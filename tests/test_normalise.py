@@ -59,3 +59,22 @@ def test_words_starting_with_e_are_not_codes():
 def test_extract_ins_strips_text():
     text, uses = extract_ins("Emulsifier (INS 471)")
     assert "471" not in text and len(uses) == 1
+
+
+def test_bare_codes_after_additive_class_word():
+    ing = normalise_ingredient("Flavour Enhancers (627, 631)")
+    assert [u.code for u in ing.ins] == ["627", "631"]
+    assert ing.name == "flavour enhancer" and ing.inner == ""
+    assert [u.name for u in ing.ins] == ["disodium guanylate", "disodium inosinate"]
+    assert all("USER-APPROVED" in u.source for u in ing.ins)
+
+
+def test_bare_codes_with_roman_suffix_and_plural_class_word():
+    assert [u.code for u in normalise_ingredient("Raising agents (500(ii), 503(ii))").ins] == ["500(ii)", "503(ii)"]
+    assert [u.code for u in normalise_ingredient("Colours (102, 110)").ins] == ["102", "110"]
+
+
+def test_bare_numbers_without_class_word_are_not_codes():
+    assert normalise_ingredient("Salt (500)").ins == []
+    assert normalise_ingredient("Sugar (1200)").ins == []
+    assert normalise_ingredient("Potato (83)").ins == []

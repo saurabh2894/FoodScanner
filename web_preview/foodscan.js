@@ -111,15 +111,27 @@
     const CODE_RE = new RegExp(CODE, "g");
     const canonicalCode = (c) => c.toLowerCase().replace(/\s+/g, "");
 
+    const ADDITIVE_CLASSES = new Set(["cosmetic_additive", "ordinary_additive", "unlisted_additive"]);
+    const bareTerms = [...new Set(T.markers.filter((r) => ADDITIVE_CLASSES.has(r.marker_class)).map((r) => r.term.toLowerCase()))]
+      .sort((a, b) => b.length - a.length).map(esc).join("|");
+    // "Flavour Enhancers (627, 631)": bare codes, only right after an additive class word
+    const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?\\s*\\(\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*\\)", "g");
+
     function extractIns(text) {
       const uses = [];
-      let stripped = text.toLowerCase().replace(INS_RE, (...a) => {
+      const addUse = (c) => {
+        const code = canonicalCode(c);
+        const row = insTable[code];
+        uses.push({ code, name: row ? row.name : null, source: row ? row.source : null });
+      };
+      const low = text.toLowerCase().replace(BARE_RE, (...a) => {
+        const m = a[0], groups = a[a.length - 1];
+        for (const c of groups.codes.match(CODE_RE) || []) addUse(c);
+        return m.slice(0, m.indexOf(groups.codes)).replace(/[( \t]+$/, "") + " ";
+      });
+      let stripped = low.replace(INS_RE, (...a) => {
         const groups = a[a.length - 1];
-        for (const c of groups.codes.match(CODE_RE) || []) {
-          const code = canonicalCode(c);
-          const row = insTable[code];
-          uses.push({ code, name: row ? row.name : null, source: row ? row.source : null });
-        }
+        for (const c of groups.codes.match(CODE_RE) || []) addUse(c);
         return " ";
       });
       for (let i = 0; i < 3; i++) stripped = stripped.replace(/[(\[{]\s*[,;/&]*\s*[)\]}]/g, " ");

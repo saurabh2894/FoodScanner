@@ -20,6 +20,20 @@ _INS = re.compile(
 _CODE_RE = re.compile(_CODE)
 
 
+_ADDITIVE_CLASSES = {"cosmetic_additive", "ordinary_additive", "unlisted_additive"}
+
+
+@cache
+def _bare_codes_re() -> re.Pattern:
+    """"Flavour Enhancers (627, 631)": codes with no INS/E prefix, but only right after an
+    additive class word taken from markers.csv, so "Salt (500)" is never read as a code."""
+    terms = sorted({r["term"].lower() for r in load_table("markers.csv") if r["marker_class"] in _ADDITIVE_CLASSES},
+                   key=len, reverse=True)
+    alt = "|".join(re.escape(t) for t in terms)
+    return re.compile(
+        rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?\s*\(\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*\)")
+
+
 @dataclass(frozen=True)
 class InsUse:
     code: str
@@ -100,6 +114,15 @@ def extract_ins(text: str) -> tuple[str, list[InsUse]]:
             uses.append(InsUse(code, row["name"] if row else None, row["source"] if row else None))
         return " "
 
+    def repl_bare(m: re.Match) -> str:
+        # keep the class word, drop only the bracketed codes
+        for c in _CODE_RE.findall(m.group("codes")):
+            code = canonical_code(c)
+            row = table.get(code)
+            uses.append(InsUse(code, row["name"] if row else None, row["source"] if row else None))
+        return m.group(0)[: m.start("codes") - m.start(0)].rstrip("( \t") + " "
+
+    low = _bare_codes_re().sub(repl_bare, low)
     stripped = _INS.sub(repl, low)
     # tidy brackets emptied by the removal, e.g. "emulsifier ( )"
     for _ in range(3):
