@@ -1,0 +1,59 @@
+"""Command-line entry point: the testable core. The web page calls the same pipeline."""
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+from .ocr import OcrUnavailable
+from .pipeline import Analysis, analyse_image, analyse_text
+
+
+def format_analysis(a: Analysis) -> str:
+    lines = []
+    if a.ingredients:
+        lines.append("Ingredients found:")
+        lines += [f"  {n}. {i}" for n, i in enumerate(a.ingredients, 1)]
+    else:
+        lines.append("Ingredients found: none")
+    lines.append("")
+    lines.append(a.headline)
+    if a.answered and a.drivers:
+        lines.append("Driven by:")
+        lines += [f"  - {d.ingredient}: {d.detail}  [{d.source}]" for d in a.drivers]
+    if not a.answered and a.drivers:
+        lines.append("Weak evidence seen (not enough to decide):")
+        lines += [f"  - {d.ingredient}: {d.detail}" for d in a.drivers]
+    if a.ins_mappings:
+        lines.append("INS mappings used:")
+        for u in a.ins_mappings:
+            lines.append(f"  - INS {u.code} -> {u.name or '(not in local mapping)'}" + (f"  [{u.source}]" if u.source else ""))
+    return "\n".join(lines)
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(prog="foodscan", description="Estimate NOVA processing level from a label photo.")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    c = sub.add_parser("classify", help="classify one label photo")
+    c.add_argument("path", help="image file (or text file with --text, '-' for stdin)")
+    c.add_argument("--text", action="store_true", help="treat input as label text, skipping OCR")
+    args = ap.parse_args(argv)
+
+    try:
+        if args.text:
+            text = sys.stdin.read() if args.path == "-" else Path(args.path).read_text(encoding="utf-8")
+            result = analyse_text(text)
+        else:
+            result = analyse_image(args.path)
+    except OcrUnavailable as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+    except FileNotFoundError as exc:
+        print(f"error: file not found: {exc.filename}", file=sys.stderr)
+        return 2
+    print(format_analysis(result))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
