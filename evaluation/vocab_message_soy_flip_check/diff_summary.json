@@ -1,0 +1,82 @@
+{
+ "inputs": 66,
+ "builds": {
+  "before": "8f682e9",
+  "after": "558bcf9 (this build)"
+ },
+ "changed_counts": {
+  "group": 0,
+  "drivers": 0,
+  "status": 0,
+  "reason": 4,
+  "warnings": 1
+ },
+ "changed_inputs": {
+  "group": [],
+  "drivers": [],
+  "status": [],
+  "reason": [
+   "b1/N08",
+   "b2/M02",
+   "b3/Q06",
+   "b3/Q08"
+  ],
+  "warnings": [
+   "b2/M07"
+  ]
+ },
+ "display_text_changes": {
+  "b1/N08": {
+   "reason": {
+    "before": "ingredient list looks truncated (ends mid-word or unrecognised: \"Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)\")",
+    "after": "ingredients not in the local vocabulary, so processing level cannot be judged: Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+   },
+   "warnings": {
+    "before": [],
+    "after": []
+   }
+  },
+  "b2/M02": {
+   "reason": {
+    "before": "ingredient list looks truncated (ends mid-word or unrecognised: \"PASTEURISED COW MILK\")",
+    "after": "ingredients not in the local vocabulary, so processing level cannot be judged: PASTEURISED COW MILK"
+   },
+   "warnings": {
+    "before": [],
+    "after": []
+   }
+  },
+  "b2/M07": {
+   "reason": {
+    "before": null,
+    "after": null
+   },
+   "warnings": {
+    "before": [
+     "List may be incomplete (ends mid-word or unrecognised: \"Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)\"). Group 4 stands because the markers found are already enough."
+    ],
+    "after": []
+   }
+  },
+  "b3/Q06": {
+   "reason": {
+    "before": "ingredient list looks truncated (ends mid-word or unrecognised: \"Pasteurized Cow Milk\")",
+    "after": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Cow Milk"
+   },
+   "warnings": {
+    "before": [],
+    "after": []
+   }
+  },
+  "b3/Q08": {
+   "reason": {
+    "before": "ingredient list looks truncated (ends mid-word or unrecognised: \"Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)\")",
+    "after": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+   },
+   "warnings": {
+    "before": [],
+    "after": []
+   }
+  }
+ }
+}
