@@ -1,0 +1,5 @@
+{
+  "installCommand": "pip install -e .",
+  "buildCommand": "python scripts/fetch_tesseract_assets.py && python scripts/build_web_preview.py",
+  "outputDirectory": "web_preview/dist"
+}

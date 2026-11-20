@@ -33,3 +33,6 @@ import shutil  # noqa: E402
 shutil.copytree(VENDOR, out.parent / "tess", dirs_exist_ok=True)
 shutil.copy(ROOT / "web_preview" / "worker-boot.js", out.parent / "tess" / "worker-boot.js")
 print(f"copied photo-reader files to {out.parent / 'tess'}")
+shutil.copy(out, out.parent / "index.html")          # a static host serves index.html at the root
+shutil.copy(ROOT / "web_preview" / "vercel.dist.json", out.parent / "vercel.json")
+print("wrote index.html and vercel.json for static hosting")
