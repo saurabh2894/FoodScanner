@@ -28,9 +28,30 @@ def test_truncated_list_abstains_research_example():
     assert "truncated" in a.reason and a.headline.startswith(NOT_ENOUGH)
 
 
-def test_unclosed_bracket_abstains():
-    a = analyse_text("Ingredients: Sugar, emulsifier (INS 471, salt")
+def test_unclosed_bracket_without_marker_abstains():
+    a = analyse_text("Ingredients: Cucumber, salt (iodised, vinegar")
     assert not a.answered and "truncated" in a.reason
+
+
+# --- Option A (user decision): strong marker survives truncation, with a warning ------
+def test_truncated_list_with_strong_marker_is_group4_with_warning():
+    a = analyse_text("Ingredients: Sugar, maltodextrin, refined wheat flo")
+    assert a.answered and a.group == 4
+    assert a.warnings and "incomplete" in a.warnings[0]
+
+
+def test_unclosed_bracket_with_strong_marker_is_group4_with_warning():
+    a = analyse_text("Ingredients: Sugar, emulsifier (INS 471, salt")
+    assert a.answered and a.group == 4 and "unclosed bracket" in a.warnings[0]
+
+
+def test_option_a_does_not_loosen_other_truncation_cases():
+    assert not analyse_text("Ingredients: Sugar, refined wheat flo").answered       # research example
+    assert not analyse_text("Ingredients: Mango, sugar, pectin (INS 440, jam").answered  # weak marker only
+
+
+def test_complete_list_has_no_warning():
+    assert analyse_text(BISCUIT).warnings == []
 
 
 def test_little_text_abstains():

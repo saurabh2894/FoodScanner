@@ -30,6 +30,7 @@
 {% if result %}
 <div class="card {{ 'answer' if result.answered else 'abstain' }}">
   <h2>{{ result.headline }}</h2>
+  {% for w in result.warnings %}<p><strong>Warning:</strong> {{ w }}</p>{% endfor %}
   {% if result.answered and result.drivers %}
     <h3>Driven by</h3>
     <ul>

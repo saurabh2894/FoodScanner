@@ -13,7 +13,7 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, is_recognised
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import parse_ingredient_list
+from .parser import parse_ingredient_list, split_compound
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -36,6 +36,7 @@ class Analysis:
     drivers: list[Driver] = field(default_factory=list)
     ins_mappings: list[InsUse] = field(default_factory=list)
     extracted_text: str = ""
+    warnings: list[str] = field(default_factory=list)   # answered, but with a caveat
 
     @property
     def headline(self) -> str:
@@ -52,6 +53,25 @@ def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
 
 
+def _expand(items: list[str], depth: int = 0) -> list[Ingredient]:
+    """Normalise items, expanding unknown compound ingredients into their sub-items.
+
+    "Seasoning (Sugar, Maltodextrin, ...)" is judged by its contents, so drivers
+    name the specific ingredient. A compound whose head is already recognised
+    ("edible vegetable oil (palm, coconut)") or carries a marker/INS code
+    ("raising agents (INS 500(ii), INS 503(ii))") is left whole.
+    """
+    out: list[Ingredient] = []
+    for raw in items:
+        ing = normalise_list([raw])[0]
+        split = split_compound(raw) if depth < 3 else None
+        if split and not _recognisable(normalise_list([split[0]])[0]):
+            out.extend(_expand(split[1], depth + 1))
+        else:
+            out.append(ing)
+    return out
+
+
 def analyse_text(text: str) -> Analysis:
     compact = re.sub(r"\s+", "", text)
     if len(compact) < MIN_CHARS:
@@ -63,24 +83,33 @@ def analyse_text(text: str) -> Analysis:
     if not parsed.found:
         return _abstain("no ingredient list found in the text", text)
 
-    ings = normalise_list(parsed.items)
+    ings = _expand(parsed.items)
     uses = [u for i in ings for u in i.ins]
     common = dict(ingredients=parsed.items, ins_mappings=uses)
 
     # Truncation: brackets left open, or the list runs off the end of the text
     # (no full stop / stop phrase) on a word we cannot recognise ("refined wheat flo").
+    truncation = None
     if parsed.unbalanced_brackets:
-        return _abstain("ingredient list looks truncated (unclosed bracket)", text, **common)
-    if not parsed.terminated and not _recognisable(ings[-1]):
-        return _abstain(
-            f'ingredient list looks truncated (ends mid-word or unrecognised: "{parsed.items[-1]}")',
-            text, **common)
+        truncation = "ingredient list looks truncated (unclosed bracket)"
+    elif not parsed.terminated and not _recognisable(ings[-1]):
+        truncation = f'ingredient list looks truncated (ends mid-word or unrecognised: "{parsed.items[-1]}")'
 
     result = classify_ingredients(ings, parsed.declarations)
+
+    # Option A (decided by the user): missing text can never remove a marker, so a
+    # strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
+    # Every other truncated case abstains.
+    if truncation and result.group != 4:
+        return _abstain(truncation, text, drivers=result.drivers, **common)
     if result.group is None:
         return _abstain(result.reason or "classification uncertain", text, drivers=result.drivers, **common)
+    warnings = []
+    if truncation:
+        warnings.append("List may be incomplete (" + truncation.removeprefix("ingredient list looks truncated ").strip("()") +
+                        "). Group 4 stands because the markers found are already enough.")
     return Analysis(answered=True, group=result.group, drivers=result.drivers,
-                    extracted_text=text, **common)
+                    extracted_text=text, warnings=warnings, **common)
 
 
 def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:

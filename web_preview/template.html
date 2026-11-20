@@ -47,6 +47,8 @@
   .btn:disabled { opacity: .55; cursor: default; }
   .chip { appearance: none; background: var(--accent-soft); color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: .25rem .7rem; font: 500 .8rem var(--font-body); cursor: pointer; }
   .hint { color: var(--muted); font-size: .85rem; }
+  #photo-preview { max-width: 100%; max-height: 14rem; border: 1px solid var(--line); border-radius: 8px; justify-self: start; }
+  .warn { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: .5rem .75rem; border-radius: 0 6px 6px 0; font-size: .88rem; }
   .status { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
   /* result */
   .scale { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
@@ -107,15 +109,19 @@
     <div id="pane-photo" class="pane" role="tabpanel" aria-labelledby="tab-photo" hidden>
       <label class="field" for="photo">Photo of the ingredient panel (flat, well lit, English text)</label>
       <input type="file" id="photo" accept="image/*">
+      <img id="photo-preview" alt="Selected label photo" hidden>
+      <div class="row">
+        <button class="btn" id="photo-analyse" type="button" disabled>Read photo and analyse</button>
+      </div>
       <p class="status" id="photo-status" role="status"></p>
-      <p class="hint">Text is read in your browser with tesseract.js. If photo reading cannot start in this viewer, paste the text instead. Check the extracted text before trusting the result.</p>
+      <p class="hint">Text is read in your browser with tesseract.js; small photos are enlarged first. If photo reading cannot start in this viewer, paste the text instead. The text it reads is copied into the Paste tab so you can fix mistakes and press Analyse again.</p>
     </div>
   </section>
 
   <section id="result" aria-live="polite"></section>
 
   <footer>
-    <p>This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; 61 of 61 matched at build time.</p>
+    <p>This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; /*PARITY*/ of /*PARITY*/ matched at build time.</p>
     <p>Groups follow the NOVA classification (University of Sao Paulo). Marker rules and sources are listed per result. Reference labels for any test set are provisional, not ground truth.</p>
   </footer>
 </div>
@@ -154,6 +160,7 @@
           [el("b", { text: s[0] }), el("span", { text: s[1] })]);
       }));
     card.appendChild(el("h2", { text: a.headline }));
+    (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
     card.appendChild(scale);
     if (a.drivers.length) {
       card.appendChild(el("div", {}, [
@@ -205,29 +212,66 @@
   $("tab-text").addEventListener("click", function () { selectTab("text"); });
   $("tab-photo").addEventListener("click", function () { selectTab("photo"); });
 
+  var photoFile = null;
+
+  // Enlarge small photos and stretch contrast before OCR (mirrors the Python app's prepare_image).
+  function prepare(file) {
+    return new Promise(function (resolve) {
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        try {
+          var factor = img.width >= 1000 ? 1 : Math.min(4, Math.max(2, Math.round(1000 / img.width)));
+          var c = document.createElement("canvas");
+          c.width = img.width * factor; c.height = img.height * factor;
+          var g = c.getContext("2d");
+          g.imageSmoothingQuality = "high";
+          g.drawImage(img, 0, 0, c.width, c.height);
+          var d = g.getImageData(0, 0, c.width, c.height), px = d.data, lo = 255, hi = 0, i, v;
+          for (i = 0; i < px.length; i += 4) { v = (px[i] * 299 + px[i + 1] * 587 + px[i + 2] * 114) / 1000; px[i] = v; if (v < lo) lo = v; if (v > hi) hi = v; }
+          var span = Math.max(hi - lo, 1);
+          for (i = 0; i < px.length; i += 4) { v = (px[i] - lo) * 255 / span; px[i] = px[i + 1] = px[i + 2] = v; }
+          g.putImageData(d, 0, 0);
+          c.toBlob(function (b) { URL.revokeObjectURL(url); resolve(b || file); }, "image/png");
+        } catch (e) { URL.revokeObjectURL(url); resolve(file); }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+      img.src = url;
+    });
+  }
+
   $("photo").addEventListener("change", function (ev) {
-    var f = ev.target.files && ev.target.files[0];
-    var status = $("photo-status");
-    if (!f) return;
+    photoFile = ev.target.files && ev.target.files[0] || null;
+    $("photo-analyse").disabled = !photoFile;
+    var pv = $("photo-preview");
+    if (photoFile) { pv.src = URL.createObjectURL(photoFile); pv.hidden = false; $("photo-status").textContent = "Photo ready. Press Read photo and analyse."; }
+    else { pv.hidden = true; }
+  });
+
+  $("photo-analyse").addEventListener("click", function () {
+    var status = $("photo-status"), btn = $("photo-analyse");
+    if (!photoFile) { status.textContent = "Choose a photo first."; return; }
     if (typeof Tesseract === "undefined") {
       status.textContent = "Photo reading could not load in this viewer. Paste the label text instead.";
       return;
     }
-    status.textContent = "Starting text recognition…";
+    btn.disabled = true;
+    status.textContent = "Preparing photo…";
     var done = false;
     var timer = setTimeout(function () {
-      if (!done) status.textContent = "Photo reading is taking too long or is blocked in this viewer. Paste the label text instead.";
+      if (!done) { status.textContent = "Photo reading is taking too long or is blocked in this viewer. Paste the label text instead."; btn.disabled = false; }
     }, 90000);
-    Tesseract.recognize(f, "eng", {
-      logger: function (m) { if (!done && m.status) status.textContent = m.status + (m.progress ? " " + Math.round(m.progress * 100) + "%" : ""); }
+    prepare(photoFile).then(function (img) {
+      status.textContent = "Starting text recognition…";
+      return Tesseract.recognize(img, "eng", {
+        logger: function (m) { if (!done && m.status) status.textContent = m.status + (m.progress ? " " + Math.round(m.progress * 100) + "%" : ""); }
+      });
     }).then(function (res) {
-      done = true; clearTimeout(timer);
+      done = true; clearTimeout(timer); btn.disabled = false;
       $("label-text").value = res.data.text;
-      status.textContent = "Text read. Check it below, fix any mistakes, then press Analyse.";
-      selectTab("text");
       run();
+      status.textContent = "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
     }).catch(function () {
-      done = true; clearTimeout(timer);
+      done = true; clearTimeout(timer); btn.disabled = false;
       status.textContent = "Photo reading failed in this viewer. Paste the label text instead.";
     });
   });

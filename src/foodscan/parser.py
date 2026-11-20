@@ -107,6 +107,12 @@ def parse_ingredient_list(text: str) -> ParsedList:
             declarations.append(tail[:end] if end is not None else tail)
 
     end = _find_terminator(body)
+    if end is None and _bracket_depth(body) > 0:
+        # A bracket the pack never closes (seen on a real label) hides the full stop from the
+        # depth-0 scan, so footnotes would be absorbed into the last ingredient. Fall back to
+        # the first full stop that directly follows a closing bracket.
+        m = re.search(r"[)\]}]\.(?=\s|$)", body)
+        end = m.end() - 1 if m else None
     if end is not None:
         body = body[:end]
         terminated = True
@@ -122,3 +128,27 @@ def parse_ingredient_list(text: str) -> ParsedList:
         unbalanced_brackets=unbalanced,
         declarations=declarations,
     )
+
+
+def split_compound(raw: str) -> tuple[str, list[str]] | None:
+    """Split "Seasoning (Sugar, Salt, Maltodextrin)" into ("Seasoning", [sub-items]).
+
+    Returns None when the bracket holds no comma-separated list. An unclosed
+    bracket (a printing slip seen on a real pack) runs to the end of the string.
+    """
+    idx = raw.find("(")
+    if idx <= 0:
+        return None
+    depth, end = 0, len(raw)
+    for i in range(idx, len(raw)):
+        if raw[i] in _OPEN:
+            depth += 1
+        elif raw[i] in _CLOSE:
+            depth -= 1
+            if depth == 0:
+                end = i
+                break
+    subs, _ = _split_top_level(raw[idx + 1:end])
+    if len(subs) < 2:
+        return None
+    return raw[:idx].strip(" *"), subs

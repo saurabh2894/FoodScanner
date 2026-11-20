@@ -54,6 +54,21 @@ CORPUS = [
     "Ingredients: Tomato, edible vegetable oil (palmolein), salt, anti-foaming agent (INS 900a).",
     "Ingredients: Mango, sugar, lemon, colour (INS 102 and 110), flavour",
     "Ingredients: Peas (60%), water, salt.", "Ingredients: Potato, sunflower oil, iodised salt, chilli, turmeric.",
+    # real chips label (see tests/test_real_label.py): as printed, and as tesseract read it
+    "INGREDIENTS: Potato (83%), Edible Vegetable Oil*, *Seasoning (Sugar, Iodised Salt, Milk Solids (1.2%), Spices and Condiments, Maltodextrin, Flavour (Natural and Nature Identical Flavouring Substances), Cheese Powder (0.3%), Hydrolysed Vegetable Protein, Flavour Enhancers (627, 631), Edible Vegetable Oil (Palm, Coconut). *As flavouring agent. ALLERGEN ADVICE: Contains Soy, Milk",
+    'INGREDIENTS: Potato (83%), Edible Vegetable Or",\n"Seasoning (Suger, lodised Salt, Mik Solids (1.2%), Spices\nand Comiments, Maltodextrin, Flavour (Natural and Nature\nidentical Raxvouring Substances}, Cheese Powler (0.3%),\nHydrolysed Vegetable Protein, Flavour Enhancers (627,\n631), Edible Vegetadie OF (Paim, Coconut).\n\n"AS favouring agent.',
+    # Option A and compound expansion
+    "Ingredients: Sugar, maltodextrin, refined wheat flo", "Ingredients: Sugar, emulsifier (INS 471, salt",
+    "Ingredients: Cucumber, salt (iodised, vinegar", "Ingredients: Mango, sugar, pectin (INS 440, jam",
+    "Ingredients: Potato, edible vegetable oil (palm, coconut), salt.",
+    "Ingredients: Potato, raising agents (INS 500(ii), INS 503(ii)), salt.",
+    "Ingredients: Potato, seasoning (salt, sugar, turmeric), oil.",
+    "Ingredients: Potato, seasoning (salt, sugar, colour (INS 150d)), edible vegetable oil.",
+    "Ingredients: Rice, masala (spices, salt, dextrose).", "Ingredients: *(salt, sugar), rice.",
+    "Ingredients: Rice, mix (a (b, c), d (e, f)), salt.",
+    "Ingredients: Potato, *Seasoning (Sugar, Salt, Edible Vegetable Oil (Palm, Coconut). *As flavouring agent.",
+    "Ingredients: Potato, *Seasoning (Sugar, Maltodextrin, Edible Vegetable Oil (Palm, Coconut). *As flavouring agent.",
+    "Ingredients: Rice, salt (iodised. Contains soy",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -62,7 +77,7 @@ def py_result(text):
     a = analyse_text(text)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients,
+        "ingredients": a.ingredients, "warnings": a.warnings,
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source} for u in a.ins_mappings],
     }
@@ -73,7 +88,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map((t) => pick(E.analyseText(t)))));
 """
 

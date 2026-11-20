@@ -9,12 +9,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+from parity_check import CORPUS, main as parity_main  # noqa: E402
 from web_tables import tables  # noqa: E402
+
+if parity_main() != 0:
+    sys.exit("parity check failed: not building")
 
 tpl = (ROOT / "web_preview" / "template.html").read_text(encoding="utf-8")
 engine = (ROOT / "web_preview" / "foodscan.js").read_text(encoding="utf-8")
 html = tpl.replace("/*TABLES*/", json.dumps(tables(), ensure_ascii=False).replace("</", "<\\/")) \
-          .replace("/*ENGINE*/", engine.replace("</script", "<\\/script"))
+          .replace("/*ENGINE*/", engine.replace("</script", "<\\/script")) \
+          .replace("/*PARITY*/", str(len(CORPUS)))
 out = ROOT / "web_preview" / "dist" / "foodscan-preview.html"
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(html, encoding="utf-8")

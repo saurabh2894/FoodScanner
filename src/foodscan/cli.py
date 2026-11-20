@@ -18,6 +18,8 @@ def format_analysis(a: Analysis) -> str:
         lines.append("Ingredients found: none")
     lines.append("")
     lines.append(a.headline)
+    for w in a.warnings:
+        lines.append(f"Warning: {w}")
     if a.answered and a.drivers:
         lines.append("Driven by:")
         lines += [f"  - {d.ingredient}: {d.detail}  [{d.source}]" for d in a.drivers]

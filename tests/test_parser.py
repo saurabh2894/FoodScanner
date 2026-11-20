@@ -76,3 +76,20 @@ def test_contains_statement_kept_as_declaration_may_contain_ignored():
 
 def test_hindi_heading():
     assert parse_ingredient_list("सामग्री: चावल, नमक").found
+
+
+def test_unclosed_bracket_does_not_absorb_footnote():
+    p = parse_ingredient_list(
+        "Ingredients: Potato, *Seasoning (Sugar, Salt, Edible Vegetable Oil (Palm, Coconut). *As flavouring agent."
+    )
+    assert p.items[-1].endswith("(Palm, Coconut)") and "flavouring" not in " ".join(p.items)
+    assert p.unbalanced_brackets and p.terminated
+
+
+def test_split_compound():
+    from foodscan.parser import split_compound
+
+    assert split_compound("*Seasoning (Sugar, Salt, Maltodextrin)") == ("Seasoning", ["Sugar", "Salt", "Maltodextrin"])
+    assert split_compound("*Seasoning (Sugar, Salt, Oil (Palm, Coconut)") == ("Seasoning", ["Sugar", "Salt", "Oil (Palm, Coconut)"])
+    assert split_compound("emulsifier (INS 471)") is None
+    assert split_compound("Salt") is None

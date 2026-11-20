@@ -69,11 +69,29 @@
           declarations.push(e !== null ? tail.slice(0, e) : tail);
         }
       }
-      const end = findTerminator(body);
+      let end = findTerminator(body);
+      if (end === null && bracketDepth(body) > 0) {
+        // unclosed bracket on the pack: fall back to the first full stop right after a closing bracket
+        const m = /[)\]}]\.(?=\s|$)/.exec(body);
+        end = m ? m.index + m[0].length - 1 : null;
+      }
       if (end !== null) { body = body.slice(0, end); terminated = true; }
       const { items, unbalanced } = splitTopLevel(body);
       if (!items.length) return { found: false };
       return { found: true, items, terminated, unbalanced, declarations };
+    }
+
+    function splitCompound(raw) {
+      const idx = raw.indexOf("(");
+      if (idx <= 0) return null;
+      let depth = 0, end = raw.length;
+      for (let i = idx; i < raw.length; i++) {
+        if (OPEN.includes(raw[i])) depth++;
+        else if (CLOSE.includes(raw[i])) { depth--; if (depth === 0) { end = i; break; } }
+      }
+      const subs = splitTopLevel(raw.slice(idx + 1, end)).items;
+      if (subs.length < 2) return null;
+      return [stripChars(raw.slice(0, idx), " *"), subs];
     }
 
     /* ---------- tables ---------- */
@@ -178,7 +196,18 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+    }
+    const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
+    function expand(items, depth) {
+      const out = [];
+      for (const raw of items) {
+        const ing = normaliseIngredient(raw);
+        const split = depth < 3 ? splitCompound(raw) : null;
+        if (split && !recognisableIng(normaliseIngredient(split[0]))) out.push(...expand(split[1], depth + 1));
+        else out.push(ing);
+      }
+      return out;
     }
     function analyseText(text) {
       const compact = text.replace(/\s+/g, "");
@@ -188,16 +217,19 @@
         return abstain("extracted text looks like noise, not a readable label", text);
       const parsed = parseIngredientList(text);
       if (!parsed.found) return abstain("no ingredient list found in the text", text);
-      const ings = parsed.items.map(normaliseIngredient);
+      const ings = expand(parsed.items, 0);
       const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins) };
-      if (parsed.unbalanced) return abstain("ingredient list looks truncated (unclosed bracket)", text, common);
-      const last = ings[ings.length - 1];
-      const recognisable = isRecognised(last.name) || last.ins.length > 0 || hitsFor(last).length > 0;
-      if (!parsed.terminated && !recognisable)
-        return abstain(`ingredient list looks truncated (ends mid-word or unrecognised: "${parsed.items[parsed.items.length - 1]}")`, text, common);
+      let truncation = null;
+      if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
+      else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
+        truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${parsed.items[parsed.items.length - 1]}")`;
       const r = classifyIngredients(ings, parsed.declarations);
+      // Option A (user decision): a strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
+      if (truncation && r.group !== 4) return abstain(truncation, text, Object.assign({ drivers: r.drivers }, common));
       if (r.group === null) return abstain(r.reason || "classification uncertain", text, Object.assign({ drivers: r.drivers }, common));
-      return Object.assign({ answered: true, group: r.group, reason: null, drivers: r.drivers, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` }, common);
+      const warnings = [];
+      if (truncation) warnings.push("List may be incomplete (" + stripChars(truncation.replace(/^ingredient list looks truncated /, ""), "()") + "). Group 4 stands because the markers found are already enough.");
+      return Object.assign({ answered: true, group: r.group, reason: null, drivers: r.drivers, warnings, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` }, common);
     }
     return { analyseText, NOT_ENOUGH, GROUP_NAMES };
   }
