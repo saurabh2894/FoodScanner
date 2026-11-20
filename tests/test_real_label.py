@@ -107,4 +107,5 @@ def test_reference_example_with_seasoning_section_is_group4():
 
 def test_us_spelling_in_contains_statement():
     a = analyse_text("Ingredients: Potato, salt. Contains permitted color.")
-    assert a.group == 4
+    assert a.group is None and "colouring" in a.reason          # US spelling is read as a colour; alone it abstains (option B)
+    assert analyse_text("Ingredients: Potato, salt. Contains permitted color and added flavor.").group == 4

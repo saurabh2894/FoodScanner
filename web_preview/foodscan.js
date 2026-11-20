@@ -397,6 +397,13 @@
           if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(text))
             strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source, section: null });
       }
+      // option B (user decision, Amul Butter review): a colouring as the only strong evidence does not decide a group
+      const colourCodes = new Set(T.ins_map.filter((r) => r.strength === "strong" && (r.functional_class || "").split(";").map((x) => x.trim()).includes("colour")).map((r) => r.ins.toLowerCase()));
+      const isColour = (d) => { if (d.detail.startsWith('"colour"') || d.detail.includes('Contains" statement: "colour"')) return true; const m = /^INS (\S+) /.exec(d.detail); return !!(m && colourCodes.has(m[1].toLowerCase())); };
+      if (strong.length && strong.every(isColour)) {
+        const names = [...new Set(strong.map((d) => `${d.ingredient} -> ${d.detail}`))].sort().join("; ");
+        return { group: null, drivers: strong, reason: `the only ultra-processing evidence is a colouring (${names}); a colour alone does not decide a group` };
+      }
       if (strong.length) return { group: 4, drivers: strong, reason: null };
       if (weak.length) {
         const names = [...new Set(weak.map((d) => `${d.ingredient} -> ${d.detail}`))].sort().join("; ");
