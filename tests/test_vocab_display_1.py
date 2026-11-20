@@ -1,5 +1,4 @@
 """Tests for Task 2: Vocabulary and Display Data Expansion 1."""
-import csv
 from pathlib import Path
 import pytest
 
@@ -12,6 +11,9 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def test_package_1_spelling_synonyms():
+    # OCR typo variants
+    assert normalise_ingredient("lodised salt").name == "iodised salt"
+    assert normalise_ingredient("lodized salt").name == "iodised salt"
     # US spelling variant
     assert normalise_ingredient("iodized salt").name == "iodised salt"
     # open compound variant
@@ -25,9 +27,14 @@ def test_package_2_ins_display_names():
     added_codes = ["202", "260", "339(ii)", "407", "412", "415", "466", "476", "500(i)", "501(i)", "551", "1422"]
     for code in added_codes:
         assert code in rows, f"missing INS code {code}"
-        assert "JECFA" in rows[code]["source"]
-        assert "Codex" not in rows[code]["source"]
-        assert "Display name only: no rule, no group effect" in rows[code]["source"]
+        name = rows[code]["name"]
+        source = rows[code]["source"]
+        # Assert non-empty, single-spaced display name
+        assert name and name.strip() == name, f"name for {code} is empty or unstripped"
+        assert "  " not in name, f"name for {code} has double spaces: {name!r}"
+        # Assert source note contains JECFA URL
+        assert "https://www.fao.org/food/food-safety-quality/scientific-advice/jecfa/jecfa-additives/detail/en/c/" in source, f"source for {code} missing JECFA URL"
+        assert "Display name only: no rule, no group effect" in source
 
     # Test that display names appear on unmapped codes without altering group
     a = analyse_text("Ingredients: Rice, Preservative (INS 202), salt.", source="text")
@@ -36,12 +43,30 @@ def test_package_2_ins_display_names():
     assert u.name is None  # no marker decision row
 
 
+def test_package_2_name_tie_hints():
+    # Assert name-tie misread hint fires correctly for Guar gum (INS 415) and Xanthan gum (INS 412)
+    r_guar = analyse_text("Ingredients: Water, Guar gum (INS 415).", source="text")
+    assert any("Read as INS 415. The label text says Guar gum, and the source page for guar gum gives INS 412" in w for w in r_guar.warnings)
+
+    r_xanthan = analyse_text("Ingredients: Water, Xanthan gum (INS 412).", source="text")
+    assert any("Read as INS 412. The label text says Xanthan gum, and the source page for xanthan gum gives INS 415" in w for w in r_xanthan.warnings)
+
+    # Carrageenan (INS 407a): pin current behavior with a test (known limitation under review)
+    # The label names Carrageenan but codes 407a; the lookup recognizes 407 (Monograph 16) as Carrageenan
+    # and issues a possible misread hint citing 407, while 407a itself remains unmapped.
+    r_carr = analyse_text("Ingredients: Water, Carrageenan (INS 407a).", source="text")
+    assert any("Read as INS 407a. The label text says Carrageenan, and the source page for carrageenan gives INS 407" in w for w in r_carr.warnings)
+    u_carr = next(x for x in r_carr.ins_mappings if x.code == "407a")
+    assert u_carr.ref_name is None  # 407a itself is not in ins_names.csv
+
+
 def test_package_3_declared_roles():
     roles = {r["term"]: r for r in load_table("declared_roles.csv")}
     assert "sequestrant" in roles
     assert roles["sequestrant"]["nova_status"] == "not_named"
     assert "dough conditioner" in roles
     assert roles["dough conditioner"]["nova_status"] == "not_named"
+    assert "thickening & stabilizing agents" not in roles
 
     # Test label phrasing gets declared roles
     u = next(x for x in analyse_text("Ingredients: Rice, sequestrant - E385, salt.", source="text").ins_mappings if x.code == "385")

@@ -5,18 +5,77 @@
     "after": "antigravity/vocab-display-1"
   },
   "changed_counts": {
-    "group": 0,
-    "drivers": 0,
+    "group": 1,
+    "drivers": 1,
     "status": 0,
-    "reason": 0,
-    "warnings": 0
+    "reason": 3,
+    "warnings": 0,
+    "unassessed": 17,
+    "additive_display": 22
   },
   "changed_inputs": {
-    "group": [],
-    "drivers": [],
+    "group": [
+      "b3/Q03"
+    ],
+    "drivers": [
+      "b3/Q03"
+    ],
     "status": [],
-    "reason": [],
-    "warnings": []
+    "reason": [
+      "b3/Q03",
+      "neg/R2",
+      "dev/F09"
+    ],
+    "warnings": [],
+    "unassessed": [
+      "b1/N04",
+      "b1/N05",
+      "b1/N12",
+      "b1/N15",
+      "b2/M07",
+      "b2/M10",
+      "b2/M15",
+      "b3/Q03",
+      "b3/Q14",
+      "neg/R2",
+      "dev/F02",
+      "dev/F07",
+      "dev/F08",
+      "dev/F09",
+      "dev/F10",
+      "dev/F13",
+      "dev/F15"
+    ],
+    "additive_display": [
+      "b1/N05",
+      "b1/N06",
+      "b1/N11",
+      "b1/N12",
+      "b1/N13",
+      "b2/M04",
+      "b2/M05",
+      "b2/M10",
+      "b2/M11",
+      "b2/M12",
+      "b2/M14",
+      "b2/M15",
+      "b3/Q11",
+      "b3/Q12",
+      "b3/Q14",
+      "neg/R5",
+      "dev/F06",
+      "dev/F07",
+      "dev/F08",
+      "dev/F13",
+      "dev/F14",
+      "dev/F15"
+    ]
   },
-  "display_text_changes": {}
+  "attributions": {
+    "b3/Q03": "Flips group None -> 3 and gains driver ['recognised whole food', 'recognised culinary']; drops 'lodised Salt' from unassessed and reason text. Caused by Package 1 alias 'lodised salt' -> 'iodised salt' (resolving Katraj buttermilk Water, Curd, lodised Salt as NOVA 3).",
+    "neg/R2": "Reason text drops 'lodized salt' from unrecognised list. Caused by Package 1 alias 'lodized salt' -> 'iodised salt'.",
+    "dev/F09": "Reason text drops 'Refined Palmolein Oil' from unrecognised list (leaving only Ajwain). Caused by Package 1 alias 'refined palmolein oil' -> 'palmolein'.",
+    "unassessed_17_labels": "17 labels dropped newly recognised synonyms (lodised salt, lodized salt, iodized salt, cotton seed oil, refined palmolein oil) from unassessed lists. Caused by Package 1 synonym aliases.",
+    "additive_display_22_labels": "22 labels had INS display names (monographs for 202, 260, 339(ii), 407, 412, 415, 466, 476, 500(i), 501(i), 551, 1422) and/or declared role 'sequestrant' populated. Caused by Package 2 ins_names.csv and Package 3 declared_roles.csv. No group or scoring impact."
+  }
 }

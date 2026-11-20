@@ -234,6 +234,9 @@ PASTE = [
     "Soyabean Seed", "Soybean", "Soya bean", "Soyabean Seed, Salt", "Water, Sugar, Zorbium", "Rice, flavour, Zorbium", "Zorbium, Quux", "Sugar, refined wheat flo", "Rice, salt, flavou", "Soybean oil, Soya beans",
     "Ingredients: Milk & Milk Solids", "Ingredients: Toned milk, milk solids.", "Ingredients: Pasteurized Cow Milk", "Ingredients: Cow milk, active culture",
     "Ingredients: Milk, milk solids, Vitamin A.", "Ingredients: Milk, milk solids, sugar.", "Ingredients: Milk, milk solids, flavour.", "Ingredients: Milk, milk solids, stabilizer (INS 440).",
+    "Rice, lodised salt", "Rice, lodized salt", "Rice, iodized salt", "Rice, cotton seed oil", "Rice, refined palmolein oil",
+    "Ingredients: Water, Xanthan gum (INS 415), Guar gum (INS 412).",
+    "Ingredients: Rice, sequestrant - E385, dough conditioner (INS 223).",
 ]
 TOTAL = len(CORPUS) + len(PASTE)
 
