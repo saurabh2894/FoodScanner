@@ -22,7 +22,7 @@
     const HEADING = /(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
-    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})\s*:\s*(?=\S)/;
+    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(?:\s+(\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)/;
     const DENY = /^(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)$/i;
 
     function bracketDepth(text) {
@@ -69,7 +69,44 @@
       if (!/^\p{L}/u.test(seg.slice(m[0].length))) return null;
       const flat = flatten(label);
       if (isRecognised(flat)) return null;
-      return { label, off: m[0].length, strip: !CLASS_WORD_RE.test(flat) };
+      const shown = label + (m[2] ? " " + m[2].replace(/\s+/g, "") : "");   // "Seasoning 12%"
+      return { label: shown, off: m[0].length, strip: !CLASS_WORD_RE.test(flat) };
+    }
+    const MARKER_TERMS = new Set(T.markers.map((r) => flatten(r.term)));
+    const knownPhrase = (flat) => isRecognised(flat) || MARKER_TERMS.has(flat);
+    function colonAtDepth0(item) {
+      let depth = 0;
+      for (let i = 0; i < item.length; i++) {
+        const ch = item[i];
+        if (OPEN.includes(ch)) depth++;
+        else if (CLOSE.includes(ch)) depth = Math.max(depth - 1, 0);
+        else if (ch === ":" && depth === 0) return i;
+      }
+      return -1;
+    }
+    // "Rice Bran Oil Seasoning : Onion" -> [prefix, label, rest]; mirrors parser._peel_label
+    function peelLabel(item) {
+      const colon = colonAtDepth0(item);
+      if (colon <= 0) return null;
+      let left = item.slice(0, colon);
+      const rest = item.slice(colon + 1).trim();
+      if (!/^\p{L}/u.test(rest)) return null;
+      let pct = "";
+      const mp = /\s+(\d+(?:\.\d+)?\s*%)\s*$/.exec(left);
+      if (mp) { pct = mp[1].replace(/\s+/g, ""); left = left.slice(0, mp.index); }
+      const words = left.split(/\s+/).filter(Boolean);
+      for (let k = words.length - 1; k > 0; k--) {
+        const labelWords = words.slice(k);
+        if (labelWords.length > 4 || !labelWords.every((w) => /^[A-Za-z&'\u2019\/\-]+$/.test(w))) continue;
+        const label = labelWords.join(" "), flat = flatten(label);
+        if (DENY.test(label) || isRecognised(flat) || CLASS_WORD_RE.test(flat)) continue;
+        const prefix = words.slice(0, k).join(" ");
+        if (knownPhrase(flatten(prefix))) return [prefix, label + (pct ? " " + pct : ""), rest];
+      }
+      return null;
+    }
+    function suspectSectionItems(items) {
+      return items.filter((it) => { const c = colonAtDepth0(it); return c > 0 && !CLASS_WORD_RE.test(flatten(it.slice(0, c))); });
     }
     function nextBoundary(body, start) {
       let depth = 0;
@@ -133,7 +170,16 @@
       for (const [label, content] of read.sections) {
         const r = splitTopLevel(collapse(content));
         unbalanced = unbalanced || r.unbalanced;
-        if (r.items.length) { sections.push({ label, items: r.items }); items.push(...r.items); }
+        let curLabel = label, cur = [];
+        for (const it of r.items) {
+          const peeled = peelLabel(it);
+          if (peeled) {                       // "Rice Bran Oil Seasoning : Onion": a new section starts mid-line
+            cur.push(peeled[0]);
+            sections.push({ label: curLabel, items: cur }); items.push(...cur);
+            curLabel = peeled[1]; cur = [peeled[2]];
+          } else cur.push(it);
+        }
+        if (cur.length) { sections.push({ label: curLabel, items: cur }); items.push(...cur); }
       }
       if (!items.length) return { found: false };
       return { found: true, items, terminated, unbalanced, declarations, sections };
@@ -315,7 +361,8 @@
         if (!parsed.found) return abstain("no ingredient list found in the text", text);
       }
       const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0);
-      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
+      const sectionWarnings = suspectSectionItems(parsed.items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
+      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
@@ -324,9 +371,9 @@
       // Option A (user decision): a strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
       if (truncation && r.group !== 4) return abstain(truncation, text, Object.assign({ drivers: r.drivers }, common));
       if (r.group === null) return abstain(r.reason || "classification uncertain", text, Object.assign({ drivers: r.drivers }, common));
-      const warnings = [];
+      const warnings = [...sectionWarnings];
       if (truncation) warnings.push("List may be incomplete (" + stripChars(truncation.replace(/^ingredient list looks truncated /, ""), "()") + "). Group 4 stands because the markers found are already enough.");
-      return Object.assign({ answered: true, group: r.group, reason: null, drivers: r.drivers, warnings, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` }, common);
+      return Object.assign({}, common, { answered: true, group: r.group, reason: null, drivers: r.drivers, warnings, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` });
     }
     return { analyseText, NOT_ENOUGH, GROUP_NAMES };
   }

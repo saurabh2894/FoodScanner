@@ -13,7 +13,7 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, is_recognised
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import parse_ingredient_list, split_compound
+from .parser import parse_ingredient_list, split_compound, suspect_section_items
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -110,7 +110,9 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
 
     ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items])
     uses = [u for i in ings for u in i.ins]
-    common = dict(ingredients=parsed.items, ins_mappings=uses,
+    section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
+                        for it in suspect_section_items(parsed.items)]
+    common = dict(ingredients=parsed.items, ins_mappings=uses, warnings=list(section_warnings),
                   sections=[(sec.label, list(sec.items)) for sec in parsed.sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
@@ -130,12 +132,12 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         return _abstain(truncation, text, drivers=result.drivers, **common)
     if result.group is None:
         return _abstain(result.reason or "classification uncertain", text, drivers=result.drivers, **common)
-    warnings = []
+    warnings = list(section_warnings)
     if truncation:
         warnings.append("List may be incomplete (" + truncation.removeprefix("ingredient list looks truncated ").strip("()") +
                         "). Group 4 stands because the markers found are already enough.")
     return Analysis(answered=True, group=result.group, drivers=result.drivers,
-                    extracted_text=text, warnings=warnings, **common)
+                    extracted_text=text, **{**common, "warnings": warnings})
 
 
 def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:

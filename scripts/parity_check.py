@@ -93,6 +93,14 @@ CORPUS = [
     "Ingredients: Fruit: mango. Set: sugar, pectin (INS 440).", "Ingredients: Sugar (min. 10%), salt (approx. 2%), flavour.",
     "Ingredients: Sugar (12.5%), emulsifier (INS 322), milk solids, salt.", "Ingredients: Rice: 60%, salt.",
     "Ingredients: Milk: skimmed milk, cream, salt.", "Ingredients: Spices:\nTurmeric, cumin\nSeasoning: salt, flavour",
+    # review fixes: percentage labels, same-line labels, OCR "O11" (real millet puff label: tests/test_review_labels.py)
+    "INGREDIENTS:\nPuff 88%: Supergrain Blend (Jowar, Foxtail Millet,\nCorn, Rice)(72%), Rice Bran Oil(16%).\nSeasoning 12%: Vegetables and Spices (Onion,\nGarlic, Tomato, Chilli, Amchur, Tamarind), Salt,\nNatural and Nature Identical Flavours, Raw Sugar,\nAcidity Regulators(INS330, INS296, INS334),\nPotassium Chloride - Salt Substitute (INS 508),\nRosemary Extract - Antioxidant (INS 392).\nTHIS PRODUCT CONTAINS 37% MILLETS",
+    "INGREDIENTS: Puff 88%: Supergrain Blend (Jowar, Foxtail Millet, Corn, Rice)(72%), Rice Bran O11 (16%). Seasoning 12%: Salt, Raw Sugar.",
+    "Ingredients: Base Mix(57%)(Beetroot, Carrot, Rice, Urad Dal), Sabudana Flour, Potato Flour, Rice Bran Oil Seasoning : Dehydrated Vegetables(Garlic, Onion, Tomato), Iodised Salt, Natural & Nature Identical Flavours",
+    "Ingredients: Rice, Rice Bran Oil Seasoning : Onion, Garlic, Flavour.", "Ingredients: Rice, Mystery Paste Seasoning : Onion, salt.",
+    "Ingredients: Rice, Rice Bran Oil Colour : INS 150d.", "Ingredients: Rice, salt. Salt 5%: sugar, flavour.",
+    "Ingredients: Rice, salt. Seasoning 12.5 %: sugar, flavour.", "Ingredients: Rice, Salt Seasoning 5%: Onion, chilli.",
+    "Ingredients: Edible Vegetable O11, salt.", "Ingredients: Rice Bran Oil Seasoning: Onion.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -110,6 +118,7 @@ def py_result(text, source="ocr"):
 
 # pasted-text path (source="text"): the regression fixtures, plus every corpus text above, must also match
 PASTE = [
+    "Puff 88%: Rice, Rice Bran Oil. Seasoning 12%: Salt, Flavour.", "Rice, Rice Bran Oil Seasoning : Onion, Garlic, Flavour",
     "Ingredients: Milk", "Milk", "milk.", "INGREDIENTS : MILK", "  ingredients:milk  ", "Ingredients: milk.", "MILK, SALT",
     "", "   ", "\n \t\n", "Ingredients:", "Ingredients:   ", "###", "#### ~~ 1234 !!!! 5678", "1234 5678",
     "Salt", "Sugar, refined wheat flo", "Ingredients: Sugar, refined wheat flo", "Rice, salt", "rice,salt,sugar",

@@ -33,7 +33,9 @@ _STOP = re.compile(
 _OPEN, _CLOSE = "([{", ")]}"
 
 # "Label:" at the start of a section: 1 to 4 words, then a colon, then more text.
-_LABEL = re.compile(r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})\s*:\s*(?=\S)")
+_LABEL = re.compile(
+    r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})"
+    r"(?:\s+(?P<pct>\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)")
 # Labels that introduce non-ingredient text: the list ends before them.
 _DENY = re.compile(
     r"(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|"
@@ -92,7 +94,76 @@ def _label_info(seg: str) -> tuple[str, int, bool] | None:
     flat = _flat(label)
     if flat in _lexicon_terms():
         return None
-    return label, m.end(), not _class_word_re().search(flat)
+    shown = label + (" " + re.sub(r"\s+", "", m.group("pct")) if m.group("pct") else "")   # "Seasoning 12%"
+    return shown, m.end(), not _class_word_re().search(flat)
+
+
+@cache
+def _marker_terms() -> frozenset:
+    return frozenset(_flat(r["term"]) for r in load_table("markers.csv"))
+
+
+def _known_phrase(flat: str) -> bool:
+    return flat in _lexicon_terms() or flat in _marker_terms()
+
+
+_LABEL_WORD = re.compile(r"[A-Za-z&'\u2019/\-]+")
+
+
+def _colon_at_depth0(item: str) -> int:
+    depth = 0
+    for i, ch in enumerate(item):
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(depth - 1, 0)
+        elif ch == ":" and depth == 0:
+            return i
+    return -1
+
+
+def _peel_label(item: str) -> tuple[str, str, str] | None:
+    """Split an item where a section label sits on the same line as the ingredient before it.
+
+    "Rice Bran Oil Seasoning : Onion" -> ("Rice Bran Oil", "Seasoning", "Onion"). The label is the
+    last 1 to 4 words before the colon, and what precedes it must be a recognised ingredient (longest
+    recognised prefix wins). If the prefix is not recognised nothing is guessed: the item is left whole
+    (and flagged by suspect_section_items).
+    """
+    colon = _colon_at_depth0(item)
+    if colon <= 0:
+        return None
+    left, rest = item[:colon], item[colon + 1:].strip()
+    if not rest[:1].isalpha():
+        return None
+    pct = ""
+    mp = re.search(r"\s+(\d+(?:\.\d+)?\s*%)\s*$", left)
+    if mp:
+        pct, left = re.sub(r"\s+", "", mp.group(1)), left[:mp.start()]
+    words = left.split()
+    for k in range(len(words) - 1, 0, -1):
+        label_words = words[k:]
+        if len(label_words) > 4 or not all(_LABEL_WORD.fullmatch(w) for w in label_words):
+            continue
+        label = " ".join(label_words)
+        flat = _flat(label)
+        if _DENY.fullmatch(label) or flat in _lexicon_terms() or _class_word_re().search(flat):
+            continue
+        prefix = " ".join(words[:k])
+        if _known_phrase(_flat(prefix)):
+            return prefix, label + (" " + pct if pct else ""), rest
+    return None
+
+
+def suspect_section_items(items: list[str]) -> list[str]:
+    """Items that still contain a colon at depth 0 after splitting: a section label may be glued in.
+    Items whose pre-colon text holds an additive class word ("Colour : INS 150d") are not suspect."""
+    out = []
+    for it in items:
+        c = _colon_at_depth0(it)
+        if c > 0 and not _class_word_re().search(_flat(it[:c])):
+            out.append(it)
+    return out
 
 
 def _normalise_ws(text: str) -> str:
@@ -240,9 +311,20 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
     for label, content in raw_sections:
         its, unb = _split_top_level(_collapse(content))
         unbalanced = unbalanced or unb
-        if its:
-            sections.append(Section(label, its))
-            items.extend(its)
+        cur_label, cur = label, []
+        for it in its:
+            peeled = _peel_label(it)
+            if peeled:                          # "Rice Bran Oil Seasoning : Onion": a new section starts mid-line
+                prefix, lab, rest = peeled
+                cur.append(prefix)
+                sections.append(Section(cur_label, cur))
+                items.extend(cur)
+                cur_label, cur = lab, [rest]
+            else:
+                cur.append(it)
+        if cur:
+            sections.append(Section(cur_label, cur))
+            items.extend(cur)
     if not items:
         return ParsedList(found=False)
     return ParsedList(
