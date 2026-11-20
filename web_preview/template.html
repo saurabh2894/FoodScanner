@@ -200,11 +200,12 @@
     box.appendChild(card);
   }
 
-  function run() { render(engine.analyseText($("label-text").value)); }
+  // source "text": pasted or typed (messages are about the text). source "ocr": text read from a photo.
+  function run(source) { render(engine.analyseText($("label-text").value, { source: source || "text" })); }
 
-  $("analyse").addEventListener("click", run);
+  $("analyse").addEventListener("click", function () { run("text"); });
   document.querySelectorAll("[data-example]").forEach(function (b) {
-    b.addEventListener("click", function () { $("label-text").value = EXAMPLES[b.getAttribute("data-example")]; run(); });
+    b.addEventListener("click", function () { $("label-text").value = EXAMPLES[b.getAttribute("data-example")]; run("text"); });
   });
 
   function selectTab(which) {
@@ -329,7 +330,7 @@
       over = true; clearInterval(tick); btn.disabled = false;
       try { await worker.terminate(); } catch (e) {}
       $("label-text").value = res.data.text;
-      run();
+      run("ocr");
       status.textContent = "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
     } catch (e) {
       fail("Photo reading failed: " + String((e && e.message) || e).slice(0, 160) + ".");
@@ -337,6 +338,6 @@
   });
 
   $("label-text").value = EXAMPLES.biscuit;
-  run();
+  run("text");
 })();
 </script>

@@ -56,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.text:
             text = sys.stdin.read() if args.path == "-" else Path(args.path).read_text(encoding="utf-8")
-            result = analyse_text(text)
+            result = analyse_text(text, source="text")   # typed or file text: never blame OCR
         else:
             result = analyse_image(args.path)
     except OcrUnavailable as exc:

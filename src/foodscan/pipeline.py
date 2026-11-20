@@ -141,4 +141,4 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
 def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:
     """Raises ocr.OcrUnavailable if the OCR backend cannot run (an error, not an abstention)."""
     engine = ocr or TesseractOcr()
-    return analyse_text(engine.extract_text(path))
+    return analyse_text(engine.extract_text(path), source="ocr")
