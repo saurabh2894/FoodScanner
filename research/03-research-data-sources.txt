@@ -1,0 +1,71 @@
+# Research: data sources, licences and regulatory pointers
+
+Compiled 20 Nov 2026. Everything here is free and public.
+
+## Open Food Facts (main test-data source)
+
+- Crowdsourced, openly licensed database of packaged foods with a large India
+  section (in.openfoodfacts.org). Free JSON API, no key needed for reads.
+- Useful fields per product: `ingredients_text`, `nova_group`, `additives_tags`,
+  `ingredients_analysis_tags`, plus photos of the ingredient panel on many
+  records.
+- The API already computes a NOVA group and additive list from an ingredient
+  text. Treat this as a reference implementation to compare against, not as
+  truth: the data is contributed by volunteers and Open Food Facts itself says
+  it may be inaccurate or incomplete. A disagreement between your classifier
+  and their record is something to inspect, not an automatic error on either
+  side.
+- Licence: Open Database License (ODbL) for the database, Database Contents
+  License for the contents, CC-BY-SA for product images. You may use and adapt
+  the data with attribution and share-alike. For a private portfolio project
+  this is compatible; read the licences before any public release.
+- Etiquette: send a descriptive User-Agent, cache responses, do not scrape at
+  high volume.
+- Docs: https://openfoodfacts.github.io/openfoodfacts-server/api/
+  India data and licence: https://in.openfoodfacts.org/data
+
+## FSSAI (regulatory context, India)
+
+- Indian labelling is governed by the Food Safety and Standards (Labelling and
+  Display) Regulations, 2020, with later amendments. They require an ingredient
+  list in descending order of weight and additive declaration by functional
+  class with INS numbers.
+- Use FSSAI rules to know what a compliant label looks like, so the parser
+  matches real packs. Do not turn this into a legal-compliance feature in the
+  first version, and do not claim in the write-up that Indian rules let unsafe
+  food through; that is an opinion, not a verified fact.
+- Current regulations text: https://www.fssai.gov.in (search "Labelling and
+  Display Regulations").
+
+## What not to use
+
+- Siga's score and category boundaries were proprietary. Its public method page
+  (https://siga.care/indice-siga/) is inspiration for combining rule inputs;
+  the score itself must not be copied or claimed.
+- Nothing from any employer's internal material. Public sources and your own
+  photos only.
+
+## Collecting your own test set
+
+Photograph 20 to 30 ingredient panels from products at home or a shop shelf.
+Mix obvious cases (plain atta, a cola) with borderline ones (breads, breakfast
+cereals, namkeens). Record your own NOVA call for each in labels.csv before
+running the classifier.
+
+Treat these labels as provisional reference labels, not scientific ground
+truth. Before trusting the evaluation, do a second review pass over your own
+labels on a different day, and check a sample against Open Food Facts' NOVA
+data where a record exists. Where you remain unsure, mark the sample uncertain
+and exclude it from accuracy, keeping it in the abstention analysis.
+
+## Reading the evaluation
+
+Report two separate numbers, never one:
+
+- **Coverage**: how many samples the classifier answered versus abstained on.
+- **Accuracy on answered samples**: how often answered samples matched the
+  reference label.
+
+A classifier that answers everything but is often wrong, and one that abstains
+on everything, are both failures; the interesting result is high accuracy at
+useful coverage, and the write-up should show both.

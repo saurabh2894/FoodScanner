@@ -1,0 +1,96 @@
+# Research: NOVA classification and ingredient markers
+
+Knowledge base for the foodscan classifier. Compiled 20 Nov 2026 from public
+sources listed at the end. Where a rule in the code comes from this file, the
+code comments should name the source it was checked against.
+
+## The four NOVA groups
+
+NOVA classifies foods by the extent and purpose of industrial processing, not
+by nutrients. It was developed by researchers at the University of Sao Paulo,
+Brazil, and is the most widely used public processing classification.
+
+- **Group 1 - Unprocessed or minimally processed foods.** Whole foods with no
+  or minimal alteration: cleaning, drying, grinding, freezing, pasteurising.
+  Examples: atta, rice, milk, eggs, fruit, plain dals.
+- **Group 2 - Processed culinary ingredients.** Substances extracted from group
+  1 foods or from nature, used in cooking: oils, ghee, sugar, salt.
+- **Group 3 - Processed foods.** Group 1 foods combined with group 2 substances
+  using recognisable preservation or cooking methods: canned vegetables in
+  brine, cheese, simple unpackaged breads.
+- **Group 4 - Ultra-processed foods.** Industrial formulations made mostly or
+  entirely from substances extracted from foods or synthesised in factories,
+  with little or no intact group 1 food.
+
+## What an ingredient list can and cannot tell you
+
+- The ingredient list is strong evidence for Group 4: the marker classes below
+  rarely appear in groups 1 to 3.
+- It is weaker evidence at the group 1/2/3 boundary. Two products with the same
+  ingredients can be processed differently, and the label does not always say
+  how an ingredient was made (for example whether a bread is bakery-fresh or an
+  industrial formulation).
+- There is no ingredient-count rule in NOVA. A short ingredient list can still
+  be ultra-processed, and a long list of recognisable foods can be group 3.
+- When the list is missing, incomplete, or the processing context is decisive
+  and unknown, the correct output is "not enough information", not a guess.
+
+## Marker classes associated with Group 4
+
+These classes are documented in the NOVA literature and in Open Food Facts'
+published ingredients analysis as indicators of ultra-processing. Treat them as
+strong indicators, not absolute proof, and validate the final mapping against
+the two sources below while building:
+
+1. **Substances derived from foods that rarely appear in home kitchens:**
+   hydrogenated or interesterified vegetable oil, high fructose corn syrup /
+   glucose-fructose syrup, invert sugar, maltodextrin, dextrose, modified
+   starches, protein isolates (soy protein isolate, whey protein isolate).
+2. **Cosmetic additive classes** (they imitate or intensify sensory
+   qualities): colourings, flavourings and flavour enhancers, non-sugar
+   sweeteners, emulsifiers, and cosmetic processing aids such as anti-foaming,
+   bulking, carbonating, foaming, gelling, glazing, firming and humectant
+   agents.
+
+Important qualifications:
+
+- A single ordinary additive does not automatically make a product group 4.
+  Pectin (INS 440) in a jam or raising agents in a plain bread are consistent
+  with group 3. When the only marker is a weak or ambiguous one, prefer
+  "uncertain" over a forced call.
+- Legality is not the question. An additive can be fully permitted in India
+  and still mark the product as ultra-processed. Keep those claims separate.
+
+## Indian label specifics
+
+- Indian packs declare additives by functional class and INS number, for
+  example "Emulsifier (INS 471)". INS numbers follow the same international
+  numbering as European E numbers: INS 171 is E171. The parser must handle both
+  spellings.
+- Ingredients appear in descending order of weight under FSSAI labelling rules.
+- Labels may mix English and Hindi, and use local names (for example "edible
+  vegetable oil (palmolein)").
+
+## Synthetic examples for tests
+
+These are invented examples for unit tests, not validated classifications of
+real products.
+
+- "Ingredients: Whole wheat flour." -> Group 1.
+- "Ingredients: Refined wheat flour, sugar, edible vegetable oil (palmolein),
+  invert syrup, raising agents (INS 500(ii), INS 503(ii)), emulsifier
+  (INS 471), salt, added flavour (vanilla)." -> Group 4 (derived substances
+  plus flavouring and emulsifier markers).
+- "Ingredients: Cucumber, water, salt, vinegar, dill." -> Group 3.
+- Partial text: "Ingredients: Sugar, refined wheat flo" -> Not enough
+  information (truncated list).
+
+## Sources
+
+- NOVA classification, University of Sao Paulo:
+  https://nupens.fsp.usp.br/en/food-classification-nova/
+- Open Food Facts computes NOVA groups from ingredient texts and documents its
+  ingredients analysis: https://world.openfoodfacts.org/nova and
+  https://openfoodfacts.github.io/openfoodfacts-server/api/
+- Siga's public method page (its score was proprietary; use as inspiration
+  only, never copied): https://siga.care/indice-siga/
