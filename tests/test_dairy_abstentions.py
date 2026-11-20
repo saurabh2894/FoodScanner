@@ -1,0 +1,21 @@
+"""Addendum (research/04): dairy additions that have no explicit NOVA-method basis stay abstaining. FSSAI identity is not a NOVA group basis.
+These tests pin the abstentions so a later rule cannot widen them silently."""
+import pytest
+from foodscan.pipeline import analyse_text
+
+
+@pytest.mark.parametrize("text", [
+    "Ingredients: Milk & Milk Solids",
+    "Ingredients: Toned milk, milk solids.",
+    "Ingredients: Pasteurized Cow Milk",
+    "Ingredients: Milk, milk solids, Vitamin A.",
+    "Ingredients: Milk solids, Vitamin A palmitate & Vitamin D (ergocalciferol)",
+])
+def test_no_method_basis_means_abstain(text):
+    r = analyse_text(text, source="text")
+    assert not r.answered and r.group is None, text
+
+
+def test_single_milk_solids_and_culture_rule_unchanged():
+    assert analyse_text("Ingredients: Milk solids", source="text").group == 1
+    assert analyse_text("Ingredients: Milk solids (Toned Milk) & Active Culture", source="text").group == 1

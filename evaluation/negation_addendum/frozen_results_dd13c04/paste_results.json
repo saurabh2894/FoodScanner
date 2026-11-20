@@ -1,0 +1,174 @@
+{
+ "R1": {
+  "answered": false,
+  "group": null,
+  "reason": "only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group",
+  "items": [
+   "PASTEURIZED MILK",
+   "PAST STABILIZER (INS 509)",
+   "MICROBIAL CULTU"
+  ],
+  "drivers": [
+   [
+    "PAST STABILIZER (INS 509)",
+    "\"stabiliser\" (unlisted_additive)"
+   ],
+   [
+    "PAST STABILIZER (INS 509)",
+    "INS 509 (not in local mapping)"
+   ]
+  ],
+  "warnings": [],
+  "declared": [],
+  "completeness": "complete"
+ },
+ "R2": {
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Edible Peanut Oil, lodized salt, Spices & Condiments",
+  "items": [
+   "Potatoes",
+   "Refined Palmolien Oil",
+   "Edible Peanut Oil",
+   "lodized salt",
+   "Red Chilli Powder",
+   "Spices & Condiments"
+  ],
+  "drivers": [],
+  "warnings": [],
+  "declared": [],
+  "completeness": "complete"
+ },
+ "R3": {
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Milk Solids (Malai Curd)",
+   "Potable Water",
+   "Sugar",
+   "Salt",
+   "Starter Culture"
+  ],
+  "drivers": [
+   [
+    "CONTAINS ADDED FLAVOUR(S) (NATURE IDENTICAL & ARTIFICIAL FLAVOURING SUBSTANCES-ROSE FLAVOUR)",
+    "declared in \"Contains\" statement: \"flavour\""
+   ]
+  ],
+  "warnings": [],
+  "declared": [
+   "{'text': 'ADDED FLAVOUR(S) (NATURE IDENTICAL & ARTIFICIAL FLAVOURING SUBSTANCES-ROSE FLAVOUR)', 'in_list': False}"
+  ],
+  "completeness": "complete"
+ },
+ "R4": {
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WATER",
+   "SUGAR",
+   "APPLE JUICE CONCENTRATE (2.1%) [EQUIVALENT TO 14% APPLE JUICE (RECONSTITUTED)]",
+   "ACIDITY REGULATORS (INS 296, INS 330, INS 331(iii)]",
+   "STABILIZER (INS 440)",
+   "FOOD COLOUR (INS 150d)",
+   "ANTIOXIDANT (INS 300)",
+   "NATURE-IDENTICAL FLAVOURING SUBSTANCE (APPLE) (INS-INTERNATIONAL NUMBERING SYSTEM)"
+  ],
+  "drivers": [
+   [
+    "FOOD COLOUR (INS 150d)",
+    "\"colour\" (cosmetic_additive)"
+   ],
+   [
+    "FOOD COLOUR (INS 150d)",
+    "INS 150d (caramel IV (sulfite ammonia caramel))"
+   ],
+   [
+    "NATURE-IDENTICAL FLAVOURING SUBSTANCE (APPLE) (INS-INTERNATIONAL NUMBERING SYSTEM)",
+    "\"flavour\" (cosmetic_additive)"
+   ]
+  ],
+  "warnings": [],
+  "declared": [],
+  "completeness": "complete"
+ },
+ "R5": {
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Reconstituted skimmed MILK",
+   "sugar",
+   "cocoa butter \u00b9",
+   "glucose syrup",
+   "ALMONDS",
+   "coconut fat",
+   "skimmed MILK powder",
+   "butter oil (MILK)",
+   "fructose",
+   "skimmed MILK powder or concentrate",
+   "cocoa mass \u00b9",
+   "emulsifiers (E471, E442, E476)",
+   "stabilisers (locust bean gum, guar gum, carrageenan)",
+   "exhausted vanilla bean pieces",
+   "whey solids (MILK)",
+   "natural vanilla flavouring \u00b9 (with MILK)",
+   "flavouring",
+   "colour (carotenes)"
+  ],
+  "drivers": [
+   [
+    "emulsifiers (E471, E442, E476)",
+    "\"emulsifier\" (cosmetic_additive)"
+   ],
+   [
+    "emulsifiers (E471, E442, E476)",
+    "INS 471 (emulsifier)"
+   ],
+   [
+    "natural vanilla flavouring \u00b9 (with MILK)",
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   [
+    "flavouring",
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   [
+    "colour (carotenes)",
+    "\"colour\" (cosmetic_additive)"
+   ]
+  ],
+  "warnings": [],
+  "declared": [],
+  "completeness": "complete"
+ },
+ "R6": {
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "CARBONATED WATER",
+   "SUGAR",
+   "ACIDITY REGULATOR (INS 330)",
+   "CLASS II PRESERVATIVE (INS 211)"
+  ],
+  "drivers": [
+   [
+    "CONTAINS PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS (INS 150d, INS 122, INS 102,INS 124,INS 133) AND ADDED FLAVOURS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL FLAVOURING SUBSTANCES (MIXED FRUIT))",
+    "declared in \"Contains\" statement: \"colour\""
+   ],
+   [
+    "CONTAINS PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS (INS 150d, INS 122, INS 102,INS 124,INS 133) AND ADDED FLAVOURS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL FLAVOURING SUBSTANCES (MIXED FRUIT))",
+    "declared in \"Contains\" statement: \"flavour\""
+   ]
+  ],
+  "warnings": [],
+  "declared": [
+   "{'text': 'SYNTHETIC FOOD COLOURS (INS 150d, INS 122, INS 102,INS 124,INS 133)', 'in_list': False}",
+   "{'text': 'ADDED FLAVOURS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL FLAVOURING SUBSTANCES (MIXED FRUIT))', 'in_list': False}"
+  ],
+  "completeness": "complete"
+ }
+}

@@ -1,0 +1,3 @@
+# Dairy additions (owner direction): none added
+
+FSSAI standardisation text supports identity only; a confident group needs an explicit NOVA-method basis (NUPENS-USP page: milk, pasteurised or powdered). That page does not say a blend of milk and milk solids stays Group 1, does not name cow milk, and says nothing on fortified milk. So milk plus milk solids, 'cow milk' and added vitamins keep abstaining. Details and the FSSAI passages: research/04 addendum. Pinned by tests/test_dairy_abstentions.py. Existing PROVISIONAL rows (toned, double toned, buffalo milk treated as milk; milk solids treated as powdered milk) rest on the same kind of inference and are flagged for the owner's decision, not changed.

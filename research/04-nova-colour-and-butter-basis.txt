@@ -94,3 +94,10 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
 - A trailing provenance line "Made from <milk term>" is part of the milk context: it is not an ingredient and is counted as set aside.
 - Negation in Contains lines is scoped to the exact negated span (see CLAUDE.md); a sentence-start claim such as "No added colours, ..." after the list ends the list and is not an ingredient.
 - Lookup now tries leading descriptors first ("pasteurised double toned milk" -> "double toned milk").
+
+## Addendum (2026-11-20): dairy additions considered and NOT added (owner direction)
+- Rule applied: an FSSAI definition supports a product's identity only, never its NOVA group. A confident group needs an explicit NOVA-method basis (NUPENS-USP page: milk, pasteurised or powdered, is group 1); otherwise the result abstains, which is an acceptable answer.
+- Milk with added milk solids ("Milk, Milk solids"): FSSAI 2.1.2 item 1(c) lets toned, double toned, standardised, full cream and skimmed milk be made "with or without dried or concentrated milks or milk fat" (identity only). The NOVA page names milk, pasteurised or powdered, as group 1 but does not say a blend of the two stays group 1, nor that "milk solids" equals powdered milk. No rule added: such lists abstain ("combination does not match a group 1, 2 or 3 pattern").
+- cow milk: FSSAI 2.1.2 item 1(a) names "cow milk" (identity). The NOVA page names "milk" only. No row added: "Pasteurized Cow Milk" abstains as outside the vocabulary.
+- Vitamins: FSSAI 2.1.1 item 4 allows milk to be fortified with "vitamins, minerals, etc." (permission only; names no vitamin for milk). No read NOVA page says fortified milk stays in group 1. Lists with vitamins keep abstaining.
+- Existing rows carry the same kind of inference (toned milk, double toned milk, buffalo milk treated as milk; milk solids treated as powdered milk; all PROVISIONAL): flagged to the owner for a decision, not changed here.

@@ -1,0 +1,38 @@
+{
+ "R1": {
+  "code": "8906010090197",
+  "brand": "Dlecta",
+  "name": "Dlecta Natural Cheddar",
+  "photo": "https://images.openfoodfacts.org/images/products/890/601/009/0197/ingredients_en.12.full.jpg"
+ },
+ "R2": {
+  "code": "8906010450236",
+  "brand": "Budhani Bros",
+  "name": "Budhani Bros Potato Wafers",
+  "photo": "https://images.openfoodfacts.org/images/products/890/601/045/0236/ingredients_en.5.full.jpg"
+ },
+ "R3": {
+  "code": "8906019580224",
+  "brand": "Urja",
+  "name": "Urja Lassi",
+  "photo": "https://images.openfoodfacts.org/images/products/890/601/958/0224/ingredients_en.12.full.jpg"
+ },
+ "R4": {
+  "code": "8902579000387",
+  "brand": "Parle Agro",
+  "name": "Appy",
+  "photo": "https://images.openfoodfacts.org/images/products/890/257/900/0387/ingredients_en.18.full.jpg"
+ },
+ "R5": {
+  "code": "8909106034921",
+  "brand": "Magnum",
+  "name": "Almond Magnum",
+  "photo": "https://images.openfoodfacts.org/images/products/890/910/603/4921/ingredients_en.5.full.jpg"
+ },
+ "R6": {
+  "code": "8908014480073",
+  "brand": "NL KALIS SPARKLING WATER",
+  "name": "Bovonto",
+  "photo": "https://images.openfoodfacts.org/images/products/890/801/448/0073/ingredients_en.20.full.jpg"
+ }
+}

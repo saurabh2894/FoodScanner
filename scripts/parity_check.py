@@ -227,6 +227,8 @@ PASTE = [
     "Noodles: wheat flour, salt. Masala tastemaker: sugar, flavour.",
     "Noodles: wheat flour, palm oil, salt\nMasala tastemaker: mixed spices, flavour enhancers (INS 627, INS 631)",
     "Colour (INS 150d)", "INS 150d", "Potato (83%), edible vegetable oil, salt", "Eggs", "Toor dal",
+    "Ingredients: Milk & Milk Solids", "Ingredients: Toned milk, milk solids.", "Ingredients: Pasteurized Cow Milk", "Ingredients: Cow milk, active culture",
+    "Ingredients: Milk, milk solids, Vitamin A.", "Ingredients: Milk, milk solids, sugar.", "Ingredients: Milk, milk solids, flavour.", "Ingredients: Milk, milk solids, stabilizer (INS 440).",
 ]
 TOTAL = len(CORPUS) + len(PASTE)
 

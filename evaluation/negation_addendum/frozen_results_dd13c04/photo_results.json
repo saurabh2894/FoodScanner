@@ -1,0 +1,92 @@
+[
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/neg/img/N_8906010090197.jpg",
+  "total_ms": 19847,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "3 3 BEN DERE ee SE PER Wo sn ERROR ol TE RS ae RAT Soa g\nEE a TT Re ee Ts Cpt\n8 Es 3 or SEE aa Rs PE A a Sins BO iE Te Be Ere ER i\n. - CUE ame eas Assi le a e ae sa Ee CREST Se\nA 5 Gor 5 i PE A LS ESCM Sas ne a ee A RAN TR LT el a TT CR ee RI ER\nis LEE ATOR ht Se aR eR ae SE a LS pe A a Die 2 Bote Ae tL\nL x £ nl 3 aR Ree Sh SE ES CSS cl a ay JA She CR\nid go Fl ee ; : CE\n: MES ol CERI Se Sc hs il $ wv Sioa\nBR da oi SBR dy tee tn ce ne le ST 3 So\nLFS A A ATE Se Ce a hea a LE ; is\nJ Fe Re Te pe aE xo 3 a E\nCs eS : : gal : =\nlo dag RE a Ee gst a SL is aed v\nCE Re I Ee i ae\njie ae = ES v\nGT Ae ale EE 2g :\nCS RE TE ;\nRV A EMR a Cre fs aio oh Th Se a ES i\nBie RRS ae oF dc i i fl Y Sona nea Te\nSel OBR SE pl an ee EE ERE Pn a I SE SE\nSouci ait Sa Crone EE\nSE EN TS Ce Ra a I a EN EGR SR\nSar RE RR a SE Ne eR ye a\nCielo tin nn SE geen Ee Un Te Sa\n. EEE el\nHeol hi ¥ a 5\nShen: Fi ‘ 4 § TRE Yee\nfate \" 5] 3\nbo ;\nEw i; =\nFs 5 i\nora 3\nBA t cs ct he SE AL BO KS BE E\n£5 Ta ree CR\nrsa - 5 Sx £\n’ : 3: = a\n. - “Ep < 3 5\ni ) ) Pe 2 2 3\n: £ fol s : :\nORR a AA\nSERVING SIZE y k i - :\npor 5 . = ry PRET Emam rire gene\n¢ ¥ 5 2\nNUTRITIONAL 1 : 3\npg: Sen\nales BS ; Sis\nnik §\nia #3 RRS : 2\nhee ste ie Jac Cras\n—— AS . P ENE ESR a\nAL 3 R / \\ Le has ?\nEo oa rN\n—— e wo RE OR\n— RR - pene\nEi 31 EE hse\n1111 4 BE Teheiie nao\nUL 1 Sai\nIWATA \\ RE ER\nFister sdnae ’ \\ LU hee\n —— 2 Cah Re\nREM UE AN Wea\nLW» ww AA . Bove on\nERT i h rated\nSeems - te TR t=\nhE: ie Bg SES oo\nB= E-| fae\n5 LF a :\nen gr is } ; ie Cie\ni aa ER ES — 5 Av Jf SE gE\nBe biepie ¢ . Me Smee\npt 2 §' 8s £ | cane 5\n3 i © 1 EERE Sm\nCARA Te ————— — — a  E\n: PREY iS 2 FE PVE TRE may\nE 7 pou 3 AUER: SAEs =\n3% CRS ] BEC Beni :\n: 7 Pi £0 ME BRE TE =\n— PRR ne = ots SEES BERT\n@ eRe Bees EE ee Ey\n3 % Sate St ME Seas\n2 4 = BY ANE ANNE Eos SR\nVan AN SRE Std Shere Si\n; eR i I SIS v -\ncht a Ts lao\nGE EER © i oegiien aT\nCLC URS RE Wl was Sal heen hs\n% CL URCRGOREEeNE SANE SE Shee rn\n= EEE Weta CRED\nSTE ea ee i\nhes oe\neae “an Ea cu TT SE\naio AR st eR ee\nEe i RY SIRES TE\nLhe RRS : i : i\nLooms sede Poo :\n",
+  "calls": [
+   {
+    "ms": 15637,
+    "text": "3 3 BEN DERE ee SE PER Wo sn ERROR ol TE RS ae RAT Soa g\nEE a TT Re ee Ts Cpt\n8 Es 3 or SEE aa Rs PE A a Sins BO iE Te Be Ere ER i\n. - CUE ame eas Assi le a e ae sa Ee CREST Se\nA 5 Gor 5 i PE A LS ESCM Sas ne a ee A RAN TR LT el a TT CR ee RI ER\nis LEE ATOR ht Se aR eR ae SE a LS pe A a Die 2 Bote Ae tL\nL x £ nl 3 aR Ree Sh SE ES CSS cl a ay JA She CR\nid go Fl ee ; : CE\n: MES ol CERI Se Sc hs il $ wv Sioa\nBR da oi SBR dy tee tn ce ne le ST 3 So\nLFS A A ATE Se Ce a hea a LE ; is\nJ Fe Re Te pe aE xo 3 a E\nCs eS : : gal : =\nlo dag RE a Ee gst a SL is aed v\nCE Re I Ee i ae\njie ae = ES v\nGT Ae ale EE 2g :\nCS RE TE ;\nRV A EMR a Cre fs aio oh Th Se a ES i\nBie RRS ae oF dc i i fl Y Sona nea Te\nSel OBR SE pl an ee EE ERE Pn a I SE SE\nSouci ait Sa Crone EE\nSE EN TS Ce Ra a I a EN EGR SR\nSar RE RR a SE Ne eR ye a\nCielo tin nn SE geen Ee Un Te Sa\n. EEE el\nHeol hi ¥ a 5\nShen: Fi ‘ 4 § TRE Yee\nfate \" 5] 3\nbo ;\nEw i; =\nFs 5 i\nora 3\nBA t cs ct he SE AL BO KS BE E\n£5 Ta ree CR\nrsa - 5 Sx £\n’ : 3: = a\n. - “Ep < 3 5\ni ) ) Pe 2 2 3\n: £ fol s : :\nORR a AA\nSERVING SIZE y k i - :\npor 5 . = ry PRET Emam rire gene\n¢ ¥ 5 2\nNUTRITIONAL 1 : 3\npg: Sen\nales BS ; Sis\nnik §\nia #3 RRS : 2\nhee ste ie Jac Cras\n—— AS . P ENE ESR a\nAL 3 R / \\ Le has ?\nEo oa rN\n—— e wo RE OR\n— RR - pene\nEi 31 EE hse\n1111 4 BE Teheiie nao\nUL 1 Sai\nIWATA \\ RE ER\nFister sdnae ’ \\ LU hee\n —— 2 Cah Re\nREM UE AN Wea\nLW» ww AA . Bove on\nERT i h rated\nSeems - te TR t=\nhE: ie Bg SES oo\nB= E-| fae\n5 LF a :\nen gr is } ; ie Cie\ni aa ER ES — 5 Av Jf SE gE\nBe biepie ¢ . Me Smee\npt 2 §' 8s £ | cane 5\n3 i © 1 EERE Sm\nCARA Te ————— — — a  E\n: PREY iS 2 FE PVE TRE may\nE 7 pou 3 AUER: SAEs =\n3% CRS ] BEC Beni :\n: 7 Pi £0 ME BRE TE =\n— PRR ne = ots SEES BERT\n@ eRe Bees EE ee Ey\n3 % Sate St ME Seas\n2 4 = BY ANE ANNE Eos SR\nVan AN SRE Std Shere Si\n; eR i I SIS v -\ncht a Ts lao\nGE EER © i oegiien aT\nCLC URS RE Wl was Sal heen hs\n% CL URCRGOREEeNE SANE SE Shee rn\n= EEE Weta CRED\nSTE ea ee i\nhes oe\neae “an Ea cu TT SE\naio AR st eR ee\nEe i RY SIRES TE\nLhe RRS : i : i\nLooms sede Poo :\n"
+   },
+   {
+    "ms": 2313,
+    "text": "&. |\nF Di >cta ER PACK BEFORE\n- ad REMOVE THE ye\nDOK — NGREDENTS PEERED ML 0\nER NS 509) MICRO\nBed] CHEDDAR CHEESE Boh AAR A 01\nSERNGSTEZY | WSREBHN [ CONTAINS MILK | | SURFACE TREATEL\nTHT FURAN) 5 SATS 0 Bron) REFRIGERATED AT BETWEEN 2\nENERGY kcal bi 4 ¥_ USE WITHIN 3 DAYS OF OPENING.\n| PROTEN iL MANUFACTURED & MARKETED BY LEC\nCARBOHYDRAT ; :\nEE — LT\nSUGGESTIONS / COMPLANTS fn\nEN ER TET ul oe on see\nWWE [66 | um | EMAL consumerareQdlects com\n\\ WERT 0] 6 J T02423130g\nNoam | 8] PO 00M\n8 AUN mg CHE pT™\n| dilin| DATE OF Phx Fe\ni i sl50c0 10050157 J ey z\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/neg/img/N_8906010450236.jpg",
+  "total_ms": 7294,
+  "errs": [],
+  "status": "Done (the second reading, with lighting correction, gave more and was used). The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: text after a full stop looks like more ingredients and was not read: \"gdible Peanut Oil, lodized salt, F § red Chilli Powder, Spices & Condiments a a\"\n\nWarning: Text after a full stop was not read as ingredients but looks like more of the list: \"gdible Peanut Oil, lodized salt, F § red Chilli Powder, Spices & Condiments a a\"\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\npotatoes\nRefined Palmolien Oil\n3\nCOMPLETENESS: UNCERTAIN\n\n5 words read as ingredients (28% of the list region); 13 not read, 0 unaccounted, 35 set aside after the list, 0 declared. 2 of 3 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\ntext after a full stop looks like more ingredients and was not read\nNOT READ AS INGREDIENTS\n\nText after the list, shown here so nothing is hidden.\n\ngdible Peanut Oil, lodized salt, F § red Chilli Powder, Spices & Condiments a a\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\nRefined Palmolien Oil\n3\nRaw text analysed",
+  "ocr": "Dee A Ny *\n55 . TE sae Ag ' j Wi 0\nFIN ITTSTT i i\n| a\n; a» |\ni Ingredients :\npotatoes, Refined Palmolien Oil,\n3 . gdible Peanut Oil, lodized salt,\nF § red Chilli Powder, Spices & Condiments\na a Contains :\nNo artificial colours, flavours\n| or preservatives.\nA ®\n#F Allergy Advice :\n= 3 i Made in the facility that\n| 4 processes Peanuts, Treenuts\nFR »\nF | “ep away from direct sunlight\nF Store in Cool & Dry place.\n",
+  "calls": [
+   {
+    "ms": 3869,
+    "text": "y ( #150 LR EEE CA\n) a EG IATSAT 1 4\nJ ~~ ,— \"8 &\n\n|\nI ®\ni | Ingredients :\nwr potatoes, Refined Palmolien Oil,\n|  tdible Peanut Oil, lodized salt,\n| ~ed Chilli Powder, Spices & Condiments\n| Contains:\no£ 3 No artificial colours, flavours\n/ i or preservatives.\nbh Allergy Advice :\nI Made in the facility that\nprocesses Peanuts, Treenuts\n+3 _\"°€p away from direct sunlight\n3 . Store in Cool & Dry place.\n"
+   },
+   {
+    "ms": 1732,
+    "text": "Dee A Ny *\n55 . TE sae Ag ' j Wi 0\nFIN ITTSTT i i\n| a\n; a» |\ni Ingredients :\npotatoes, Refined Palmolien Oil,\n3 . gdible Peanut Oil, lodized salt,\nF § red Chilli Powder, Spices & Condiments\na a Contains :\nNo artificial colours, flavours\n| or preservatives.\nA ®\n#F Allergy Advice :\n= 3 i Made in the facility that\n| 4 processes Peanuts, Treenuts\nFR »\nF | “ep away from direct sunlight\nF Store in Cool & Dry place.\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/neg/img/N_8906019580224.jpg",
+  "total_ms": 2611,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "Mil Solids ( lt curd) potable WS |\nSuga, Salt, Starter culture CONTAINS App 0\nFLAVOURS) (NATURE --—\nARTIFICIAL FLAVOURING BSTANCES ROSE\nFLAVOUR)\nNO PRESERVATIVES.\n",
+  "calls": [
+   {
+    "ms": 953,
+    "text": "Mil Solids ( lt curd) potable WS |\nSuga, Salt, Starter culture CONTAINS App 0\nFLAVOURS) (NATURE --—\nARTIFICIAL FLAVOURING BSTANCES ROSE\nFLAVOUR)\nNO PRESERVATIVES.\n"
+   },
+   {
+    "ms": 809,
+    "text": "Mig NTS: urd): ps Wate\nSugar, sat, Starter Cult\"® CONTAINS ppp\nFLAVOUR(S) (NATURE IDENTICAL &\nARTIFICIAL FLAVOURING SUBSTANCES pose\nFLAVOUR)\n\nNO PRESERVATIVES.\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/neg/img/N_8902579000387.jpg",
+  "total_ms": 4036,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "NOVA group 4: ultra-processed foods\n\nLabel-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.\n\nWarning: \"APPLE JUICE CONCENTRATE (2.1%) EQUIVALENT T0 14% APPLE JUICE (RECONSTITUTED) ACIDITY REGULATORS (...\" has text after a percentage; a comma may be missing between two ingredients\n\nWarning: Two readings of the photo disagree on additive codes: INS 331(ii) in the first reading, INS 331i in the second. Possible misread, check the pack.\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nDRIVEN BY\nFOOD COLOUR (INS 150d): \"colour\" (cosmetic_additive)\nresearch/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only\nFOOD COLOUR (INS 150d): INS 150d (caramel IV (sulfite ammonia caramel))\nProject-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2\nNATURE-DENTICAL FLAVOURING SUBSTANCE (APPLE) (INS - INTERNATIONAL NUMBERING SYSTEM ): \"flavour\" (cosmetic_additive)\nresearch/02 marker class 2 (flavourings)\nEXTRACTED INGREDIENTS\nWATER\nSUGAR\nAPPLE JUICE CONCENTRATE (2.1%) EQUIVALENT T0 14% APPLE JUICE (RECONSTITUTED) ACIDITY REGULATORS (INS 296, INS 330, INS 331(ii)]\nSTABILIZER (INS 440)\nFOOD COLOUR (INS 150d)\nANTIOXIDANT (INS 300)\nNATURE-DENTICAL FLAVOURING SUBSTANCE (APPLE) (INS - INTERNATIONAL NUMBERING SYSTEM )\nADDITIVE CODES\n\n6 codes found: 2 with a decision rule, 4 without.\n\nAPPLE JUICE CONCENTRATE\nINS 296\nDL-Malic acid\nRecognised code, no processing rule yet. Classification treats it as unknown. Name checked against its source page (https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/5163).\nNo decision rule\nINS 330\nCitric acid\nRecognised code, no processing rule yet. Classification treats it as unknown. Name checked against its source page (https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/3594).\nNo decision rule\nINS 331(ii)\nCode not in the table\nNot in the table yet\nSTABILIZER\nINS 440\npectin\nSource: Project research notes\nWeak marker\nFOOD COLOUR\nINS 150d\ncaramel IV (sulfite ammonia caramel)\ncolour\nSource: Project-maintained mapping (Codex names are reference only; not an endorsement by Codex, FAO or WHO)\nUltra-processing marker\nANTIOXIDANT\nINS 300\nCode not in the table\nNot in the table yet\n\nCannot count as a marker. If nothing else decides, the result stays uncertain.\n\nWhere these names come from\nCOMPLETENESS: UNCERTAIN\n\n42 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 3 set aside after the list, 0 declared. 0 of 7 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nan item has text after a percentage: a comma may be missing between two ingredients\nRaw text analysed",
+  "ocr": "BE TE\nINGREDIENTS: WATER, SUGAR, APPLE JUICE CONCENTRATE\n(2.1%) EQUIVALENT T0 14% APPLE JUICE (RECONSTITUTED)\nACIDITY REGULATORS (INS 296, INS 330, INS 331(ii)],\nSTABILIZER (INS 440), FOOD COLOUR (INS 150d),\nANTIOXIDANT (INS 300) AND NATURE-DENTICAL FLAVOURING\nSUBSTANCE (APPLE)\n(INS - INTERNATIONAL NUMBERING SYSTEM )\nNO ADDED PRESERVATIVE\n",
+  "calls": [
+   {
+    "ms": 1586,
+    "text": "BE TE\nINGREDIENTS: WATER, SUGAR, APPLE JUICE CONCENTRATE\n(2.1%) EQUIVALENT T0 14% APPLE JUICE (RECONSTITUTED)\nACIDITY REGULATORS (INS 296, INS 330, INS 331(ii)],\nSTABILIZER (INS 440), FOOD COLOUR (INS 150d),\nANTIOXIDANT (INS 300) AND NATURE-DENTICAL FLAVOURING\nSUBSTANCE (APPLE)\n(INS - INTERNATIONAL NUMBERING SYSTEM )\nNO ADDED PRESERVATIVE\n"
+   },
+   {
+    "ms": 1802,
+    "text": "INGREDIENTS: WATER, SUGAR, APPLE JUICE CONCENTRATE : |\n(2.1%) [EQUIVALENT 10 14% APPLE JUICE (RECONSTITUTED),\n| ACIDITY REGULATORS (INS 296; INS 330, INS 331i],\n\n| STABILIZER (INS 440), FOOD COLOUR (INS 150d); 55\n\n| ANTIOXIDANT (INS 300) AND NATURE-IDENTICAL FLAVOURING\n\n. SUBSTANCE (APPLE) |, 5 es 5 (0 ©\n\n1 INS - INTERNATIONAL NUMBERING SYSTEM ) == = §\n* NO ADDED PRESERVATIVE #5 A Ee AEE\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/neg/img/N_8908014480073.jpg",
+  "total_ms": 6185,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: ingredient list looks truncated (unclosed bracket)\n\nWarning: Text after a full stop was not read as ingredients but looks like more of the list: \"IDITY REGULATOR [TAINS PERMITTED NATURAL AND SYNTHETIC CON Sod, INS 122, INS 102 INS 124INS 133) ...\"\n\nWarning: Two readings of the photo disagree on additive codes: INS 211 in the first reading, none in the second. Possible misread, check the pack.\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nWEAK EVIDENCE SEEN (NOT ENOUGH TO DECIDE)\nCLASS |] PRESERVATIVE (INS 211): \"preservative\" (unlisted_additive)\nCLASS |] PRESERVATIVE (INS 211): INS 211 (sodium benzoate)\nEXTRACTED INGREDIENTS\nCARBONATED WATER\nSUGAR\nAC (NS 330)\nCLASS |] PRESERVATIVE (INS 211)\nADDITIVE CODES\n\n1 code found: 1 with a decision rule, 0 without.\n\nCLASS |] PRESERVATIVE\nINS 211\nsodium benzoate\npreservative\nSource: Project-maintained mapping (Codex names are reference only; not an endorsement by Codex, FAO or WHO)\nNot a marker by itself\nWhere these names come from\nCOMPLETENESS: UNCERTAIN\n\n10 words read as ingredients (20% of the list region); 39 not read, 0 unaccounted, 0 set aside after the list, 0 declared. 2 of 4 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nthe heading was read as \"GREDIENTS\": the photo may be cut off at the left edge\nbrackets are not balanced: text may be cut off or misread\nthe list looks truncated\ntext after a full stop looks like more ingredients and was not read\nNOT READ AS INGREDIENTS\n\nText after the list, shown here so nothing is hidden.\n\nIDITY REGULATOR [TAINS PERMITTED NATURAL AND SYNTHETIC CON Sod, INS 122, INS 102 INS 124INS 133) No FOOD Cou INS URS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL | AOURING SUBSTANCES (MIXED FRUIT). \"ONTAINS NO FRUIT JUICE OR PULP Fo fu 8\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\nCARBONATED WATER\nAC (NS 330)\nRaw text analysed",
+  "ocr": "cARBONATED WATER\n\nC GREDIENTS: CARBONATED WATER, SUGAR, AC\n\n(NS 330), CLASS |] PRESERVATIVE (INS 211). IDITY REGULATOR\n[TAINS PERMITTED NATURAL AND SYNTHETIC\nCON Sod, INS 122, INS 102 INS 124INS 133) No FOOD Cou\nINS URS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL |\nAOURING SUBSTANCES (MIXED FRUIT).\n\"ONTAINS NO FRUIT JUICE OR PULP Fo fu 8\n",
+  "calls": [
+   {
+    "ms": 3222,
+    "text": "cARBONATED WATER\n\nC GREDIENTS: CARBONATED WATER, SUGAR, AC\n\n(NS 330), CLASS |] PRESERVATIVE (INS 211). IDITY REGULATOR\n[TAINS PERMITTED NATURAL AND SYNTHETIC\nCON Sod, INS 122, INS 102 INS 124INS 133) No FOOD Cou\nINS URS (NATURAL, NATURE IDENTICAL AND ARTIFICIAL |\nAOURING SUBSTANCES (MIXED FRUIT).\n\"ONTAINS NO FRUIT JUICE OR PULP Fo fu 8\n"
+   },
+   {
+    "ms": 2068,
+    "text": "ED WATER | is\n\nCARBON 8% RBONATED WATER, SUGAR, ACIDITY REGULAToq\n\nINGRE 0) CLASS Il PRESERVATIVE (INS 211). Eos k\n(NS 3300 EC MATTED, NATURALTAND SYNTHETIC FOOD Colout\n| CONTAIN ING 122, INS 102/,INS 124,INS 133) AND ADDED\nNS 30 NATURAL, NATURE IDENTICAL AND ARTIFICIALE\n. HOURING SUBSTANCES (MIXED FRUIT). a\n- CONTAINS NO FRUITJUICE OR PULP: ST\nBE ag Af E 1°. Ma A0ANDAAAAAAAAR\n"
+   }
+  ]
+ }
+]
