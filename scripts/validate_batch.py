@@ -8,6 +8,9 @@ Checks (each reported PASS / FAIL / NOTE):
                to the staged row that caused it; a changed group, status or driver list is a FLIP and BLOCKS the batch
   ambiguity    uncertain terms are PARKED in ambiguity_queue.csv instead of being included: WS3 QUEUE decisions, a term that collides with an existing row of another kind,
                a term equal to a NOVA marker term
+  policy       --policy (data/ingest/variant_policy_1.json): a staged term that is the same ingredient, plant part and form as an existing row becomes a SYNONYM candidate (never a new
+               lexicon row); a different part or species stays a separate row; a term on a conditioned-clause boundary is PARKED. A ready row that is a variant of an existing row and is
+               neither mapped nor listed as separate BLOCKS the gate (the inconsistency this policy exists to remove).
   clause       the verbatim clause is checked against the FAO report text when --fao-text is given (else NOTE: not checked)
 Ready rows = schema ok, provenance ok, not a duplicate, not parked. The gate writes only into --out and never touches src/foodscan/resources/ (the 'after' build is a temporary copy).
 Exit codes: 0 gate ran (verdict in the report); 1 error; 2 refused (output exists without --force); 3 gate verdict BLOCKED (with --strict).
@@ -120,6 +123,50 @@ def ambiguity(staged: list[dict], decisions: list[dict], lexicon: list[dict], ma
     return queue
 
 
+def load_policy(path: Path | None) -> dict:
+    empty = {"policy_id": None, "synonyms": {}, "separate_rows": {}, "parked": {}}
+    return json.loads(path.read_text(encoding="utf-8")) if path else empty
+
+
+def apply_policy(staged: list[dict], dups: dict, policy: dict, lexicon: list[dict], synonyms: list[dict], candidates: dict[str, dict]) -> dict:
+    """Variant policy. Returns synonym candidate rows (from,to,source), policy-parked queue rows, and policy errors (each one blocks the gate)."""
+    errs: list[str] = []
+    by_term = {r["term"]: r for r in staged}
+    lex = {flat(r["term"]) for r in lexicon}
+    syn = {flat(r["from"]) for r in synonyms}
+    syn_rows, queue = [], []
+    for term, m in policy.get("synonyms", {}).items():
+        if term not in by_term:
+            errs.append(f"policy synonym '{term}' is not a staged term")
+            continue
+        if flat(m["to"]) not in lex:
+            errs.append(f"policy synonym '{term}' -> '{m['to']}': target is not an existing lexicon row")
+        if flat(term) in lex or flat(term) in syn:
+            errs.append(f"policy synonym '{term}' already exists in lexicon.csv or synonyms.csv")
+            continue
+        recs = [candidates[i] for i in by_term[term]["fdc_ids"].split(";") if i in candidates]
+        prov = "; ".join(f"{c['dataset']} FDC id {c['fdc_id']} \"{c['description']}\"" for c in recs)
+        syn_rows.append({"from": term, "to": m["to"], "source": f"PROVISIONAL: alias of existing lexicon row \"{m['to']}\" ({m['basis']}); {policy['policy_id']}; name from USDA FoodData Central (CC0 1.0): {prov}"})
+    for term in policy.get("separate_rows", {}):
+        if term not in by_term:
+            errs.append(f"policy separate row '{term}' is not a staged term")
+    for term, m in policy.get("parked", {}).items():
+        if term not in by_term:
+            errs.append(f"policy parked term '{term}' is not a staged term")
+            continue
+        queue.append({"term": term, "source_row": by_term[term]["fdc_ids"], "origin": "policy", "reason_code": m["reason_code"], "reason": m["reason"], "description": ""})
+    groups = [set(policy.get("synonyms", {})), set(policy.get("separate_rows", {})), set(policy.get("parked", {}))]
+    for i in range(3):
+        for j in range(i + 1, 3):
+            for t in groups[i] & groups[j]:
+                errs.append(f"policy lists '{t}' in two different dispositions")
+    covered = set().union(*groups)
+    for t, info in dups.items():
+        if "variant_of" in info and "duplicate" not in info and t not in covered:
+            errs.append(f"'{t}' is a variant of {info['variant_of']} but the policy neither maps it to a synonym nor keeps it as a separate row")
+    return {"synonym_rows": syn_rows, "queue": queue, "errors": errs}
+
+
 # ---------------------------------------------------------------- flip harness (two fresh processes)
 def append_rows(lexicon_csv: Path, rows: list[dict]) -> None:
     data = lexicon_csv.read_bytes()
@@ -135,6 +182,19 @@ def append_rows(lexicon_csv: Path, rows: list[dict]) -> None:
         fh.write(buf.getvalue().encode("utf-8"))
 
 
+def append_synonyms(synonyms_csv: Path, rows: list[dict]) -> None:
+    import io
+    data = synonyms_csv.read_bytes()
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\n")
+    for r in rows:
+        w.writerow([r["from"], r["to"], r["source"]])
+    with synonyms_csv.open("ab") as fh:
+        if data and not data.endswith(b"\n"):
+            fh.write(b"\n")
+        fh.write(buf.getvalue().encode("utf-8"))
+
+
 def run_dump(src_dir: Path, evaluation: Path, out: Path, probe_file: Path | None = None) -> None:
     env = {"PYTHONPATH": str(src_dir), "PATH": "/usr/bin:/bin:/usr/local/bin", "HOME": str(Path.home())}
     cmd = [sys.executable, str(ROOT / "scripts" / "flip_dump.py"), "--evaluation", str(evaluation), "--out", str(out)] + (["--probe-file", str(probe_file)] if probe_file else [])
@@ -143,15 +203,18 @@ def run_dump(src_dir: Path, evaluation: Path, out: Path, probe_file: Path | None
         raise RuntimeError(f"flip dump failed or did not use {src_dir}: {r.stderr[-400:]}")
 
 
-def flip_check(rows: list[dict], repo_src: Path, evaluation: Path, work: Path) -> dict:
+def flip_check(rows: list[dict], repo_src: Path, evaluation: Path, work: Path, syn_rows: list[dict] | None = None) -> dict:
     """before = a copy of the repo src as it is; after = the same copy with the rows appended to lexicon.csv. Each is analysed in its OWN fresh process."""
     before_src, after_src = work / "before" / "src", work / "after" / "src"
     for d in (before_src, after_src):
         shutil.copytree(repo_src, d, ignore=shutil.ignore_patterns("__pycache__", "*.egg-info"))
+    syn_rows = syn_rows or []
     append_rows(after_src / "foodscan" / "resources" / "lexicon.csv", rows)
+    if syn_rows:
+        append_synonyms(after_src / "foodscan" / "resources" / "synonyms.csv", syn_rows)
     b, a = work / "before.json", work / "after.json"
     probe = work / "probe.txt"
-    probe.write_text("\n".join(r["term"] for r in rows) + "\n", encoding="utf-8")
+    probe.write_text("\n".join([r["term"] for r in rows] + [r["from"] for r in syn_rows]) + "\n", encoding="utf-8")
     run_dump(before_src, evaluation, b, probe)
     run_dump(after_src, evaluation, a, probe)
     pb = json.loads((work / "before.json.probe.json").read_text(encoding="utf-8"))
@@ -162,7 +225,8 @@ def flip_check(rows: list[dict], repo_src: Path, evaluation: Path, work: Path) -
         raise RuntimeError(f"harness invalid: the AFTER build does not recognise staged term(s) {missing}")
     n = lambda d: len(read_csv(d / "foodscan" / "resources" / "lexicon.csv"))
     return {"before": json.loads(b.read_text(encoding="utf-8")), "after": json.loads(a.read_text(encoding="utf-8")),
-            "harness": {"lexicon_rows_before": n(before_src), "lexicon_rows_after": n(after_src), "terms_recognised_before": already, "terms_recognised_after": len(pa)}}
+            "harness": {"lexicon_rows_before": n(before_src), "lexicon_rows_after": n(after_src),
+                                                           "synonym_rows_added": len(syn_rows), "terms_recognised_before": already, "terms_recognised_after": len(pa)}}
 
 
 def _singular(tok: str) -> str:
@@ -205,7 +269,7 @@ def attribute(before: dict, after: dict, rows: list[dict], descriptors: set[str]
 
 
 # ---------------------------------------------------------------- the gate
-def run_gate(staged_csv: Path, decisions_csv: Path, candidates_csv: Path, rule: dict, repo_src: Path, evaluation: Path, work: Path, fao_text: Path | None) -> dict:
+def run_gate(staged_csv: Path, decisions_csv: Path, candidates_csv: Path, rule: dict, repo_src: Path, evaluation: Path, work: Path, fao_text: Path | None, policy: dict | None = None) -> dict:
     sys.path.insert(0, str(repo_src))
     from foodscan.classify import is_recognised
     from foodscan.normalise import normalise_ingredient
@@ -216,21 +280,25 @@ def run_gate(staged_csv: Path, decisions_csv: Path, candidates_csv: Path, rule: 
     schema_err, prov_err = check_schema(staged, rule), check_provenance(staged, candidates)
     dups = check_duplicates(staged, lexicon, synonyms, lambda t: is_recognised(normalise_ingredient(t).name))
     queue = ambiguity(staged, decisions, lexicon, markers)
-    parked = {q["term"] for q in queue if q["origin"] == "gate"}
+    policy = policy or load_policy(None)
+    pol = apply_policy(staged, dups, policy, lexicon, synonyms, candidates)
+    queue += pol["queue"]
+    parked = {q["term"] for q in queue if q["origin"] in ("gate", "policy")}
     duplicate_terms = {t for t, i in dups.items() if "duplicate" in i}
-    ready = [r for r in staged if r["term"] not in schema_err and r["term"] not in prov_err and r["term"] not in duplicate_terms and r["term"] not in parked]
+    syn_terms = {r["from"] for r in pol["synonym_rows"]}
+    ready = [r for r in staged if r["term"] not in schema_err and r["term"] not in prov_err and r["term"] not in duplicate_terms and r["term"] not in parked and r["term"] not in syn_terms]
     flip = {"skipped": "no ready rows"}
-    if ready:
-        runs = flip_check(ready, repo_src, evaluation, work)
+    if ready or pol["synonym_rows"]:
+        runs = flip_check(ready, repo_src, evaluation, work, pol["synonym_rows"])
         descriptors = {r["word"].lower() for r in read_csv(res / "descriptors.csv")}
-        flip = attribute(runs["before"], runs["after"], ready, descriptors)
+        flip = attribute(runs["before"], runs["after"], ready + [{"term": r["from"]} for r in pol["synonym_rows"]], descriptors)
         flip["inputs"] = len(runs["before"])
         flip["harness"] = runs["harness"]
         flip["_runs"] = runs
     clause_state = "NOT CHECKED (no --fao-text)"
     if fao_text:
         clause_state = "PASS" if clause_tier.fao_clause_present(fao_text.read_text(encoding="utf-8"), rule["clause"]["text"]) else "FAIL"
-    blockers = []
+    blockers = [f"policy: {e}" for e in pol["errors"]]
     if schema_err:
         blockers.append(f"schema errors on {len(schema_err)} row(s)")
     if prov_err:
@@ -241,12 +309,13 @@ def run_gate(staged_csv: Path, decisions_csv: Path, candidates_csv: Path, rule: 
         blockers.append(f"{len(flip['unexplained'])} input(s) changed in a way no ready row explains")
     if clause_state == "FAIL":
         blockers.append("verbatim clause not found in the FAO text")
-    return {"rule_id": rule["rule_id"], "staged": len(staged), "ready": [r["term"] for r in ready], "ready_rows": ready, "duplicates": dups, "schema_errors": schema_err,
+    return {"rule_id": rule["rule_id"], "staged": len(staged), "ready": [r["term"] for r in ready], "ready_rows": ready, "duplicates": dups, "synonym_rows": pol["synonym_rows"], "separate_rows": {t: w for t, w in policy.get("separate_rows", {}).items() if t in {r["term"] for r in ready}},
+            "policy_id": policy.get("policy_id"), "policy_errors": pol["errors"], "schema_errors": schema_err,
             "provenance_errors": prov_err, "ambiguity_queue": queue, "flip": flip, "clause_check": clause_state, "blockers": blockers, "verdict": "BLOCKED" if blockers else "READY_FOR_REVIEW"}
 
 
 def write_report(g: dict, out: Path, force: bool) -> None:
-    targets = [out / n for n in ("gate_report.json", "gate_report.md", "ambiguity_queue.csv", "lexicon_candidate_rows.csv", "flip_before.json", "flip_after.json")]
+    targets = [out / n for n in ("gate_report.json", "gate_report.md", "ambiguity_queue.csv", "lexicon_candidate_rows.csv", "synonyms_candidate_rows.csv", "flip_before.json", "flip_after.json")]
     if any(t.exists() for t in targets) and not force:
         raise FileExistsError(f"{out} already holds gate output; use --force to overwrite")
     out.mkdir(parents=True, exist_ok=True)
@@ -263,24 +332,30 @@ def write_report(g: dict, out: Path, force: bool) -> None:
         w.writerow(["term", "kind", "source"])
         for r in g["ready_rows"]:
             w.writerow([r["term"], r["kind"], r["source"]])
+    with (out / "synonyms_candidate_rows.csv").open("w", newline="", encoding="utf-8") as fh:      # synonyms.csv column layout; NOT merged
+        w = csv.writer(fh, lineterminator="\n")
+        w.writerow(["from", "to", "source"])
+        for r in g["synonym_rows"]:
+            w.writerow([r["from"], r["to"], r["source"]])
     slim = {k: v for k, v in g.items() if k != "ready_rows"}
     (out / "gate_report.json").write_text(json.dumps(slim, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     f = g["flip"]
     L = [f"# Gate report: {g['rule_id']}", "", f"**Verdict: {g['verdict']}**" + (": " + "; ".join(g["blockers"]) if g["blockers"] else ""), "",
-         "Nothing was merged. `lexicon_candidate_rows.csv` holds the ready rows in lexicon.csv layout for review.", "",
+         "Nothing was merged. `lexicon_candidate_rows.csv` holds the ready rows in lexicon.csv layout and `synonyms_candidate_rows.csv` the synonym candidates in synonyms.csv layout, for review.", "",
          "| Check | Result |", "|---|---|",
          f"| staged rows | {g['staged']} |", f"| schema errors | {len(g['schema_errors'])} |", f"| provenance errors | {len(g['provenance_errors'])} |",
          f"| duplicates (exact, synonym, already recognised) | {sum('duplicate' in i for i in g['duplicates'].values())} |",
          f"| variants of an existing term (informational) | {sum('variant_of' in i for i in g['duplicates'].values())} |",
          f"| parked in the ambiguity queue | {len(g['ambiguity_queue'])} ({Counter(q['origin'] for q in g['ambiguity_queue'])}) |",
-         f"| ready rows | {len(g['ready'])} |", f"| verbatim clause vs FAO text | {g['clause_check']} |"]
+         f"| ready rows (new lexicon rows) | {len(g['ready'])} |", f"| synonym candidates (variant policy {g['policy_id']}) | {len(g['synonym_rows'])} |", f"| policy errors | {len(g['policy_errors'])} |", f"| verbatim clause vs FAO text | {g['clause_check']} |"]
     if "changed_counts" in f:
         h = f.get("harness", {})
         L += [f"| harness proof (separate processes) | lexicon rows {h.get('lexicon_rows_before')} -> {h.get('lexicon_rows_after')}; all {h.get('terms_recognised_after')} staged terms recognised after; "
               f"{len(h.get('terms_recognised_before', []))} already recognised before |",
               f"| flip check ({f['inputs']} frozen inputs, before and after in separate fresh processes) | " + ", ".join(f"{k} {v}" for k, v in f["changed_counts"].items()) + " |",
               f"| group/status/driver flips | {len(f['flips'])} {f['flips'] or ''} |", f"| unexplained changes | {len(f['unexplained'])} |"]
-    L += ["", "## Ready rows", ""] + [f"- `{t}`" for t in g["ready"]]
+    L += ["", "## Ready rows (new lexicon rows)", ""] + [f"- `{t}`" + (f": separate row because {g['separate_rows'][t]}" if t in g["separate_rows"] else "") for t in g["ready"]]
+    L += ["", "## Synonym candidates (variant policy: same ingredient, plant part and form)", ""] + [f"- `{r['from']}` -> `{r['to']}`" for r in g["synonym_rows"]]
     dup = [(t, i) for t, i in g["duplicates"].items() if "duplicate" in i]
     L += ["", "## Duplicates (excluded: already covered)", ""] + [f"- `{t}`: {i['duplicate']}" for t, i in dup]
     var = [(t, i) for t, i in g["duplicates"].items() if "variant_of" in i and "duplicate" not in i]
@@ -303,14 +378,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--src", type=Path, default=ROOT / "src")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
     ap.add_argument("--fao-text", type=Path, default=None, help="pdftotext -layout output of the FAO report, to verify the clause verbatim")
+    ap.add_argument("--policy", type=Path, default=None, help="variant policy JSON (data/ingest/variant_policy_1.json)")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--strict", action="store_true", help="exit 3 when the verdict is BLOCKED")
     args = ap.parse_args(argv)
     try:
         with tempfile.TemporaryDirectory() as td:
-            g = run_gate(args.staged, args.decisions, args.candidates, clause_tier.load_rule(args.rule), args.src, args.evaluation, Path(td), args.fao_text)
+            g = run_gate(args.staged, args.decisions, args.candidates, clause_tier.load_rule(args.rule), args.src, args.evaluation, Path(td), args.fao_text, load_policy(args.policy))
             write_report(g, args.out, args.force)
-        print(f"verdict {g['verdict']}; staged {g['staged']}, ready {len(g['ready'])}, parked {len(g['ambiguity_queue'])}, blockers {g['blockers']}")
+        print(f"verdict {g['verdict']}; staged {g['staged']}, ready {len(g['ready'])}, synonyms {len(g['synonym_rows'])}, parked {len(g['ambiguity_queue'])}, blockers {g['blockers']}")
         return 3 if (args.strict and g["blockers"]) else 0
     except FileExistsError as e:
         sys.stderr.write(f"Refusing to overwrite: {e}\n")

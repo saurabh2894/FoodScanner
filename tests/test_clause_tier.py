@@ -110,3 +110,62 @@ def test_cli_writes_decisions_and_staged_rows_and_refuses_to_overwrite(tmp_path,
     assert "ACCEPT': 1" in capsys.readouterr().out
     assert ct.main(["--candidates", str(cand), "--out", str(out)]) == 2
     assert ct.main(["--candidates", str(cand), "--out", str(out), "--force"]) == 0
+
+
+# ---- exclusion safety (SYNTHETIC descriptions built from the rule's own word lists: they prove no listed word can ever auto-accept; none is evidence of coverage) ----
+@pytest.mark.parametrize("w", RULE["processed_words"]["words"])
+def test_every_processed_word_rejects_in_any_position(w):
+    for desc in (f"Spices, basil, {w}", f"Spices, {w} basil", f"Basil, {w}", f"{w.capitalize()}, basil", f"Spices, basil {w}, dried"):
+        d = ct.decide(row(desc), RULE)
+        assert d["decision"] == "REJECT" and d["reason_code"] == "processed" and d["term"] is None, (w, desc, d)
+
+
+@pytest.mark.parametrize("w", RULE["group2_heads"]["words"])
+def test_every_group2_word_rejects_as_head_or_as_qualifier(w):
+    for desc in (f"{w.capitalize()}, table", f"Spices, {w}", f"Spices, garlic, {w}", f"Spices, basil, {w}, dried", f"Basil {w}"):
+        d = ct.decide(row(desc), RULE)
+        assert d["decision"] == "REJECT" and d["reason_code"] in ("group2_head", "group2_word", "processed") and d["term"] is None, (w, desc, d)   # syrup is on both lists
+
+
+@pytest.mark.parametrize("w", RULE["form_words"])
+def test_a_form_word_inside_a_multiword_name_is_queued_never_accepted(w):
+    for desc in (f"Spices, garlic {w}", f"Spices, chili {w}", f"Spices, mixed herbs {w}"):
+        d = ct.decide(row(desc), RULE)
+        assert d["decision"] == "QUEUE" and d["reason_code"] == "form_embedded_in_name" and d["term"] is None, (w, desc, d)
+
+
+@pytest.mark.parametrize("desc", ["Spices, pumpkin pie spice", "Spices, apple pie spice", "Spices, mixed spice", "Spices, five spice"])
+def test_multiword_names_ending_in_spice_are_queued_never_accepted(desc):
+    d = ct.decide(row(desc), RULE)
+    assert d["decision"] == "QUEUE" and d["reason_code"] == "blend_name" and d["term"] is None
+
+
+@pytest.mark.parametrize("desc", ["Spices, pepper, red or cayenne", "Spices, basil, with garlic", "Spices, thyme, 2 mm", "Spices, sage, rubbed or ground", "Spices, mint, a b"])
+def test_unresolved_qualifiers_are_queued_never_accepted(desc):
+    assert ct.decide(row(desc), RULE)["decision"] == "QUEUE"
+
+
+def test_the_mapper_cannot_accept_outside_the_gate_category_or_label_bound_clauses_whatever_the_name():
+    names = ["Spices, basil", "Basil, fresh", "Almonds", "Oats", "Apple juice", "Corn flakes", "Peppermint, fresh", "Salt"]
+    for cat in list(RULE["label_bound_clauses"]["clauses"]) + ["Vegetables and Vegetable Products", "Baby Foods", "Beverages", "", "spices and herbs", "Spices and Herbs "]:
+        for n in names:
+            d = ct.decide(row(n, cat), RULE)
+            assert d["decision"] in ("LABEL_BOUND", "OUT_OF_SCOPE") and d["term"] is None, (cat, n, d)
+
+
+def test_label_bound_categories_are_exactly_the_three_conditioned_clauses_and_none_is_the_gate():
+    bound = RULE["label_bound_clauses"]["clauses"]
+    assert set(bound) == {"Nut and Seed Products", "Fruits and Fruit Juices", "Cereal Grains and Pasta"}
+    assert RULE["category_gate"]["food_category"] not in bound
+
+
+def test_provenance_says_named_only_for_the_six_terms_the_clause_lists():
+    clause = RULE["clause"]["text"]
+    assert RULE["named_terms"]["terms"] == ["thyme", "oregano", "mint", "pepper", "cloves", "cinnamon"]
+    for t in RULE["named_terms"]["terms"]:
+        assert "exact term IS named by the clause" in ct.source_text(RULE, [row("Spices, x")], t) and clause in ct.source_text(RULE, [row("Spices, x")], t)
+    for t in ("basil", "paprika", "black pepper", "coriander leaf"):
+        s = ct.source_text(RULE, [row("Spices, x")], t)
+        assert "exact term not named by the clause" in s and "IS named" not in s
+    for t in ("peppermint", "spearmint"):
+        assert "the clause names the broader term 'mint'" in ct.source_text(RULE, [row("Spices, x")], t)

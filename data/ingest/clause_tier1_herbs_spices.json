@@ -13,6 +13,15 @@
     "food_category": "Spices and Herbs",
     "note": "FDC files non-clause items in this category too (salt, vinegar, vanilla extract, prepared mustard, canned capers, seasoning mixes): the steps below sort them out. A candidate outside this category is never mapped by this rule."
   },
+  "named_terms": {
+    "terms": ["thyme", "oregano", "mint", "pepper", "cloves", "cinnamon"],
+    "why": "The six items the clause itself lists ('such as thyme, oregano, mint, pepper, cloves and cinnamon'). A row's provenance says the exact term IS named only for these; every other row says it is not named."
+  },
+  "broader_named_terms": {
+    "peppermint": "mint",
+    "spearmint": "mint",
+    "why": "The clause names 'mint' but not these two terms. The row says so; membership of the herbs-and-spices category is inferred from the broader named term, not stated by the clause."
+  },
   "lead_words": ["spices"],
   "form_words": ["whole", "ground", "powder", "powdered", "fresh", "dried", "dry"],
   "processed_words": {

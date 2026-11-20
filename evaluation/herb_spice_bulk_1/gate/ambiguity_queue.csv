@@ -9,3 +9,4 @@ term,source_row,origin,reason_code,reason,description
 "Vinegar, red wine",fdc_sr_legacy:172240,clause_tier,qualifier_unresolved,qualifier(s) ['red wine'] are not clause forms and cannot be resolved mechanically,"Vinegar, red wine"
 "Vinegar, balsamic",fdc_sr_legacy:172241,clause_tier,qualifier_unresolved,qualifier(s) ['balsamic'] are not clause forms and cannot be resolved mechanically,"Vinegar, balsamic"
 "Vinegar, cider",fdc_sr_legacy:173469,clause_tier,qualifier_unresolved,qualifier(s) ['cider'] are not clause forms and cannot be resolved mechanically,"Vinegar, cider"
+poppy seed,fdc_sr_legacy:171330,policy,overlaps_conditioned_clause,"FAO Table 1 Group 1 also lists 'tree and ground nuts and other oily seeds (with no added salt or sugar)': a conditioned clause. Poppy seed sits on the boundary between that clause and the unconditioned herbs-and-spices clause; the boundary is unresolved, so it is parked (same discipline as the juice rows).",

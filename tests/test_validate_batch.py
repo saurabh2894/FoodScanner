@@ -147,6 +147,73 @@ def test_run_gate_end_to_end_and_report_writing(tmp_path):
     g = json.loads((out / "gate_report.json").read_text())
     assert g["verdict"] == "READY_FOR_REVIEW" and g["ready"] == ["zorbium"] and [q["reason_code"] for q in g["ambiguity_queue"]] == ["form_embedded_in_name"]
     assert g["flip"]["changed_counts"]["group"] == 0 and g["clause_check"].startswith("NOT CHECKED")
-    assert sorted(p.name for p in out.iterdir()) == ["ambiguity_queue.csv", "flip_after.json", "flip_before.json", "gate_report.json", "gate_report.md", "lexicon_candidate_rows.csv"]
+    assert sorted(p.name for p in out.iterdir()) == ["ambiguity_queue.csv", "flip_after.json", "flip_before.json", "gate_report.json", "gate_report.md", "lexicon_candidate_rows.csv", "synonyms_candidate_rows.csv"]
     assert (out / "lexicon_candidate_rows.csv").read_text().splitlines()[0] == "term,kind,source"
     assert vb.main(["--staged", str(tmp_path / "staged_rows.csv"), "--decisions", str(tmp_path / "decisions.csv"), "--candidates", str(cand), "--out", str(out)]) == 2   # refuses to overwrite
+
+
+# ---- variant policy (SYNTHETIC lexicon and staged rows; unit tests of the policy mechanics, not coverage evidence) ----
+LEX = [{"term": "zing", "kind": "herb_spice", "source": "x"}, {"term": "quill", "kind": "herb_spice", "source": "x"}]
+POL = {"policy_id": "variant-policy-test",
+       "synonyms": {"zing seed": {"to": "zing", "basis": "same ingredient, same plant part (seed), same form as the existing row"}},
+       "separate_rows": {"quill leaf": "different plant part from quill seed", "quill seed": "different plant part from quill leaf"},
+       "parked": {"flax seed": {"reason_code": "overlaps_conditioned_clause", "reason": "boundary unresolved"}}}
+
+
+def _staged(*terms):
+    return [staged_row(term=t, fdc=f"fdc_sr_legacy:{i}", desc=f"Spices, {t}", fid=str(i)) for i, t in enumerate(terms, 1)]
+
+
+def _cands(*terms):
+    return {f"fdc_sr_legacy:{i}": {"candidate_id": f"fdc_sr_legacy:{i}", "dataset": "sr_legacy", "fdc_id": str(i), "description": f"Spices, {t}"} for i, t in enumerate(terms, 1)}
+
+
+def test_policy_maps_same_part_variant_to_a_synonym_keeps_other_parts_and_parks_boundary_terms():
+    terms = ("zing seed", "quill leaf", "quill seed", "flax seed")
+    staged = _staged(*terms)
+    dups = vb.check_duplicates(staged, LEX, [], lambda t: False)
+    r = vb.apply_policy(staged, dups, POL, LEX, [], _cands(*terms))
+    assert r["errors"] == []
+    assert [(x["from"], x["to"]) for x in r["synonym_rows"]] == [("zing seed", "zing")]
+    assert r["synonym_rows"][0]["source"].startswith("PROVISIONAL: alias of existing lexicon row \"zing\"") and "FDC id 1 \"Spices, zing seed\"" in r["synonym_rows"][0]["source"]
+    assert [(q["term"], q["origin"], q["reason_code"]) for q in r["queue"]] == [("flax seed", "policy", "overlaps_conditioned_clause")]
+
+
+def test_policy_blocks_an_unpoliced_variant_so_the_inconsistency_cannot_return():
+    staged = _staged("quill leaf")                       # a variant of existing 'quill' that the policy does not mention
+    dups = vb.check_duplicates(staged, LEX, [], lambda t: False)
+    assert "variant_of" in dups["quill leaf"]
+    r = vb.apply_policy(staged, dups, {"policy_id": "p", "synonyms": {}, "separate_rows": {}, "parked": {}}, LEX, [], _cands("quill leaf"))
+    assert any("quill leaf" in e and "neither maps it to a synonym nor keeps it as a separate row" in e for e in r["errors"])
+
+
+def test_policy_errors_are_reported_for_bad_targets_stale_entries_and_double_dispositions():
+    staged = _staged("zing seed")
+    dups = vb.check_duplicates(staged, LEX, [], lambda t: False)
+    bad = {"policy_id": "p", "synonyms": {"zing seed": {"to": "nonexistent", "basis": "b"}, "ghost seed": {"to": "zing", "basis": "b"}},
+           "separate_rows": {"zing seed": "x", "ghost leaf": "y"}, "parked": {"zing seed": {"reason_code": "c", "reason": "r"}}}
+    errs = " | ".join(vb.apply_policy(staged, dups, bad, LEX, [], _cands("zing seed"))["errors"])
+    assert "target is not an existing lexicon row" in errs and "'ghost seed' is not a staged term" in errs and "'ghost leaf' is not a staged term" in errs and "two different dispositions" in errs
+    existing = vb.apply_policy(staged, dups, {"policy_id": "p", "synonyms": {"zing seed": {"to": "zing", "basis": "b"}}, "separate_rows": {}, "parked": {}}, LEX,
+                               [{"from": "zing seed", "to": "zing", "source": "x"}], _cands("zing seed"))
+    assert any("already exists" in e for e in existing["errors"])
+
+
+def test_real_policy_file_is_consistent_with_the_rule_and_with_itself():
+    pol = vb.load_policy(REPO_ROOT / "data" / "ingest" / "variant_policy_1.json")
+    assert pol["policy_id"] == "variant-policy-1"
+    sets = [set(pol["synonyms"]), set(pol["separate_rows"]), set(pol["parked"])]
+    assert not (sets[0] & sets[1]) and not (sets[0] & sets[2]) and not (sets[1] & sets[2])
+    assert "poppy seed" in pol["parked"] and pol["parked"]["poppy seed"]["reason_code"] == "overlaps_conditioned_clause"
+    assert {"coriander leaf", "coriander seed", "dill weed", "dill seed", "peppermint", "spearmint"} <= set(pol["separate_rows"])
+    assert set(pol["synonyms"]) == {"anise seed", "caraway seed", "cumin seed", "fenugreek seed"}
+    assert "coriander" not in pol["synonyms"] and "dill" not in pol["synonyms"]            # bare ambiguous base terms are never widened
+    assert all("seed" in t for t in pol["synonyms"])                                         # only same-part (seed) forms become synonyms
+
+
+def test_append_synonyms_keeps_existing_bytes_and_quotes(tmp_path):
+    f = tmp_path / "synonyms.csv"
+    f.write_bytes(b"from,to,source\r\na,b,c")
+    vb.append_synonyms(f, [{"from": "x seed", "to": "x", "source": 'has "quotes", commas'}])
+    rows = list(csv.DictReader(f.read_text(newline="").splitlines()))
+    assert rows[-1] == {"from": "x seed", "to": "x", "source": 'has "quotes", commas'} and rows[0]["from"] == "a"

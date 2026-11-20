@@ -1,0 +1,39 @@
+{
+  "policy_id": "variant-policy-1",
+  "applies_to": "tier1-herbs-and-spices-1 staged batches",
+  "policy": "A staged term that is the SAME ingredient, SAME plant part and SAME form as an existing lexicon row is a synonym of that row (synonyms.csv), never a new lexicon row. A DIFFERENT plant part (coriander leaf vs coriander seed, dill weed vs dill seed) or a different species (peppermint, spearmint vs mint) may be a separate row. A bare base term that is ambiguous between parts (coriander, dill) is left untouched and is not widened. Any staged term that overlaps a conditioned clause is parked, not decided.",
+  "check": "scripts/validate_batch.py blocks the gate when a ready row is a variant of an existing row (shares a whole word-sequence boundary with one) and this file neither maps it to a synonym nor keeps it as a separate row.",
+  "synonyms": {
+    "anise seed": {
+      "to": "aniseed",
+      "basis": "same ingredient, same plant part (seed), same form as the existing row"
+    },
+    "caraway seed": {
+      "to": "caraway",
+      "basis": "same ingredient, same plant part (seed), same form as the existing row"
+    },
+    "cumin seed": {
+      "to": "cumin",
+      "basis": "same ingredient, same plant part (seed), same form as the existing row"
+    },
+    "fenugreek seed": {
+      "to": "fenugreek",
+      "basis": "same ingredient, same plant part (seed), same form as the existing row"
+    }
+  },
+  "separate_rows": {
+    "coriander leaf": "different plant part from coriander seed",
+    "coriander seed": "different plant part from coriander leaf; the existing bare row 'coriander' is ambiguous between parts and is left untouched (not widened)",
+    "dill weed": "different plant part (leaf) from dill seed; the existing bare row 'dill' is left untouched (not widened)",
+    "dill seed": "different plant part (seed) from dill weed; the existing bare row 'dill' is left untouched (not widened)",
+    "peppermint": "different species from 'mint' (bare mint is an existing row)",
+    "spearmint": "different species from 'mint' (bare mint is an existing row)"
+  },
+  "parked": {
+    "poppy seed": {
+      "reason_code": "overlaps_conditioned_clause",
+      "reason": "FAO Table 1 Group 1 also lists 'tree and ground nuts and other oily seeds (with no added salt or sugar)': a conditioned clause. Poppy seed sits on the boundary between that clause and the unconditioned herbs-and-spices clause; the boundary is unresolved, so it is parked (same discipline as the juice rows)."
+    }
+  },
+  "untouched_base_rows_note": "Bare 'coriander' (PROVISIONAL author seed) and bare 'dill' (research/02 synthetic example) are existing rows that do not say leaf or seed. They are left as they are."
+}

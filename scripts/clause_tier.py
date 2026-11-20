@@ -64,6 +64,9 @@ def decide(row: dict, rule: dict) -> dict:
     g2 = sorted(set(head_words) & set(rule["group2_heads"]["words"]))
     if g2:
         return done("REJECT", "group2_head", f"head word(s) {g2}: FAO Table 1 Group 2 example, not a herb or spice")
+    g2_any = sorted(all_words & set(rule["group2_heads"]["words"]))
+    if g2_any:                    # a Group 2 word in a qualifier ('Spices, garlic, salt') must never be turned into a label term by the series rule
+        return done("REJECT", "group2_word", f"word(s) {g2_any} in a qualifier: FAO Table 1 Group 2 example, so this is not a single herb or spice")
 
     forms = set(rule["form_words"])
     if len(head_words) > 1 and (set(head_words) & forms):
@@ -79,9 +82,22 @@ def decide(row: dict, rule: dict) -> dict:
     return done("QUEUE", "qualifier_unresolved", f"qualifier(s) {left} are not clause forms and cannot be resolved mechanically")
 
 
-def source_text(rule: dict, recs: list[dict]) -> str:
+def named_status(term: str, rule: dict) -> str:
+    """What the verbatim clause says about this exact term: it is named, or it is not (with the broader named term where the rule records one)."""
+    clause_words = set(words(rule["clause"]["text"]))
+    named = rule["named_terms"]["terms"]
+    assert all(n in clause_words for n in named), "named_terms must all occur in the clause text"
+    if term in named:
+        return "exact term IS named by the clause"
+    broad = rule["broader_named_terms"].get(term)
+    if broad:
+        return f"exact term not named by the clause (the clause names the broader term '{broad}')"
+    return "exact term not named by the clause"
+
+
+def source_text(rule: dict, recs: list[dict], term: str) -> str:
     prov = "; ".join(f"{r['dataset']} FDC id {r['fdc_id']} \"{r['description']}\"" for r in recs)
-    return (f"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"{rule['clause']['text']}\"; exact term not named by the clause; "
+    return (f"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"{rule['clause']['text']}\"; {named_status(term, rule)}; "
             f"name from USDA FoodData Central (CC0 1.0): {prov}")
 
 
@@ -93,7 +109,7 @@ def map_candidates(rows: list[dict], rule: dict) -> tuple[list[dict], list[dict]
         decisions.append({**{k: r[k] for k in ("candidate_id", "dataset", "fdc_id", "description", "food_category")}, **d})
         if d["decision"] == "ACCEPT":
             by_term[d["term"]].append(r)
-    staged = [{"term": t, "kind": rule["kind"], "source": source_text(rule, recs), "fdc_ids": ";".join(r["candidate_id"] for r in recs), "rule_id": rule["rule_id"]}
+    staged = [{"term": t, "kind": rule["kind"], "source": source_text(rule, recs, t), "fdc_ids": ";".join(r["candidate_id"] for r in recs), "rule_id": rule["rule_id"]}
               for t, recs in sorted(by_term.items())]
     return decisions, staged
 

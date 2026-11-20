@@ -1,0 +1,5 @@
+from,to,source
+anise seed,aniseed,"PROVISIONAL: alias of existing lexicon row ""aniseed"" (same ingredient (anise), same part (the seed), same form: 'aniseed' is the existing row's spelling of 'anise seed'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171316 ""Spices, anise seed"""
+caraway seed,caraway,"PROVISIONAL: alias of existing lexicon row ""caraway"" (same ingredient and part: the spice caraway is the seed; no other part is sold as 'caraway'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170918 ""Spices, caraway seed"""
+cumin seed,cumin,"PROVISIONAL: alias of existing lexicon row ""cumin"" (same ingredient and part: the spice cumin is the seed; no other part is sold as 'cumin'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170923 ""Spices, cumin seed"""
+fenugreek seed,fenugreek,"PROVISIONAL: alias of existing lexicon row ""fenugreek"" (same ingredient and part as the owner's variant policy decision (fenugreek seed ~ fenugreek)); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171324 ""Spices, fenugreek seed"""

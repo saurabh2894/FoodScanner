@@ -3,23 +3,18 @@
   "staged": 37,
   "ready": [
     "allspice",
-    "anise seed",
     "basil",
-    "caraway seed",
     "celery seed",
     "chervil",
     "coriander leaf",
     "coriander seed",
-    "cumin seed",
     "dill seed",
     "dill weed",
-    "fenugreek seed",
     "marjoram",
     "oregano",
     "paprika",
     "parsley",
     "peppermint",
-    "poppy seed",
     "rosemary",
     "saffron",
     "sage",
@@ -114,6 +109,38 @@
       ]
     }
   },
+  "synonym_rows": [
+    {
+      "from": "anise seed",
+      "to": "aniseed",
+      "source": "PROVISIONAL: alias of existing lexicon row \"aniseed\" (same ingredient (anise), same part (the seed), same form: 'aniseed' is the existing row's spelling of 'anise seed'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171316 \"Spices, anise seed\""
+    },
+    {
+      "from": "caraway seed",
+      "to": "caraway",
+      "source": "PROVISIONAL: alias of existing lexicon row \"caraway\" (same ingredient and part: the spice caraway is the seed; no other part is sold as 'caraway'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170918 \"Spices, caraway seed\""
+    },
+    {
+      "from": "cumin seed",
+      "to": "cumin",
+      "source": "PROVISIONAL: alias of existing lexicon row \"cumin\" (same ingredient and part: the spice cumin is the seed; no other part is sold as 'cumin'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170923 \"Spices, cumin seed\""
+    },
+    {
+      "from": "fenugreek seed",
+      "to": "fenugreek",
+      "source": "PROVISIONAL: alias of existing lexicon row \"fenugreek\" (same ingredient and part as the owner's variant policy decision (fenugreek seed ~ fenugreek)); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171324 \"Spices, fenugreek seed\""
+    }
+  ],
+  "separate_rows": {
+    "coriander leaf": "different plant part from coriander seed",
+    "coriander seed": "different plant part from coriander leaf; the existing bare row 'coriander' is ambiguous between parts and is left untouched (not widened)",
+    "dill weed": "different plant part (leaf) from dill seed; the existing bare row 'dill' is left untouched (not widened)",
+    "dill seed": "different plant part (seed) from dill weed; the existing bare row 'dill' is left untouched (not widened)",
+    "peppermint": "different species from 'mint' (bare mint is an existing row)",
+    "spearmint": "different species from 'mint' (bare mint is an existing row)"
+  },
+  "policy_id": "variant-policy-1",
+  "policy_errors": [],
   "schema_errors": {},
   "provenance_errors": {},
   "ambiguity_queue": [
@@ -196,6 +223,14 @@
       "reason_code": "qualifier_unresolved",
       "reason": "qualifier(s) ['cider'] are not clause forms and cannot be resolved mechanically",
       "description": "Vinegar, cider"
+    },
+    {
+      "term": "poppy seed",
+      "source_row": "fdc_sr_legacy:171330",
+      "origin": "policy",
+      "reason_code": "overlaps_conditioned_clause",
+      "reason": "FAO Table 1 Group 1 also lists 'tree and ground nuts and other oily seeds (with no added salt or sugar)': a conditioned clause. Poppy seed sits on the boundary between that clause and the unconditioned herbs-and-spices clause; the boundary is unresolved, so it is parked (same discipline as the juice rows).",
+      "description": ""
     }
   ],
   "flip": {
@@ -226,9 +261,10 @@
     "inputs": 66,
     "harness": {
       "lexicon_rows_before": 115,
-      "lexicon_rows_after": 140,
+      "lexicon_rows_after": 135,
+      "synonym_rows_added": 4,
       "terms_recognised_before": [],
-      "terms_recognised_after": 25
+      "terms_recognised_after": 24
     }
   },
   "clause_check": "PASS",
