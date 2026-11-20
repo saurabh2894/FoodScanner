@@ -25,4 +25,4 @@ Licence unverified, so nothing is imported. A future adapter must meet this inte
 same gate (WS4) with no shortcut. Until then `scripts/fdc_ingest.py` refuses it ("hook only").
 
 ## Open Food Facts: reference only
-Open Food Facts remains the source of the frozen evaluation inputs (already in the repo under their stated terms). Nothing is incorporated from it into vocabulary: the ODbL share-alike fit is unresolved. The registry marks it `reference_only`.
+Open Food Facts remains the source of the frozen evaluation inputs (already in the repo with the terms string in each manifest; no ODbL notice or share-alike decision is recorded for them: see evaluation/out_of_sample_herb_spice_1/README.md section 3). The out-of-sample challenge set keeps its texts OUT of the repo (gitignored cache). Nothing is incorporated from it into vocabulary: the ODbL share-alike fit is unresolved. The registry marks it `reference_only`.
