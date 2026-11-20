@@ -1,0 +1,232 @@
+[
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q02_8908000794023.jpg",
+  "total_ms": 17246,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "—— — El\noi ” ee id ” 4\nsi Te { w,\n—t f J\ny A x 1 F : 1 Se fr - 4\nas gM $F ~ { * pe Ra ed /\now I £55 £y > 4 ¢ 74 A\nLi Joa 8 xr\n; . [ NE on\n: 1 PE 1“ $m 7 : > oo dy\nfe Lie te ee Si\nk | HE oo ig as 3 . \"“y rr # §\nB= Bs 2s 2) . RY 4 4 i\nPo LL es i : ¢ A\n2 - - | 00\nF i —— ae #\na MAY tg 7\na Soden 1 Pre 10% | 4,\nRc 5. — 7d\n] LDR 0\n2.1 A ROA 4 or Rodos 3 Distary Allowance par serving J\nog ” 5 . y p\npan EA 2 , WEN YT 2 A\ni ~ Wiredients : Milk Solids 7\n™ a1 ht rt 7\n= E | KOLRAPUR ZILLA SAHAKARI DUDH |\n5 = i eit LID, KOLHAPUR, = = —_— = 7 n\n=~ : Bt, MIDE Shirgaon, = = / de -\nv i Kolhapur 415, Mahzashbse Zoi “rf a EL\na » rr A 4 oF Ya Er\n3 ig Ci A a pl a 1\n\\ 2 wi 8 p ATRURRGL g BF PR _ E\niar | 250 SG XS 2 * 3\n| t 3 seo Pt probe af BU = i | FE\nTLE be : 5 a er z 4 7 ; fo Lise FE\n«Y 5 \"F XDUAPGR7ILLA SAHAKARL ou ress 888\na= © ronson UT KOLHAPY A aa. 4000\nTe x oe TY ’ > 1 0, 89,5 7, ae Ee\nA = DC Co arose. _ -.\n- ie, Ne A — = a\need Le } For Consumer Care Cell al Kolhapur ie FP = . E i\n. wh. 0 on above Lo Eo\n“aed iy Contact Manager Marketing 0 g12311 0 15 - 4 E\nET bv Address or Phone No. 0234-2 « E\nwo Email | mdg@gokuimilk.coop____, { =\n: Lo» Sipe, . - a ;\nE \\ oe =\noy » it Proraaced KL DatRba BY puoK - \"4\nee ms Ol gases ACRE Ly KAR! 4 \\ 1\nre oo Gp HLA SAAC yp i\n- > R 7 Arana SANGHATD. lg as a.’ |\n1 X 5 Hagen A KB VT, , 5,\n‘ < a |\ngo \" WB gem YR} lite . ars HC Cia\nFE - ro? A Se f Js =.\nIRRRSE : i Se is SE Eg Nr ni § H EOE Rs ENR En Eg\na EV «a\nee Ea Ls ee\naut \" Eo a Re\nit he a Sade\nad ; Eo Te\n",
+  "calls": [
+   {
+    "ms": 10183,
+    "text": "—— — El\noi ” ee id ” 4\nsi Te { w,\n—t f J\ny A x 1 F : 1 Se fr - 4\nas gM $F ~ { * pe Ra ed /\now I £55 £y > 4 ¢ 74 A\nLi Joa 8 xr\n; . [ NE on\n: 1 PE 1“ $m 7 : > oo dy\nfe Lie te ee Si\nk | HE oo ig as 3 . \"“y rr # §\nB= Bs 2s 2) . RY 4 4 i\nPo LL es i : ¢ A\n2 - - | 00\nF i —— ae #\na MAY tg 7\na Soden 1 Pre 10% | 4,\nRc 5. — 7d\n] LDR 0\n2.1 A ROA 4 or Rodos 3 Distary Allowance par serving J\nog ” 5 . y p\npan EA 2 , WEN YT 2 A\ni ~ Wiredients : Milk Solids 7\n™ a1 ht rt 7\n= E | KOLRAPUR ZILLA SAHAKARI DUDH |\n5 = i eit LID, KOLHAPUR, = = —_— = 7 n\n=~ : Bt, MIDE Shirgaon, = = / de -\nv i Kolhapur 415, Mahzashbse Zoi “rf a EL\na » rr A 4 oF Ya Er\n3 ig Ci A a pl a 1\n\\ 2 wi 8 p ATRURRGL g BF PR _ E\niar | 250 SG XS 2 * 3\n| t 3 seo Pt probe af BU = i | FE\nTLE be : 5 a er z 4 7 ; fo Lise FE\n«Y 5 \"F XDUAPGR7ILLA SAHAKARL ou ress 888\na= © ronson UT KOLHAPY A aa. 4000\nTe x oe TY ’ > 1 0, 89,5 7, ae Ee\nA = DC Co arose. _ -.\n- ie, Ne A — = a\need Le } For Consumer Care Cell al Kolhapur ie FP = . E i\n. wh. 0 on above Lo Eo\n“aed iy Contact Manager Marketing 0 g12311 0 15 - 4 E\nET bv Address or Phone No. 0234-2 « E\nwo Email | mdg@gokuimilk.coop____, { =\n: Lo» Sipe, . - a ;\nE \\ oe =\noy » it Proraaced KL DatRba BY puoK - \"4\nee ms Ol gases ACRE Ly KAR! 4 \\ 1\nre oo Gp HLA SAAC yp i\n- > R 7 Arana SANGHATD. lg as a.’ |\n1 X 5 Hagen A KB VT, , 5,\n‘ < a |\ngo \" WB gem YR} lite . ars HC Cia\nFE - ro? A Se f Js =.\nIRRRSE : i Se is SE Eg Nr ni § H EOE Rs ENR En Eg\na EV «a\nee Ea Ls ee\naut \" Eo a Re\nit he a Sade\nad ; Eo Te\n"
+   },
+   {
+    "ms": 5294,
+    "text": "aE\ni a | i as\n= = af fo : ae faa\nSgt” - / u : 2 $1 EY Fr / jf = Ti, LT wu =:\nI | Ws § 3 7 LL\nA 1 Tim ze FP = eer, oh Ce E\nCoys pe Ca ae nn Fo EE\ni = YY a\n7 Vom | 0/8 Lm\nE ee CE 7 7d pe ea i A\nfiona Yighe = 4 CU\non [ER oe pe] ‘ ee\nNl = Zh Ingredients : Milk Solids 7% ” Ee ey\n4 7 NPR Dk SAAKARY DUDH - Ep\n: § ee Lo KOUAPIR. 5 é 4 -\n| MIDE | Shirgaon, => > / o FE 0\n- iq = Kohepw 415.23 Se « o E\nWw % = % A : -\n= 5 eg ims BL Z . p> 5 r =\n~ TY) For Kegon of Packaa Th, 5 7 oo E @\n\\ Z rr 2 A BY. Z 7 0\nin  Nanuaciieg Pao 7 f 3\nTw x KoLsAPgR 7h LA SARRKARI DUD = _ 2 & -\nL in i THA SINGH LID, KO, TAN . ¥ a\nw © B4MiDe Goi Snigadh > ! ae\n: a ” Bai Tse ;\n- a Go voAmmpnss = i : ye\n- A 3 «{ For Consumer Care Cell Khe Z x 5 9\nat | Contact M Marketing 5 a. i\nT. 4 £\\ Moras or Phe aera tod k :\nw Ol Eval, midg@gokuimik 000p { Lo\n: Ve 2\n\" ') Processed LPEORS Bf puDH: \\\n3 - Sd! a Br LR SAHARA Tol 4 / S\n1 be 2) Ci ¥oppik SANOH LTD. KOU Cutt :\nTe N = EK AFCO TL is \\\n\" dy. 3 = 25 = 0 Nah aro - 430 70% y\n1 Te ’ a Jo a\nSi. N a E Als. Yo. od is 4\n- LJ eT Wr hn | #\nFi fe. og EVs iv VEE AN LOW i\nRn 7 Yo mF ¥\ni a Je are Ww.\n| Le ENED REX ‘\n7! TY 2 0)\nFOOTE pe a eT a ee fF  -. LL\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q03_8906041150501.jpg",
+  "total_ms": 1309,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: ingredient list looks truncated (ends mid-word or unrecognised: \"lodised Sal AONTAINS MILK\")\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\nWater\nCurd\nlodised Sal AONTAINS MILK\nCOMPLETENESS: UNCERTAIN\n\n6 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 0 set aside after the list, 0 declared. 1 of 3 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nthe heading was read as \"WGREDIENTS\": the photo may be cut off at the left edge\nthe list looks truncated\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\nlodised Sal AONTAINS MILK\nRaw text analysed",
+  "ocr": "RE -\nWGREDIENTS : Water, Curd, lodised Sal\nAONTAINS MILK\n",
+  "calls": [
+   {
+    "ms": 413,
+    "text": "RE -\nWGREDIENTS : Water, Curd, lodised Sal\nAONTAINS MILK\n"
+   },
+   {
+    "ms": 388,
+    "text": "fignet | 9] } RAPA temett 080\nINGREDIENTS . Water, Curd, lodised Salt\nsoNTAINS MILK |\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q04_8906036670212.jpg",
+  "total_ms": 1499,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "NOVA group 1: unprocessed or minimally processed foods\n\nLabel-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nDRIVEN BY\nMilk Solids (Toned Milk): milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)\nNUPENS-USP classification page (research/04)\nActive Culture: milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)\nNUPENS-USP classification page (research/04)\nEXTRACTED INGREDIENTS\nMilk Solids (Toned Milk)\nActive Culture\nCOMPLETENESS: COMPLETE\n\n6 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 2 set aside after the list, 2 declared. 0 of 2 items are outside the vocabulary. All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.\n\nRaw text analysed",
+  "ocr": "ingredients: Milk Solids (Toned Milk) & Active Culture\nAllergen Advice: contains Milk\n",
+  "calls": [
+   {
+    "ms": 849,
+    "text": "ingredients: Milk Solids (Toned Milk) & Active Culture\nAllergen Advice: contains Milk\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q05_8904089915137.jpg",
+  "total_ms": 5161,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "| VOSA Ren Leber SERENA ER HS RE\n; Toy] a RAR BB & ;\ngE “4 ! £4) Sr : 18 1 m AEN © g\ni. fe 4-2 fa Hg } § | § ? > :\naR FE dem SC were | Y | ! ¥ ¢ N\nRn A TORRE ce TR Re ERR cuss of LT 3 a | ou ’ OX a v LN LA v id ;\n* fea 3 fo GE TAT TAR 3 BE Tp\noS SX S fa RS Cian 5 AR JARRA\n) wn ; > | me of & 5\ngs BN Ir Bad 0 © 4 [a Bed 4 7\nNT e——— E - BR 5 h y | 'S i\nTTTTTEREE Ww Sel MA) y 2 ¥ 4 | LA\nTEER as “svg CER, A A CREE Nr tht cyt\np.! Va a poco ESA ie ~ r 5 G 4\nJ ¢ jy pve y b ¢ pT bh =} . n|\nTR aye BraR 4 i I é | tie H ) Vy i n\ni CE et RR ES aca ie oo aes fi adh 44 |\nA se ER ER A EE TE BL EET Wh 3 7 Ad\n3 : thy RRR RN, ET — p— — mr eee rea Bes ree lom rreee ———ce pe ——r——— ~ en sn mee ST\n9 pr: WW AiR Com RS CTE TT Arey CIT nig\n",
+  "calls": [
+   {
+    "ms": 3904,
+    "text": "| VOSA Ren Leber SERENA ER HS RE\n; Toy] a RAR BB & ;\ngE “4 ! £4) Sr : 18 1 m AEN © g\ni. fe 4-2 fa Hg } § | § ? > :\naR FE dem SC were | Y | ! ¥ ¢ N\nRn A TORRE ce TR Re ERR cuss of LT 3 a | ou ’ OX a v LN LA v id ;\n* fea 3 fo GE TAT TAR 3 BE Tp\noS SX S fa RS Cian 5 AR JARRA\n) wn ; > | me of & 5\ngs BN Ir Bad 0 © 4 [a Bed 4 7\nNT e——— E - BR 5 h y | 'S i\nTTTTTEREE Ww Sel MA) y 2 ¥ 4 | LA\nTEER as “svg CER, A A CREE Nr tht cyt\np.! Va a poco ESA ie ~ r 5 G 4\nJ ¢ jy pve y b ¢ pT bh =} . n|\nTR aye BraR 4 i I é | tie H ) Vy i n\ni CE et RR ES aca ie oo aes fi adh 44 |\nA se ER ER A EE TE BL EET Wh 3 7 Ad\n3 : thy RRR RN, ET — p— — mr eee rea Bes ree lom rreee ———ce pe ——r——— ~ en sn mee ST\n9 pr: WW AiR Com RS CTE TT Arey CIT nig\n"
+   },
+   {
+    "ms": 562,
+    "text": "Ingredients: Milk Solids oned | Wilk), Vitamin A Palmitate &\nVitamin D{(Eraocalciferol)\n~—=1aens information: Contains Mill\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q06_8906117360360.jpg",
+  "total_ms": 8108,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Cow Milk For any queries reach us at, fat 3.50% Min\n\nWarning: Few of the items were recognised, so this text may not be the ingredient list\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\nPasteurized Cow Milk For any queries reach us at\nfat 3.50% Min\nCOMPLETENESS: UNCERTAIN\n\n13 words read as ingredients (59% of the list region); 9 not read, 0 unaccounted, 58 set aside after the list, 0 declared. 2 of 2 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nfew of the items were recognised: this text may not be an ingredient list\nNOT READ AS INGREDIENTS\n\nText after the list, shown here so nothing is hidden.\n\n, SNF 8.50% Min. p— S—— —_—r ie. pends\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\nPasteurized Cow Milk For any queries reach us at\nfat 3.50% Min\nRaw text analysed",
+  "ocr": "Countryg THE HONEST\nwt MILK COMPANY |\noe ’Y o6 Ne” Nr f\n/ \" Yi” ;\n4 | Pp ee ;\n\\ \\ F 5\n\\\nCow Milk Ns |\nIngredients:\nPasteurized Cow Milk For any queries reach us at,\nfat 3.50% Min., SNF 8.50% Min. p— S—— —_—r ie. pends\nAllergen :- CONTAINS MILK info@countrydelightin, 4\n| tent: 450 www.countrydetight.in .\n| Met Cost - Manufactured & M; :\n: & Marketed By: {\n4 id ple) . oe **RD/ SY NO. 339, PHASE V, ( hi: Xa :\naaa OE 3 PETITE ch Or ev\n\n——— a a A —-— —— ia WARE pe FR R—— iin ph ht Ch Tk a a ch : TRE\n= 2% 7 oy we weew  -\n",
+  "calls": [
+   {
+    "ms": 3581,
+    "text": "Countryg THE HONEST\nwt MILK COMPANY |\noe ’Y o6 Ne” Nr f\n/ \" Yi” ;\n4 | Pp ee ;\n\\ \\ F 5\n\\\nCow Milk Ns |\nIngredients:\nPasteurized Cow Milk For any queries reach us at,\nfat 3.50% Min., SNF 8.50% Min. p— S—— —_—r ie. pends\nAllergen :- CONTAINS MILK info@countrydelightin, 4\n| tent: 450 www.countrydetight.in .\n| Met Cost - Manufactured & M; :\n: & Marketed By: {\n4 id ple) . oe **RD/ SY NO. 339, PHASE V, ( hi: Xa :\naaa OE 3 PETITE ch Or ev\n\n——— a a A —-— —— ia WARE pe FR R—— iin ph ht Ch Tk a a ch : TRE\n= 2% 7 oy we weew  -\n"
+   },
+   {
+    "ms": 2953,
+    "text": "7 il THE HONEST\net MILK COMPANY\n# 7 — | J o BY cps,\nH 4+ 1 h A Fim,\n\n| i i f or |\n| ALUN 7\n| Cow Milk a |\nIngredients: For any queries reach us at, y\n| Pasteurized Cow Mik il Address: Same as below, ©+91- 6366235177. :\nfat 3.50% Min., SNF 8.50% Min. Mon. to Sun. ~ 06 am to 09 pm ;\nwww.countrydelight. :\n\nNet Content: 450m Manufactured & Marketed By:\n\nition Facts per 100 mi serving Beejapuri Dairy Private Limited |\nee \"Per |\"*%RDA 8YNO. 339, PHASE V, Chinnakanjrala(y), |\nNutrient Information Patancheru(M), Sangareddy, 4\n— [61keal] 3% | Telangana, India -502319 ;\n4alories (29g | | 59 Ei 4\nSonyizes — 2 -— fisat Lic.No.13622026000332 |\nSugar Sugar | (0g | [0% | ;\nincludes AddeS== oo og Store under refrigeration\nNal Fet 72a iow below 5°C ¢\nfaturat q £\nTans fat Tm i\nCholesterol [Smg | 2% | 4\nSodium End E\n\n» xi owance g\neX oc ona 2000kct he Your ay © 8%06117\"3603¢ 4\nRDA) 42 Cy vary based on your calorie needs. A : 4\nER TT — A 4\natch No., USE BY DATE, > = oe Fix LLP - Daman :\ncl of all taxes) see stamp Rais Fes 17 Oo, wenn co &\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q07_8904057396166.jpg",
+  "total_ms": 1469,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\nMilk\nMilk Solids\nCOMPLETENESS: COMPLETE\n\n3 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 2 set aside after the list, 2 declared. 0 of 2 items are outside the vocabulary. All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.\n\nRaw text analysed",
+  "ocr": "Ingredients: Milk & Milk Solids\nAllergen Information: Contains Milk\n",
+  "calls": [
+   {
+    "ms": 477,
+    "text": "Ingredients: Milk & Milk Solids\nAllergen Information: Contains Milk\n"
+   },
+   {
+    "ms": 428,
+    "text": "Ingredients: Milk & Milk Solids\" Lil\nAllergen Information: Contains Milk\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q08_8906024480380.jpg",
+  "total_ms": 12190,
+  "errs": [],
+  "status": "Done (the second reading, with lighting correction, gave more and was used). The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: ingredient list looks truncated (unclosed bracket)\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\nMilk solids\nVitamin 4 # ee) 9) Pld Parc) rf Vien Ofte Jot Quantify B00 0 es <8 Aa\nCOMPLETENESS: UNCERTAIN\n\n18 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 281 set aside after the list, 4 declared. 1 of 2 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nbrackets are not balanced: text may be cut off or misread\nthe list looks truncated\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\nVitamin 4 # ee) 9) Pld Parc) rf Vien Ofte Jot Quantify B00 0 es <8 Aa\nRaw text analysed",
+  "ocr": "BR i : 5 |\n» p= A Ingredients: Milk solids, Vitamin 4\n# ee) 9) Pld Parc) rf Vien Ofte Jot Quantify B00 0 es <8\nAa Allergens: Contains Milk Fo i\nB35 Se 4 ¢ %\nsr FAT 3.0%, SNF 8.5% ; : 5 E3\n4, DODLA DAIRY Mig. Plant/Baich No i |\nAR Marketed by Nutritional Information (Approx. values) Date of Manufacture/Use by : oet 3\na on ; § Goon 3\nDODLA DATRY LIMITED MRP 7 pre ;\n8-2-293/82/A, Plot No.270 0, Road No. 10 C (incl. of all taxes) on\nJubilee Hills, Hyderabad, Telangana - 500033 [Eww [Ska | 5 | ynitSaldPricepermi? <a\nPoh [31g | 6 | E\nara BCT Te  covomons + IEEE\nspol RCT BT WS AFTER OPENING OF PACK STORE [°°\n5 For Manufactured by unit address | Addedsugars | 09 | 0 | JNDER REFRIGERATION AT 4°C AN |\n3 (Read the First Character of the Batch No. Total tat Cle 0% ko] CONSUME WITHIN 24 HRS ad\npr CT To 00 NOT BUY IF PACKET 1S PUFFED\nDODLA DAIRY LIMITED [Vest | 006g | 3 | ORLERKY TTT\n! SyNo.163 8164, Indsagi vitage, [Sodum | awomg | 2 | oe\nBR CN UTI 2\ni : Lic. No. 10015043001144 [Added tamin A | 36 ugRE | 4 | & Os Lid\n; x va y Emi\n| A Syo 4, henchrth Viage, Golapok Mande, [eaves atten ower ule\nEast Godavari, Andhra Pradesh - 533449. #Per serve percentage (%) contribution to Ny\nLic. No. 10019044001479 Recommended Dietary Alowance (RDA] is 5\nCalculated on the basis of 2000 cal energy for an\nCONSUMER SERVICES: average adult per day (FSSAVICMR %RDA) :\nFor compla/nt/Feedback, Contact Consumer Care\nExecutive a: \"Marketed by” Address. | | : as\nToll Free No.1\" J. 103-14/7¢10 AM to 5 PM | 2\n: from Mo- day  Satlirday) 5\nE-mu, «tomercare@dodiadairy,com, EY |\nHEE ww dod\" dairy. com 4 ! :\ngit | 8906024480380 | | :\n4 3 5 1 7 p Gi a 7 po” . : 3 A : HE X §\n",
+  "calls": [
+   {
+    "ms": 6671,
+    "text": "| -m\npode. oo k\nSs Po se\n= a Ron voairuc ur ® : j\nRPC % 7% - 5 pen od. solids, Vitamin A i :\nems itate) and Vitamin D(Ergocalciferol) Es\na i | Rew 5 » Fa od g\ndw Merges: Cras Wo Net Quanity: ~ 500 mi : 8\nt 3 i c: 7 MH 7 4 DAIRY FAT 3.0%, SNF 8.5% Ho ; £ i |\ncai Mark Hed by: Nutritional Information (Approx. values) y- : ; ; 5 Y\ntd : i ale 0 = DAIRY LIMITED Serving size 100 mi 5 Servings per pack Date of Manufacture/Use by : roo 3\nHo 8-2-233/82/A, Plot No.270 0, Road No. 10 C Amount pe 100 mi ping Wh Fg\nhe : per serve (incl. of all taxes) Side 3\nNy Jubilee Hills, Hyderabad, Telangana - 500033 (Enwgy ~~ | S0Kel | 3 | bats\neRe fat = pa Ta Unit Salé Price permi 2 © Eo\n2 On : y 1 - 1% MINT724 *\nSEE Lic. No. 1001707000724 Outinyrats | 489 | 4 | STORE UNDER COOL AND DRY E 3\nER Manufactuccd by me lL CONDITIONS 5d\ni For Manufactured by unit address ee foe Lo AFTER OPENING OF PACK STORE :\nBr (Read the First Character of the Batch No how 10s 1 8 J JNDER REFRIGERAT CA! rs\n: -r ERATION AT 4°C AND i\nand see below) a TREE RL CON\nBOD I ED\nLA DAIRY i [Vet [008g | 3 | DO NOT BUY IF PACKET IS PUFFED\n| SyNo.163 &164, Indrag village, | Costes) | fomg | | PR LEARY HH\nKoppal Talk i. Dist, Kamataka -583231. [Sodum 1am | 7 | 3\ngs Lic. No. 10015043001144 [Com | tiomg | 1 |  P™, £\nSy.No.93, Chendurthi Village, Gollaprolu Mandal, | Added vitamin D | EE a—— ——— }\nEast Godavari, Andhra Pradesh - 533449. . hi ised 2; |\nic N n # Per serve percentage {%) contribution te 4 a8\nL i 10 01 9044001479 Recommended Dietary Niowsncs (ADA) : i\nCONSUMER Sr VICES: Glo nd on the basis of 2000«cal energy for an & 4\nFor complaintFeedback Contact EL, average adult per day (FSSAVICMR %RDA) 4 i\nExecutive a: \"Marketed by\" Address, ; ia\nTd Free No 1 1031477640 AM to 5 PM a\naii from Mo day  Sattirday) | a\nob Em shomercaB@dodladairy.com, + | 1H 1 | eh OE wo\nLSE ww dod” dairy gm v HHH i es al el\nTE | LAI90SRREBRaT RON ps ole da\nBe hI BE {5 AEE ey go REC CE ER ERE SRE fo\nae SG TE LE aT TEE Ee ha le Taam ab\n"
+   },
+   {
+    "ms": 4234,
+    "text": "BR i : 5 |\n» p= A Ingredients: Milk solids, Vitamin 4\n# ee) 9) Pld Parc) rf Vien Ofte Jot Quantify B00 0 es <8\nAa Allergens: Contains Milk Fo i\nB35 Se 4 ¢ %\nsr FAT 3.0%, SNF 8.5% ; : 5 E3\n4, DODLA DAIRY Mig. Plant/Baich No i |\nAR Marketed by Nutritional Information (Approx. values) Date of Manufacture/Use by : oet 3\na on ; § Goon 3\nDODLA DATRY LIMITED MRP 7 pre ;\n8-2-293/82/A, Plot No.270 0, Road No. 10 C (incl. of all taxes) on\nJubilee Hills, Hyderabad, Telangana - 500033 [Eww [Ska | 5 | ynitSaldPricepermi? <a\nPoh [31g | 6 | E\nara BCT Te  covomons + IEEE\nspol RCT BT WS AFTER OPENING OF PACK STORE [°°\n5 For Manufactured by unit address | Addedsugars | 09 | 0 | JNDER REFRIGERATION AT 4°C AN |\n3 (Read the First Character of the Batch No. Total tat Cle 0% ko] CONSUME WITHIN 24 HRS ad\npr CT To 00 NOT BUY IF PACKET 1S PUFFED\nDODLA DAIRY LIMITED [Vest | 006g | 3 | ORLERKY TTT\n! SyNo.163 8164, Indsagi vitage, [Sodum | awomg | 2 | oe\nBR CN UTI 2\ni : Lic. No. 10015043001144 [Added tamin A | 36 ugRE | 4 | & Os Lid\n; x va y Emi\n| A Syo 4, henchrth Viage, Golapok Mande, [eaves atten ower ule\nEast Godavari, Andhra Pradesh - 533449. #Per serve percentage (%) contribution to Ny\nLic. No. 10019044001479 Recommended Dietary Alowance (RDA] is 5\nCalculated on the basis of 2000 cal energy for an\nCONSUMER SERVICES: average adult per day (FSSAVICMR %RDA) :\nFor compla/nt/Feedback, Contact Consumer Care\nExecutive a: \"Marketed by” Address. | | : as\nToll Free No.1\" J. 103-14/7¢10 AM to 5 PM | 2\n: from Mo- day  Satlirday) 5\nE-mu, «tomercare@dodiadairy,com, EY |\nHEE ww dod\" dairy. com 4 ! :\ngit | 8906024480380 | | :\n4 3 5 1 7 p Gi a 7 po” . : 3 A : HE X §\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q09_8904011302837.jpg",
+  "total_ms": 3281,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "| -\noh\n3 — ee) —\n4 . |  -\n£3 “ | man\nSad { i\nScien. 4 : i\nNo 4 4 f 7\n«5 J § ’»\n[> 2 v\n0 o | -\n7 |\niE ; ;\non = mp\nBa : HL)\nx /\npi -\ncy A =\nwv §\n} Vv EE | @ ~\nb | ; @®\ngh\nte Coo fe 5)!\nCo _\n¥ : ud\nBs\nSe\n8a\nIRE\n",
+  "calls": [
+   {
+    "ms": 1642,
+    "text": "| -\noh\n3 — ee) —\n4 . |  -\n£3 “ | man\nSad { i\nScien. 4 : i\nNo 4 4 f 7\n«5 J § ’»\n[> 2 v\n0 o | -\n7 |\niE ; ;\non = mp\nBa : HL)\nx /\npi -\ncy A =\nwv §\n} Vv EE | @ ~\nb | ; @®\ngh\nte Coo fe 5)!\nCo _\n¥ : ud\nBs\nSe\n8a\nIRE\n"
+   },
+   {
+    "ms": 607,
+    "text": "da 73\nJule\nLezl\n7% = |\n\n~ A n IN\n\ni = 5 FR\nfog 1\n\n}] &\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q10_8906177761084.jpg",
+  "total_ms": 1528,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: OCR produced little text; retake the photo closer and in focus\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "i\n1\n5 |\n3\nEs\nE\n",
+  "calls": [
+   {
+    "ms": 269,
+    "text": "i\n1\n5 |\n3\nEs\nE\n"
+   },
+   {
+    "ms": 536,
+    "text": "INGREDIENT: MilK solids\n¢ (Pasteurized skimmed cow milk)\n* Fat: 0.5% maximum\n= SNES 8.7% minimum\n+ Allergen Declaration: Contains milk\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q11_8901030975530.jpg",
+  "total_ms": 3666,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: ingredient list looks truncated (unclosed bracket)\n\nWarning: A bracket near \"dity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407),\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)\n\nWarning: Two readings of the photo disagree on additive codes: INS 339(i) in the first reading, INS 339 in the second. Possible misread, check the pack.\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nWEAK EVIDENCE SEEN (NOT ENOUGH TO DECIDE)\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:: \"acidity regulator\" (unlisted_additive)\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:: \"stabiliser\" (unlisted_additive)\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:: INS 339(i) (not in local mapping)\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:: INS 418 (not in local mapping)\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:: INS 407 (not in local mapping)\nEXTRACTED INGREDIENTS\nToned Milk (60%)\nWater\ni Sugar\nCereal product (3%)\nMilk Solids\n14 Minerals\nAcidity Regulator (INS 339 (i) Stabilizers (INS 418, INS 407), Vitamins:\nADDITIVE CODES\n\n3 codes found: 0 with a decision rule, 3 without.\n\nAcidity Regulator\nINS 339(i)\nCode not in the table\nNot in the table yet\nINS 418\nCode not in the table\nNot in the table yet\nINS 407\nCode not in the table\nNot in the table yet\n\nCannot count as a marker. If nothing else decides, the result stays uncertain.\n\nCOMPLETENESS: UNCERTAIN\n\n24 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 8 set aside after the list, 3 declared. 3 of 7 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nbrackets are not balanced: text may be cut off or misread\nthe list looks truncated\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\ni Sugar\nCereal product (3%)\n14 Minerals\nRaw text analysed",
+  "ocr": "9 Ty \\ Tatra Pak OR IF\n-r 0 Ry qT # gE £45\nIngredients: Toned Milk (60%), Water, i\nSugar, Cereal product (3%), Milk Solids, 14\nMinerals, Acidity Regulator (INS 339 (i)\nStabilizers (INS 418, INS 407), Vitamins:\nAllergen Information: Contains Milk, 5\nWheat, Barley and Soy. 8\nann\n",
+  "calls": [
+   {
+    "ms": 1484,
+    "text": "9 Ty \\ Tatra Pak OR IF\n-r 0 Ry qT # gE £45\nIngredients: Toned Milk (60%), Water, i\nSugar, Cereal product (3%), Milk Solids, 14\nMinerals, Acidity Regulator (INS 339 (i)\nStabilizers (INS 418, INS 407), Vitamins:\nAllergen Information: Contains Milk, 5\nWheat, Barley and Soy. 8\nann\n"
+   },
+   {
+    "ms": 1404,
+    "text": "\", ; hi ND SY Ia b\nEE Bi rf p Or A ] [\nNL SY 13\n\nDairy Based Drink (Proprietary food) |\nIngredients: Toned Milk (60%), Water ©\nSugar, Cereal product (3%), Milk Soli i i\nMinerals, Acidity Regulator (INS 339 1) F¥\nStabilizers (INS 418, INS 407), Vitamins: = Z;\nAllergen Information: Contains Milk, ]\nWheat, Barley and Soy. pl |\n| fssat CEN Y a by 4 |\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q12_8906059639890.jpg",
+  "total_ms": 3174,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "NOVA group 4: ultra-processed foods\n\nLabel-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.\n\nWarning: A bracket near \"dity Regulator [INS 339 (iil b Eble Common Salt Vitamin A&Vi\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)\n\nWarning: A bracket near \"lator [INS 339 (iil b Eble Common Salt Vitamin A&Viamin D. ~\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)\n\nWarning: List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough.\n\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nDRIVEN BY\nEmulsifier& ~~ Stabilizers [INS 471; INS 407, INS 412]: \"emulsifier\" (cosmetic_additive)\nresearch/02 marker class 2 (emulsifiers)\nEmulsifier& ~~ Stabilizers [INS 471; INS 407, INS 412]: INS 471 (emulsifier)\nresearch/02 \"Indian label specifics\" example \"Emulsifier (INS 471)\" + marker class 2 (emulsifiers)\nFlavour (Natural Favouring Substances): \"flavour\" (cosmetic_additive)\nresearch/02 marker class 2 (flavourings)\nEXTRACTED INGREDIENTS\nSkimmed Milk (80%)\nSugar\nWater\no Milk Solids\nCocoa Powder (1.5%)\nEmulsifier& ~~ Stabilizers [INS 471; INS 407, INS 412]\nFlavour (Natural Favouring Substances)\nAcidity Regulator [INS 339 (iil b Eble Common Salt Vitamin A&Viamin D. ~~\nADDITIVE CODES\n\n4 codes found: 1 with a decision rule, 3 without.\n\nEmulsifier& ~~ Stabilizers [INS 471; INS 407, INS 412]\nINS 471\nemulsifier\nSource: Project research notes\nUltra-processing marker\nINS 407\nCode not in the table\nNot in the table yet\nINS 412\nCode not in the table\nNot in the table yet\nAcidity Regulator [INS 339\nINS 339\nCode not in the table\nNot in the table yet\n\nCannot count as a marker. If nothing else decides, the result stays uncertain.\n\nWhere these names come from\nCOMPLETENESS: UNCERTAIN\n\n37 words read as ingredients (100% of the list region); 0 not read, 0 unaccounted, 0 set aside after the list, 0 declared. 2 of 8 items are outside the vocabulary. This is text coverage, not a guarantee that characters, digits or the list are complete or correct.\n\nbrackets are not balanced: text may be cut off or misread\nthe list looks truncated\nNOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\no Milk Solids\nCocoa Powder (1.5%)\nRaw text analysed",
+  "ocr": "a Ingredients: Skimmed Milk (80%), Sugar, Water,\no Milk Solids, Cocoa Powder (1.5%), Emulsifier& ~~\nStabilizers [INS 471; INS 407, INS 412], Flavour (Natural\n Favouring Substances), Acidity Regulator [INS 339 (iil\nb Eble Common Salt Vitamin A&Viamin D. ~~\n",
+  "calls": [
+   {
+    "ms": 1328,
+    "text": "a Ingredients: Skimmed Milk (80%), Sugar, Water,\no Milk Solids, Cocoa Powder (1.5%), Emulsifier& ~~\nStabilizers [INS 471; INS 407, INS 412], Flavour (Natural\n Favouring Substances), Acidity Regulator [INS 339 (iil\nb Eble Common Salt Vitamin A&Viamin D. ~~\n"
+   },
+   {
+    "ms": 1064,
+    "text": "+ Ingredients: Skimmed Milk (80%), Stgar, Water, =|\nMilk Solids, Cocoa Powder (1.5%), Emulsifierde === §\n§ Stalizers INS 471, INS 407, INS 412], Flavour (Natural =\n| Flavouring Substances), Acidity Regulator [INS 339 (ill,\nEdible Common Salt, Vitamin A & Vitamin Dn\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q13_8902080364053.jpg",
+  "total_ms": 5361,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: extracted text looks like noise, not a readable label; retake a clearer photo\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "Ir £ ;\n* y\nr\nie Nn As\ngeist\n==5227 == 8\nSescziT J5Eo=2 w\nHe ZZ2Z EZ =5 £\n= Eau —— 4\n=2Tz 3523285 =°S°¢\nE2225 Zoo322=5 = 3\nIR2=E0s E222 T 55 2\nBEER 222523 NE2 E\nBSc TSTo2O=X=% =\nISS 9< SESSc=2=r ES 2\n85 Tg Z=EETE33E\n== = £222 S= == =\n= S352 e==3\nSFR = x Fos =\n=S-15 EE ®%3= oT 3\n= 21 = === =\n= S = = o> =\n= =>= = == ==\nE23 Ee = :\n5 So EE= =\nSS & E ssseee= = §\n= E messes = = 3\n; wif : Ls 3 = BE =\npi gr a r\n=\n| |\n; z A % - ir\noi & . | 4 ;\n",
+  "calls": [
+   {
+    "ms": 3126,
+    "text": "Ir £ ;\n* y\nr\nie Nn As\ngeist\n==5227 == 8\nSescziT J5Eo=2 w\nHe ZZ2Z EZ =5 £\n= Eau —— 4\n=2Tz 3523285 =°S°¢\nE2225 Zoo322=5 = 3\nIR2=E0s E222 T 55 2\nBEER 222523 NE2 E\nBSc TSTo2O=X=% =\nISS 9< SESSc=2=r ES 2\n85 Tg Z=EETE33E\n== = £222 S= == =\n= S352 e==3\nSFR = x Fos =\n=S-15 EE ®%3= oT 3\n= 21 = === =\n= S = = o> =\n= =>= = == ==\nE23 Ee = :\n5 So EE= =\nSS & E ssseee= = §\n= E messes = = 3\n; wif : Ls 3 = BE =\npi gr a r\n=\n| |\n; z A % - ir\noi & . | 4 ;\n"
+   },
+   {
+    "ms": 1279,
+    "text": "J ) 7\n| E J\nXN :\n. —~— . LA aE | or\nLA HHE = ot\nHEE v\n5 sas \"\n== Hea bl |\n52 Cg aii o=d\ncil |\n2 =a H\n1 Ui ie kj\n\\ Wie\n- a |\n- Fr\ni . r p i ke\n"
+   }
+  ]
+ },
+ {
+  "image": "/tmp/claude-0/-home-user-FoodScanner/c105f301-faf6-5ec9-9c7e-cc5938f54053/scratchpad/batch4/img/Q14_8906006783591.jpg",
+  "total_ms": 13232,
+  "errs": [],
+  "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+  "result": "Not enough information: no ingredient list found in the text; retake the photo with the ingredient panel (and its \"Ingredients\" heading) in frame\n1\nUnprocessed or minimal\n2\nCulinary ingredients\n3\nProcessed\n4\nUltra-processed\nEXTRACTED INGREDIENTS\n\nNone found.\n\nRaw text analysed",
+  "ocr": "eae ERED hdmi Lar, Starch, BLE Taney Ty\nan & Stabilizing Agent (INS1422, | | A\noe INS415), Acidity Regulator INS260),\nOnion Powder, Garlic Powder, ’ 4 ' j h\n: & Condiments, Preservative (INS211) STR\nCONTAINS PERMITTED CLASS Ii 4 9\nPRESERVATIVE (INS211) F 2\nAllergy Instructions: This product was ny E\nmachinery and in a plant that also processes y »\nmilk solids, mustard, tree nuts andSesame seode™  §\ni | ___ (Typical approx value per %00g R -\nF | | Serving Size-15g E iE\n| No. of Servings per pack - 30 | a.\nEnergy Value (kcal) : 13702 103 & A8F\nProtein (g) : 1.58 047 9 -\nCarbohydrates (g) : 3378 1.69 — -\nSaturated Fat <4 : 009 0.0 wes of\nno) - 0.00 0.00 | Allowances fora\n— Mfg. Date ER\nco | nclusive of oll taxes) a\n",
+  "calls": [
+   {
+    "ms": 7039,
+    "text": "eae ERED hdmi Lar, Starch, BLE Taney Ty\nan & Stabilizing Agent (INS1422, | | A\noe INS415), Acidity Regulator INS260),\nOnion Powder, Garlic Powder, ’ 4 ' j h\n: & Condiments, Preservative (INS211) STR\nCONTAINS PERMITTED CLASS Ii 4 9\nPRESERVATIVE (INS211) F 2\nAllergy Instructions: This product was ny E\nmachinery and in a plant that also processes y »\nmilk solids, mustard, tree nuts andSesame seode™  §\ni | ___ (Typical approx value per %00g R -\nF | | Serving Size-15g E iE\n| No. of Servings per pack - 30 | a.\nEnergy Value (kcal) : 13702 103 & A8F\nProtein (g) : 1.58 047 9 -\nCarbohydrates (g) : 3378 1.69 — -\nSaturated Fat <4 : 009 0.0 wes of\nno) - 0.00 0.00 | Allowances fora\n— Mfg. Date ER\nco | nclusive of oll taxes) a\n"
+   },
+   {
+    "ms": 4074,
+    "text": "- JIETEREW oO, Starch, SiTTuisitying -\n: & Stabilizing Agent (INS1422,\nINS415), Acidity Regulator (INS260),\nOnion Powder, Garlic Powder, Spices | ,\n: & Condiments, Preservative (INS211) X\nCONTAINS PERMITTED CLASS Ii\nPRESERVATIVE (INS211) f\nAllergy Instructions: This product was pro. od of\nmachinery and in a plant that also processes gt. soyd\n; milk solids, mustard, tree nuts and sesame seod- A\n| Tr —\nF (Typical approx value per 100g) \\\nServing Size - 15 g LA\nNo. of Servings per pack - 30\nEnergy Value (kcal) : 137.02 1.03 y\nProtein (g) : 158 0.47\nCarbohydrates (g) : 3378 1.69\na) > 3225 9.68\nFat (g) : 0.51 010 *Approximate Value\nSaturated Fat(g) : 0,09 0.07 ‘Recommended Die\nae Fat (g) : 0.00 © 0.00 Allowances for an a\n| Ee wera, : 0.00 0.00 | adult (2000 keai en\nMfg. Date ; Se en Bo\nUse by : & Pedi Naga 3\n= Body 5-2 >\nBatch No, ; OD -0OB-YOH2E\nMRP? 3 = i ve 12\ni, Onciusive of all taxes) > » > § 5 g- : ’\nn- Net Weight : : jy 2\nNr Ta wn, a\n"
+   }
+  ]
+ }
+]

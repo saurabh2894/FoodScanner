@@ -1,0 +1,314 @@
+{
+ "Q02": {
+  "text": "Milk solids.",
+  "answered": true,
+  "group": 1,
+  "reason": null,
+  "items": [
+   "Milk solids"
+  ],
+  "warnings": [],
+  "unassessed": [],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "single recognised unprocessed food"
+  ]
+ },
+ "Q03": {
+  "text": "Water, Curd, lodised Salt CONTAINS MILK",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: lodised Salt",
+  "items": [
+   "Water",
+   "Curd",
+   "lodised Salt"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "lodised Salt"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "Q04": {
+  "text": "Milk Solids (Toned Milk) & Active Culture Allergen Advice: contains Milk",
+  "answered": true,
+  "group": 1,
+  "reason": null,
+  "items": [
+   "Milk Solids (Toned Milk)",
+   "Active Culture"
+  ],
+  "warnings": [],
+  "unassessed": [],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+  ]
+ },
+ "Q05": {
+  "text": "Milk Solids (Toned Milk), Vitamin A Palmitate & Vitamin D (Ergocalciferol) Allergens information: Contains Milk",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A Palmitate & Vitamin D (Ergocalciferol)",
+  "items": [
+   "Milk Solids (Toned Milk)",
+   "Vitamin A Palmitate & Vitamin D (Ergocalciferol)"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Vitamin A Palmitate & Vitamin D (Ergocalciferol)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "Q06": {
+  "text": "Pasteurized Cow Milk",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Pasteurized Cow Milk\")",
+  "items": [
+   "Pasteurized Cow Milk"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Pasteurized Cow Milk"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": []
+ },
+ "Q07": {
+  "text": "Milk & Milk Solids Milk \nAllergen Information: Contains Milk",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Milk & Milk Solids Milk",
+  "items": [
+   "Milk & Milk Solids Milk"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Milk & Milk Solids Milk"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "Q08": {
+  "text": "Milk solids, Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)\")",
+  "items": [
+   "Milk solids",
+   "Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": []
+ },
+ "Q09": {
+  "text": "Milk & Milk Solids",
+  "answered": false,
+  "group": null,
+  "reason": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+  "items": [
+   "Milk",
+   "Milk Solids"
+  ],
+  "warnings": [],
+  "unassessed": [],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "Q10": {
+  "text": "Milk solids (Pasteurized skimmed cow milk)",
+  "answered": true,
+  "group": 1,
+  "reason": null,
+  "items": [
+   "Milk solids (Pasteurized skimmed cow milk)"
+  ],
+  "warnings": [],
+  "unassessed": [],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "single recognised unprocessed food"
+  ]
+ },
+ "Q11": {
+  "text": "Toned Milk (60%), Water, Sugar, Cereal product (3%), Milk Solids, Minerals, Acidity Regulator (INS 339 (ii)), Stabilizers (INS 418, INS 407), Vitamins. Allergen Information: Contains Milk, Wheat, Barley and Soy. fssai",
+  "answered": false,
+  "group": null,
+  "reason": "only weak or unlisted markers present (Acidity Regulator (INS 339 (ii)) -> \"acidity regulator\" (unlisted_additive); Acidity Regulator (INS 339 (ii)) -> INS 339(ii) (not in local mapping); Stabilizers (INS 418, INS 407) -> \"stabiliser\" (unlisted_additive); Stabilizers (INS 418, INS 407) -> INS 407 (not in local mapping); Stabilizers (INS 418, INS 407) -> INS 418 (not in local mapping)); not enough to call a group",
+  "items": [
+   "Toned Milk (60%)",
+   "Water",
+   "Sugar",
+   "Cereal product (3%)",
+   "Milk Solids",
+   "Minerals",
+   "Acidity Regulator (INS 339 (ii))",
+   "Stabilizers (INS 418, INS 407)",
+   "Vitamins"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Cereal product (3%)",
+   "Minerals",
+   "Vitamins"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "INS 339(ii) (not in local mapping)",
+   "\"stabiliser\" (unlisted_additive)",
+   "INS 418 (not in local mapping)"
+  ]
+ },
+ "Q12": {
+  "text": "Skimmed Milk (80%), Sugar, Water, Milk Solids, Cocoa Powder (1.5%), Emulsifier & Stabilizers [INS 471, INS 407, INS 412], Flavour (Natural Flavouring Substances), Acidity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A & Vitamin D.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Skimmed Milk (80%)",
+   "Sugar",
+   "Water",
+   "Milk Solids",
+   "Cocoa Powder (1.5%)",
+   "Emulsifier & Stabilizers [INS 471, INS 407, INS 412]",
+   "Flavour (Natural Flavouring Substances)",
+   "Acidity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A & Vitamin D"
+  ],
+  "warnings": [
+   "A bracket near \"dity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "Cocoa Powder (1.5%)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 471 (emulsifier)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "Q13": {
+  "text": "Carbonated Water, Sugar, Acidity Regulator (330), Natural Flavoring Substances, Preservative (211), Caffeine, Stabilizer (414), Antioxidant (300), Synthetic Food Color (102), Synthetic Food Color (110), Contains Non-Caloric Sweeteners (Aspartame, Acesulfame K), Contains Permitted Natural Colour (150d)",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Carbonated Water",
+   "Sugar",
+   "Acidity Regulator (330)",
+   "Natural Flavoring Substances",
+   "Preservative (211)",
+   "Caffeine",
+   "Stabilizer (414)",
+   "Antioxidant (300)",
+   "Synthetic Food Color (102)",
+   "Synthetic Food Color (110)"
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Carbonated Water",
+   "Caffeine"
+  ],
+  "declared": [
+   "Non-Caloric Sweeteners (Aspartame, Acesulfame K)",
+   "Permitted Natural Colour (150d)"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"sweetener\""
+  ]
+ },
+ "Q14": {
+  "text": "Tomato Puree (67%), Water, Sugar, Liquid Glucose, Iodized Salt, Starch, Emulsifying & Stabilizing Agent (INS1422, INS415), Acidity Regulator (INS260), Onion Powder, Garlic Powder, Spices & Condiments, Preservative (INS211)",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Tomato Puree (67%)",
+   "Water",
+   "Sugar",
+   "Liquid Glucose",
+   "Iodized Salt",
+   "Starch",
+   "Emulsifying & Stabilizing Agent (INS1422, INS415)",
+   "Acidity Regulator (INS260)",
+   "Onion Powder",
+   "Garlic Powder",
+   "Spices & Condiments",
+   "Preservative (INS211)"
+  ],
+  "warnings": [
+   "\"Emulsifying & Stabilizing Agent (INS1422, INS415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+  ],
+  "unassessed": [
+   "Tomato Puree (67%)",
+   "Liquid Glucose",
+   "Iodized Salt",
+   "Starch",
+   "Spices & Condiments"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)"
+  ]
+ }
+}
