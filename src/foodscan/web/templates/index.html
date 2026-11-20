@@ -105,13 +105,15 @@
             <span class="{{ 'missing' if u.name is none and not u.ref_name }}">{{ u.name or u.ref_name or 'Code not in the table' }}</span>
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
             {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} {{ 'Name is provisional' if 'PROVISIONAL' in u.ref_source else 'Name checked against its source page' }} ({{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
-            <span class="effect">{{ effect(u) }}</span>
+            {% for n in u.role_notes %}<span class="src">{{ n }}</span>{% endfor %}
+            <span class="effect">{{ u.role_label if (u.role_label and u.strength not in ('strong', 'weak', 'weak_specific')) else effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>
         {% endfor %}
         </ul>
       </div>
     {% endfor %}
+    {% if result.ins_mappings | selectattr('role_notes') | list %}<p class="src">NOVA method text read for the declared-role notes: Monteiro, Cannon, Lawrence, Costa Louzada, Pereira Machado 2019, Ultra-processed foods, diet quality, and health using the NOVA classification system, FAO, Rome, https://www.fao.org/3/ca5644en/ca5644en.pdf</p>{% endif %}
   {% endif %}
   <details><summary>Raw OCR text</summary><pre style="white-space: pre-wrap">{{ result.extracted_text }}</pre></details>
 </div>

@@ -212,6 +212,9 @@
             (u.ref_classes && u.ref_classes.length ? " Possible functions listed elsewhere: " + u.ref_classes.join(", ") + "." : "") }));
         }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
+        (u.role_notes || []).forEach(function (n) { main.appendChild(el("span", { "class": "src", text: n })); });
+        var declaredPill = (u.declared_roles && u.declared_roles.length && ["strong", "weak", "weak_specific"].indexOf(u.strength) < 0) ? "Declared as " + u.declared_roles.join(" & ") : null;
+        if (declaredPill) eff = { tone: "neutral", label: declaredPill, help: "The class this label itself declares for the entry. See the notes under the code for what the NOVA source says about that role." };
         return el("li", { "class": "ins-row" }, [
           el("span", { "class": "ins-code", text: "INS " + u.code }),
           main,
@@ -223,6 +226,7 @@
     if (unknown) box.appendChild(el("p", { "class": "hint ins-note", text: EFFECTS.unknown.help }));
     var sources = Array.from(new Set(uses.map(function (u) { return u.source; }).filter(Boolean)));
     if (uses.some(function (u) { return u.ref_name; })) sources.push("Display-only names: Codex CXG 36-1989 (2026 revision), FAO and WHO, licence CC BY-NC 4.0, https://openknowledge.fao.org/handle/20.500.14283/cd8953en");
+    if (uses.some(function (u) { return u.role_notes && u.role_notes.length; })) sources.push("NOVA method text read for the declared-role notes: Monteiro, Cannon, Lawrence, Costa Louzada, Pereira Machado 2019, Ultra-processed foods, diet quality, and health using the NOVA classification system, FAO, Rome, https://www.fao.org/3/ca5644en/ca5644en.pdf");
     if (sources.length) box.appendChild(el("details", { "class": "ins-note" }, [
       el("summary", { text: "Where these names come from" }),
       el("ul", { "class": "plain" }, sources.map(function (t) { return el("li", { "class": "src", text: t }); }))

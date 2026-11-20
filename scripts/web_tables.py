@@ -12,6 +12,7 @@ def tables() -> dict:
         "markers": [dict(r) for r in load_table("markers.csv")],
         "lexicon": [dict(r) for r in load_table("lexicon.csv")],
         "descriptors": [dict(r) for r in load_table("descriptors.csv")],
+        "declared_roles": [dict(r) for r in load_table("declared_roles.csv")],
     }
 
 

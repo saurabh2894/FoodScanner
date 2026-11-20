@@ -61,6 +61,8 @@ def format_analysis(a: Analysis) -> str:
         lines.append("INS mappings used:")
         for u in a.ins_mappings:
             lines.append(f"  - INS {u.code} -> {u.name or '(not in local mapping)'}" + (f"  [{u.source}]" if u.source else ""))
+            for n in u.role_notes:      # declared role read from the scanned label (roles.py); display only
+                lines.append(f"      {n}")
             if u.name is None and u.ref_name:      # display only: it never decides a group
                 lines.append(f"      {u.ref_name}. Recognised code, no processing rule yet; classification treats it as unknown."
                              + (f" Source: {u.ref_url}" if u.ref_url else ""))

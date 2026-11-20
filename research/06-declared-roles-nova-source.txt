@@ -1,0 +1,39 @@
+06 - Declared role of additive codes: the NOVA method text that was read (2026-11-20)
+
+PURPOSE. Each additive-code row can show the class the scanned label itself declares for the entry the code sits in (src/foodscan/roles.py,
+resources/declared_roles.csv). The wording about what that role means for Group 4 is taken only from the NOVA method text below. Display only:
+no classification depends on it (tests/test_declared_roles.py proves identical group, reason and drivers with the feature switched off).
+
+PRIMARY SOURCE READ IN FULL (all 44 pages as text, searched for every class word):
+  Monteiro CA, Cannon G, Lawrence M, Costa Louzada ML, Pereira Machado P. 2019. Ultra-processed foods, diet quality, and health using the NOVA
+  classification system. Rome, FAO.   https://www.fao.org/3/ca5644en/ca5644en.pdf   (PDF fetched 2026-11-20, SHA-256 c8024c194a8294a0...)
+  The same authors' Public Health Nutrition 2019 paper ("Ultra-processed foods: what they are and how to identify them") could not be read in full:
+  PMC answered with a reCAPTCHA page and cambridge.org / europepmc.org are not reachable from this environment; only its abstract was read earlier.
+
+WHAT THE TEXT SAYS (report page numbers as printed in the footer):
+  p. 9   "Classes of additives used only in the manufacture of ultra-processed foods, are flavours, flavour enhancers, colours, emulsifiers, emulsifying
+         salts, artificial sweeteners, thickeners, and foaming, anti-foaming, bulking, carbonating, gelling and glazing agents."
+  p. 10  "Classes of additive exclusively used in ultra-processed foods ... include flavours, flavour enhancers, colours, emulsifiers, emulsifying salts,
+         artificial sweeteners, thickeners, and anti-foaming, bulking, carbonating, foaming, gelling and glazing agents. Any example of these classes of
+         additive, as shown on ingredients lists also identifies a product as ultra-processed."
+  p. 11  Table 1, Group 3: "They may contain additives that prolong product duration, protect original properties, or prevent proliferation of
+         microorganisms." Table 1, Group 4 also lists "additives that prolong product duration, protect original properties or prevent proliferation of
+         microorganisms" among what ultra-processed formulations contain.
+  p. 12  Group 3 examples: "canned fish (with or without added preservatives); fruit in syrup (with or without added anti-oxidants)".
+  Not named anywhere in the 44 pages (searched: acidity, regulator, stabili*, caking, flour treatment, raising, humectant, firming, salt substitute): acidity
+  regulators, stabilisers, anticaking agents, flour treatment agents, raising agents, humectants, firming agents, salt substitutes.
+
+WORDING RULES DERIVED (declared_roles.csv, column nova_status)
+  group4_listed  (the class is on the pp. 9-10 list): "Declared as X: the NOVA source lists X among the additive classes of ultra-processed foods", then what
+                 this tool does with the class word.
+  group3_allowed (preservative, antioxidant): "Declared as X: no Group 4 marker detected for this role per [source]", with the qualification that the source
+                 mentions such additives in both Group 3 and the Group 4 definition, so the role does not by itself separate the groups. Never "never a marker".
+  not_named      (acidity regulator, stabiliser, anticaking agent, flour treatment agent, raising agent, humectant, firming agent, salt substitute): "this class is
+                 not named in the NOVA source read"; no "no marker" claim is made.
+  A code whose label declares no class keeps the bare wording. A class is never read from a code.
+
+FINDINGS THAT AFFECT CLASSIFICATION (flagged to the owner, NOT changed in this round)
+  1. thickeners are on the source's list of Group 4 additive classes (pp. 9-10) but markers.csv holds "thickener" as unlisted ("NOT in research/02"), so a
+     label declaring "Thickeners (INS 508)" stays uncertain. The row now says exactly this. Whether to count the class is the owner's decision.
+  2. emulsifying salts are on the same list; markers.csv has no row for them.
+  3. humectant and firming agent are counted as strong markers here (research/02, from Open Food Facts material) but are not named in the FAO 2019 text.

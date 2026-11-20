@@ -212,7 +212,8 @@ def py_result(text, source="ocr"):
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
-                 "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial, "ref_source": u.ref_source} for u in a.ins_mappings],
+                 "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial, "ref_source": u.ref_source,
+                 "declared": u.declared, "declared_roles": list(u.declared_roles), "role_notes": u.role_notes} for u in a.ins_mappings],
     }
 
 
@@ -227,6 +228,7 @@ PASTE = [
     "Noodles: wheat flour, salt. Masala tastemaker: sugar, flavour.",
     "Noodles: wheat flour, palm oil, salt\nMasala tastemaker: mixed spices, flavour enhancers (INS 627, INS 631)",
     "Colour (INS 150d)", "INS 150d", "Potato (83%), edible vegetable oil, salt", "Eggs", "Toor dal",
+    "Ingredients: Rice, salt, Thickeners (INS 508).", "Ingredients: Rice, salt, Salt substitute (INS 508).", "Ingredients: Rice, salt, Potassium chloride (INS 508).", "Ingredients: Water, Sugar, Class II Preservative (INS 211), Antioxidant (INS 300), Acidity Regulator (INS 330).", "Ingredients: Milk, Emulsifier & Stabilizers [INS 471, INS 407, INS 412].", "Ingredients: Water, Natural and Synthetic Food Colours (INS 150d, INS 122), Emulsifying & Stabilizing Agent (INS1422, INS415).",
     "Ingredients: Milk & Milk Solids", "Ingredients: Toned milk, milk solids.", "Ingredients: Pasteurized Cow Milk", "Ingredients: Cow milk, active culture",
     "Ingredients: Milk, milk solids, Vitamin A.", "Ingredients: Milk, milk solids, sugar.", "Ingredients: Milk, milk solids, flavour.", "Ingredients: Milk, milk solids, stabilizer (INS 440).",
 ]

@@ -380,6 +380,50 @@
     }
     const isRecognised = (name) => lookup(name) !== null;
 
+    /* ---------- declared role (mirrors roles.py): the class the SCANNED label names for the entry a code sits in; display only ---------- */
+    const ROLE_FILLER = new Set(["contains", "contain", "permitted", "natural", "synthetic", "artificial", "nature", "identical", "added", "food", "class", "i", "ii", "iii", "1", "2", "substance", "substances", "and", "&", "the", "of"]);
+    const roleRows = [...T.declared_roles].sort((a, b) => b.term.length - a.term.length).map((r) => ({ re: new RegExp("(?<![a-z])" + esc(r.term) + "s?(?![a-z])"), row: r }));
+    const markerFlat = (t) => t.toLowerCase().replace(/[-–—_/]/g, " ").replace(/\s+/g, " ").trim();
+    const markerPats = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(markerFlat(r.term)) + "(?![a-z])"), strength: r.strength }));
+    const countedAsMarker = (role) => { const text = role.toLowerCase().replace(/[-–—_/]/g, " "); return markerPats.some((m) => m.re.test(text) && m.strength === "strong"); };
+    function declaredRoles(name) {
+      let text = name.toLowerCase().replace(/[,;&/]/g, " ");
+      const found = [];
+      for (const { re, row } of roleRows) {
+        const m = re.exec(text);
+        if (m) { found.push(row.role); text = text.slice(0, m.index) + " " + text.slice(m.index + m[0].length); }
+      }
+      const left = (text.match(/[a-z0-9]+/g) || []).filter((t) => !ROLE_FILLER.has(t));
+      if (left.length || !found.length) return [];
+      return [...new Set(found)];
+    }
+    function labelPhrase(raw) {
+      let out = "", depth = 0;
+      for (const ch of raw) {
+        if ("([{".includes(ch)) depth++;
+        else if (")]}".includes(ch)) depth = Math.max(depth - 1, 0);
+        else if (!depth) out += ch;
+      }
+      const s = stripChars(out.replace(/\s+/g, " ").trim(), " ,;.:*-");
+      return s.replace(/^contains\s*:?\s*/i, "").trim();
+    }
+    function declaredRoleNotes(roles, phrase) {
+      if (!roles.length) return [];
+      const notes = [`Declared on the label as: "${phrase}".`];
+      if (/(?:emulsifying|stabili[sz]ing)\s+(?:&\s*)?(?:and\s+)?(?:stabili[sz]ing\s+)?agent/i.test(phrase)) notes.push("That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).");
+      if (roles.length > 1) notes.push("The codes listed with it share this entry, so the label does not say which code has which of these roles.");
+      for (const role of roles) {
+        const r = roleRows.find((x) => x.row.role === role).row, src = r.cite;
+        if (r.nova_status === "group4_listed")
+          notes.push(`Declared as ${role}: the NOVA source lists ${r.source_wording} among the additive classes of ultra-processed foods (${src}). ` + (countedAsMarker(role) ? "This tool counts that class on the label as a Group 4 marker." : "This tool does not count this class as a marker yet, so it leaves the result uncertain."));
+        else if (r.nova_status === "group3_allowed")
+          notes.push(`Declared as ${role}: no Group 4 marker detected for this role per ${src}: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (${r.source_wording}) and also mentions them in its Group 4 definition, so this role does not by itself separate the groups.`);
+        else
+          notes.push(`Declared as ${role}: this class is not named in the NOVA source read (${src}); ` + (countedAsMarker(role) ? "this tool counts it as a marker on the basis of research/02, not of that source." : "this tool does not use it to decide a group."));
+      }
+      return notes;
+    }
+
     /* ---------- normalise ---------- */
     const CODE = "\\d{3,4}(?:\\s*\\(\\s*[ivx]+\\s*\\))?(?:[a-z](?![a-z]))?";
     const INS_RE = new RegExp("(?<![a-z0-9])(?:ins|e)\\s*[-:.]?\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)", "g");
@@ -401,7 +445,7 @@
         const classes = row ? (row.functional_class || "").split(";").map((x) => x.trim()).filter(Boolean) : [];
         const ref = row ? null : insRef[code];
         uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null,
-          ref_name: ref ? ref.name : null, ref_classes: ref ? (ref.functional_classes || "").split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && (ref.reading || "").startsWith("partial")), ref_source: ref ? (ref.source || null) : null });
+          ref_name: ref ? ref.name : null, ref_classes: ref ? (ref.functional_classes || "").split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && (ref.reading || "").startsWith("partial")), ref_source: ref ? (ref.source || null) : null, declared: null, declared_roles: [], role_notes: [] });
       };
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];
@@ -433,7 +477,8 @@
       for (const s of synonyms) text = text.replace(s.re, s.to);
       text = flatten(text);
       const [name, inner] = splitBrackets(text);
-      uses.forEach((u) => { u.ingredient = raw; });
+      const roles = declaredRoles(name), phrase = roles.length ? labelPhrase(raw) : null, notes = declaredRoleNotes(roles, phrase || "");
+      uses.forEach((u) => { u.ingredient = raw; u.declared = phrase; u.declared_roles = roles; u.role_notes = notes; });
       return { raw, name, inner, ins: uses, text: (name + " " + inner).trim() };
     }
 

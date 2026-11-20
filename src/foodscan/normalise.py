@@ -49,11 +49,26 @@ class InsUse:
     ref_classes: tuple[str, ...] = ()
     ref_partial: bool = False
     ref_source: str | None = None
+    # Declared role (roles.py): the class the SCANNED label names for the entry this code sits in ("Acidity Regulator (INS 330)" -> acidity regulator).
+    # Read from the label text only, never from the code. Display only: it never feeds a decision.
+    declared: str | None = None            # the label's own wording for the entry
+    declared_roles: tuple[str, ...] = ()   # canonical roles read from it; () when the label names no class
+
+    @property
+    def role_notes(self) -> list[str]:
+        return role_notes(self.declared_roles, self.declared or "")
+
+    @property
+    def role_label(self) -> str | None:
+        return role_label(self.declared_roles)
 
     @property
     def ref_url(self) -> str | None:
         m = re.search(r"https?://\S+", self.ref_source or "")
         return m.group(0) if m else None
+
+
+from .roles import declared_roles as _declared_roles, label_phrase, role_label, role_notes  # noqa: E402
 
 
 def _make_use(code: str, table: dict) -> "InsUse":
@@ -177,7 +192,9 @@ def normalise_ingredient(raw: str) -> Ingredient:
     text = _apply_synonyms(text)
     text = flatten(text)
     name, inner = _split_brackets(text)
-    return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw) for u in uses])
+    roles = _declared_roles(name)
+    phrase = label_phrase(raw) if roles else None
+    return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw, declared=phrase, declared_roles=roles) for u in uses])
 
 
 def normalise_list(items: list[str]) -> list[Ingredient]:
