@@ -45,8 +45,10 @@ def test_parse_real_fresh_batches():
     assert len(rollup_b1.extraction_table) == 2
     assert len(rollup_b1.classification_table) == 2
     assert any(r.split is not None for r in rollup_b1.extraction_table)
-    # Errata captured
-    assert any("121" in e or "120" in e for e in rollup_b1.errata_notes)
+    # Errata captured whole
+    assert rollup_b1.errata_markdown is not None
+    assert "121" in rollup_b1.errata_markdown
+    assert "120" in rollup_b1.errata_markdown
     # Warnings parsed and qualifier preserved
     assert len(rollup_b1.warnings_worked) > 0
     assert len(rollup_b1.warnings_not_worked) > 0
@@ -93,6 +95,37 @@ def test_tie_outs_real_batches():
     assert any("Classification labels (Paste): 11 correct + 0 wrong + 3 abstained = 14/14 (Ties out exactly with stated denominator)" in to for to in b2.tie_outs)
 
 
+def test_errata_rendering_whole():
+    """Regression test for Change 1: Errata section contains the complete N13 sentence (both halves)
+    and the re-run table's header and separator rows."""
+    repo_root = Path(__file__).resolve().parent.parent
+    b1_dir = repo_root / "evaluation" / "fresh_batch_1"
+    b2_dir = repo_root / "evaluation" / "fresh_batch_2"
+
+    rollup_b1 = parse_batch_scores(b1_dir)
+    rollup_b2 = parse_batch_scores(b2_dir)
+    rendered = generate_rollup_markdown([rollup_b1, rollup_b2])
+
+    # Check complete N13 explanation sentence is present without truncation
+    expected_fragment_1 = (
+        "The original reference counted it as two items (Nature identical flavouring substances; "
+        "Natural flavouring substances). It is one declared phrase (two modifiers,"
+    )
+    expected_fragment_2 = (
+        "one head noun), and keeping it whole loses nothing. N13's reference therefore has **11** "
+        "items instead of 12 and the batch has **120** instead of 121."
+    )
+    assert expected_fragment_1 in rendered
+    assert expected_fragment_2 in rendered
+
+    # Check reference.errata-v1.json line is present
+    assert "`reference.errata-v1.json` holds the corrected N13 entry." in rendered
+
+    # Check table header row and separator are present
+    assert "| Mode | Own item | Merged | Split | Omitted | Total |" in rendered
+    assert "|---|---|---|---|---|---|" in rendered
+
+
 def test_synthetic_malformed_table():
     """Test handling of malformed or incomplete markdown table without unused tmp_path."""
     lines = [
@@ -118,10 +151,8 @@ def test_synthetic_missing_sections(tmp_path: Path):
     )
 
     rollup = parse_batch_scores(batch_dir)
-    # Extraction section exists but has no table -> section found but not parsed
     inv_dict = dict(rollup.inventory_items)
     assert inv_dict.get("Extraction table") == "section found but not parsed"
-    # Classification section was completely absent -> section absent
     assert inv_dict.get("Classification table") == "section absent"
     assert inv_dict.get("Uncertainty warnings section") == "section absent"
 
@@ -137,13 +168,10 @@ def test_rendering_and_bullet_formatting():
 
     rendered = generate_rollup_markdown([b1, b2])
 
-    # Numbering sequential
     assert "## 1. Batch Summaries & Denominator Overview" in rendered
     assert "## 2. Batch: `fresh_batch_1`" in rendered
     assert "## 3. Batch: `fresh_batch_2`" in rendered
     assert "## 2. Batch: `fresh_batch_2`" not in rendered
-
-    # No doubled bullets
     assert "- - " not in rendered
 
 
@@ -154,7 +182,6 @@ def test_tie_out_exit_cases_all_four(tmp_path: Path):
     (c) only a table-derived denominator exists -> label derived, exit 0 (case c)
     (d) component needed for sum is not recorded -> report partial tie-out with named assumption, exit 0 (case d)
     """
-    # Setup mock repo structure
     mock_repo = tmp_path / "mock_repo"
     b1 = mock_repo / "evaluation" / "fresh_batch_1"
     b2 = mock_repo / "evaluation" / "fresh_batch_2"
@@ -196,7 +223,6 @@ def test_tie_out_exit_cases_all_four(tmp_path: Path):
     assert rollup_b.has_real_tie_out_gap is False
     assert rollup_b.stated_extraction_denominator is None
     assert rollup_b.stated_classification_denominator is None
-    # run_rollup succeeds
     rendered_b, _ = run_rollup(repo_root=mock_repo, force=True)
     assert "not stated" in rendered_b
 
@@ -236,26 +262,31 @@ def test_tie_out_exit_cases_all_four(tmp_path: Path):
     rollup_d = parse_batch_scores(b1)
     assert rollup_d.has_real_tie_out_gap is False
     assert any("assumption of 0 splits" in to for to in rollup_d.tie_outs)
-    # run_rollup succeeds
     rendered_d, _ = run_rollup(repo_root=mock_repo, force=True)
     assert "Partial tie-out" in rendered_d
 
 
 def test_protect_input_paths(tmp_path: Path):
-    """Refuse to write over any existing file that is not the tool's previous ROLLUP.md output."""
+    """Refuse to write over existing source/input files even with --force, while allowing new paths."""
     repo_root = Path(__file__).resolve().parent.parent
     scores_file = repo_root / "evaluation" / "fresh_batch_1" / "SCORES.md"
-    arbitrary_file = tmp_path / "custom.md"
-    arbitrary_file.write_text("protected content", encoding="utf-8")
+    errata_file = repo_root / "evaluation" / "fresh_batch_1" / "ERRATA.md"
 
-    with pytest.raises(ValueError, match="Refusing to write to protected path"):
+    # Existing files cannot be overwritten
+    with pytest.raises(ValueError, match="Refusing to write to protected existing file"):
         run_rollup(repo_root=repo_root, force=True, output_path=scores_file)
 
-    with pytest.raises(ValueError, match="Refusing to write to protected path"):
-        run_rollup(repo_root=repo_root, force=True, output_path=arbitrary_file)
+    with pytest.raises(ValueError, match="Refusing to write to protected existing file"):
+        run_rollup(repo_root=repo_root, force=True, output_path=errata_file)
+
+    # New custom path outside evaluation is allowed
+    new_out = tmp_path / "subdir" / "new_rollup.md"
+    rendered, out_path = run_rollup(repo_root=repo_root, force=False, output_path=new_out)
+    assert out_path.is_file()
+    assert "# Frozen Evaluation Rollup (fresh_batch_1 & fresh_batch_2)" in rendered
 
 
-def test_run_rollup_refuse_overwrite_without_force(tmp_path: Path):
+def test_run_rollup_refuse_overwrite_without_force():
     """Test that existing evaluation/ROLLUP.md is not overwritten without --force."""
     repo_root = Path(__file__).resolve().parent.parent
     rollup_file = repo_root / "evaluation" / "ROLLUP.md"
@@ -277,7 +308,7 @@ def test_main_cli_exit_codes(tmp_path: Path):
     ret2 = main([])
     assert ret2 == 2
 
-    # 3. Input collision returns 3 (Validation Error)
+    # 3. Protected existing file collision returns 3 (Validation Error)
     input_scores = repo_root / "evaluation" / "fresh_batch_1" / "SCORES.md"
     ret3 = main(["--output", str(input_scores), "--force"])
     assert ret3 == 3

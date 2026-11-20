@@ -2,6 +2,13 @@
 
 Reads frozen evaluation artifacts (SCORES.md, ERRATA.md) for fresh_batch_1 and fresh_batch_2
 and prints / writes a consolidated, honest rollup.
+
+Exit codes:
+  0: Success (rollup printed and written).
+  1: Execution error or evaluation/ directory not found.
+  2: Output file exists without --force flag.
+  3: Validation failure: protected existing file collision, or real tie-out gap
+     where a stated denominator does not match the sum of its reported parts.
 """
 
 from __future__ import annotations
@@ -43,7 +50,7 @@ class BatchRollup:
     stated_classification_denominator: str | None
     derived_extraction_denominator: int | None
     derived_classification_denominator: int | None
-    errata_notes: list[str]
+    errata_markdown: str | None
     extraction_table: list[ExtractionRow]
     extraction_notes: list[str]
     classification_table: list[ClassificationRow]
@@ -51,9 +58,9 @@ class BatchRollup:
     other_sections: dict[str, list[str]]
     warnings_worked: list[str]
     warnings_not_worked: list[str]
-    inventory_items: list[tuple[str, str]]  # list of (item_label, status_category)
+    inventory_items: list[tuple[str, str]]
     tie_outs: list[str]
-    has_real_tie_out_gap: bool  # True ONLY for case (a): stated denominator vs sum mismatch
+    has_real_tie_out_gap: bool
 
 
 def parse_markdown_table(lines: list[str]) -> list[dict[str, str]]:
@@ -121,7 +128,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
 
     title = lines[0].lstrip("#").strip() if lines else ""
 
-    # Split lines into sections based on ## headers
     sections: dict[str, list[str]] = {}
     current_sec = "__header__"
     sections[current_sec] = []
@@ -135,17 +141,11 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
 
     header_paras = parse_paragraphs(sections.get("__header__", []))
 
-    # Read ERRATA.md if present
-    errata_notes: list[str] = []
+    # Read ERRATA.md whole if present
+    errata_markdown: str | None = None
     errata_path = batch_dir / "ERRATA.md"
     if errata_path.is_file():
-        err_text = errata_path.read_text(encoding="utf-8")
-        err_lines = [ln.strip() for ln in err_text.splitlines() if ln.strip()]
-        for ln in err_lines:
-            if "Erratum" in ln or "denominator" in ln or "re-run" in ln or "121" in ln or "120" in ln:
-                errata_notes.append(re.sub(r"^[-*#]+\s*", "", ln).strip())
-        if not errata_notes:
-            errata_notes.append("ERRATA.md present in batch directory.")
+        errata_markdown = errata_path.read_text(encoding="utf-8").strip()
 
     # 1. Stated denominators in prose or prefix form
     stated_ext_denom = None
@@ -199,7 +199,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
                 if d_info:
                     derived_ext_denom = d_info[1]
 
-        # Process notes line by line, joining wrapped bullet lines
         curr_bullet: list[str] = []
         for ln in ext_lines:
             s = ln.strip()
@@ -284,8 +283,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
             if not s or s.startswith("#") or s.startswith("Not general accuracy"):
                 continue
 
-            # In batch 2, Worked and Did not work are on the same line:
-            # "Worked: paste M07... Did not work (extraction wrong...): paste M08..."
             if "Did not work" in s and ("Worked:" in s or s.startswith("- Worked") or s.startswith("Worked")):
                 parts = re.split(r"(?=Did not work)", s, flags=re.IGNORECASE)
                 for part in parts:
@@ -355,28 +352,24 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
     # Honest Inventory Classification
     inventory_items: list[tuple[str, str]] = []
 
-    # Extraction
     if ext_sec_title:
         if ext_rows:
             inventory_items.append(("Extraction table", f"Recorded ({len(ext_rows)} rows)"))
         else:
             inventory_items.append(("Extraction table", "section found but not parsed"))
     else:
-        # Check if heading exists partially
         cand_ext = any("extraction" in k.lower() for k in sections)
         if cand_ext:
             inventory_items.append(("Extraction table", "uncertain whether recorded"))
         else:
             inventory_items.append(("Extraction table", "section absent"))
 
-    # Split column
     has_split = any(r.split is not None for r in ext_rows)
     if has_split:
         inventory_items.append(("Extraction table: Split column", "Recorded"))
     else:
         inventory_items.append(("Extraction table: Split column", "not recorded in batch table"))
 
-    # Classification
     if cls_sec_title:
         if cls_rows:
             inventory_items.append(("Classification table", f"Recorded ({len(cls_rows)} rows)"))
@@ -389,14 +382,12 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
         else:
             inventory_items.append(("Classification table", "section absent"))
 
-    # Overlapping column
     has_overlap_col = any("Without" in k for r in cls_rows for k in r.extra_columns)
     if has_overlap_col:
         inventory_items.append(("Classification table: Without overlapping labels column", "Recorded"))
     else:
         inventory_items.append(("Classification table: Without overlapping labels column", "not recorded in batch table"))
 
-    # Uncertainty warnings
     if warn_sec_title:
         if warnings_worked or warnings_not_worked:
             inventory_items.append(("Uncertainty warnings section", "Recorded"))
@@ -409,7 +400,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
         else:
             inventory_items.append(("Uncertainty warnings section", "section absent"))
 
-    # Additional sections
     for sec_name in other_sections:
         clean_name = sec_name.lstrip("#").strip()
         inventory_items.append((f"Additional section ({clean_name})", "Recorded"))
@@ -434,13 +424,10 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
             omitted_cnt = extract_leading_int(r.omitted or "") or 0
             split_cnt = extract_leading_int(r.split or "") if r.split is not None else None
 
-            # Compare table denominator with stated target if available
             target_denom = stated_ext_target if stated_ext_target is not None else table_denom
             is_stated = stated_ext_target is not None
 
-            # Check components
             if split_cnt is not None:
-                # All components recorded
                 sum_parts = own_cnt + merged_cnt + omitted_cnt + split_cnt
                 if sum_parts == target_denom:
                     if is_stated and table_denom == stated_ext_target:
@@ -469,7 +456,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
                             f"Extraction items ({mode_label}): sum {sum_parts} != table-derived denominator {target_denom} (Table-derived gap: {gap}; stated denominator not stated)"
                         )
             else:
-                # Component (Split) is not recorded -> Partial tie-out with named assumption
                 sum_without_split = own_cnt + merged_cnt + omitted_cnt
                 if sum_without_split == target_denom:
                     if is_stated:
@@ -524,7 +510,6 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
                     f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls}/{stated_cls_target} (Gap: {stated_cls_target - sum_cls})"
                 )
         else:
-            # Stated denominator not stated
             tie_outs.append(
                 f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls} (Stated denominator not stated; matches summed total of {sum_cls})"
             )
@@ -538,7 +523,7 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
         stated_classification_denominator=stated_cls_denom,
         derived_extraction_denominator=derived_ext_denom,
         derived_classification_denominator=derived_cls_denom,
-        errata_notes=errata_notes,
+        errata_markdown=errata_markdown,
         extraction_table=ext_rows,
         extraction_notes=ext_notes,
         classification_table=cls_rows,
@@ -581,10 +566,10 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
         out.append(f"**Title**: {b.title}")
         out.append("")
 
-        if b.errata_notes:
-            out.append("**Errata Notice:**")
-            for e in b.errata_notes:
-                out.append(f"- {e}")
+        if b.errata_markdown:
+            out.append("### Errata Notice (evaluation/fresh_batch_1/ERRATA.md)")
+            out.append("")
+            out.append(b.errata_markdown)
             out.append("")
 
         if b.metadata_paragraphs:
@@ -701,13 +686,14 @@ def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = 
         output_path = repo_root / "evaluation" / "ROLLUP.md"
 
     output_path = output_path.resolve()
-
-    # Refuse to write over any existing file that is not the tool's previous ROLLUP.md output
     default_rollup_path = (repo_root / "evaluation" / "ROLLUP.md").resolve()
+
+    # Protected path check: new paths are allowed, but existing source/input files
+    # can NEVER be overwritten, even with --force (only evaluation/ROLLUP.md can be overwritten with --force).
     if output_path.exists():
         if output_path != default_rollup_path:
             raise ValueError(
-                f"Refusing to write to protected path '{output_path}'. The tool may only write to evaluation/ROLLUP.md."
+                f"Refusing to write to protected existing file '{output_path}'. Existing source and input files cannot be overwritten, even with --force."
             )
         if not force:
             raise FileExistsError(
@@ -722,7 +708,6 @@ def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = 
         parse_batch_scores(b2_dir),
     ]
 
-    # Enforce case (a): exit non-zero if a batch states a denominator and parts do not sum to it
     gaps_found = [b.name for b in rollups if b.has_real_tie_out_gap]
     if gaps_found:
         rendered_md = generate_rollup_markdown(rollups)
@@ -732,7 +717,6 @@ def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = 
 
     rendered_md = generate_rollup_markdown(rollups)
 
-    # Write output
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rendered_md, encoding="utf-8")
 
@@ -741,7 +725,9 @@ def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Roll up frozen evaluation results from fresh_batch_1 and fresh_batch_2 into evaluation/ROLLUP.md."
+        description="Roll up frozen evaluation results from fresh_batch_1 and fresh_batch_2 into evaluation/ROLLUP.md.\n"
+                    "Exit codes: 0 success; 1 directory error; 2 output exists without --force; "
+                    "3 protected path collision or real tie-out gap."
     )
     parser.add_argument(
         "--force",
@@ -754,7 +740,7 @@ def main(argv: list[str] | None = None) -> int:
         "-o",
         type=Path,
         default=None,
-        help="Custom output file path (default: evaluation/ROLLUP.md).",
+        help="Custom output file path (default: evaluation/ROLLUP.md). New paths allowed; existing input files protected.",
     )
     args = parser.parse_args(argv)
 

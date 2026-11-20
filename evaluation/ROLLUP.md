@@ -12,17 +12,26 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 ## 2. Batch: `fresh_batch_1`
 **Title**: Fresh batch 1: scores for ONE frozen build (code commit 12e7226)
 
-**Errata Notice:**
-- references.md and reference.json are NOT edited: batch 1's original scores (build 12e7226) keep their 121-item denominator. Any re-run from the fix round on
-- states the corrected denominator below.
-- Erratum 1 (v1): N13, `nature identical and natural flavouring substances` is ONE item
-- one head noun), and keeping it whole loses nothing. N13's reference therefore has **11** items instead of 12 and the batch has **120** instead of 121.
-- What changes in the re-run table (REGRESSION.md, build 9c00962), recomputed on 120
-- | Paste, before (12e7226), on 120 | 93 | 15 | 2 | 10 | 120 |
-- | Paste, after (9c00962), on 120 | 107 | 13 | 0 | 0 | 120 |
-- | Photo, before, on 120 | 18 | 10 | 0 | 92 | 120 |
-- | Photo, after, on 120 | 28 | 10 | 0 | 82 | 120 |
-- (The original 121 figures stay valid for the original run. The classification counts do not change: 13 judged labels either way.)
+### Errata Notice (evaluation/fresh_batch_1/ERRATA.md)
+
+# Errata to references.md / reference.json (version 1)
+
+references.md and reference.json are NOT edited: batch 1's original scores (build 12e7226) keep their 121-item denominator. Any re-run from the fix round on
+states the corrected denominator below.
+
+## Erratum 1 (v1): N13, `nature identical and natural flavouring substances` is ONE item
+The original reference counted it as two items (Nature identical flavouring substances; Natural flavouring substances). It is one declared phrase (two modifiers,
+one head noun), and keeping it whole loses nothing. N13's reference therefore has **11** items instead of 12 and the batch has **120** instead of 121.
+`reference.errata-v1.json` holds the corrected N13 entry.
+
+## What changes in the re-run table (REGRESSION.md, build 9c00962), recomputed on 120
+| Mode | Own item | Merged | Split | Omitted | Total |
+|---|---|---|---|---|---|
+| Paste, before (12e7226), on 120 | 93 | 15 | 2 | 10 | 120 |
+| Paste, after (9c00962), on 120 | 107 | 13 | 0 | 0 | 120 |
+| Photo, before, on 120 | 18 | 10 | 0 | 92 | 120 |
+| Photo, after, on 120 | 28 | 10 | 0 | 82 | 120 |
+(The original 121 figures stay valid for the original run. The classification counts do not change: 13 judged labels either way.)
 
 **Metadata & Context:**
 - Frozen build: code at `12e7226`; the reference commit `608fc6c` adds only evaluation files (no change under src/, web_preview/, scripts/, tests/ between them). No code was changed while scoring and nothing was tuned to this batch. One sample, 15 labels scored (16 drawn; N04 excluded before scoring as a variant of a development product): not a general accuracy figure. References were written by an LLM from the photos before any run and have not been spot-checked by the owner. Item adjudication for OCR-garbled items counts an item as present when a human can recognise it; those counts are approximate. All numbers are from `frozen_results_12e7226/`.
