@@ -1,13 +1,12 @@
 """Evaluation rollup for frozen evaluation batches.
 
-Reads frozen evaluation artifacts (SCORES.md) for fresh_batch_1 and fresh_batch_2
+Reads frozen evaluation artifacts (SCORES.md, ERRATA.md) for fresh_batch_1 and fresh_batch_2
 and prints / writes a consolidated, honest rollup.
 """
 
 from __future__ import annotations
 
 import argparse
-import os
 import re
 import sys
 from dataclasses import dataclass
@@ -17,8 +16,8 @@ from pathlib import Path
 @dataclass
 class ExtractionRow:
     mode: str
-    list_found: str | None  # e.g. "15/15 labels", "7/13 (6 no list)"
-    own_item: str | None    # e.g. "92/121", "77/94"
+    list_found: str | None
+    own_item: str | None
     merged: str | None
     split: str | None
     omitted: str | None
@@ -31,13 +30,7 @@ class ClassificationRow:
     correct_confident: str | None
     wrong_confident: str | None
     abstained: str | None
-    extra_columns: dict[str, str]  # any other column in the table, e.g. "Without the 5 overlapping labels (9)"
-
-
-@dataclass
-class WarningRow:
-    category: str
-    details: str
+    extra_columns: dict[str, str]
 
 
 @dataclass
@@ -45,11 +38,14 @@ class BatchRollup:
     name: str
     path: Path
     title: str
-    metadata_lines: list[str]
-    extraction_denominator: str | None
+    metadata_paragraphs: list[str]
+    stated_extraction_denominator: str | None
+    stated_classification_denominator: str | None
+    derived_extraction_denominator: int | None
+    derived_classification_denominator: int | None
+    errata_notes: list[str]
     extraction_table: list[ExtractionRow]
     extraction_notes: list[str]
-    classification_denominator: str | None
     classification_table: list[ClassificationRow]
     classification_notes: list[str]
     other_sections: dict[str, list[str]]
@@ -58,6 +54,7 @@ class BatchRollup:
     recorded_fields: dict[str, str]
     unrecorded_fields: list[str]
     tie_outs: list[str]
+    has_tie_out_gap: bool
 
 
 def parse_markdown_table(lines: list[str]) -> list[dict[str, str]]:
@@ -66,9 +63,7 @@ def parse_markdown_table(lines: list[str]) -> list[dict[str, str]]:
     if len(table_lines) < 2:
         return []
 
-    # Parse header
     headers = [c.strip() for c in table_lines[0].strip("|").split("|")]
-    # Check if second row is separator
     sep_row = [c.strip() for c in table_lines[1].strip("|").split("|")]
     if not all(re.match(r"^:?-+:?$", s) for s in sep_row):
         return []
@@ -76,7 +71,6 @@ def parse_markdown_table(lines: list[str]) -> list[dict[str, str]]:
     data_rows = []
     for line in table_lines[2:]:
         cols = [c.strip() for c in line.strip("|").split("|")]
-        # Pad with empty string if row has fewer columns
         if len(cols) < len(headers):
             cols.extend([""] * (len(headers) - len(cols)))
         row_dict = {headers[i]: cols[i] for i in range(len(headers))}
@@ -100,8 +94,25 @@ def extract_leading_int(s: str) -> int | None:
     return None
 
 
+def parse_paragraphs(lines: list[str]) -> list[str]:
+    """Combine lines separated by blank lines into coherent paragraph blocks."""
+    paras: list[str] = []
+    curr: list[str] = []
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            if curr:
+                paras.append(" ".join(curr))
+                curr = []
+        else:
+            curr.append(stripped)
+    if curr:
+        paras.append(" ".join(curr))
+    return paras
+
+
 def parse_batch_scores(batch_dir: Path) -> BatchRollup:
-    """Parse SCORES.md of a batch directory faithfully."""
+    """Parse SCORES.md and any ERRATA.md of a batch directory faithfully."""
     scores_path = batch_dir / "SCORES.md"
     if not scores_path.is_file():
         raise FileNotFoundError(f"Missing SCORES.md in {batch_dir}")
@@ -123,31 +134,53 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
         else:
             sections[current_sec].append(line)
 
-    header_lines = [ln.strip() for ln in sections.get("__header__", []) if ln.strip()]
+    header_paras = parse_paragraphs(sections.get("__header__", []))
 
-    # Extract metadata line info
-    extraction_denom_stated = None
-    classification_denom_stated = None
+    # Read ERRATA.md if present
+    errata_notes: list[str] = []
+    errata_path = batch_dir / "ERRATA.md"
+    if errata_path.is_file():
+        err_text = errata_path.read_text(encoding="utf-8")
+        for ln in err_text.splitlines():
+            s = ln.strip()
+            if "Erratum" in s or "denominator" in s or "re-run" in s:
+                errata_notes.append(s.lstrip("#").strip())
+        if not errata_notes:
+            errata_notes.append("ERRATA.md present in batch directory.")
 
-    for ln in header_lines:
-        if "Extraction denominator:" in ln:
-            m = re.search(r"Extraction denominator:\s*([^.]+)", ln)
-            if m:
-                extraction_denom_stated = m.group(1).strip()
-        if "Judged for classification:" in ln:
-            m = re.search(r"Judged for classification:\s*([^.]+)", ln)
-            if m:
-                classification_denom_stated = m.group(1).strip()
+    # 1. Stated denominators in prose
+    stated_ext_denom = None
+    stated_cls_denom = None
+
+    for p in header_paras:
+        # Check extraction prose statements:
+        m_ext1 = re.search(r"Extraction denominator:\s*([^.]+)", p)
+        if m_ext1:
+            stated_ext_denom = m_ext1.group(1).strip()
+        else:
+            m_ext2 = re.search(r"extraction uses\s*([^,;]+(?:labels and \d+ reference items|\d+ reference items))", p, re.IGNORECASE)
+            if m_ext2:
+                stated_ext_denom = m_ext2.group(1).strip()
+
+        # Check classification prose statements:
+        m_cls1 = re.search(r"Judged for classification:\s*([^.]+)", p)
+        if m_cls1:
+            stated_cls_denom = m_cls1.group(1).strip()
+        else:
+            m_cls2 = re.search(r"classification uses\s*([^,;]+judged labels?)", p, re.IGNORECASE)
+            if m_cls2:
+                stated_cls_denom = m_cls2.group(1).strip()
 
     # Find Extraction section
     ext_sec_title = next((k for k in sections if "Extraction" in k), None)
     ext_rows: list[ExtractionRow] = []
     ext_notes: list[str] = []
+    derived_ext_denom: int | None = None
+
     if ext_sec_title:
         ext_lines = sections[ext_sec_title]
         parsed_table = parse_markdown_table(ext_lines)
         for r in parsed_table:
-            # Map column variations
             mode = r.get("Mode", "")
             list_found = r.get("List found in the right place")
             own_item = r.get("Own item, recognisable") or r.get("Own item")
@@ -164,23 +197,31 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
                 omitted=omitted,
                 additions=additions,
             ))
-        # Non-table lines
+            # Derive extraction denominator from table
+            if own_item and derived_ext_denom is None:
+                d_info = extract_denominator_and_count(own_item)
+                if d_info:
+                    derived_ext_denom = d_info[1]
+
+        # Collect notes without doubled bullets
         for ln in ext_lines:
             s = ln.strip()
             if s and not s.startswith("|"):
-                ext_notes.append(s)
+                clean_s = re.sub(r"^[-*]\s*", "", s).strip()
+                ext_notes.append(clean_s)
 
     # Find Classification section
     cls_sec_title = next((k for k in sections if "Classification" in k), None)
     cls_rows: list[ClassificationRow] = []
     cls_notes: list[str] = []
+    derived_cls_denom: int | None = None
+
     if cls_sec_title:
         cls_lines = sections[cls_sec_title]
-        # In batch 2, the denominator might be in the section header: "Classification (14 judged labels...)"
-        if not classification_denom_stated:
+        if not stated_cls_denom:
             m = re.search(r"Classification\s*\(([^)]+)\)", cls_sec_title)
             if m:
-                classification_denom_stated = m.group(1).strip()
+                stated_cls_denom = m.group(1).strip()
 
         parsed_cls = parse_markdown_table(cls_lines)
         for r in parsed_cls:
@@ -197,158 +238,218 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
                 abstained=abstained,
                 extra_columns=extra,
             ))
+            # Derive classification denominator by summing outcomes
+            if derived_cls_denom is None:
+                c = extract_leading_int(correct or "") or 0
+                w = extract_leading_int(wrong or "") or 0
+                a = extract_leading_int(abstained or "") or 0
+                sum_row = c + w + a
+                if sum_row > 0:
+                    derived_cls_denom = sum_row
+
         for ln in cls_lines:
             s = ln.strip()
             if s and not s.startswith("|"):
-                cls_notes.append(s)
+                clean_s = re.sub(r"^[-*]\s*", "", s).strip()
+                cls_notes.append(clean_s)
 
     # Uncertainty warnings section
-    warn_sec_title = next((k for k in sections if "Did uncertainty warnings work?" in k), None)
+    warn_sec_title = next((k for k in sections if "uncertainty warnings" in k.lower()), None)
     warnings_worked: list[str] = []
     warnings_not_worked: list[str] = []
+
     if warn_sec_title:
         warn_lines = sections[warn_sec_title]
-        # In batch 2:
-        # "Worked: paste M07... Did not work (extraction wrong...): paste M08... No wrong confident group resulted in any of them."
         # In batch 1:
-        # "- Worked: paste N03..."
-        # "- Did not work (extraction wrong...): paste N02..."
-        full_warn_text = "\n".join(warn_lines)
-        # Check if there are separate lines or inline
-        worked_match = re.search(r"Worked:\s*([^\n]+(?:\n[^\n]+)*?)(?=(?:Did not work|$))", full_warn_text)
-        did_not_work_match = re.search(r"Did not work(?:\s*\([^)]+\))?:\s*([^\n]+(?:\n[^\n]+)*)", full_warn_text)
-        if worked_match:
-            w_text = worked_match.group(1).strip()
-            # Clean up leading list dash or whitespace
-            warnings_worked.append(w_text.strip("- ").strip())
-        if did_not_work_match:
-            dnw_text = did_not_work_match.group(1).strip()
-            warnings_not_worked.append(dnw_text.strip("- ").strip())
+        # - Worked: paste N03, N08, N16; photo N05, N11, N12...
+        # - Did not work (extraction wrong...): paste N02... None of these produced a wrong confident group...
+        # In batch 2:
+        # Worked: paste M07, M10, M11... photo M05, M09, M11, M12... Did not work (extraction wrong...): paste M08... No wrong confident group resulted in any of them.
+        for ln in warn_lines:
+            s = ln.strip()
+            if not s or s.startswith("#") or s.startswith("Not general accuracy"):
+                continue
 
-    # Other sections
+            # Separate by Did not work if both are on same line
+            if "Did not work" in s and ("Worked:" in s or s.startswith("- Worked") or s.startswith("Worked")):
+                parts = re.split(r"(?=Did not work)", s, flags=re.IGNORECASE)
+                for part in parts:
+                    part_str = part.strip().lstrip("-* ").strip()
+                    if part_str.lower().startswith("worked"):
+                        w_val = re.sub(r"^worked:\s*", "", part_str, flags=re.IGNORECASE).strip()
+                        if w_val:
+                            warnings_worked.append(w_val)
+                    elif "did not work" in part_str.lower():
+                        # Extract qualifier and text
+                        m_dnw = re.match(r"^did not work\s*(\([^)]+\))?:\s*(.*)", part_str, flags=re.IGNORECASE)
+                        if m_dnw:
+                            qual = m_dnw.group(1) or ""
+                            val = m_dnw.group(2).strip()
+                            if qual:
+                                warnings_not_worked.append(f"{qual}: {val}")
+                            else:
+                                warnings_not_worked.append(val)
+                        else:
+                            warnings_not_worked.append(part_str)
+            elif s.lower().startswith("- worked:") or s.lower().startswith("worked:"):
+                clean = re.sub(r"^[-*]\s*worked:\s*", "", s, flags=re.IGNORECASE).strip()
+                if clean:
+                    warnings_worked.append(clean)
+            elif "did not work" in s.lower() and not s.lower().startswith("worked:"):
+                clean = re.sub(r"^[-*]\s*", "", s).strip()
+                m_dnw = re.match(r"^did not work\s*(\([^)]+\))?:\s*(.*)", clean, flags=re.IGNORECASE)
+                if m_dnw:
+                    qual = m_dnw.group(1) or ""
+                    val = m_dnw.group(2).strip()
+                    if qual:
+                        warnings_not_worked.append(f"{qual}: {val}")
+                    else:
+                        warnings_not_worked.append(val)
+                else:
+                    warnings_not_worked.append(clean)
+
+    # Other sections unique to this batch
     other_sections: dict[str, list[str]] = {}
     known_sec_titles = {ext_sec_title, cls_sec_title, warn_sec_title, "__header__"}
     for sec_name, s_lines in sections.items():
         if sec_name not in known_sec_titles:
-            non_empty = [ln.strip() for ln in s_lines if ln.strip()]
-            if non_empty:
-                other_sections[sec_name] = non_empty
+            # Clean each line's leading bullet markers if present, but maintain items
+            cleaned_lines = []
+            for ln in s_lines:
+                s = ln.strip()
+                if not s:
+                    continue
+                clean_s = re.sub(r"^[-*]\s*", "", s).strip()
+                cleaned_lines.append(clean_s)
+            if cleaned_lines:
+                other_sections[sec_name] = cleaned_lines
 
     # Recorded vs unrecorded analysis
     recorded_fields: dict[str, str] = {}
     unrecorded_fields: list[str] = []
 
     if ext_sec_title:
-        recorded_fields["Extraction table"] = f"Recorded ({len(ext_rows)} rows)"
+        recorded_fields["Extraction section"] = f"Recorded ({len(ext_rows)} rows)"
     else:
-        unrecorded_fields.append("Extraction table")
+        unrecorded_fields.append("Extraction section: section not found or not parsed")
 
-    # Check split column
     has_split = any(r.split is not None for r in ext_rows)
     if has_split:
-        recorded_fields["Extraction: Split into several"] = "Recorded"
+        recorded_fields["Extraction table: Split column"] = "Recorded"
     else:
-        unrecorded_fields.append("Extraction: Split into several (not recorded in batch)")
+        unrecorded_fields.append("Extraction table: Split column (not recorded in batch table)")
 
     if cls_sec_title:
-        recorded_fields["Classification table"] = f"Recorded ({len(cls_rows)} rows)"
+        recorded_fields["Classification section"] = f"Recorded ({len(cls_rows)} rows)"
     else:
-        unrecorded_fields.append("Classification table")
+        unrecorded_fields.append("Classification section: section not found or not parsed")
 
-    # Extra classification breakdown (e.g. without overlap)
     has_overlap_col = any("Without" in k for r in cls_rows for k in r.extra_columns)
     if has_overlap_col:
-        recorded_fields["Classification: Without overlapping labels breakdown"] = "Recorded"
+        recorded_fields["Classification table: Without overlapping labels column"] = "Recorded"
     else:
-        unrecorded_fields.append("Classification: Without overlapping labels breakdown (not recorded in batch)")
+        unrecorded_fields.append("Classification table: Without overlapping labels column (not recorded in batch table)")
 
-    # Diagnostic / Hint / Time sections
+    if warn_sec_title:
+        recorded_fields["Uncertainty warnings section"] = "Recorded"
+    else:
+        unrecorded_fields.append("Uncertainty warnings section: section not found or not parsed")
+
     for sec_name in other_sections:
         clean_name = sec_name.lstrip("#").strip()
-        recorded_fields[f"Section: {clean_name}"] = "Recorded"
+        recorded_fields[f"Additional section: {clean_name}"] = "Recorded"
 
-    # Specific checks across batches
-    if not any("Hint, disagreement and role-phrase" in k for k in other_sections):
-        unrecorded_fields.append("Section: Hint, disagreement and role-phrase paths (not recorded in batch)")
-    if not any("Added time of the second OCR reading" in k for k in other_sections):
-        unrecorded_fields.append("Section: Added time of the second OCR reading (not recorded in batch)")
-
-    # Tie-out checks
+    # Tie-out checks and enforcement
     tie_outs: list[str] = []
+    has_tie_out_gap = False
+
+    stated_ext_target = None
+    if stated_ext_denom:
+        m = re.search(r"(\d+)\s+reference items", stated_ext_denom)
+        if m:
+            stated_ext_target = int(m.group(1))
 
     # 1. Extraction items tie-out
-    # Items: own_item + merged + omitted (+ split?) vs denominator
     for r in ext_rows:
         mode_label = r.mode.split("(")[0].strip()
         denom_info = extract_denominator_and_count(r.own_item or "")
         if denom_info:
-            own_cnt, total_denom = denom_info
+            own_cnt, table_denom = denom_info
             merged_cnt = extract_leading_int(r.merged or "") or 0
             omitted_cnt = extract_leading_int(r.omitted or "") or 0
             split_cnt = extract_leading_int(r.split or "") if r.split is not None else 0
 
-            # Does it sum to total_denom?
-            sum_parts = own_cnt + merged_cnt + omitted_cnt
-            # In batch 1 paste: 92 + 17 + 2(split) + 10(omitted) = 121
-            if r.split is not None:
-                sum_with_split = sum_parts + (split_cnt or 0)
-                if sum_with_split == total_denom:
+            sum_parts = own_cnt + merged_cnt + omitted_cnt + split_cnt
+
+            denom_match_msg = ""
+            if stated_ext_target is not None:
+                if table_denom == stated_ext_target:
+                    denom_match_msg = f"matches stated denominator ({stated_ext_target})"
+                else:
+                    has_tie_out_gap = True
+                    denom_match_msg = f"MISMATCH with stated denominator ({stated_ext_target})"
+
+            if sum_parts == table_denom:
+                if r.split is not None:
                     tie_outs.append(
-                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {split_cnt} split + {omitted_cnt} omitted = {sum_with_split}/{total_denom} (Ties out exactly)"
+                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {split_cnt} split + {omitted_cnt} omitted = {sum_parts}/{table_denom} (Ties out exactly; table denominator {denom_match_msg})"
                     )
                 else:
                     tie_outs.append(
-                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {omitted_cnt} omitted (+ split {split_cnt}) = {sum_with_split}/{total_denom} (Gap: {total_denom - sum_with_split})"
+                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {omitted_cnt} omitted = {sum_parts}/{table_denom} (Sum matches table denominator, assuming 0 splits as split column is not recorded; table denominator {denom_match_msg})"
                     )
             else:
-                if sum_parts == total_denom:
-                    tie_outs.append(
-                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {omitted_cnt} omitted = {sum_parts}/{total_denom} (Ties out exactly)"
-                    )
-                else:
-                    tie_outs.append(
-                        f"Extraction items ({mode_label}): {own_cnt} own + {merged_cnt} merged + {omitted_cnt} omitted = {sum_parts}/{total_denom} (Gap: {total_denom - sum_parts})"
-                    )
+                has_tie_out_gap = True
+                gap = table_denom - sum_parts
+                tie_outs.append(
+                    f"Extraction items ({mode_label}): sum {sum_parts} != denominator {table_denom} (Gap: {gap}; table denominator {denom_match_msg})"
+                )
         else:
-            tie_outs.append(f"Extraction items ({mode_label}): No valid fraction denominator found in '{r.own_item}'")
+            has_tie_out_gap = True
+            tie_outs.append(f"Extraction items ({mode_label}): Missing valid fraction denominator in '{r.own_item}'")
+
+    stated_cls_target = None
+    if stated_cls_denom:
+        m = re.search(r"(\d+)\s*(?:judged)?\s*labels?", stated_cls_denom)
+        if m:
+            stated_cls_target = int(m.group(1))
 
     # 2. Classification labels tie-out
-    # Parse denominator from classification_denominator
-    cls_denom_val = None
-    if classification_denom_stated:
-        m = re.search(r"(\d+)\s*(?:judged)?\s*labels?", classification_denom_stated)
-        if m:
-            cls_denom_val = int(m.group(1))
-
     for r in cls_rows:
         mode_label = r.mode.split("(")[0].strip()
         c_cnt = extract_leading_int(r.correct_confident or "") or 0
         w_cnt = extract_leading_int(r.wrong_confident or "") or 0
         a_cnt = extract_leading_int(r.abstained or "") or 0
         sum_cls = c_cnt + w_cnt + a_cnt
-        if cls_denom_val is not None:
-            if sum_cls == cls_denom_val:
+
+        if stated_cls_target is not None:
+            if sum_cls == stated_cls_target:
                 tie_outs.append(
-                    f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls}/{cls_denom_val} (Ties out exactly)"
+                    f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls}/{stated_cls_target} (Ties out exactly with stated denominator)"
                 )
             else:
+                has_tie_out_gap = True
                 tie_outs.append(
-                    f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls}/{cls_denom_val} (Gap: {cls_denom_val - sum_cls})"
+                    f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls}/{stated_cls_target} (Gap: {stated_cls_target - sum_cls})"
                 )
         else:
+            has_tie_out_gap = True
             tie_outs.append(
-                f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls} (No explicit classification denominator stated)"
+                f"Classification labels ({mode_label}): {c_cnt} correct + {w_cnt} wrong + {a_cnt} abstained = {sum_cls} (Stated denominator is missing or not parsed)"
             )
 
     return BatchRollup(
         name=batch_dir.name,
         path=batch_dir,
         title=title,
-        metadata_lines=header_lines,
-        extraction_denominator=extraction_denom_stated,
+        metadata_paragraphs=header_paras,
+        stated_extraction_denominator=stated_ext_denom,
+        stated_classification_denominator=stated_cls_denom,
+        derived_extraction_denominator=derived_ext_denom,
+        derived_classification_denominator=derived_cls_denom,
+        errata_notes=errata_notes,
         extraction_table=ext_rows,
         extraction_notes=ext_notes,
-        classification_denominator=classification_denom_stated,
         classification_table=cls_rows,
         classification_notes=cls_notes,
         other_sections=other_sections,
@@ -357,6 +458,7 @@ def parse_batch_scores(batch_dir: Path) -> BatchRollup:
         recorded_fields=recorded_fields,
         unrecorded_fields=unrecorded_fields,
         tie_outs=tie_outs,
+        has_tie_out_gap=has_tie_out_gap,
     )
 
 
@@ -365,52 +467,66 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
     out: list[str] = []
     out.append("# Frozen Evaluation Rollup (fresh_batch_1 & fresh_batch_2)")
     out.append("")
-    out.append("This document summarizes the hand-adjudicated frozen evaluation artifacts recorded in `evaluation/fresh_batch_1` and `evaluation/fresh_batch_2`. All figures and observations are read-only extractions from each batch's respective `SCORES.md` without modification, derivation, or re-computation.")
+    out.append("This document summarizes the hand-adjudicated frozen evaluation artifacts recorded in `evaluation/fresh_batch_1` and `evaluation/fresh_batch_2`. Stated figures and notes are extracted read-only from each batch's respective `SCORES.md` and `ERRATA.md`. The tie-out verification computes category sums and compares them directly against stated and table denominators to verify integrity.")
     out.append("")
 
     # Overview table
-    out.append("## 1. Batch Summaries & Metadata")
+    out.append("## 1. Batch Summaries & Denominator Overview")
     out.append("")
-    out.append("| Batch | Title | Stated Extraction Denominator | Stated Classification Denominator |")
-    out.append("|---|---|---|---|")
+    out.append("| Batch | Title | Stated Extraction Denom | Table (Derived) Ext Denom | Stated Classif Denom | Summed (Derived) Classif Denom |")
+    out.append("|---|---|---|---|---|---|")
     for b in rollups:
-        ext_d = b.extraction_denominator or "Not stated"
-        cls_d = b.classification_denominator or "Not stated"
-        out.append(f"| `{b.name}` | {b.title} | {ext_d} | {cls_d} |")
+        s_ext = b.stated_extraction_denominator or "Not found/parsed"
+        d_ext = str(b.derived_extraction_denominator) if b.derived_extraction_denominator is not None else "Not derived"
+        s_cls = b.stated_classification_denominator or "Not found/parsed"
+        d_cls = str(b.derived_classification_denominator) if b.derived_classification_denominator is not None else "Not derived"
+        out.append(f"| `{b.name}` | {b.title} | {s_ext} | {d_ext} | {s_cls} | {d_cls} |")
     out.append("")
 
     # Section for each batch
+    sec_idx = 2
     for b in rollups:
-        out.append(f"## 2. Batch: `{b.name}`")
+        out.append(f"## {sec_idx}. Batch: `{b.name}`")
+        sec_idx += 1
         out.append(f"**Title**: {b.title}")
         out.append("")
-        if b.metadata_lines:
-            out.append("**Metadata & Notes:**")
-            for m in b.metadata_lines:
-                out.append(f"- {m}")
+
+        if b.errata_notes:
+            out.append("**Errata Notice:**")
+            for e in b.errata_notes:
+                out.append(f"- {e}")
+            out.append("")
+
+        if b.metadata_paragraphs:
+            out.append("**Metadata & Context:**")
+            for p in b.metadata_paragraphs:
+                out.append(f"- {p}")
             out.append("")
 
         # Extraction
-        out.append("### Extraction Outcomes (per batch record)")
+        out.append("### Extraction Outcomes")
         if b.extraction_table:
-            has_split = any(r.split is not None for r in b.extraction_table)
-            if has_split:
-                out.append("| Mode | List Found | Own Item | Merged | Split | Omitted | Additions |")
-                out.append("|---|---|---|---|---|---|---|")
-                for r in b.extraction_table:
-                    out.append(f"| {r.mode} | {r.list_found or 'not recorded'} | {r.own_item or 'not recorded'} | {r.merged or 'not recorded'} | {r.split or 'not recorded'} | {r.omitted or 'not recorded'} | {r.additions or 'not recorded'} |")
-            else:
-                out.append("| Mode | List Found | Own Item | Merged | Split | Omitted | Additions |")
-                out.append("|---|---|---|---|---|---|---|")
-                for r in b.extraction_table:
-                    out.append(f"| {r.mode} | {r.list_found or 'not recorded'} | {r.own_item or 'not recorded'} | {r.merged or 'not recorded'} | not recorded | {r.omitted or 'not recorded'} | {r.additions or 'not recorded'} |")
+            hdr = ["Mode", "List Found", "Own Item", "Merged", "Split", "Omitted", "Additions"]
+            out.append("| " + " | ".join(hdr) + " |")
+            out.append("| " + " | ".join(["---"] * len(hdr)) + " |")
+            for r in b.extraction_table:
+                row_vals = [
+                    r.mode,
+                    r.list_found or "not recorded",
+                    r.own_item or "not recorded",
+                    r.merged or "not recorded",
+                    r.split if (r.split is not None) else "not recorded in batch table",
+                    r.omitted or "not recorded",
+                    r.additions or "not recorded",
+                ]
+                out.append("| " + " | ".join(row_vals) + " |")
             out.append("")
         else:
-            out.append("*No extraction table recorded.*")
+            out.append("*No extraction table found or parsed.*")
             out.append("")
 
         if b.extraction_notes:
-            out.append("**Extraction Notes & Failure Splits:**")
+            out.append("**Extraction Notes:**")
             for note in b.extraction_notes:
                 out.append(f"- {note}")
             out.append("")
@@ -439,7 +555,7 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
                 out.append("| " + " | ".join(row_vals) + " |")
             out.append("")
         else:
-            out.append("*No classification table recorded.*")
+            out.append("*No classification table found or parsed.*")
             out.append("")
 
         if b.classification_notes:
@@ -454,24 +570,24 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
             if b.warnings_worked:
                 out.append("- **Worked:** " + "; ".join(b.warnings_worked))
             else:
-                out.append("- **Worked:** not recorded")
+                out.append("- **Worked:** not recorded or not parsed")
             if b.warnings_not_worked:
                 out.append("- **Did not work:** " + "; ".join(b.warnings_not_worked))
             else:
-                out.append("- **Did not work:** not recorded")
+                out.append("- **Did not work:** not recorded or not parsed")
             out.append("")
         else:
-            out.append("- *Uncertainty warning effectiveness not recorded in this batch.*")
+            out.append("- *Uncertainty warning section not found or not parsed.*")
             out.append("")
 
-        # Other sections unique to this batch
+        # Other sections
         if b.other_sections:
-            out.append("### Batch-Specific Additional Sections")
-            for sec_name, sec_lines in b.other_sections.items():
+            out.append("### Additional Recorded Sections")
+            for sec_name, sec_paras in b.other_sections.items():
                 clean_sec = sec_name.lstrip("#").strip()
                 out.append(f"#### {clean_sec}")
-                for ln in sec_lines:
-                    out.append(f"- {ln}")
+                for p in sec_paras:
+                    out.append(f"- {p}")
                 out.append("")
 
         # Recorded vs Unrecorded
@@ -480,12 +596,12 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
         for k, v in b.recorded_fields.items():
             out.append(f"- {k}: {v}")
         out.append("")
-        out.append("**Not Recorded in this Batch:**")
+        out.append("**Unrecorded / Missing in this Batch:**")
         for u in b.unrecorded_fields:
             out.append(f"- {u}")
         out.append("")
 
-        # Tie-out checks
+        # Tie-outs
         out.append("### Denominator & Tie-Out Verification")
         for to in b.tie_outs:
             out.append(f"- {to}")
@@ -495,9 +611,20 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
 
 
 def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = None) -> tuple[str, Path]:
-    """Execute rollup, print output, and write evaluation/ROLLUP.md."""
+    """Execute rollup, enforce tie-outs, print output, and write output file."""
     if output_path is None:
         output_path = repo_root / "evaluation" / "ROLLUP.md"
+
+    output_path = output_path.resolve()
+
+    # Guard: output path must not be an existing input artifact
+    input_artifacts = [
+        (repo_root / "evaluation" / "fresh_batch_1" / "SCORES.md").resolve(),
+        (repo_root / "evaluation" / "fresh_batch_1" / "ERRATA.md").resolve(),
+        (repo_root / "evaluation" / "fresh_batch_2" / "SCORES.md").resolve(),
+    ]
+    if output_path in input_artifacts:
+        raise ValueError(f"Refusing to write to input evaluation artifact '{output_path}'.")
 
     if output_path.exists() and not force:
         raise FileExistsError(
@@ -511,6 +638,14 @@ def run_rollup(repo_root: Path, force: bool = False, output_path: Path | None = 
         parse_batch_scores(b1_dir),
         parse_batch_scores(b2_dir),
     ]
+
+    # Enforce tie-outs
+    gaps_found = [b.name for b in rollups if b.has_tie_out_gap]
+    if gaps_found:
+        rendered_md = generate_rollup_markdown(rollups)
+        raise ValueError(
+            f"Tie-out validation failed for batch(es): {', '.join(gaps_found)}. Gaps or denominator mismatches detected."
+        )
 
     rendered_md = generate_rollup_markdown(rollups)
 
@@ -540,10 +675,8 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    # Repo root is directory containing pyproject.toml or evaluation/
     repo_root = Path.cwd()
     if not (repo_root / "evaluation").is_dir():
-        # Try script's grandparent
         cand = Path(__file__).resolve().parent.parent
         if (cand / "evaluation").is_dir():
             repo_root = cand
@@ -553,13 +686,15 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         rendered, out_file = run_rollup(repo_root, force=args.force, output_path=args.output)
-        # Print the rollup to stdout
         print(rendered)
         sys.stderr.write(f"\nWrote rollup successfully to {out_file}\n")
         return 0
     except FileExistsError as e:
         sys.stderr.write(f"Refusing to overwrite: {e}\n")
         return 2
+    except ValueError as e:
+        sys.stderr.write(f"Validation Error: {e}\n")
+        return 3
     except Exception as e:
         sys.stderr.write(f"Error during rollup: {e}\n")
         return 1
