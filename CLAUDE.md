@@ -9,6 +9,13 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
 - Exception, decided by the user ("Option A"): a list that looks truncated (unclosed bracket, or cut off
   mid-word) still gets Group 4 if a STRONG marker is already present, because missing text cannot remove a
   marker. The result carries a "List may be incomplete" warning. All other truncated cases abstain.
+- "Contains ..." statements count as evidence ONLY when they declare an additive class (colour, flavour,
+  sweetener, emulsifier, ...). Allergen statements ("Contains soy, milk") and "May contain" never do.
+  Known gap: only the first sentence after the ingredient list is read, so a later "Contains permitted colour"
+  is missed (this errs on the cautious side).
+- yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
+  isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
+- Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.
 - Never output health judgements ("healthy", "unhealthy", "should not be eaten").
 - No ingredient-count rules. Short lists can be UPF; long lists of foods can be group 3.
 - Every rule or mapping entry cites its source (research/ file or external reference).
@@ -31,6 +38,11 @@ Resource tables (src/foodscan/resources/*.csv) each carry a `source` column.
 web_preview/ holds a JS port of the classifier published as a single-page artifact. Python is the source of
 truth. After ANY rule or table change: `python scripts/parity_check.py` (must be all identical), then
 `python scripts/build_web_preview.py` (refuses to build if parity fails) and republish web_preview/dist/.
+
+## Static hosting
+`python scripts/build_web_preview.py` writes web_preview/dist/foodscan-preview.html (for the artifact host,
+which adds its own document skeleton) and dist/index.html (wrapped with doctype, lang, viewport, description,
+favicon for ordinary static hosts such as Vercel). Run scripts/fetch_tesseract_assets.py once first.
 
 ## Workflow
 - Small commits, tests passing before each commit. One task per branch.

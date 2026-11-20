@@ -11,3 +11,5 @@ ins,name,functional_class,strength,source
 110,sunset yellow FCF,colour,strong,"USER-APPROVED 2026-11-20; name/class from the Codex INS list (not in research/02); colourings are marker class 2"
 150d,caramel IV (sulfite ammonia caramel),colour,strong,"USER-APPROVED 2026-11-20; name/class from the Codex INS list (not in research/02); colourings are marker class 2"
 950,acesulfame potassium,sweetener,strong,"USER-APPROVED 2026-11-20; name/class from the Codex INS list (not in research/02); non-sugar sweeteners are marker class 2"
+322,lecithin,emulsifier,strong,"USER-APPROVED 2026-11-20; name/class from the Codex INS list (not in research/02); emulsifiers are marker class 2"
+452(i),sodium polyphosphate,stabiliser,unlisted,"USER-APPROVED 2026-11-20; name from the Codex INS list; its functional classes are in no research/02 marker list, so it never decides a group"

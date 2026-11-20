@@ -104,6 +104,10 @@ CORPUS = [
     "Ingredients: Rice, Mystery Seasoning : Dehydrated Vegetables(Garlic, Onion, Tomato), flavour.",
     "Ingredients: Rice, jackfruit seed paste, jaggery syrup.", "Ingredients: Rice, jackfruit, jackfruit, flavour.",
     "Ingredients: Rice, preservative (INS 211), emulsifier (INS 471), maltodextrin, INS 999.",
+    "Ingredients: Jaggery.", "Ingredients: Ragi, jaggery, groundnut oil.", "Ingredients: Milk, INS 322.",
+    "Ingredients: Milk, stabiliser (INS 452(i)).", "Ingredients: Rice, yeast extract, salt.", "Ingredients: Rice, pea protein.",
+    "Ingredients: Rice, yeast extract, pea protein, natural flavour.", "Ingredients: Rice, salt. Contains soy, milk, wheat, gluten.",
+    "Ingredients: Rice, salt. Contains soy. Contains permitted colour.", "Ingredients: Rice, salt. Contains artificial sweetener.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
