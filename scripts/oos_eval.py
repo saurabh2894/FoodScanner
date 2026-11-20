@@ -62,8 +62,9 @@ def evaluate(manifest: dict, cache: Path, before_src: Path, after_src: Path) -> 
     texts = {}
     for l in manifest["labels"]:
         f = cache / l["cache_file"].split(" ")[0]
-        t = f.read_text(encoding="utf-8")
-        if hashlib.sha256(t.encode("utf-8")).hexdigest() != l["text_sha256"]:
+        raw = f.read_bytes()                                   # exact bytes: a text holding a carriage return must hash as drawn
+        t = raw.decode("utf-8")
+        if hashlib.sha256(raw).hexdigest() != l["text_sha256"]:
             raise RuntimeError(f"{l['id']}: cached text does not match the manifest sha256 (the database changed or the cache is damaged: redraw is NOT allowed, report it)")
         texts[l["id"]] = t
     with tempfile.TemporaryDirectory() as td:
@@ -105,6 +106,17 @@ def report_md(res: dict, manifest: dict, summ: dict) -> str:
          "## NOT recognised (abstention or gap on a staged term): first-class results", ""]
     miss = [(r["id"], m) for r in res["labels"] for m in r["mentions"] if m["after"] != "recognised"]
     L += [f"- {i} ({next(x['code'] for x in res['labels'] if x['id'] == i)}): `{m['mention']}` (target `{m['target']}`): **{m['after']}**" for i, m in miss] or ["- none"]
+    per = {}
+    for r in res["labels"]:
+        for m in r["mentions"]:
+            d = per.setdefault(m["target"], {"recognised": 0, "NOT recognised": 0, "inside another item": 0})
+            d[m["after"]] += 1
+    drawn = manifest.get("per_target", {})
+    L += ["", "## Per staged target (mentions across all drawn labels, after build)", "", "| target | eligible pool | labels drawn | mentions recognised | NOT recognised | inside another item |", "|---|---|---|---|---|---|"]
+    for t in TARGETS:
+        d = per.get(t, {"recognised": 0, "NOT recognised": 0, "inside another item": 0})
+        n = drawn.get(t, {})
+        L.append(f"| {t} | {n.get('eligible_pool', '?')} | {n.get('drawn', '?')}" + (" (**no label drawn**)" if not n.get("drawn") else "") + f" | {d['recognised']} | {d['NOT recognised']} | {d['inside another item']} |")
     L += ["", "## Changes of group, status, drivers or reason between before and after", ""]
     ch = [r for r in res["labels"] if r["changed_fields"]]
     L += [f"- {r['id']}: {r['changed_fields']} (group {r['group_before']} -> {r['group_after']}, status {r['status_before']} -> {r['status_after']})" for r in ch] or ["- none"]

@@ -1,0 +1,14 @@
+foodscan third-party data notices
+
+Open Food Facts (evaluation material only)
+Contains information from Open Food Facts, which is made available under the Open Database License (ODbL).
+Terms: https://world.openfoodfacts.org/terms-of-use   Licence: https://opendatacommons.org/licenses/odbl/1-0/
+Individual contents: Database Contents License (DbCL). Product images (not stored in this repository): CC BY-SA.
+Where it is stored here: ingredient-text inputs under evaluation/*/inputs/ and their manifests (evaluation/*/manifest.json). It is not used as a source for any vocabulary or resource-table row.
+If this repository is ever distributed publicly, the ODbL obligations (attribution, intact notices, share-alike for an adapted database) must be re-checked first.
+
+USDA FoodData Central (CC0 1.0 Universal; public domain)
+Names in staged vocabulary batches come from USDA FoodData Central (https://fdc.nal.usda.gov/); listing it as the source is requested and done in each row's `source` column.
+
+FAO report (cited, not redistributed)
+Monteiro et al. 2019, Ultra-processed foods, diet quality, and health using the NOVA classification system, FAO: https://www.fao.org/3/ca5644en/ca5644en.pdf

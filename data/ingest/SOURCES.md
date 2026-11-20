@@ -24,5 +24,6 @@ Licence unverified, so nothing is imported. A future adapter must meet this inte
 `fdc_ingest.py normalise` (candidate_id, dataset, data_type, source record id, verbatim description, description_norm, parts, category, publication date, dataset release, source URL, licence); (3) per-row provenance back to the source record; (4) the
 same gate (WS4) with no shortcut. Until then `scripts/fdc_ingest.py` refuses it ("hook only").
 
-## Open Food Facts: reference only
-Open Food Facts remains the source of the frozen evaluation inputs (already in the repo with the terms string in each manifest; no ODbL notice or share-alike decision is recorded for them: see evaluation/out_of_sample_herb_spice_1/README.md section 3). The out-of-sample challenge set keeps its texts OUT of the repo (gitignored cache). Nothing is incorporated from it into vocabulary: the ODbL share-alike fit is unresolved. The registry marks it `reference_only`.
+## Open Food Facts: reference only, and walled off from production sourcing
+Open Food Facts is EVALUATION MATERIAL ONLY. Production vocabulary and resource-table rows (src/foodscan/resources/*.csv) carry FDC and FAO/research provenance only; Open Food Facts appears nowhere in their `source` columns and nothing is incorporated from it into vocabulary. The registry marks it `reference_only`.
+Stored OFF texts: the frozen evaluation inputs are in the repo (each manifest carries the terms string; /NOTICE carries the attribution and terms URL). The out-of-sample challenge set keeps its texts out of the repo (gitignored cache) as storage minimization, not a licence determination: see evaluation/out_of_sample_herb_spice_1/README.md sections 2-3. The ODbL share-alike question for any public distribution stays open.

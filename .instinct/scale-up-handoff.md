@@ -16,24 +16,23 @@ Scale vocabulary recognition from open, citable sources in four workstreams, bra
 - No classification-rule changes in this work; commodity datasets never decide NOVA groups; no blanket additive-to-NOVA mapping; no per-product hardcoding; keep OCR/extraction/classification separation.
 - Conditioned clauses (nuts, juices, plain cereals) stay label-bound; no auto-pass for plain-looking terms.
 - Every candidate row: PROVISIONAL, verbatim source clause, per-row provenance.
-- Git: push only claude/scale-ingest-1 (status lines go to claude/great-mendel-rx6aek via /tmp/status_line.sh pattern: append one line to .instinct/session-status.md there, commit that file alone, push that branch only). No PR creation, no merge to main, no GitHub comments, no Vercel/artifact actions.
+- OFF texts never enter the repo from new draws (gitignored cache); OFF is evaluation material only. Git: push only claude/scale-ingest-1 (status lines go to claude/great-mendel-rx6aek via /tmp/status_line.sh pattern: append one line to .instinct/session-status.md there, commit that file alone, push that branch only). No PR creation, no merge to main, no GitHub comments, no Vercel/artifact actions.
 - Staged batches never merge into src/foodscan/resources/lexicon.csv without owner verification and a senior review pass.
 - After each step: full suite + `python scripts/parity_check.py` (must be all identical), commit, push, status line.
 - Flip check: before/after in SEPARATE fresh processes; any group/status/driver flip -> stop and report.
 
 ## 3. Checkpoint
-Branch base: main 3df79d7. Suite 658 passed, parity 395/395.
-- [x] WS1 demand miner: 8ae89bf (evaluation/demand_inventory_1/)
-- [x] WS2 supply ingest: 1365b49 (scripts/fdc_ingest.py, data/ingest/SOURCES.md, fdc_downloads_1.json)
-- [x] WS3 clause-tier rule: 7a4394f (data/ingest/clause_tier1_herbs_spices.json, scripts/clause_tier.py)
-- [x] WS4 validation gate: 3c6def3 (scripts/validate_batch.py, scripts/flip_dump.py)
-- [x] Batch 1 staged herb_spice_bulk_1: gate READY_FOR_REVIEW (25 ready, 12 duplicates, 10 parked, flip 0/66). Commit sha: 4b519ea.
-- [x] Test hardened (end-to-end gate test uses absent term; merge probe passes 658).
+Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, strict xfail), parity 395/395.
+- [x] WS1 demand miner: 8ae89bf. [x] WS2 supply ingest: 1365b49. [x] WS3 clause-tier rule: 7a4394f. [x] WS4 validation gate: 3c6def3.
+- [x] Batch 1 staged, then revision 2 (dc3babf): poppy seed parked, variant policy data/ingest/variant_policy_1.json (4 synonyms, 6 separate rows), oregano/thyme "IS named" provenance, Group-2 word anywhere in a name rejects, mapper exclusion tests. Gate READY_FOR_REVIEW: 20 rows + 4 synonyms, flip 0/66.
+- [x] Out-of-sample tooling (scripts/oos_draw.py, scripts/oos_eval.py): texts in gitignored cache data/cache/oos_herb_spice_1/ (NOT in repo), manifest + results + FINDINGS committed. Licence status: storage MINIMIZED, not resolved; NOTICE added; OFF never appears in production source columns.
+- [x] Integration prep on the feature branch: gate rows merged into lexicon.csv/synonyms.csv (6cf9a99), tests/test_herb_spice_bulk_1.py (synthetic), research/07 held-category note (sources and clause fit only, no rows).
+- [x] Challenge-set results: 32 labels, 7 of 24 targets with no label; 40 recognised / 24 not / 2 inside another item; see evaluation/out_of_sample_herb_spice_1/FINDINGS.md.
 
 ## 4. Remaining steps (in order)
-- [ ] Report all workstreams + batch to the owner in-session; wait for owner verification of herb_spice_bulk_1 (do not merge).
-- [ ] On owner instruction only: next staged batch via the same pipeline (candidate categories for the next tier chosen by owner; conditioned clauses stay label-bound).
-- [ ] On owner verification + senior review only: merge ready rows into lexicon.csv in a separate commit, rerun suite, parity, 66-input flip check, then build_web_preview (never push main without explicit release decision).
+- [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
+- [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
+- [ ] Only on instruction: next staged batch (held categories per research/07 need sources first); conditioned clauses stay label-bound.
 
 ## 5. Fresh-session resume
 1. Read this file and .instinct/session-status.md (on claude/great-mendel-rx6aek).
