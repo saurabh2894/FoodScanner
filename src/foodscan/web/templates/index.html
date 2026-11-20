@@ -87,7 +87,7 @@
   {% endif %}
   {% if result.ins_mappings %}
     {% macro effect(u) -%}
-      {%- if u.name is none and u.ref_name -%}No decision rule (the Codex list names it, but it cannot decide a group; unknown stays unknown)
+      {%- if u.name is none and u.ref_name -%}No decision rule (the JECFA page read names it, but it cannot decide a group; unknown stays unknown)
       {%- elif u.name is none -%}Code not in the table (cannot count as a marker; if nothing else decides, the result stays uncertain)
       {%- elif u.strength == 'strong' -%}Ultra-processing marker
       {%- elif u.strength in ('weak', 'weak_specific') -%}Weak marker (not enough on its own)

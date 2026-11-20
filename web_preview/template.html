@@ -174,7 +174,7 @@
     unknown:  { tone: "unknown", label: "Not in the table yet", help: "Cannot count as a marker. If nothing else decides, the result stays uncertain." }
   };
   EFFECTS.weak_specific = EFFECTS.weak;
-  EFFECTS.reference = { tone: "unknown", label: "No decision rule", help: "The Codex list names this code, but this project has no rule for it, so it cannot decide a group. Unknown stays unknown: it does not mean the product is or is not ultra-processed." };
+  EFFECTS.reference = { tone: "unknown", label: "No decision rule", help: "A JECFA database page that was read names this code, but this project has no rule for it, so it cannot decide a group. Unknown stays unknown: it does not mean the product is or is not ultra-processed." };
   function effectOf(u) { return u.name === null ? (u.ref_name ? EFFECTS.reference : EFFECTS.unknown) : (EFFECTS[u.strength] || EFFECTS.unlisted); }
   function shortSource(src) {
     if (!src) return "";
@@ -225,7 +225,11 @@
     });
     if (unknown) box.appendChild(el("p", { "class": "hint ins-note", text: EFFECTS.unknown.help }));
     var sources = Array.from(new Set(uses.map(function (u) { return u.source; }).filter(Boolean)));
-    if (uses.some(function (u) { return u.ref_name; })) sources.push("Display-only names: Codex CXG 36-1989 (2026 revision), FAO and WHO, licence CC BY-NC 4.0, https://openknowledge.fao.org/handle/20.500.14283/cd8953en");
+    uses.forEach(function (u) {      // display-only names come from the JECFA database pages that were read (ins_names.csv), not from Codex
+      if (!u.ref_name) return;
+      var m = /https?:\/\/\S+/.exec(u.ref_source || "");
+      sources.push("Name of INS " + u.code + " (display only): " + u.ref_name + ", JECFA database page" + (m ? " " + m[0].replace(/[;,.]+$/, "") : "") + (/PROVISIONAL/.test(u.ref_source || "") ? " (name provisional)" : ", read in full by the maintainer"));
+    });
     if (uses.some(function (u) { return u.role_notes && u.role_notes.length; })) sources.push("NOVA method text read for the declared-role notes: Monteiro, Cannon, Lawrence, Costa Louzada, Pereira Machado 2019, Ultra-processed foods, diet quality, and health using the NOVA classification system, FAO, Rome, https://www.fao.org/3/ca5644en/ca5644en.pdf");
     if (sources.length) box.appendChild(el("details", { "class": "ins-note" }, [
       el("summary", { text: "Where these names come from" }),
