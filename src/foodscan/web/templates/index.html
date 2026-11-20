@@ -12,6 +12,11 @@
   .error { border-left: 6px solid #c33; }
   small, .src { color: #555; }
   code { background: #f3f3f3; padding: 0 .25rem; }
+  .insgroup { border-top: 1px solid #ddd; margin-top: .6rem; padding-top: .5rem; }
+  .inslist { list-style: none; padding: 0; margin: .4rem 0 0; display: grid; gap: .5rem; }
+  .inslist .missing { color: #666; font-style: italic; }
+  .inslist .src, .inslist .effect { display: block; font-size: .85rem; }
+  .role { font-size: .75rem; background: #e6f1ee; border-radius: 999px; padding: 0 .45rem; }
 </style>
 </head>
 <body>
@@ -68,12 +73,31 @@
     <ul>{% for u in result.unassessed %}<li>{{ u }}</li>{% endfor %}</ul>
   {% endif %}
   {% if result.ins_mappings %}
-    <h3>INS numbers</h3>
-    <ul>
-    {% for u in result.ins_mappings %}
-      <li>INS {{ u.code }} &rarr; {{ u.name or '(not in local mapping)' }}{% if u.source %} <span class="src">[{{ u.source }}]</span>{% endif %}</li>
+    {% macro effect(u) -%}
+      {%- if u.name is none -%}Not in the table yet (cannot count as a marker; if nothing else decides, the result stays uncertain)
+      {%- elif u.strength == 'strong' -%}Ultra-processing marker
+      {%- elif u.strength in ('weak', 'weak_specific') -%}Weak marker (not enough on its own)
+      {%- else -%}Not a marker by itself{%- endif -%}
+    {%- endmacro %}
+    <h3>Additive codes</h3>
+    {% set named = result.ins_mappings | selectattr('name') | list | length %}
+    <p class="src">{{ result.ins_mappings | length }} found: {{ named }} named, {{ result.ins_mappings | length - named }} not in the table yet.</p>
+    {% for group in result.ins_mappings | groupby('ingredient') %}
+      <div class="insgroup">
+        <strong>{{ (group.grouper or '').split('(')[0].strip(' ,;:*-') or group.grouper }}</strong>
+        {% if group.list[0].section %}<span class="src">{{ group.list[0].section }}</span>{% endif %}
+        <ul class="inslist">
+        {% for u in group.list %}
+          <li><code>INS {{ u.code }}</code>
+            <span class="{{ 'missing' if u.name is none }}">{{ u.name or 'Name not in the table yet' }}</span>
+            {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
+            <span class="effect">{{ effect(u) }}</span>
+            {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-    </ul>
   {% endif %}
   <details><summary>Raw OCR text</summary><pre style="white-space: pre-wrap">{{ result.extracted_text }}</pre></details>
 </div>

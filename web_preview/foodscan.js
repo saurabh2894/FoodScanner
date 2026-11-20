@@ -246,7 +246,8 @@
       const addUse = (c) => {
         const code = canonicalCode(c);
         const row = insTable[code];
-        uses.push({ code, name: row ? row.name : null, source: row ? row.source : null });
+        const classes = row ? (row.functional_class || "").split(";").map((x) => x.trim()).filter(Boolean) : [];
+        uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null });
       };
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];
@@ -278,6 +279,7 @@
       for (const s of synonyms) text = text.replace(s.re, s.to);
       text = flatten(text);
       const [name, inner] = splitBrackets(text);
+      uses.forEach((u) => { u.ingredient = raw; });
       return { raw, name, inner, ins: uses, text: (name + " " + inner).trim() };
     }
 
@@ -340,6 +342,7 @@
       for (const [raw, section] of items) {
         const ing = normaliseIngredient(raw);
         ing.section = section;
+        ing.ins.forEach((u) => { u.section = section; });
         const split = depth < 3 ? splitCompound(raw) : null;
         if (split && !recognisableIng(normaliseIngredient(split[0]))) {
           if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible

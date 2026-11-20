@@ -7,7 +7,7 @@ with a reason, never a guessed group.
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 from .classify import Driver, _hits_for, classify_ingredients, is_recognised
@@ -87,6 +87,7 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
     for raw, section in items:
         ing = normalise_list([raw])[0]
         ing.section = section
+        ing.ins = [replace(u, section=section) for u in ing.ins]
         split = split_compound(raw) if depth < 3 else None
         if split and not _recognisable(normalise_list([split[0]])[0]):
             if heads is not None:

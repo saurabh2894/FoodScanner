@@ -119,6 +119,9 @@ CORPUS = [
     "Ingredients: Rice, salt. *As flavouring agent.", "Ingredients: Rice, salt. Serving suggestion: with butter.",
     "Ingredients: Rice. Seasoning 12%: Salt. Enjoy hot. Coating: Sugar.", "Ingredients: Rice, salt. THIS PRODUCT CONTAINS 37% MILLETS",
     "Ingredients: Rice, salt. Allergen advice: contains soy.", "Ingredients: Rice Manufactured by Example Foods",
+    "Ingredients: Rice, Acidity Regulators(INS330, INS296, INS334), salt.", "Ingredients: Rice, Preservatives (INS 211), Antioxidants (INS 392).",
+    "Ingredients: Rice, humectants (INS 422), salt.", "Ingredients: Rice, Stabilisers (INS 466), Thickeners (INS 415), salt.",
+    "Ingredients: Rice, Anticaking Agents (INS 551), Flour Treatment Agents (INS 300).",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -130,7 +133,8 @@ def py_result(text, source="ocr"):
         "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
-        "ins": [{"code": u.code, "name": u.name, "source": u.source} for u in a.ins_mappings],
+        "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
+                 "ingredient": u.ingredient, "section": u.section} for u in a.ins_mappings],
     }
 
 

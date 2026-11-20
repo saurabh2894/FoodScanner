@@ -24,3 +24,11 @@ stabilizer,stabiliser,US spelling variant (class not in research/02: see markers
 stabilizers,stabiliser,plural (class not in research/02: see markers.csv "unlisted")
 o11,oil,"OCR misread of the word Oil seen on a real photo (millet puff pack, 2026-11-20); matched as a whole token only"
 0il,oil,"OCR misread of the word Oil (zero for O) seen in the browser OCR of the same real photo (2026-11-20); matched as a whole token only"
+acidity regulators,acidity regulator,"plural of the marker term 'acidity regulator' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+preservatives,preservative,"plural of the marker term 'preservative' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+antioxidants,antioxidant,"plural of the marker term 'antioxidant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+stabilisers,stabiliser,"plural of the marker term 'stabiliser' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+thickeners,thickener,"plural of the marker term 'thickener' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+anticaking agents,anticaking agent,"plural of the marker term 'anticaking agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+flour treatment agents,flour treatment agent,"plural of the marker term 'flour treatment agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+humectants,humectant,"plural of the marker term 'humectant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"

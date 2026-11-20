@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 from functools import cache
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 from .tables import load_table
 
@@ -39,6 +39,18 @@ class InsUse:
     code: str
     name: str | None      # None: code not in ins_map.csv
     source: str | None
+    classes: tuple[str, ...] = ()      # functional classes from the table ("emulsifier"); () when unknown
+    strength: str | None = None        # decision strength from the table: strong / weak / weak_specific / unlisted
+    ingredient: str | None = None      # the raw ingredient text the code was found in
+    section: str | None = None         # list section that ingredient belongs to, if any
+
+
+def _make_use(code: str, table: dict) -> "InsUse":
+    row = table.get(code)
+    if not row:
+        return InsUse(code, None, None)
+    classes = tuple(c.strip() for c in (row.get("functional_class") or "").split(";") if c.strip())
+    return InsUse(code, row["name"], row["source"], classes, row["strength"])
 
 
 @dataclass
@@ -117,17 +129,13 @@ def extract_ins(text: str) -> tuple[str, list[InsUse]]:
 
     def repl(m: re.Match) -> str:
         for c in _CODE_RE.findall(m.group("codes")):
-            code = canonical_code(c)
-            row = table.get(code)
-            uses.append(InsUse(code, row["name"] if row else None, row["source"] if row else None))
+            uses.append(_make_use(canonical_code(c), table))
         return " "
 
     def repl_bare(m: re.Match) -> str:
         # keep the class word, drop only the bracketed codes
         for c in _CODE_RE.findall(m.group("codes")):
-            code = canonical_code(c)
-            row = table.get(code)
-            uses.append(InsUse(code, row["name"] if row else None, row["source"] if row else None))
+            uses.append(_make_use(canonical_code(c), table))
         return m.group(0)[: m.start("codes") - m.start(0)].rstrip("( \t") + " "
 
     low = _bare_codes_re().sub(repl_bare, low)
@@ -144,7 +152,7 @@ def normalise_ingredient(raw: str) -> Ingredient:
     text = _apply_synonyms(text)
     text = flatten(text)
     name, inner = _split_brackets(text)
-    return Ingredient(raw=raw, name=name, inner=inner, ins=uses)
+    return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw) for u in uses])
 
 
 def normalise_list(items: list[str]) -> list[Ingredient]:

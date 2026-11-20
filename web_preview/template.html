@@ -72,11 +72,26 @@
   details summary { cursor: pointer; color: var(--muted); font-size: .85rem; }
   pre { margin: .5rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 400 .82rem/1.5 var(--font-mono); }
   footer { color: var(--muted); font-size: .8rem; display: grid; gap: .35rem; }
-  .table-scroll { overflow-x: auto; }
-  table { border-collapse: collapse; width: 100%; font-size: .84rem; }
-  th, td { text-align: left; padding: .3rem .5rem .3rem 0; vertical-align: top; }
-  td.mono { white-space: nowrap; padding-right: .9rem; }
-  th { font-weight: 600; color: var(--muted); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; }
+  /* additive codes: grouped by the ingredient they were found in */
+  .ins-group { border-top: 1px solid var(--line); padding-top: .65rem; margin-top: .65rem; }
+  .ins-group-h { display: flex; flex-wrap: wrap; gap: .1rem .6rem; align-items: baseline; font-size: .86rem; }
+  .ins-list { list-style: none; margin: .5rem 0 0; padding: 0; display: grid; gap: .65rem; }
+  .ins-row { display: grid; grid-template-columns: 5.6rem minmax(0, 1fr) auto; gap: .2rem .75rem; align-items: start; }
+  .ins-code { font: 500 .8rem var(--font-mono); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: .15rem .5rem; justify-self: start; white-space: nowrap; }
+  .ins-name { font-weight: 500; overflow-wrap: anywhere; }
+  .ins-name.missing { color: var(--muted); font-weight: 400; font-style: italic; }
+  .ins-roles { display: inline-flex; flex-wrap: wrap; gap: .25rem; margin-left: .4rem; vertical-align: middle; }
+  .role { font-size: .7rem; padding: .05rem .45rem; border-radius: 999px; background: var(--accent-soft); color: var(--fg); }
+  .pill { font-size: .74rem; font-weight: 600; padding: .15rem .6rem; border-radius: 999px; white-space: nowrap; justify-self: end; }
+  .pill-marker { background: var(--accent); color: var(--accent-ink); }
+  .pill-weak { border: 1px solid var(--accent); color: var(--fg); }
+  .pill-neutral { background: var(--accent-soft); color: var(--fg); }
+  .pill-unknown { border: 1px dashed var(--stop); color: var(--muted); font-weight: 500; }
+  .ins-note { margin-top: .6rem; }
+  @media (max-width: 560px) {
+    .ins-row { grid-template-columns: auto minmax(0, 1fr); }
+    .ins-row .pill { grid-column: 1 / -1; justify-self: start; }
+  }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
@@ -150,6 +165,62 @@
     return n;
   }
 
+  // ---- additive codes ------------------------------------------------------------------------------------
+  // What a code does to the result, in plain words. No health wording: this is about processing evidence only.
+  var EFFECTS = {
+    strong:   { tone: "marker",  label: "Ultra-processing marker", help: "This code counts as evidence of ultra-processing." },
+    weak:     { tone: "weak",    label: "Weak marker", help: "Not enough on its own to decide a group." },
+    unlisted: { tone: "neutral", label: "Not a marker by itself", help: "Named, but its role is not a marker class, so it cannot decide a group." },
+    unknown:  { tone: "unknown", label: "Not in the table yet", help: "Cannot count as a marker. If nothing else decides, the result stays uncertain." }
+  };
+  EFFECTS.weak_specific = EFFECTS.weak;
+  function effectOf(u) { return u.name === null ? EFFECTS.unknown : (EFFECTS[u.strength] || EFFECTS.unlisted); }
+  function shortSource(src) {
+    if (!src) return "";
+    if (/^research\//.test(src)) return "Project research notes";
+    if (/Codex/i.test(src)) return /USER-APPROVED/.test(src) ? "Codex INS list, approved by you" : "Codex INS list";
+    return src.slice(0, 48);
+  }
+  function insBlock(uses) {
+    var named = uses.filter(function (u) { return u.name !== null; }).length, unknown = uses.length - named;
+    var groups = [], index = {};
+    uses.forEach(function (u) {
+      var key = (u.ingredient || "") + "||" + (u.section || "");
+      if (!(key in index)) { index[key] = groups.length; groups.push({ ingredient: u.ingredient || "", section: u.section, items: [] }); }
+      groups[index[key]].items.push(u);
+    });
+    var box = el("div", { "class": "ins" }, [
+      el("h3", { text: "Additive codes" }),
+      el("p", { "class": "hint", text: uses.length + (uses.length === 1 ? " code" : " codes") + " found: " + named + " named, " + unknown + " not in the table yet." })
+    ]);
+    groups.forEach(function (g) {
+      var title = g.ingredient.split("(")[0].replace(/[\s,;:*-]+$/, "").trim() || g.ingredient;
+      var head = el("div", { "class": "ins-group-h" }, [el("strong", { text: title })]);
+      if (g.section) head.appendChild(el("span", { "class": "src", text: g.section }));
+      var list = el("ul", { "class": "ins-list" }, g.items.map(function (u) {
+        var eff = effectOf(u);
+        var name = el("span", { "class": "ins-name" + (u.name === null ? " missing" : ""), text: u.name === null ? "Name not in the table yet" : u.name });
+        var roles = (u.classes || []).filter(function (c) { return c.toLowerCase() !== (u.name || "").toLowerCase(); });   // do not repeat the name as a role
+        if (roles.length) name.appendChild(el("span", { "class": "ins-roles" }, roles.map(function (c) { return el("span", { "class": "role", text: c }); })));
+        var main = el("div", {}, [name]);
+        if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
+        return el("li", { "class": "ins-row" }, [
+          el("span", { "class": "ins-code", text: "INS " + u.code }),
+          main,
+          el("span", { "class": "pill pill-" + eff.tone, title: eff.help, text: eff.label })
+        ]);
+      }));
+      box.appendChild(el("div", { "class": "ins-group" }, [head, list]));
+    });
+    if (unknown) box.appendChild(el("p", { "class": "hint ins-note", text: EFFECTS.unknown.help }));
+    var sources = Array.from(new Set(uses.map(function (u) { return u.source; }).filter(Boolean)));
+    if (sources.length) box.appendChild(el("details", { "class": "ins-note" }, [
+      el("summary", { text: "Where these names come from" }),
+      el("ul", { "class": "plain" }, sources.map(function (t) { return el("li", { "class": "src", text: t }); }))
+    ]));
+    return box;
+  }
+
   function render(a) {
     var box = $("result");
     box.textContent = "";
@@ -186,16 +257,8 @@
       });
     } else listBox.appendChild(el("ol", { "class": "plain" }, a.ingredients.map(function (i) { return el("li", { "class": "mono", text: i }); })));
     cols.appendChild(listBox);
-    if (a.ins.length) {
-      var rows = a.ins.map(function (u) {
-        return el("tr", {}, [el("td", { "class": "mono", text: "INS " + u.code }), el("td", { text: u.name || "not in local mapping" }), el("td", { "class": "src", text: u.source || "" })]);
-      });
-      cols.appendChild(el("div", { "class": "table-scroll" }, [
-        el("h3", { text: "INS numbers" }),
-        el("table", {}, [el("thead", {}, [el("tr", {}, [el("th", { text: "Code" }), el("th", { text: "Name" }), el("th", { text: "Source" })])]), el("tbody", {}, rows)])
-      ]));
-    }
     card.appendChild(cols);
+    if (a.ins.length) card.appendChild(insBlock(a.ins));
     if (a.ignored && a.ignored.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not read as ingredients" }),
