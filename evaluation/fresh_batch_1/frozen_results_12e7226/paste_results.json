@@ -1,0 +1,692 @@
+{
+ "N01": {
+  "text": "Sugar, Refined Wheat flour (Maida), Hydrogenated vegetable fats, Fractionated vegetable fats, Milk solids, Cocoa solids (3.8%), Emulsifier (Soya lecithin and 476), Raising agent (500 (ii)), Yeast, Iodised salt, Flour treatment agent (516), Artificial (Vanilla) flavouring substances.\nAllergen Note: Contains Wheat, Soy, Sesame and Milk. May Contains Nut.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Sugar",
+   "Refined Wheat flour (Maida)",
+   "Hydrogenated vegetable fats",
+   "Fractionated vegetable fats",
+   "Milk solids",
+   "Cocoa solids (3.8%)",
+   "Emulsifier (Soya lecithin and 476)",
+   "Raising agent (500 (ii))",
+   "Yeast",
+   "Iodised salt",
+   "Flour treatment agent (516)",
+   "Artificial (Vanilla) flavouring substances"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Sugar",
+     "Refined Wheat flour (Maida)",
+     "Hydrogenated vegetable fats",
+     "Fractionated vegetable fats",
+     "Milk solids",
+     "Cocoa solids (3.8%)",
+     "Emulsifier (Soya lecithin and 476)",
+     "Raising agent (500 (ii))",
+     "Yeast",
+     "Iodised salt",
+     "Flour treatment agent (516)",
+     "Artificial (Vanilla) flavouring substances"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Fractionated vegetable fats",
+   "Milk solids",
+   "Cocoa solids (3.8%)",
+   "Yeast"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"hydrogenated\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "N02": {
+  "text": "Refined wheat flour (maida), refined (palm & palmolein) oil, sugar, liquid glucose, raising agents [503(ii), 341(ii), 500(ii) & 450(i)], butter (1.2%), black salt, milk solids, dehydrated vegetable (chives) (1%), iodised salt, nature identical flavouring substance and dough conditioner (223).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Refined wheat flour (maida)",
+   "refined (palm & palmolein) oil",
+   "sugar",
+   "liquid glucose",
+   "raising agents [503(ii), 341(ii), 500(ii) & 450(i)]",
+   "butter (1.2%)",
+   "black salt",
+   "milk solids",
+   "dehydrated vegetable (chives) (1%)",
+   "iodised salt",
+   "nature identical flavouring substance and dough conditioner (223)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Refined wheat flour (maida)",
+     "refined (palm & palmolein) oil",
+     "sugar",
+     "liquid glucose",
+     "raising agents [503(ii), 341(ii), 500(ii) & 450(i)]",
+     "butter (1.2%)",
+     "black salt",
+     "milk solids",
+     "dehydrated vegetable (chives) (1%)",
+     "iodised salt",
+     "nature identical flavouring substance and dough conditioner (223)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "refined (palm & palmolein) oil",
+   "liquid glucose",
+   "milk solids",
+   "dehydrated vegetable (chives) (1%)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "N03": {
+  "text": "Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%), guar gum, iodised salt, rosemary (antioxidant) [INS 392]. Seasoning (11.5%): Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenugreek, black pepper, ginger, clove, cardamom, nutmeg), tapioca starch, desi khand, iodised salt, edible vegetable oil (soyabean), natural colors and nature identical flavors, guar gum, citric acid (acidity regulator) [INS 330), baking soda (raising agent) [INS 500(ii)].",
+  "answered": false,
+  "group": null,
+  "reason": "text after a full stop looks like more ingredients and was not read: \"Seasoning (11.5%): Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenu...\"",
+  "items": [
+   "Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%)",
+   "guar gum",
+   "iodised salt",
+   "rosemary (antioxidant) [INS 392]"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%)",
+     "guar gum",
+     "iodised salt",
+     "rosemary (antioxidant) [INS 392]"
+    ]
+   ]
+  ],
+  "warnings": [
+   "\"Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%)\" contains a colon, so a section label may not have been split from the ingredient before it",
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"Seasoning (11.5%): Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenu...\""
+  ],
+  "unassessed": [
+   "guar gum",
+   "Noodles (88.5%): Supergrain blend (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [
+   "Seasoning (11.5%): Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenugreek, black pepper, ginger, clove, cardamom, nutmeg), tapioca starch, desi khand, iodised salt, edible vegetable oil (soyabean), natural colors and nature identical flavors, guar gum, citric acid (acidity regulator) [INS 330), baking soda (raising agent) [INS 500(ii)]."
+  ],
+  "compl": "uncertain",
+  "creasons": [
+   "text after a full stop looks like more ingredients and was not read",
+   "a section label may not have been split from an ingredient"
+  ],
+  "drivers": [
+   "\"antioxidant\" (unlisted_additive)",
+   "INS 392 (not in local mapping)"
+  ]
+ },
+ "N05": {
+  "text": "Tapioca Starch, Refined Palmolein Oil, Soya Flour (9%), Split Pulse Urad (Urad Dal) Flour, Mixed Spices (Refined Sugar, Edible Common Salt, Maltodextrin, Black Salt, Red Chilli Powder, Dried Mango Powder, Onion Powder, Glucose Powder, Preservative (INS 262i), Coriander Powder, Cumin Powder, Fennel, Whey Powder, Ginger Powder, Garlic Powder, Clove Powder, Yeast Extract, Pipal, Black Pepper, Acidity Regulator (INS 296), Flavour Enhancer (INS 627, INS 631), Turmeric Powder, Anticaking Agent (INS 551), Bay Leaf, Acidity Regulator (INS 330), Colour (INS 160c), Nutmeg, Capsicum Powder, Cinnamon, Asafoetida), Hydrogenated Vegetable Oil (Vanaspati), Natural Flavouring Substance And Nature Identical Flavouring Substance",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Tapioca Starch",
+   "Refined Palmolein Oil",
+   "Soya Flour (9%)",
+   "Split Pulse Urad (Urad Dal) Flour",
+   "Mixed Spices (Refined Sugar, Edible Common Salt, Maltodextrin, Black Salt, Red Chilli Powder, Dried Mango Powder, Onion Powder, Glucose Powder, Preservative (INS 262i), Coriander Powder, Cumin Powder, Fennel, Whey Powder, Ginger Powder, Garlic Powder, Clove Powder, Yeast Extract, Pipal, Black Pepper, Acidity Regulator (INS 296), Flavour Enhancer (INS 627, INS 631), Turmeric Powder, Anticaking Agent (INS 551), Bay Leaf, Acidity Regulator (INS 330), Colour (INS 160c), Nutmeg, Capsicum Powder, Cinnamon, Asafoetida)",
+   "Hydrogenated Vegetable Oil (Vanaspati)",
+   "Natural Flavouring Substance",
+   "Nature Identical Flavouring Substance"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Tapioca Starch",
+     "Refined Palmolein Oil",
+     "Soya Flour (9%)",
+     "Split Pulse Urad (Urad Dal) Flour",
+     "Mixed Spices (Refined Sugar, Edible Common Salt, Maltodextrin, Black Salt, Red Chilli Powder, Dried Mango Powder, Onion Powder, Glucose Powder, Preservative (INS 262i), Coriander Powder, Cumin Powder, Fennel, Whey Powder, Ginger Powder, Garlic Powder, Clove Powder, Yeast Extract, Pipal, Black Pepper, Acidity Regulator (INS 296), Flavour Enhancer (INS 627, INS 631), Turmeric Powder, Anticaking Agent (INS 551), Bay Leaf, Acidity Regulator (INS 330), Colour (INS 160c), Nutmeg, Capsicum Powder, Cinnamon, Asafoetida)",
+     "Hydrogenated Vegetable Oil (Vanaspati)",
+     "Natural Flavouring Substance",
+     "Nature Identical Flavouring Substance"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Tapioca Starch",
+   "Refined Palmolein Oil",
+   "Soya Flour (9%)",
+   "Split Pulse Urad (Urad Dal) Flour",
+   "Glucose Powder",
+   "Fennel",
+   "Whey Powder",
+   "Yeast Extract",
+   "Pipal",
+   "Bay Leaf",
+   "Nutmeg",
+   "Capsicum Powder",
+   "Mixed Spices (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "INS 627 (disodium guanylate)"
+  ]
+ },
+ "N06": {
+  "text": "SUGAR, MILK SOLIDS, COCOA BUTTER, COCOA SOLIDS, PERMITTED EMULSIFIERS (E322, E476). CONTAINS ADDED FLAVOURS (ARTIFICIAL FLAVOURING SUBSTANCES-COCOA & VANILLA).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "SUGAR",
+   "MILK SOLIDS",
+   "COCOA BUTTER",
+   "COCOA SOLIDS",
+   "PERMITTED EMULSIFIERS (E322, E476)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "SUGAR",
+     "MILK SOLIDS",
+     "COCOA BUTTER",
+     "COCOA SOLIDS",
+     "PERMITTED EMULSIFIERS (E322, E476)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "MILK SOLIDS",
+   "COCOA BUTTER",
+   "COCOA SOLIDS"
+  ],
+  "declared": [
+   "ADDED FLAVOURS (ARTIFICIAL FLAVOURING SUBSTANCES-COCOA & VANILLA)"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "N07": {
+  "text": "cocoa(cocoa nibs (45%), cocoa butter (10%)), date powder (45%)",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"date powder (45%)\")",
+  "items": [
+   "cocoa(cocoa nibs (45%), cocoa butter (10%))",
+   "date powder (45%)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "cocoa(cocoa nibs (45%), cocoa butter (10%))",
+     "date powder (45%)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "cocoa nibs (45%)",
+   "cocoa butter (10%)",
+   "date powder (45%)",
+   "cocoa (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": []
+ },
+ "N08": {
+  "text": "Pasteurised Toned Milk, Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)\")",
+  "items": [
+   "Pasteurised Toned Milk",
+   "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Pasteurised Toned Milk",
+     "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": []
+ },
+ "N09": {
+  "text": "Pasteurized Buffalo Milk Fat 6.00% Min., SNF 9.00% Min.",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Buffalo Milk Fat 6.00% Min",
+  "items": [
+   "Pasteurized Buffalo Milk Fat 6.00% Min"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Pasteurized Buffalo Milk Fat 6.00% Min"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Pasteurized Buffalo Milk Fat 6.00% Min"
+  ],
+  "declared": [],
+  "ignored": [
+   ", SNF 9.00% Min."
+  ],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "N10": {
+  "text": "Mango Pieces, Salt, Chilli Powder, Sesame Oil (Gingelly Oil), Mustard, Fenugreek, Asafoetida, Synthetic Vinegar. CONTAINS PERMITED CLASS II PRESERVATIVE. SODIUM BENZOATE.",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Mango Pieces, Mustard, Fenugreek, Synthetic Vinegar",
+  "items": [
+   "Mango Pieces",
+   "Salt",
+   "Chilli Powder",
+   "Sesame Oil (Gingelly Oil)",
+   "Mustard",
+   "Fenugreek",
+   "Asafoetida",
+   "Synthetic Vinegar"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Mango Pieces",
+     "Salt",
+     "Chilli Powder",
+     "Sesame Oil (Gingelly Oil)",
+     "Mustard",
+     "Fenugreek",
+     "Asafoetida",
+     "Synthetic Vinegar"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Mango Pieces",
+   "Mustard",
+   "Fenugreek",
+   "Synthetic Vinegar"
+  ],
+  "declared": [
+   "PERMITED CLASS II PRESERVATIVE"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "N11": {
+  "text": "Mango (54%), lodised salt brine, Refined sesame oil, Red chilli powder (5.7%), Mixed spices powder, Mustard seeds (0.3%), Acidity regulators (INS 330 & INS 260) and Preservative (INS 211).",
+  "answered": false,
+  "group": null,
+  "reason": "only weak or unlisted markers present (Acidity regulators (INS 330 & INS 260) -> \"acidity regulator\" (unlisted_additive); Acidity regulators (INS 330 & INS 260) -> INS 260 (not in local mapping); Acidity regulators (INS 330 & INS 260) -> INS 330 (not in local mapping); Preservative (INS 211) -> \"preservative\" (unlisted_additive); Preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+  "items": [
+   "Mango (54%)",
+   "lodised salt brine",
+   "Refined sesame oil",
+   "Red chilli powder (5.7%)",
+   "Mixed spices powder",
+   "Mustard seeds (0.3%)",
+   "Acidity regulators (INS 330 & INS 260)",
+   "Preservative (INS 211)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Mango (54%)",
+     "lodised salt brine",
+     "Refined sesame oil",
+     "Red chilli powder (5.7%)",
+     "Mixed spices powder",
+     "Mustard seeds (0.3%)",
+     "Acidity regulators (INS 330 & INS 260)",
+     "Preservative (INS 211)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "lodised salt brine",
+   "Mixed spices powder"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "INS 330 (not in local mapping)",
+   "INS 260 (not in local mapping)",
+   "\"preservative\" (unlisted_additive)"
+  ]
+ },
+ "N12": {
+  "text": "Tomato puree (67%), water, sugar, liquid glucose, iodized salt, starch, emulsifying & stabilizing agent (INS 1422, INS 415), acidity regulator (INS 260), spices & condiments, preservative (INS 211). Contains permitted class II preservative (INS 211).",
+  "answered": false,
+  "group": null,
+  "reason": "only weak or unlisted markers present (INS 1422 -> INS 1422 (not in local mapping); INS 415 -> INS 415 (not in local mapping); acidity regulator (INS 260) -> \"acidity regulator\" (unlisted_additive); acidity regulator (INS 260) -> INS 260 (not in local mapping); preservative (INS 211) -> \"preservative\" (unlisted_additive); preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+  "items": [
+   "Tomato puree (67%)",
+   "water",
+   "sugar",
+   "liquid glucose",
+   "iodized salt",
+   "starch",
+   "emulsifying & stabilizing agent (INS 1422, INS 415)",
+   "acidity regulator (INS 260)",
+   "spices & condiments",
+   "preservative (INS 211)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Tomato puree (67%)",
+     "water",
+     "sugar",
+     "liquid glucose",
+     "iodized salt",
+     "starch",
+     "emulsifying & stabilizing agent (INS 1422, INS 415)",
+     "acidity regulator (INS 260)",
+     "spices & condiments",
+     "preservative (INS 211)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Tomato puree (67%)",
+   "liquid glucose",
+   "iodized salt",
+   "starch",
+   "spices & condiments",
+   "emulsifying & stabilizing agent (group name; its contents were assessed separately)"
+  ],
+  "declared": [
+   "permitted class II preservative (INS 211)"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "INS 1422 (not in local mapping)",
+   "INS 415 (not in local mapping)",
+   "\"acidity regulator\" (unlisted_additive)",
+   "INS 260 (not in local mapping)"
+  ]
+ },
+ "N13": {
+  "text": "Refined soybean oil (fortified with vitamin A & D), water, sugar, thickeners - E1442, E1450, natural vinegar, iodised salt, spices & condiments, lemon juice concentrate, preservative - E202, nature identical and natural flavouring substances, sequestrant - E385.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Refined soybean oil (fortified with vitamin A & D)",
+   "water",
+   "sugar",
+   "thickeners - E1442",
+   "E1450",
+   "natural vinegar",
+   "iodised salt",
+   "spices & condiments",
+   "lemon juice concentrate",
+   "preservative - E202",
+   "nature identical and natural flavouring substances",
+   "sequestrant - E385"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Refined soybean oil (fortified with vitamin A & D)",
+     "water",
+     "sugar",
+     "thickeners - E1442",
+     "E1450",
+     "natural vinegar",
+     "iodised salt",
+     "spices & condiments",
+     "lemon juice concentrate",
+     "preservative - E202",
+     "nature identical and natural flavouring substances",
+     "sequestrant - E385"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "natural vinegar",
+   "spices & condiments",
+   "lemon juice concentrate"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "N14": {
+  "text": "Whole Grains (34%) (Rolled Oats, Ragi Flakes, Jowar Flakes, Quinoa Flakes, Brown Rice Flakes); Protein Blend (24%) {Texturized Soy Protein, Soy Protein Isolate}; Dry Fruits, Nuts & Seeds (22%) (Black Raisin, Cranberry, Almonds, Flax Seeds, Pumpkin Seeds); Organic Jaggery, Cocoa Powder (7%), Dates, Rice Bran Oil, Himalayan Pink Salt.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Whole Grains (34%) (Rolled Oats, Ragi Flakes, Jowar Flakes, Quinoa Flakes, Brown Rice Flakes)",
+   "Protein Blend (24%) {Texturized Soy Protein, Soy Protein Isolate}",
+   "Dry Fruits",
+   "Nuts & Seeds (22%) (Black Raisin, Cranberry, Almonds, Flax Seeds, Pumpkin Seeds)",
+   "Organic Jaggery",
+   "Cocoa Powder (7%)",
+   "Dates",
+   "Rice Bran Oil",
+   "Himalayan Pink Salt"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Whole Grains (34%) (Rolled Oats, Ragi Flakes, Jowar Flakes, Quinoa Flakes, Brown Rice Flakes)",
+     "Protein Blend (24%) {Texturized Soy Protein, Soy Protein Isolate}",
+     "Dry Fruits",
+     "Nuts & Seeds (22%) (Black Raisin, Cranberry, Almonds, Flax Seeds, Pumpkin Seeds)",
+     "Organic Jaggery",
+     "Cocoa Powder (7%)",
+     "Dates",
+     "Rice Bran Oil",
+     "Himalayan Pink Salt"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Ragi Flakes",
+   "Jowar Flakes",
+   "Quinoa Flakes",
+   "Brown Rice Flakes",
+   "Texturized Soy Protein",
+   "Dry Fruits",
+   "Black Raisin",
+   "Cranberry",
+   "Almonds",
+   "Flax Seeds",
+   "Pumpkin Seeds",
+   "Cocoa Powder (7%)",
+   "Dates",
+   "Himalayan Pink Salt",
+   "Whole Grains (34%) (group name; its contents were assessed separately)",
+   "Protein Blend (24%) (group name; its contents were assessed separately)",
+   "Nuts & Seeds (22%) (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"protein isolate\" (derived_substance)"
+  ]
+ },
+ "N15": {
+  "text": "Roasted Peanuts (91%) Sugar, Stabilizer (INS471), lodised Salt. 31 Category :4.2.2.5 (Proprietary Food - Peanut Butter) Allergen Information: Contains Nuts. Manufactured in facility that also processes other nuts. 3.84 3.36 23.40 13.09 0.0",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Roasted Peanuts (91%) Sugar",
+   "Stabilizer (INS471)",
+   "lodised Salt"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Roasted Peanuts (91%) Sugar",
+     "Stabilizer (INS471)",
+     "lodised Salt"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Roasted Peanuts (91%) Sugar",
+   "lodised Salt"
+  ],
+  "declared": [],
+  "ignored": [
+   "31 Category :4.2.2.5 (Proprietary Food - Peanut Butter)"
+  ],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "INS 471 (emulsifier)"
+  ]
+ },
+ "N16": {
+  "text": "Cereal extract (49%) [Barley, Wheat, Millet), Malted Barley (Extracted solids) (21%), Sugar, Wheat Flour (Atta) (6.5%) Milk Solids (6%), Minerals, Wheat gluten, Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500(ii)], Edible lodized Salt, Cocoa powder Vitamins, Soy Protein Isolate (0.28%), Nature-identical flavouring substances CONTAINS PERMITTED NATURAL COLOUR AND ADDED FLAVOUR (NATURE IDENTICAL FLAVOURING SUBSTANCES). 500100 Tengah +Based on an independent study conducted in 2009, the number of shuttles completed by Boost consuming children (aged 7-105 increased by 25% compared to 8% increase in children who consumed endurance. Study published in J Nutr. 141:2017-2023, 2011 fortified chocolate beverage, in a 20 m shuttle test measuring we A Boost is a nourishing beverage to be consumed as a part of your daily diet and exercise plan. PET",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Cereal extract (49%) [Barley, Wheat, Millet)",
+   "Malted Barley (Extracted solids) (21%)",
+   "Sugar",
+   "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+   "Minerals",
+   "Wheat gluten",
+   "Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500(ii)], Edible lodized Salt, Cocoa powder Vitamins, Soy Protein Isolate (0.28%), Nature-identical flavouring substances"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Cereal extract (49%) [Barley, Wheat, Millet)",
+     "Malted Barley (Extracted solids) (21%)",
+     "Sugar",
+     "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+     "Minerals",
+     "Wheat gluten",
+     "Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500(ii)], Edible lodized Salt, Cocoa powder Vitamins, Soy Protein Isolate (0.28%), Nature-identical flavouring substances"
+    ]
+   ]
+  ],
+  "warnings": [
+   "A bracket near \"Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "Malted Barley (Extracted solids) (21%)",
+   "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+   "Minerals",
+   "Wheat gluten",
+   "Cereal extract (49%) (group name; its contents were assessed separately)"
+  ],
+  "declared": [
+   "PERMITTED NATURAL COLOUR",
+   "ADDED FLAVOUR (NATURE IDENTICAL FLAVOURING SUBSTANCES)"
+  ],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"protein isolate\" (derived_substance)",
+   "\"colour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"colour\""
+  ]
+ }
+}
