@@ -1,0 +1,28 @@
+{
+  "foundation": {
+    "source": "foundation",
+    "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-10-29.zip",
+    "file": "FoodData_Central_foundation_food_csv_2026-10-29.zip",
+    "bytes": 4209875,
+    "sha256": "c3158a5d1b758f56ef20ec76d93603d2bf872e739d51f5f3079e3ef46181351a",
+    "http": {
+      "etag": "\"6aff073c-403cd3\"",
+      "last_modified": "Thu, 19 Nov 2026 14:27:08 GMT"
+    },
+    "retrieved_utc": "2026-11-20T19:35:05Z",
+    "licence": "CC0 1.0 Universal (USDA FoodData Central data are in the public domain and not copyrighted; listing FoodData Central as the source is requested)"
+  },
+  "sr_legacy": {
+    "source": "sr_legacy",
+    "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+    "file": "FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+    "bytes": 6074592,
+    "sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+    "http": {
+      "etag": "\"65398c05-5cb0e0\"",
+      "last_modified": "Wed, 25 Oct 2023 21:43:33 GMT"
+    },
+    "retrieved_utc": "2026-11-20T19:35:05Z",
+    "licence": "CC0 1.0 Universal (USDA FoodData Central data are in the public domain and not copyrighted; listing FoodData Central as the source is requested)"
+  }
+}

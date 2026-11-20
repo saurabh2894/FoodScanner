@@ -7,3 +7,4 @@ data/samples/
 web_preview/dist/
 web_preview/vendor/
 .vercel
+data/cache/
