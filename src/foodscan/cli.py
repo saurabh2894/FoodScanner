@@ -30,6 +30,8 @@ def format_analysis(a: Analysis) -> str:
         lines.append("Ingredients found: none")
     lines.append("")
     lines.append(a.headline)
+    if a.answered:
+        lines.append("Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.")
     for w in a.warnings:
         lines.append(f"Warning: {w}")
     if a.answered and a.drivers:
