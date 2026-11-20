@@ -54,6 +54,7 @@ class Analysis:
     # Completeness signal. Text-span coverage over the words after the heading plus explicit reasons for doubt; it never
     # claims exact completeness (the true item count is unknown): {"status": complete|uncertain, "heading", "words":
     # {region, in_list, declared, excluded, not_read, unaccounted}, "list_share", "assessed": {items, not_assessed}, "reasons"}
+    retake: str | None = None            # photo path only: concrete retake guidance when no list could be read even after the rotated retries
     completeness: dict = field(default_factory=lambda: {
         "status": "uncertain", "heading": "none", "reasons": ["no ingredient list was read"], "list_share": 0.0,
         "words": {"region": 0, "in_list": 0, "declared": 0, "excluded": 0, "not_read": 0, "unaccounted": 0},
@@ -430,6 +431,14 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                     extracted_text=text, **{**common, "warnings": warnings})
 
 
+ROTATIONS = (90, 270, 180)      # clockwise degrees tried, in this order, only when no list was found
+GOOD_ENOUGH_ITEMS = 3           # a rotated reading with at least this many recognised items stops the retries
+
+RETAKE_GUIDANCE = ("No ingredient list could be read from this photo, even after trying it turned 90, 270 and 180 degrees. Retake it: put the pack on a flat surface "
+                   "(or hold it still), use good even light with no glare or shadow across the text, shoot straight-on and close so the ingredients panel fills the "
+                   "frame with the text upright. Or paste the label text instead.")
+
+
 def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:
     """Raises ocr.OcrUnavailable if the OCR backend cannot run (an error, not an abstention)."""
     engine = ocr or TesseractOcr()
@@ -445,7 +454,29 @@ def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:
     note = ocr_code_disagreement([u.code for u in first.ins_mappings], [u.code for u in second.ins_mappings])
     if note:
         chosen.warnings.append(note)
+    if not chosen.ingredients:
+        chosen = _rotated_fallback(path, engine, chosen)
     return chosen
+
+
+def _rotated_fallback(path, engine, chosen: Analysis) -> Analysis:
+    """Fallback only when the readings so far found no ingredient list: the same OCR engine on the photo turned 90, 270, 180 degrees.
+    A rotated reading is used only when it finds a list (yield above the current one); the first such reading with enough items stops the retries."""
+    rotated = getattr(engine, "extract_text_rotated", None)
+    if rotated is None:
+        return chosen
+    best, best_deg = chosen, 0
+    for deg in ROTATIONS:
+        a = analyse_text(rotated(path, deg), source="ocr")
+        if _ocr_yield(a) > _ocr_yield(best):
+            best, best_deg = a, deg
+            if _ocr_yield(a) >= GOOD_ENOUGH_ITEMS:
+                break
+    if best_deg:
+        best.warnings.append(f"The text was read after turning the photo {best_deg} degrees clockwise (sideways or upside-down text). Check the extracted ingredients against the pack.")
+    elif not best.ingredients:
+        best.retake = RETAKE_GUIDANCE
+    return best
 
 
 def ocr_code_disagreement(first: list[str], second: list[str]) -> str | None:

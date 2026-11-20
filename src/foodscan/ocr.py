@@ -92,3 +92,11 @@ class TesseractOcr:
 
         with Image.open(image_path) as img:
             return pytesseract.image_to_string(flatten_lighting(img), lang=self.lang)
+
+    def extract_text_rotated(self, image_path: str | Path, degrees: int) -> str:
+        """Fallback reading with the photo turned clockwise by `degrees` (90, 180 or 270), for sideways or upside-down label text."""
+        import pytesseract
+        from PIL import Image
+
+        with Image.open(image_path) as img:
+            return pytesseract.image_to_string(prepare_image(img.rotate(-degrees, expand=True)), lang=self.lang)

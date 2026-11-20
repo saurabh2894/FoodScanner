@@ -37,6 +37,7 @@
   <h2>{{ result.headline }}</h2>
   {% if result.answered %}<p class="src">Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.</p>{% endif %}
   {% for w in result.warnings %}<p><strong>Warning:</strong> {{ w }}</p>{% endfor %}
+  {% if result.retake %}<p><strong>Retake guidance:</strong> {{ result.retake }}</p>{% endif %}
   {% if result.answered and result.drivers %}
     <h3>Driven by</h3>
     <ul>
