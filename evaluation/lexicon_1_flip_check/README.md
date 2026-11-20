@@ -72,3 +72,23 @@ True baseline: commit `8a4e2e7` (origin/main), generated in a clean, isolated pr
 
 ## Generalization Disclaimer
 These 66 inputs represent a frozen evidence sample from historical evaluation batches. Zero flips on this evidence sample confirms non-regression on known test vectors, but does not assert that no other unseen packaged-food label flips.
+
+
+---
+
+## Senior revision: fb28575-anchored flip check (26 rows; the four plain-juice rows held)
+
+The section above is the junior's analysis as submitted (anchored at 8a4e2e7, 30 rows). It is kept unchanged. After PR #2 was released (main = fb28575) and after the senior review, the evidence below supersedes the counts above for the row set that will actually be merged.
+
+### What changed after review
+1. **Four juice rows held** (apple, grape, orange, pineapple juice; removed from `lexicon.csv`; `tests/test_lexicon_1.py` adjusted; a test pins that they stay unassessed). Reason, from the sources: FAO 2019 Table 1, Group 1, p. 11 lists "fresh or pasteurized fruit or vegetable juices (with no added sugar, sweeteners or flavours)", while pp. 9-10 list "fruit juice concentrate" among the substances of ultra-processed foods. The bare term "juice" does not say which. The item-level condition (no additions on the item) is met on b2/M14 and dev15/F14, but the unmet condition (fresh/pasteurized versus from concentrate) crosses the Group 1 / Group 4 boundary, unlike the unknowns the endorsed nuts rows leave open (roasted versus raw stays inside Group 1). The corpus shows concentrates declared as "concentrate" (b1/N13, neg/R4), which supports a label convention but is two labels from two products, and the two labels carrying the juice rows are one product family. Benefit if kept: cosmetic only (8 unassessed item slots on those two Group 4 labels, no group change). Same discipline as cranberry. To restore them, source the label convention first (for example the FSSAI fruit-juice standard's labelling clause).
+2. **Pin repair** in `tests/test_followup_fixes.py::test_no_broad_batch_unknown_terms_still_abstain`: attributed exceptions for `ajwain` and `bishop's seed` only (rows added by this PR, FAO spice clause); `carom seeds` and `compounded asafoetida` stay pinned as unrecognised. The besan/ajwain/salt assertion in the same test still holds: the list still abstains, now through the flour rule instead of the vocabulary gap.
+
+### fb28575-anchored results (66 frozen paste inputs; before and after produced in separate, fresh processes)
+- Files: `before_fb28575.json`, `after_fb28575.json`, `groups_before_fb28575.json`, `groups_after_fb28575.json`, `diff_summary_fb28575.json`.
+- **group 0, drivers 0, status 0, warnings 0, ingredients 0, additive display 0 changed.**
+- **reason: 2** (b1/N10: Mustard, Fenugreek recognised, still abstains on other items; dev15/F09: Ajwain recognised, the flour-list rule now gives the reason, still an abstention).
+- **unassessed: 11 inputs, 38 item slots**, removals only; every dropped term is one of the 26 added rows. As submitted (30 rows) it was 13 inputs and 46 slots: the four juice rows account for the difference (b2/M14 and dev15/F14, 4 slots each).
+- The junior's 8a4e2e7 before-artifact was checked and is valid (equal to a fresh 8a4e2e7 run on group, reason, warnings, status, unassessed and ingredients in 66/66 inputs).
+- Schema note: the fb28575 files use the same serialisation as `evaluation/vocab_display_1_flip_check/` (detail strings for drivers, `dev/` key prefix); the junior's files use a repr of the driver objects and `dev15/` keys.
+- These 66 inputs are the frozen evidence set that the vocabulary was drawn from: they cannot measure generalisation. The new rows are PROVISIONAL.

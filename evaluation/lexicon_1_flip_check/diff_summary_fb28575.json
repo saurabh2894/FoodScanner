@@ -1,0 +1,148 @@
+{
+  "inputs": 66,
+  "builds": {
+    "before": "fb28575 (origin/main after PR #2), fresh clean process",
+    "after": "fb28575 + antigravity/lexicon-1 with the 4 juice rows held (26 rows), trial-merged tree, fresh process"
+  },
+  "changed_counts": {
+    "group": 0,
+    "drivers": 0,
+    "status": 0,
+    "reason": 2,
+    "warnings": 0,
+    "ingredients": 0,
+    "unassessed": 11,
+    "ins_mappings": 0
+  },
+  "changed_inputs": {
+    "group": [],
+    "drivers": [],
+    "status": [],
+    "reason": [
+      "b1/N10",
+      "dev/F09"
+    ],
+    "warnings": [],
+    "ingredients": [],
+    "unassessed": [
+      "b1/N03",
+      "b1/N05",
+      "b1/N10",
+      "b1/N14",
+      "neg/R5",
+      "dev/F03",
+      "dev/F07",
+      "dev/F09",
+      "dev/F10",
+      "dev/F11",
+      "dev/F15"
+    ],
+    "ins_mappings": []
+  },
+  "unassessed_dropped_terms_by_input": {
+    "b1/N03": [
+      "aniseed",
+      "fenugreek",
+      "nutmeg"
+    ],
+    "b1/N05": [
+      "Fennel",
+      "Bay Leaf",
+      "Nutmeg",
+      "Capsicum Powder"
+    ],
+    "b1/N10": [
+      "Mustard",
+      "Fenugreek"
+    ],
+    "b1/N14": [
+      "Black Raisin",
+      "Almonds",
+      "Flax Seeds",
+      "Pumpkin Seeds"
+    ],
+    "neg/R5": [
+      "ALMONDS"
+    ],
+    "dev/F03": [
+      "Pepper",
+      "Fenugreek",
+      "Nutmeg",
+      "Red Chili"
+    ],
+    "dev/F07": [
+      "chillies",
+      "aniseed",
+      "fenugreek",
+      "nutmeg",
+      "caraway",
+      "chilli flakes",
+      "black pepper bits"
+    ],
+    "dev/F09": [
+      "Ajwain"
+    ],
+    "dev/F10": [
+      "Nutmeg",
+      "Long Pepper",
+      "Mace",
+      "Mint",
+      "Fenugreek",
+      "Fennel Seeds",
+      "Bishop's Seed",
+      "Dried Curry Leaves (0.5%)"
+    ],
+    "dev/F11": [
+      "mustard",
+      "fenugreek"
+    ],
+    "dev/F15": [
+      "White Pepper",
+      "Schezwan Pepper"
+    ]
+  },
+  "unassessed_item_slots_dropped": 38,
+  "reason_changes": {
+    "b1/N10": {
+      "before": "ingredients not in the local vocabulary, so processing level cannot be judged: Mango Pieces, Mustard, Fenugreek, Synthetic Vinegar",
+      "after": "ingredients not in the local vocabulary, so processing level cannot be judged: Mango Pieces, Synthetic Vinegar"
+    },
+    "dev/F09": {
+      "before": "ingredients not in the local vocabulary, so processing level cannot be judged: Ajwain",
+      "after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list"
+    }
+  },
+  "attribution": {
+    "unassessed": "Every dropped term is one of the 26 added lexicon rows (nuts/seeds, herb_spice, black raisin); no term was newly added to unassessed; no group, driver, status, warning, ingredient or additive-display change.",
+    "reason b1/N10": "'Mustard' and 'Fenugreek' became recognised (rows mustard, fenugreek); the list still abstains on 'Mango Pieces' and 'Synthetic Vinegar'.",
+    "reason dev/F09": "'Ajwain' became recognised (row ajwain, FAO spice clause); the existing flour rule now speaks (besan flour list) instead of the vocabulary gap. Still an abstention."
+  },
+  "juice_rows_held": {
+    "decision": "apple/grape/orange/pineapple juice rows were removed (held). If kept they would have changed unassessed on b2/M14 and dev/F14 only (8 item slots), no group.",
+    "as_submitted_30_rows_changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 2,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 13,
+      "ins_mappings": 0
+    },
+    "as_submitted_unassessed_inputs": [
+      "b1/N03",
+      "b1/N05",
+      "b1/N10",
+      "b1/N14",
+      "b2/M14",
+      "neg/R5",
+      "dev/F03",
+      "dev/F07",
+      "dev/F09",
+      "dev/F10",
+      "dev/F11",
+      "dev/F14",
+      "dev/F15"
+    ]
+  }
+}
