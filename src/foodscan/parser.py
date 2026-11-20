@@ -197,12 +197,34 @@ def _colon_at_depth0(item: str) -> int:
     return -1
 
 
+# Words that make a candidate label an ingredient NAME rather than a section label. Three sources, nothing else:
+#  1. every word in descriptors.csv (form and handling: powder, powdered, dried, dry, ground, whole, fresh, ...)
+#  2. "flake", "flakes" (not in descriptors.csv)
+#  3. the processed/form words of data/ingest/clause_tier1_herbs_spices.json (processed_words) that describe a FORM of the ingredient before them:
+#     extract, paste, mix, blend, syrup, cooked, canned, pickled, prepared (+ the plurals extracts, pastes, mixes, blends)
+# Deliberately NOT included although the rule file lists them: "seasoning" and "sauce" (genuine section headers: "Seasoning:", "Sauce:"), "imitation" (precedes a name),
+# "flavor"/"flavour" (already blocked as additive class words). tests/test_peel_label_guard.py pins this set against the rule file.
+# "Paprika Powder Flake (0.6%): Roasted Sesame" must not become the ingredient "Paprika" plus a phantom section "Powder Flake": the colon item stays whole and is
+# flagged by suspect_section_items instead of being guessed.
+_FORM_WORDS_EXTRA = frozenset({"flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"})
+
+
+@cache
+def _name_form_words() -> frozenset:
+    return frozenset(r["word"].lower() for r in load_table("descriptors.csv")) | _FORM_WORDS_EXTRA
+
+
+def _label_has_form_word(label: str) -> bool:
+    return any(t in _name_form_words() for t in re.findall(r"[a-z]+", label.lower()))
+
+
 def _peel_label(item: str) -> tuple[str, str, str] | None:
     """Split an item where a section label sits on the same line as the ingredient before it.
 
     "Rice Bran Oil Seasoning : Onion" -> ("Rice Bran Oil", "Seasoning", "Onion"). The label is the
     last 1 to 4 words before the colon, and what precedes it must be a recognised ingredient (longest
-    recognised prefix wins). If the prefix is not recognised nothing is guessed: the item is left whole
+    recognised prefix wins). A candidate label that holds a descriptor or form word (powder, dried, flake, ...) is
+    never a label: those words belong to an ingredient name. If the prefix is not recognised nothing is guessed: the item is left whole
     (and flagged by suspect_section_items).
     """
     colon = _colon_at_depth0(item)
@@ -222,8 +244,8 @@ def _peel_label(item: str) -> tuple[str, str, str] | None:
             continue
         label = " ".join(label_words)
         flat = _flat(label)
-        if _DENY.fullmatch(label) or flat in _lexicon_terms() or _class_word_re().search(flat):
-            continue
+        if _DENY.fullmatch(label) or flat in _lexicon_terms() or _class_word_re().search(flat) or _label_has_form_word(label):
+            continue                                   # checked for EVERY candidate the loop tries (shortest label first), not only the first
         prefix = " ".join(words[:k])
         if _known_phrase(_flat(prefix)):
             return prefix, label + (" " + pct if pct else ""), rest

@@ -137,6 +137,11 @@ CORPUS = [
     "Ingredients: Rice, salt.\nContains wheat, milk and soy.\nMay contain traces of nuts.", "Ingredients: Rice, salt. Contains wheat and milk, permitted natural colour (160c) and added flavour.",
     "Ingredients: Rice, salt. Contains soy. Contains permitted colour. Manufactured by X.", "Ingredients: Rice, salt.\nManufactured by Example Foods.\nAllergen information: Contains wheat.\nContains added flavours",
     "Ingredients: Rice. May contain traces of nuts. Contains milk.", "Ingredients: raising agents [500(ii), 503(ii)], Colour [150d], rice.",
+    # peel-label guard (tests/test_peel_label_guard.py, SYNTHETIC): a descriptor or form word makes a name, never a section label
+    "Ingredients: Rice flour, salt, Paprika Powder Flake(0.6%): Roasted Sesame, Roasted Seaweed.",
+    "Ingredients: Rice, Rice Bran Oil Seasoning Powder : Onion, salt.", "Ingredients: Rice, Rice Bran Oil Dried Flakes (5%): Onion, salt.",
+    "Ingredients: Rice, Paprika Extract (5%): Roasted Sesame, salt.", "Ingredients: Rice, Thyme Mix (10%): Roasted Sesame, salt.", "Ingredients: Rice, Oregano Blend: Roasted Sesame, salt.",
+    "Ingredients: Rice, Rice Bran Oil Seasoning : Onion, salt, flavour.", "Ingredients: Rice, Rice Bran Oil Seasoning (12%): Onion, salt, flavour.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
@@ -254,19 +259,27 @@ process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseTe
 PAIRS = [(t, "ocr") for t in CORPUS] + [(t, "text") for t in PASTE]
 
 
-def main() -> int:
+def run_js(pairs):
+    """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         (td / "tables.json").write_text(json.dumps(tables()))
-        (td / "corpus.json").write_text(json.dumps(PAIRS))
+        (td / "corpus.json").write_text(json.dumps(pairs))
         (td / "run.js").write_text(NODE)
         out = subprocess.run(
             ["node", str(td / "run.js"), str(ROOT / "web_preview" / "foodscan.js"), str(td / "tables.json"), str(td / "corpus.json")],
             capture_output=True, text=True)
         if out.returncode:
-            print(out.stderr)
-            return 2
-        js = json.loads(out.stdout)
+            raise RuntimeError(out.stderr)
+        return json.loads(out.stdout)
+
+
+def main() -> int:
+    try:
+        js = run_js(PAIRS)
+    except RuntimeError as e:
+        print(e)
+        return 2
     bad = 0
     for (text, source), j in zip(PAIRS, js):
         p = py_result(text, source)
