@@ -13,3 +13,8 @@ Part B, controls (5 labels): (B1) 2 sweetened or flavoured dairy labels (same ca
 
 Pasted input = the untouched Open Food Facts text. Photos are not copied (URLs in manifest.json). References (item lists, expected group or "unjudged", with basis) are written from the photos by an LLM before anything is run, committed, then spot-checked by the owner;
 they are provisional. No code change and no tuning while scoring; one frozen-build sample, no general accuracy claim. Development overlap by product family is flagged and results are given with and without it.
+
+## Drawn labels and flags (added at pre-registration, before any run)
+Drawn by the rule: Q01 to Q14 (Part A Q01-Q10, B1 Q11-Q12, B2 Q13, B3 Q14). Part B2 yielded ONE label, not two: only one product in the pages the rule allows had a negation in its ingredients text; the rule was not loosened after the draw.
+Excluded before scoring: Q01 (the photo shows no ingredient list). Item lists unjudged (group judged): Q13, Q14. Development overlap by product family (the rule excluded exact codes only): Q05 (Heritage, M06), Q06 (Country Delight, N09), Q11 (brand Boost, N16, a different product),
+Q14 (same ketchup recipe family as N12, M12). Results are given for all scored labels and again without these four.

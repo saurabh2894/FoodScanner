@@ -1,0 +1,171 @@
+{
+ "Q01": {
+  "product": "Amul Taaza toned milk (EXCLUDED before scoring)",
+  "top": [],
+  "declared": [],
+  "exp": null,
+  "basis": "EXCLUDED under the selection rule: the photo shows the product name, an allergen line and a nutrition table, no ingredient list",
+  "traps": ""
+ },
+ "Q02": {
+  "product": "Gokul pasteurised full cream milk",
+  "top": [
+   "Milk solids"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: a single dairy ingredient (milk, pasteurised or powdered, NUPENS-USP Group 1); 'milk solids' is itself a PROVISIONAL vocabulary row",
+  "traps": "sideways bag photo with water drops and tiny text; the Ingredients line is one short line among many"
+ },
+ "Q03": {
+  "product": "Katraj pasteurised buttermilk",
+  "top": [
+   "Water",
+   "Curd",
+   "Iodised salt"
+  ],
+  "declared": [],
+  "exp": 3,
+  "basis": "provisional: Group 1 foods (curd, water) with a Group 2 substance (salt) (NUPENS-USP Group 3 description)",
+  "traps": "very small crop; 'CONTAINS MILK' follows with no separator"
+ },
+ "Q04": {
+  "product": "Nandini curd",
+  "top": [
+   "Milk solids (toned milk)",
+   "Active culture"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "milk (as solids) fermented with a culture, nothing else (NUPENS-USP: fermentation of milk to make yoghurt; plain yoghurt with no added sugar)",
+  "traps": "'&' joins the two items; 'Allergen Advice: contains Milk' below; the milk-plus-culture rule should fire (milk solids and culture are in the rule)"
+ },
+ "Q05": {
+  "product": "Heritage Daily Health toned milk",
+  "top": [
+   "Milk solids (toned milk)",
+   "Vitamin A palmitate",
+   "Vitamin D (ergocalciferol)"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk with added vitamins (NUPENS-USP: foods with vitamins and minerals added to replace lost nutrients stay in their group)",
+  "traps": "'Vitamin A Palmitate & Vitamin D (Ergocalciferol)' joins two items with '&'; vitamins are outside the vocabulary, so an abstention is possible",
+  "overlap": "family of M06 Heritage curd"
+ },
+ "Q06": {
+  "product": "Country Delight cow milk",
+  "top": [
+   "Pasteurized cow milk"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "pasteurised milk (NUPENS-USP Group 1)",
+  "traps": "'Fat 3.50% Min., SNF 8.50% Min.' is a composition note on the same line; a two-panel photo with a nutrition table",
+  "overlap": "family of N09 Country Delight buffalo milk"
+ },
+ "Q07": {
+  "product": "Arokya toned milk",
+  "top": [
+   "Milk",
+   "Milk solids"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk and its solids, nothing else (NUPENS-USP: milk, pasteurised or powdered)",
+  "traps": "'Milk & Milk Solids' with '&'; no culture, so the milk-plus-culture rule does not apply"
+ },
+ "Q08": {
+  "product": "Dodla toned milk",
+  "top": [
+   "Milk solids",
+   "Vitamin A (retinyl palmitate)",
+   "Vitamin D (ergocalciferol)"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk with added vitamins (NUPENS-USP: fortified foods stay in their group)",
+  "traps": "'Vitamin A (...) and Vitamin D(...)' joins two items; tiny text on a large crumpled pouch; fat/SNF line below; allergen line"
+ },
+ "Q09": {
+  "product": "Aavin Delite toned milk",
+  "top": [
+   "Milk",
+   "Milk solids"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk and its solids (NUPENS-USP: milk, pasteurised or powdered)",
+  "traps": "the text runs SIDEWAYS in the photo (rotated 90 degrees): OCR of rotated text is likely to fail"
+ },
+ "Q10": {
+  "product": "Akshayakalpa high protein milk",
+  "top": [
+   "Milk solids (pasteurized skimmed cow milk)"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk solids of skimmed milk (NUPENS-USP: milk, pasteurised or powdered)",
+  "traps": "the heading is singular 'INGREDIENT:'; 'Fat: 0.5% maximum / S.N.F: 8.7% minimum' lines follow and are composition notes; blurred photo"
+ },
+ "Q11": {
+  "product": "Boost milk shake (dairy based drink)",
+  "top": [
+   "Toned milk (60%)",
+   "Water",
+   "Sugar",
+   "Cereal product (3%)",
+   "Milk solids",
+   "Minerals",
+   "Acidity regulator (INS 339 (ii))",
+   "Stabilizers (INS 418, INS 407)",
+   "Vitamins"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "provisional: stabilisers are on the NUPENS-USP list of Group 4 additive classes; 'milk drinks' are on its Group 4 examples. Control: this list must NOT fire the milk-plus-culture rule (it holds sugar and stabilisers)",
+  "traps": "'Dairy Based Drink (Proprietary Food)' line above; the code bracket '(INS 339 (ii))' nests a bracket; the stabiliser class is 'unlisted' in the app, so an abstention is possible",
+  "overlap": "brand Boost (N16, a different product)"
+ },
+ "Q12": {
+  "product": "Epigamia chocolate milk shake",
+  "top": [
+   "Skimmed milk (80%)",
+   "Sugar",
+   "Water",
+   "Milk solids",
+   "Cocoa powder (1.5%)",
+   "Emulsifier & Stabilizers [INS 471, INS 407, INS 412]",
+   "Flavour (natural flavouring substances)",
+   "Acidity regulator [INS 339 (iii)]",
+   "Edible common salt",
+   "Vitamin A",
+   "Vitamin D"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "emulsifier and flavour (NUPENS-USP Group 4 classes). Control: this list must NOT fire the milk-plus-culture rule",
+  "traps": "'Emulsifier & Stabilizers [codes]' is ONE declared phrase with a shared code list; 'Vitamin A & Vitamin D' joins two items; square brackets; nested bracket in '[INS 339 (iii)]'"
+ },
+ "Q13": {
+  "product": "Mountain Dew (bottle)",
+  "top": [],
+  "declared": [],
+  "exp": 4,
+  "basis": "classification only: the readable fragments show acidity regulators (330, 331), flavour, preservative (211), colour and a line 'CONTAINS NON-CALORIC SWEETENERS' (NUPENS-USP: colourings, flavourings, sweeteners are Group 4 classes); the full list cannot be read at this resolution, so extraction is UNJUDGED",
+  "traps": "bottle photographed sideways with tiny curved text and a sweeteners sentence; chosen as the negation control (the record's text holds a negation), which the photo cannot show",
+  "extraction": "unjudged"
+ },
+ "Q14": {
+  "product": "Tomato ketchup pouch (code-heavy control)",
+  "top": [],
+  "declared": [
+   "permitted class II preservative (INS211)"
+  ],
+  "exp": 4,
+  "basis": "classification only: the readable part lists 'Emulsifying & Stabilizing Agent (INS1422, INS415)' (a provisional role phrase: emulsifier class; INS 1422 is a modified starch), acidity regulator, preservative: Group 4 by the NUPENS-USP classes. The TOP of the ingredient list is cut off in the photo, so the item list is UNJUDGED",
+  "traps": "the list starts above the frame; the Contains line and an allergy statement that mentions milk solids, wheat and soya as processing facts (never ingredients) follow; codes without spaces (INS1422)",
+  "extraction": "unjudged",
+  "overlap": "same recipe family as the ketchups of N12 and M12"
+ }
+}
