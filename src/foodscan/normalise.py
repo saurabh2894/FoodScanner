@@ -87,7 +87,9 @@ def _synonyms() -> list[tuple[re.Pattern, str]]:
     for r in rows:
         term = r["from"].lower()
         left, right = boundary(term)
-        out.append((re.compile(f"{left}{re.escape(term)}{right}"), r["to"].lower()))
+        # an alias for a "... dal" term also absorbs a following "dal" ("bengal gram dal" -> "chana dal", not "chana dal dal")
+        tail = r"(?:\s+dal(?![a-z]))?" if r["to"].lower().endswith(" dal") and not term.endswith(" dal") else ""
+        out.append((re.compile(f"{left}{re.escape(term)}{right}{tail}"), r["to"].lower()))
     return out
 
 

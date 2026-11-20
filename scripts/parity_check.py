@@ -122,6 +122,12 @@ CORPUS = [
     "Ingredients: Rice, Acidity Regulators(INS330, INS296, INS334), salt.", "Ingredients: Rice, Preservatives (INS 211), Antioxidants (INS 392).",
     "Ingredients: Rice, humectants (INS 422), salt.", "Ingredients: Rice, Stabilisers (INS 466), Thickeners (INS 415), salt.",
     "Ingredients: Rice, Anticaking Agents (INS 551), Flour Treatment Agents (INS 300).",
+    # vocabulary layer (tests/test_vocabulary_layer.py): ordinary wordings of plain staples
+    "Ingredients: rolled oat flakes", "Ingredients: Oats", "Ingredients: steamed rolled oats", "Ingredients: corn flakes", "Ingredients: wheat flakes",
+    "Ingredients: mung bean splits, edible vegetable oil, edible common salt, black salt", "Ingredients: split green gram, refined palm oil, table salt",
+    "Ingredients: bengal gram dal", "Ingredients: red lentil, kala namak", "Ingredients: butter", "Ingredients: pasteurised butter, salt",
+    "Ingredients: rolled oats, sugar, salt", "Ingredients: rolled oats, maltodextrin", "Ingredients: powdered sugar", "Ingredients: Honey",
+    "Ingredients: brown rice, salted butter", "Ingredients: cold pressed sesame oil", "Ingredients: edible", "Ingredients: jackfruit seed paste, oat",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

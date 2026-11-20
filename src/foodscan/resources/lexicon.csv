@@ -41,3 +41,36 @@ rice flour,flour,PROVISIONAL author seed (milled rice; flour kind so mixed lists
 potato flour,flour,PROVISIONAL author seed (flour kind so mixed lists abstain)
 rice bran oil,culinary,research/02 group 2 (oils)
 jaggery,culinary,"PROVISIONAL author seed: unrefined cane/palm sugar, a group 2 sugar like sugar itself (research/02 group 2); added on user approval 2026-11-20"
+oat,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+wheat,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+maize,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+corn,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+barley,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+jowar,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+bajra,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+millet,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+foxtail millet,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+pearl millet,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+quinoa,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+chickpea,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+lentil,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+rajma,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+moong,whole_food,"PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1"
+black salt,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+rock salt,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+sea salt,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+butter,culinary,PROVISIONAL: butter is a NOVA group 2 culinary ingredient in the NOVA literature cited via the USP NUPENS page in research/02; not re-verified in this session
+palm oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+palmolein,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+soybean oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+sesame oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+olive oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+cottonseed oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+vegetable oil,culinary,"PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+honey,culinary,PROVISIONAL: honey is a NOVA group 2 culinary ingredient in the NOVA literature; not re-verified in this session
+ginger,herb_spice,PROVISIONAL author seed (spice)
+cardamom,herb_spice,PROVISIONAL author seed (spice)
+cinnamon,herb_spice,PROVISIONAL author seed (spice)
+clove,herb_spice,PROVISIONAL author seed (spice)
+asafoetida,herb_spice,PROVISIONAL author seed (spice)
+mustard seed,herb_spice,PROVISIONAL author seed (spice)

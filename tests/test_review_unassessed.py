@@ -12,9 +12,11 @@ from test_review_labels import MILLET_PUFF
 def test_group4_result_still_lists_what_was_not_assessed():
     a = analyse_text(MILLET_PUFF, source="text")
     assert a.group == 4
-    for leaf in ("Jowar", "Foxtail Millet", "Corn", "Amchur", "Tamarind", "Raw Sugar"):
+    for leaf in ("Amchur", "Tamarind"):                       # still outside the vocabulary
         assert leaf in a.unassessed, leaf
-    assert "Rice" not in a.unassessed and "Salt" not in a.unassessed          # recognised
+    # ordinary staples the vocabulary layer now recognises (they used to be listed here): coverage grew, so they are assessed
+    for leaf in ("Jowar", "Foxtail Millet", "Corn", "Raw Sugar", "Rice", "Salt"):
+        assert leaf not in a.unassessed, leaf
     assert not any("Flavours" in u for u in a.unassessed)                      # a marker is assessed
 
 

@@ -221,12 +221,36 @@
       .map((r) => {
         const term = r.from.toLowerCase();   // a term starting or ending with a digit must not match inside a longer alphanumeric run
         const left = /^\d/.test(term) ? "(?<![a-z0-9])" : "(?<![a-z])", right = /\d$/.test(term) ? "(?![a-z0-9])" : "(?![a-z])";
-        return { re: new RegExp(left + esc(term) + right, "g"), to: r.to.toLowerCase() };
+        // an alias for a "... dal" term also absorbs a following "dal" (see normalise.py)
+        const tail = r.to.toLowerCase().endsWith(" dal") && !term.endsWith(" dal") ? "(?:\\s+dal(?![a-z]))?" : "";
+        return { re: new RegExp(left + esc(term) + right + tail, "g"), to: r.to.toLowerCase() };
       });
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(flatten(r.term)) + "(?![a-z])"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
-    const isRecognised = (name) => Object.prototype.hasOwnProperty.call(lexicon, name);
+    const descriptors = new Set(T.descriptors.map((r) => r.word.toLowerCase()));
+    const singular = (t) => {
+      if (t.length > 3 && t.endsWith("ies")) return t.slice(0, -3) + "y";
+      if (t.length > 4 && t.endsWith("oes")) return t.slice(0, -2);
+      if (t.length > 3 && t.endsWith("s") && !/(ss|us|is)$/.test(t)) return t.slice(0, -1);
+      return t;
+    };
+    const singularPhrase = (p) => p.split(" ").map(singular).join(" ");
+    const lexIndex = {};
+    for (const term of Object.keys(lexicon)) { const k = singularPhrase(term); if (!(k in lexIndex)) lexIndex[k] = lexicon[term]; }
+    const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+    // mirrors classify.lookup: exact, singular, then both again without descriptor words
+    function lookup(name) {
+      if (has(lexicon, name)) return lexicon[name];
+      if (has(lexIndex, singularPhrase(name))) return lexIndex[singularPhrase(name)];
+      const kept = name.split(" ").filter((t) => t && !descriptors.has(t)).join(" ");
+      if (kept && kept !== name) {
+        if (has(lexicon, kept)) return lexicon[kept];
+        if (has(lexIndex, singularPhrase(kept))) return lexIndex[singularPhrase(kept)];
+      }
+      return null;
+    }
+    const isRecognised = (name) => lookup(name) !== null;
 
     /* ---------- normalise ---------- */
     const CODE = "\\d{3,4}(?:\\s*\\(\\s*[ivx]+\\s*\\))?(?:[a-z](?![a-z]))?";
@@ -314,17 +338,17 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const kinds = ings.map((i) => lexicon[i.name].kind);
+      const kinds = ings.map((i) => lookup(i.name).kind);
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral");
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
-        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lexicon[ings[0].name].source, section: ings[0].section ?? null }], reason: null };
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
-        return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lexicon[ings[0].name].source, section: ings[0].section ?? null }], reason: null };
+        return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
       const hasFood = substantive.some(([, k]) => k === "whole_food");
       const hasCulinary = substantive.some(([, k]) => k === "culinary");
       if (hasFood && hasCulinary)
-        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + k.replace(/_/g, " "), source: lexicon[i.name].source, section: i.section ?? null })), reason: null };
+        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + k.replace(/_/g, " "), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
       return { group: null, drivers: [], reason: "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern" };
     }
 

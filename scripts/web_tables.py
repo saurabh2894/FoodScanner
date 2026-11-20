@@ -10,6 +10,7 @@ def tables() -> dict:
         "synonyms": [dict(r) for r in load_table("synonyms.csv")],
         "markers": [dict(r) for r in load_table("markers.csv")],
         "lexicon": [dict(r) for r in load_table("lexicon.csv")],
+        "descriptors": [dict(r) for r in load_table("descriptors.csv")],
     }
 
 

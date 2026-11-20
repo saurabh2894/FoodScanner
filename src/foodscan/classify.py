@@ -52,8 +52,56 @@ def lexicon() -> dict[str, dict[str, str]]:
     return {flatten(r["term"]): r for r in load_table("lexicon.csv")}
 
 
+@cache
+def _descriptors() -> frozenset:
+    return frozenset(r["word"].lower() for r in load_table("descriptors.csv"))
+
+
+def _singular(tok: str) -> str:
+    if len(tok) > 3 and tok.endswith("ies"):
+        return tok[:-3] + "y"
+    if len(tok) > 4 and tok.endswith("oes"):
+        return tok[:-2]
+    if len(tok) > 3 and tok.endswith("s") and not tok.endswith(("ss", "us", "is")):
+        return tok[:-1]
+    return tok
+
+
+def _singular_phrase(phrase: str) -> str:
+    return " ".join(_singular(t) for t in phrase.split())
+
+
+@cache
+def _lexicon_index() -> dict[str, dict[str, str]]:
+    idx: dict[str, dict[str, str]] = {}
+    for term, row in lexicon().items():
+        idx.setdefault(_singular_phrase(term), row)
+    return idx
+
+
+def lookup(name: str) -> dict[str, str] | None:
+    """The lexicon row for an ingredient name, tolerant of ordinary wording.
+
+    Order: exact term, singular form, then the same two after dropping descriptor words (descriptors.csv: edible,
+    common, rolled, split, refined, powdered, ...). Used ONLY for recognising plain ingredients and their kind;
+    markers are matched separately and always win. "flakes" is deliberately not a descriptor (corn flakes and wheat
+    flakes are processed cereals), so oat flakes is an explicit synonym of oat instead."""
+    lex, idx = lexicon(), _lexicon_index()
+    if name in lex:
+        return lex[name]
+    if _singular_phrase(name) in idx:
+        return idx[_singular_phrase(name)]
+    kept = " ".join(t for t in name.split() if t not in _descriptors())
+    if kept and kept != name:
+        if kept in lex:
+            return lex[kept]
+        if _singular_phrase(kept) in idx:
+            return idx[_singular_phrase(kept)]
+    return None
+
+
 def is_recognised(name: str) -> bool:
-    return name in lexicon()
+    return lookup(name) is not None
 
 
 @dataclass
@@ -108,18 +156,18 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if unrecognised:
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
-    kinds = [lexicon()[i.name]["kind"] for i in ings]
+    kinds = [lookup(i.name)["kind"] for i in ings]
     substantive = [(i, k) for i, k in zip(ings, kinds) if k != "neutral"]
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
-        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lexicon()[ings[0].name]["source"], ings[0].section)])
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
-        return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lexicon()[ings[0].name]["source"], ings[0].section)])
+        return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k == "whole_food" for _, k in substantive)
     has_culinary = any(k == "culinary" for _, k in substantive)
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {k.replace('_', ' ')}", lexicon()[i.name]["source"], i.section) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 
