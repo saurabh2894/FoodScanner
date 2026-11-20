@@ -1,0 +1,53 @@
+# 04 - Basis for the declared-colour marker and the butter case (read 2026-11-20)
+
+Scope: documentation only. No rule was added or changed by this note. The declared-colour marker stays as it was,
+PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a finding about the safety of any additive
+(annatto included) or about the health effects of any product.
+
+## Sources actually read
+1. Monteiro CA, Cannon G, Levy RB, Moubarac JC, Louzada ML, Rauber F, Khandpur N, Cediel G, Neri D, Martinez-Steele E,
+   Baraldi LG, Jaime PC. "Ultra-processed foods: what they are and how to identify them." Public Health Nutrition 2019;
+   22(5):936-941. doi:10.1017/S1368980018003762, PMID 30744710 (PMC10260459 is its PubMed Central copy).
+   READ: the abstract only, via the Europe PMC API (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID:PMC10260459&resultType=core).
+   NOT READ: the full text (pmc.ncbi.nlm.nih.gov answered with a browser-check challenge, which was not bypassed).
+   Note: this is the NOVA group's 2019 identification guide, not the first (2010) NOVA paper.
+   Abstract wording used: ultra-processed products can be identified by "at least one item characteristic of the NOVA
+   ultra-processed food group, ... either food substances never or rarely used in kitchens (such as high-fructose corn
+   syrup, hydrogenated or interesterified oils, and hydrolysed proteins), or classes of additives designed to make the
+   final product palatable or more appealing (such as flavours, flavour enhancers, colours, emulsifiers, emulsifying
+   salts, sweeteners, thickeners, and anti-foaming, bulking, carbonating, foaming, gelling and glazing agents)".
+2. NUPENS/USP, "Learn how to classify foods" (page dated 5 March 2018),
+   https://www.fsp.usp.br/nupens/en/learn-how-to-classify-foods/ (redirects to nupens.fsp.usp.br). READ in full.
+   - Group 2 examples: "butter and lard obtained from milk and pork". "Products consisting of two group 2 items, such as
+     salted butter ... remain in this group. Group 2 items may contain additives used to preserve the product's original
+     properties" (examples given: antioxidants in oils, anti-humectants in salt, preservatives in vinegar).
+   - Group 4: "When products made solely of group 1 or group 3 foods also contain cosmetic or sensory intensifying
+     additives, such as plain yoghurt with added artificial sweeteners, and breads with added emulsifiers, they are
+     classified here in group 4." Listed classes restricted to group 4 include "colourings" (and also thickeners,
+     stabilisers, anti-caking agents, which foodscan treats as "unlisted"/uncertain: a known difference, not changed here).
+3. FAO/WHO GSFA Online, additives by technological function ("colour"):
+   https://www.fao.org/gsfaonline/additives/results.html?d-49489-o=1&d-49489-s=2&lang=&searchBy=tf&techFunction=9
+   NOT READ: fao.org answered HTTP 403 (bot protection), not bypassed. It would only show which additives carry the
+   "colour" function in the GSFA; it is not a NOVA source. Needed: an export of that page from the user, or a
+   reachable alternative.
+
+## What the sources do and do not establish
+- Plain or salted butter (milk fat, with or without salt) is a Group 2 example (source 2).
+- A product that DECLARES an added colour is, under the NOVA wording above, classified in Group 4 when the colour is a
+  cosmetic additive in the declared-additive sense (sources 1 and 2). Neither source states that a group 2 product with an
+  added colour stays in group 2, and neither states a natural-versus-synthetic exemption. The sources say "colours" and
+  "colourings" without qualification; they do not discuss annatto specifically. (Annatto's own status as a natural-origin
+  colour is not covered by either source: unverified here.)
+- Therefore: "butter" and "salted butter" differ from "butter with a natural colour (annatto)" only by that declared colour.
+  The existing behaviour (Group 4 on a declared colour) is kept, provisionally, as the closest reading of the sources. It is
+  not an unconditional "any colour word = Group 4" rule; see the limits below.
+
+## Limits that stay in force (tests: tests/test_colour_marker_scope.py)
+- The marker needs a DECLARED additive colour (class word "colour/color", an INS colour code, or a "Contains ... colour"
+  declaration). A naturally coloured whole ingredient (turmeric, beetroot powder, saffron, annatto seed listed as an
+  ingredient with no colour declaration) is never read as an additive; unrecognised ones appear under "Not assessed".
+- If the identity, the declared function or the photo reading is uncertain, the existing uncertainty paths apply
+  (truncation, heading and completeness signal). Group 4 on a marker survives only under the documented Option A rule,
+  and the result carries the warning.
+- Open for the project owner, not for this pass: whether thickeners/stabilisers/anti-caking agents, which source 2 also
+  lists as group-4 classes, should become markers. Not done; no new rules are approved.

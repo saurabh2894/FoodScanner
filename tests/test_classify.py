@@ -138,4 +138,4 @@ def test_approved_codes_carry_names_and_sources():
     names = {c: normalise_ingredient(f"INS {c}").ins[0] for c in ("102", "110", "150d", "950")}
     assert names["102"].name == "tartrazine" and names["110"].name == "sunset yellow FCF"
     assert names["150d"].name.startswith("caramel IV") and names["950"].name == "acesulfame potassium"
-    assert all("Project decision" in u.source for u in names.values())
+    assert all("Project-maintained classification mapping" in u.source for u in names.values())

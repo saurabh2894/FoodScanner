@@ -179,7 +179,7 @@
   function shortSource(src) {
     if (!src) return "";
     if (/^research\//.test(src)) return "Project research notes";
-    if (/Codex/i.test(src)) return /Project decision/.test(src) ? "Codex INS list; mapping decided by the project owner" : "Codex INS list";
+    if (/Codex/i.test(src)) return /Project-maintained/.test(src) ? "Project-maintained mapping (Codex names are reference only; not an endorsement by Codex, FAO or WHO)" : "Codex INS list";
     return src.slice(0, 48);
   }
   function insBlock(uses) {
@@ -238,6 +238,7 @@
           [el("b", { text: s[0] }), el("span", { text: s[1] })]);
       }));
     card.appendChild(el("h2", { text: a.headline }));
+    if (a.answered) card.appendChild(el("p", { "class": "hint", text: "Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product." }));
     (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
     card.appendChild(scale);
     if (a.drivers.length) {
