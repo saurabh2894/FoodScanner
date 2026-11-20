@@ -24,7 +24,7 @@ def test_package_1_spelling_synonyms():
 
 def test_package_2_ins_display_names():
     rows = {r["ins"]: r for r in load_table("ins_names.csv")}
-    added_codes = ["202", "260", "339(ii)", "407", "412", "415", "466", "476", "500(i)", "501(i)", "551", "1422"]
+    added_codes = ["202", "260", "339(ii)", "412", "415", "466", "476", "500(i)", "501(i)", "551", "1422"]      # 407 withheld pending the sourced family-exception fix (BACKLOG.md)
     for code in added_codes:
         assert code in rows, f"missing INS code {code}"
         name = rows[code]["name"]
@@ -51,13 +51,10 @@ def test_package_2_name_tie_hints():
     r_xanthan = analyse_text("Ingredients: Water, Xanthan gum (INS 412).", source="text")
     assert any("Read as INS 412. The label text says Xanthan gum, and the source page for xanthan gum gives INS 415" in w for w in r_xanthan.warnings)
 
-    # Carrageenan (INS 407a): pin current behavior with a test (known limitation under review)
-    # The label names Carrageenan but codes 407a; the lookup recognizes 407 (Monograph 16) as Carrageenan
-    # and issues a possible misread hint citing 407, while 407a itself remains unmapped.
+    # 407 (carrageenan) is withheld from ins_names.csv: without that row the name-tie hint cannot fire on the legitimate 407a family code.
+    assert "407" not in {r["ins"] for r in load_table("ins_names.csv")}
     r_carr = analyse_text("Ingredients: Water, Carrageenan (INS 407a).", source="text")
-    assert any("Read as INS 407a. The label text says Carrageenan, and the source page for carrageenan gives INS 407" in w for w in r_carr.warnings)
-    u_carr = next(x for x in r_carr.ins_mappings if x.code == "407a")
-    assert u_carr.ref_name is None  # 407a itself is not in ins_names.csv
+    assert not any("Read as INS" in w for w in r_carr.warnings)
 
 
 def test_package_3_declared_roles():

@@ -213,7 +213,7 @@ def test_display_names_say_recognised_code_no_rule_and_stay_unknown_for_classifi
         assert by[c].name is None and by[c].strength is None and by[c].ref_name == name and by[c].ref_url, c      # name and URL only, no rule
     assert by["382"].ref_name is None                                           # identity not sourced: no metadata
     rows = {x["ins"]: x["source"] for x in load_table("ins_names.csv")}
-    assert set(rows) == {"202", "260", "296", "330", "334", "339(ii)", "392", "407", "412", "415", "466", "476", "500(i)", "501(i)", "508", "551", "1422"}
+    assert set(rows) == {"202", "260", "296", "330", "334", "339(ii)", "392", "412", "415", "466", "476", "500(i)", "501(i)", "508", "551", "1422"}      # 407 withheld (see BACKLOG.md: narrow sourced fix for the 407/407a name-tie hint)
     assert all(v.startswith("Checked 2026-11-20: JECFA database page read in full by me") for v in rows.values())
     for c in {"296", "330", "334", "392", "508"}:
         assert "apps.who.int" in rows[c]

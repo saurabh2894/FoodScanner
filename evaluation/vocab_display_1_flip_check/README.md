@@ -9,8 +9,8 @@
    - `lodized salt` -> `iodised salt` (Indian OCR variant lowercase l + US spelling z; seen on F02, M10, R2)
 
 2. **Package 2 (`ins_names.csv`)**:
-   - Added display names for 12 INS codes: 202, 260, 339(ii), 407, 412, 415, 466, 476, 500(i), 501(i), 551, 1422.
-   - Sourced directly from online JECFA specification monographs published by FAO (Monographs 1, 5, 11, 16, 20). No Codex tables or republished Codex data used. Cleaned display names with single spacing (e.g. "Silicon Dioxide, Amorphous" without double space, "Acetylated Distarch Adipate" without tentative suffix).
+   - Added display names for 11 INS codes: 202, 260, 339(ii), 412, 415, 466, 476, 500(i), 501(i), 551, 1422. **The 407 (carrageenan) row was withheld pending the sourced family-exception fix** (BACKLOG.md): with it, "Carrageenan (INS 407a)" raised a false name-tie misread hint.
+   - Sourced directly from online JECFA specification monographs published by FAO (Monographs 1, 5, 11, 20 and the 2016 monograph for 1422). No Codex tables or republished Codex data used. Cleaned display names with single spacing (e.g. "Silicon Dioxide, Amorphous" without double space, "Acetylated Distarch Adipate" without tentative suffix).
 
 3. **Package 3 (`declared_roles.csv`)**:
    - Added `sequestrant` and `dough conditioner`. (Removed compound role `thickening & stabilizing agents`).
@@ -38,7 +38,7 @@ True baseline: commit `8a4e2e7` (origin/main), evaluated in a separate git workt
   - `warnings`: **0 of 66 changed**
   - `ingredients`: **0 of 66 changed**
   - `unassessed`: **17 of 66 changed**
-  - `additive_display`: **22 of 66 changed**
+  - `additive_display`: **22 of 66 changed** (39 name entries + 1 declared-role entry; 407 withheld)
 
 ### Detailed Field Attributions
 1. **NOVA-Group & Driver Flip (`b3/Q03`)**:
@@ -53,7 +53,7 @@ True baseline: commit `8a4e2e7` (origin/main), evaluated in a separate git workt
    - 17 labels dropped newly recognised synonyms (`lodised salt`, `lodized salt`, `iodized salt`, `cotton seed oil`, `refined palmolein oil`) from their unassessed ingredient lists: `b1/N04`, `b1/N05`, `b1/N12`, `b1/N15`, `b2/M07`, `b2/M10`, `b2/M15`, `b3/Q03`, `b3/Q14`, `neg/R2`, `dev/F02`, `dev/F07`, `dev/F08`, `dev/F09`, `dev/F10`, `dev/F13`, `dev/F15`.
    - Responsible change: Package 1 synonym aliases.
 4. **Display-Only Enrichments (22 inputs)**:
-   - 22 labels had JECFA display names and/or declared role `sequestrant` populated in `ins_mappings`: `b1/N05`, `b1/N06`, `b1/N11`, `b1/N12`, `b1/N13`, `b2/M04`, `b2/M05`, `b2/M10`, `b2/M11`, `b2/M12`, `b2/M14`, `b2/M15`, `b3/Q11`, `b3/Q12`, `b3/Q14`, `neg/R5`, `dev/F06`, `dev/F07`, `dev/F08`, `dev/F13`, `dev/F14`, `dev/F15`.
+   - 22 labels had JECFA display names (11 codes; 407 withheld) and/or declared role `sequestrant` populated in `ins_mappings`: `b1/N05`, `b1/N06`, `b1/N11`, `b1/N12`, `b1/N13`, `b2/M04`, `b2/M05`, `b2/M10`, `b2/M11`, `b2/M12`, `b2/M14`, `b2/M15`, `b3/Q11`, `b3/Q12`, `b3/Q14`, `neg/R5`, `dev/F06`, `dev/F07`, `dev/F08`, `dev/F13`, `dev/F14`, `dev/F15`.
    - Responsible change: Package 2 `ins_names.csv` and Package 3 `declared_roles.csv`. Purely additive display text with zero impact on NOVA classification or rules.
 
 ## Generalization Disclaimer

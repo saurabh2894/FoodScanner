@@ -2,7 +2,7 @@
   "inputs": 66,
   "builds": {
     "before": "8a4e2e7",
-    "after": "antigravity/vocab-display-1"
+    "after": "antigravity/vocab-display-1 + 407 display row withheld (see attributions)"
   },
   "changed_counts": {
     "group": 1,
@@ -76,6 +76,9 @@
     "neg/R2": "Reason text drops 'lodized salt' from unrecognised list. Caused by Package 1 alias 'lodized salt' -> 'iodised salt'.",
     "dev/F09": "Reason text drops 'Refined Palmolein Oil' from unrecognised list (leaving only Ajwain). Caused by Package 1 alias 'refined palmolein oil' -> 'palmolein'.",
     "unassessed_17_labels": "17 labels dropped newly recognised synonyms (lodised salt, lodized salt, iodized salt, cotton seed oil, refined palmolein oil) from unassessed lists. Caused by Package 1 synonym aliases.",
-    "additive_display_22_labels": "22 labels had INS display names (monographs for 202, 260, 339(ii), 407, 412, 415, 466, 476, 500(i), 501(i), 551, 1422) and/or declared role 'sequestrant' populated. Caused by Package 2 ins_names.csv and Package 3 declared_roles.csv. No group or scoring impact."
+    "additive_display_22_labels": "22 labels had INS display names (JECFA monographs for 202, 260, 339(ii), 412, 415, 466, 476, 500(i), 501(i), 551, 1422: 39 name entries) and/or declared role 'sequestrant' (N13, 1 entry) populated. Caused by Package 2 ins_names.csv and Package 3 declared_roles.csv. No group or scoring impact. The 407 (carrageenan) display row is WITHHELD pending the sourced family-exception fix (BACKLOG.md); 3 entries that carried it in the earlier head no longer show a name. The input count stays 22 because every label that carried 407 also carries another newly named code."
+  },
+  "withheld": {
+    "407": "Carrageenan display row removed from ins_names.csv before release: with it, 'Carrageenan (INS 407a)' (a legitimate family code) raised a false name-tie 'Possible misread' hint. Deferred to the narrow sourced fix in BACKLOG.md."
   }
 }
