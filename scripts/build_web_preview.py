@@ -5,6 +5,7 @@ Two outputs from one template:
   index.html             the same page wrapped for ordinary static hosting (Vercel): doctype, lang,
                          viewport, description, favicon. Without these a phone lays the page out at 980 px
                          wide in quirks mode, so the static build must carry them itself.
+Hosting config (headers, build commands) lives in the repo-root vercel.json, the single source for Git deploys.
 Run order: scripts/fetch_tesseract_assets.py once, then this. It refuses to build unless the Python and
 JS implementations agree on every parity text.
 """
@@ -62,9 +63,8 @@ def build() -> None:
     (dist / "index.html").write_text(wrap_for_static(page), encoding="utf-8")
     shutil.copytree(vendor, dist / "tess", dirs_exist_ok=True)
     shutil.copy(ROOT / "web_preview" / "worker-boot.js", dist / "tess" / "worker-boot.js")
-    shutil.copy(ROOT / "web_preview" / "vercel.dist.json", dist / "vercel.json")
     print(f"wrote {dist / 'foodscan-preview.html'} (artifact) and {dist / 'index.html'} (static host), "
-          f"{len(page) / 1024:.0f} KB; photo-reader files and vercel.json copied")
+          f"{len(page) / 1024:.0f} KB; photo-reader files copied")
 
 
 if __name__ == "__main__":

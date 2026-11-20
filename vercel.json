@@ -1,5 +1,10 @@
 {
-  "installCommand": "pip install -e .",
-  "buildCommand": "python scripts/fetch_tesseract_assets.py && python scripts/build_web_preview.py",
-  "outputDirectory": "web_preview/dist"
+  "installCommand": "echo 'no install step: the build uses only the Python standard library, node and npm'",
+  "buildCommand": "PYTHONPATH=src python3 scripts/fetch_tesseract_assets.py && PYTHONPATH=src python3 scripts/build_web_preview.py",
+  "outputDirectory": "web_preview/dist",
+  "cleanUrls": true,
+  "headers": [
+    { "source": "/tess/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }] }
+  ]
 }

@@ -44,6 +44,12 @@ truth. After ANY rule or table change: `python scripts/parity_check.py` (must be
 which adds its own document skeleton) and dist/index.html (wrapped with doctype, lang, viewport, description,
 favicon for ordinary static hosts such as Vercel). Run scripts/fetch_tesseract_assets.py once first.
 
+## Deploy flow
+Production is `main` -> Vercel (project "foodscan", Git-connected). Do NOT run `vercel deploy` by hand. Work on a
+branch, get approval, then push to `main`; Vercel runs the repo-root vercel.json build (fetch the photo-reader
+files, run the parity check, build web_preview/dist) and publishes it. The build needs only python3, node and npm.
+Preview deploys of other branches sit behind Vercel Authentication.
+
 ## Workflow
 - Small commits, tests passing before each commit. One task per branch.
 - OCR is behind an interface (foodscan.ocr.OcrEngine) so a vision model can replace it later.
