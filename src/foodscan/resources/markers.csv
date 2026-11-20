@@ -1,0 +1,32 @@
+term,marker_class,strength,source
+hydrogenated,derived_substance,strong,research/02 marker class 1 (hydrogenated vegetable oil)
+interesterified,derived_substance,strong,research/02 marker class 1 (interesterified vegetable oil)
+glucose-fructose syrup,derived_substance,strong,research/02 marker class 1 (HFCS / glucose-fructose syrup)
+invert sugar,derived_substance,strong,research/02 marker class 1
+maltodextrin,derived_substance,strong,research/02 marker class 1
+dextrose,derived_substance,strong,research/02 marker class 1
+modified starch,derived_substance,strong,research/02 marker class 1 (modified starches)
+protein isolate,derived_substance,strong,research/02 marker class 1 (soy / whey protein isolate)
+colour,cosmetic_additive,strong,research/02 marker class 2 (colourings)
+flavour,cosmetic_additive,strong,research/02 marker class 2 (flavourings)
+enhancer,cosmetic_additive,strong,research/02 marker class 2 (flavour enhancers)
+sweetener,cosmetic_additive,strong,research/02 marker class 2 (non-sugar sweeteners)
+emulsifier,cosmetic_additive,strong,research/02 marker class 2 (emulsifiers)
+anti-foaming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+antifoaming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+bulking,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+carbonating,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+foaming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+gelling,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+glazing,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+firming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+humectant,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
+pectin,ordinary_additive,weak_specific,research/02 qualification: pectin in a jam is consistent with group 3
+raising agent,ordinary_additive,weak,research/02 qualification: raising agents in plain bread are consistent with group 3
+preservative,unlisted_additive,unlisted,NOT in research/02: class named in no marker list; treated as uncertain pending review
+antioxidant,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+acidity regulator,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+stabiliser,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+thickener,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+anticaking agent,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+flour treatment agent,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
