@@ -85,6 +85,12 @@ def test_cores_strip_descriptors_and_plurals():
 
 
 def run_flip(rows):
+    # These probes depend on the frozen corpus and on the term still being open: if a probe term is ever added to the lexicon, pick another open term
+    # from evaluation/demand_inventory_1/ (the assertion below says so instead of failing obscurely).
+    from foodscan.classify import is_recognised
+    from foodscan.normalise import normalise_ingredient
+    for r in rows:
+        assert not is_recognised(normalise_ingredient(r["term"]).name), f"probe term {r['term']!r} is in the lexicon now: choose another open term from evaluation/demand_inventory_1/"
     with tempfile.TemporaryDirectory() as td:
         runs = vb.flip_check(rows, SRC, EVAL, Path(td))
     desc = {r["word"].lower() for r in vb.read_csv(SRC / "foodscan" / "resources" / "descriptors.csv")}
@@ -124,8 +130,8 @@ def test_flip_harness_never_touches_the_repo_resources():
 
 def test_run_gate_end_to_end_and_report_writing(tmp_path):
     cand = tmp_path / "cand.csv"
-    rows = [{"candidate_id": "fdc_sr_legacy:7", "dataset": "sr_legacy", "data_type": "sr_legacy_food", "fdc_id": "7", "description": "Basil, fresh", "description_norm": "basil, fresh",
-             "parts": json.dumps(["basil", "fresh"]), "food_category_id": "2", "food_category": "Spices and Herbs", "publication_date": "2018-04-01", "dataset_release": "2018-04",
+    rows = [{"candidate_id": "fdc_sr_legacy:7", "dataset": "sr_legacy", "data_type": "sr_legacy_food", "fdc_id": "7", "description": "Zorbium, fresh", "description_norm": "zorbium, fresh",
+             "parts": json.dumps(["zorbium", "fresh"]), "food_category_id": "2", "food_category": "Spices and Herbs", "publication_date": "2018-04-01", "dataset_release": "2018-04",
              "source_url": "https://fdc.nal.usda.gov/x.zip", "licence": "CC0 1.0 Universal"},
             {"candidate_id": "fdc_sr_legacy:8", "dataset": "sr_legacy", "data_type": "sr_legacy_food", "fdc_id": "8", "description": "Spices, curry powder", "description_norm": "spices, curry powder",
              "parts": json.dumps(["spices", "curry powder"]), "food_category_id": "2", "food_category": "Spices and Herbs", "publication_date": "2018-04-01", "dataset_release": "2018-04",
@@ -139,7 +145,7 @@ def test_run_gate_end_to_end_and_report_writing(tmp_path):
     code = vb.main(["--staged", str(tmp_path / "staged_rows.csv"), "--decisions", str(tmp_path / "decisions.csv"), "--candidates", str(cand), "--out", str(out)])
     assert code == 0
     g = json.loads((out / "gate_report.json").read_text())
-    assert g["verdict"] == "READY_FOR_REVIEW" and g["ready"] == ["basil"] and [q["reason_code"] for q in g["ambiguity_queue"]] == ["form_embedded_in_name"]
+    assert g["verdict"] == "READY_FOR_REVIEW" and g["ready"] == ["zorbium"] and [q["reason_code"] for q in g["ambiguity_queue"]] == ["form_embedded_in_name"]
     assert g["flip"]["changed_counts"]["group"] == 0 and g["clause_check"].startswith("NOT CHECKED")
     assert sorted(p.name for p in out.iterdir()) == ["ambiguity_queue.csv", "flip_after.json", "flip_before.json", "gate_report.json", "gate_report.md", "lexicon_candidate_rows.csv"]
     assert (out / "lexicon_candidate_rows.csv").read_text().splitlines()[0] == "term,kind,source"

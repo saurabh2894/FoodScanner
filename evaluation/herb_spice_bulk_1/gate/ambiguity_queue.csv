@@ -1,0 +1,11 @@
+term,source_row,origin,reason_code,reason,description
+"Spices, curry powder",fdc_sr_legacy:170924,clause_tier,form_embedded_in_name,"'curry powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice","Spices, curry powder"
+"Spices, pepper, red or cayenne",fdc_sr_legacy:170932,clause_tier,qualifier_unresolved,qualifier(s) ['red or cayenne'] are not clause forms and cannot be resolved mechanically,"Spices, pepper, red or cayenne"
+"Spices, chili powder",fdc_sr_legacy:171319,clause_tier,form_embedded_in_name,"'chili powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice","Spices, chili powder"
+"Spices, garlic powder",fdc_sr_legacy:171325,clause_tier,form_embedded_in_name,"'garlic powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice","Spices, garlic powder"
+"Spices, onion powder",fdc_sr_legacy:171327,clause_tier,form_embedded_in_name,"'onion powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice","Spices, onion powder"
+"Spices, pumpkin pie spice",fdc_sr_legacy:171332,clause_tier,blend_name,'pumpkin pie spice': a multi-word name ending in 'spice' is a blend,"Spices, pumpkin pie spice"
+"Vinegar, distilled",fdc_sr_legacy:172237,clause_tier,qualifier_unresolved,qualifier(s) ['distilled'] are not clause forms and cannot be resolved mechanically,"Vinegar, distilled"
+"Vinegar, red wine",fdc_sr_legacy:172240,clause_tier,qualifier_unresolved,qualifier(s) ['red wine'] are not clause forms and cannot be resolved mechanically,"Vinegar, red wine"
+"Vinegar, balsamic",fdc_sr_legacy:172241,clause_tier,qualifier_unresolved,qualifier(s) ['balsamic'] are not clause forms and cannot be resolved mechanically,"Vinegar, balsamic"
+"Vinegar, cider",fdc_sr_legacy:173469,clause_tier,qualifier_unresolved,qualifier(s) ['cider'] are not clause forms and cannot be resolved mechanically,"Vinegar, cider"
