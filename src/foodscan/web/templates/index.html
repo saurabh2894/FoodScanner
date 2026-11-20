@@ -85,14 +85,15 @@
   {% endif %}
   {% if result.ins_mappings %}
     {% macro effect(u) -%}
-      {%- if u.name is none -%}Not in the table yet (cannot count as a marker; if nothing else decides, the result stays uncertain)
+      {%- if u.name is none and u.ref_name -%}No decision rule (the Codex list names it, but it cannot decide a group; unknown stays unknown)
+      {%- elif u.name is none -%}Code not in the table (cannot count as a marker; if nothing else decides, the result stays uncertain)
       {%- elif u.strength == 'strong' -%}Ultra-processing marker
       {%- elif u.strength in ('weak', 'weak_specific') -%}Weak marker (not enough on its own)
       {%- else -%}Not a marker by itself{%- endif -%}
     {%- endmacro %}
     <h3>Additive codes</h3>
     {% set named = result.ins_mappings | selectattr('name') | list | length %}
-    <p class="src">{{ result.ins_mappings | length }} found: {{ named }} named, {{ result.ins_mappings | length - named }} not in the table yet.</p>
+    <p class="src">{{ result.ins_mappings | length }} found: {{ named }} with a decision rule, {{ result.ins_mappings | length - named }} without.</p>
     {% for group in result.ins_mappings | groupby('ingredient') %}
       <div class="insgroup">
         <strong>{{ (group.grouper or '').split('(')[0].strip(' ,;:*-') or group.grouper }}</strong>
@@ -100,9 +101,9 @@
         <ul class="inslist">
         {% for u in group.list %}
           <li><code>INS {{ u.code }}</code>
-            <span class="{{ 'missing' if u.name is none }}">{{ u.name or 'Name not in the table yet' }}</span>
+            <span class="{{ 'missing' if u.name is none and not u.ref_name }}">{{ u.name or u.ref_name or 'Code not in the table' }}</span>
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
-            {% if u.name is none and u.ref_name %}<span class="src">Codex list (display only, not used in the decision): {{ u.ref_name }}{% if u.ref_classes %}; {{ u.ref_classes | join(', ') }}{% endif %}{% if u.ref_partial %} (partial reading){% endif %}</span>{% endif %}
+            {% if u.name is none and u.ref_name %}<span class="src">Name and possible functions from the Codex list (display only; not confirmed for this product, not used in the decision){% if u.ref_classes %}: {{ u.ref_classes | join(', ') }}{% endif %}{% if u.ref_partial %}. Partial reading: the source may list more.{% endif %}</span>{% endif %}
             <span class="effect">{{ effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>

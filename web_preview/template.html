@@ -174,7 +174,8 @@
     unknown:  { tone: "unknown", label: "Not in the table yet", help: "Cannot count as a marker. If nothing else decides, the result stays uncertain." }
   };
   EFFECTS.weak_specific = EFFECTS.weak;
-  function effectOf(u) { return u.name === null ? EFFECTS.unknown : (EFFECTS[u.strength] || EFFECTS.unlisted); }
+  EFFECTS.reference = { tone: "unknown", label: "No decision rule", help: "The Codex list names this code, but this project has no rule for it, so it cannot decide a group. Unknown stays unknown: it does not mean the product is or is not ultra-processed." };
+  function effectOf(u) { return u.name === null ? (u.ref_name ? EFFECTS.reference : EFFECTS.unknown) : (EFFECTS[u.strength] || EFFECTS.unlisted); }
   function shortSource(src) {
     if (!src) return "";
     if (/^research\//.test(src)) return "Project research notes";
@@ -191,7 +192,7 @@
     });
     var box = el("div", { "class": "ins" }, [
       el("h3", { text: "Additive codes" }),
-      el("p", { "class": "hint", text: uses.length + (uses.length === 1 ? " code" : " codes") + " found: " + named + " named, " + unknown + " not in the table yet." })
+      el("p", { "class": "hint", text: uses.length + (uses.length === 1 ? " code" : " codes") + " found: " + named + " with a decision rule, " + unknown + " without." })
     ]);
     groups.forEach(function (g) {
       var title = g.ingredient.split("(")[0].replace(/[\s,;:*-]+$/, "").trim() || g.ingredient;
@@ -199,13 +200,14 @@
       if (g.section) head.appendChild(el("span", { "class": "src", text: g.section }));
       var list = el("ul", { "class": "ins-list" }, g.items.map(function (u) {
         var eff = effectOf(u);
-        var name = el("span", { "class": "ins-name" + (u.name === null ? " missing" : ""), text: u.name === null ? "Name not in the table yet" : u.name });
+        var refOnly = u.name === null && !!u.ref_name;
+        var name = el("span", { "class": "ins-name" + (u.name === null && !refOnly ? " missing" : ""), text: u.name !== null ? u.name : (refOnly ? u.ref_name : "Code not in the table") });
         var roles = (u.classes || []).filter(function (c) { return c.toLowerCase() !== (u.name || "").toLowerCase(); });   // do not repeat the name as a role
         if (roles.length) name.appendChild(el("span", { "class": "ins-roles" }, roles.map(function (c) { return el("span", { "class": "role", text: c }); })));
         var main = el("div", {}, [name]);
-        if (u.name === null && u.ref_name) {      // display only: the Codex list names the code, but it never decides a group
-          main.appendChild(el("span", { "class": "src", text: "Codex list (display only, not used in the decision): " + u.ref_name +
-            (u.ref_classes && u.ref_classes.length ? "; " + u.ref_classes.join(", ") : "") + (u.ref_partial ? " (partial reading)" : "") }));
+        if (refOnly) {      // display only: possible functions per the Codex list, never confirmed for this product and never a decision input
+          main.appendChild(el("span", { "class": "src", text: "Name and possible functions from the Codex list (display only; not confirmed for this product, not used in the decision)" +
+            (u.ref_classes && u.ref_classes.length ? ": " + u.ref_classes.join(", ") : "") + (u.ref_partial ? ". Partial reading: the source may list more." : "") }));
         }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
         return el("li", { "class": "ins-row" }, [
