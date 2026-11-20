@@ -99,12 +99,6 @@ def _ins_reference() -> dict[str, dict[str, str]]:
 
 
 @cache
-def ins_functions() -> dict[str, tuple[str, ...]]:
-    """code -> functions (ins_functions.csv). Used only to compare a label's class word with a code, for a review hint."""
-    return {canonical_code(r["ins"]): tuple(c.strip() for c in r["functions"].split(";") if c.strip()) for r in load_table("ins_functions.csv")}
-
-
-@cache
 def _synonyms() -> list[tuple[re.Pattern, str]]:
     rows = sorted(load_table("synonyms.csv"), key=lambda r: -len(r["from"]))
     def boundary(term: str) -> tuple[str, str]:

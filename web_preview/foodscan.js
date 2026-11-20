@@ -62,7 +62,7 @@
       }
       return null;
     }
-    const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
+    const STOP = /\b(?:may\s+contain|(?:does|do)\s+not\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
     const LEAD_IN = /(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019\/\-]{0,40}:)\s*$/id;
     const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(\s*\([A-Za-z][A-Za-z ]{0,18}\))?(?:\s+(\d+(?:\.\d+)?\s*%)|\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\))?\s*:\s*(?=\S)/;
@@ -227,8 +227,23 @@
         if (isStop || (ch === "\n" && depth === 0)) { out.push(buf); buf = ""; } else buf += ch;
       }
       out.push(buf);
-      return out.map((seg) => collapse(seg).replace(ALLERGEN_LABEL, "")).filter((seg) => /^contains\b/i.test(seg));
+      return out.flatMap((seg) => positiveSpans(collapse(seg).replace(ALLERGEN_LABEL, "")));
     }
+    // See parser._positive_spans: only POSITIVE spans of a "contains"/negator sentence are declarations; negation is scoped to its span.
+    const POLARITY = /(?<maybe>\bmay\s+contain\b)|(?<neg>\b(?:does\s+not\s+contain|do\s+not\s+contain|contains?\s+(?:no|nil|none|without)|free\s+(?:from|of)|without|nil|none|no|not)\b)|(?<pos>\bcontains?\b)/gi;
+    function positiveSpans(seg) {
+      const ms = [...seg.matchAll(POLARITY)];
+      if (!ms.length || ms[0].index !== 0 || ms[0].groups.maybe) return [];
+      const out = [];
+      ms.forEach((m, k) => {
+        if (!m.groups.pos) return;
+        const end = k + 1 < ms.length ? ms[k + 1].index : seg.length;
+        const text = stripChars(seg.slice(m.index + m[0].length, end), " ,;:-");
+        if (text) out.push(m[0] + " " + text);          // the label's own keyword and casing
+      });
+      return out;
+    }
+    const NEG_CLAIM = /(?:^|[.\n])\s*((?:no|nil|without|free\s+from)\s+(?:added|artificial|preservatives?|colou?rs?|flavou?rs?|sweeteners?)\b)/i;
     // "a and b" / "a & b" at bracket depth 0; the caller decides whether both sides are ingredients
     function splitTopLevelAnd(raw) { return splitTopLevelAndEx(raw)[0]; }
     function splitTopLevelAndEx(raw) {
@@ -257,7 +272,9 @@
       else return { found: false };
       let terminated = false; const declarations = [];
       const regionWords = countWords(body);
-      const stop = STOP.exec(body);
+      let stop = STOP.exec(body);
+      const claim = NEG_CLAIM.exec(body);
+      if (claim) { const cs = claim.index + claim[0].length - claim[1].length; if (!stop || cs < stop.index) stop = { index: cs }; }   // a negation claim after the list is not an ingredient
       const bodyWithTail = stop ? body.slice(stop.index) : "";
       if (stop) {
         const tail = collapse(body.slice(stop.index));
@@ -319,8 +336,7 @@
     for (const r of T.ins_map) insTable[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
     const insRef = {};     // display names only (ins_names.csv): "Recognised code, no processing rule yet"; never feeds a decision
     for (const r of T.ins_names) insRef[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
-    const insFunctions = {};   // code -> functions, used only to compare a label's class word with a code (review hint)
-    for (const r of T.ins_functions) insFunctions[r.ins.toLowerCase().replace(/\s+/g, "")] = r.functions.split(";").map((x) => x.trim()).filter(Boolean);
+
     const synonyms = [...T.synonyms]
       .sort((a, b) => b.from.length - a.from.length)
       .map((r) => {
@@ -348,6 +364,13 @@
     function lookup(name) {
       if (has(lexicon, name)) return lexicon[name];
       if (has(lexIndex, singularPhrase(name))) return lexIndex[singularPhrase(name)];
+      let toks = name.split(" ").filter(Boolean);
+      while (toks.length && descriptors.has(toks[0])) {       // leading descriptors first: "pasteurised double toned milk" -> "double toned milk"
+        toks = toks.slice(1);
+        const lead = toks.join(" ");
+        if (has(lexicon, lead)) return lexicon[lead];
+        if (has(lexIndex, singularPhrase(lead))) return lexIndex[singularPhrase(lead)];
+      }
       const kept = name.split(" ").filter((t) => t && !descriptors.has(t)).join(" ");
       if (kept && kept !== name) {
         if (has(lexicon, kept)) return lexicon[kept];
@@ -416,6 +439,7 @@
 
     /* ---------- classify ---------- */
     // A colour word that is only a short bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)") is not a declared ADDED colour.
+    const MILK_TERMS = ["milk", "toned milk", "double toned milk", "buffalo milk", "milk solids"];   // milk context of the milk-plus-culture rule
     const NOTE_PREFIX = "(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*", NOTE_COLOUR = "colou?r(?:ant)?(?: agent)?", NOTE_OTHER = "(?:spices?|seasoning|flavou?rs?)";
     const COLOUR_NOTE = new RegExp(`^${NOTE_PREFIX}(?:${NOTE_COLOUR}(?: (?:and|&) ${NOTE_OTHER})?|${NOTE_OTHER} (?:and|&) ${NOTE_COLOUR})$`);
     const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
@@ -461,7 +485,7 @@
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
         return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
-      const rows = ings.map((i) => lookup(i.name)), MILK_TERMS = ["milk", "toned milk", "double toned milk", "buffalo milk"];
+      const rows = ings.map((i) => lookup(i.name));
       if (rows.some((r) => r.kind === "culture") && rows.some((r) => MILK_TERMS.includes(r.term)) && rows.every((r) => r.kind === "culture" || MILK_TERMS.includes(r.term)))
         // Narrow rule (research/04): the WHOLE list is recognised and is only milk plus starter culture(s). Not keyed off product words.
         return { group: 1, drivers: ings.map((i) => ({ ingredient: i.raw, detail: "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)", source: "NUPENS-USP classification page (research/04)", section: i.section ?? null })), reason: null };
@@ -593,9 +617,6 @@
     // source "ocr" (default, photo path): short/noisy text is blamed on OCR and the heading is required.
     // source "text" (typed or pasted): no length gate, a heading-less text is the list, messages are about the text.
     const SUSPECT_PCT = /\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]/i;
-    const LABEL_CLASS_ALIAS = { stabiliser: "stabilizer", enhancer: "flavour enhancer", flavour: "flavouring", colour: "colour" };
-    const FUNCTION_ALIAS = { "acidity regulator": ["acid"] };     // JECFA writes "acid" where a label says "acidity regulator" (PROVISIONAL reading)
-    const classListed = (c, fn) => fn.map((f) => f.toLowerCase()).some((f) => f === c || f.startsWith(c) || (FUNCTION_ALIAS[c] || []).includes(f));
     function roleNotes(ings) {      // a role phrase read as its class word is a PROVISIONAL mapping: keep that visible
       const out = [];
       for (const i of ings) {
@@ -620,8 +641,6 @@
       for (const ing of ings) {
         if (!ing.ins.length) continue;
         const head = (ing.raw.split(/[\[({]/, 1)[0].replace(/^[ ,;:*-]+|[ ,;:*-]+$/g, "")) || ing.raw;
-        const classRe = new RegExp(CLASS_WORD_RE.source, "g"); const labelClasses = new Set();
-        let m; while ((m = classRe.exec(ing.name))) labelClasses.add(LABEL_CLASS_ALIAS[m[0]] || m[0]);
         const codes = new Set(ing.ins.map((u) => u.code));
         for (const u of ing.ins) {
           const key = ing.raw + "|" + u.code; if (seen.has(key)) continue;
@@ -632,14 +651,23 @@
             out.push(`Read as INS ${u.code}. The label text says ${head}, and the source page for ${insRef[tied].name.toLowerCase()} gives INS ${tied}${url ? " (" + url[0] + ")" : ""}. Possible misread, check the pack.`);
             continue;
           }
-          const fn = insFunctions[u.code];
-          if (fn && labelClasses.size && ![...labelClasses].some((c) => classListed(c, fn))) {
-            seen.add(key);
-            out.push(`Read as INS ${u.code}. The label text says ${head}. Possible misread, check the pack. Retake a clearer photo of this line or type the code.`);
-          }
         }
       }
       return out;
+    }
+    const PROVENANCE = /^made\s+(?:from|with|using)\s+(.+)$/i;
+    function stripProvenance(parsed) {     // see pipeline._strip_provenance
+      let words = 0;
+      for (const sec of parsed.sections) {
+        while (sec.items.length > 1) {
+          const m = PROVENANCE.exec(sec.items[sec.items.length - 1]);
+          const row = m ? lookup(normaliseIngredient(m[1]).name) : null;
+          if (!row || !MILK_TERMS.includes(row.term)) break;
+          words += countWords(sec.items.pop());
+        }
+      }
+      parsed.items = parsed.sections.flatMap((sec) => sec.items);
+      return words;
     }
     function analyseText(text, opts) {
       const source = (opts && opts.source) || "ocr";
@@ -664,6 +692,7 @@
           parsed.headingKind = "inferred";
         }
       }
+      const provenanceWords = stripProvenance(parsed);
       let joiners = 0;
       const sections = parsed.sections.map((sec) => ({ label: sec.label, items: sec.items.flatMap((raw) => {
         const [parts, j] = splitPairsEx(raw);
@@ -703,7 +732,7 @@
       const inList = sections.reduce((n, sec) => n + countWords(sec.label || "") + sec.items.reduce((m, x) => m + countWords(x), 0), 0) + joiners;
       const notRead = parsed.ignored.reduce((n, x) => n + countWords(x), 0);
       const declaredW = parsed.declarations.reduce((n, x) => n + countWords(x), 0);
-      const unaccounted = Math.max(0, parsed.keptWords - inList - notRead);
+      const unaccounted = Math.max(0, parsed.keptWords - inList - notRead - provenanceWords);
       const reasons = [];
       if (source === "ocr" && parsed.headingKind === "fuzzy") reasons.push(`the heading was read as "${parsed.headingText}": the photo may be cut off at the left edge`);
       if (source === "ocr" && parsed.headingKind === "inferred") reasons.push('no "Ingredients" heading was found: the most list-like text block was used');
@@ -718,7 +747,7 @@
       common.completeness = {
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
-        words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW), not_read: notRead, unaccounted },
+        words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
         assessed: { items: ings.length, not_assessed: ings.filter((i) => !recognisableIng(i)).length } };
       const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
       const blocking = truncation || unread || headingRisk || lost;

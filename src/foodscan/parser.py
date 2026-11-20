@@ -74,9 +74,16 @@ def _find_heading(norm: str) -> tuple[int, str, str] | None:
             return end, "fuzzy", t.group()
     return None
 
+class _Cut:
+    def __init__(self, i): self._i = i
+    def start(self): return self._i
+
+
+_NEG_CLAIM = re.compile(r"(?:^|[.\n])\s*((?:no|nil|without|free\s+from)\s+(?:added|artificial|preservatives?|colou?rs?|flavou?rs?|sweeteners?)\b)", re.IGNORECASE)
+
 # Phrases that end the list. "contains" statements are kept separately (see below).
 _STOP = re.compile(
-    r"\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|"
+    r"\b(?:may\s+contain|(?:does|do)\s+not\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|"
     r"manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|"
     r"net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b",
     re.IGNORECASE,
@@ -413,10 +420,34 @@ def _contains_sentences(tail: str) -> list[str]:
     out.append("".join(buf))
     found = []
     for seg in out:
-        seg = _ALLERGEN_LABEL.sub("", _collapse(seg))
-        if re.match(r"contains\b", seg, re.IGNORECASE):
-            found.append(seg)
+        found.extend(_positive_spans(_ALLERGEN_LABEL.sub("", _collapse(seg))))
     return found
+
+
+# One keyword at a time: a NEGATOR opens a negated span, "contains" opens a positive one, "may contain" opens a span that is never read.
+_POLARITY = re.compile(
+    r"(?P<maybe>\bmay\s+contain\b)"
+    r"|(?P<neg>\b(?:does\s+not\s+contain|do\s+not\s+contain|contains?\s+(?:no|nil|none|without)|free\s+(?:from|of)|without|nil|none|no|not)\b)"
+    r"|(?P<pos>\bcontains?\b)", re.IGNORECASE)
+
+
+def _positive_spans(seg: str) -> list[str]:
+    """A sentence that opens with "contains" or a negator is read as alternating spans. Only the POSITIVE spans are declarations
+    ("Contains <span>"): "Contains no added flavours, added colour or preservatives" declares nothing; "No added colours, contains
+    preservative (INS 211)" declares the preservative only; "free from nuts" is never a driver in either direction. Scoped to the
+    span, never to the whole line or input."""
+    ms = list(_POLARITY.finditer(seg))
+    if not ms or ms[0].start() != 0 or ms[0].group("maybe"):
+        return []
+    out = []
+    for k, m in enumerate(ms):
+        if not m.group("pos"):
+            continue
+        end = ms[k + 1].start() if k + 1 < len(ms) else len(seg)
+        text = seg[m.end():end].strip(" ,;:-")
+        if text:
+            out.append(m.group(0) + " " + text)          # the label's own keyword and casing
+    return out
 
 
 def unclosed_openers(text: str) -> list[str]:
@@ -472,6 +503,9 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
     region_words = count_words(body)
 
     stop = _STOP.search(body)
+    claim = _NEG_CLAIM.search(body)
+    if claim and (not stop or claim.start(1) < stop.start()):
+        stop = _Cut(claim.start(1))                 # "No added colours, ..." opening a sentence after the list: a claim, not an ingredient
     body_with_tail = body[stop.start():] if stop else ""
     if stop:
         tail = _collapse(body[stop.start():])

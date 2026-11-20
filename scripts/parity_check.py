@@ -190,6 +190,13 @@ CORPUS = [
     "Ingredients: Seasoning 12%: Acidity Regulators (INS330, INS296, INS334), Potassium Chloride - Salt Substitute (INS 508), Rosemary Extract - Antioxidant (INS 392).",
     "Ingredients: Seasoning 12%: Acidity Regulators (INS330, INS236, INS334), Potassium Chloride - Salt Substitute (INS 508), Rosemary Extract - Antioxidant (INS 382).",
     "Ingredients: Rice, salt, acidity regulator (INS 392).", "Ingredients: Rice, salt, preservative (INS 999).", "Ingredients: Water, emulsifiers and stabilizers [INS 460(i), INS 471].",
+    # dairy vocabulary + provenance line + negation scoped to its span (tests/test_dairy_negation_round.py)
+    "Ingredients: Milk, starter culture.", "Ingredients: Pasteurised toned milk, milk solids, active lactic cultures.", "Ingredients: Pasteurised double toned milk, Milk Solids, Active Lactic Cultures (L.bacillus delbrueckii subsp. bulgaricus, S.thermophilus).",
+    "Pasteurised Toned Milk & Active Lactic Cultures, Made from Toned Milk Allergen Information: Contains Milk", "Ingredients: Milk solids and Sugar.", "Ingredients: Rice, salt, made from rice.",
+    "Ingredients: Milk, salt. Contains no added flavours, added colour or preservatives.", "Ingredients: Milk, salt. CONTAINS NO ADDED FLAVOURS,\nADDED COLOUR OR PRESERVATIVES.",
+    "Ingredients: Milk, salt. Contains added flavours.", "Ingredients: Milk, salt. No added colours, contains added flavour.", "Ingredients: Milk, salt. Contains added flavour, no added colours.",
+    "Ingredients: Milk, salt. No added colours, contains preservative (INS 211).", "Ingredients: Milk, salt. Does not contain added flavour.", "Ingredients: Rice, salt. Free from nuts. Contains soy, milk. May contain traces of sesame.",
+    "Ingredients: Mozzarella Cheese (Pasteurized Milk, Iodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)\n\nCONTAINS NO ADDED FLAVOURS,\nADDED COLOUR OR PRESERVATIVES.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 _f07 = Path(__file__).resolve().parent.parent / 'evaluation/dev_regression_15/inputs/F07.txt'

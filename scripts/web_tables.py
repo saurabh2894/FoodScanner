@@ -8,7 +8,6 @@ def tables() -> dict:
     return {
         "ins_map": [dict(r) for r in load_table("ins_map.csv")],
         "ins_names": [dict(r) for r in load_table("ins_names.csv")],
-        "ins_functions": [dict(r) for r in load_table("ins_functions.csv")],
         "synonyms": [dict(r) for r in load_table("synonyms.csv")],
         "markers": [dict(r) for r in load_table("markers.csv")],
         "lexicon": [dict(r) for r in load_table("lexicon.csv")],

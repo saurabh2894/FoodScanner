@@ -178,12 +178,13 @@ def misreads(r):
     return [w for w in r.warnings if w.startswith("Read as INS")]
 
 
-def test_misread_codes_are_flagged_for_review_with_the_label_wording():
+def test_only_the_name_tie_hint_remains_for_misread_codes():
     r = label("236", "382")
     m = misreads(r)
-    assert any(w.startswith("Read as INS 236. The label text says Acidity Regulators. Possible misread, check the pack.") for w in m)
-    assert any("Retake a clearer photo of this line or type the code." in w for w in m if "INS 236" in w)       # no candidate is guessed for 236
-    assert any(w.startswith("Read as INS 382. The label text says Rosemary Extract - Antioxidant") and "INS 392" in w for w in m)   # a source ties the NAME to 392
+    # the function-class check was REMOVED (INS 508 under "Thickeners" was flagged on a legitimate pack): 236 under "Acidity Regulators" raises nothing
+    assert not any("INS 236" in w for w in m)
+    assert any(w.startswith("Read as INS 382. The label text says Rosemary Extract - Antioxidant") and "INS 392" in w and "apps.who.int" in w for w in m)   # a read page ties the NAME to 392
+    assert len(m) == 1
 
 
 def test_the_correct_codes_raise_no_flag():
@@ -197,12 +198,12 @@ def test_a_flag_never_replaces_a_code_or_changes_the_classification():
     assert [d.detail for d in bad.drivers] == [d.detail for d in good.drivers]
 
 
-def test_each_flag_alone_and_no_digit_similarity_guessing():
-    assert len(misreads(label("236", "392"))) == 1 and len(misreads(label("296", "382"))) == 1
-    r = t("Ingredients: Rice, salt, preservative (INS 999).")        # unknown code, unrelated: no flag and no candidate
-    assert misreads(r) == []
-    r = t("Ingredients: Rice, salt, acidity regulator (INS 392).")   # a known code under a class it is not listed for: review hint, no candidate named
-    assert misreads(r) and "INS 392" in misreads(r)[0] and "gives INS" not in misreads(r)[0]
+def test_no_flag_without_a_name_tie_and_no_digit_similarity_guessing():
+    assert misreads(label("236", "392")) == [] and len(misreads(label("296", "382"))) == 1
+    assert misreads(t("Ingredients: Rice, salt, preservative (INS 999).")) == []                # unknown code, unrelated: no flag, no candidate
+    assert misreads(t("Ingredients: Rice, salt, acidity regulator (INS 392).")) == []           # a class word never triggers a hint any more
+    assert misreads(t("Ingredients: Noodles, thickeners (508 & 412), salt.")) == []             # the observed false hint (INS 508 under Thickeners) is gone
+    assert misreads(t("Ingredients: Rice, rosemary extract (INS 392), salt.")) == []            # name and code agree
 
 
 def test_display_names_say_recognised_code_no_rule_and_stay_unknown_for_classification():
@@ -216,17 +217,10 @@ def test_display_names_say_recognised_code_no_rule_and_stay_unknown_for_classifi
     assert all(v.startswith("Checked 2026-11-20: JECFA database page read in full by me") and "apps.who.int" in v for v in rows.values())
 
 
-def test_hint_rows_cite_only_pages_read_individually_and_no_codex_rows_remain():
-    rows = {x["ins"]: x["source"] for x in load_table("ins_functions.csv")}
-    assert set(rows) == {"236", "296", "330", "334", "392", "508"}
-    assert all("JECFA database page read in full by me" in v and "Codex" not in v for v in rows.values())
-    assert "Chemical/1561" in rows["236"] and "Chemical/6311" in rows["392"]
-
-
-def test_jecfa_wording_acid_is_consistent_with_a_label_saying_acidity_regulator_so_the_users_own_label_is_not_flagged():
-    assert misreads(label("296", "392")) == []          # 330 and 334 are listed as "acid" on their JECFA pages, 296 as acidity regulator
-    assert misreads(t("Ingredients: Rice, preservative (INS 236).")) == []                # 236 is listed as a preservative
-    assert misreads(t("Ingredients: Rice, antioxidant (INS 330).")) == []                 # "antioxidant synergist" starts with antioxidant
+def test_no_function_table_remains_and_name_rows_cite_only_pages_read():
+    assert not (ROOT / "src/foodscan/resources/ins_functions.csv").exists()
+    rows = {x["ins"]: x["source"] for x in load_table("ins_names.csv")}
+    assert "Codex" not in " ".join(rows.values()) and all("JECFA database page read in full by me" in v for v in rows.values())
 
 
 def test_provisional_role_phrase_mapping_stays_visible_and_other_phrases_are_not_added():

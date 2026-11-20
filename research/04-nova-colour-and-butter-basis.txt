@@ -87,3 +87,10 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
   named only when a source row ties the label's own additive name to a different code; two photo readings that disagree on a code are shown as such. Agreement of two readings is NOT
   reassurance (296 became 236 in both). A code is never replaced and never changes the classification. Nothing is guessed from digit similarity.
 - Role phrases (emulsifying agent, stabilizing agent) stay PROVISIONAL and may drive Group 4 as the emulsifier class; a warning shows the provisional mapping whenever one is used.
+
+## Direction after batch 2 (2026-11-20)
+- Function-class hint REMOVED (false hint on a legitimate pack: INS 508 under "Thickeners"; JECFA's page lists flavour enhancer, gelling agent, yeast food). ins_functions.csv is deleted. Kept: the name-tie hint and the two-readings disagreement flag.
+- milk solids (PROVISIONAL): FSSAI uses the words only as a composition measure (2.1.5) and lists concentrated and dried milk as raw materials of fermented milks (2.1.13 item 2(a)(ii)). starter culture: FSSAI 2.1.13 item 2(b)(i) names "starter cultures of harmless microorganisms" (exact term).
+- A trailing provenance line "Made from <milk term>" is part of the milk context: it is not an ingredient and is counted as set aside.
+- Negation in Contains lines is scoped to the exact negated span (see CLAUDE.md); a sentence-start claim such as "No added colours, ..." after the list ends the list and is not an ingredient.
+- Lookup now tries leading descriptors first ("pasteurised double toned milk" -> "double toned milk").

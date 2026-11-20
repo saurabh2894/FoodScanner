@@ -91,6 +91,14 @@ def lookup(name: str) -> dict[str, str] | None:
         return lex[name]
     if _singular_phrase(name) in idx:
         return idx[_singular_phrase(name)]
+    toks = name.split()
+    while toks and toks[0] in _descriptors():               # leading descriptors first: "pasteurised double toned milk" -> "double toned milk"
+        toks = toks[1:]
+        lead = " ".join(toks)
+        if lead in lex:
+            return lex[lead]
+        if _singular_phrase(lead) in idx:
+            return idx[_singular_phrase(lead)]
     kept = " ".join(t for t in name.split() if t not in _descriptors())
     if kept and kept != name:
         if kept in lex:
@@ -116,7 +124,7 @@ class _Hit:
 # "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
 # is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
 # "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
-_MILK_TERMS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk"})      # lexicon terms that count as the milk of the milk-plus-culture rule
+_MILK_TERMS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "milk solids"})      # lexicon terms that count as the milk of the milk-plus-culture rule
 _NOTE_PREFIX = r"(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
 _NOTE_COLOUR = r"colou?r(?:ant)?(?: agent)?"
 _NOTE_OTHER = r"(?:spices?|seasoning|flavou?rs?)"

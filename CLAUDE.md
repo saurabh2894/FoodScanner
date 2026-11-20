@@ -29,10 +29,14 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
 - Heading: the word "Ingredients" must sit in heading position or form (start of text/line/sentence, or followed by a colon or dash); marketing and attribution
   text that merely contains it is not a heading. Section labels may carry a bracketed percentage ("Noodles (88.5%):"). A text block with few recognised items
   and no code or marker on the photo path is flagged "uncertain" (it may not be an ingredient list).
-- INS codes: a code is never replaced and never reclassified by a review hint ("Possible misread, check the pack"). ins_names.csv rows are display names only
-  ("Recognised code, no processing rule yet"); ins_functions.csv is used only for the hints. Both hold ONLY rows from source pages that were individually read
-  (WHO JECFA database, research/04); no Codex-derived rows. Anything not read stays provisional and is not built on. Agreement of two readings is not reassurance. The photo path runs a second reading when the first holds codes and
-  shows a disagreement on codes as a hint. The completeness line is text coverage, not a guarantee that characters, digits or the list are correct.
+- INS codes: a code is never replaced and never reclassified by a review hint. Two hints only: (1) the label's own additive name is tied to a DIFFERENT code by a page that was
+  read (ins_names.csv, WHO JECFA pages read in full, research/04), (2) two photo readings that disagree on a code. The class-word versus function check was removed (it flagged
+  INS 508 under "Thickeners" on a legitimate pack). ins_names.csv rows are display names only ("Recognised code, no processing rule yet"). Agreement of two readings is not
+  reassurance. No Codex-derived data is used. The completeness line is text coverage, not a guarantee that characters, digits or the list are correct.
+- Contains lines: negation is scoped to its exact span. "Contains no added flavours, added colour or preservatives" declares nothing; in a mixed line only the positive span is a
+  declaration ("No added colours, contains preservative (INS 211)"); "free from nuts" and "may contain" are never drivers.
+- Milk context: milk, toned milk, double toned milk, buffalo milk and milk solids (PROVISIONAL) plus starter culture(s) is Group 1; a trailing "Made from <milk>" provenance line is
+  set aside (counted, not an ingredient). Not a general dairy matcher.
 - Role phrases "emulsifying agent" and "stabilizing agent" map to their class words (PROVISIONAL). "probiotic culture" is NOT a starter culture (research/04).
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.

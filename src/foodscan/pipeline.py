@@ -10,10 +10,10 @@ import re
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
+from .classify import _MILK_TERMS, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .normalise import _ins_reference, ins_functions
+from .normalise import _ins_reference
 from .tables import load_table
 from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, unclosed_openers)
@@ -111,16 +111,6 @@ def _ends_in_code_bracket(part: str) -> bool:
 
 
 _SUSPECT_PCT = re.compile(r"\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]", re.IGNORECASE)
-_LABEL_CLASS_ALIAS = {"stabiliser": "stabilizer", "enhancer": "flavour enhancer", "flavour": "flavouring", "colour": "colour"}
-# JECFA writes "acid" where a label says "acidity regulator" (and "antioxidant synergist" for an antioxidant helper): treated as consistent, PROVISIONAL reading
-_FUNCTION_ALIAS = {"acidity regulator": {"acid"}}
-
-
-def _class_listed(label_class: str, functions) -> bool:
-    fl = {f.lower() for f in functions}
-    return any(f == label_class or f.startswith(label_class) or f in _FUNCTION_ALIAS.get(label_class, set()) for f in fl)
-
-
 def _role_phrase_notes(ings) -> list[str]:
     """A role phrase ("emulsifying agent") read as its class word is a PROVISIONAL mapping (no source names the phrase): keep that visible."""
     out = []
@@ -143,17 +133,15 @@ def _implausible(ings) -> bool:
 
 
 def _possible_misreads(ings) -> list[str]:
-    """REVIEW HINTS ONLY. A code is never replaced and no alternative is used in classification. Two checks, both from a source row:
-    (1) the label's class word is not among the functions listed for the code (ins_functions.csv);
-    (2) the label's own additive name is tied to a different code (ins_names.csv).
-    No candidate is ever guessed from digit similarity. A missing function in one list is not proof the label is wrong."""
+    """REVIEW HINT ONLY. A code is never replaced and no alternative is used in classification. One check, from a source row: the label's
+    own additive name is tied to a DIFFERENT code by a page that was read (ins_names.csv). No candidate is ever guessed from digit
+    similarity. (The class-word versus function check was removed: a legitimate pack was flagged, e.g. INS 508 under "Thickeners".)"""
     out, seen = [], set()
-    funcs, names = ins_functions(), _ins_reference()
+    names = _ins_reference()
     for ing in ings:
         if not ing.ins:
             continue
         head = re.split(r"[\[({]", ing.raw, maxsplit=1)[0].strip(" ,;:*-") or ing.raw
-        label_classes = {_LABEL_CLASS_ALIAS.get(m.group(0), m.group(0)) for m in _class_word_re().finditer(ing.name)}
         codes = {u.code for u in ing.ins}
         for u in ing.ins:
             key = (ing.raw, u.code)
@@ -166,11 +154,6 @@ def _possible_misreads(ings) -> list[str]:
                 out.append(f'Read as INS {u.code}. The label text says {head}, and the source page for {names[tied]["name"].lower()} gives INS {tied}'
                            f'{" (" + url.group(0) + ")" if url else ""}. Possible misread, check the pack.')
                 continue
-            fn = funcs.get(u.code)
-            if fn and label_classes and not any(_class_listed(c, fn) for c in label_classes):
-                seen.add(key)
-                out.append(f"Read as INS {u.code}. The label text says {head}. Possible misread, check the pack. "
-                           "Retake a clearer photo of this line or type the code.")
     return out
 
 
@@ -212,6 +195,25 @@ def _declared_additives(declarations: list[str], ings: list[Ingredient]) -> list
 _NUTRITION = ("kcal", "energy", "carbohydrate", "per 100", "serving size", "cholesterol", "nutrition", "rda", "calories", "total fat", "trans fat")
 _MARKETING = ("buy", "offer", "free", "mrp", "enjoy", "tasty", "crunchy", "delicious", "limited", "new!", "gift", "price", "taste", "extra")
 RETAKE = 'retake the photo with the ingredient panel (and its "Ingredients" heading) in frame'
+
+
+_PROVENANCE = re.compile(r"^made\s+(?:from|with|using)\s+(.+)$", re.IGNORECASE)
+
+
+def _strip_provenance(parsed) -> int:
+    """A trailing provenance line ("Made from Toned Milk") names the milk the product is made from: part of the milk context, not a
+    separate ingredient. It is removed from the items only when what follows is a milk term, and its words are counted as set aside
+    (never silently lost). Returns the number of words set aside."""
+    words = 0
+    for sec in parsed.sections:
+        while len(sec.items) > 1:
+            m = _PROVENANCE.match(sec.items[-1])
+            row = _lookup(normalise_list([m.group(1)])[0].name) if m else None
+            if not row or row["term"] not in _MILK_TERMS:
+                break
+            words += count_words(sec.items.pop())
+    parsed.items = [i for sec in parsed.sections for i in sec.items]
+    return words
 
 
 def _outside_brackets(s: str) -> str:
@@ -320,6 +322,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                 return _abstain(f"no ingredient list found in the text; {RETAKE}", text)
             parsed.heading_kind = "inferred"
 
+    provenance_words = _strip_provenance(parsed)
     split = [[(raw, *_split_pairs_ex(raw)) for raw in sec.items] for sec in parsed.sections]
     sections = [(sec.label, [p for _, parts, _j in grp for p in parts]) for sec, grp in zip(parsed.sections, split)]
     items = [raw for _, its in sections for raw in its]
@@ -377,7 +380,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     in_list = sum(count_words(label or "") + sum(count_words(i) for i in its) for label, its in sections) + joiners
     not_read = sum(count_words(x) for x in parsed.ignored)
     declared_w = sum(count_words(d) for d in parsed.declarations)
-    unaccounted = max(0, parsed.kept_words - in_list - not_read)
+    unaccounted = max(0, parsed.kept_words - in_list - not_read - provenance_words)
     reasons = []
     if source == "ocr" and parsed.heading_kind == "fuzzy":
         reasons.append(f'the heading was read as "{parsed.heading_text}": the photo may be cut off at the left edge')
@@ -402,7 +405,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "status": "uncertain" if reasons else "complete", "heading": parsed.heading_kind, "reasons": reasons,
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
-                  "excluded": max(0, parsed.tail_words - declared_w), "not_read": not_read, "unaccounted": unaccounted},
+                  "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
         "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i))}}
     common["completeness"] = completeness
     if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
