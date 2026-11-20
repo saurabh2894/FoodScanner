@@ -142,9 +142,22 @@ def colour_note_only(ing: Ingredient) -> bool:
     return not any(pat.search(ing.name) for pat, _ in _markers())
 
 
+def sweetener_foods_only(ing: Ingredient) -> bool:
+    """The entry's own name is only the class word "sweetener" and its bracket names only recognised foods, no INS code ("Sweeteners (Jaggery
+    Powder, Dates Powder)"). The NOVA source lists ARTIFICIAL sweeteners as a Group 4 class (FAO 2019 pp. 9-10); named sugars are foods, so the word
+    alone is not read as an added sweetener class. Any name or code that is not a recognised food keeps the marker (aspartame, "stevia", INS 950)."""
+    if ing.ins or not ing.inner or ing.name not in ("sweetener", "natural sweetener"):
+        return False
+    parts = [p.strip() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner) if p.strip()]
+    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "culinary") for p in parts)
+
+
 def ingredient_marker_terms(ing: Ingredient) -> set[str]:
     """marker_terms for an ingredient in the list. When its bracket is only a function note, nothing in it is a marker."""
-    return set() if colour_note_only(ing) else marker_terms(ing.text)
+    if colour_note_only(ing):
+        return set()
+    terms = marker_terms(ing.text)
+    return terms - {"sweetener"} if sweetener_foods_only(ing) else terms
 
 
 def marker_terms(text: str) -> set[str]:
@@ -155,9 +168,12 @@ def marker_terms(text: str) -> set[str]:
 def _hits_for(ing: Ingredient) -> list[_Hit]:
     hits: list[_Hit] = []
     note_only = colour_note_only(ing)
+    sweet_foods = sweetener_foods_only(ing)
     for pat, row in _markers():
         if note_only:
             break          # the name has no marker and the bracket is only a function note: its words ("colour & flavour") decide nothing
+        if sweet_foods and row["term"] == "sweetener":
+            continue       # "Sweeteners (Jaggery Powder, Dates Powder)": the bracket names foods, so the class word is not counted
         if pat.search(ing.text):
             hits.append(_Hit(row["strength"], row["marker_class"], f'"{row["term"]}" ({row["marker_class"]})', row["source"]))
     ins_table = {r["ins"].lower(): r for r in load_table("ins_map.csv")}
@@ -196,6 +212,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     notes = [i.raw for i in ings if colour_note_only(i)]
     if notes:
         return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group")
+
+    sweet = [i.raw for i in ings if sweetener_foods_only(i)]
+    if sweet:
+        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group")
 
     if weak:
         names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in weak}))

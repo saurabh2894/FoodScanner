@@ -40,6 +40,7 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
 - Role phrases "emulsifying agent" and "stabilizing agent" map to their class words (PROVISIONAL). "probiotic culture" is NOT a starter culture (research/04).
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
+- Sweetener class word (owner decision): an entry named only "sweetener" whose bracket names only recognised foods and no INS code ("Sweeteners (Jaggery Powder, Dates Powder)") is not read as an added sweetener class (FAO 2019 lists *artificial* sweeteners); the result says so. Any non-food name or code keeps the marker. Basis in research/04; the lexicon row "dates" is PROVISIONAL.
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.
 - Never output health judgements ("healthy", "unhealthy", "should not be eaten").
 - No ingredient-count rules. Short lists can be UPF; long lists of foods can be group 3.

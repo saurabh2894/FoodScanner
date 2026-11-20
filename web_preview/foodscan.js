@@ -489,11 +489,18 @@
     const COLOUR_NOTE = new RegExp(`^${NOTE_PREFIX}(?:${NOTE_COLOUR}(?: (?:and|&) ${NOTE_OTHER})?|${NOTE_OTHER} (?:and|&) ${NOTE_COLOUR})$`);
     const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
     const colourNoteOnly = (ing) => !!ing.name && isColourNote(ing.inner) && !markers.some(({ re }) => re.test(ing.name));
+    // mirrors classify.sweetener_foods_only: the entry's own name is only "sweetener" and its bracket names only recognised foods, no INS code
+    function sweetenerFoodsOnly(ing) {
+      if (ing.ins.length || !ing.inner || (ing.name !== "sweetener" && ing.name !== "natural sweetener")) return false;
+      const parts = ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim()).filter(Boolean);
+      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "culinary"); });
+    }
     function hitsFor(ing) {
       let hits = [];
-      const noteOnly = colourNoteOnly(ing);
+      const noteOnly = colourNoteOnly(ing), sweetFoods = sweetenerFoodsOnly(ing);
       for (const { re, row } of markers) {
-        if (noteOnly) break;      // the name has no marker and the bracket is only a function note: its words decide nothing
+        if (noteOnly) break;
+        if (sweetFoods && row.term === "sweetener") continue;      // the bracket names foods, so the class word is not counted      // the name has no marker and the bracket is only a function note: its words decide nothing
         if (re.test(ing.text)) hits.push({ strength: row.strength, marker_class: row.marker_class, detail: `"${row.term}" (${row.marker_class})`, source: row.source });
       }
       for (const use of ing.ins) {
@@ -518,6 +525,8 @@
       // A colour note on a named food leaves open whether a colour is added: without an independent marker (above) the result stays uncertain.
       const colourNotes = ings.filter(colourNoteOnly).map((i) => i.raw);
       if (colourNotes.length) return { group: null, drivers: weak, reason: `a colour note on a named ingredient (${colourNotes.join("; ")}) leaves open whether a colour is added, and no other marker decides the group` };
+      const sweetFoodEntries = ings.filter(sweetenerFoodsOnly).map((i) => i.raw);
+      if (sweetFoodEntries.length) return { group: null, drivers: weak, reason: `a sweetener entry whose bracket names only foods (${sweetFoodEntries.join("; ")}) leaves open whether a sweetener additive is added, and no other marker decides the group` };
       if (weak.length) {
         const names = [...new Set(weak.map((d) => `${d.ingredient} -> ${d.detail}`))].sort().join("; ");
         return { group: null, drivers: weak, reason: `only weak or unlisted markers present (${names}); not enough to call a group` };
@@ -569,7 +578,12 @@
     }
     const splitItemsText = (t) => splitTopLevel(collapse(t)).items;
     const markerTerms = (text) => new Set(markers.filter(({ re }) => re.test(text)).map(({ row }) => row.term));
-    const ingredientMarkerTerms = (ing) => (colourNoteOnly(ing) ? new Set() : markerTerms(ing.text));
+    const ingredientMarkerTerms = (ing) => {
+      if (colourNoteOnly(ing)) return new Set();
+      const terms = markerTerms(ing.text);
+      if (sweetenerFoodsOnly(ing)) terms.delete("sweetener");
+      return terms;
+    };
     const subset = (a, b) => [...a].every((x) => b.has(x));
     // "emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, only when EVERY side is recognisable
     const CODE_ONLY = /^\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*(?:\s*(?:,|;|and|&|\/)\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*)*\s*$/i;
@@ -755,6 +769,7 @@
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
+      sectionWarnings.push(...ings.filter(sweetenerFoodsOnly).map((i) => `"${i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class`));
       sectionWarnings.push(...roleNotes(ings));
       const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
       sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));

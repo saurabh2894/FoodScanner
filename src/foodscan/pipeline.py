@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import _MILK_TERMS, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
+from .classify import _MILK_TERMS, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference
@@ -342,6 +342,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                        for seg in unread_like]
     section_warnings += unread_warnings
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
+    section_warnings += [f'"{i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class' for i in ings if sweetener_foods_only(i)]
     section_warnings += _role_phrase_notes(ings)
     pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
     section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]
