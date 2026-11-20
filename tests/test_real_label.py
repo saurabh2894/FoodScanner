@@ -47,7 +47,7 @@ def test_enhancer_codes_mapped_with_source():
     a = analyse_text(AS_PRINTED)
     mapped = {u.code: u for u in a.ins_mappings}
     assert mapped["627"].name == "disodium guanylate" and mapped["631"].name == "disodium inosinate"
-    assert "USER-APPROVED" in mapped["627"].source
+    assert "Project decision" in mapped["627"].source
 
 
 def test_footnote_after_unclosed_bracket_is_not_a_driver():

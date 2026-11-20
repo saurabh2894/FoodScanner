@@ -33,8 +33,8 @@ def test_unmapped_ins_has_no_name_and_no_invented_source():
 def test_user_approved_ins_entries_carry_their_source():
     (u171,) = normalise_ingredient("Colour (E171)").ins
     (u211,) = normalise_ingredient("Preservative (INS 211)").ins
-    assert u171.name == "titanium dioxide" and "USER-APPROVED" in u171.source
-    assert u211.name == "sodium benzoate" and "USER-APPROVED" in u211.source
+    assert u171.name == "titanium dioxide" and "Project decision" in u171.source
+    assert u211.name == "sodium benzoate" and "Project decision" in u211.source
 
 
 def test_synonyms_and_spelling():
@@ -66,7 +66,7 @@ def test_bare_codes_after_additive_class_word():
     assert [u.code for u in ing.ins] == ["627", "631"]
     assert ing.name == "flavour enhancer" and ing.inner == ""
     assert [u.name for u in ing.ins] == ["disodium guanylate", "disodium inosinate"]
-    assert all("USER-APPROVED" in u.source for u in ing.ins)
+    assert all("Project decision" in u.source for u in ing.ins)
 
 
 def test_bare_codes_with_roman_suffix_and_plural_class_word():

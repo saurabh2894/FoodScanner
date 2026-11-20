@@ -178,7 +178,7 @@
   function shortSource(src) {
     if (!src) return "";
     if (/^research\//.test(src)) return "Project research notes";
-    if (/Codex/i.test(src)) return /USER-APPROVED/.test(src) ? "Codex INS list, approved by you" : "Codex INS list";
+    if (/Codex/i.test(src)) return /Project decision/.test(src) ? "Codex INS list; mapping decided by the project owner" : "Codex INS list";
     return src.slice(0, 48);
   }
   function insBlock(uses) {
@@ -203,6 +203,10 @@
         var roles = (u.classes || []).filter(function (c) { return c.toLowerCase() !== (u.name || "").toLowerCase(); });   // do not repeat the name as a role
         if (roles.length) name.appendChild(el("span", { "class": "ins-roles" }, roles.map(function (c) { return el("span", { "class": "role", text: c }); })));
         var main = el("div", {}, [name]);
+        if (u.name === null && u.ref_name) {      // display only: the Codex list names the code, but it never decides a group
+          main.appendChild(el("span", { "class": "src", text: "Codex list (display only, not used in the decision): " + u.ref_name +
+            (u.ref_classes && u.ref_classes.length ? "; " + u.ref_classes.join(", ") : "") + (u.ref_partial ? " (partial reading)" : "") }));
+        }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
         return el("li", { "class": "ins-row" }, [
           el("span", { "class": "ins-code", text: "INS " + u.code }),
@@ -214,6 +218,7 @@
     });
     if (unknown) box.appendChild(el("p", { "class": "hint ins-note", text: EFFECTS.unknown.help }));
     var sources = Array.from(new Set(uses.map(function (u) { return u.source; }).filter(Boolean)));
+    if (uses.some(function (u) { return u.ref_name; })) sources.push("Display-only names: Codex CXG 36-1989 (2026 revision), FAO and WHO, licence CC BY-NC 4.0, https://openknowledge.fao.org/handle/20.500.14283/cd8953en");
     if (sources.length) box.appendChild(el("details", { "class": "ins-note" }, [
       el("summary", { text: "Where these names come from" }),
       el("ul", { "class": "plain" }, sources.map(function (t) { return el("li", { "class": "src", text: t }); }))

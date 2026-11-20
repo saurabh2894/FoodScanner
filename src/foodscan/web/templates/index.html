@@ -102,6 +102,7 @@
           <li><code>INS {{ u.code }}</code>
             <span class="{{ 'missing' if u.name is none }}">{{ u.name or 'Name not in the table yet' }}</span>
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
+            {% if u.name is none and u.ref_name %}<span class="src">Codex list (display only, not used in the decision): {{ u.ref_name }}{% if u.ref_classes %}; {{ u.ref_classes | join(', ') }}{% endif %}{% if u.ref_partial %} (partial reading){% endif %}</span>{% endif %}
             <span class="effect">{{ effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>

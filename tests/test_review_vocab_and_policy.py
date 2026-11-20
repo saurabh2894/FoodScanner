@@ -41,14 +41,14 @@ def test_jaggery_is_a_culinary_ingredient():
 
 def test_ins_322_lecithin_is_a_strong_emulsifier_marker():
     (use,) = normalise_ingredient("INS 322").ins
-    assert use.name == "lecithin" and "USER-APPROVED" in use.source
+    assert use.name == "lecithin" and "Project decision" in use.source
     a = analyse_text("Ingredients: Milk, INS 322.")
     assert a.group == 4 and any("INS 322" in d.detail for d in a.drivers)
 
 
 def test_ins_452i_is_named_but_never_decides_a_group():
     (use,) = normalise_ingredient("stabiliser (INS 452(i))").ins
-    assert use.code == "452(i)" and use.name == "sodium polyphosphate" and "USER-APPROVED" in use.source
+    assert use.code == "452(i)" and use.name == "sodium polyphosphate" and "Project decision" in use.source
     a = analyse_text("Ingredients: Milk, stabiliser (INS 452(i)).")
     assert not a.answered and "weak" in a.reason
 

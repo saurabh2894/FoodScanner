@@ -57,6 +57,9 @@ def format_analysis(a: Analysis) -> str:
         lines.append("INS mappings used:")
         for u in a.ins_mappings:
             lines.append(f"  - INS {u.code} -> {u.name or '(not in local mapping)'}" + (f"  [{u.source}]" if u.source else ""))
+            if u.name is None and u.ref_name:      # display only: it never decides a group
+                lines.append(f"      Codex list (display only, not used in the decision): {u.ref_name}"
+                             + (f"; {', '.join(u.ref_classes)}" if u.ref_classes else "") + ("  [partial reading]" if u.ref_partial else ""))
     return "\n".join(lines)
 
 

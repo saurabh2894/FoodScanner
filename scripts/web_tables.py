@@ -7,6 +7,7 @@ from foodscan.tables import load_table
 def tables() -> dict:
     return {
         "ins_map": [dict(r) for r in load_table("ins_map.csv")],
+        "ins_reference": [dict(r) for r in load_table("ins_reference.csv")],
         "synonyms": [dict(r) for r in load_table("synonyms.csv")],
         "markers": [dict(r) for r in load_table("markers.csv")],
         "lexicon": [dict(r) for r in load_table("lexicon.csv")],

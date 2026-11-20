@@ -43,11 +43,20 @@ class InsUse:
     strength: str | None = None        # decision strength from the table: strong / weak / weak_specific / unlisted
     ingredient: str | None = None      # the raw ingredient text the code was found in
     section: str | None = None         # list section that ingredient belongs to, if any
+    # Display only (ins_reference.csv, Codex CXG 36 2026): for a code absent from ins_map.csv. It never feeds a decision;
+    # the code still counts as "not in local mapping" and cannot decide a group.
+    ref_name: str | None = None
+    ref_classes: tuple[str, ...] = ()
+    ref_partial: bool = False
 
 
 def _make_use(code: str, table: dict) -> "InsUse":
     row = table.get(code)
     if not row:
+        ref = _ins_reference().get(code)
+        if ref:
+            return InsUse(code, None, None, ref_name=ref["name"], ref_partial=ref["reading"].startswith("partial"),
+                          ref_classes=tuple(c.strip() for c in ref["functional_classes"].split(";") if c.strip()))
         return InsUse(code, None, None)
     classes = tuple(c.strip() for c in (row.get("functional_class") or "").split(";") if c.strip())
     return InsUse(code, row["name"], row["source"], classes, row["strength"])
@@ -73,6 +82,11 @@ def canonical_code(code: str) -> str:
 @cache
 def _ins_map() -> dict[str, dict[str, str]]:
     return {canonical_code(r["ins"]): r for r in load_table("ins_map.csv")}
+
+
+@cache
+def _ins_reference() -> dict[str, dict[str, str]]:
+    return {canonical_code(r["ins"]): r for r in load_table("ins_reference.csv")}
 
 
 @cache

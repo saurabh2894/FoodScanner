@@ -278,6 +278,8 @@
     /* ---------- tables ---------- */
     const insTable = {};
     for (const r of T.ins_map) insTable[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
+    const insRef = {};     // display only (Codex CXG 36 2026); never feeds a decision
+    for (const r of T.ins_reference) insRef[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
     const synonyms = [...T.synonyms]
       .sort((a, b) => b.from.length - a.from.length)
       .map((r) => {
@@ -333,7 +335,9 @@
         const code = canonicalCode(c);
         const row = insTable[code];
         const classes = row ? (row.functional_class || "").split(";").map((x) => x.trim()).filter(Boolean) : [];
-        uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null });
+        const ref = row ? null : insRef[code];
+        uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null,
+          ref_name: ref ? ref.name : null, ref_classes: ref ? ref.functional_classes.split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && ref.reading.startsWith("partial")) });
       };
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];

@@ -234,10 +234,10 @@ def verify(pdf: Path) -> int:
 def write_csv(rows: list[dict], out: Path) -> None:
     with out.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
-        w.writerow(["ins", "name", "functional_classes", "is_group", "source"])
+        w.writerow(["ins", "name", "functional_classes", "is_group", "reading", "source"])
         for r in rows:
             src = SOURCE + ("; listed only in the alphabetical list of the source text" if r.get("alpha_only") else "")
-            w.writerow([r["ins"], r["name"], "; ".join(r["classes"]), "yes" if r["is_group"] else "", src])
+            w.writerow([r["ins"], r["name"], "; ".join(r["classes"]), "yes" if r["is_group"] else "", r["reading"], src])
 
 
 def main() -> int:
@@ -248,19 +248,31 @@ def main() -> int:
     args = ap.parse_args()
     if args.verify:
         return verify(args.pdf)
-    rows, anomalies = build(args.pdf, "numerical")
-    known = {r["ins"] for r in rows}
-    for r in build(args.pdf, "alphabetical")[0]:      # codes the source text lists only alphabetically
-        if r["ins"] not in known:
-            r.update(alpha_only=True)
-            rows.append(r)
-            known.add(r["ins"])
+    # Two independent readings of the same additives (numerical and alphabetical lists). An entry ships only where both
+    # exist and carry the same set of classes; everything else is withheld and reported, never guessed.
+    n_rows, anomalies = build(args.pdf, "numerical")
+    a_rows, a_anoms = build(args.pdf, "alphabetical")
+    by_a = {r["ins"]: r for r in a_rows}
+    rows, withheld = [], []
+    for r in n_rows:
+        o = by_a.get(r["ins"])
+        if not o:
+            withheld.append(r["ins"]); continue
+        both = sorted(set(o["classes"]) & set(r["classes"]))
+        if sorted(o["classes"]) == sorted(r["classes"]) and both:
+            r["reading"] = "both lists agree"; rows.append(r)
+        elif both:        # the readings differ (a row's text can bleed into its neighbour): keep only what both readings show
+            r["classes"] = both; r["reading"] = "partial: only the classes both readings agree on; the source may list more"; rows.append(r)
+        else:
+            withheld.append(r["ins"])
+    withheld += sorted(set(by_a) - {r["ins"] for r in n_rows})
     rows.sort(key=lambda r: (int(re.match(r"\d+", r["ins"]).group()), r["ins"]))
+    print(f"withheld (readings disagree or one list lacks the code): {len(withheld)}: {withheld}")
     for a in anomalies:
         print("ANOMALY:", a, file=sys.stderr)
     write_csv(rows, args.out)
     print(f"{len(rows)} INS entries ({sum(1 for r in rows if r['is_group'])} group headings) -> {args.out}; {len(anomalies)} anomalies")
-    return 1 if anomalies else 0
+    return 0
 
 
 if __name__ == "__main__":

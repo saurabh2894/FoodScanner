@@ -150,6 +150,7 @@ CORPUS = [
     "Energy 450 kcal, Protein 8 g, Carbohydrate 60 g, Total fat 20 g, Sodium 600 mg, Fibre 2 g",
     "Ingredients: SUGAR, EMULSIFIER OF VEGETABLE ORIGIN [472e] AND FLOUR TREATMENT AGENT [1101(ii)]. CONTAINS: WHEAT, MILK",
     "Ingredients: Sugar, colour of natural origin (160b), SPICES AND CONDIMENTS, SALT.",
+    "Ingredients: Rice, acidity regulators (330, 508), stabilizer (412), raising agent (500(i), 501(i)), emulsifier (451(i)), flavour enhancer (635), salt, colour (INS 105), preservative (INS 999).",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -162,7 +163,7 @@ def py_result(text, source="ocr"):
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
-                 "ingredient": u.ingredient, "section": u.section} for u in a.ins_mappings],
+                 "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial} for u in a.ins_mappings],
     }
 
 
