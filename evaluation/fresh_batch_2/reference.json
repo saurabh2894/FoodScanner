@@ -1,0 +1,240 @@
+{
+ "M01": {
+  "product": "Amul pasteurized butter",
+  "top": [
+   "Butter",
+   "Common salt"
+  ],
+  "declared": [
+   "permitted natural colour [annatto]"
+  ],
+  "exp": 4,
+  "basis": "provisional: a label declaring an added colour is read as Group 4 under the documented provisional rule (NUPENS-USP lists colourings; plain or salted butter is a Group 2 example, research/04). Same product family as development item P06",
+  "traps": "the Contains sentence declares the colour after a full stop; development overlap (butter/annatto case)",
+  "overlap": "P06 Amul butter"
+ },
+ "M02": {
+  "product": "Chitale pasteurised cow milk (EXCLUDED before scoring)",
+  "top": [],
+  "declared": [],
+  "exp": null,
+  "basis": "EXCLUDED under the selection rule: the photo on record shows a product name and a nutrition table, no ingredient list at all",
+  "traps": ""
+ },
+ "M03": {
+  "product": "Milky Mist Greek yogurt (partly skimmed)",
+  "top": [
+   "Pasteurised double toned milk",
+   "Milk solids",
+   "Active lactic cultures (L.bacillus delbrueckii subsp. bulgaricus, S.thermophilus)"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "provisional: milk, milk solids and yoghurt cultures, no sugar or additive (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; milk, pasteurised or powdered)",
+  "traps": "'Milk Solids AND Active Lactic Cultures' joins two items; the milk-plus-culture rule does not cover 'milk solids', so abstaining is possible"
+ },
+ "M04": {
+  "product": "Smoodh masala flavoured buttermilk (carton)",
+  "top": [
+   "Water",
+   "Double toned milk dahi (40%) (milk solids, starter culture)",
+   "Iodised salt",
+   "Stabilizer (INS 466)",
+   "Nature identical flavouring substances (masala)",
+   "Acidity regulator (INS 330)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "nature identical flavouring substances (NUPENS-USP: flavourings are a Group 4 class)",
+  "traps": "'flavouring substances (masala) AND acidity regulator (INS 330)' joins two items; narrow carton photo; '(INS-International Numbering System)' note after the list",
+  "overlap": "family of F06 Smoodh"
+ },
+ "M05": {
+  "product": "Smoodh chaas (bottle; same recipe text as M04)",
+  "top": [
+   "Water",
+   "Double toned milk dahi (40%) (milk solids, starter culture)",
+   "Iodised salt",
+   "Stabilizer (INS 466)",
+   "Nature identical flavouring substances (masala)",
+   "Acidity regulator (INS 330)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "nature identical flavouring substances (NUPENS-USP Group 4 class)",
+  "traps": "curved bottle held in a hand; same text as M04 on a different pack; 'AND acidity regulator'",
+  "overlap": "family of F06 Smoodh; same text as M04"
+ },
+ "M06": {
+  "product": "Heritage total curd",
+  "top": [
+   "Pasteurised toned milk",
+   "Active lactic cultures"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "milk fermented with cultures, nothing else (NUPENS-USP: fermentation of milk to make yoghurt; plain yoghurt with no added sugar)",
+  "traps": "'Made from Toned Milk.' follows the list in the same line; '&' joins the two items; angled photo with a nutrition table below"
+ },
+ "M07": {
+  "product": "Dlecta mozzarella cheese",
+  "top": [
+   "Mozzarella cheese (pasteurized milk, pasteurized skimmed milk, iodised salt, firming agent (INS 509), microbial cultures and microbial rennet)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "provisional: a firming agent is on the NUPENS-USP list of Group 4 additive classes, which applies to products made of Group 1 or Group 3 foods (cheese is a Group 3 example)",
+  "traps": "ONE top-level item with 6 or 7 nested items; 'microbial cultures AND microbial rennet' joins two; the sentence 'CONTAINS NO ADDED FLAVOURS, ADDED COLOUR OR PRESERVATIVES' is a NEGATION: it declares nothing and must not be read as a colour or flavour declaration; low-resolution photo"
+ },
+ "M08": {
+  "product": "Nestle Milkmaid sweetened condensed milk",
+  "top": [
+   "Milk solids",
+   "Sugar"
+  ],
+  "declared": [],
+  "exp": 3,
+  "basis": "provisional: a Group 1 food (milk solids) with a Group 2 substance (sugar) (NUPENS-USP Group 3 description)",
+  "traps": "'Milk solids AND Sugar' joins two items; curved tin with a lot of other printed text, nutrition table and a 'Contains Milk' line"
+ },
+ "M09": {
+  "product": "Britannia NutriChoice biscuits",
+  "top": [
+   "Wheat flour (atta) (63%)",
+   "Refined palm oil",
+   "Sugar",
+   "Wheat bran (4.7%)",
+   "Liquid glucose",
+   "Milk solids",
+   "Maltodextrin",
+   "Raising agents [500(ii) & 503(ii)]",
+   "Iodised salt",
+   "Emulsifiers [322(i), 471 & 472e]",
+   "Natural, nature identical & artificial (vanilla) flavouring substances",
+   "Malt extract",
+   "Dough conditioner (223)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "maltodextrin, emulsifiers, flavouring substances (NUPENS-USP Group 4)",
+  "traps": "'&' inside the code brackets; 'Natural, nature identical & artificial (vanilla) flavouring substances' is ONE phrase with commas inside it; 'malt extract AND dough conditioner (223)' joins two items; '(Numbers in brackets...)' note and an allergen line after; glare"
+ },
+ "M10": {
+  "product": "Maggi 2-minute noodles Spicy Garlic",
+  "top": [
+   "Noodles: Refined wheat flour (maida)",
+   "Palm oil",
+   "Iodized salt",
+   "Wheat gluten",
+   "Thickeners (508 & 412)",
+   "Acidity regulators (501(i) & 500(i))",
+   "Humectant (451(i))",
+   "Masala Tastemaker: Mixed spices (55.7%) (garlic powder (36.4%), red chilli flakes, onion powder, spice extract blend, curry spice extract blend, star anise powder, rosemary extract & capsicum extract)",
+   "Sugar",
+   "Iodized salt",
+   "Thickener (508)",
+   "Flavour enhancer (635)",
+   "Palm oil",
+   "Starch",
+   "Acidity regulator (330)"
+  ],
+  "sections": 2,
+  "declared": [],
+  "exp": 4,
+  "basis": "flavour enhancer 635 (NUPENS-USP Group 4 class)",
+  "traps": "two sections ('NOODLES:' and 'Masala *TASTEMAKER*:' with a registered mark and an asterisk); 'acidity regulators (...) AND humectant (451(i))' and 'starch AND acidity regulator (330)' join two items each; bare code brackets with '&'; allergen note",
+  "overlap": "P02 Maggi"
+ },
+ "M11": {
+  "product": "Balaji Rumbles potato chips",
+  "top": [
+   "Potato (88%)",
+   "Edible vegetable oil (palmolein)",
+   "Edible common salt",
+   "Maltodextrin",
+   "Spices & condiments 2% (cumin, coriander, cinnamon)",
+   "Dehydrated vegetable powder (onion, garlic)",
+   "Sugar",
+   "Black salt",
+   "Acidity regulator (INS 330)",
+   "Anticaking agent (INS 551)",
+   "Flavour enhancer (INS 627, INS 631)",
+   "Natural & nature identical flavouring substances (mint)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "maltodextrin, flavour enhancer, flavouring substances (NUPENS-USP Group 4)",
+  "traps": "the percentage sits before the bracket without its own brackets ('Spices & Condiments 2 % (...)'); 'Natural & nature identical flavouring substances' is one phrase; codes written with spaces"
+ },
+ "M12": {
+  "product": "Tomato ketchup (sachet)",
+  "top": [
+   "Water",
+   "Sugar",
+   "Tomato paste (28 deg B) 24.7%",
+   "Edible common salt",
+   "Emulsifying & stabilizing agent (INS 1422 & INS 415)",
+   "Acetic acid (INS 260)",
+   "Onion powder",
+   "Garlic powder",
+   "Mixed spices (clove, cinnamon, chilli)",
+   "Preservative (INS 211)"
+  ],
+  "declared": [
+   "permitted class II preservative (INS 211)"
+  ],
+  "exp": 4,
+  "basis": "emulsifying agent and modified starch INS 1422 (NUPENS-USP Group 4 classes: emulsifiers, modified starches); the phrase 'emulsifying & stabilizing agent' is a PROVISIONAL role-phrase mapping in the app",
+  "traps": "the label has NO comma between '(clove, cinnamon, chilli)' and 'PRESERVATIVE (INS 211)', so two reference items sit together in the source; 'emulsifying & stabilizing agent' is one phrase; '28 deg B' is a Brix mark; a web address line above the heading; 'Tomato Ketchup' below; glare"
+ },
+ "M13": {
+  "product": "Pepsi Zero Sugar (bottle)",
+  "top": [],
+  "declared": [],
+  "exp": 4,
+  "basis": "classification only: the readable fragments show colour (150d), acidity regulators, non-calorific sweeteners and flavour; the full list cannot be read at this resolution, so extraction is UNJUDGED (excluded from the item denominator)",
+  "traps": "small text printed around a tilted, curved bottle with water drops; unreadable item by item",
+  "extraction": "unjudged"
+ },
+ "M14": {
+  "product": "Kissan mixed fruit jam 700 g",
+  "top": [
+   "Sugar",
+   "Mixed fruit pulp blend - 60% (papaya pulp, pear pulp, apple juice, banana pulp, pineapple juice, orange juice, mango pulp, grape juice#)",
+   "Acidity regulator - E330",
+   "Thickener - E440",
+   "Iodised salt",
+   "Vitamins & mineral",
+   "Preservative - E202",
+   "Natural flavouring substances",
+   "Food colour - E122"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "natural flavouring substances and food colour E122 (NUPENS-USP Group 4 classes)",
+  "traps": "'Name - E330' separators; 'Vitamins & mineral'; the heading reads 'JAM. INGREDIENTS:'; dim, tilted photo with small text",
+  "overlap": "F14 Kissan mixed fruit jam (same text, another pack size)"
+ },
+ "M15": {
+  "product": "Mango candy (unnamed in the record)",
+  "top": [
+   "Sugar",
+   "Liquid glucose",
+   "Invert sugar syrup",
+   "Raw mango pulp (5%)",
+   "Caster sugar",
+   "Acidity regulators (INS 296, INS 331, INS 334, INS 297)",
+   "Thickener (INS 440)",
+   "Iodized salt",
+   "Artificial flavouring substances - raw mango",
+   "Potassium sorbate (INS 202)",
+   "Synthetic food colour (INS 102, INS 133)",
+   "Chilli powder",
+   "Cumin powder"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "invert sugar, artificial flavouring substances, synthetic food colour (NUPENS-USP Group 4)",
+  "traps": "a long thin wrapper photographed on cloth; the nutrition line follows directly; codes include 296, 334 (checked JECFA rows) and 331, 297 (no row); 'Raw mango' sits after a dash inside the flavouring item"
+ }
+}
