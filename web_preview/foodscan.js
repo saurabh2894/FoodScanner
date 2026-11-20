@@ -146,6 +146,35 @@
       }
       return { sections, ended, unread };
     }
+    const ALLERGEN_LABEL = /^(?:allerg(?:en|y)[a-z ]*|note)\s*:\s*/i;
+    // every "Contains ..." sentence of the text after the list ("May contain" never matches); see parser._contains_sentences
+    function containsSentences(tail) {
+      const out = []; let buf = "", depth = 0;
+      for (let i = 0; i < tail.length; i++) {
+        const ch = tail[i];
+        if (OPEN.includes(ch)) depth++; else if (CLOSE.includes(ch)) depth = Math.max(depth - 1, 0);
+        const isStop = ch === "." && depth === 0 && !(i > 0 && /\d/.test(tail[i - 1]) && i + 1 < tail.length && /\d/.test(tail[i + 1]));
+        if (isStop || (ch === "\n" && depth === 0)) { out.push(buf); buf = ""; } else buf += ch;
+      }
+      out.push(buf);
+      return out.map((seg) => collapse(seg).replace(ALLERGEN_LABEL, "")).filter((seg) => /^contains\b/i.test(seg));
+    }
+    // "a and b" / "a & b" at bracket depth 0; the caller decides whether both sides are ingredients
+    function splitTopLevelAnd(raw) {
+      const cuts = []; let depth = 0, m;
+      const re = /[(\[{)\]}]|\s+(?:and|&)\s+/g;
+      while ((m = re.exec(raw))) {
+        const tok = m[0];
+        if (tok.length === 1 && OPEN.includes(tok)) depth++;
+        else if (tok.length === 1 && CLOSE.includes(tok)) depth = Math.max(depth - 1, 0);
+        else if (depth === 0) cuts.push([m.index, m.index + tok.length]);
+      }
+      const parts = []; let last = 0;
+      for (const [a, b] of cuts) { parts.push(raw.slice(last, a).trim()); last = b; }
+      parts.push(raw.slice(last).trim());
+      const kept = parts.filter(Boolean);
+      return kept.length > 1 ? kept : [raw];
+    }
     function parseIngredientList(text, opts) {
       const assumeList = !!(opts && opts.assumeList);
       const norm = normaliseWs(text);
@@ -156,16 +185,14 @@
       else return { found: false };
       let terminated = false; const declarations = [];
       const stop = STOP.exec(body);
+      const bodyWithTail = stop ? body.slice(stop.index) : "";
       if (stop) {
         const tail = collapse(body.slice(stop.index));
         // the stop phrase takes its lead-in with it: a label right before it, or a claim opener (see parser.py)
         const lead = LEAD_IN.exec(body.slice(0, stop.index));
         body = body.slice(0, lead ? lead.indices[1][0] : stop.index);
         terminated = true;
-        if (/^contains\b/i.test(tail)) {
-          const e = findTerminator(tail);
-          declarations.push(e !== null ? tail.slice(0, e) : tail);
-        }
+        declarations.push(...containsSentences(bodyWithTail));
       }
       const read = readSections(body);
       terminated = terminated || read.ended;
@@ -263,7 +290,7 @@
       .sort((a, b) => b.length - a.length).map(esc).join("|");
     const CLASS_WORD_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?![a-z])");
     // "Flavour Enhancers (627, 631)": bare codes, only right after an additive class word
-    const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?\\s*\\(\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*\\)", "g");
+    const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?\\s*[(\\[{]\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*[)\\]}]", "g");
 
     function extractIns(text) {
       const uses = [];
@@ -276,7 +303,7 @@
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];
         for (const c of groups.codes.match(CODE_RE) || []) addUse(c);
-        return m.slice(0, m.indexOf(groups.codes)).replace(/[( \t]+$/, "") + " ";
+        return m.slice(0, m.indexOf(groups.codes)).replace(/[([{ \t]+$/, "") + " ";
       });
       let stripped = low.replace(INS_RE, (...a) => {
         const groups = a[a.length - 1];
@@ -358,7 +385,7 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], declared: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
     function expand(items, depth, heads) {   // items: [raw, section label] pairs
@@ -373,6 +400,31 @@
           out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1, heads));
         }
         else out.push(ing);
+      }
+      return out;
+    }
+    const splitItemsText = (t) => splitTopLevel(collapse(t)).items;
+    const markerTerms = (text) => new Set(markers.filter(({ re }) => re.test(text)).map(({ row }) => row.term));
+    const subset = (a, b) => [...a].every((x) => b.has(x));
+    // "emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, only when EVERY side is recognisable
+    function splitPairs(raw) {
+      const parts = splitTopLevelAnd(raw);
+      return parts.length > 1 && parts.every((p) => recognisableIng(normaliseIngredient(p))) ? parts : [raw];
+    }
+    // additive/flavour clauses of the "Contains ..." lines, marked as in or missing from the list; allergens are dropped
+    function declaredAdditives(declarations, ings) {
+      const listTerms = new Set(); const listCodes = new Set();
+      for (const i of ings) { markerTerms(i.text).forEach((t) => listTerms.add(t)); i.ins.forEach((u) => listCodes.add(u.code)); }
+      const out = [];
+      for (const decl of declarations) {
+        const body = decl.replace(/^contains\s*:?\s*/i, "");
+        for (const part of splitItemsText(body)) for (const clause of splitTopLevelAnd(part)) {
+          const ing = normaliseIngredient(clause);
+          const terms = markerTerms(ing.text), codes = new Set(ing.ins.map((u) => u.code));
+          if (!terms.size && !codes.size) continue;
+          const entry = { text: stripChars(clause, " ."), in_list: subset(terms, listTerms) && subset(codes, listCodes) };
+          if (!out.some((e) => e.text === entry.text && e.in_list === entry.in_list)) out.push(entry);
+        }
       }
       return out;
     }
@@ -405,19 +457,22 @@
         parsed = parseIngredientList(text);
         if (!parsed.found) return abstain("no ingredient list found in the text", text);
       }
+      const sections = parsed.sections.map((sec) => ({ label: sec.label, items: sec.items.flatMap(splitPairs) }));
+      const items = sections.flatMap((sec) => sec.items);
       const heads = [];
-      const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads);
+      const ings = expand(sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads);
+      const declared = declaredAdditives(parsed.declarations, ings);
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
-      const sectionWarnings = suspectSectionItems(parsed.items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
+      const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
-      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
-        truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${parsed.items[parsed.items.length - 1]}")`;
+        truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${items[items.length - 1]}")`;
       // unlabelled text after a full stop that looks like more of the list: like truncation, only a strong-marker Group 4 stands
       const unread = unreadLike.length ? `text after a full stop looks like more ingredients and was not read: "${shortText(unreadLike[0])}"` : null;
       const blocking = truncation || unread;

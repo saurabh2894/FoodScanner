@@ -128,6 +128,15 @@ CORPUS = [
     "Ingredients: bengal gram dal", "Ingredients: red lentil, kala namak", "Ingredients: butter", "Ingredients: pasteurised butter, salt",
     "Ingredients: rolled oats, sugar, salt", "Ingredients: rolled oats, maltodextrin", "Ingredients: powdered sugar", "Ingredients: Honey",
     "Ingredients: brown rice, salted butter", "Ingredients: cold pressed sesame oil", "Ingredients: edible", "Ingredients: jackfruit seed paste, oat",
+    # extraction completeness (tests/test_extraction_completeness.py): and-pairs, bracket kinds, Contains lines
+    "Ingredients: wheat flour, emulsifier [472e] and flour treatment agent [1101(ii)], salt.", "Ingredients: rice, salt and sugar, water.",
+    "Ingredients: rice, Spices and Condiments, Natural and Nature Identical Flavours, milk and cream.", "Ingredients: rice, colour (INS 102 and INS 110), water.",
+    "Ingredients: rice, antioxidant (INS 392) and acidity regulator (INS 330), water.", "Ingredients: rice, emulsifiers (471) & raising agents (500(ii)).",
+    "Ingredients: Noodles: wheat flour, salt and sugar. Masala: emulsifier [472e] and flour treatment agent [1101(ii)].",
+    "Ingredients: Rice, salt.\nContains added flavours (nature identical flavouring substances).", "Ingredients: Rice, natural flavour, salt.\nContains added flavours.",
+    "Ingredients: Rice, salt.\nContains wheat, milk and soy.\nMay contain traces of nuts.", "Ingredients: Rice, salt. Contains wheat and milk, permitted natural colour (160c) and added flavour.",
+    "Ingredients: Rice, salt. Contains soy. Contains permitted colour. Manufactured by X.", "Ingredients: Rice, salt.\nManufactured by Example Foods.\nAllergen information: Contains wheat.\nContains added flavours",
+    "Ingredients: Rice. May contain traces of nuts. Contains milk.", "Ingredients: raising agents [500(ii), 503(ii)], Colour [150d], rice.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -136,7 +145,7 @@ def py_result(text, source="ocr"):
     a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored,
+        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored, "declared": a.declared,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
@@ -164,7 +173,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, sections: a.sections, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, declared: a.declared, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
 

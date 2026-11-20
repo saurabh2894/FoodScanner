@@ -62,6 +62,11 @@
   {% else %}
     <p>None found.</p>
   {% endif %}
+  {% if result.declared %}
+    <h3>Declared on a "Contains" line</h3>
+    <p class="src">Counts as evidence. Allergen statements are not shown and never become ingredients.</p>
+    <ul>{% for d in result.declared %}<li>{{ d.text }} <span class="src">{{ 'also in the ingredient list' if d.in_list else 'NOT in the ingredient list' }}</span></li>{% endfor %}</ul>
+  {% endif %}
   {% if result.ignored %}
     <h3>Not read as ingredients</h3>
     <p class="src">Text after the list, kept here so nothing is hidden.</p>

@@ -31,7 +31,7 @@ def _bare_codes_re() -> re.Pattern:
                    key=len, reverse=True)
     alt = "|".join(re.escape(t) for t in terms)
     return re.compile(
-        rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?\s*\(\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*\)")
+        rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?\s*[(\[{{]\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*[)\]}}]")
 
 
 @dataclass(frozen=True)
@@ -138,7 +138,7 @@ def extract_ins(text: str) -> tuple[str, list[InsUse]]:
         # keep the class word, drop only the bracketed codes
         for c in _CODE_RE.findall(m.group("codes")):
             uses.append(_make_use(canonical_code(c), table))
-        return m.group(0)[: m.start("codes") - m.start(0)].rstrip("( \t") + " "
+        return m.group(0)[: m.start("codes") - m.start(0)].rstrip("([{ \t") + " "
 
     low = _bare_codes_re().sub(repl_bare, low)
     stripped = _INS.sub(repl, low)

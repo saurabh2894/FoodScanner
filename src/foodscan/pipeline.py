@@ -10,10 +10,11 @@ import re
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import Driver, _hits_for, classify_ingredients, is_recognised
+from .classify import Driver, _hits_for, classify_ingredients, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import parse_ingredient_list, split_compound, split_items, starts_with_denied_label, suspect_section_items
+from .parser import (parse_ingredient_list, split_compound, split_items, split_top_level_and, starts_with_denied_label,
+                     suspect_section_items)
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -44,6 +45,9 @@ class Analysis:
     # group names that were expanded. Shown so nothing is invisible once a strong marker is found.
     unassessed: list[str] = field(default_factory=list)
     ignored: list[str] = field(default_factory=list)    # text after the list that was not read as ingredients
+    # additive / flavour declarations from "Contains ..." lines: [{"text", "in_list"}]. in_list False: stated there but
+    # missing from the ingredient list. They count as evidence but are never added to the list; allergens are dropped.
+    declared: list[dict] = field(default_factory=list)
 
     @property
     def headline(self) -> str:
@@ -58,6 +62,35 @@ def _abstain(reason: str, text: str, **kw) -> Analysis:
 
 def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
+
+
+def _split_pairs(raw: str) -> list[str]:
+    """"emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, but only when EVERY side is a recognisable
+    ingredient, so "Spices and Condiments" or "Natural and Nature Identical Flavours" stay whole."""
+    parts = split_top_level_and(raw)
+    if len(parts) > 1 and all(_recognisable(normalise_list([p])[0]) for p in parts):
+        return parts
+    return [raw]
+
+
+def _declared_additives(declarations: list[str], ings: list[Ingredient]) -> list[dict]:
+    """Additive/flavour clauses of the "Contains ..." lines, each marked as present in or missing from the list.
+    A clause with no additive class word and no INS code (an allergen, "37% millets") is not an additive: dropped."""
+    list_terms = set().union(*[marker_terms(i.text) for i in ings]) if ings else set()
+    list_codes = {u.code for i in ings for u in i.ins}
+    out: list[dict] = []
+    for decl in declarations:
+        body = re.sub(r"^contains\s*:?\s*", "", decl, flags=re.IGNORECASE)
+        for part in split_items(body):
+            for clause in split_top_level_and(part):
+                ing = normalise_list([clause])[0]
+                terms, codes = marker_terms(ing.text), {u.code for u in ing.ins}
+                if not terms and not codes:
+                    continue
+                entry = {"text": clause.strip(" ."), "in_list": terms <= list_terms and codes <= list_codes}
+                if entry not in out:
+                    out.append(entry)
+    return out
 
 
 def _short(text: str, limit: int = 100) -> str:
@@ -129,21 +162,24 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         if not parsed.found:
             return _abstain("no ingredient list found in the text", text)
 
+    sections = [(sec.label, [p for raw in sec.items for p in _split_pairs(raw)]) for sec in parsed.sections]
+    items = [raw for _, its in sections for raw in its]
     heads: list[str] = []
-    ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items], heads=heads)
+    ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads)
+    declared = _declared_additives(parsed.declarations, ings)
     unassessed = list(dict.fromkeys(
         [i.raw for i in ings if not _recognisable(i)]
         + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
-                        for it in suspect_section_items(parsed.items)]
+                        for it in suspect_section_items(items)]
     unread_like = [seg for seg in parsed.ignored if _looks_like_more_ingredients(seg)]
     unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
                        for seg in unread_like]
     section_warnings += unread_warnings
-    common = dict(ingredients=parsed.items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
-                  ignored=list(parsed.ignored),
-                  sections=[(sec.label, list(sec.items)) for sec in parsed.sections])
+    common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
+                  ignored=list(parsed.ignored), declared=declared,
+                  sections=[(label, list(its)) for label, its in sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
     # (no full stop / stop phrase) on a word we cannot recognise ("refined wheat flo").
@@ -151,7 +187,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     if parsed.unbalanced_brackets:
         truncation = "ingredient list looks truncated (unclosed bracket)"
     elif not parsed.terminated and not _recognisable(ings[-1]):
-        truncation = f'ingredient list looks truncated (ends mid-word or unrecognised: "{parsed.items[-1]}")'
+        truncation = f'ingredient list looks truncated (ends mid-word or unrecognised: "{items[-1]}")'
     # Unlabelled text after a full stop that looks like more of the list was not read (never dropped silently:
     # it is in `ignored` and in the warnings). Like truncation, it can only be answered when a strong marker
     # already decides (Group 4); otherwise a Group 1-3 call could hide a missing ingredient or marker.

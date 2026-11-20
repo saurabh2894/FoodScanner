@@ -38,6 +38,9 @@ def format_analysis(a: Analysis) -> str:
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
         lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
+    if a.declared:
+        lines.append("Declared on a 'Contains' line (counts as evidence; allergen statements are not shown):")
+        lines += [f"  - {d['text']}  [{'also in the ingredient list' if d['in_list'] else 'NOT in the ingredient list'}]" for d in a.declared]
     if a.ignored:
         lines.append("Not read as ingredients (text after the list):")
         lines += [f"  - {t}" for t in a.ignored]

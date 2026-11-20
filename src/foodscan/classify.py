@@ -112,6 +112,11 @@ class _Hit:
     source: str
 
 
+def marker_terms(text: str) -> set[str]:
+    """The marker terms (markers.csv) found in a normalised text."""
+    return {row["term"] for pat, row in _markers() if pat.search(text)}
+
+
 def _hits_for(ing: Ingredient) -> list[_Hit]:
     hits: list[_Hit] = []
     for pat, row in _markers():

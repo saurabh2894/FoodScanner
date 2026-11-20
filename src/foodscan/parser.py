@@ -286,6 +286,54 @@ def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool, str]:
     return sections, ended, unread
 
 
+_ALLERGEN_LABEL = re.compile(r"^(?:allerg(?:en|y)[a-z ]*|note)\s*:\s*", re.IGNORECASE)
+
+
+def _contains_sentences(tail: str) -> list[str]:
+    """The "Contains ..." sentences of the text after the list: sentences end at a full stop outside brackets or at a
+    line break; a leading "Allergen information:" label is dropped; "May contain" does not match."""
+    out, buf, depth = [], [], 0
+    for i, ch in enumerate(tail):
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(depth - 1, 0)
+        is_stop = (ch == "." and depth == 0 and not (i > 0 and tail[i - 1].isdigit() and i + 1 < len(tail) and tail[i + 1].isdigit()))
+        if is_stop or (ch == "\n" and depth == 0):
+            out.append("".join(buf))
+            buf = []
+        else:
+            buf.append(ch)
+    out.append("".join(buf))
+    found = []
+    for seg in out:
+        seg = _ALLERGEN_LABEL.sub("", _collapse(seg))
+        if re.match(r"contains\b", seg, re.IGNORECASE):
+            found.append(seg)
+    return found
+
+
+def split_top_level_and(raw: str) -> list[str]:
+    """Split "a and b" / "a & b" at bracket depth 0. Always returns at least [raw]; whether both sides are really
+    ingredients is for the caller to decide (it needs the vocabulary)."""
+    cuts, depth = [], 0
+    for m in re.finditer(r"[(\[{)\]}]|\s+(?:and|&)\s+", raw):
+        tok = m.group()
+        if tok in _OPEN:
+            depth += 1
+        elif tok in _CLOSE:
+            depth = max(depth - 1, 0)
+        elif depth == 0:
+            cuts.append((m.start(), m.end()))
+    parts, last = [], 0
+    for a, b in cuts:
+        parts.append(raw[last:a].strip())
+        last = b
+    parts.append(raw[last:].strip())
+    parts = [p for p in parts if p]
+    return parts if len(parts) > 1 else [raw]
+
+
 def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:
     norm = _normalise_ws(text)
     m = _HEADING.search(norm)
@@ -300,6 +348,7 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
     declarations: list[str] = []
 
     stop = _STOP.search(body)
+    body_with_tail = body[stop.start():] if stop else ""
     if stop:
         tail = _collapse(body[stop.start():])
         # The stop phrase takes its own lead-in with it: a label right before it ("Note: store in ...") or a
@@ -307,12 +356,10 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         lead = _LEAD_IN.search(body[: stop.start()])
         body = body[: lead.start(1) if lead else stop.start()]
         terminated = True
-        # Keep "Contains ..." statements: they can declare additive classes
-        # (e.g. "Contains added flavour") that are classification evidence.
-        # "may contain" (allergen cross-contact) is not an ingredient declaration.
-        if re.match(r"contains\b", tail, re.IGNORECASE):
-            end = _find_terminator(tail)
-            declarations.append(tail[:end] if end is not None else tail)
+        # "Contains ..." statements can declare additive classes (e.g. "Contains added flavour"): classification
+        # evidence. Every such sentence in the text after the list is kept, not only the first one. "May contain"
+        # (allergen cross-contact) is never a declaration.
+        declarations = _contains_sentences(body_with_tail)
 
     raw_sections, ended, unread = _read_sections(body)
     terminated = terminated or ended

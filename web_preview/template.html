@@ -259,6 +259,17 @@
     cols.appendChild(listBox);
     card.appendChild(cols);
     if (a.ins.length) card.appendChild(insBlock(a.ins));
+    if (a.declared && a.declared.length) {
+      card.appendChild(el("div", {}, [
+        el("h3", { text: "Declared on a Contains line" }),
+        el("p", { "class": "hint", text: "Counts as evidence. Allergen statements are not shown and never become ingredients." }),
+        el("ul", { "class": "plain" }, a.declared.map(function (d) {
+          var li = el("li", { "class": "mono", text: d.text + "  " });
+          li.appendChild(el("span", { "class": "src", text: d.in_list ? "also in the ingredient list" : "NOT in the ingredient list" }));
+          return li;
+        }))
+      ]));
+    }
     if (a.ignored && a.ignored.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not read as ingredients" }),
