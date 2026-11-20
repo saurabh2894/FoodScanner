@@ -1,0 +1,38 @@
+term,kind,source
+whole wheat flour,flour,research/02 synthetic example 1 (group 1); atta listed as group 1
+refined wheat flour,flour,research/02 synthetic example 2 ingredient; flour kind => bread-like lists abstain
+cucumber,whole_food,research/02 synthetic example 3
+rice,whole_food,research/02 group 1 examples (rice)
+milk,whole_food,research/02 group 1 examples (milk)
+egg,whole_food,research/02 group 1 examples (eggs)
+eggs,whole_food,research/02 group 1 examples (eggs)
+toor dal,whole_food,research/02 group 1 examples (plain dals)
+moong dal,whole_food,research/02 group 1 examples (plain dals)
+chana dal,whole_food,research/02 group 1 examples (plain dals)
+masoor dal,whole_food,research/02 group 1 examples (plain dals)
+urad dal,whole_food,research/02 group 1 examples (plain dals)
+tomato,whole_food,PROVISIONAL author seed (fruit/vegetable; research/02 group 1 examples list fruit)
+potato,whole_food,PROVISIONAL author seed (vegetable)
+onion,whole_food,PROVISIONAL author seed (vegetable)
+carrot,whole_food,PROVISIONAL author seed (vegetable)
+peas,whole_food,PROVISIONAL author seed (vegetable)
+mango,whole_food,PROVISIONAL author seed (fruit; research/02 group 1 examples list fruit)
+lemon,whole_food,PROVISIONAL author seed (fruit)
+salt,culinary,research/02 group 2 (salt)
+iodised salt,culinary,PROVISIONAL author seed (variant of salt)
+sugar,culinary,research/02 group 2 (sugar)
+vinegar,culinary,research/02 synthetic example 3
+edible vegetable oil,culinary,research/02 group 2 (oils); example 2 ingredient
+ghee,culinary,research/02 group 2 (ghee)
+mustard oil,culinary,research/02 group 2 (oils)
+sunflower oil,culinary,research/02 group 2 (oils)
+groundnut oil,culinary,research/02 group 2 (oils)
+coconut oil,culinary,research/02 group 2 (oils)
+dill,herb_spice,research/02 synthetic example 3
+turmeric,herb_spice,PROVISIONAL author seed (spice)
+cumin,herb_spice,PROVISIONAL author seed (spice)
+coriander,herb_spice,PROVISIONAL author seed (spice)
+black pepper,herb_spice,PROVISIONAL author seed (spice)
+chilli,herb_spice,PROVISIONAL author seed (spice)
+garlic,herb_spice,PROVISIONAL author seed (spice)
+water,neutral,research/02 synthetic example 3 (water carries no processing signal)
