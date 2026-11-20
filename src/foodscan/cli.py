@@ -44,7 +44,9 @@ def format_analysis(a: Analysis) -> str:
     w = c["words"]
     lines.append(f"Completeness: {c['status']}. {w['in_list']} words read as ingredients ({round(c['list_share'] * 100)}% of the list region); "
                  f"{w['not_read']} not read, {w['unaccounted']} unaccounted, {w['excluded']} set aside after the list, {w['declared']} declared; "
-                 f"{c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary.")
+                 f"{c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary."
+                 + (" All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct."
+                    if c["status"] == "complete" else ""))
     lines += [f"  - check: {r}" for r in c["reasons"]]
     if a.declared:
         lines.append("Declared on a 'Contains' line (counts as evidence; allergen statements are not shown):")
@@ -60,8 +62,8 @@ def format_analysis(a: Analysis) -> str:
         for u in a.ins_mappings:
             lines.append(f"  - INS {u.code} -> {u.name or '(not in local mapping)'}" + (f"  [{u.source}]" if u.source else ""))
             if u.name is None and u.ref_name:      # display only: it never decides a group
-                lines.append(f"      Codex list (display only, not used in the decision): {u.ref_name}"
-                             + (f"; {', '.join(u.ref_classes)}" if u.ref_classes else "") + ("  [partial reading]" if u.ref_partial else ""))
+                lines.append(f"      {u.ref_name} (provisional name). Recognised code, no processing rule yet; classification treats it as unknown."
+                             + (f" Source: {u.ref_url}" if u.ref_url else ""))
     return "\n".join(lines)
 
 

@@ -45,15 +45,29 @@ def _heading_like(tok: str) -> bool:
     return len(t) >= 8 and any(_lev(t, w) <= 2 for w in _HEADING_WORDS)
 
 
+_HEAD_QUALIFIER = re.compile(r"(?:^|[\s(])(?:active|inactive|cooking)\s*$", re.IGNORECASE)
+
+
+def _heading_position_ok(norm: str, m: re.Match) -> bool:
+    """The word must sit in heading position and form: at the start of the text, a line or a sentence, or followed by a colon or
+    dash. "COOKING INGREDIENTS & MEALS" and "SYMEGA FOOD INGREDIENTS LTD." are text that merely contains the word."""
+    before = norm[: m.start()]
+    if _HEAD_QUALIFIER.search(before):
+        return False                       # "Active ingredients:", "Cooking ingredients:"
+    at_start = re.search(r"(?:^|\n)[\s*\u2022|\-]*$", before) is not None or re.search(r"[.!?]\s*$", before) is not None
+    has_separator = re.search(r"[:\-\u2013\u2014]", m.group()) is not None
+    return at_start or has_separator
+
+
 def _find_heading(norm: str) -> tuple[int, str, str] | None:
     """(end of heading, kind, heading text). kind "exact", or "fuzzy" for a damaged heading. A fuzzy heading must
     sit at the start of a line or be followed by a colon or dash, so a look-alike word inside a sentence is not one."""
-    m = _HEADING.search(norm)
-    if m:
-        return m.end(), "exact", m.group().strip(" :-–—")
+    for m in _HEADING.finditer(norm):
+        if _heading_position_ok(norm, m):
+            return m.end(), "exact", m.group().strip(" :-–—")
     for t in re.finditer(r"[A-Za-z0-9]{6,}", norm):
-        if not _heading_like(t.group()):
-            continue
+        if not _heading_like(t.group()) or t.group().lower() in _HEADING_WORDS:
+            continue                       # the exact word was already judged by its position (_heading_position_ok)
         before, after = norm[: t.start()], norm[t.end():]
         if re.match(r"\s*[:\-–—]", after) or re.search(r"(?:^|\n)[\s*•\-]*$", before):
             end = t.end() + len(re.match(r"\s*[:\-–—]?\s*", after).group())
@@ -79,7 +93,7 @@ _LEAD_IN = re.compile(
 _LABEL = re.compile(
     r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})"
     r"(?P<qual>\s*\([A-Za-z][A-Za-z ]{0,18}\))?"
-    r"(?:\s+(?P<pct>\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)")
+    r"(?:\s+(?P<pct>\d+(?:\.\d+)?\s*%)|\s*\(\s*(?P<pctb>\d+(?:\.\d+)?\s*%)\s*\))?\s*:\s*(?=\S)")
 # Labels that introduce non-ingredient text: the list ends before them.
 _DENY = re.compile(
     r"(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|"
@@ -147,7 +161,8 @@ def _label_info(seg: str) -> tuple[str, int, bool] | None:
     if flat in _lexicon_terms():
         return None
     shown = label + (" " + m.group("qual").strip() if m.group("qual") else "")                 # "Sprinkler Mix (Topping)"
-    shown += " " + re.sub(r"\s+", "", m.group("pct")) if m.group("pct") else ""                 # "Seasoning 12%"
+    pct = m.group("pct") or m.group("pctb")
+    shown += " " + re.sub(r"\s+", "", pct) if pct else ""                                        # "Seasoning 12%", "Noodles (88.5%):" -> "Noodles 88.5%"
     return shown, m.end(), not _class_word_re().search(flat)
 
 
@@ -190,7 +205,7 @@ def _peel_label(item: str) -> tuple[str, str, str] | None:
     if not rest[:1].isalpha():
         return None
     pct = ""
-    mp = re.search(r"\s+(\d+(?:\.\d+)?\s*%)\s*$", left)
+    mp = re.search(r"\s+(\d+(?:\.\d+)?\s*%)\s*$", left) or re.search(r"\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)\s*$", left)
     if mp:
         pct, left = re.sub(r"\s+", "", mp.group(1)), left[:mp.start()]
     words = left.split()
@@ -234,22 +249,59 @@ def _collapse(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+_CODE_ITEM = re.compile(r"^(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*$", re.IGNORECASE)
+# "NAME (22%) {a, b, c}": a percentage then a bracket holding letters, ending the chunk
+_PCT_GROUP = re.compile(r"\(\s*\d+(?:\.\d+)?\s*%\s*\)\s*[\[{(].*[A-Za-z].*[\]})]\s*$")
+
+
 def _split_top_level(text: str) -> tuple[list[str], bool]:
-    """Split on commas/semicolons outside brackets. Returns (items, unbalanced)."""
-    items, buf, depth = [], [], 0
+    """Split on commas/semicolons outside brackets. Returns (items, unbalanced).
+
+    Two general rules on top of the plain split:
+    - in a list whose groups are separated by semicolons, a chunk shaped "NAME, NAME (22%) {a, b}" keeps its commas: the
+      percentage belongs to the group, so everything before it is the group's name ("Dry Fruits, Nuts & Seeds");
+    - an item that is only an additive code ("E1450", "INS 415") continues the previous item's code list
+      ("thickeners - E1442, E1450")."""
+    pieces, seps, buf, depth = [], [], [], 0
     for ch in text:
         if ch in _OPEN:
             depth += 1
         elif ch in _CLOSE:
             depth = max(depth - 1, 0) if depth else 0
         if ch in ",;" and depth == 0:
-            items.append("".join(buf))
+            pieces.append("".join(buf))
+            seps.append(ch)
             buf = []
         else:
             buf.append(ch)
-    items.append("".join(buf))
-    unbalanced = _bracket_depth(text) != 0
-    return [i.strip(" .") for i in items if i.strip(" .")], unbalanced
+    pieces.append("".join(buf))
+    if ";" in seps:
+        merged, cur = [], [pieces[0]]
+        for sep, piece in zip(seps, pieces[1:]):
+            if sep == ";":
+                merged.append(cur)
+                cur = [piece]
+            else:
+                cur.append(piece)
+        merged.append(cur)
+        pieces = []
+        for chunk in merged:
+            head = chunk[:-1]
+            if len(chunk) >= 2 and _PCT_GROUP.search(chunk[-1]) and all(not re.search(r"[(\[{]", p) for p in head) \
+                    and sum(len(p.split()) for p in head) <= 6:
+                pieces.append(",".join(chunk))
+            else:
+                pieces.extend(chunk)
+    items: list[str] = []
+    for p in pieces:
+        p = p.strip(" .")
+        if not p:
+            continue
+        if items and _CODE_ITEM.match(p):
+            items[-1] += ", " + p
+        else:
+            items.append(p)
+    return items, _bracket_depth(text) != 0
 
 
 def _bracket_depth(text: str) -> int:

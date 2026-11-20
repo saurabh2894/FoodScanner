@@ -48,6 +48,12 @@ class InsUse:
     ref_name: str | None = None
     ref_classes: tuple[str, ...] = ()
     ref_partial: bool = False
+    ref_source: str | None = None
+
+    @property
+    def ref_url(self) -> str | None:
+        m = re.search(r"https?://\S+", self.ref_source or "")
+        return m.group(0) if m else None
 
 
 def _make_use(code: str, table: dict) -> "InsUse":
@@ -55,8 +61,9 @@ def _make_use(code: str, table: dict) -> "InsUse":
     if not row:
         ref = _ins_reference().get(code)
         if ref:
-            return InsUse(code, None, None, ref_name=ref["name"], ref_partial=ref["reading"].startswith("partial"),
-                          ref_classes=tuple(c.strip() for c in ref["functional_classes"].split(";") if c.strip()))
+            return InsUse(code, None, None, ref_name=ref["name"], ref_partial=(ref.get("reading") or "").startswith("partial"),
+                          ref_classes=tuple(c.strip() for c in (ref.get("functional_classes") or "").split(";") if c.strip()),
+                          ref_source=ref.get("source"))
         return InsUse(code, None, None)
     classes = tuple(c.strip() for c in (row.get("functional_class") or "").split(";") if c.strip())
     return InsUse(code, row["name"], row["source"], classes, row["strength"])
@@ -86,12 +93,15 @@ def _ins_map() -> dict[str, dict[str, str]]:
 
 @cache
 def _ins_reference() -> dict[str, dict[str, str]]:
-    """Display-only Codex data. NOT SHIPPED while its licence is unresolved (data/pending/, research/05): the table is
-    read only if src/foodscan/resources/ins_reference.csv exists, so a release without the file simply shows nothing."""
-    from .tables import has_table
-    if not has_table("ins_reference.csv"):
-        return {}
-    return {canonical_code(r["ins"]): r for r in load_table("ins_reference.csv")}
+    """Display-only names (ins_names.csv): "Recognised code, no processing rule yet". They never feed a decision. The bulk Codex
+    table stays parked in data/pending/ (licence and edition unresolved, research/05)."""
+    return {canonical_code(r["ins"]): r for r in load_table("ins_names.csv")}
+
+
+@cache
+def ins_functions() -> dict[str, tuple[str, ...]]:
+    """code -> functions (ins_functions.csv). Used only to compare a label's class word with a code, for a review hint."""
+    return {canonical_code(r["ins"]): tuple(c.strip() for c in r["functions"].split(";") if c.strip()) for r in load_table("ins_functions.csv")}
 
 
 @cache

@@ -178,6 +178,18 @@ CORPUS = [
     "Ingredients: Milk, live cultures.", "Ingredients: Double toned milk, active culture.", "Ingredients: Toned milk, active culture, xyzgum.",
     "Ingredients: Milk, active culture, sugar.", "Ingredients: Milk, active culture, sweetener (INS 950).", "Ingredients: Milk, active culture, stabilizer (INS 440).",
     "Ingredients: Dahi, active culture.", "Ingredients: Active culture.", "Ingredients: Milk, water.", "Ingredients: Milk, yoghurt culture, lactic culture.", "Ingredients: Curd.", "Ingredients: Double-toned milk, live culture.",
+    # fix round + INS-misread addendum (tests/test_round_fixes.py)
+    "MFG. BY: SYMEGA FOOD INGREDIENTS LTD., KERALA\nSOURCE: EUROMONITOR, COOKING INGREDIENTS & MEALS, RETAIL VALUE RSP IN 2024\nSINGLE SERVE PACK.", "Active ingredients: caffeine, taurine, sugar, water",
+    "Ingredients: retail value, single serve pack, premium quality, best offer, free gift.", "Biscuits\nINGREDIENTS REFINED WHEAT FLOUR, SUGAR, SALT, PALM OIL.",
+    "Ingredients: Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%), guar gum, iodised salt. Seasoning (11.5%): Mixed spices (onion, cumin), sugar, salt.",
+    "Ingredients: Rice, salt, emulsifying agent.", "Ingredients: Rice, salt, emulsifying & stabilizing agent (INS 1422, INS 415).", "Ingredients: Rice, salt, stabilizing agent (INS 440).",
+    "Ingredients: Pasteurized Buffalo Milk.", "Ingredients: Buffalo milk, active lactic culture.", "Ingredients: Pasteurised toned milk, active lactic culture and probiotic culture (Bifidobacterium lactis & Lactobacillus acidophilus).",
+    "Ingredients: Water, thickeners - E1442, E1450, salt.", "Ingredients: Sugar, nature identical flavouring substance and dough conditioner (223).",
+    "Ingredients: Whole Grains (34%) {rolled oats, ragi flakes}; Dry Fruits, Nuts & Seeds (22%) {raisin, almonds}; Organic Jaggery, Cocoa Powder (7%), Dates.",
+    "Ingredients: Roasted Peanuts (91%) Sugar, Stabilizer (INS471), Iodised Salt.", "Ingredients: Sugar, nature identical and natural flavouring substances, salt.",
+    "Ingredients: Seasoning 12%: Acidity Regulators (INS330, INS296, INS334), Potassium Chloride - Salt Substitute (INS 508), Rosemary Extract - Antioxidant (INS 392).",
+    "Ingredients: Seasoning 12%: Acidity Regulators (INS330, INS236, INS334), Potassium Chloride - Salt Substitute (INS 508), Rosemary Extract - Antioxidant (INS 382).",
+    "Ingredients: Rice, salt, acidity regulator (INS 392).", "Ingredients: Rice, salt, preservative (INS 999).", "Ingredients: Water, emulsifiers and stabilizers [INS 460(i), INS 471].",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 _f07 = Path(__file__).resolve().parent.parent / 'evaluation/dev_regression_15/inputs/F07.txt'
@@ -193,7 +205,7 @@ def py_result(text, source="ocr"):
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
-                 "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial} for u in a.ins_mappings],
+                 "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial, "ref_source": u.ref_source} for u in a.ins_mappings],
     }
 
 

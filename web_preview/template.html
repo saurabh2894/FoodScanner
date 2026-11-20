@@ -205,9 +205,11 @@
         var roles = (u.classes || []).filter(function (c) { return c.toLowerCase() !== (u.name || "").toLowerCase(); });   // do not repeat the name as a role
         if (roles.length) name.appendChild(el("span", { "class": "ins-roles" }, roles.map(function (c) { return el("span", { "class": "role", text: c }); })));
         var main = el("div", {}, [name]);
-        if (refOnly) {      // display only: possible functions per the Codex list, never confirmed for this product and never a decision input
-          main.appendChild(el("span", { "class": "src", text: "Name and possible functions from the Codex list (display only; not confirmed for this product, not used in the decision)" +
-            (u.ref_classes && u.ref_classes.length ? ": " + u.ref_classes.join(", ") : "") + (u.ref_partial ? ". Partial reading: the source may list more." : "") }));
+        if (refOnly) {      // display only: a recognised code with no processing rule; never a decision input
+          var refUrl = /https?:\/\/\S+/.exec(u.ref_source || "");
+          main.appendChild(el("span", { "class": "src", text: "Recognised code, no processing rule yet. Classification treats it as unknown." +
+            (u.ref_source ? " Name is provisional" + (refUrl ? " (source: " + refUrl[0] + ")" : "") + "." : "") +
+            (u.ref_classes && u.ref_classes.length ? " Possible functions listed elsewhere: " + u.ref_classes.join(", ") + "." : "") }));
         }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
         return el("li", { "class": "ins-row" }, [
@@ -282,7 +284,7 @@
       var c = a.completeness, w = c.words;
       card.appendChild(el("div", {}, [
         el("h3", { text: "Completeness: " + c.status }),
-        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are outside the vocabulary. This is text coverage, not proof that the list is complete." }),
+        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are outside the vocabulary. " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
         el("ul", { "class": "plain" }, c.reasons.map(function (r) { return el("li", { text: r }); }))
       ]));
     }
@@ -455,17 +457,24 @@
       // Yield of a reading = ingredients found minus those outside the vocabulary (0 when no list was found).
       function yieldOf(a) { return a.ingredients.length ? Math.max(0, a.ingredients.length - a.unassessed.length) : 0; }
       var text = res.data.text, a1 = engine.analyseText(text, { source: "ocr" }), note = "";
-      if (!(a1.answered && a1.completeness.status === "complete")) {
+      var ocrNotes = [], codesOf = function (a) { return a.ins.map(function (u) { return u.code; }); };
+      if (!(a1.answered && a1.completeness.status === "complete" && a1.ins.length === 0)) {
         // One bounded second pass for photos that did not read cleanly: uneven lighting and glare flattened. The better yield is kept; ties keep the first reading.
         stage = "Second reading with lighting correction"; lastEvent = Date.now();
         var res2 = await worker.recognize(await prepare(photoFile, "flat"));
         if (over) return;
-        if (yieldOf(engine.analyseText(res2.data.text, { source: "ocr" })) > yieldOf(a1)) { text = res2.data.text; note = " (the second reading, with lighting correction, gave more and was used)"; }
+        var a2 = engine.analyseText(res2.data.text, { source: "ocr" });
+        if (yieldOf(a2) > yieldOf(a1)) { text = res2.data.text; note = " (the second reading, with lighting correction, gave more and was used)"; }
+        // Two readings that disagree on additive codes: a review hint only. Neither is chosen for the codes; nothing is replaced.
+        var c1 = codesOf(a1), c2 = codesOf(a2), only1 = c1.filter(function (c) { return c2.indexOf(c) < 0; }), only2 = c2.filter(function (c) { return c1.indexOf(c) < 0; });
+        if (only1.length || only2.length) ocrNotes.push("Two readings of the photo disagree on additive codes: " + (only1.length ? "INS " + only1.sort().join(", INS ") : "none") + " in the first reading, " + (only2.length ? "INS " + only2.sort().join(", INS ") : "none") + " in the second. Possible misread, check the pack.");
       }
       over = true; clearInterval(tick); btn.disabled = false;
       try { await worker.terminate(); } catch (e) {}
       $("label-text").value = text;
-      run("ocr");
+      var finalA = engine.analyseText(text, { source: "ocr" });
+      ocrNotes.forEach(function (n) { finalA.warnings.push(n); });
+      render(finalA);
       status.textContent = "Done" + note + ". The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
     } catch (e) {
       fail("Photo reading failed: " + String((e && e.message) || e).slice(0, 160) + ".");

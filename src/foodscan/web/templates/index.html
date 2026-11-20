@@ -71,7 +71,7 @@
   {% if result.completeness.words.in_list %}
     {% set c = result.completeness %}
     <h3>Completeness: {{ c.status }}</h3>
-    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed.items }} items are outside the vocabulary. This is text coverage, not proof that the list is complete.</p>
+    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed.items }} items are outside the vocabulary. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
     {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
   {% endif %}
   {% if result.ignored %}
@@ -104,7 +104,7 @@
           <li><code>INS {{ u.code }}</code>
             <span class="{{ 'missing' if u.name is none and not u.ref_name }}">{{ u.name or u.ref_name or 'Code not in the table' }}</span>
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
-            {% if u.name is none and u.ref_name %}<span class="src">Name and possible functions from the Codex list (display only; not confirmed for this product, not used in the decision){% if u.ref_classes %}: {{ u.ref_classes | join(', ') }}{% endif %}{% if u.ref_partial %}. Partial reading: the source may list more.{% endif %}</span>{% endif %}
+            {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} Name is provisional (source: {{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
             <span class="effect">{{ effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>

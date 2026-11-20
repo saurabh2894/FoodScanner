@@ -13,7 +13,8 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import (count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
+from .normalise import _ins_reference, ins_functions
+from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, unclosed_openers)
 
 NOT_ENOUGH = "Not enough information"
@@ -83,6 +84,8 @@ def _shared_code_list(parts: list[str]) -> bool:
     last = parts[-1].rstrip()
     if len(parts) < 2 or not last or last[-1] not in ")]}" or any(c in p for p in parts[:-1] for c in "([{"):
         return False
+    if any(re.search(r"flavou?r", p, re.IGNORECASE) for p in parts[:-1]):
+        return False          # flavourings have no INS numbers (CXG 36 introduction), so a trailing code belongs to the other item
     depth = 0
     for i in range(len(last) - 1, -1, -1):
         depth += last[i] in ")]}"
@@ -92,13 +95,72 @@ def _shared_code_list(parts: list[str]) -> bool:
     return False
 
 
+def _ends_in_code_bracket(part: str) -> bool:
+    """"dough conditioner (223)": the item ends in a bracket holding only additive codes, which is itself the mark of an additive item."""
+    s = part.rstrip()
+    if not s or s[-1] not in ")]}":
+        return False
+    depth = 0
+    for i in range(len(s) - 1, -1, -1):
+        depth += s[i] in ")]}"
+        depth -= s[i] in "([{"
+        if depth == 0:
+            return i > 0 and bool(_CODE_ONLY.match(s[i + 1:-1]))
+    return False
+
+
+_SUSPECT_PCT = re.compile(r"\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]", re.IGNORECASE)
+_LABEL_CLASS_ALIAS = {"stabiliser": "stabilizer", "enhancer": "flavour enhancer", "flavour": "flavouring", "colour": "colour"}
+
+
+def _implausible(ings) -> bool:
+    """Few recognised items and no additive code or marker at all: the block may not be an ingredient list (photo path)."""
+    if not ings:
+        return False
+    if any(i.ins or _hits_for(i) for i in ings):
+        return False
+    return sum(_recognisable(i) for i in ings) / len(ings) < 1 / 3
+
+
+def _possible_misreads(ings) -> list[str]:
+    """REVIEW HINTS ONLY. A code is never replaced and no alternative is used in classification. Two checks, both from a source row:
+    (1) the label's class word is not among the functions listed for the code (ins_functions.csv);
+    (2) the label's own additive name is tied to a different code (ins_names.csv).
+    No candidate is ever guessed from digit similarity. A missing function in one list is not proof the label is wrong."""
+    out, seen = [], set()
+    funcs, names = ins_functions(), _ins_reference()
+    for ing in ings:
+        if not ing.ins:
+            continue
+        head = re.split(r"[\[({]", ing.raw, maxsplit=1)[0].strip(" ,;:*-") or ing.raw
+        label_classes = {_LABEL_CLASS_ALIAS.get(m.group(0), m.group(0)) for m in _class_word_re().finditer(ing.name)}
+        codes = {u.code for u in ing.ins}
+        for u in ing.ins:
+            key = (ing.raw, u.code)
+            if key in seen:
+                continue
+            tied = next((c for c, r in names.items() if len(r["name"]) >= 5 and r["name"].lower() in ing.name and c not in codes), None)
+            if tied:
+                seen.add(key)
+                url = re.search(r"https?://\S+", names[tied]["source"])
+                out.append(f'Read as INS {u.code}. The label text says {head}, and the source recorded for {names[tied]["name"].lower()} gives INS {tied}'
+                           f'{" (" + url.group(0) + ", provisional)" if url else ""}. Possible misread, check the pack.')
+                continue
+            fn = funcs.get(u.code)
+            if fn and label_classes and not (label_classes & {f.lower() for f in fn}):
+                seen.add(key)
+                out.append(f"Read as INS {u.code}. The label text says {head}. Possible misread, check the pack. "
+                           "Retake a clearer photo of this line or type the code.")
+    return out
+
+
 def _split_pairs_ex(raw: str) -> tuple[list[str], int]:
     """"emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, but only when EVERY side is a recognisable
     ingredient, so "Spices and Condiments" or "Natural and Nature Identical Flavours" stay whole. One shared trailing code list
     keeps the item whole (see _shared_code_list). Also returns how many words were the joiners ("and"), so the completeness
     accounting counts only those as removed."""
     parts, connectors = split_top_level_and_ex(raw)
-    if len(parts) > 1 and not _shared_code_list(parts) and all(_recognisable(normalise_list([p])[0]) for p in parts):
+    if len(parts) > 1 and not _shared_code_list(parts) and all(_recognisable(normalise_list([p])[0]) or _ends_in_code_bracket(p) for p in parts):
         return parts, sum(count_words(c) for c in connectors)
     return [raw], 0
 
@@ -132,6 +194,14 @@ _MARKETING = ("buy", "offer", "free", "mrp", "enjoy", "tasty", "crunchy", "delic
 RETAKE = 'retake the photo with the ingredient panel (and its "Ingredients" heading) in frame'
 
 
+def _outside_brackets(s: str) -> str:
+    """The item without its bracketed contents ("Mixed spices (onion, cumin, ...)" -> "Mixed spices"): a long sub-list is not a long item."""
+    prev = None
+    while prev != s:
+        prev, s = s, re.sub(r"[(\[{][^(\[{)\]}]*[)\]}]", "", s)
+    return s
+
+
 def _infer_block(text: str) -> str | None:
     """No heading was found: the most plausible ingredient text block, or None. Never a nutrition table, marketing copy
     or an allergen statement, and it must look like a list (four or more short items, mostly recognisable)."""
@@ -144,7 +214,7 @@ def _infer_block(text: str) -> str | None:
         if sum(k in low for k in _NUTRITION) >= 2 or sum(k in low for k in _MARKETING) >= 2:
             continue
         parts = split_items(flat)
-        if len(parts) < 4 or sum(len(x.split()) for x in parts) / len(parts) > 6:
+        if len(parts) < 4 or sum(len(_outside_brackets(x).split()) for x in parts) / len(parts) > 6:
             continue
         ings = normalise_list(parts)
         recognised = sum(_recognisable(i) for i in ings)
@@ -248,6 +318,13 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                        for seg in unread_like]
     section_warnings += unread_warnings
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
+    pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
+    section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]
+    implausible = source == "ocr" and _implausible(ings)
+    if implausible:
+        section_warnings.append("Few of the items were recognised, so this text may not be the ingredient list")
+    misreads = _possible_misreads(ings)
+    section_warnings += misreads
     if parsed.unbalanced_brackets:
         # No auto-close: any close point would be a guess. The text after the stray bracket stays together, in the item that holds it.
         section_warnings += [f'A bracket near "{snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)'
@@ -295,6 +372,10 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         reasons.append(f"{unaccounted} word(s) after the heading were neither read as ingredients nor set aside")
     if suspect_section_items(items):
         reasons.append("a section label may not have been split from an ingredient")
+    if pct_suspects:
+        reasons.append("an item has text after a percentage: a comma may be missing between two ingredients")
+    if implausible:
+        reasons.append("few of the items were recognised: this text may not be an ingredient list")
     denom = in_list + not_read + unaccounted
     completeness = {
         "status": "uncertain" if reasons else "complete", "heading": parsed.heading_kind, "reasons": reasons,
@@ -330,11 +411,27 @@ def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:
     engine = ocr or TesseractOcr()
     first = analyse_text(engine.extract_text(path), source="ocr")
     alt = getattr(engine, "extract_text_alt", None)
-    if alt is None or (first.answered and first.completeness["status"] == "complete"):
+    clean = first.answered and first.completeness["status"] == "complete" and not first.ins_mappings
+    if alt is None or clean:
         return first
-    # One bounded second pass for photos that did not read cleanly. The better yield is kept; ties keep the first reading.
+    # One bounded second pass for photos that did not read cleanly, and for any reading that holds additive codes (digits are the
+    # characters OCR confuses most). The better yield is kept; ties keep the first reading. The two readings are compared on the codes only.
     second = analyse_text(alt(path), source="ocr")
-    return second if _ocr_yield(second) > _ocr_yield(first) else first
+    chosen = second if _ocr_yield(second) > _ocr_yield(first) else first
+    note = ocr_code_disagreement([u.code for u in first.ins_mappings], [u.code for u in second.ins_mappings])
+    if note:
+        chosen.warnings.append(note)
+    return chosen
+
+
+def ocr_code_disagreement(first: list[str], second: list[str]) -> str | None:
+    """Two readings of the same photo that disagree on additive codes: a review hint. Neither reading is chosen for the codes and
+    no alternative is used in classification."""
+    a, b = sorted(set(first) - set(second)), sorted(set(second) - set(first))
+    if not a and not b:
+        return None
+    return ("Two readings of the photo disagree on additive codes: " + ("INS " + ", INS ".join(a) if a else "none") + " in the first reading, "
+            + ("INS " + ", INS ".join(b) if b else "none") + " in the second. Possible misread, check the pack.")
 
 
 def _ocr_yield(a: Analysis) -> int:

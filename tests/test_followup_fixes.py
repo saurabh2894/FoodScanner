@@ -186,9 +186,18 @@ CLEAN = "Ingredients: Sugar, palm oil, emulsifier (INS 322), added flavour, salt
 NOISY = "Ingredients: Sug4r palm 0il emuls1fier flav0ur xx"
 
 
-def test_second_pass_is_skipped_when_the_first_reading_is_clean():
-    e = _Engine(CLEAN, NOISY)
+CLEAN_NO_CODES = "Ingredients: Sugar, palm oil, added flavour, salt."
+
+
+def test_second_pass_is_skipped_when_the_first_reading_is_clean_and_has_no_codes():
+    e = _Engine(CLEAN_NO_CODES, NOISY)
     assert analyse_image("x.jpg", ocr=e).group == 4 and e.calls == ["first"]
+
+
+def test_second_pass_also_runs_when_the_first_reading_holds_additive_codes():
+    e = _Engine(CLEAN, CLEAN)                                           # digits are what OCR confuses most
+    r = analyse_image("x.jpg", ocr=e)
+    assert e.calls == ["first", "second"] and r.group == 4 and not any("disagree" in w for w in r.warnings)
 
 
 def test_second_pass_with_better_yield_is_used():

@@ -39,12 +39,22 @@
       return t.length >= 8 && HEADING_WORDS.some((w) => lev(t, w) <= 2);
     }
     // {end, kind, text}: "exact", or "fuzzy" for a damaged heading, which must start a line or be followed by a colon/dash
+    // The word must sit in heading position and form (start of text, line or sentence, or followed by a colon or dash).
+    function headingPositionOk(norm, m) {
+      const before = norm.slice(0, m.index);
+      if (/(?:^|[\s(])(?:active|inactive|cooking)\s*$/i.test(before)) return false;
+      const atStart = /(?:^|\n)[\s*\u2022|\-]*$/.test(before) || /[.!?]\s*$/.test(before);
+      return atStart || /[:\-\u2013\u2014]/.test(m[0]);
+    }
     function findHeading(norm) {
-      const m = HEADING.exec(norm);
-      if (m) return { end: m.index + m[0].length, kind: "exact", text: stripChars(m[0], " :-–—") };
+      const hre = new RegExp(HEADING.source, "gi"); let m;
+      while ((m = hre.exec(norm))) {
+        if (headingPositionOk(norm, m)) return { end: m.index + m[0].length, kind: "exact", text: stripChars(m[0], " :-–—") };
+        if (m[0].length === 0) hre.lastIndex++;
+      }
       const re = /[A-Za-z0-9]{6,}/g; let t;
       while ((t = re.exec(norm))) {
-        if (!headingLike(t[0])) continue;
+        if (!headingLike(t[0]) || HEADING_WORDS.includes(t[0].toLowerCase())) continue;     // the exact word was already judged by its position
         const before = norm.slice(0, t.index), after = norm.slice(t.index + t[0].length);
         if (/^\s*[:\-–—]/.test(after) || /(?:^|\n)[\s*•\-]*$/.test(before)) {
           return { end: t.index + t[0].length + /^\s*[:\-–—]?\s*/.exec(after)[0].length, kind: "fuzzy", text: t[0] };
@@ -55,7 +65,7 @@
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
     const LEAD_IN = /(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019\/\-]{0,40}:)\s*$/id;
-    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(\s*\([A-Za-z][A-Za-z ]{0,18}\))?(?:\s+(\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)/;
+    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(\s*\([A-Za-z][A-Za-z ]{0,18}\))?(?:\s+(\d+(?:\.\d+)?\s*%)|\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\))?\s*:\s*(?=\S)/;
     const DENY = /^(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)$/i;
 
     function bracketDepth(text) {
@@ -80,16 +90,37 @@
       }
       return null;
     }
+    const CODE_ITEM = /^(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*$/i;
+    const PCT_GROUP = /\(\s*\d+(?:\.\d+)?\s*%\s*\)\s*[\[{(].*[A-Za-z].*[\]})]\s*$/;
+    // Plain split on commas/semicolons outside brackets, plus two general rules (see parser.py _split_top_level).
     function splitTopLevel(text) {
-      const items = []; let buf = ""; let depth = 0;
+      let pieces = [], seps = [], buf = "", depth = 0;
       for (const ch of text) {
         if (OPEN.includes(ch)) depth++;
         else if (CLOSE.includes(ch)) depth = depth ? Math.max(depth - 1, 0) : 0;
-        if ((ch === "," || ch === ";") && depth === 0) { items.push(buf); buf = ""; }
+        if ((ch === "," || ch === ";") && depth === 0) { pieces.push(buf); seps.push(ch); buf = ""; }
         else buf += ch;
       }
-      items.push(buf);
-      return { items: items.map((i) => stripChars(i, " .")).filter((i) => i), unbalanced: bracketDepth(text) !== 0 };
+      pieces.push(buf);
+      if (seps.includes(";")) {
+        const chunks = []; let cur = [pieces[0]];
+        seps.forEach((sep, k) => { if (sep === ";") { chunks.push(cur); cur = [pieces[k + 1]]; } else cur.push(pieces[k + 1]); });
+        chunks.push(cur);
+        pieces = [];
+        for (const chunk of chunks) {
+          const head = chunk.slice(0, -1);
+          if (chunk.length >= 2 && PCT_GROUP.test(chunk[chunk.length - 1]) && head.every((p) => !/[(\[{]/.test(p)) && head.reduce((n, p) => n + p.split(/\s+/).filter(Boolean).length, 0) <= 6) pieces.push(chunk.join(","));
+          else pieces.push(...chunk);
+        }
+      }
+      const items = [];
+      for (let p of pieces) {
+        p = stripChars(p, " .");
+        if (!p) continue;
+        if (items.length && CODE_ITEM.test(p)) items[items.length - 1] += ", " + p;
+        else items.push(p);
+      }
+      return { items, unbalanced: bracketDepth(text) !== 0 };
     }
     const normaliseWs = (text) => text.replace(/\r\n?/g, "\n").split("\n")
       .map((ln) => ln.replace(/[ \t ]+/g, " ").trim()).join("\n").replace(/\n{2,}/g, "\n").trim();
@@ -102,7 +133,7 @@
       if (!/^\p{L}/u.test(seg.slice(m[0].length))) return null;
       const flat = flatten(label);
       if (isRecognised(flat)) return null;
-      const shown = label + (m[2] ? " " + m[2].trim() : "") + (m[3] ? " " + m[3].replace(/\s+/g, "") : "");   // "Sprinkler Mix (Topping)", "Seasoning 12%"
+      const shown = label + (m[2] ? " " + m[2].trim() : "") + ((m[3] || m[4]) ? " " + (m[3] || m[4]).replace(/\s+/g, "") : "");   // "Sprinkler Mix (Topping)", "Seasoning 12%", "Noodles (88.5%):"
       return { label: shown, off: m[0].length, strip: !CLASS_WORD_RE.test(flat) };
     }
     const MARKER_TERMS = new Set(T.markers.map((r) => flatten(r.term)));
@@ -125,7 +156,7 @@
       const rest = item.slice(colon + 1).trim();
       if (!/^\p{L}/u.test(rest)) return null;
       let pct = "";
-      const mp = /\s+(\d+(?:\.\d+)?\s*%)\s*$/.exec(left);
+      const mp = /\s+(\d+(?:\.\d+)?\s*%)\s*$/.exec(left) || /\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)\s*$/.exec(left);
       if (mp) { pct = mp[1].replace(/\s+/g, ""); left = left.slice(0, mp.index); }
       const words = left.split(/\s+/).filter(Boolean);
       for (let k = words.length - 1; k > 0; k--) {
@@ -286,8 +317,10 @@
     /* ---------- tables ---------- */
     const insTable = {};
     for (const r of T.ins_map) insTable[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
-    const insRef = {};     // display only (Codex CXG 36 2026); never feeds a decision
-    for (const r of T.ins_reference) insRef[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
+    const insRef = {};     // display names only (ins_names.csv): "Recognised code, no processing rule yet"; never feeds a decision
+    for (const r of T.ins_names) insRef[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
+    const insFunctions = {};   // code -> functions, used only to compare a label's class word with a code (review hint)
+    for (const r of T.ins_functions) insFunctions[r.ins.toLowerCase().replace(/\s+/g, "")] = r.functions.split(";").map((x) => x.trim()).filter(Boolean);
     const synonyms = [...T.synonyms]
       .sort((a, b) => b.from.length - a.from.length)
       .map((r) => {
@@ -345,7 +378,7 @@
         const classes = row ? (row.functional_class || "").split(";").map((x) => x.trim()).filter(Boolean) : [];
         const ref = row ? null : insRef[code];
         uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null,
-          ref_name: ref ? ref.name : null, ref_classes: ref ? ref.functional_classes.split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && ref.reading.startsWith("partial")) });
+          ref_name: ref ? ref.name : null, ref_classes: ref ? (ref.functional_classes || "").split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && (ref.reading || "").startsWith("partial")), ref_source: ref ? (ref.source || null) : null });
       };
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];
@@ -428,7 +461,7 @@
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
         return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
-      const rows = ings.map((i) => lookup(i.name)), MILK_TERMS = ["milk", "toned milk", "double toned milk"];
+      const rows = ings.map((i) => lookup(i.name)), MILK_TERMS = ["milk", "toned milk", "double toned milk", "buffalo milk"];
       if (rows.some((r) => r.kind === "culture") && rows.some((r) => MILK_TERMS.includes(r.term)) && rows.every((r) => r.kind === "culture" || MILK_TERMS.includes(r.term)))
         // Narrow rule (research/04): the WHOLE list is recognised and is only milk plus starter culture(s). Not keyed off product words.
         return { group: 1, drivers: ings.map((i) => ({ ingredient: i.raw, detail: "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)", source: "NUPENS-USP classification page (research/04)", section: i.section ?? null })), reason: null };
@@ -474,6 +507,7 @@
     function sharedCodeList(parts) {     // "emulsifiers and stabilizers [INS 460(i), INS 471]": one code list for both classes; not split
       const last = parts[parts.length - 1].trimEnd();
       if (parts.length < 2 || !last || !")]}".includes(last[last.length - 1]) || parts.slice(0, -1).some((p) => /[(\[{]/.test(p))) return false;
+      if (parts.slice(0, -1).some((p) => /flavou?r/i.test(p))) return false;       // flavourings have no INS numbers (CXG 36 introduction)
       let depth = 0;
       for (let i = last.length - 1; i >= 0; i--) {
         if (")]}".includes(last[i])) depth++;
@@ -482,9 +516,20 @@
       }
       return false;
     }
+    function endsInCodeBracket(part) {   // "dough conditioner (223)": a bracket holding only additive codes marks an additive item
+      const s = part.trimEnd();
+      if (!s || !")]}".includes(s[s.length - 1])) return false;
+      let depth = 0;
+      for (let i = s.length - 1; i >= 0; i--) {
+        if (")]}".includes(s[i])) depth++;
+        if ("([{".includes(s[i])) depth--;
+        if (depth === 0) return i > 0 && CODE_ONLY.test(s.slice(i + 1, -1));
+      }
+      return false;
+    }
     function splitPairsEx(raw) {
       const [parts, connectors] = splitTopLevelAndEx(raw);
-      if (parts.length > 1 && !sharedCodeList(parts) && parts.every((p) => recognisableIng(normaliseIngredient(p))))
+      if (parts.length > 1 && !sharedCodeList(parts) && parts.every((p) => recognisableIng(normaliseIngredient(p)) || endsInCodeBracket(p)))
         return [parts, connectors.reduce((n, c) => n + countWords(c), 0)];
       return [[raw], 0];
     }
@@ -523,6 +568,11 @@
     const MARKETING = ["buy", "offer", "free", "mrp", "enjoy", "tasty", "crunchy", "delicious", "limited", "new!", "gift", "price", "taste", "extra"];
     const RETAKE = 'retake the photo with the ingredient panel (and its "Ingredients" heading) in frame';
     // no heading: the most plausible ingredient block, never a nutrition table, marketing copy or allergen statement (see pipeline._infer_block)
+    function outsideBrackets(s) {      // the item without its bracketed contents: a long sub-list is not a long item
+      let prev = null;
+      while (prev !== s) { prev = s; s = s.replace(/[(\[{][^(\[{)\]}]*[)\]}]/g, ""); }
+      return s;
+    }
     function inferBlock(text) {
       let best = null, bestScore = 0;
       for (const block of text.replace(/\r\n/g, "\n").split(/\n\s*\n/)) {
@@ -530,7 +580,7 @@
         if (!flat || /^(?:(?:may\s+)?contains?\b|allerg)/.test(low)) continue;
         if (NUTRITION.filter((k) => low.includes(k)).length >= 2 || MARKETING.filter((k) => low.includes(k)).length >= 2) continue;
         const parts = splitItemsText(flat);
-        if (parts.length < 4 || parts.reduce((n, x) => n + x.split(/\s+/).filter(Boolean).length, 0) / parts.length > 6) continue;
+        if (parts.length < 4 || parts.reduce((n, x) => n + outsideBrackets(x).split(/\s+/).filter(Boolean).length, 0) / parts.length > 6) continue;
         const ings = parts.map(normaliseIngredient);
         const recognised = ings.filter(recognisableIng).length;
         const marked = ings.filter((i) => i.ins.length > 0 || hitsFor(i).length > 0).length;
@@ -542,6 +592,40 @@
     const NO_TEXT = "No text to analyse", NO_INGREDIENTS = "No ingredients found in this text";
     // source "ocr" (default, photo path): short/noisy text is blamed on OCR and the heading is required.
     // source "text" (typed or pasted): no length gate, a heading-less text is the list, messages are about the text.
+    const SUSPECT_PCT = /\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]/i;
+    const LABEL_CLASS_ALIAS = { stabiliser: "stabilizer", enhancer: "flavour enhancer", flavour: "flavouring", colour: "colour" };
+    function isImplausible(ings) {   // few recognised items and no additive code or marker at all (photo path)
+      if (!ings.length) return false;
+      if (ings.some((i) => i.ins.length > 0 || hitsFor(i).length > 0)) return false;
+      return ings.filter(recognisableIng).length / ings.length < 1 / 3;
+    }
+    // REVIEW HINTS ONLY (see pipeline._possible_misreads): a code is never replaced and no alternative is used in classification.
+    function possibleMisreads(ings) {
+      const out = [], seen = new Set();
+      for (const ing of ings) {
+        if (!ing.ins.length) continue;
+        const head = (ing.raw.split(/[\[({]/, 1)[0].replace(/^[ ,;:*-]+|[ ,;:*-]+$/g, "")) || ing.raw;
+        const classRe = new RegExp(CLASS_WORD_RE.source, "g"); const labelClasses = new Set();
+        let m; while ((m = classRe.exec(ing.name))) labelClasses.add(LABEL_CLASS_ALIAS[m[0]] || m[0]);
+        const codes = new Set(ing.ins.map((u) => u.code));
+        for (const u of ing.ins) {
+          const key = ing.raw + "|" + u.code; if (seen.has(key)) continue;
+          const tied = Object.keys(insRef).find((c) => insRef[c].name.length >= 5 && ing.name.includes(insRef[c].name.toLowerCase()) && !codes.has(c));
+          if (tied) {
+            seen.add(key);
+            const url = /https?:\/\/\S+/.exec(insRef[tied].source || "");
+            out.push(`Read as INS ${u.code}. The label text says ${head}, and the source recorded for ${insRef[tied].name.toLowerCase()} gives INS ${tied}${url ? " (" + url[0] + ", provisional)" : ""}. Possible misread, check the pack.`);
+            continue;
+          }
+          const fn = insFunctions[u.code];
+          if (fn && labelClasses.size && ![...labelClasses].some((c) => fn.map((f) => f.toLowerCase()).includes(c))) {
+            seen.add(key);
+            out.push(`Read as INS ${u.code}. The label text says ${head}. Possible misread, check the pack. Retake a clearer photo of this line or type the code.`);
+          }
+        }
+      }
+      return out;
+    }
     function analyseText(text, opts) {
       const source = (opts && opts.source) || "ocr";
       if (source !== "ocr" && source !== "text") throw new Error("source must be 'ocr' or 'text'");
@@ -582,6 +666,11 @@
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
+      const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
+      sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));
+      const implausible = source === "ocr" && isImplausible(ings);
+      if (implausible) sectionWarnings.push("Few of the items were recognised, so this text may not be the ingredient list");
+      sectionWarnings.push(...possibleMisreads(ings));
       if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
       const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
@@ -607,6 +696,8 @@
       if (unreadLike.length) reasons.push("text after a full stop looks like more ingredients and was not read");
       if (unaccounted) reasons.push(`${unaccounted} word(s) after the heading were neither read as ingredients nor set aside`);
       if (suspectSectionItems(items).length) reasons.push("a section label may not have been split from an ingredient");
+      if (pctSuspects.length) reasons.push("an item has text after a percentage: a comma may be missing between two ingredients");
+      if (implausible) reasons.push("few of the items were recognised: this text may not be an ingredient list");
       const denom = inList + notRead + unaccounted;
       common.completeness = {
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,

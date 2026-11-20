@@ -90,6 +90,6 @@ def test_additive_codes_are_grouped_with_plain_effect_labels(monkeypatch):
     html = post(create_app(FakeOcr(text)).test_client()).get_data(as_text=True)
     assert "Additive codes" in html and "4 found: 2 with a decision rule, 2 without." in html
     assert "Acidity Regulators" in html and "Ultra-processing marker" in html and "Not a marker by itself" in html
-    assert "No decision rule" in html and "possible functions from the Codex list" in html
-    assert "not confirmed for this product" in html and "Name not in the table yet" not in html
+    assert "No decision rule" in html and "Recognised code, no processing rule yet. Classification treats it as unknown." in html
+    assert "Name is provisional" in html and "Name not in the table yet" not in html
     assert "INS numbers" not in html
