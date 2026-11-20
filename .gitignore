@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 data/samples/
 web_preview/dist/
+web_preview/vendor/

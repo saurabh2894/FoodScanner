@@ -123,3 +123,19 @@ def test_ins171_titanium_dioxide_is_strong_marker():
 def test_ins211_alone_stays_uncertain():
     r = cls("Ingredients: Cucumber, salt, preservative (INS 211).")
     assert r.group is None and "211" in r.reason
+
+
+def test_approved_colour_and_sweetener_codes_are_strong_markers_without_class_word():
+    for code in ("102", "110", "150d", "950"):
+        r = cls(f"Ingredients: Water, sugar, INS {code}.")
+        assert r.group == 4, code
+        assert any(code in d.detail for d in r.drivers)
+
+
+def test_approved_codes_carry_names_and_sources():
+    from foodscan.normalise import normalise_ingredient
+
+    names = {c: normalise_ingredient(f"INS {c}").ins[0] for c in ("102", "110", "150d", "950")}
+    assert names["102"].name == "tartrazine" and names["110"].name == "sunset yellow FCF"
+    assert names["150d"].name.startswith("caramel IV") and names["950"].name == "acesulfame potassium"
+    assert all("USER-APPROVED" in u.source for u in names.values())

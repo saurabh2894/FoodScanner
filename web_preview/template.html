@@ -114,7 +114,7 @@
         <button class="btn" id="photo-analyse" type="button" disabled>Read photo and analyse</button>
       </div>
       <p class="status" id="photo-status" role="status"></p>
-      <p class="hint">Text is read in your browser with tesseract.js; small photos are enlarged first. If photo reading cannot start in this viewer, paste the text instead. The text it reads is copied into the Paste tab so you can fix mistakes and press Analyse again.</p>
+      <p class="hint">Text is read in your browser (nothing is uploaded); small photos are enlarged first, and the first read takes a few seconds while the reader loads. If photo reading fails, paste the text instead. The text it reads is copied into the Paste tab so you can fix mistakes and press Analyse again.</p>
     </div>
   </section>
 
@@ -126,7 +126,7 @@
   </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
+<script src="tess/tesseract.min.js"></script>
 <script>window.FOODSCAN_TABLES = /*TABLES*/;</script>
 <script>/*ENGINE*/</script>
 <script>
@@ -217,7 +217,9 @@
   // Enlarge small photos and stretch contrast before OCR (mirrors the Python app's prepare_image).
   function prepare(file) {
     return new Promise(function (resolve) {
-      var url = URL.createObjectURL(file), img = new Image();
+      var url = URL.createObjectURL(file), img = new Image(), settled = false;
+      function finish(v) { if (!settled) { settled = true; URL.revokeObjectURL(url); resolve(v); } }
+      setTimeout(function () { finish(file); }, 10000);   // never hang here: fall back to the original file
       img.onload = function () {
         try {
           var factor = img.width >= 1000 ? 1 : Math.min(4, Math.max(2, Math.round(1000 / img.width)));
@@ -229,15 +231,38 @@
           var d = g.getImageData(0, 0, c.width, c.height), px = d.data, lo = 255, hi = 0, i, v;
           for (i = 0; i < px.length; i += 4) { v = (px[i] * 299 + px[i + 1] * 587 + px[i + 2] * 114) / 1000; px[i] = v; if (v < lo) lo = v; if (v > hi) hi = v; }
           var span = Math.max(hi - lo, 1);
-          for (i = 0; i < px.length; i += 4) { v = (px[i] - lo) * 255 / span; px[i] = px[i + 1] = px[i + 2] = v; }
+          var w = c.width, h = c.height, grey = new Float32Array(w * h), sharp = new Uint8ClampedArray(px.length), x, y, k, n;
+          for (i = 0, k = 0; i < px.length; i += 4, k++) grey[k] = (px[i] - lo) * 255 / span;
+          // 3x3 sharpen, same kernel as the Python app (PIL SHARPEN): centre 32, neighbours -2, divided by 16.
+          // Canvas upscaling is smoother than Pillow's Lanczos; without this the heading line of a small photo was misread.
+          for (y = 0; y < h; y++) for (x = 0; x < w; x++) {
+            k = y * w + x;
+            if (x === 0 || y === 0 || x === w - 1 || y === h - 1) v = grey[k];
+            else v = (32 * grey[k] - 2 * (grey[k - w - 1] + grey[k - w] + grey[k - w + 1] + grey[k - 1] + grey[k + 1] + grey[k + w - 1] + grey[k + w] + grey[k + w + 1])) / 16;
+            n = k * 4; sharp[n] = sharp[n + 1] = sharp[n + 2] = v; sharp[n + 3] = 255;
+          }
+          d.data.set(sharp);
           g.putImageData(d, 0, 0);
-          c.toBlob(function (b) { URL.revokeObjectURL(url); resolve(b || file); }, "image/png");
-        } catch (e) { URL.revokeObjectURL(url); resolve(file); }
+          c.toBlob(function (b) { finish(b || file); }, "image/png");
+        } catch (e) { finish(file); }
       };
-      img.onerror = function () { URL.revokeObjectURL(url); resolve(file); };
+      img.onerror = function () { finish(file); };
       img.src = url;
     });
   }
+
+  // The result area is what people look at, so progress and failures show there, not only in the small status line.
+  function showCard(title, lines, abstain) {
+    var box = $("result");
+    box.textContent = "";
+    var card = el("div", { "class": "panel" + (abstain ? " abstain" : "") }, [el("h2", { text: title })]);
+    lines.forEach(function (t) { card.appendChild(el("p", { "class": "hint", text: t })); });
+    box.appendChild(card);
+    box.scrollIntoView({ block: "nearest" });
+  }
+
+  function assetUrl(p) { return new URL(p, document.baseURI).href; }
+  var STALL_MS = 45000;   // no progress message for this long: stop and say so
 
   $("photo").addEventListener("change", function (ev) {
     photoFile = ev.target.files && ev.target.files[0] || null;
@@ -247,33 +272,63 @@
     else { pv.hidden = true; }
   });
 
-  $("photo-analyse").addEventListener("click", function () {
+  $("photo-analyse").addEventListener("click", async function () {
     var status = $("photo-status"), btn = $("photo-analyse");
     if (!photoFile) { status.textContent = "Choose a photo first."; return; }
+    var t0 = Date.now(), lastEvent = Date.now(), stage = "Preparing photo", over = false, worker = null, lastError = "";
+    function say(text) { status.textContent = text; showCard("Reading photo…", [text, "Nothing is uploaded: this runs in your browser."], false); }
+    function fail(msg) {
+      if (over) return;
+      over = true; clearInterval(tick); btn.disabled = false;
+      status.textContent = msg;
+      showCard("Photo could not be read", [msg, "Paste the label text into the Paste tab instead; the rest of the page works without the photo."], true);
+      if (worker) { try { worker.terminate(); } catch (e) {} }
+    }
     if (typeof Tesseract === "undefined") {
-      status.textContent = "Photo reading could not load in this viewer. Paste the label text instead.";
+      status.textContent = "";
+      showCard("Photo could not be read", ["The text reader did not load in this viewer.", "Paste the label text into the Paste tab instead."], true);
       return;
     }
     btn.disabled = true;
-    status.textContent = "Preparing photo…";
-    var done = false;
-    var timer = setTimeout(function () {
-      if (!done) { status.textContent = "Photo reading is taking too long or is blocked in this viewer. Paste the label text instead."; btn.disabled = false; }
-    }, 90000);
-    prepare(photoFile).then(function (img) {
-      status.textContent = "Starting text recognition…";
-      return Tesseract.recognize(img, "eng", {
-        logger: function (m) { if (!done && m.status) status.textContent = m.status + (m.progress ? " " + Math.round(m.progress * 100) + "%" : ""); }
+    say("Preparing photo… 0 s");
+    var tick = setInterval(function () {
+      if (over) return;
+      var secs = Math.round((Date.now() - t0) / 1000);
+      if (Date.now() - lastEvent > STALL_MS) {
+        fail("Reading stalled at “" + stage + "” after " + secs + " s" + (lastError ? " (" + lastError + ")" : "") + ".");
+        return;
+      }
+      say(stage + "… " + secs + " s");
+    }, 1000);
+    try {
+      var img = await prepare(photoFile);
+      stage = "Starting the text reader"; lastEvent = Date.now();
+      worker = await Tesseract.createWorker("eng", 1, {
+        // everything comes from this page's own files: the viewer blocks runtime downloads from other sites
+        workerPath: assetUrl("tess/worker-boot.js"),
+        corePath: assetUrl("tess"),
+        langPath: assetUrl("tess/lang"),
+        workerBlobURL: false,
+        cacheMethod: "none",
+        gzip: true,
+        errorHandler: function (e) { lastError = String((e && e.message) || e).slice(0, 220); },
+        logger: function (m) {
+          if (over || !m || !m.status) return;
+          stage = m.status.charAt(0).toUpperCase() + m.status.slice(1) + (m.progress ? " " + Math.round(m.progress * 100) + "%" : "");
+          lastEvent = Date.now();
+        }
       });
-    }).then(function (res) {
-      done = true; clearTimeout(timer); btn.disabled = false;
+      stage = "Recognising text"; lastEvent = Date.now();
+      var res = await worker.recognize(img);
+      if (over) return;
+      over = true; clearInterval(tick); btn.disabled = false;
+      try { await worker.terminate(); } catch (e) {}
       $("label-text").value = res.data.text;
       run();
       status.textContent = "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
-    }).catch(function () {
-      done = true; clearTimeout(timer); btn.disabled = false;
-      status.textContent = "Photo reading failed in this viewer. Paste the label text instead.";
-    });
+    } catch (e) {
+      fail("Photo reading failed: " + String((e && e.message) || e).slice(0, 160) + ".");
+    }
   });
 
   $("label-text").value = EXAMPLES.biscuit;

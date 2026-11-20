@@ -20,7 +20,16 @@ engine = (ROOT / "web_preview" / "foodscan.js").read_text(encoding="utf-8")
 html = tpl.replace("/*TABLES*/", json.dumps(tables(), ensure_ascii=False).replace("</", "<\\/")) \
           .replace("/*ENGINE*/", engine.replace("</script", "<\\/script")) \
           .replace("/*PARITY*/", str(len(CORPUS)))
+VENDOR = ROOT / "web_preview" / "vendor" / "tess"
+if not (VENDOR / "tesseract.min.js").exists():
+    sys.exit("missing web_preview/vendor/tess: run python scripts/fetch_tesseract_assets.py first")
 out = ROOT / "web_preview" / "dist" / "foodscan-preview.html"
 out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(html, encoding="utf-8")
 print(f"wrote {out} ({len(html) / 1024:.0f} KB)")
+
+import shutil  # noqa: E402
+
+shutil.copytree(VENDOR, out.parent / "tess", dirs_exist_ok=True)
+shutil.copy(ROOT / "web_preview" / "worker-boot.js", out.parent / "tess" / "worker-boot.js")
+print(f"copied photo-reader files to {out.parent / 'tess'}")
