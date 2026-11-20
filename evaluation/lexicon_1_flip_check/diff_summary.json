@@ -1,0 +1,65 @@
+{
+  "inputs": 66,
+  "builds": {
+    "before": "8a4e2e7",
+    "after": "antigravity/lexicon-1"
+  },
+  "changed_counts": {
+    "group": 0,
+    "drivers": 0,
+    "status": 0,
+    "reason": 2,
+    "warnings": 0,
+    "ingredients": 0,
+    "unassessed": 13,
+    "ins_mappings": 0
+  },
+  "changed_inputs": {
+    "group": [],
+    "drivers": [],
+    "status": [],
+    "reason": [
+      "b1/N10",
+      "dev15/F09"
+    ],
+    "warnings": [],
+    "ingredients": [],
+    "unassessed": [
+      "b1/N03",
+      "b1/N05",
+      "b1/N10",
+      "b1/N14",
+      "b2/M14",
+      "neg/R5",
+      "dev15/F03",
+      "dev15/F07",
+      "dev15/F09",
+      "dev15/F10",
+      "dev15/F11",
+      "dev15/F14",
+      "dev15/F15"
+    ],
+    "ins_mappings": []
+  },
+  "attributions": {
+    "reason_changes": {
+      "b1/N10": "Reason text dropped unrecognised terms 'Mustard, Fenugreek' (leaving 'Mango Pieces, Synthetic Vinegar'). Caused by Package B rows 'mustard' and 'fenugreek'.",
+      "dev15/F09": "Reason text dropped unrecognised term 'Ajwain' (leaving 'Refined Palmolein Oil'). Caused by Package B row 'ajwain'."
+    },
+    "unassessed_changes": {
+      "b1/N03": "Dropped 'aniseed', 'fenugreek', 'nutmeg'. Caused by Package B spice rows.",
+      "b1/N05": "Dropped 'Fennel', 'Bay Leaf', 'Nutmeg', 'Capsicum Powder'. Caused by Package B spice rows.",
+      "b1/N10": "Dropped 'Mustard', 'Fenugreek'. Caused by Package B spice rows.",
+      "b1/N14": "Dropped 'Almonds', 'Flax Seeds', 'Pumpkin Seeds' (Package A) and 'Black Raisin' (Package D). 'Cranberry' remains unassessed (blocked by Condition Rule).",
+      "b2/M14": "Dropped 'apple juice', 'pineapple juice', 'orange juice', 'grape juice'. Caused by Package E plain juice rows. Pulps ('papaya pulp', 'pear pulp', 'banana pulp', 'mango pulp') remain unassessed (explicit exclusions).",
+      "neg/R5": "Dropped 'ALMONDS'. Caused by Package A 'almonds'.",
+      "dev15/F03": "Dropped 'Pepper', 'Fenugreek', 'Nutmeg', 'Red Chili'. Caused by Package B spice rows.",
+      "dev15/F07": "Dropped 'chillies', 'aniseed', 'fenugreek', 'nutmeg', 'caraway', 'chilli flakes', 'black pepper bits'. Caused by Package B spice rows.",
+      "dev15/F09": "Dropped 'Ajwain'. Caused by Package B 'ajwain'.",
+      "dev15/F10": "Dropped 'Nutmeg', 'Long Pepper', 'Mace', 'Mint', 'Fenugreek', 'Fennel Seeds', 'Bishop\\'s Seed', 'Dried Curry Leaves (0.5%)'. Caused by Package B spice rows.",
+      "dev15/F11": "Dropped 'mustard', 'fenugreek'. Caused by Package B spice rows.",
+      "dev15/F14": "Dropped 'APPLE JUICE', 'PINEAPPLE JUICE', 'ORANGE JUICE', 'GRAPE JUICE'. Caused by Package E plain juice rows. Pulps remain unassessed.",
+      "dev15/F15": "Dropped 'White Pepper', 'Schezwan Pepper'. Caused by Package B spice rows."
+    }
+  }
+}
