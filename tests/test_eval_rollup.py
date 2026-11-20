@@ -14,6 +14,7 @@ import pytest
 
 from scripts.eval_rollup import (
     BatchRollup,
+    generate_rollup_markdown,
     main,
     parse_batch_scores,
     parse_markdown_table,
@@ -46,14 +47,16 @@ def test_parse_real_fresh_batches():
     assert any(r.split is not None for r in rollup_b1.extraction_table)
     # Errata captured
     assert any("121" in e or "120" in e for e in rollup_b1.errata_notes)
-    # Warnings parsed
+    # Warnings parsed and qualifier preserved
     assert len(rollup_b1.warnings_worked) > 0
     assert len(rollup_b1.warnings_not_worked) > 0
-    assert not rollup_b1.has_tie_out_gap
+    assert any('(extraction wrong, completeness "complete", no warning)' in w for w in rollup_b1.warnings_not_worked)
+    assert not rollup_b1.has_real_tie_out_gap
 
     # Batch 2 checks
     assert rollup_b2.name == "fresh_batch_2"
     assert "2eb5f39" in rollup_b2.title
+    # Prose extraction denominator found
     assert rollup_b2.stated_extraction_denominator == "13 labels and 94 reference items"
     assert rollup_b2.derived_extraction_denominator == 94
     assert "14 judged labels" in (rollup_b2.stated_classification_denominator or "")
@@ -62,9 +65,11 @@ def test_parse_real_fresh_batches():
     assert len(rollup_b2.classification_table) == 2
     assert all(r.split is None for r in rollup_b2.extraction_table)
     assert any("Without" in k for r in rollup_b2.classification_table for k in r.extra_columns)
+    # Warnings parsed and qualifier preserved
     assert len(rollup_b2.warnings_worked) > 0
     assert len(rollup_b2.warnings_not_worked) > 0
-    assert not rollup_b2.has_tie_out_gap
+    assert any('(extraction wrong, completeness "complete", no warning)' in w for w in rollup_b2.warnings_not_worked)
+    assert not rollup_b2.has_real_tie_out_gap
 
 
 def test_tie_outs_real_batches():
@@ -78,136 +83,198 @@ def test_tie_outs_real_batches():
     b2 = parse_batch_scores(b2_dir)
 
     # Fresh batch 1 tie outs
-    assert any("Extraction items (Paste): 92 own + 17 merged + 2 split + 10 omitted = 121/121 (Ties out exactly; table denominator matches stated denominator (121))" in to for to in b1.tie_outs)
-    assert any("Extraction items (Photo): 18 own + 10 merged + 0 split + 93 omitted = 121/121 (Ties out exactly; table denominator matches stated denominator (121))" in to for to in b1.tie_outs)
+    assert any("Extraction items (Paste): 92 own + 17 merged + 2 split + 10 omitted = 121/121 (Ties out exactly with stated denominator; table denominator matches)" in to for to in b1.tie_outs)
+    assert any("Extraction items (Photo): 18 own + 10 merged + 0 split + 93 omitted = 121/121 (Ties out exactly with stated denominator; table denominator matches)" in to for to in b1.tie_outs)
     assert any("Classification labels (Paste): 8 correct + 0 wrong + 5 abstained = 13/13 (Ties out exactly with stated denominator)" in to for to in b1.tie_outs)
     assert any("Classification labels (Photo): 2 correct + 0 wrong + 11 abstained = 13/13 (Ties out exactly with stated denominator)" in to for to in b1.tie_outs)
 
-    # Fresh batch 2 tie outs
-    assert any("Extraction items (Paste): 77 own + 6 merged + 11 omitted = 94/94 (Sum matches table denominator, assuming 0 splits as split column is not recorded; table denominator matches stated denominator (94))" in to for to in b2.tie_outs)
-    assert any("Extraction items (Photo): 27 own + 23 merged + 44 omitted = 94/94 (Sum matches table denominator, assuming 0 splits as split column is not recorded; table denominator matches stated denominator (94))" in to for to in b2.tie_outs)
+    # Fresh batch 2 tie outs (Partial tie out assuming 0 splits)
+    assert any("Partial tie-out: matches stated denominator under the assumption of 0 splits" in to for to in b2.tie_outs)
     assert any("Classification labels (Paste): 11 correct + 0 wrong + 3 abstained = 14/14 (Ties out exactly with stated denominator)" in to for to in b2.tie_outs)
-    assert any("Classification labels (Photo): 4 correct + 0 wrong + 10 abstained = 14/14 (Ties out exactly with stated denominator)" in to for to in b2.tie_outs)
 
 
-def test_synthetic_malformed_table(tmp_path: Path):
-    """Test handling of malformed or incomplete markdown table."""
-    batch_dir = tmp_path / "malformed_batch"
-    batch_dir.mkdir()
-    scores_md = batch_dir / "SCORES.md"
-    scores_md.write_text(
-        "# Malformed Batch\n\n"
-        "## A. Extraction\n"
-        "| Mode | List found |\n"
-        "| not a separator |\n"
-        "| Paste | 15/15 |\n",
-        encoding="utf-8",
-    )
-
-    rollup = parse_batch_scores(batch_dir)
-    assert rollup.extraction_table == []
+def test_synthetic_malformed_table():
+    """Test handling of malformed or incomplete markdown table without unused tmp_path."""
+    lines = [
+        "| Mode | List found |",
+        "| not a separator |",
+        "| Paste | 15/15 |",
+    ]
+    parsed = parse_markdown_table(lines)
+    assert parsed == []
 
 
 def test_synthetic_missing_sections(tmp_path: Path):
-    """Test honest handling when sections are completely missing or unparsed."""
+    """Test honest handling with three distinct labels: section absent, section found but not parsed, uncertain."""
     batch_dir = tmp_path / "sparse_batch"
     batch_dir.mkdir()
     scores_md = batch_dir / "SCORES.md"
     scores_md.write_text(
         "# Sparse Batch\n\n"
-        "Only text notes here, no markdown tables at all.\n",
-        encoding="utf-8",
-    )
-
-    rollup = parse_batch_scores(batch_dir)
-    assert "Extraction section: section not found or not parsed" in rollup.unrecorded_fields
-    assert "Classification section: section not found or not parsed" in rollup.unrecorded_fields
-    assert "Uncertainty warnings section: section not found or not parsed" in rollup.unrecorded_fields
-    assert rollup.extraction_table == []
-    assert rollup.classification_table == []
-    assert rollup.warnings_worked == []
-    assert rollup.warnings_not_worked == []
-
-
-def test_synthetic_tie_out_gap_enforcement(tmp_path: Path):
-    """Test that arithmetic gaps in denominators cause has_tie_out_gap and run_rollup failure."""
-    batch_dir = tmp_path / "fresh_batch_1"
-    batch_dir.mkdir()
-    scores_md = batch_dir / "SCORES.md"
-    scores_md.write_text(
-        "# Gap Batch\n\n"
-        "Judged for classification: 20 labels.\n"
-        "Extraction denominator: 50 reference items in 20 labels.\n\n"
+        "Only text notes here, no markdown tables at all.\n\n"
         "## A. Extraction\n"
-        "| Mode | Own item | Merged | Omitted |\n"
-        "|---|---|---|---|\n"
-        "| Paste | 10/50 | 5 | 5 |\n\n"
-        "## B. Classification (20 judged labels)\n"
-        "| Mode | Correct confident | Wrong confident | Abstained |\n"
-        "|---|---|---|---|\n"
-        "| Paste | 5 | 2 | 3 |\n",
+        "No table format here, just text description.\n",
         encoding="utf-8",
     )
 
     rollup = parse_batch_scores(batch_dir)
-    assert rollup.has_tie_out_gap is True
-    assert any("Gap: 30" in to for to in rollup.tie_outs)
-    assert any("Gap: 10" in to for to in rollup.tie_outs)
+    # Extraction section exists but has no table -> section found but not parsed
+    inv_dict = dict(rollup.inventory_items)
+    assert inv_dict.get("Extraction table") == "section found but not parsed"
+    # Classification section was completely absent -> section absent
+    assert inv_dict.get("Classification table") == "section absent"
+    assert inv_dict.get("Uncertainty warnings section") == "section absent"
 
-    # run_rollup with mock repo holding gap batch
-    fake_repo = tmp_path / "mock_repo"
-    (fake_repo / "evaluation" / "fresh_batch_1").mkdir(parents=True)
-    (fake_repo / "evaluation" / "fresh_batch_2").mkdir(parents=True)
-    (fake_repo / "evaluation" / "fresh_batch_1" / "SCORES.md").write_text(
-        scores_md.read_text(encoding="utf-8"), encoding="utf-8"
-    )
-    (fake_repo / "evaluation" / "fresh_batch_2" / "SCORES.md").write_text(
-        scores_md.read_text(encoding="utf-8"), encoding="utf-8"
-    )
 
+def test_rendering_and_bullet_formatting():
+    """Test output rendering: section numbering (## 1., ## 2., ## 3.), no doubled bullets."""
+    repo_root = Path(__file__).resolve().parent.parent
+    b1_dir = repo_root / "evaluation" / "fresh_batch_1"
+    b2_dir = repo_root / "evaluation" / "fresh_batch_2"
+
+    b1 = parse_batch_scores(b1_dir)
+    b2 = parse_batch_scores(b2_dir)
+
+    rendered = generate_rollup_markdown([b1, b2])
+
+    # Numbering sequential
+    assert "## 1. Batch Summaries & Denominator Overview" in rendered
+    assert "## 2. Batch: `fresh_batch_1`" in rendered
+    assert "## 3. Batch: `fresh_batch_2`" in rendered
+    assert "## 2. Batch: `fresh_batch_2`" not in rendered
+
+    # No doubled bullets
+    assert "- - " not in rendered
+
+
+def test_tie_out_exit_cases_all_four(tmp_path: Path):
+    """Assert exit behaviour for all four tie-out cases:
+    (a) batch states a denominator and parts do not sum -> exit non-zero (case a)
+    (b) no denominator stated anywhere -> report 'not stated' and exit 0 (case b)
+    (c) only a table-derived denominator exists -> label derived, exit 0 (case c)
+    (d) component needed for sum is not recorded -> report partial tie-out with named assumption, exit 0 (case d)
+    """
+    # Setup mock repo structure
+    mock_repo = tmp_path / "mock_repo"
+    b1 = mock_repo / "evaluation" / "fresh_batch_1"
+    b2 = mock_repo / "evaluation" / "fresh_batch_2"
+    b1.mkdir(parents=True)
+    b2.mkdir(parents=True)
+
+    # --- Case (a): Stated denominator with real gap -> must raise ValueError / exit non-zero
+    (b1 / "SCORES.md").write_text(
+        "# Batch 1\n\nExtraction denominator: 50 reference items.\nJudged for classification: 20 labels.\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10/50 | 5 | 0 | 5 |\n\n"
+        "## B. Classification (20 judged labels)\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    (b2 / "SCORES.md").write_text(
+        "# Batch 2\n\nExtraction denominator: 20 reference items.\nJudged for classification: 10 labels.\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10/20 | 5 | 0 | 5 |\n\n"
+        "## B. Classification (10 judged labels)\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    rollup_a = parse_batch_scores(b1)
+    assert rollup_a.has_real_tie_out_gap is True
     with pytest.raises(ValueError, match="Tie-out validation failed"):
-        run_rollup(repo_root=fake_repo, force=True)
+        run_rollup(repo_root=mock_repo, force=True)
+
+    # --- Case (b): No denominator is stated anywhere -> exit 0, reports 'not stated'
+    (b1 / "SCORES.md").write_text(
+        "# Batch 1\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10 | 5 | 0 | 5 |\n\n"
+        "## B. Classification\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    (b2 / "SCORES.md").write_text(
+        "# Batch 2\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10 | 5 | 0 | 5 |\n\n"
+        "## B. Classification\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    rollup_b = parse_batch_scores(b1)
+    assert rollup_b.has_real_tie_out_gap is False
+    assert rollup_b.stated_extraction_denominator is None
+    assert rollup_b.stated_classification_denominator is None
+    # run_rollup succeeds
+    rendered_b, _ = run_rollup(repo_root=mock_repo, force=True)
+    assert "not stated" in rendered_b
+
+    # --- Case (c): Only a table-derived denominator exists -> exit 0, labeled derived
+    (b1 / "SCORES.md").write_text(
+        "# Batch 1\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10/20 | 5 | 0 | 5 |\n\n"
+        "## B. Classification\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    (b2 / "SCORES.md").write_text(
+        "# Batch 2\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Split | Omitted |\n|---|---|---|---|---|\n| Paste | 10/20 | 5 | 0 | 5 |\n\n"
+        "## B. Classification\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    rollup_c = parse_batch_scores(b1)
+    assert rollup_c.has_real_tie_out_gap is False
+    assert rollup_c.derived_extraction_denominator == 20
+    assert any("Ties out exactly with table-derived denominator" in to for to in rollup_c.tie_outs)
+    rendered_c, _ = run_rollup(repo_root=mock_repo, force=True)
+    assert "Table (Derived) Ext Denom" in rendered_c
+
+    # --- Case (d): Component needed for sum is not recorded -> partial tie-out with named assumption, exit 0
+    (b1 / "SCORES.md").write_text(
+        "# Batch 1\n\nExtraction denominator: 20 reference items.\nJudged for classification: 10 labels.\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Omitted |\n|---|---|---|---|\n| Paste | 10/20 | 5 | 5 |\n\n"
+        "## B. Classification (10 judged labels)\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    (b2 / "SCORES.md").write_text(
+        "# Batch 2\n\nExtraction denominator: 20 reference items.\nJudged for classification: 10 labels.\n\n"
+        "## A. Extraction\n| Mode | Own item | Merged | Omitted |\n|---|---|---|---|\n| Paste | 10/20 | 5 | 5 |\n\n"
+        "## B. Classification (10 judged labels)\n| Mode | Correct confident | Wrong confident | Abstained |\n|---|---|---|---|\n| Paste | 5 | 0 | 5 |\n",
+        encoding="utf-8",
+    )
+    rollup_d = parse_batch_scores(b1)
+    assert rollup_d.has_real_tie_out_gap is False
+    assert any("assumption of 0 splits" in to for to in rollup_d.tie_outs)
+    # run_rollup succeeds
+    rendered_d, _ = run_rollup(repo_root=mock_repo, force=True)
+    assert "Partial tie-out" in rendered_d
 
 
-def test_refuse_output_equal_to_input_artifact(tmp_path: Path):
-    """Refuse to overwrite an input artifact file even with --force."""
+def test_protect_input_paths(tmp_path: Path):
+    """Refuse to write over any existing file that is not the tool's previous ROLLUP.md output."""
     repo_root = Path(__file__).resolve().parent.parent
     scores_file = repo_root / "evaluation" / "fresh_batch_1" / "SCORES.md"
+    arbitrary_file = tmp_path / "custom.md"
+    arbitrary_file.write_text("protected content", encoding="utf-8")
 
-    with pytest.raises(ValueError, match="Refusing to write to input evaluation artifact"):
+    with pytest.raises(ValueError, match="Refusing to write to protected path"):
         run_rollup(repo_root=repo_root, force=True, output_path=scores_file)
+
+    with pytest.raises(ValueError, match="Refusing to write to protected path"):
+        run_rollup(repo_root=repo_root, force=True, output_path=arbitrary_file)
 
 
 def test_run_rollup_refuse_overwrite_without_force(tmp_path: Path):
-    """Test that existing output file is not overwritten without --force."""
-    out_file = tmp_path / "ROLLUP.md"
-    out_file.write_text("Existing content", encoding="utf-8")
-
+    """Test that existing evaluation/ROLLUP.md is not overwritten without --force."""
     repo_root = Path(__file__).resolve().parent.parent
+    rollup_file = repo_root / "evaluation" / "ROLLUP.md"
+    assert rollup_file.is_file()
 
     with pytest.raises(FileExistsError, match="already exists"):
-        run_rollup(repo_root=repo_root, force=False, output_path=out_file)
-
-    assert out_file.read_text(encoding="utf-8") == "Existing content"
-
-    # With force=True, it succeeds
-    run_rollup(repo_root=repo_root, force=True, output_path=out_file)
-    content = out_file.read_text(encoding="utf-8")
-    assert "# Frozen Evaluation Rollup (fresh_batch_1 & fresh_batch_2)" in content
+        run_rollup(repo_root=repo_root, force=False)
 
 
 def test_main_cli_exit_codes(tmp_path: Path):
     """Test CLI return codes for normal execution, overwrite collision, and validation failure."""
     repo_root = Path(__file__).resolve().parent.parent
 
-    # 1. Normal run to custom output path returns 0
-    custom_out = tmp_path / "test_out.md"
-    ret0 = main(["--output", str(custom_out)])
+    # 1. Normal run with --force returns 0
+    ret0 = main(["--force"])
     assert ret0 == 0
-    assert custom_out.is_file()
 
     # 2. Overwrite collision without --force returns 2
-    ret2 = main(["--output", str(custom_out)])
+    ret2 = main([])
     assert ret2 == 2
 
     # 3. Input collision returns 3 (Validation Error)

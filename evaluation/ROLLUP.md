@@ -16,7 +16,13 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 - references.md and reference.json are NOT edited: batch 1's original scores (build 12e7226) keep their 121-item denominator. Any re-run from the fix round on
 - states the corrected denominator below.
 - Erratum 1 (v1): N13, `nature identical and natural flavouring substances` is ONE item
+- one head noun), and keeping it whole loses nothing. N13's reference therefore has **11** items instead of 12 and the batch has **120** instead of 121.
 - What changes in the re-run table (REGRESSION.md, build 9c00962), recomputed on 120
+- | Paste, before (12e7226), on 120 | 93 | 15 | 2 | 10 | 120 |
+- | Paste, after (9c00962), on 120 | 107 | 13 | 0 | 0 | 120 |
+- | Photo, before, on 120 | 18 | 10 | 0 | 92 | 120 |
+- | Photo, after, on 120 | 28 | 10 | 0 | 82 | 120 |
+- (The original 121 figures stay valid for the original run. The classification counts do not change: 13 judged labels either way.)
 
 **Metadata & Context:**
 - Frozen build: code at `12e7226`; the reference commit `608fc6c` adds only evaluation files (no change under src/, web_preview/, scripts/, tests/ between them). No code was changed while scoring and nothing was tuned to this batch. One sample, 15 labels scored (16 drawn; N04 excluded before scoring as a variant of a development product): not a general accuracy figure. References were written by an LLM from the photos before any run and have not been spot-checked by the owner. Item adjudication for OCR-garbled items counts an item as present when a human can recognise it; those counts are approximate. All numbers are from `frozen_results_12e7226/`.
@@ -47,18 +53,15 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 - **Did not work:** (extraction wrong, completeness "complete", no warning): paste N02, N13, N14, N15; photo N07 (2 items omitted), N08 (3 items merged), N13 (wrong block). None of these produced a wrong confident group (paste answers were correct; the photo cases abstained).
 
 ### Recorded vs. Unrecorded Inventory
-**Recorded Fields & Sections:**
-- Extraction section: Recorded (2 rows)
+- Extraction table: Recorded (2 rows)
 - Extraction table: Split column: Recorded
-- Classification section: Recorded (2 rows)
+- Classification table: Recorded (2 rows)
+- Classification table: Without overlapping labels column: not recorded in batch table
 - Uncertainty warnings section: Recorded
 
-**Unrecorded / Missing in this Batch:**
-- Classification table: Without overlapping labels column (not recorded in batch table)
-
 ### Denominator & Tie-Out Verification
-- Extraction items (Paste): 92 own + 17 merged + 2 split + 10 omitted = 121/121 (Ties out exactly; table denominator matches stated denominator (121))
-- Extraction items (Photo): 18 own + 10 merged + 0 split + 93 omitted = 121/121 (Ties out exactly; table denominator matches stated denominator (121))
+- Extraction items (Paste): 92 own + 17 merged + 2 split + 10 omitted = 121/121 (Ties out exactly with stated denominator; table denominator matches)
+- Extraction items (Photo): 18 own + 10 merged + 0 split + 93 omitted = 121/121 (Ties out exactly with stated denominator; table denominator matches)
 - Classification labels (Paste): 8 correct + 0 wrong + 5 abstained = 13/13 (Ties out exactly with stated denominator)
 - Classification labels (Photo): 2 correct + 0 wrong + 11 abstained = 13/13 (Ties out exactly with stated denominator)
 
@@ -75,8 +78,7 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 | Photo (browser OCR, second reading when needed) | 7/13 (6 no list) | 27/94 | 23 | not recorded in batch table | 44 | 0 |
 
 **Extraction Notes:**
-- Paste merges: M08 `milk solids and sugar` (milk solids is not in the vocabulary, so the pair is not split), M09 `malt extract and dough conditioner (INS 223)` (the shared-code-list rule keeps it whole: one trailing code could belong to either side; the earlier N02 split worked only because its first side was a flavouring, which carries no INS number), M12 `(clove, cinnamon, chilli) PRESERVATIVE (INS 211)` (the pack has no comma; completeness stayed "complete").
-- Paste omissions: M09 1 (the source text lacks the flavouring phrase that is on the pack), M10 8 (second section after a full stop: set aside under "not read" and flagged), M11 2 (a stray full stop in the source text: flagged). Addition: M06 `Made from Toned Milk` read as an ingredient.
+- Paste merges: M08 `milk solids and sugar` (milk solids is not in the vocabulary, so the pair is not split), M09 `malt extract and dough conditioner (INS 223)` (the shared-code-list rule keeps it whole: one trailing code could belong to either side; the earlier N02 split worked only because its first side was a flavouring, which carries no INS number), M12 `(clove, cinnamon, chilli) PRESERVATIVE (INS 211)` (the pack has no comma; completeness stayed "complete"). Paste omissions: M09 1 (the source text lacks the flavouring phrase that is on the pack), M10 8 (second section after a full stop: set aside under "not read" and flagged), M11 2 (a stray full stop in the source text: flagged). Addition: M06 `Made from Toned Milk` read as an ingredient.
 - Photo: no list on M03, M06, M08, M10, M14, M15 (and M13). M09's list is found, but an unclosed bracket makes one garbled item of all 13. OCR damage, not a parser rule, in every no-list case I checked (the heading is not read or the text is mostly garbage).
 
 ### Classification Outcomes (abstentions are their own outcome)
@@ -100,23 +102,19 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 - Negation bug (photo M07): "CONTAINS NO ADDED FLAVOURS, ADDED COLOUR OR PRESERVATIVES" was read as a declaration: the result lists a declared flavour as a driver next to the real firming-agent driver. The group is right only because INS 509 (firming) decides anyway.
 
 #### D. Added time of the second OCR reading (14 photos, headless browser)
-- Mean total per photo 13.3 s (three large photos took 16 to 49 s on the first reading); mean first reading 9.4 s, mean second reading 2.9 s; the second reading ran on 13 of 14 photos, almost always because the first reading was not clean.
-- Only ONE photo (M07, 0.8 s) ran the second reading solely because the first reading held codes. Added time attributable to the codes trigger: 0.8 s over the whole set: not material, so the trigger is not narrowed.
+- Mean total per photo 13.3 s (three large photos took 16 to 49 s on the first reading); mean first reading 9.4 s, mean second reading 2.9 s; the second reading ran on 13 of 14 photos, almost always because the first reading was not clean. Only ONE photo (M07, 0.8 s) ran the second reading solely because the first reading held codes. Added time attributable to the codes trigger: 0.8 s over the whole set: not material, so the trigger is not narrowed.
 
 ### Recorded vs. Unrecorded Inventory
-**Recorded Fields & Sections:**
-- Extraction section: Recorded (2 rows)
-- Classification section: Recorded (2 rows)
+- Extraction table: Recorded (2 rows)
+- Extraction table: Split column: not recorded in batch table
+- Classification table: Recorded (2 rows)
 - Classification table: Without overlapping labels column: Recorded
 - Uncertainty warnings section: Recorded
-- Additional section: C. Hint, disagreement and role-phrase paths: Recorded
-- Additional section: D. Added time of the second OCR reading (14 photos, headless browser): Recorded
-
-**Unrecorded / Missing in this Batch:**
-- Extraction table: Split column (not recorded in batch table)
+- Additional section (C. Hint, disagreement and role-phrase paths): Recorded
+- Additional section (D. Added time of the second OCR reading (14 photos, headless browser)): Recorded
 
 ### Denominator & Tie-Out Verification
-- Extraction items (Paste): 77 own + 6 merged + 11 omitted = 94/94 (Sum matches table denominator, assuming 0 splits as split column is not recorded; table denominator matches stated denominator (94))
-- Extraction items (Photo): 27 own + 23 merged + 44 omitted = 94/94 (Sum matches table denominator, assuming 0 splits as split column is not recorded; table denominator matches stated denominator (94))
+- Extraction items (Paste): 77 own + 6 merged + 11 omitted = 94/94 (Partial tie-out: matches stated denominator under the assumption of 0 splits, as the Split column is not recorded; table denominator matches)
+- Extraction items (Photo): 27 own + 23 merged + 44 omitted = 94/94 (Partial tie-out: matches stated denominator under the assumption of 0 splits, as the Split column is not recorded; table denominator matches)
 - Classification labels (Paste): 11 correct + 0 wrong + 3 abstained = 14/14 (Ties out exactly with stated denominator)
 - Classification labels (Photo): 4 correct + 0 wrong + 10 abstained = 14/14 (Ties out exactly with stated denominator)
