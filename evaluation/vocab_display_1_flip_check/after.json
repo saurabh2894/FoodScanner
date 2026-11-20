@@ -1,0 +1,1105 @@
+{
+  "b1/N01": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"hydrogenated\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Fractionated vegetable fats",
+      "Cocoa solids (3.8%)",
+      "Yeast"
+    ]
+  },
+  "b1/N02": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "refined (palm & palmolein) oil",
+      "liquid glucose",
+      "dehydrated vegetable (chives) (1%)",
+      "dough conditioner (223)"
+    ]
+  },
+  "b1/N03": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "guar gum",
+      "aniseed",
+      "fenugreek",
+      "nutmeg",
+      "tapioca starch",
+      "desi khand",
+      "Supergrain blend (group name; its contents were assessed separately)",
+      "Mixed spices (group name; its contents were assessed separately)"
+    ]
+  },
+  "b1/N04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"As Flavouring Agent.\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "INS 627 (disodium guanylate)",
+      "INS 631 (disodium inosinate)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Rice Meal (43%)",
+      "Com Meal (23%)",
+      "&quot",
+      "Spices & Condiments",
+      "lodised Salt",
+      "Gram Meal (0.5%)",
+      "Cereal Products (66%) (group name; its contents were assessed separately)",
+      "Seasoning (group name; its contents were assessed separately)"
+    ]
+  },
+  "b1/N05": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "INS 627 (disodium guanylate)",
+      "INS 631 (disodium inosinate)",
+      "\"colour\" (cosmetic_additive)",
+      "\"hydrogenated\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Tapioca Starch",
+      "Soya Flour (9%)",
+      "Split Pulse Urad (Urad Dal) Flour",
+      "Glucose Powder",
+      "Fennel",
+      "Whey Powder",
+      "Yeast Extract",
+      "Pipal",
+      "Bay Leaf",
+      "Nutmeg",
+      "Capsicum Powder",
+      "Mixed Spices (group name; its contents were assessed separately)"
+    ]
+  },
+  "b1/N06": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "unassessed": [
+      "COCOA BUTTER",
+      "COCOA SOLIDS"
+    ]
+  },
+  "b1/N07": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: cocoa nibs (45%), cocoa butter (10%)",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "cocoa nibs (45%)",
+      "cocoa butter (10%)",
+      "cocoa (group name; its contents were assessed separately)"
+    ]
+  },
+  "b1/N08": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "unassessed": [
+      "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+    ]
+  },
+  "b1/N09": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Buffalo Milk Fat 6.00% Min",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Pasteurized Buffalo Milk Fat 6.00% Min"
+    ]
+  },
+  "b1/N10": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Mango Pieces, Mustard, Fenugreek, Synthetic Vinegar",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Mango Pieces",
+      "Mustard",
+      "Fenugreek",
+      "Synthetic Vinegar"
+    ]
+  },
+  "b1/N11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (Acidity regulators (INS 330 & INS 260) -> \"acidity regulator\" (unlisted_additive); Acidity regulators (INS 330 & INS 260) -> INS 260 (not in local mapping); Acidity regulators (INS 330 & INS 260) -> INS 330 (not in local mapping); Preservative (INS 211) -> \"preservative\" (unlisted_additive); Preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "INS 330 (not in local mapping)",
+      "INS 260 (not in local mapping)",
+      "\"preservative\" (unlisted_additive)",
+      "INS 211 (sodium benzoate)"
+    ],
+    "unassessed": [
+      "lodised salt brine",
+      "Mixed spices powder"
+    ]
+  },
+  "b1/N12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"emulsifying & stabilizing agent (INS 1422, INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Tomato puree (67%)",
+      "liquid glucose",
+      "starch",
+      "spices & condiments"
+    ]
+  },
+  "b1/N13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "natural vinegar",
+      "spices & condiments",
+      "lemon juice concentrate"
+    ]
+  },
+  "b1/N14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"protein isolate\" (derived_substance)"
+    ],
+    "unassessed": [
+      "Ragi Flakes",
+      "Jowar Flakes",
+      "Quinoa Flakes",
+      "Brown Rice Flakes",
+      "Texturized Soy Protein",
+      "Black Raisin",
+      "Cranberry",
+      "Almonds",
+      "Flax Seeds",
+      "Pumpkin Seeds",
+      "Cocoa Powder (7%)",
+      "Himalayan Pink Salt",
+      "Whole Grains (34%) (group name; its contents were assessed separately)",
+      "Protein Blend (24%) (group name; its contents were assessed separately)",
+      "Dry Fruits, Nuts & Seeds (22%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "b1/N15": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Roasted Peanuts (91%) Sugar\" has text after a percentage; a comma may be missing between two ingredients"
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "INS 471 (emulsifier)"
+    ],
+    "unassessed": [
+      "Roasted Peanuts (91%) Sugar",
+      "lodised Salt"
+    ]
+  },
+  "b1/N16": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Wheat Flour (Atta) (6.5%) Milk Solids (6%)\" has text after a percentage; a comma may be missing between two ingredients",
+      "A bracket near \"Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"protein isolate\" (derived_substance)",
+      "\"colour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "declared in \"Contains\" statement: \"colour\"",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "unassessed": [
+      "Malted Barley (Extracted solids) (21%)",
+      "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+      "Minerals",
+      "Wheat gluten",
+      "Cereal extract (49%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M01": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"colour\""
+    ],
+    "unassessed": []
+  },
+  "b2/M02": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: PASTEURISED COW MILK",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "unassessed": [
+      "PASTEURISED COW MILK"
+    ]
+  },
+  "b2/M03": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "unassessed": []
+  },
+  "b2/M04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M05": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M06": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "unassessed": []
+  },
+  "b2/M07": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [
+      "\"firming\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "lodised Salt",
+      "Microbial Cultures and Microbial Rennet",
+      "Mozzarella Cheese (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M08": {
+    "answered": true,
+    "group": 3,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "recognised whole food",
+      "recognised culinary"
+    ],
+    "unassessed": []
+  },
+  "b2/M09": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "INS 471 (emulsifier)"
+    ],
+    "unassessed": [
+      "WHEAT FLOUR (63%)",
+      "WHEAT BRAN (4.7%)",
+      "LIQUID GLUCOSE"
+    ]
+  },
+  "b2/M10": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"Masala *TASTEMAKERⓇ: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder...\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"humectant\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "lodized salt",
+      "Wheat gluten"
+    ]
+  },
+  "b2/M11": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT ).\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)"
+    ],
+    "unassessed": [
+      "CORIANDER. CINNAMON",
+      "SPICES & CONDIMENTS 2 % (group name; its contents were assessed separately)",
+      "DEHYDRATED VEGETABLE POWDER (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "TOMATO PASTE (28°B) 24.7%",
+      "MIXED SPICES (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "\"sweetener\" (cosmetic_additive)",
+      "INS 950 (acesulfame potassium)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Carbonated water",
+      "caffeine (13mg/100g)"
+    ]
+  },
+  "b2/M14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "papaya pulp",
+      "pear pulp",
+      "apple juice",
+      "banana pulp",
+      "pineapple juice",
+      "orange juice",
+      "mango pulp",
+      "grape juice",
+      "vitamins & mineral",
+      "mixed fruit pulp blend - 60% (group name; its contents were assessed separately)"
+    ]
+  },
+  "b2/M15": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"invert sugar\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)",
+      "INS 102 (tartrazine)"
+    ],
+    "unassessed": [
+      "liquid glucose",
+      "raw mango pulp (5%)",
+      "caster sugar"
+    ]
+  },
+  "b3/Q01": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "unassessed": []
+  },
+  "b3/Q02": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "unassessed": []
+  },
+  "b3/Q03": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: lodised Salt",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "lodised Salt"
+    ]
+  },
+  "b3/Q04": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "unassessed": []
+  },
+  "b3/Q05": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A Palmitate & Vitamin D (Ergocalciferol)",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Vitamin A Palmitate & Vitamin D (Ergocalciferol)"
+    ]
+  },
+  "b3/Q06": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Cow Milk",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "unassessed": [
+      "Pasteurized Cow Milk"
+    ]
+  },
+  "b3/Q07": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Milk & Milk Solids Milk",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Milk & Milk Solids Milk"
+    ]
+  },
+  "b3/Q08": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "unassessed": [
+      "Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+    ]
+  },
+  "b3/Q09": {
+    "answered": false,
+    "group": null,
+    "reason": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": []
+  },
+  "b3/Q10": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "unassessed": []
+  },
+  "b3/Q11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (Acidity Regulator (INS 339 (ii)) -> \"acidity regulator\" (unlisted_additive); Acidity Regulator (INS 339 (ii)) -> INS 339(ii) (not in local mapping); Stabilizers (INS 418, INS 407) -> \"stabiliser\" (unlisted_additive); Stabilizers (INS 418, INS 407) -> INS 407 (not in local mapping); Stabilizers (INS 418, INS 407) -> INS 418 (not in local mapping)); not enough to call a group",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "INS 339(ii) (not in local mapping)",
+      "\"stabiliser\" (unlisted_additive)",
+      "INS 418 (not in local mapping)",
+      "INS 407 (not in local mapping)"
+    ],
+    "unassessed": [
+      "Cereal product (3%)",
+      "Minerals",
+      "Vitamins"
+    ]
+  },
+  "b3/Q12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"dity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 471 (emulsifier)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Cocoa Powder (1.5%)"
+    ]
+  },
+  "b3/Q13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)",
+      "declared in \"Contains\" statement: \"sweetener\"",
+      "declared in \"Contains\" statement: \"colour\""
+    ],
+    "unassessed": [
+      "Carbonated Water",
+      "Caffeine"
+    ]
+  },
+  "b3/Q14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Emulsifying & Stabilizing Agent (INS1422, INS415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Tomato Puree (67%)",
+      "Liquid Glucose",
+      "Starch",
+      "Spices & Condiments"
+    ]
+  },
+  "neg/R1": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"stabiliser\" (unlisted_additive)",
+      "INS 509 (not in local mapping)"
+    ],
+    "unassessed": [
+      "MICROBIAL CULTU"
+    ]
+  },
+  "neg/R2": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Edible Peanut Oil, lodized salt, Spices & Condiments",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Refined Palmolien Oil",
+      "Edible Peanut Oil",
+      "lodized salt",
+      "Spices & Condiments"
+    ]
+  },
+  "neg/R3": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "unassessed": [
+      "Potable Water"
+    ]
+  },
+  "neg/R4": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "INS 150d (caramel IV (sulfite ammonia caramel))",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "APPLE JUICE CONCENTRATE (2.1%) [EQUIVALENT TO 14% APPLE JUICE (RECONSTITUTED)]"
+    ]
+  },
+  "neg/R5": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 471 (emulsifier)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Reconstituted skimmed MILK",
+      "cocoa butter ¹",
+      "glucose syrup",
+      "ALMONDS",
+      "coconut fat",
+      "butter oil (MILK)",
+      "fructose",
+      "skimmed MILK powder or concentrate",
+      "cocoa mass ¹",
+      "exhausted vanilla bean pieces",
+      "whey solids (MILK)"
+    ]
+  },
+  "neg/R6": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"colour\"",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "unassessed": [
+      "CARBONATED WATER"
+    ]
+  },
+  "dev/F01": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredient list looks truncated (unclosed bracket)",
+    "warnings": [
+      "A bracket near \"ED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDI\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "A bracket near \"(MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STAR\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "A bracket near \", COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)"
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"raising agent\" (ordinary_additive)",
+      "INS 500i (not in local mapping)"
+    ],
+    "unassessed": []
+  },
+  "dev/F02": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"ur Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar)\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "INS 150d (caramel IV (sulfite ammonia caramel))",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "Wheat Flour (Atta) (55.8%)",
+      "Sorghum (Jowar) Flour (3%)",
+      "Cocoa Solids (5.3%)",
+      "Minerals",
+      "Cereal Extract",
+      "lodized Salt",
+      "Vitamins",
+      "Multigrain Flour Mix (64.8%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F03": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "unassessed": [
+      "Maltodectrin",
+      "Tumeric",
+      "Pepper",
+      "Fenugreek",
+      "Nutmeg",
+      "Red Chili",
+      "Onions Flakes (1.15%)",
+      "Starch",
+      "Hydrolysed Vegetable Protein",
+      "631)",
+      "Anlioxidant (320)",
+      "Spices and Condiments (34%) (group name; its contents were assessed separately)",
+      "Dried Vegetables (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"hydrogenated\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "cocoa solids"
+    ]
+  },
+  "dev/F05": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "unassessed": []
+  },
+  "dev/F06": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 471 (emulsifier)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "WHEY POWDER",
+      "COCOA SOLIDS (1%)",
+      "MALT EXTRACT"
+    ]
+  },
+  "dev/F07": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"maltodextrin\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "maida (refined wheat flour) (78.7%)",
+      "wheat gluten (0.4%)",
+      "beans (9.5%)",
+      "cabbage (3.8%)",
+      "maida (refined wheat flour) (15.9%)",
+      "wheat gluten (0.07%)",
+      "chillies",
+      "aniseed",
+      "fenugreek",
+      "nutmeg",
+      "caraway",
+      "defatted soya",
+      "yeast extract",
+      "chilli flakes",
+      "black pepper bits",
+      "dehydrated onion",
+      "dehydrated vegetables (group name; its contents were assessed separately)",
+      "instant noodle powder (group name; its contents were assessed separately)",
+      "spices and condiments (17.6%) (group name; its contents were assessed separately)",
+      "hydrolyzed vegetable protein (group name; its contents were assessed separately)",
+      "spices & condiments (67.8%) (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F08": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)\": \"stabilizing agents\" is read as the stabiliser class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "INS 471 (emulsifier)"
+    ],
+    "unassessed": [
+      "Wheat Gluten",
+      "lodised Salt"
+    ]
+  },
+  "dev/F09": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Ajwain",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Ajwain"
+    ]
+  },
+  "dev/F10": {
+    "answered": false,
+    "group": null,
+    "reason": "a colour note on a named ingredient (Turmeric (Colouring & Spices)) leaves open whether a colour is added, and no other marker decides the group",
+    "warnings": [
+      "\"Turmeric (Colouring & Spices)\": a colour note on a named ingredient is not counted as an added colour"
+    ],
+    "status": "complete",
+    "drivers": [],
+    "unassessed": [
+      "Rice Flakes (37%)",
+      "Roasted Gram (25%)",
+      "Corn Flakes (6%)",
+      "lodised Salt",
+      "Dried Mango Black Salt",
+      "Nutmeg",
+      "Long Pepper",
+      "Mace",
+      "Mint",
+      "Fenugreek",
+      "Fennel Seeds",
+      "Bishop's Seed",
+      "Dried Curry Leaves (0.5%)",
+      "Ground Spices & Condiments (group name; its contents were assessed separately)",
+      "Dehydrated Vegetable Powder (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (acidity regulator -> \"acidity regulator\" (unlisted_additive); preservative (INS 211) -> \"preservative\" (unlisted_additive); preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "\"preservative\" (unlisted_additive)",
+      "INS 211 (sodium benzoate)"
+    ],
+    "unassessed": [
+      "mustard",
+      "fenugreek",
+      "compounded Asafoetida"
+    ]
+  },
+  "dev/F12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"and condiments (onion powder, chilli powder, dry mango powde\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "citric acid",
+      "tartaric acid",
+      "spices and condiments (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "lodised Salt"
+    ]
+  },
+  "dev/F14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "PAPAYA PULP",
+      "PEAR PULP",
+      "APPLE JUICE",
+      "BANANA PULP",
+      "PINEAPPLE JUICE",
+      "ORANGE JUICE",
+      "MANGO PULP",
+      "GRAPE JUICE",
+      "VITAMINS & MINERAL",
+      "MIXED FRUIT PULP BLEND - 60% (group name; its contents were assessed separately)"
+    ]
+  },
+  "dev/F15": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "unassessed": [
+      "White Pepper",
+      "Schezwan Pepper",
+      "Spices (group name; its contents were assessed separately)"
+    ]
+  }
+}

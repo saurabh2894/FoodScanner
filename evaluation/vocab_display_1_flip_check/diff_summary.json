@@ -1,0 +1,22 @@
+{
+  "inputs": 66,
+  "builds": {
+    "before": "8a4e2e7",
+    "after": "antigravity/vocab-display-1"
+  },
+  "changed_counts": {
+    "group": 0,
+    "drivers": 0,
+    "status": 0,
+    "reason": 0,
+    "warnings": 0
+  },
+  "changed_inputs": {
+    "group": [],
+    "drivers": [],
+    "status": [],
+    "reason": [],
+    "warnings": []
+  },
+  "display_text_changes": {}
+}

@@ -22,7 +22,7 @@ def with_reference(monkeypatch):
 
 def test_reference_table_is_not_shipped_while_its_licence_is_unresolved():
     assert not has_table("ins_reference.csv")
-    (u,) = normalise_ingredient("stabilizer (INS 412)").ins
+    (u,) = normalise_ingredient("stabilizer (INS 999)").ins
     assert u.name is None and u.ref_name is None and u.strength is None
 
 
