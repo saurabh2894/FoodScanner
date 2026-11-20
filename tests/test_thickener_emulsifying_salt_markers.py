@@ -55,3 +55,43 @@ def test_every_frozen_paste_input_keeps_its_group():
         k, name = key.split("/")
         a = analyse_text((ROOT / "evaluation" / dirs[k] / "inputs" / f"{name}.txt").read_text(), source="text")
         assert (a.group if a.answered else None) == group, key
+
+
+# ---- focused coverage added after the flip check (no frozen input contains "emulsifying salt") ----
+def drivers(text):
+    return [d.detail for d in analyse_text(text, source="text").drivers]
+
+
+@pytest.mark.parametrize("text", [
+    "Ingredients: Milk, cheese, Emulsifying Salt (INS 339).",
+    "Ingredients: Milk, cheese, Emulsifying Salts (INS 339, INS 331).",
+])
+def test_emulsifying_salt_by_class_word_singular_and_plural_gives_group_4_with_its_driver(text):
+    group, a = g(text)
+    assert group == 4 and '"emulsifying salt" (cosmetic_additive)' in drivers(text)
+
+
+def test_negated_emulsifying_salt_is_not_a_driver():
+    t = "Ingredients: Milk, cheese, salt. Contains no emulsifying salts."
+    group, a = g(t)
+    assert group is None and a.drivers == []
+    assert not any("emulsifying salt" in d for d in drivers(t))
+
+
+def test_mixed_line_keeps_only_the_positive_marker():
+    t = "Ingredients: Milk, cheese, salt. Contains no emulsifying salts, contains added flavour."
+    group, a = g(t)
+    assert group == 4
+    assert drivers(t) == ['declared in "Contains" statement: "flavour"']                      # the negated emulsifying salt is not registered
+    t2 = "Ingredients: Milk, cheese, salt. Contains no emulsifying salts, contains preservative (INS 211)."
+    assert g(t2)[0] is None and not any("emulsifying salt" in d for d in drivers(t2))      # preservative is not a marker: nothing decides
+    t3 = "Ingredients: Milk, cheese, salt. No emulsifying salts, contains emulsifying salt (INS 339)."
+    assert g(t3)[0] == 4 and drivers(t3) == ['declared in "Contains" statement: "emulsifying salt"']   # the positive half of a mixed line still registers
+
+
+def test_thickener_with_pectin_code_does_not_drive_group_4_but_another_code_does():
+    assert g("Ingredients: Sugar, fruit pulp, Thickener (INS 440).")[0] is None
+    assert g("Ingredients: Sugar, fruit pulp, Thickener (INS 412).")[0] == 4
+    assert '"thickener" (cosmetic_additive)' in drivers("Ingredients: Sugar, fruit pulp, Thickener (INS 412).")
+    # separate entries: the pectin qualification is per ingredient entry, so a second thickener entry with another code still counts
+    assert g("Ingredients: Sugar, fruit pulp, Thickener (INS 440), Thickener (INS 412).")[0] == 4
