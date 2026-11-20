@@ -11,7 +11,7 @@ Outputs: `frozen_results_2eb5f39/` (every OCR reading and its time are in photo_
 |---|---|---|---|---|---|
 | Paste (untouched Open Food Facts text) | 77/94 | 6 | 11 | 1 | 13/13 |
 | Photo (browser OCR, second reading when needed) | 27/94 | 23 | 44 | 0 | 7/13 (6 no list) |
-- Paste merges: M08 `milk solids and sugar` (milk solids is not in the vocabulary, so the pair is not split), M09 `malt extract and dough conditioner (223)` (the fix needs both sides recognised or a code bracket on BOTH; here the code bracket is shared), M12 `(clove, cinnamon, chilli) PRESERVATIVE (INS 211)` (the pack has no comma; completeness stayed "complete").
+- Paste merges: M08 `milk solids and sugar` (milk solids is not in the vocabulary, so the pair is not split), M09 `malt extract and dough conditioner (INS 223)` (the shared-code-list rule keeps it whole: one trailing code could belong to either side; the earlier N02 split worked only because its first side was a flavouring, which carries no INS number), M12 `(clove, cinnamon, chilli) PRESERVATIVE (INS 211)` (the pack has no comma; completeness stayed "complete").
   Paste omissions: M09 1 (the source text lacks the flavouring phrase that is on the pack), M10 8 (second section after a full stop: set aside under "not read" and flagged), M11 2 (a stray full stop in the source text: flagged). Addition: M06 `Made from Toned Milk` read as an ingredient.
 - Photo: no list on M03, M06, M08, M10, M14, M15 (and M13). M09's list is found, but an unclosed bracket makes one garbled item of all 13. OCR damage, not a parser rule, in every no-list case I checked (the heading is not read or the text is mostly garbage).
 
