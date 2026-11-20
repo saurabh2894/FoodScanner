@@ -73,8 +73,9 @@ def test_additive_class_label_mid_item_is_not_peeled():
 def test_ocr_o11_is_read_as_oil():
     assert normalise_ingredient("Rice Bran O11 (16%)").name == "rice bran oil"
     assert normalise_ingredient("Edible Vegetable O11").name == "edible vegetable oil"
+    assert normalise_ingredient("Rice Bran 0il (16%)").name == "rice bran oil"      # browser OCR variant (zero for O)
 
 
-@pytest.mark.parametrize("word", ["Oiled", "Boil", "O1l1"])
+@pytest.mark.parametrize("word", ["Oiled", "Boil", "O1l1", "10il", "0ils"])
 def test_o11_rule_does_not_touch_other_words(word):
     assert normalise_ingredient(word).name == word.lower()

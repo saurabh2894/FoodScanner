@@ -23,3 +23,4 @@ raising agents,raising agent,research/02 qualification (plural)
 stabilizer,stabiliser,US spelling variant (class not in research/02: see markers.csv "unlisted")
 stabilizers,stabiliser,plural (class not in research/02: see markers.csv "unlisted")
 o11,oil,"OCR misread of the word Oil seen on a real photo (millet puff pack, 2026-11-20); matched as a whole token only"
+0il,oil,"OCR misread of the word Oil (zero for O) seen in the browser OCR of the same real photo (2026-11-20); matched as a whole token only"
