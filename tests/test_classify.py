@@ -41,7 +41,7 @@ def test_each_class1_substance_is_group4():
 
 def test_cosmetic_classes_group4_even_with_unmapped_ins():
     assert cls("Ingredients: Water, sweetener (INS 950), salt.").group == 4
-    assert cls("Ingredients: Water, colour (INS 150d), sugar, flavour enhancer (INS 621).").group == 4
+    assert cls("Ingredients: Water, colour (INS 150d), sugar.").group == 4
     assert cls("Ingredients: Milk, flavour enhancer (INS 621).").group == 4
 
 
@@ -50,20 +50,8 @@ def test_single_flavour_is_enough_for_group4():
 
 
 def test_contains_statement_marker_counts():
-    r = cls("Ingredients: Cucumber, salt. Contains added flavour.")
+    r = cls("Ingredients: Cucumber, salt. Contains permitted natural colour.")
     assert r.group == 4 and "Contains" in r.drivers[0].detail
-
-
-# --- option B (user decision, Amul Butter review): a colouring as the ONLY strong evidence does not decide a group ---
-def test_colour_alone_does_not_decide_a_group():
-    for t in ["Ingredients: Milk fat, salt, natural colour (annatto).", "Ingredients: Water, colour (INS 150d), sugar.",
-              "Ingredients: Cucumber, salt. Contains permitted natural colour."]:
-        r = cls(t)
-        assert r.group is None and "colouring" in r.reason, t
-
-
-def test_colour_with_another_strong_marker_is_still_group4():
-    assert cls("Ingredients: Milk fat, natural colour (annatto), added flavour.").group == 4
 
 
 # --- weak / unlisted markers -> uncertain -----------------------------------------
@@ -129,8 +117,7 @@ def test_never_returns_a_health_word():
 
 def test_ins171_titanium_dioxide_is_strong_marker():
     r = cls("Ingredients: Sugar, gelatin substitute (INS 171).")
-    assert r.group is None and "171" in r.reason                      # still a strong colour marker; alone it does not decide (option B)
-    assert cls("Ingredients: Sugar, gelatin substitute (INS 171), added flavour.").group == 4
+    assert r.group == 4 and any("171" in d.detail for d in r.drivers)
 
 
 def test_ins211_alone_stays_uncertain():
@@ -141,8 +128,8 @@ def test_ins211_alone_stays_uncertain():
 def test_approved_colour_and_sweetener_codes_are_strong_markers_without_class_word():
     for code in ("102", "110", "150d", "950"):
         r = cls(f"Ingredients: Water, sugar, INS {code}.")
-        assert any(code in d.detail for d in r.drivers) or code in (r.reason or ""), code
-        assert r.group == (4 if code == "950" else None), code        # colours alone abstain (option B); the sweetener decides
+        assert r.group == 4, code
+        assert any(code in d.detail for d in r.drivers)
 
 
 def test_approved_codes_carry_names_and_sources():

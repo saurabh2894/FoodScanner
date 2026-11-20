@@ -18,10 +18,6 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
   or inferred heading, unbalanced brackets or unread ingredient-like text make it "uncertain" and block every answer
   except a strong-marker Group 4 (Option A). Photo path: a damaged heading ("REDIENTS") is matched tolerantly; with
   no heading the most list-like block is used, never a nutrition table or allergen-only line; else ask for a clearer photo.
-- Colour-alone policy, decided by the user ("Option B", Amul Butter review): if the ONLY strong evidence is a
-  colouring (class word, colour INS code, or a Contains colour declaration), the result is "Not enough information"
-  with that reason. Any other strong marker alongside it still gives Group 4. Basis: research/02 prefers "uncertain" over
-  a forced call on weak/ambiguous markers and names no butter/annatto rule. A cited source on natural colours may revisit it.
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.

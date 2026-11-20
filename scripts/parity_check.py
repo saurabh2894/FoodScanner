@@ -151,8 +151,6 @@ CORPUS = [
     "Ingredients: SUGAR, EMULSIFIER OF VEGETABLE ORIGIN [472e] AND FLOUR TREATMENT AGENT [1101(ii)]. CONTAINS: WHEAT, MILK",
     "Ingredients: Sugar, colour of natural origin (160b), SPICES AND CONDIMENTS, SALT.",
     "Ingredients: Rice, acidity regulators (330, 508), stabilizer (412), raising agent (500(i), 501(i)), emulsifier (451(i)), flavour enhancer (635), salt, colour (INS 105), preservative (INS 999).",
-    "Ingredients: Milk fat, salt, natural colour (annatto).", "Ingredients: Milk fat, natural colour (annatto), added flavour.", "Ingredients: Sugar, gelatin substitute (INS 171).",
-    "Ingredients: Rice, salt. Contains permitted natural colour.", "Ingredients: Water, sugar, INS 102, INS 110.", "Ingredients: Rice, salt. Colour: INS 150d.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

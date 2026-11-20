@@ -137,17 +137,6 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
     return hits
 
 
-def _only_colour(drivers: list[Driver]) -> bool:
-    colour_codes = {r["ins"].lower() for r in load_table("ins_map.csv")
-                    if r["strength"] == "strong" and "colour" in [c.strip() for c in r["functional_class"].split(";")]}
-    def is_colour(d: Driver) -> bool:
-        if d.detail.startswith('"colour"') or 'Contains" statement: "colour"' in d.detail:
-            return True
-        m = re.match(r"INS (\S+) ", d.detail)
-        return bool(m and m.group(1).lower() in colour_codes)
-    return all(is_colour(d) for d in drivers)
-
-
 def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None = None) -> Classification:
     strong: list[Driver] = []
     weak: list[Driver] = []
@@ -160,13 +149,6 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         for pat, row in _markers():
             if row["strength"] == "strong" and row["marker_class"] == "cosmetic_additive" and pat.search(text):
                 strong.append(Driver(decl, f'declared in "Contains" statement: "{row["term"]}"', row["source"]))
-
-    if strong and _only_colour(strong):
-        # Policy decision (user, option B, Amul Butter review): a colouring is the only ultra-processing evidence, so the
-        # group is not called. research/02 says to prefer "uncertain" over a forced call when the only marker is weak or
-        # ambiguous, and names no butter/annatto rule. Revisit when a cited source settles natural colours.
-        names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in strong}))
-        return Classification(None, drivers=strong, reason=f"the only ultra-processing evidence is a colouring ({names}); a colour alone does not decide a group")
 
     if strong:
         return Classification(4, drivers=strong)

@@ -130,8 +130,7 @@ def test_unlabelled_text_after_full_stop_still_ends_the_list():
 def test_additive_class_label_after_full_stop_keeps_its_marker():
     # "Colour:" is an additive class word, so it is kept as part of the item, never stripped as a label
     a = analyse_text("Ingredients: Rice, salt. Colour: INS 150d.")
-    assert "150d" in [u.code for u in a.ins_mappings] and not a.answered       # read as evidence; a colour alone abstains (option B)
-    assert analyse_text("Ingredients: Rice, salt. Colour: INS 150d. Flavour: vanilla.").group == 4
+    assert a.answered and a.group == 4
 
 
 def test_weak_single_additive_still_leads_to_uncertain():

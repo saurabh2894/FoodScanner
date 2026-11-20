@@ -24,18 +24,12 @@ def test_allergen_and_other_statements_never_drive_group4(statement):
 
 
 @pytest.mark.parametrize("statement", [
-    "Contains added flavour.",
+    "Contains permitted natural colour.", "Contains permitted natural color.", "Contains added flavour.",
     "CONTAINS NATURE IDENTICAL FLAVOURING SUBSTANCES.", "Contains artificial sweetener.",
 ])
 def test_declared_additive_classes_do_count(statement):
     a = analyse_text("Ingredients: Rice, salt. " + statement)
     assert a.group == 4 and any("Contains" in d.detail for d in a.drivers), statement
-
-
-@pytest.mark.parametrize("statement", ["Contains permitted natural colour.", "Contains permitted natural color."])
-def test_declared_colour_alone_is_read_but_abstains(statement):
-    a = analyse_text("Ingredients: Rice, salt. " + statement)
-    assert not a.answered and any("Contains" in d.detail for d in a.drivers) and "colouring" in a.reason
 
 
 # ---- user-approved additions ("fix all", 2026-11-20) --------------------------------------------------
