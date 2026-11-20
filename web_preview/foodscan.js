@@ -194,7 +194,7 @@
     // "a and b" / "a & b" at bracket depth 0; the caller decides whether both sides are ingredients
     function splitTopLevelAnd(raw) {
       const cuts = []; let depth = 0, m;
-      const re = /[(\[{)\]}]|\s+(?:and|&)\s+/g;
+      const re = /[(\[{)\]}]|\s+(?:and|&)\s+/gi;
       while ((m = re.exec(raw))) {
         const tok = m[0];
         if (tok.length === 1 && OPEN.includes(tok)) depth++;
@@ -325,7 +325,7 @@
       .sort((a, b) => b.length - a.length).map(esc).join("|");
     const CLASS_WORD_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?![a-z])");
     // "Flavour Enhancers (627, 631)": bare codes, only right after an additive class word
-    const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?\\s*[(\\[{]\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*[)\\]}]", "g");
+    const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?:\\s+of\\s+[a-z]+(?:\\s+[a-z]+){0,2})?\\s*[(\\[{]\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*[)\\]}]", "g");
 
     function extractIns(text) {
       const uses = [];

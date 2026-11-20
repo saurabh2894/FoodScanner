@@ -364,7 +364,7 @@ def split_top_level_and(raw: str) -> list[str]:
     """Split "a and b" / "a & b" at bracket depth 0. Always returns at least [raw]; whether both sides are really
     ingredients is for the caller to decide (it needs the vocabulary)."""
     cuts, depth = [], 0
-    for m in re.finditer(r"[(\[{)\]}]|\s+(?:and|&)\s+", raw):
+    for m in re.finditer(r"[(\[{)\]}]|\s+(?:and|&)\s+", raw, re.IGNORECASE):
         tok = m.group()
         if tok in _OPEN:
             depth += 1

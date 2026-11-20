@@ -148,6 +148,8 @@ CORPUS = [
     "Nutritional information per 100 g\nEnergy 450 kcal\nProtein 8 g\nCarbohydrate 60 g\nTotal fat 20 g\nSodium 600 mg",
     "Contains: wheat, milk, soy, gluten, peanuts, tree nuts.", "NEW, tasty, crunchy, buy now, free gift, limited offer, enjoy the taste",
     "Energy 450 kcal, Protein 8 g, Carbohydrate 60 g, Total fat 20 g, Sodium 600 mg, Fibre 2 g",
+    "Ingredients: SUGAR, EMULSIFIER OF VEGETABLE ORIGIN [472e] AND FLOUR TREATMENT AGENT [1101(ii)]. CONTAINS: WHEAT, MILK",
+    "Ingredients: Sugar, colour of natural origin (160b), SPICES AND CONDIMENTS, SALT.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

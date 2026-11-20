@@ -31,7 +31,7 @@ def _bare_codes_re() -> re.Pattern:
                    key=len, reverse=True)
     alt = "|".join(re.escape(t) for t in terms)
     return re.compile(
-        rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?\s*[(\[{{]\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*[)\]}}]")
+        rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?(?:\s+of\s+[a-z]+(?:\s+[a-z]+){{0,2}})?\s*[(\[{{]\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*[)\]}}]")
 
 
 @dataclass(frozen=True)
