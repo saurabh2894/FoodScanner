@@ -54,7 +54,11 @@ def test_every_frozen_paste_input_keeps_its_group():
     for key, group in before.items():
         k, name = key.split("/")
         a = analyse_text((ROOT / "evaluation" / dirs[k] / "inputs" / f"{name}.txt").read_text(), source="text")
-        assert (a.group if a.answered else None) == group, key
+        # Intended, attributed exception (vocab-display-1): the synonyms.csv row "lodised salt" -> "iodised salt" makes b3/Q03 ("Water, Curd, lodised Salt")
+        # recognisable, so it moves from the frozen None to Group 3 (its reference expectation). Evidence: evaluation/vocab_display_1_flip_check/.
+        # Every other key must still equal its frozen value; the frozen before-JSON is not edited.
+        expected = 3 if key == "b3/Q03" else group
+        assert (a.group if a.answered else None) == expected, key
 
 
 # ---- focused coverage added after the flip check (no frozen input contains "emulsifying salt") ----
