@@ -19,6 +19,8 @@
     const HEADING = /(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
+    // labelled sections after a full stop stay part of the list (see parser.py)
+    const SECTION = /\s*(?:seasoning|coating|filling|topping|sauce|masala|dressing|marinade|glaze|base|premix|spice\s+mix|tadka|chutney)(?:\s+(?:mix|powder|blend))?\s*:\s*/iy;
 
     function bracketDepth(text) {
       let depth = 0;
@@ -53,6 +55,16 @@
       items.push(buf);
       return { items: items.map((i) => stripChars(i, " .")).filter((i) => i), unbalanced: bracketDepth(text) !== 0 };
     }
+    function joinSections(body) {
+      for (;;) {
+        const end = findTerminator(body);
+        if (end === null) return body;
+        SECTION.lastIndex = end + 1;
+        const m = SECTION.exec(body);
+        if (!m) return body;
+        body = body.slice(0, end) + ", " + body.slice(SECTION.lastIndex);
+      }
+    }
     function parseIngredientList(text) {
       const flat = collapse(text);
       const m = HEADING.exec(flat);
@@ -69,6 +81,7 @@
           declarations.push(e !== null ? tail.slice(0, e) : tail);
         }
       }
+      body = joinSections(body);
       let end = findTerminator(body);
       if (end === null && bracketDepth(body) > 0) {
         // unclosed bracket on the pack: fall back to the first full stop right after a closing bracket
@@ -81,17 +94,29 @@
       return { found: true, items, terminated, unbalanced, declarations };
     }
 
-    function splitCompound(raw) {
-      const idx = raw.indexOf("(");
-      if (idx <= 0) return null;
-      let depth = 0, end = raw.length;
-      for (let i = idx; i < raw.length; i++) {
-        if (OPEN.includes(raw[i])) depth++;
-        else if (CLOSE.includes(raw[i])) { depth--; if (depth === 0) { end = i; break; } }
+    function* bracketGroups(raw) {
+      let i = 0;
+      while (i < raw.length) {
+        if (OPEN.includes(raw[i])) {
+          let depth = 0, end = raw.length;
+          for (let j = i; j < raw.length; j++) {
+            if (OPEN.includes(raw[j])) depth++;
+            else if (CLOSE.includes(raw[j])) { depth--; if (depth === 0) { end = j; break; } }
+          }
+          yield [i, end, raw.slice(i + 1, end)];
+          i = end + 1;
+        } else i++;
       }
-      const subs = splitTopLevel(raw.slice(idx + 1, end)).items;
-      if (subs.length < 2) return null;
-      return [stripChars(raw.slice(0, idx), " *"), subs];
+    }
+    function splitCompound(raw) {
+      for (const [idx, , content] of bracketGroups(raw)) {
+        if (!/[A-Za-z]/.test(content)) continue;
+        if (idx <= 0) return null;
+        const subs = splitTopLevel(content).items;
+        if (subs.length < 2) return null;
+        return [stripChars(raw.slice(0, idx), " *"), subs];
+      }
+      return null;
     }
 
     /* ---------- tables ---------- */
@@ -176,7 +201,7 @@
       const strong = [], weak = [];
       for (const ing of ings) for (const h of hitsFor(ing)) (h.strength === "strong" ? strong : weak).push({ ingredient: ing.raw, detail: h.detail, source: h.source });
       for (const decl of declarations || []) {
-        const text = flatten(decl);
+        const text = normaliseIngredient(decl).text;
         for (const { re, row } of markers)
           if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(text))
             strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source });

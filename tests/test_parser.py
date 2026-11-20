@@ -93,3 +93,23 @@ def test_split_compound():
     assert split_compound("*Seasoning (Sugar, Salt, Oil (Palm, Coconut)") == ("Seasoning", ["Sugar", "Salt", "Oil (Palm, Coconut)"])
     assert split_compound("emulsifier (INS 471)") is None
     assert split_compound("Salt") is None
+
+
+def test_labelled_section_after_full_stop_stays_in_the_list():
+    p = parse_ingredient_list("Ingredients: Rice, Rice Bran Oil. Seasoning : Iodised Salt, Sugar, Flavour.")
+    assert p.items == ["Rice", "Rice Bran Oil", "Iodised Salt", "Sugar", "Flavour"]
+    p2 = parse_ingredient_list("Ingredients: Rice, salt. Coating: Sugar, Cocoa.")
+    assert p2.items == ["Rice", "salt", "Sugar", "Cocoa"]
+
+
+def test_other_labels_still_end_the_list():
+    p = parse_ingredient_list("Ingredients: Rice, salt. Note: store in a cool place, away from light.")
+    assert p.items == ["Rice", "salt"] and p.terminated
+
+
+def test_split_compound_skips_percentage_bracket():
+    from foodscan.parser import split_compound
+
+    assert split_compound("Base Mix(57%)(Ragi, Rice, Pea Protein, Urad Dal)") == (
+        "Base Mix(57%)", ["Ragi", "Rice", "Pea Protein", "Urad Dal"])
+    assert split_compound("Sugar (12.5%)") is None

@@ -19,7 +19,7 @@ import re
 from dataclasses import dataclass, field
 from functools import cache
 
-from .normalise import Ingredient, flatten, normalise_list
+from .normalise import Ingredient, flatten, normalise_ingredient, normalise_list
 from .tables import load_table
 
 
@@ -91,7 +91,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
             d = Driver(ing.raw, h.detail, h.source)
             (strong if h.strength == "strong" else weak).append(d)
     for decl in declarations or []:
-        text = flatten(decl)
+        text = normalise_ingredient(decl).text   # same spelling/plural handling as ingredients (color -> colour)
         for pat, row in _markers():
             if row["strength"] == "strong" and row["marker_class"] == "cosmetic_additive" and pat.search(text):
                 strong.append(Driver(decl, f'declared in "Contains" statement: "{row["term"]}"', row["source"]))

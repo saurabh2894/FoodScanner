@@ -86,3 +86,25 @@ def test_real_photo_end_to_end():
     a = analyse_image(FIXTURE)
     assert a.answered and a.group == 4
     assert any("altodextrin" in d.ingredient for d in a.drivers)
+
+
+REFERENCE_2 = (
+    "Ingredients:\nBase Mix(57%)(Ragi, Rice, Pea Protein, Urad Dal), Sabudana Flour, Potato Flour, Rice Bran Oil. "
+    "Seasoning : Dehydrated Vegetables(Garlic, Onion, Tomato), Iodised Salt, Khaand, Natural Citric Acid, Milk Solids, "
+    "Spices & Condiments, Natural & Nature Identical Flavours, Rosemary Extract, "
+    "Contains natural color extracted from Paprika"
+)
+
+
+def test_reference_example_with_seasoning_section_is_group4():
+    a = analyse_text(REFERENCE_2)
+    assert a.answered and a.group == 4 and a.warnings == []
+    assert len(a.ingredients) == 12            # the seasoning section is part of the list
+    details = " | ".join(d.ingredient + " " + d.detail for d in a.drivers)
+    assert "Flavours" in details                # named ingredient, not the whole section
+    assert "Contains" in details and "colour" in details   # US spelling "color" is recognised
+
+
+def test_us_spelling_in_contains_statement():
+    a = analyse_text("Ingredients: Potato, salt. Contains permitted color.")
+    assert a.group == 4

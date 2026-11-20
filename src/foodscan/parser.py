@@ -23,6 +23,13 @@ _STOP = re.compile(
 
 _OPEN, _CLOSE = "([{", ")]}"
 
+# Packs often split the list into labelled sections after a full stop:
+# "... Rice Bran Oil. Seasoning : Iodised Salt, ..." The section is still part of the ingredient
+# list. Only these section labels are absorbed, so "Note: store cool." still ends the list.
+_SECTION = re.compile(
+    r"\s*(?:seasoning|coating|filling|topping|sauce|masala|dressing|marinade|glaze|base|premix|spice\s+mix|tadka|chutney)"
+    r"(?:\s+(?:mix|powder|blend))?\s*:\s*", re.IGNORECASE)
+
 
 @dataclass
 class ParsedList:
@@ -84,6 +91,17 @@ def _find_terminator(text: str) -> int | None:
     return None
 
 
+def _join_sections(body: str) -> str:
+    while True:
+        end = _find_terminator(body)
+        if end is None:
+            return body
+        m = _SECTION.match(body, end + 1)
+        if not m:
+            return body
+        body = body[:end] + ", " + body[m.end():]
+
+
 def parse_ingredient_list(text: str) -> ParsedList:
     flat = _collapse(text)
     m = _HEADING.search(flat)
@@ -106,6 +124,7 @@ def parse_ingredient_list(text: str) -> ParsedList:
             end = _find_terminator(tail)
             declarations.append(tail[:end] if end is not None else tail)
 
+    body = _join_sections(body)
     end = _find_terminator(body)
     if end is None and _bracket_depth(body) > 0:
         # A bracket the pack never closes (seen on a real label) hides the full stop from the
@@ -130,25 +149,40 @@ def parse_ingredient_list(text: str) -> ParsedList:
     )
 
 
+def _bracket_groups(raw: str):
+    """Yield (open_index, close_index_or_len, content) for each top-level bracket group."""
+    i = 0
+    while i < len(raw):
+        if raw[i] in _OPEN:
+            depth, end = 0, len(raw)
+            for j in range(i, len(raw)):
+                if raw[j] in _OPEN:
+                    depth += 1
+                elif raw[j] in _CLOSE:
+                    depth -= 1
+                    if depth == 0:
+                        end = j
+                        break
+            yield i, end, raw[i + 1:end]
+            i = end + 1
+        else:
+            i += 1
+
+
 def split_compound(raw: str) -> tuple[str, list[str]] | None:
     """Split "Seasoning (Sugar, Salt, Maltodextrin)" into ("Seasoning", [sub-items]).
 
-    Returns None when the bracket holds no comma-separated list. An unclosed
-    bracket (a printing slip seen on a real pack) runs to the end of the string.
+    Returns None when no bracket holds a comma-separated list. Brackets with no letters
+    ("(57%)") are skipped, so "Base Mix(57%)(Ragi, Rice)" splits on the second one. An
+    unclosed bracket (a printing slip seen on a real pack) runs to the end of the string.
     """
-    idx = raw.find("(")
-    if idx <= 0:
-        return None
-    depth, end = 0, len(raw)
-    for i in range(idx, len(raw)):
-        if raw[i] in _OPEN:
-            depth += 1
-        elif raw[i] in _CLOSE:
-            depth -= 1
-            if depth == 0:
-                end = i
-                break
-    subs, _ = _split_top_level(raw[idx + 1:end])
-    if len(subs) < 2:
-        return None
-    return raw[:idx].strip(" *"), subs
+    for idx, end, content in _bracket_groups(raw):
+        if not re.search(r"[A-Za-z]", content):
+            continue
+        if idx <= 0:
+            return None
+        subs, _ = _split_top_level(content)
+        if len(subs) < 2:
+            return None
+        return raw[:idx].strip(" *"), subs
+    return None
