@@ -1,0 +1,67 @@
+candidate_id,dataset,fdc_id,description,food_category,decision,reason_code,reason,term
+fdc_foundation:321505,foundation,321505,"Salt, table, iodized",Spices and Herbs,REJECT,group2_head,"head word(s) ['salt']: FAO Table 1 Group 2 example, not a herb or spice",
+fdc_foundation:326698,foundation,326698,"Mustard, prepared, yellow",Spices and Herbs,REJECT,processed,"processed word(s) ['prepared']: outside 'whole or powdered, fresh or dried'",
+fdc_foundation:746775,foundation,746775,"Salt, table, iodized",Spices and Herbs,REJECT,group2_head,"head word(s) ['salt']: FAO Table 1 Group 2 example, not a herb or spice",
+fdc_sr_legacy:170917,sr_legacy,170917,"Spices, bay leaf",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",bay leaf
+fdc_sr_legacy:170918,sr_legacy,170918,"Spices, caraway seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",caraway seed
+fdc_sr_legacy:170919,sr_legacy,170919,"Spices, cardamom",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",cardamom
+fdc_sr_legacy:170920,sr_legacy,170920,"Spices, celery seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",celery seed
+fdc_sr_legacy:170921,sr_legacy,170921,"Spices, coriander leaf, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",coriander leaf
+fdc_sr_legacy:170922,sr_legacy,170922,"Spices, coriander seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",coriander seed
+fdc_sr_legacy:170923,sr_legacy,170923,"Spices, cumin seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",cumin seed
+fdc_sr_legacy:170924,sr_legacy,170924,"Spices, curry powder",Spices and Herbs,QUEUE,form_embedded_in_name,"'curry powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+fdc_sr_legacy:170925,sr_legacy,170925,"Spices, dill seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",dill seed
+fdc_sr_legacy:170926,sr_legacy,170926,"Spices, ginger, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",ginger
+fdc_sr_legacy:170927,sr_legacy,170927,"Spices, mace, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",mace
+fdc_sr_legacy:170928,sr_legacy,170928,"Spices, marjoram, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",marjoram
+fdc_sr_legacy:170929,sr_legacy,170929,"Spices, mustard seed, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",mustard seed
+fdc_sr_legacy:170930,sr_legacy,170930,"Spices, parsley, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",parsley
+fdc_sr_legacy:170931,sr_legacy,170931,"Spices, pepper, black",Spices and Herbs,ACCEPT,series_variety,"FDC 'Spices, pepper, black' order: label term is 'black pepper'",black pepper
+fdc_sr_legacy:170932,sr_legacy,170932,"Spices, pepper, red or cayenne",Spices and Herbs,QUEUE,qualifier_unresolved,qualifier(s) ['red or cayenne'] are not clause forms and cannot be resolved mechanically,
+fdc_sr_legacy:170933,sr_legacy,170933,"Spices, pepper, white",Spices and Herbs,ACCEPT,series_variety,"FDC 'Spices, pepper, white' order: label term is 'white pepper'",white pepper
+fdc_sr_legacy:170934,sr_legacy,170934,"Spices, saffron",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",saffron
+fdc_sr_legacy:170935,sr_legacy,170935,"Spices, sage, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",sage
+fdc_sr_legacy:170936,sr_legacy,170936,"Spices, savory, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",savory
+fdc_sr_legacy:170937,sr_legacy,170937,"Spices, tarragon, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",tarragon
+fdc_sr_legacy:170938,sr_legacy,170938,"Spices, thyme, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",thyme
+fdc_sr_legacy:171315,sr_legacy,171315,"Spices, allspice, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",allspice
+fdc_sr_legacy:171316,sr_legacy,171316,"Spices, anise seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",anise seed
+fdc_sr_legacy:171317,sr_legacy,171317,"Spices, basil, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",basil
+fdc_sr_legacy:171318,sr_legacy,171318,"Spices, chervil, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",chervil
+fdc_sr_legacy:171319,sr_legacy,171319,"Spices, chili powder",Spices and Herbs,QUEUE,form_embedded_in_name,"'chili powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+fdc_sr_legacy:171320,sr_legacy,171320,"Spices, cinnamon, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",cinnamon
+fdc_sr_legacy:171321,sr_legacy,171321,"Spices, cloves, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",cloves
+fdc_sr_legacy:171322,sr_legacy,171322,"Spices, dill weed, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",dill weed
+fdc_sr_legacy:171323,sr_legacy,171323,"Spices, fennel seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",fennel seed
+fdc_sr_legacy:171324,sr_legacy,171324,"Spices, fenugreek seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",fenugreek seed
+fdc_sr_legacy:171325,sr_legacy,171325,"Spices, garlic powder",Spices and Herbs,QUEUE,form_embedded_in_name,"'garlic powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+fdc_sr_legacy:171326,sr_legacy,171326,"Spices, nutmeg, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",nutmeg
+fdc_sr_legacy:171327,sr_legacy,171327,"Spices, onion powder",Spices and Herbs,QUEUE,form_embedded_in_name,"'onion powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+fdc_sr_legacy:171328,sr_legacy,171328,"Spices, oregano, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",oregano
+fdc_sr_legacy:171329,sr_legacy,171329,"Spices, paprika",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",paprika
+fdc_sr_legacy:171330,sr_legacy,171330,"Spices, poppy seed",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",poppy seed
+fdc_sr_legacy:171331,sr_legacy,171331,"Spices, poultry seasoning",Spices and Herbs,REJECT,processed,"processed word(s) ['seasoning']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:171332,sr_legacy,171332,"Spices, pumpkin pie spice",Spices and Herbs,QUEUE,blend_name,'pumpkin pie spice': a multi-word name ending in 'spice' is a blend,
+fdc_sr_legacy:171333,sr_legacy,171333,"Spices, rosemary, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",rosemary
+fdc_sr_legacy:172231,sr_legacy,172231,"Spices, turmeric, ground",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",turmeric
+fdc_sr_legacy:172232,sr_legacy,172232,"Basil, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",basil
+fdc_sr_legacy:172233,sr_legacy,172233,"Dill weed, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",dill weed
+fdc_sr_legacy:172234,sr_legacy,172234,"Mustard, prepared, yellow",Spices and Herbs,REJECT,processed,"processed word(s) ['prepared']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:172235,sr_legacy,172235,"Vanilla extract, imitation, alcohol",Spices and Herbs,REJECT,processed,"processed word(s) ['extract', 'imitation']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:172236,sr_legacy,172236,"Vanilla extract, imitation, no alcohol",Spices and Herbs,REJECT,processed,"processed word(s) ['extract', 'imitation']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:172237,sr_legacy,172237,"Vinegar, distilled",Spices and Herbs,QUEUE,qualifier_unresolved,qualifier(s) ['distilled'] are not clause forms and cannot be resolved mechanically,
+fdc_sr_legacy:172238,sr_legacy,172238,"Capers, canned",Spices and Herbs,REJECT,processed,"processed word(s) ['canned']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:172239,sr_legacy,172239,"Spearmint, dried",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",spearmint
+fdc_sr_legacy:172240,sr_legacy,172240,"Vinegar, red wine",Spices and Herbs,QUEUE,qualifier_unresolved,qualifier(s) ['red wine'] are not clause forms and cannot be resolved mechanically,
+fdc_sr_legacy:172241,sr_legacy,172241,"Vinegar, balsamic",Spices and Herbs,QUEUE,qualifier_unresolved,qualifier(s) ['balsamic'] are not clause forms and cannot be resolved mechanically,
+fdc_sr_legacy:172242,sr_legacy,172242,"Seasoning mix, dry, sazon, coriander & annatto",Spices and Herbs,REJECT,processed,"processed word(s) ['mix', 'seasoning']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:172243,sr_legacy,172243,"Seasoning mix, dry, taco, original",Spices and Herbs,REJECT,processed,"processed word(s) ['mix', 'seasoning']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:173468,sr_legacy,173468,"Salt, table",Spices and Herbs,REJECT,group2_head,"head word(s) ['salt']: FAO Table 1 Group 2 example, not a herb or spice",
+fdc_sr_legacy:173469,sr_legacy,173469,"Vinegar, cider",Spices and Herbs,QUEUE,qualifier_unresolved,qualifier(s) ['cider'] are not clause forms and cannot be resolved mechanically,
+fdc_sr_legacy:173470,sr_legacy,173470,"Thyme, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",thyme
+fdc_sr_legacy:173471,sr_legacy,173471,Vanilla extract,Spices and Herbs,REJECT,processed,"processed word(s) ['extract']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:173472,sr_legacy,173472,"Horseradish, prepared",Spices and Herbs,REJECT,processed,"processed word(s) ['prepared']: outside 'whole or powdered, fresh or dried'",
+fdc_sr_legacy:173473,sr_legacy,173473,"Rosemary, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",rosemary
+fdc_sr_legacy:173474,sr_legacy,173474,"Peppermint, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",peppermint
+fdc_sr_legacy:173475,sr_legacy,173475,"Spearmint, fresh",Spices and Herbs,ACCEPT,clause_forms_only,"name plus only the clause forms (whole/powdered, fresh/dried)",spearmint
+fdc_sr_legacy:173476,sr_legacy,173476,"Seasoning mix, dry, chili, original",Spices and Herbs,REJECT,processed,"processed word(s) ['mix', 'seasoning']: outside 'whole or powdered, fresh or dried'",

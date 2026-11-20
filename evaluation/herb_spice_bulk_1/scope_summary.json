@@ -1,0 +1,34 @@
+{
+  "rule_id": "tier1-herbs-and-spices-1",
+  "rule_file": "data/ingest/clause_tier1_herbs_spices.json",
+  "rule_file_sha256": "55e1adcc50b2b78a09762bb8f769a2002b095aa37274aa20136c71a6c025ae36",
+  "fao_pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+  "clause_check_against_fao_text": "PASS",
+  "fdc_inputs": {
+    "foundation": {
+      "file": "FoodData_Central_foundation_food_csv_2026-10-29.zip",
+      "sha256": "c3158a5d1b758f56ef20ec76d93603d2bf872e739d51f5f3079e3ef46181351a",
+      "etag": "\"6aff073c-403cd3\""
+    },
+    "sr_legacy": {
+      "file": "FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+      "sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+      "etag": "\"65398c05-5cb0e0\""
+    }
+  },
+  "all_candidates_mapped": 8291,
+  "decisions_over_all_candidates": {
+    "OUT_OF_SCOPE": 7385,
+    "REJECT": 14,
+    "LABEL_BOUND": 840,
+    "ACCEPT": 42,
+    "QUEUE": 10
+  },
+  "label_bound_by_category": {
+    "Nut and Seed Products": 156,
+    "Fruits and Fruit Juices": 430,
+    "Cereal Grains and Pasta": 254
+  },
+  "this_batch_scope": "food_category = Spices and Herbs (66 candidates, extracted unchanged into candidates_spices_herbs.csv)",
+  "merged_into_lexicon": false
+}

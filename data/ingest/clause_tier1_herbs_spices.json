@@ -1,0 +1,55 @@
+{
+  "rule_id": "tier1-herbs-and-spices-1",
+  "status": "DRAFT for review. Maps USDA FoodData Central NAMES to candidate lexicon rows of kind herb_spice. It never decides a NOVA group: commodity datasets supply names only.",
+  "kind": "herb_spice",
+  "clause": {
+    "text": "herbs and spices used in culinary preparations, such as thyme, oregano, mint, pepper, cloves and cinnamon, whole or powdered, fresh or dried",
+    "where": "FAO 2019 (Monteiro et al., Ultra-processed foods, diet quality, and health using the NOVA classification system), Table 1, Group 1 examples, p. 11",
+    "url": "https://www.fao.org/3/ca5644en/ca5644en.pdf",
+    "pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+    "unconditioned": "The clause carries no parenthetical condition (unlike nuts and juices): the forms it allows are 'whole or powdered, fresh or dried'. Anything outside those forms is outside the clause."
+  },
+  "category_gate": {
+    "food_category": "Spices and Herbs",
+    "note": "FDC files non-clause items in this category too (salt, vinegar, vanilla extract, prepared mustard, canned capers, seasoning mixes): the steps below sort them out. A candidate outside this category is never mapped by this rule."
+  },
+  "named_terms": {
+    "terms": ["thyme", "oregano", "mint", "pepper", "cloves", "cinnamon"],
+    "why": "The six items the clause itself lists ('such as thyme, oregano, mint, pepper, cloves and cinnamon'). A row's provenance says the exact term IS named only for these; every other row says it is not named."
+  },
+  "broader_named_terms": {
+    "peppermint": "mint",
+    "spearmint": "mint",
+    "why": "The clause names 'mint' but not these two terms. The row says so; membership of the herbs-and-spices category is inferred from the broader named term, not stated by the clause."
+  },
+  "lead_words": ["spices"],
+  "form_words": ["whole", "ground", "powder", "powdered", "fresh", "dried", "dry"],
+  "processed_words": {
+    "words": ["prepared", "canned", "pickled", "extract", "imitation", "seasoning", "mix", "sauce", "paste", "blend", "flavor", "flavour", "syrup", "cooked"],
+    "why": "The clause allows whole or powdered, fresh or dried. A name that says prepared, canned, pickled, an extract, an imitation, a seasoning, a mix, a sauce or a paste describes another treatment or a compound product: outside the clause (REJECT)."
+  },
+  "group2_heads": {
+    "words": ["salt", "sugar", "honey", "oil", "butter", "lard", "starch", "molasses", "syrup"],
+    "why": "FAO Table 1 Group 2 names these as processed culinary ingredients ('sugar and molasses ... honey ... syrup ... starches ... vegetable oils ... butter and lard ... salt mined or from seawater, and table salt'). They are not herbs or spices (REJECT)."
+  },
+  "blend_markers": {
+    "embedded_form_word": "A form word inside the name part itself (curry powder, chili powder, garlic powder, onion powder) means the name may be a product (often a blend), not a single herb or spice (QUEUE).",
+    "final_word_spice": "A multi-word name ending in 'spice' (pumpkin pie spice) is a blend (QUEUE)."
+  },
+  "steps": [
+    "1. Category gate: only food_category 'Spices and Herbs' is mapped; conditioned-clause categories are LABEL_BOUND, every other category OUT_OF_SCOPE.",
+    "2. Any processed word in any part: REJECT (processed).",
+    "3. Drop a leading 'spices' part (FDC series convention). The next part is the head, the rest are qualifiers.",
+    "4. Any group2 head word in the head: REJECT (Group 2 example).",
+    "5. Embedded form word in a multi-word head, or a multi-word head ending in 'spice': QUEUE (possible blend).",
+    "6. Remove clause form words from the qualifiers. None left: ACCEPT, term = head. Exactly one single-word qualifier left in the 'Spices,' series: ACCEPT, term = '<qualifier> <head>' (FDC order 'pepper, black' is the label term 'black pepper'). Anything else left: QUEUE (qualifier unresolved)."
+  ],
+  "label_bound_clauses": {
+    "note": "Conditioned clauses stay label-bound: no commodity name passes automatically, because the condition is about the product the label declares, not about the commodity. These FDC categories are never ACCEPTed by any rule in this file.",
+    "clauses": {
+      "Nut and Seed Products": "tree and ground nuts and other oily seeds (with no added salt or sugar)",
+      "Fruits and Fruit Juices": "fresh or pasteurized fruit or vegetable juices (with no added sugar, sweeteners or flavours)",
+      "Cereal Grains and Pasta": "grits, flakes or flour made from corn, wheat, oats, or cassava"
+    }
+  }
+}

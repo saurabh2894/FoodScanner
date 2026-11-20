@@ -1,0 +1,41 @@
+# Scale-up execution handoff (repo: FoodScanner, branch claude/scale-ingest-1)
+
+Keep this file current: tick a step and update section 3 whenever a step completes.
+
+## 1. Goal and approved scope
+Scale vocabulary recognition from open, citable sources in four workstreams, branched from main 3df79d7:
+- WS1 demand miner: read-only ranked inventory of unassessed terms across evaluation artifacts. No classification change.
+- WS2 supply ingest: USDA FoodData Central (CC0) downloader + normaliser with per-row provenance.
+- WS3 clause-tier mapping: one reviewable rule mapping FDC names to candidate herb_spice rows (names -> recognition kind only).
+- WS4 validation gate: schema, provenance, duplicates, 66-input flip check (fresh before/after processes), ambiguity queue.
+- Staged batches go to evaluation/<batch>/ with candidate rows + gate report. First batch: herb_spice_bulk_1.
+
+## 2. Standing limits
+- Sources: FDC CC0 only. IFCT 2017: documented hook only until licence verified. Open Food Facts: reference-only, nothing incorporated. No Codex-derived data (INS Codex table stays parked in data/pending/).
+- No paid APIs, no spending, no network calls in the shipped app.
+- No classification-rule changes in this work; commodity datasets never decide NOVA groups; no blanket additive-to-NOVA mapping; no per-product hardcoding; keep OCR/extraction/classification separation.
+- Conditioned clauses (nuts, juices, plain cereals) stay label-bound; no auto-pass for plain-looking terms.
+- Every candidate row: PROVISIONAL, verbatim source clause, per-row provenance.
+- OFF texts never enter the repo from new draws (gitignored cache); OFF is evaluation material only. Git: push only claude/scale-ingest-1 (status lines go to claude/great-mendel-rx6aek via /tmp/status_line.sh pattern: append one line to .instinct/session-status.md there, commit that file alone, push that branch only). No PR creation, no merge to main, no GitHub comments, no Vercel/artifact actions.
+- Staged batches never merge into src/foodscan/resources/lexicon.csv without owner verification and a senior review pass.
+- After each step: full suite + `python scripts/parity_check.py` (must be all identical), commit, push, status line.
+- Flip check: before/after in SEPARATE fresh processes; any group/status/driver flip -> stop and report.
+
+## 3. Checkpoint
+Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, strict xfail), parity 395/395.
+- [x] WS1 demand miner: 8ae89bf. [x] WS2 supply ingest: 1365b49. [x] WS3 clause-tier rule: 7a4394f. [x] WS4 validation gate: 3c6def3.
+- [x] Batch 1 staged, then revision 2 (dc3babf): poppy seed parked, variant policy data/ingest/variant_policy_1.json (4 synonyms, 6 separate rows), oregano/thyme "IS named" provenance, Group-2 word anywhere in a name rejects, mapper exclusion tests. Gate READY_FOR_REVIEW: 20 rows + 4 synonyms, flip 0/66.
+- [x] Out-of-sample tooling (scripts/oos_draw.py, scripts/oos_eval.py): texts in gitignored cache data/cache/oos_herb_spice_1/ (NOT in repo), manifest + results + FINDINGS committed. Licence status: storage MINIMIZED, not resolved; NOTICE added; OFF never appears in production source columns.
+- [x] Integration prep on the feature branch: gate rows merged into lexicon.csv/synonyms.csv (6cf9a99), tests/test_herb_spice_bulk_1.py (synthetic), research/07 held-category note (sources and clause fit only, no rows).
+- [x] Challenge-set results: 32 labels, 7 of 24 targets with no label; 40 recognised / 24 not / 2 inside another item; see evaluation/out_of_sample_herb_spice_1/FINDINGS.md.
+
+## 4. Remaining steps (in order)
+- [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
+- [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
+- [ ] Only on instruction: next staged batch (held categories per research/07 need sources first); conditioned clauses stay label-bound.
+
+## 5. Fresh-session resume
+1. Read this file and .instinct/session-status.md (on claude/great-mendel-rx6aek).
+2. `git checkout claude/scale-ingest-1`; `pip install -e ".[dev]"`; run `pytest` and `python scripts/parity_check.py` to confirm the checkpoint.
+3. Read evaluation/herb_spice_bulk_1/README.md and gate/gate_report.md.
+4. Continue from the first unchecked step in section 4.

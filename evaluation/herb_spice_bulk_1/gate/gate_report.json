@@ -1,0 +1,273 @@
+{
+  "rule_id": "tier1-herbs-and-spices-1",
+  "staged": 37,
+  "ready": [
+    "allspice",
+    "basil",
+    "celery seed",
+    "chervil",
+    "coriander leaf",
+    "coriander seed",
+    "dill seed",
+    "dill weed",
+    "marjoram",
+    "oregano",
+    "paprika",
+    "parsley",
+    "peppermint",
+    "rosemary",
+    "saffron",
+    "sage",
+    "savory",
+    "spearmint",
+    "tarragon",
+    "thyme"
+  ],
+  "duplicates": {
+    "bay leaf": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "black pepper": {
+      "duplicate": "exact lexicon term (kind herb_spice)",
+      "variant_of": [
+        "black pepper bits",
+        "pepper"
+      ]
+    },
+    "caraway seed": {
+      "variant_of": [
+        "caraway"
+      ]
+    },
+    "cardamom": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "cinnamon": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "cloves": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "coriander leaf": {
+      "variant_of": [
+        "coriander"
+      ]
+    },
+    "coriander seed": {
+      "variant_of": [
+        "coriander"
+      ]
+    },
+    "cumin seed": {
+      "variant_of": [
+        "cumin"
+      ]
+    },
+    "dill seed": {
+      "variant_of": [
+        "dill"
+      ]
+    },
+    "dill weed": {
+      "variant_of": [
+        "dill"
+      ]
+    },
+    "fennel seed": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)",
+      "variant_of": [
+        "fennel"
+      ]
+    },
+    "fenugreek seed": {
+      "variant_of": [
+        "fenugreek"
+      ]
+    },
+    "ginger": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "mace": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "mustard seed": {
+      "duplicate": "exact lexicon term (kind herb_spice)",
+      "variant_of": [
+        "mustard"
+      ]
+    },
+    "nutmeg": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "turmeric": {
+      "duplicate": "exact lexicon term (kind herb_spice)"
+    },
+    "white pepper": {
+      "duplicate": "exact lexicon term (kind herb_spice)",
+      "variant_of": [
+        "pepper"
+      ]
+    }
+  },
+  "synonym_rows": [
+    {
+      "from": "anise seed",
+      "to": "aniseed",
+      "source": "PROVISIONAL: alias of existing lexicon row \"aniseed\" (same ingredient (anise), same part (the seed), same form: 'aniseed' is the existing row's spelling of 'anise seed'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171316 \"Spices, anise seed\""
+    },
+    {
+      "from": "caraway seed",
+      "to": "caraway",
+      "source": "PROVISIONAL: alias of existing lexicon row \"caraway\" (same ingredient and part: the spice caraway is the seed; no other part is sold as 'caraway'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170918 \"Spices, caraway seed\""
+    },
+    {
+      "from": "cumin seed",
+      "to": "cumin",
+      "source": "PROVISIONAL: alias of existing lexicon row \"cumin\" (same ingredient and part: the spice cumin is the seed; no other part is sold as 'cumin'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170923 \"Spices, cumin seed\""
+    },
+    {
+      "from": "fenugreek seed",
+      "to": "fenugreek",
+      "source": "PROVISIONAL: alias of existing lexicon row \"fenugreek\" (same ingredient and part as the owner's variant policy decision (fenugreek seed ~ fenugreek)); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171324 \"Spices, fenugreek seed\""
+    }
+  ],
+  "separate_rows": {
+    "coriander leaf": "different plant part from coriander seed",
+    "coriander seed": "different plant part from coriander leaf; the existing bare row 'coriander' is ambiguous between parts and is left untouched (not widened)",
+    "dill weed": "different plant part (leaf) from dill seed; the existing bare row 'dill' is left untouched (not widened)",
+    "dill seed": "different plant part (seed) from dill weed; the existing bare row 'dill' is left untouched (not widened)",
+    "peppermint": "different species from 'mint' (bare mint is an existing row)",
+    "spearmint": "different species from 'mint' (bare mint is an existing row)"
+  },
+  "policy_id": "variant-policy-1",
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [
+    {
+      "term": "Spices, curry powder",
+      "source_row": "fdc_sr_legacy:170924",
+      "origin": "clause_tier",
+      "reason_code": "form_embedded_in_name",
+      "reason": "'curry powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+      "description": "Spices, curry powder"
+    },
+    {
+      "term": "Spices, pepper, red or cayenne",
+      "source_row": "fdc_sr_legacy:170932",
+      "origin": "clause_tier",
+      "reason_code": "qualifier_unresolved",
+      "reason": "qualifier(s) ['red or cayenne'] are not clause forms and cannot be resolved mechanically",
+      "description": "Spices, pepper, red or cayenne"
+    },
+    {
+      "term": "Spices, chili powder",
+      "source_row": "fdc_sr_legacy:171319",
+      "origin": "clause_tier",
+      "reason_code": "form_embedded_in_name",
+      "reason": "'chili powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+      "description": "Spices, chili powder"
+    },
+    {
+      "term": "Spices, garlic powder",
+      "source_row": "fdc_sr_legacy:171325",
+      "origin": "clause_tier",
+      "reason_code": "form_embedded_in_name",
+      "reason": "'garlic powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+      "description": "Spices, garlic powder"
+    },
+    {
+      "term": "Spices, onion powder",
+      "source_row": "fdc_sr_legacy:171327",
+      "origin": "clause_tier",
+      "reason_code": "form_embedded_in_name",
+      "reason": "'onion powder': a form word sits inside the name, so it may be a product or blend rather than a single herb or spice",
+      "description": "Spices, onion powder"
+    },
+    {
+      "term": "Spices, pumpkin pie spice",
+      "source_row": "fdc_sr_legacy:171332",
+      "origin": "clause_tier",
+      "reason_code": "blend_name",
+      "reason": "'pumpkin pie spice': a multi-word name ending in 'spice' is a blend",
+      "description": "Spices, pumpkin pie spice"
+    },
+    {
+      "term": "Vinegar, distilled",
+      "source_row": "fdc_sr_legacy:172237",
+      "origin": "clause_tier",
+      "reason_code": "qualifier_unresolved",
+      "reason": "qualifier(s) ['distilled'] are not clause forms and cannot be resolved mechanically",
+      "description": "Vinegar, distilled"
+    },
+    {
+      "term": "Vinegar, red wine",
+      "source_row": "fdc_sr_legacy:172240",
+      "origin": "clause_tier",
+      "reason_code": "qualifier_unresolved",
+      "reason": "qualifier(s) ['red wine'] are not clause forms and cannot be resolved mechanically",
+      "description": "Vinegar, red wine"
+    },
+    {
+      "term": "Vinegar, balsamic",
+      "source_row": "fdc_sr_legacy:172241",
+      "origin": "clause_tier",
+      "reason_code": "qualifier_unresolved",
+      "reason": "qualifier(s) ['balsamic'] are not clause forms and cannot be resolved mechanically",
+      "description": "Vinegar, balsamic"
+    },
+    {
+      "term": "Vinegar, cider",
+      "source_row": "fdc_sr_legacy:173469",
+      "origin": "clause_tier",
+      "reason_code": "qualifier_unresolved",
+      "reason": "qualifier(s) ['cider'] are not clause forms and cannot be resolved mechanically",
+      "description": "Vinegar, cider"
+    },
+    {
+      "term": "poppy seed",
+      "source_row": "fdc_sr_legacy:171330",
+      "origin": "policy",
+      "reason_code": "overlaps_conditioned_clause",
+      "reason": "FAO Table 1 Group 1 also lists 'tree and ground nuts and other oily seeds (with no added salt or sugar)': a conditioned clause. Poppy seed sits on the boundary between that clause and the unconditioned herbs-and-spices clause; the boundary is unresolved, so it is parked (same discipline as the juice rows).",
+      "description": ""
+    }
+  ],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 0,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {},
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 115,
+      "lexicon_rows_after": 135,
+      "synonym_rows_added": 4,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 24
+    }
+  },
+  "clause_check": "PASS",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}
