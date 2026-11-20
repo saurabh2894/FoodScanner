@@ -101,6 +101,9 @@ CORPUS = [
     "Ingredients: Rice, Rice Bran Oil Colour : INS 150d.", "Ingredients: Rice, salt. Salt 5%: sugar, flavour.",
     "Ingredients: Rice, salt. Seasoning 12.5 %: sugar, flavour.", "Ingredients: Rice, Salt Seasoning 5%: Onion, chilli.",
     "Ingredients: Edible Vegetable O11, salt.", "Ingredients: Rice Bran Oil Seasoning: Onion.",
+    "Ingredients: Rice, Mystery Seasoning : Dehydrated Vegetables(Garlic, Onion, Tomato), flavour.",
+    "Ingredients: Rice, jackfruit seed paste, jaggery syrup.", "Ingredients: Rice, jackfruit, jackfruit, flavour.",
+    "Ingredients: Rice, preservative (INS 211), emulsifier (INS 471), maltodextrin, INS 999.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -109,7 +112,7 @@ def py_result(text, source="ocr"):
     a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients, "warnings": a.warnings,
+        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source} for u in a.ins_mappings],
@@ -136,7 +139,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, sections: a.sections, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
 

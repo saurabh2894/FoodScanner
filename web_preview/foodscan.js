@@ -325,16 +325,19 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
-    function expand(items, depth) {          // items: [raw, section label] pairs
+    function expand(items, depth, heads) {   // items: [raw, section label] pairs
       const out = [];
       for (const [raw, section] of items) {
         const ing = normaliseIngredient(raw);
         ing.section = section;
         const split = depth < 3 ? splitCompound(raw) : null;
-        if (split && !recognisableIng(normaliseIngredient(split[0]))) out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1));
+        if (split && !recognisableIng(normaliseIngredient(split[0]))) {
+          if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible
+          out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1, heads));
+        }
         else out.push(ing);
       }
       return out;
@@ -360,9 +363,13 @@
         parsed = parseIngredientList(text);
         if (!parsed.found) return abstain("no ingredient list found in the text", text);
       }
-      const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0);
+      const heads = [];
+      const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads);
+      const unassessed = [...new Set([
+        ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
+        ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const sectionWarnings = suspectSectionItems(parsed.items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
-      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))

@@ -196,6 +196,13 @@
       ]));
     }
     card.appendChild(cols);
+    if (a.unassessed && a.unassessed.length) {
+      card.appendChild(el("div", {}, [
+        el("h3", { text: "Not assessed" }),
+        el("p", { "class": "hint", text: "Not in the vocabulary, or a group name whose contents were assessed. These did not affect the group." }),
+        el("ul", { "class": "plain" }, a.unassessed.map(function (u) { return el("li", { "class": "mono", text: u }); }))
+      ]));
+    }
     card.appendChild(el("details", {}, [el("summary", { text: "Raw text analysed" }), el("pre", { text: a.text })]));
     box.appendChild(card);
   }

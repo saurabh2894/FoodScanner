@@ -40,6 +40,9 @@ class Analysis:
     extracted_text: str = ""
     warnings: list[str] = field(default_factory=list)   # answered, but with a caveat
     sections: list[tuple[str | None, list[str]]] = field(default_factory=list)   # (label, items) per list section
+    # What the classifier could not judge (not in the vocabulary, no marker, no INS code), plus compound
+    # group names that were expanded. Shown so nothing is invisible once a strong marker is found.
+    unassessed: list[str] = field(default_factory=list)
 
     @property
     def headline(self) -> str:
@@ -56,7 +59,7 @@ def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
 
 
-def _expand(items: list[tuple[str, str | None]], depth: int = 0) -> list[Ingredient]:
+def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str] | None = None) -> list[Ingredient]:
     """Normalise (item, section label) pairs, expanding unknown compound ingredients into their sub-items.
 
     "Seasoning (Sugar, Maltodextrin, ...)" is judged by its contents, so drivers
@@ -71,7 +74,9 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0) -> list[Ingredi
         ing.section = section
         split = split_compound(raw) if depth < 3 else None
         if split and not _recognisable(normalise_list([split[0]])[0]):
-            out.extend(_expand([(sub, section) for sub in split[1]], depth + 1))
+            if heads is not None:
+                heads.append(split[0])          # the group name itself is not classified: keep it visible
+            out.extend(_expand([(sub, section) for sub in split[1]], depth + 1, heads))
         else:
             out.append(ing)
     return out
@@ -108,11 +113,15 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         if not parsed.found:
             return _abstain("no ingredient list found in the text", text)
 
-    ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items])
+    heads: list[str] = []
+    ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items], heads=heads)
+    unassessed = list(dict.fromkeys(
+        [i.raw for i in ings if not _recognisable(i)]
+        + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(parsed.items)]
-    common = dict(ingredients=parsed.items, ins_mappings=uses, warnings=list(section_warnings),
+    common = dict(ingredients=parsed.items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
                   sections=[(sec.label, list(sec.items)) for sec in parsed.sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
