@@ -166,7 +166,13 @@ def test_new_rows_follow_the_citation_rule():
 
 def test_no_broad_batch_unknown_terms_still_abstain():
     for t in ("ajwain", "compounded asafoetida", "bishop's seed", "carom seeds"):
-        assert not is_recognised(t), t
+        if t in ("ajwain", "bishop's seed"):
+            # Attributed exceptions (lexicon-1): the herb_spice rows "ajwain" and "bishop's seed" (lexicon.csv) rest on FAO 2019 Table 1 Group 1 p.11, "herbs and spices used
+            # in culinary preparations ... whole or powdered, fresh or dried" (PROVISIONAL: exact term not named). These two terms are recognised now.
+            # "compounded asafoetida" and "carom seeds" get no row and stay pinned as unrecognised.
+            assert is_recognised(t), t
+        else:
+            assert not is_recognised(t), t
     assert not a("Ingredients: Bengal Gram Flour (Besan), Ajwain, Edible Common Salt.").answered
 
 
