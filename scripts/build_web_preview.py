@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from parity_check import CORPUS, main as parity_main  # noqa: E402
+from parity_check import TOTAL, main as parity_main  # noqa: E402
 from web_tables import tables  # noqa: E402
 
 if parity_main() != 0:
@@ -19,7 +19,7 @@ tpl = (ROOT / "web_preview" / "template.html").read_text(encoding="utf-8")
 engine = (ROOT / "web_preview" / "foodscan.js").read_text(encoding="utf-8")
 html = tpl.replace("/*TABLES*/", json.dumps(tables(), ensure_ascii=False).replace("</", "<\\/")) \
           .replace("/*ENGINE*/", engine.replace("</script", "<\\/script")) \
-          .replace("/*PARITY*/", str(len(CORPUS)))
+          .replace("/*PARITY*/", str(TOTAL))
 VENDOR = ROOT / "web_preview" / "vendor" / "tess"
 if not (VENDOR / "tesseract.min.js").exists():
     sys.exit("missing web_preview/vendor/tess: run python scripts/fetch_tesseract_assets.py first")

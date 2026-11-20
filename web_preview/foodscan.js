@@ -293,14 +293,27 @@
       }
       return out;
     }
-    function analyseText(text) {
+    const NO_TEXT = "No text to analyse", NO_INGREDIENTS = "No ingredients found in this text";
+    // source "ocr" (default, photo path): short/noisy text is blamed on OCR and the heading is required.
+    // source "text" (typed or pasted): no length gate, a heading-less text is the list, messages are about the text.
+    function analyseText(text, opts) {
+      const source = (opts && opts.source) || "ocr";
+      if (source !== "ocr" && source !== "text") throw new Error("source must be 'ocr' or 'text'");
       const compact = text.replace(/\s+/g, "");
       const chars = [...compact];
-      if (chars.length < MIN_CHARS) return abstain("OCR produced little text", text);
-      if (chars.filter((c) => /\p{L}/u.test(c)).length / chars.length < MIN_ALPHA_RATIO)
-        return abstain("extracted text looks like noise, not a readable label", text);
-      const parsed = parseIngredientList(text);
-      if (!parsed.found) return abstain("no ingredient list found in the text", text);
+      const alphaShare = () => chars.filter((c) => /\p{L}/u.test(c)).length / chars.length;
+      let parsed;
+      if (source === "text") {
+        if (!chars.length) return abstain(NO_TEXT, text);
+        if (alphaShare() < MIN_ALPHA_RATIO) return abstain(NO_INGREDIENTS, text);
+        parsed = parseIngredientList(text, { assumeList: true });
+        if (!parsed.found) return abstain(NO_INGREDIENTS, text);
+      } else {
+        if (chars.length < MIN_CHARS) return abstain("OCR produced little text", text);
+        if (alphaShare() < MIN_ALPHA_RATIO) return abstain("extracted text looks like noise, not a readable label", text);
+        parsed = parseIngredientList(text);
+        if (!parsed.found) return abstain("no ingredient list found in the text", text);
+      }
       const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0);
       const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;

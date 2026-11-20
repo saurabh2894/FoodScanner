@@ -25,6 +25,8 @@ GROUP_NAMES = {
 
 MIN_CHARS = 20          # fewer non-space characters than this: OCR produced little text
 MIN_ALPHA_RATIO = 0.5   # share of alphabetic characters; below this the text looks like noise
+NO_TEXT = "No text to analyse"                         # pasted text: nothing there
+NO_INGREDIENTS = "No ingredients found in this text"   # pasted text: no readable ingredient list
 
 
 @dataclass
@@ -75,16 +77,36 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0) -> list[Ingredi
     return out
 
 
-def analyse_text(text: str) -> Analysis:
-    compact = re.sub(r"\s+", "", text)
-    if len(compact) < MIN_CHARS:
-        return _abstain("OCR produced little text", text)
-    if sum(c.isalpha() for c in compact) / len(compact) < MIN_ALPHA_RATIO:
-        return _abstain("extracted text looks like noise, not a readable label", text)
+def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
+    """Analyse label text.
 
-    parsed = parse_ingredient_list(text)
-    if not parsed.found:
-        return _abstain("no ingredient list found in the text", text)
+    source="ocr": text came from reading a photo. Short or noisy text is blamed on OCR, and the
+        "Ingredients" heading is required (otherwise a nutrition table could be taken for a list).
+        This is the default so the photo path keeps its existing behaviour.
+    source="text": text was typed or pasted. There is no length gate (a one-ingredient list is valid),
+        a list without an "Ingredients" heading is accepted as the whole text, and messages talk about
+        the text, never about OCR.
+    """
+    if source not in ("ocr", "text"):
+        raise ValueError(f"source must be 'ocr' or 'text', not {source!r}")
+    compact = re.sub(r"\s+", "", text)
+
+    if source == "text":
+        if not compact:
+            return _abstain(NO_TEXT, text)
+        if sum(c.isalpha() for c in compact) / len(compact) < MIN_ALPHA_RATIO:
+            return _abstain(NO_INGREDIENTS, text)
+        parsed = parse_ingredient_list(text, assume_list=True)
+        if not parsed.found:
+            return _abstain(NO_INGREDIENTS, text)
+    else:
+        if len(compact) < MIN_CHARS:
+            return _abstain("OCR produced little text", text)
+        if sum(c.isalpha() for c in compact) / len(compact) < MIN_ALPHA_RATIO:
+            return _abstain("extracted text looks like noise, not a readable label", text)
+        parsed = parse_ingredient_list(text)
+        if not parsed.found:
+            return _abstain("no ingredient list found in the text", text)
 
     ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items])
     uses = [u for i in ings for u in i.ins]

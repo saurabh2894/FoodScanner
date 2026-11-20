@@ -97,8 +97,8 @@ CORPUS = [
 ]
 
 
-def py_result(text):
-    a = analyse_text(text)
+def py_result(text, source="ocr"):
+    a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
         "ingredients": a.ingredients, "warnings": a.warnings,
@@ -108,21 +108,38 @@ def py_result(text):
     }
 
 
+# pasted-text path (source="text"): the regression fixtures, plus every corpus text above, must also match
+PASTE = [
+    "Ingredients: Milk", "Milk", "milk.", "INGREDIENTS : MILK", "  ingredients:milk  ", "Ingredients: milk.", "MILK, SALT",
+    "", "   ", "\n \t\n", "Ingredients:", "Ingredients:   ", "###", "#### ~~ 1234 !!!! 5678", "1234 5678",
+    "Salt", "Sugar, refined wheat flo", "Ingredients: Sugar, refined wheat flo", "Rice, salt", "rice,salt,sugar",
+    "Nutrition facts per 100 g: energy 450 kcal, protein 8 g, fat 20 g", "Contains soy", "Contains permitted color.",
+    "Sugar, maltodextrin", "Wheat flour", "Whole wheat flour.", "Mango, sugar, pectin (INS 440).",
+    "Noodles: wheat flour, salt. Masala tastemaker: sugar, flavour.",
+    "Noodles: wheat flour, palm oil, salt\nMasala tastemaker: mixed spices, flavour enhancers (INS 627, INS 631)",
+    "Colour (INS 150d)", "INS 150d", "Potato (83%), edible vegetable oil, salt", "Eggs", "Toor dal",
+]
+TOTAL = len(CORPUS) + len(PASTE)
+
+
 NODE = """
 const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
-const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));
+const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
   ingredients: a.ingredients, warnings: a.warnings, sections: a.sections, drivers: a.drivers, ins: a.ins});
-process.stdout.write(JSON.stringify(corpus.map((t) => pick(E.analyseText(t)))));
+process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
+
+
+PAIRS = [(t, "ocr") for t in CORPUS] + [(t, "text") for t in PASTE]
 
 
 def main() -> int:
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         (td / "tables.json").write_text(json.dumps(tables()))
-        (td / "corpus.json").write_text(json.dumps(CORPUS))
+        (td / "corpus.json").write_text(json.dumps(PAIRS))
         (td / "run.js").write_text(NODE)
         out = subprocess.run(
             ["node", str(td / "run.js"), str(ROOT / "web_preview" / "foodscan.js"), str(td / "tables.json"), str(td / "corpus.json")],
@@ -132,15 +149,15 @@ def main() -> int:
             return 2
         js = json.loads(out.stdout)
     bad = 0
-    for text, j in zip(CORPUS, js):
-        p = py_result(text)
+    for (text, source), j in zip(PAIRS, js):
+        p = py_result(text, source)
         if p != j:
             bad += 1
-            print("MISMATCH:", repr(text))
+            print(f"MISMATCH [{source}]:", repr(text))
             for k in p:
                 if p[k] != j[k]:
                     print(f"  {k}:\n    py: {p[k]!r}\n    js: {j[k]!r}")
-    print(f"{len(CORPUS) - bad}/{len(CORPUS)} texts identical between Python and JS")
+    print(f"{TOTAL - bad}/{TOTAL} analyses identical between Python and JS ({len(CORPUS)} photo-path texts, {len(PASTE)} pasted-text texts)")
     return 1 if bad else 0
 
 
