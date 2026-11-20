@@ -105,3 +105,7 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
 ## Owner decision (2026-11-20): existing PROVISIONAL dairy rows stay
 - toned milk, double toned milk, buffalo milk are read as milk: two-part basis = identity (FSSAI 2.1.2 item 1(a)/(c) and the composition table) plus method (NUPENS-USP page: milk, pasteurised or powdered, is group 1). milk solids is read as powdered milk: identity (FSSAI 2.1.13 item 2(a)(ii) lists dried and concentrated milk) plus the same NUPENS-USP example. All four stay visibly PROVISIONAL (the word appears in the source text shown with each driver).
 - Not covered by that two-part basis, so no rule: milk with added milk solids, cow milk, fortified milk. No new dairy cases.
+
+## Open question for a later sourcing pass (owner decision 2026-11-20): humectant and firming agent
+markers.csv counts "humectant" and "firming" as strong cosmetic_additive markers on the basis of research/02 (cosmetic processing aids, from Open Food Facts material). The FAO 2019 report (research/02 addendum) does not name humectants or firming agents anywhere in its 44 pages.
+Absence from that text is not proof that they are not markers (the same discipline as for acidity regulators), so they are neither removed nor re-sourced this round. To close: find a primary NOVA text that names or excludes them (for example the Public Health Nutrition 2019 identification paper in full, or the NUPENS-USP page), then confirm or remove the rows.

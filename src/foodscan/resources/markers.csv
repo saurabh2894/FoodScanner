@@ -7,11 +7,12 @@ maltodextrin,derived_substance,strong,research/02 marker class 1
 dextrose,derived_substance,strong,research/02 marker class 1
 modified starch,derived_substance,strong,research/02 marker class 1 (modified starches)
 protein isolate,derived_substance,strong,research/02 marker class 1 (soy / whey protein isolate)
-colour,cosmetic_additive,strong,"research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only"
+colour,cosmetic_additive,strong,research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only
 flavour,cosmetic_additive,strong,research/02 marker class 2 (flavourings)
 enhancer,cosmetic_additive,strong,research/02 marker class 2 (flavour enhancers)
 sweetener,cosmetic_additive,strong,research/02 marker class 2 (non-sugar sweeteners)
 emulsifier,cosmetic_additive,strong,research/02 marker class 2 (emulsifiers)
+emulsifying salt,cosmetic_additive,strong,"research/02 addendum (2026-11-20): FAO 2019, Monteiro et al., Ultra-processed foods, diet quality, and health using the NOVA classification system, pp. 9-10 and Table 1 (p. 11), https://www.fao.org/3/ca5644en/ca5644en.pdf: emulsifying salts are listed among the additive classes used only in ultra-processed foods"
 anti-foaming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
 antifoaming,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
 bulking,cosmetic_additive,strong,research/02 marker class 2 (cosmetic processing aids)
@@ -27,6 +28,6 @@ preservative,unlisted_additive,unlisted,NOT in research/02: class named in no ma
 antioxidant,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
 acidity regulator,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
 stabiliser,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
-thickener,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
+thickener,cosmetic_additive,strong,"research/02 addendum (2026-11-20): FAO 2019, Monteiro et al., Ultra-processed foods, diet quality, and health using the NOVA classification system, pp. 9-10 and Table 1 (p. 11), https://www.fao.org/3/ca5644en/ca5644en.pdf: thickeners are listed among the additive classes used only in ultra-processed foods"
 anticaking agent,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review
 flour treatment agent,unlisted_additive,unlisted,NOT in research/02: treated as uncertain pending review

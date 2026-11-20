@@ -229,6 +229,7 @@ PASTE = [
     "Noodles: wheat flour, palm oil, salt\nMasala tastemaker: mixed spices, flavour enhancers (INS 627, INS 631)",
     "Colour (INS 150d)", "INS 150d", "Potato (83%), edible vegetable oil, salt", "Eggs", "Toor dal",
     "Ingredients: Rice, salt, Thickeners (INS 508).", "Ingredients: Rice, salt, Salt substitute (INS 508).", "Ingredients: Rice, salt, Potassium chloride (INS 508).", "Ingredients: Water, Sugar, Class II Preservative (INS 211), Antioxidant (INS 300), Acidity Regulator (INS 330).", "Ingredients: Milk, Emulsifier & Stabilizers [INS 471, INS 407, INS 412].", "Ingredients: Water, Natural and Synthetic Food Colours (INS 150d, INS 122), Emulsifying & Stabilizing Agent (INS1422, INS415).",
+    "Ingredients: Rice, salt, Thickener (INS 412).", "Ingredients: Milk, sugar, Emulsifying salts (INS 331).", "Ingredients: Sugar, fruit pulp, Thickener (INS 440), Citric acid.", "Ingredients: Rice, salt, Stabilizer (INS 412).",
     "Ingredients: Milk & Milk Solids", "Ingredients: Toned milk, milk solids.", "Ingredients: Pasteurized Cow Milk", "Ingredients: Cow milk, active culture",
     "Ingredients: Milk, milk solids, Vitamin A.", "Ingredients: Milk, milk solids, sugar.", "Ingredients: Milk, milk solids, flavour.", "Ingredients: Milk, milk solids, stabilizer (INS 440).",
 ]

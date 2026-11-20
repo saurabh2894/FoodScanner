@@ -94,3 +94,15 @@ real products.
   https://openfoodfacts.github.io/openfoodfacts-server/api/
 - Siga's public method page (its score was proprietary; use as inspiration
   only, never copied): https://siga.care/indice-siga/
+
+## Addendum (2026-11-20): thickeners and emulsifying salts added as strong markers (owner decision)
+Source actually read (all 44 pages as text, searched for every class word): Monteiro CA, Cannon G, Lawrence M, Costa Louzada ML, Pereira Machado P. 2019.
+Ultra-processed foods, diet quality, and health using the NOVA classification system. Rome, FAO. https://www.fao.org/3/ca5644en/ca5644en.pdf
+(fetched 2026-11-20, SHA-256 c8024c194a8294a0...). Passages, with the report's printed page numbers:
+- p. 9: "Classes of additives used only in the manufacture of ultra-processed foods, are flavours, flavour enhancers, colours, emulsifiers, emulsifying salts, artificial sweeteners, thickeners, and foaming, anti-foaming, bulking, carbonating, gelling and glazing agents."
+- p. 10: the same list, ending "Any example of these classes of additive, as shown on ingredients lists also identifies a product as ultra-processed."
+- p. 11, Table 1, Group 4 row: "... flavours, flavour enhancers, colours, emulsifiers, and sweeteners, thickeners, and anti-foaming, bulking, carbonating, foaming, gelling, and glazing agents ..."
+Change: markers.csv "thickener" moves from unlisted to strong cosmetic_additive; "emulsifying salt" is added as strong cosmetic_additive (plural synonym added in synonyms.csv).
+The pectin qualification above still applies: a weak_specific hit (pectin, INS 440) in the same ingredient cancels cosmetic class-word hits, so "Thickener (INS 440)" in a jam is not read as Group 4.
+Effect on every existing frozen paste input (66 texts: fresh_batch_1, 2, 3, negation addendum, dev_regression_15): no group changed (evaluation/thickener_salt_flip_check/).
+The Public Health Nutrition 2019 paper could not be read in full; this list is taken from the FAO report only.

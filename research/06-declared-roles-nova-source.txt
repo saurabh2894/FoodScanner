@@ -32,8 +32,7 @@ WORDING RULES DERIVED (declared_roles.csv, column nova_status)
                  not named in the NOVA source read"; no "no marker" claim is made.
   A code whose label declares no class keeps the bare wording. A class is never read from a code.
 
-FINDINGS THAT AFFECT CLASSIFICATION (flagged to the owner, NOT changed in this round)
-  1. thickeners are on the source's list of Group 4 additive classes (pp. 9-10) but markers.csv holds "thickener" as unlisted ("NOT in research/02"), so a
-     label declaring "Thickeners (INS 508)" stays uncertain. The row now says exactly this. Whether to count the class is the owner's decision.
-  2. emulsifying salts are on the same list; markers.csv has no row for them.
-  3. humectant and firming agent are counted as strong markers here (research/02, from Open Food Facts material) but are not named in the FAO 2019 text.
+FINDINGS THAT AFFECT CLASSIFICATION
+  1. thickeners and 2. emulsifying salts: on the source's Group 4 list (pp. 9-10) but absent or unlisted in markers.csv. RESOLVED by the owner's decision of 2026-11-20:
+     both are now strong cosmetic_additive markers (research/02 addendum); no existing frozen paste input changed group (evaluation/thickener_salt_flip_check/).
+  3. humectant and firming agent: counted as strong markers here (research/02) but not named in the FAO 2019 text. OPEN, left as is on purpose (research/04: open question).

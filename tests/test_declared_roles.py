@@ -55,7 +55,7 @@ def test_unsupported_classes_never_get_the_no_marker_wording():
 def test_classes_the_source_lists_for_group_4_say_so_and_state_what_this_tool_does():
     t = use("Ingredients: Rice, Thickeners (INS 508).", "508")
     assert "lists thickeners among the additive classes of ultra-processed foods" in t.role_notes[-1]
-    assert "does not count this class as a marker yet" in t.role_notes[-1]       # honest about the gap: classification unchanged
+    assert "counts that class on the label as a Group 4 marker" in t.role_notes[-1]     # thickeners became a strong marker (research/02 addendum, FAO 2019)
     c = use("Ingredients: Rice, Colour (INS 150d).", "150d")
     assert "lists colours among the additive classes" in c.role_notes[-1] and "counts that class on the label as a Group 4 marker" in c.role_notes[-1]
 
