@@ -39,12 +39,8 @@ ADDED_TERMS = {
     "dried curry leaves": "herb_spice",
     # Package D (dried fruit)
     "black raisin": "whole_food",
-    # Package E (plain juices)
-    "apple juice": "whole_food",
-    "grape juice": "whole_food",
-    "orange juice": "whole_food",
-    "pineapple juice": "whole_food",
 }
+# Package E (plain juices: apple, grape, orange, pineapple juice) is HELD, not added: see test_juice_rows_are_held below and evaluation/lexicon_1_flip_check/README.md.
 
 
 def test_added_lexicon_rows_exist_with_kind_and_provisional_source():
@@ -80,6 +76,10 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
     for typo in ["tumeric", "com meal", "refined palmolien oil", "maltodectrin"]:
         assert typo not in rows, f"typo {typo} should not be in lexicon.csv"
 
+    # Plain juices held (senior review): the bare term does not establish fresh/pasteurized versus reconstituted from concentrate
+    for juice in ["apple juice", "grape juice", "orange juice", "pineapple juice"]:
+        assert juice not in rows, f"{juice} is held (cranberry precedent), no row"
+
     # Condition-blocked candidate items
     assert "roasted peanuts" not in rows, "roasted peanuts on b1/N15 has added sugar/salt, must be blocked"
     assert "corn flakes" not in rows, "corn flakes on dev/F10 does not establish plain status, must be blocked"
@@ -110,3 +110,12 @@ def test_normalise_ingredient_maps_new_terms_to_kind():
         info = lookup(norm.name)
         assert info is not None
         assert info["kind"] == expected_kind
+
+
+def test_juice_rows_are_held():
+    """FAO 2019 Table 1 Group 1 lists 'fresh or pasteurized fruit or vegetable juices (with no added sugar, sweeteners or flavours)'; pp. 9-10 list 'fruit juice concentrate'
+    among the substances of ultra-processed foods. A bare 'apple juice' does not say which, and the unknown crosses the Group 1 / Group 4 boundary, so the four juice rows
+    are held (same discipline as cranberry). They stay unassessed; nothing else changes."""
+    for juice in ["apple juice", "grape juice", "orange juice", "pineapple juice"]:
+        r = analyse_text(f"Ingredients: {juice}.", source="text")
+        assert not r.answered and juice in r.unassessed, juice
