@@ -41,8 +41,14 @@ def test_unmapped_code_gets_display_name_but_no_decision_strength(with_reference
 
 
 def test_partial_reading_is_flagged(with_reference):
+    code = next(r["ins"] for r in rows() if r["reading"].startswith("partial") and "(" not in r["ins"])
+    (u,) = normalise_ingredient(f"raising agent (INS {code})").ins
+    assert u.ref_name and u.ref_partial
+
+
+def test_visually_checked_rows_are_not_partial(with_reference):
     (u,) = normalise_ingredient("raising agent (INS 500(i))").ins
-    assert u.ref_name == "Sodium carbonate" and u.ref_partial
+    assert u.ref_name == "Sodium carbonate" and not u.ref_partial and "thickener" in u.ref_classes
 
 
 def test_mapped_code_keeps_its_decision_row():
