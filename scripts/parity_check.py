@@ -259,19 +259,27 @@ process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseTe
 PAIRS = [(t, "ocr") for t in CORPUS] + [(t, "text") for t in PASTE]
 
 
-def main() -> int:
+def run_js(pairs):
+    """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         (td / "tables.json").write_text(json.dumps(tables()))
-        (td / "corpus.json").write_text(json.dumps(PAIRS))
+        (td / "corpus.json").write_text(json.dumps(pairs))
         (td / "run.js").write_text(NODE)
         out = subprocess.run(
             ["node", str(td / "run.js"), str(ROOT / "web_preview" / "foodscan.js"), str(td / "tables.json"), str(td / "corpus.json")],
             capture_output=True, text=True)
         if out.returncode:
-            print(out.stderr)
-            return 2
-        js = json.loads(out.stdout)
+            raise RuntimeError(out.stderr)
+        return json.loads(out.stdout)
+
+
+def main() -> int:
+    try:
+        js = run_js(PAIRS)
+    except RuntimeError as e:
+        print(e)
+        return 2
     bad = 0
     for (text, source), j in zip(PAIRS, js):
         p = py_result(text, source)
