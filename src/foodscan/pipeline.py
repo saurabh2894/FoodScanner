@@ -7,6 +7,7 @@ with a reason, never a guessed group.
 from __future__ import annotations
 
 import re
+from functools import cache
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
@@ -73,6 +74,37 @@ def _abstain(reason: str, text: str, **kw) -> Analysis:
 
 def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
+
+
+@cache
+def _vocab() -> tuple[frozenset[str], frozenset[str], frozenset[str]]:
+    """(words, phrases, descriptor words) of the vocabulary tables (lexicon, synonyms, markers, descriptors): for telling a cut-off fragment from an unknown whole word."""
+    words: set[str] = set()
+    phrases: set[str] = set()
+    for table, cols in (("lexicon.csv", ("term",)), ("synonyms.csv", ("from", "to")), ("markers.csv", ("term",)), ("descriptors.csv", ("word",))):
+        for r in load_table(table):
+            for c in cols:
+                text = (r.get(c) or "").lower()
+                words.update(re.findall(r"[a-z]+", text))
+                phrases.add(" ".join(re.findall(r"[a-z]+", text)))
+    return frozenset(words), frozenset(phrases), frozenset(r["word"].lower() for r in load_table("descriptors.csv"))
+
+
+def _looks_cut_off(ing: Ingredient) -> bool:
+    """The item looks cut off: its last word is a strict prefix of a vocabulary word and not itself one ("refined wheat flo"), or the whole item (without
+    leading descriptors) is the start of a longer vocabulary phrase ("pasteurized toned" -> "toned milk"). An unknown whole word is not a cut-off."""
+    words, phrases, descriptors = _vocab()
+    toks = re.findall(r"[a-z]+", ing.name.lower())
+    if not toks:
+        return False
+    last = toks[-1]
+    if len(last) >= 3 and last not in words and any(w.startswith(last) for w in words):
+        return True
+    for k in range(len(toks)):            # drop leading words one at a time: "pasteurized toned" -> "toned" is the start of "toned milk"
+        if k == 0 or toks[k - 1] in descriptors:
+            if any(p.startswith(" ".join(toks[k:]) + " ") for p in phrases):
+                return True
+    return False
 
 
 _CODE_ONLY = re.compile(
@@ -362,10 +394,14 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     # Truncation: brackets left open, or the list runs off the end of the text
     # (no full stop / stop phrase) on a word we cannot recognise ("refined wheat flo").
     truncation = None
+    vocab_last = False      # the list runs on and its last item is not in the vocabulary, but that item does not look cut off: a vocabulary gap, not a truncation
     if parsed.unbalanced_brackets:
         truncation = "ingredient list looks truncated (unclosed bracket)"
     elif not parsed.terminated and not _recognisable(ings[-1]):
-        truncation = f'ingredient list looks truncated (ends mid-word or unrecognised: "{items[-1]}")'
+        if _looks_cut_off(ings[-1]):
+            truncation = f'ingredient list looks truncated (ends mid-word: "{items[-1]}")'
+        else:
+            vocab_last = True
     # Unlabelled text after a full stop that looks like more of the list was not read (never dropped silently:
     # it is in `ignored` and in the warnings). Like truncation, it can only be answered when a strong marker
     # already decides (Group 4); otherwise a Group 1-3 call could hide a missing ingredient or marker.
@@ -392,6 +428,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         reasons.append("brackets are not balanced: text may be cut off or misread")
     if truncation:
         reasons.append("the list looks truncated")
+    elif vocab_last:
+        reasons.append("the last item is not in the local vocabulary")
     if unread_like:
         reasons.append("text after a full stop looks like more ingredients and was not read")
     if unaccounted:

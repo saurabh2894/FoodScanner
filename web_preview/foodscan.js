@@ -560,6 +560,20 @@
       return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], declared: [], heading: { kind: "none", text: "" }, completeness: { status: "uncertain", heading: "none", reasons: ["no ingredient list was read"], list_share: 0.0, words: { region: 0, in_list: 0, declared: 0, excluded: 0, not_read: 0, unaccounted: 0 }, assessed: { items: 0, not_assessed: 0 } }, text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
+    // words and phrases of the vocabulary tables, for telling a cut-off fragment from an unknown whole word (mirrors pipeline._looks_cut_off)
+    const vocabWords = new Set(), vocabPhrases = new Set();
+    for (const [tbl, cols] of [[T.lexicon, ["term"]], [T.synonyms, ["from", "to"]], [T.markers, ["term"]], [T.descriptors, ["word"]]])
+      for (const r of tbl) for (const c of cols) { const t = String(r[c] || "").toLowerCase(), ws = t.match(/[a-z]+/g) || []; ws.forEach((w) => vocabWords.add(w)); vocabPhrases.add(ws.join(" ")); }
+    const vocabList = [...vocabWords], phraseList = [...vocabPhrases];
+    function looksCutOff(ing) {
+      const toks = ing.name.toLowerCase().match(/[a-z]+/g) || [];
+      if (!toks.length) return false;
+      const last = toks[toks.length - 1];
+      if (last.length >= 3 && !vocabWords.has(last) && vocabList.some((w) => w.startsWith(last))) return true;
+      for (let k = 0; k < toks.length; k++)      // drop leading descriptor words one at a time: "pasteurized toned" -> "toned" is the start of "toned milk"
+        if ((k === 0 || descriptors.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
+      return false;
+    }
     function expand(items, depth, heads) {   // items: [raw, section label] pairs
       const out = [];
       for (const [raw, section] of items) {
@@ -778,10 +792,12 @@
       sectionWarnings.push(...possibleMisreads(ings));
       if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
       const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
-      let truncation = null;
+      let truncation = null, vocabLast = false;      // vocabLast: the last item is not in the vocabulary but does not look cut off (a vocabulary gap, not a truncation)
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
-      else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
-        truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${items[items.length - 1]}")`;
+      else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1])) {
+        if (looksCutOff(ings[ings.length - 1])) truncation = `ingredient list looks truncated (ends mid-word: "${items[items.length - 1]}")`;
+        else vocabLast = true;
+      }
       // unlabelled text after a full stop that looks like more of the list: like truncation, only a strong-marker Group 4 stands
       const unread = unreadLike.length ? `text after a full stop looks like more ingredients and was not read: "${shortText(unreadLike[0])}"` : null;
       let headingRisk = null;
@@ -798,6 +814,7 @@
       if (source === "ocr" && parsed.headingKind === "inferred") reasons.push('no "Ingredients" heading was found: the most list-like text block was used');
       if (parsed.unbalanced) reasons.push("brackets are not balanced: text may be cut off or misread");
       if (truncation) reasons.push("the list looks truncated");
+      else if (vocabLast) reasons.push("the last item is not in the local vocabulary");
       if (unreadLike.length) reasons.push("text after a full stop looks like more ingredients and was not read");
       if (unaccounted) reasons.push(`${unaccounted} word(s) after the heading were neither read as ingredients nor set aside`);
       if (suspectSectionItems(items).length) reasons.push("a section label may not have been split from an ingredient");

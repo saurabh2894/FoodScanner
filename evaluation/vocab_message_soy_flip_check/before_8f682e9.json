@@ -1,0 +1,694 @@
+{
+ "b1/N01": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"hydrogenated\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N02": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N03": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N04": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"As Flavouring Agent.\""
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "INS 627 (disodium guanylate)",
+   "INS 631 (disodium inosinate)",
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N05": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "INS 627 (disodium guanylate)",
+   "INS 631 (disodium inosinate)",
+   "\"colour\" (cosmetic_additive)",
+   "\"hydrogenated\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N06": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "b1/N07": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: cocoa nibs (45%), cocoa butter (10%)",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b1/N08": {
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)\")",
+  "warnings": [],
+  "status": "uncertain",
+  "drivers": []
+ },
+ "b1/N09": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurized Buffalo Milk Fat 6.00% Min",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b1/N10": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Mango Pieces, Mustard, Fenugreek, Synthetic Vinegar",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b1/N11": {
+  "group": null,
+  "reason": "only weak or unlisted markers present (Acidity regulators (INS 330 & INS 260) -> \"acidity regulator\" (unlisted_additive); Acidity regulators (INS 330 & INS 260) -> INS 260 (not in local mapping); Acidity regulators (INS 330 & INS 260) -> INS 330 (not in local mapping); Preservative (INS 211) -> \"preservative\" (unlisted_additive); Preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "INS 330 (not in local mapping)",
+   "INS 260 (not in local mapping)",
+   "\"preservative\" (unlisted_additive)",
+   "INS 211 (sodium benzoate)"
+  ]
+ },
+ "b1/N12": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"emulsifying & stabilizing agent (INS 1422, INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+  ],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N13": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"thickener\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b1/N14": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"protein isolate\" (derived_substance)"
+  ]
+ },
+ "b1/N15": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"Roasted Peanuts (91%) Sugar\" has text after a percentage; a comma may be missing between two ingredients"
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "INS 471 (emulsifier)"
+  ]
+ },
+ "b1/N16": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"Wheat Flour (Atta) (6.5%) Milk Solids (6%)\" has text after a percentage; a comma may be missing between two ingredients",
+   "A bracket near \"Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"protein isolate\" (derived_substance)",
+   "\"colour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"colour\"",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "b2/M01": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "declared in \"Contains\" statement: \"colour\""
+  ]
+ },
+ "b2/M02": {
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"PASTEURISED COW MILK\")",
+  "warnings": [],
+  "status": "uncertain",
+  "drivers": []
+ },
+ "b2/M03": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+  ]
+ },
+ "b2/M04": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M05": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M06": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+  ]
+ },
+ "b2/M07": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "List may be incomplete (ends mid-word or unrecognised: \"Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)\"). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"firming\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M08": {
+  "group": 3,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "recognised whole food",
+   "recognised culinary"
+  ]
+ },
+ "b2/M09": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "INS 471 (emulsifier)"
+  ]
+ },
+ "b2/M10": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"Masala *TASTEMAKER\u24c7: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder...\""
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"thickener\" (cosmetic_additive)",
+   "\"humectant\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M11": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT ).\""
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)"
+  ]
+ },
+ "b2/M12": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+  ],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M13": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "\"sweetener\" (cosmetic_additive)",
+   "INS 950 (acesulfame potassium)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M14": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "b2/M15": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"invert sugar\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "INS 102 (tartrazine)"
+  ]
+ },
+ "b3/Q01": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "single recognised unprocessed food"
+  ]
+ },
+ "b3/Q02": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "single recognised unprocessed food"
+  ]
+ },
+ "b3/Q03": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: lodised Salt",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b3/Q04": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+  ]
+ },
+ "b3/Q05": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A Palmitate & Vitamin D (Ergocalciferol)",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b3/Q06": {
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Pasteurized Cow Milk\")",
+  "warnings": [],
+  "status": "uncertain",
+  "drivers": []
+ },
+ "b3/Q07": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Milk & Milk Solids Milk",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b3/Q08": {
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)\")",
+  "warnings": [],
+  "status": "uncertain",
+  "drivers": []
+ },
+ "b3/Q09": {
+  "group": null,
+  "reason": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "b3/Q10": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "single recognised unprocessed food"
+  ]
+ },
+ "b3/Q11": {
+  "group": null,
+  "reason": "only weak or unlisted markers present (Acidity Regulator (INS 339 (ii)) -> \"acidity regulator\" (unlisted_additive); Acidity Regulator (INS 339 (ii)) -> INS 339(ii) (not in local mapping); Stabilizers (INS 418, INS 407) -> \"stabiliser\" (unlisted_additive); Stabilizers (INS 418, INS 407) -> INS 407 (not in local mapping); Stabilizers (INS 418, INS 407) -> INS 418 (not in local mapping)); not enough to call a group",
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "INS 339(ii) (not in local mapping)",
+   "\"stabiliser\" (unlisted_additive)",
+   "INS 418 (not in local mapping)",
+   "INS 407 (not in local mapping)"
+  ]
+ },
+ "b3/Q12": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "A bracket near \"dity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 471 (emulsifier)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "b3/Q13": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"sweetener\"",
+   "declared in \"Contains\" statement: \"colour\""
+  ]
+ },
+ "b3/Q14": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"Emulsifying & Stabilizing Agent (INS1422, INS415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+  ],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)"
+  ]
+ },
+ "neg/R1": {
+  "group": null,
+  "reason": "only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group",
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"stabiliser\" (unlisted_additive)",
+   "INS 509 (not in local mapping)"
+  ]
+ },
+ "neg/R2": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Edible Peanut Oil, lodized salt, Spices & Condiments",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "neg/R3": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "neg/R4": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "INS 150d (caramel IV (sulfite ammonia caramel))",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "neg/R5": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 471 (emulsifier)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "neg/R6": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "declared in \"Contains\" statement: \"colour\"",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "dev15/F01": {
+  "group": null,
+  "reason": "ingredient list looks truncated (unclosed bracket)",
+  "warnings": [
+   "A bracket near \"ED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDI\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "A bracket near \"(MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STAR\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "A bracket near \", COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)"
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"raising agent\" (ordinary_additive)",
+   "INS 500i (not in local mapping)"
+  ]
+ },
+ "dev15/F02": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "A bracket near \"ur Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar)\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "INS 150d (caramel IV (sulfite ammonia caramel))",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F03": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "dev15/F04": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"hydrogenated\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F05": {
+  "group": 1,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+   "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+  ]
+ },
+ "dev15/F06": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 471 (emulsifier)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F07": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"thickener\" (cosmetic_additive)",
+   "\"maltodextrin\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F08": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "\"Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)\": \"stabilizing agents\" is read as the stabiliser class by a provisional mapping (no source names the phrase)"
+  ],
+  "status": "complete",
+  "drivers": [
+   "INS 471 (emulsifier)"
+  ]
+ },
+ "dev15/F09": {
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolein Oil, Ajwain",
+  "warnings": [],
+  "status": "complete",
+  "drivers": []
+ },
+ "dev15/F10": {
+  "group": null,
+  "reason": "a colour note on a named ingredient (Turmeric (Colouring & Spices)) leaves open whether a colour is added, and no other marker decides the group",
+  "warnings": [
+   "\"Turmeric (Colouring & Spices)\": a colour note on a named ingredient is not counted as an added colour"
+  ],
+  "status": "complete",
+  "drivers": []
+ },
+ "dev15/F11": {
+  "group": null,
+  "reason": "only weak or unlisted markers present (acidity regulator -> \"acidity regulator\" (unlisted_additive); preservative (INS 211) -> \"preservative\" (unlisted_additive); preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "\"preservative\" (unlisted_additive)",
+   "INS 211 (sodium benzoate)"
+  ]
+ },
+ "dev15/F12": {
+  "group": 4,
+  "reason": null,
+  "warnings": [
+   "A bracket near \"and condiments (onion powder, chilli powder, dry mango powde\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "status": "uncertain",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F13": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F14": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "dev15/F15": {
+  "group": 4,
+  "reason": null,
+  "warnings": [],
+  "status": "complete",
+  "drivers": [
+   "\"thickener\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ }
+}

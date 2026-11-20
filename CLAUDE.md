@@ -41,6 +41,7 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
 - Sweetener class word (owner decision): an entry named only "sweetener" whose bracket names only recognised foods and no INS code ("Sweeteners (Jaggery Powder, Dates Powder)") is not read as an added sweetener class (FAO 2019 lists *artificial* sweeteners); the result says so. Any non-food name or code keeps the marker. Basis in research/04; the lexicon row "dates" is PROVISIONAL.
+- Vocabulary gap versus truncation: a list is called truncated only when the last item looks cut off (word fragment, start of a longer term, unclosed bracket). An unknown whole word is reported as "not in the local vocabulary" and named; groups and gating are unchanged. Soybean is a PROVISIONAL lexicon row (research/04).
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.
 - Never output health judgements ("healthy", "unhealthy", "should not be eaten").
 - No ingredient-count rules. Short lists can be UPF; long lists of foods can be group 3.
