@@ -1,0 +1,275 @@
+{
+ "N01": {
+  "product": "Nestle Munch",
+  "top": [
+   "Sugar",
+   "Refined wheat flour (maida)",
+   "Hydrogenated vegetable fats",
+   "Fractionated vegetable fat",
+   "Milk solids",
+   "Cocoa solids (3.8%)",
+   "Emulsifiers (soya lecithin and 476)",
+   "Raising agent (500(ii))",
+   "Yeast",
+   "Iodized salt",
+   "Flour treatment agent (516)",
+   "Artificial (vanilla) flavouring substances"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "hydrogenated fats, emulsifiers, artificial flavouring (NUPENS-USP Group 4 classes)",
+  "traps": "photo of a narrow wrapper strip; wrapper foil glare; allergen note after the list"
+ },
+ "N02": {
+  "product": "Britannia 50-50 Maska Chaska",
+  "top": [
+   "Refined wheat flour (maida)",
+   "Refined (palm & palmolein) oil",
+   "Sugar",
+   "Liquid glucose",
+   "Raising agents [503(ii), 341(ii), 500(ii) & 450(i)]",
+   "Butter (1.2%)",
+   "Black salt",
+   "Milk solids",
+   "Dehydrated vegetable (chives) (1%)",
+   "Iodised salt",
+   "Nature identical flavouring substance",
+   "Dough conditioner (223)"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "nature identical flavouring substance (NUPENS-USP: flavourings are a Group 4 class)",
+  "traps": "'flavouring substance AND dough conditioner (223)' joins two items; '&' inside the bracket code list and inside '(palm & palmolein)'; photo taken at an angle, right edge of the list cut off"
+ },
+ "N03": {
+  "product": "Slurp Farm Millet Noodles",
+  "top": [
+   "Noodles (88.5%): Supergrain blend (whole wheat (atta), jowar) (83%)",
+   "guar gum",
+   "iodised salt",
+   "rosemary (antioxidant) [INS 392]",
+   "Seasoning (11.5%): Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenugreek, black pepper, ginger, clove, cardamom, nutmeg)",
+   "tapioca starch",
+   "desi khand",
+   "iodised salt",
+   "edible vegetable oil (soyabean)",
+   "natural colors",
+   "nature identical flavors",
+   "guar gum",
+   "citric acid (acidity regulator) [INS 330]",
+   "baking soda (raising agent) [INS 500(ii)]"
+  ],
+  "sections": 2,
+  "declared": [],
+  "exp": 4,
+  "basis": "declared natural colors and nature identical flavors (NUPENS-USP: colourings and flavourings are Group 4 classes; the colour is declared as its own ingredient)",
+  "traps": "two labelled sections with percentages; 'natural colors and nature identical flavors' joins two items; claim line 'THE NOODLES CONTAIN 40% MILLETS' above the list; 'Allergen Note:' after"
+ },
+ "N04": {
+  "product": "Kurkure Chilli Chatka (EXCLUDED before scoring)",
+  "top": [],
+  "declared": [],
+  "exp": null,
+  "basis": "EXCLUDED: a Kurkure variant, so it overlaps development product P03 (Kurkure Masala Munch). Kept in the files for transparency; never scored.",
+  "traps": ""
+ },
+ "N05": {
+  "product": "Haldiram's Soya Sticks",
+  "top": [
+   "Tapioca starch",
+   "Refined palmolein oil",
+   "Soya flour (9%)",
+   "Split pulse urad (urad dal) flour",
+   "Mixed spices (refined sugar, edible common salt, maltodextrin, black salt, red chilli powder, dried mango powder, onion powder, glucose powder, preservative (INS 262i), coriander powder, cumin powder, fennel, whey powder, ginger powder, garlic powder, clove powder, yeast extract, pipal, black pepper, acidity regulator (INS 296), flavour enhancer (INS 627, INS 631), turmeric powder, anticaking agent (INS 551), bay leaf, acidity regulator (INS 330), colour (INS 160c), nutmeg, capsicum powder, cinnamon, asafoetida)",
+   "Hydrogenated vegetable oil (vanaspati)",
+   "Natural flavouring substance",
+   "Nature identical flavouring substance"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "maltodextrin, flavour enhancers, declared colour and flavouring substances (NUPENS-USP Group 4 classes)",
+  "traps": "the left edge of the photo cuts the first word ('apioca'); 'Mixed Spices' holds a long nested list that includes the additives; 'natural ... AND nature identical flavouring substance' joins two items; allergen block after"
+ },
+ "N06": {
+  "product": "Amul milk chocolate",
+  "top": [
+   "Sugar",
+   "Milk solids",
+   "Cocoa butter",
+   "Cocoa solids",
+   "Permitted emulsifiers (E322, E476)"
+  ],
+  "declared": [
+   "added flavours (artificial flavouring substances - cocoa & vanilla)"
+  ],
+  "exp": 4,
+  "basis": "emulsifiers and declared added flavours (NUPENS-USP Group 4 classes; chocolate/confectionery is on its Group 4 examples list)",
+  "traps": "'Contains added flavours' sentence follows the list after a full stop with no separator line; blurred photo"
+ },
+ "N07": {
+  "product": "The Whole Truth 55% dark chocolate",
+  "top": [
+   "cocoa (55%) [cocoa nibs (45%), cocoa butter (10%)]",
+   "date powder (45%)"
+  ],
+  "declared": [],
+  "exp": null,
+  "basis": "UNJUDGED: cocoa nibs, cocoa butter and date powder only; whether such a bar is Group 3 or 4 is not settled by the source I read (USP lists 'chocolate, candies (confectionery)' under Group 4, but this list has no additive or industrial substance)",
+  "traps": "table layout with dotted leaders and a percentage column; the sub-ingredients are indented lines, not bracketed; 'Just two!' beside the heading"
+ },
+ "N08": {
+  "product": "Milky Mist Pro Biotic Curd",
+  "top": [
+   "Pasteurised toned milk",
+   "Active lactic culture",
+   "Probiotic culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "milk fermented with cultures, nothing else (NUPENS-USP: fermentation of milk to make yoghurt; plain yoghurt with no added sugar or artificial sweeteners is Group 1)",
+  "traps": "'Active lactic culture AND probiotic culture' joins two items; the species names sit in a bracket with '&'"
+ },
+ "N09": {
+  "product": "Country Delight Buffalo Milk",
+  "top": [
+   "Pasteurized buffalo milk"
+  ],
+  "declared": [],
+  "exp": 1,
+  "basis": "pasteurised milk (NUPENS-USP: milk, pasteurised or powdered, is Group 1)",
+  "traps": "'Fat 6.00% Min., SNF 9.00% Min.' follows the single ingredient on the same line (a composition note, not ingredients); Kannada text above; glare"
+ },
+ "N10": {
+  "product": "Lovely mango pickle",
+  "top": [
+   "Mango pieces",
+   "Salt",
+   "Chilli powder",
+   "Sesame oil (gingelly oil)",
+   "Asafoetida",
+   "Mustard",
+   "Fenugreek",
+   "Synthetic vinegar"
+  ],
+  "declared": [
+   "permitted class II preservative. Sodium benzoate"
+  ],
+  "exp": null,
+  "basis": "UNJUDGED: 'synthetic vinegar' is not vinegar made by fermentation (the NOVA source's Group 2 example), and a preservative is declared on a Contains line; the source I read does not settle this combination",
+  "traps": "the left edge of the photo cuts the heading ('gredients') and the first letters of two lines; 'Contains permitted class II preservative' sentence on its own line"
+ },
+ "N11": {
+  "product": "MTR mango sliced pickle",
+  "top": [
+   "Mango (54%)",
+   "Iodised salt brine",
+   "Refined sesame oil",
+   "Red chilli powder (5.7%)",
+   "Mixed spices powder",
+   "Mustard seeds (0.3%)",
+   "Acidity regulators (INS 330 & INS 260)",
+   "Preservative (INS 211)"
+  ],
+  "declared": [],
+  "exp": 3,
+  "basis": "provisional: group 1 foods with group 2 substances (salt, oil) and preservative additives; preservative and acidity regulator are not among the Group-4-only classes in the USP page's list (stabilisers, thickeners and others are)",
+  "traps": "'Acidity regulators (INS 330 & INS 260) AND Preservative (INS 211)' joins two items; '&' inside the code bracket; curved jar, glare; a dot-matrix print block below the list"
+ },
+ "N12": {
+  "product": "Surabhi tomato ketchup (no onion no garlic)",
+  "top": [
+   "Tomato puree (67%)",
+   "Water",
+   "Sugar",
+   "Liquid glucose",
+   "Iodized salt",
+   "Starch",
+   "Emulsifying & stabilizing agent (INS1422, INS415)",
+   "Acidity regulator (INS260)",
+   "Spices & condiments",
+   "Preservative (INS211)"
+  ],
+  "declared": [
+   "permitted class II preservative (INS211)"
+  ],
+  "exp": 4,
+  "basis": "declared emulsifying agent and modified starch INS 1422 (NUPENS-USP Group 4 classes: emulsifiers; modified starches)",
+  "traps": "'Emulsifying & Stabilizing Agent' contains '&' and is one declared class phrase; 'Spices & Condiments' must stay whole; codes written without a space (INS1422); the Contains line sits right below with no full stop"
+ },
+ "N13": {
+  "product": "Hellmann's real mayonnaise (single-serve sachet)",
+  "top": [
+   "Refined soybean oil (fortified with vitamin A & D)",
+   "Water",
+   "Sugar",
+   "Thickeners-E1442, E1450",
+   "Natural vinegar",
+   "Iodised salt",
+   "Spices & condiments",
+   "Lemon juice concentrate",
+   "Preservative-E202",
+   "Nature identical flavouring substances",
+   "Natural flavouring substances",
+   "Sequestrant-E385"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "nature identical and natural flavouring substances, modified-starch thickeners E1442/E1450 (NUPENS-USP Group 4 classes)",
+  "traps": "'Nature identical AND natural flavouring substances' is one phrase for two items; heading line 'MAYONNAISE-EMULSIFIED SAUCES AND DIPS (PROPRIETARY FOOD...)' above; 'Name-E123' separators; nutrition block and company text after"
+ },
+ "N14": {
+  "product": "Pintola high protein muesli",
+  "top": [
+   "Whole grains (34%) {rolled oats, ragi flakes, jowar flakes, quinoa flakes, brown rice flakes}",
+   "Protein blend (24%) {texturized soy protein, soy protein isolate}",
+   "Dry fruits, nuts & seeds (22%) {black raisin, cranberry, almonds, flax seeds, pumpkin seeds}",
+   "Organic jaggery",
+   "Cocoa powder (7%)",
+   "Dates",
+   "Rice bran oil",
+   "Himalayan pink salt"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "soy protein isolate (NUPENS-USP names soy protein isolate as a Group 4 substance)",
+  "traps": "groups are separated by semicolons and use curly braces; 'Dry Fruits, Nuts & Seeds' is one group name that contains a comma and '&'; allergen block after"
+ },
+ "N15": {
+  "product": "Disano peanut butter creamy",
+  "top": [
+   "Roasted peanuts (91%)",
+   "Sugar",
+   "Stabilizer (INS471)",
+   "Iodised salt"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "provisional: the list declares a stabilizer, a class the NUPENS-USP page lists among Group 4 additive classes (INS 471 is also an emulsifier code); margarines and spreads are on its Group 4 examples",
+  "traps": "photo is tilted and slightly out of focus; the 'Category: 4.2.2.5 (Proprietary Food - Peanut Butter)' line follows the list; the nutrition table is above"
+ },
+ "N16": {
+  "product": "Boost",
+  "top": [
+   "Cereal extract (49%) [barley, wheat, millet]",
+   "Malted barley (extracted solids) (21%)",
+   "Sugar",
+   "Wheat flour (atta) (6.5%)",
+   "Milk solids (6%)",
+   "Minerals",
+   "Wheat gluten",
+   "Natural colour [INS 150c]",
+   "Acidity regulators [INS 501(ii), INS 500(ii)]",
+   "Edible iodized salt",
+   "Cocoa powder",
+   "Vitamins",
+   "Soy protein isolate (0.28%)",
+   "Nature-identical flavouring substances"
+  ],
+  "declared": [
+   "permitted natural colour and added flavour (nature identical flavouring substances)"
+  ],
+  "exp": 4,
+  "basis": "declared natural colour, nature-identical flavouring substances, soy protein isolate (NUPENS-USP Group 4)",
+  "traps": "photo of a curved bottle with glare and a strong tilt, small text; a boxed 'CONTAINS PERMITTED NATURAL COLOUR AND ADDED FLAVOUR' sentence follows; a vitamin table above"
+ }
+}
