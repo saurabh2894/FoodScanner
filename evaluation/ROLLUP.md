@@ -12,8 +12,9 @@ This document summarizes the hand-adjudicated frozen evaluation artifacts record
 ## 2. Batch: `fresh_batch_1`
 **Title**: Fresh batch 1: scores for ONE frozen build (code commit 12e7226)
 
-### Errata Notice (evaluation/fresh_batch_1/ERRATA.md)
+### Errata Notice (evaluation/fresh_batch_1/ERRATA.md, quoted verbatim)
 
+```text
 # Errata to references.md / reference.json (version 1)
 
 references.md and reference.json are NOT edited: batch 1's original scores (build 12e7226) keep their 121-item denominator. Any re-run from the fix round on
@@ -32,6 +33,7 @@ one head noun), and keeping it whole loses nothing. N13's reference therefore ha
 | Photo, before, on 120 | 18 | 10 | 0 | 92 | 120 |
 | Photo, after, on 120 | 28 | 10 | 0 | 82 | 120 |
 (The original 121 figures stay valid for the original run. The classification counts do not change: 13 judged labels either way.)
+```
 
 **Metadata & Context:**
 - Frozen build: code at `12e7226`; the reference commit `608fc6c` adds only evaluation files (no change under src/, web_preview/, scripts/, tests/ between them). No code was changed while scoring and nothing was tuned to this batch. One sample, 15 labels scored (16 drawn; N04 excluded before scoring as a variant of a development product): not a general accuracy figure. References were written by an LLM from the photos before any run and have not been spot-checked by the owner. Item adjudication for OCR-garbled items counts an item as present when a human can recognise it; those counts are approximate. All numbers are from `frozen_results_12e7226/`.

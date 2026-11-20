@@ -567,9 +567,14 @@ def generate_rollup_markdown(rollups: list[BatchRollup]) -> str:
         out.append("")
 
         if b.errata_markdown:
-            out.append("### Errata Notice (evaluation/fresh_batch_1/ERRATA.md)")
+            # Verbatim quote inside a fenced block: its own headings, table and trailing parenthetical cannot become document headings or table rows.
+            longest = max((len(m) for m in re.findall(r"`+", b.errata_markdown)), default=0)
+            fence = "`" * max(3, longest + 1)
+            out.append(f"### Errata Notice (evaluation/{b.name}/ERRATA.md, quoted verbatim)")
             out.append("")
+            out.append(f"{fence}text")
             out.append(b.errata_markdown)
+            out.append(fence)
             out.append("")
 
         if b.metadata_paragraphs:

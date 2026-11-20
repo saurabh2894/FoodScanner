@@ -312,3 +312,72 @@ def test_main_cli_exit_codes(tmp_path: Path):
     input_scores = repo_root / "evaluation" / "fresh_batch_1" / "SCORES.md"
     ret3 = main(["--output", str(input_scores), "--force"])
     assert ret3 == 3
+
+
+def _rendered_real() -> str:
+    repo_root = Path(__file__).resolve().parent.parent
+    return generate_rollup_markdown([parse_batch_scores(repo_root / "evaluation" / "fresh_batch_1"),
+                                     parse_batch_scores(repo_root / "evaluation" / "fresh_batch_2")])
+
+
+def _outside_fences(text: str) -> list[str]:
+    """Lines as a markdown renderer sees them as document structure: everything not inside a fenced block."""
+    out, fence = [], None
+    for line in text.splitlines():
+        stripped = line.lstrip()
+        if fence is None and stripped.startswith("```"):
+            fence = stripped[: len(stripped) - len(stripped.lstrip("`"))]
+            continue
+        if fence is not None:
+            if stripped.startswith(fence) and not stripped.lstrip("`"):
+                fence = None
+            continue
+        out.append(line)
+    return out
+
+
+def test_errata_does_not_pollute_the_document_outline():
+    """Exactly one H1; no heading between '### Errata Notice' and the next '###' section except h4 or deeper; errata headings are not emitted as headings."""
+    rendered = _rendered_real()
+    structural = _outside_fences(rendered)
+    h1 = [ln for ln in structural if ln.startswith("# ")]
+    assert len(h1) == 1, h1
+    assert not any(ln.startswith("# Errata") or ln.startswith("## Erratum") or ln.startswith("## What changes") for ln in structural)
+    i = next(n for n, ln in enumerate(structural) if ln.startswith("### Errata Notice"))
+    j = next(n for n in range(i + 1, len(structural)) if structural[n].startswith("### ") or structural[n].startswith("## "))
+    between = [ln for ln in structural[i + 1:j] if ln.startswith("#")]
+    assert all(ln.startswith("####") for ln in between), between
+    assert structural[j].startswith("### "), structural[j]          # the next section is a sibling h3, not an h2 swallowed by the quote
+
+
+def test_errata_parenthetical_is_not_a_table_row_and_table_has_four_data_rows():
+    """The trailing '(The original 121 figures ...)' line must not be part of the re-run table, as a renderer would read it."""
+    rendered = _rendered_real()
+    structural = _outside_fences(rendered)
+    assert not any(ln.startswith("(The original 121 figures") for ln in structural)          # it only exists inside the fenced quote
+    assert "(The original 121 figures stay valid for the original run." in rendered           # ... and is still present verbatim
+    # the quoted table: header, separator and exactly 4 data rows, and the parenthetical comes after a non-table line boundary (the closing fence)
+    lines = rendered.splitlines()
+    k = lines.index("| Mode | Own item | Merged | Split | Omitted | Total |")
+    assert lines[k + 1] == "|---|---|---|---|---|---|"
+    rows = []
+    for ln in lines[k + 2:]:
+        if not ln.startswith("|"):
+            break
+        rows.append(ln)
+    assert len(rows) == 4, rows
+    assert lines[k + 2 + len(rows)].startswith("(The original 121 figures")               # inside the fence: plain text, not a row
+    close = next(n for n in range(k + 2 + len(rows), len(lines)) if lines[n].startswith("```"))
+    assert lines[close] == "```" or set(lines[close]) == {"`"}
+
+
+def test_errata_fence_survives_backticks_in_the_quote(tmp_path: Path):
+    """Backticks inside the quoted file must not close the fence early (the real ERRATA.md has single backticks; a triple one must still be safe)."""
+    d = tmp_path / "fresh_batch_1"
+    d.mkdir()
+    (d / "SCORES.md").write_text("# T\n\nJudged for classification: 1 labels.\n", encoding="utf-8")
+    (d / "ERRATA.md").write_text("# Errata\n\ntext with ```inline triple``` backticks\n## Heading inside\n", encoding="utf-8")
+    out = generate_rollup_markdown([parse_batch_scores(d)])
+    structural = _outside_fences(out)
+    assert not any(ln.startswith("## Heading inside") or ln.startswith("# Errata") for ln in structural)
+    assert "```inline triple```" in out
