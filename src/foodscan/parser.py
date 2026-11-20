@@ -78,6 +78,7 @@ _LEAD_IN = re.compile(
 # "Label:" at the start of a section: 1 to 4 words, then a colon, then more text.
 _LABEL = re.compile(
     r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})"
+    r"(?P<qual>\s*\([A-Za-z][A-Za-z ]{0,18}\))?"
     r"(?:\s+(?P<pct>\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)")
 # Labels that introduce non-ingredient text: the list ends before them.
 _DENY = re.compile(
@@ -145,7 +146,8 @@ def _label_info(seg: str) -> tuple[str, int, bool] | None:
     flat = _flat(label)
     if flat in _lexicon_terms():
         return None
-    shown = label + (" " + re.sub(r"\s+", "", m.group("pct")) if m.group("pct") else "")   # "Seasoning 12%"
+    shown = label + (" " + m.group("qual").strip() if m.group("qual") else "")                 # "Sprinkler Mix (Topping)"
+    shown += " " + re.sub(r"\s+", "", m.group("pct")) if m.group("pct") else ""                 # "Seasoning 12%"
     return shown, m.end(), not _class_word_re().search(flat)
 
 
@@ -317,6 +319,11 @@ def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool, str]:
             lab, off, strip = info
             if strip:
                 label, seg_start = lab, pos + off
+                while True:             # "Seasoning: Masala Mix: ...": a second label right after the first names the same section
+                    nxt = _label_info(body[seg_start:])
+                    if not nxt or not nxt[2]:
+                        break
+                    label, seg_start = f"{label}: {nxt[0]}", seg_start + nxt[1]
         end, kind = _next_boundary(body, seg_start)
         sections.append((label, body[seg_start:end]))
         if kind == "end":
@@ -360,9 +367,25 @@ def _contains_sentences(tail: str) -> list[str]:
     return found
 
 
+def unclosed_openers(text: str) -> list[str]:
+    """Snippets (from the opening bracket, 45 characters) of brackets that are opened and never closed."""
+    stack = []
+    for i, ch in enumerate(text):
+        if ch in _OPEN:
+            stack.append(i)
+        elif ch in _CLOSE and stack:
+            stack.pop()
+    return [re.sub(r"\s+", " ", text[max(0, i - 15): i + 45]).strip() for i in stack]
+
+
 def split_top_level_and(raw: str) -> list[str]:
     """Split "a and b" / "a & b" at bracket depth 0. Always returns at least [raw]; whether both sides are really
     ingredients is for the caller to decide (it needs the vocabulary)."""
+    return split_top_level_and_ex(raw)[0]
+
+
+def split_top_level_and_ex(raw: str) -> tuple[list[str], list[str]]:
+    """As split_top_level_and, also returning the connector text that was removed ("and", "&")."""
     cuts, depth = [], 0
     for m in re.finditer(r"[(\[{)\]}]|\s+(?:and|&)\s+", raw, re.IGNORECASE):
         tok = m.group()
@@ -372,13 +395,14 @@ def split_top_level_and(raw: str) -> list[str]:
             depth = max(depth - 1, 0)
         elif depth == 0:
             cuts.append((m.start(), m.end()))
-    parts, last = [], 0
+    parts, last, connectors = [], 0, []
     for a, b in cuts:
         parts.append(raw[last:a].strip())
+        connectors.append(raw[a:b].strip())
         last = b
     parts.append(raw[last:].strip())
-    parts = [p for p in parts if p]
-    return parts if len(parts) > 1 else [raw]
+    keep = [p for p in parts if p]
+    return (keep, connectors) if len(keep) > 1 and len(keep) == len(parts) else ([raw], [])
 
 
 def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:

@@ -45,6 +45,29 @@ def prepare_image(img):
     return ImageOps.autocontrast(img).filter(ImageFilter.SHARPEN)
 
 
+def flatten_lighting(img):
+    """Second reading for photos that did not read cleanly: divide by the local mean (uneven lighting, glare), stretch the
+    1st-99th percentile, no sharpening. Mirrors the browser's "flat" pass. Falls back to prepare_image without numpy."""
+    from PIL import Image
+
+    try:
+        import numpy as np
+    except ImportError:  # pragma: no cover
+        return prepare_image(img)
+    g = img.convert("L")
+    if max(g.size) > 2400:
+        s = 2400 / max(g.size)
+        g = g.resize((round(g.width * s), round(g.height * s)), resample=3)
+    a = np.asarray(g, dtype=float)
+    r = max(8, int(min(a.shape) / 30))
+    h, w = a.shape
+    c = np.pad(a, ((r + 1, r), (r + 1, r)), mode="edge").cumsum(0).cumsum(1)
+    mean = (c[2 * r + 1:, 2 * r + 1:] - c[:h, 2 * r + 1:] - c[2 * r + 1:, :w] + c[:h, :w]) / ((2 * r + 1) ** 2)
+    flat = np.clip(a / np.maximum(mean, 1) * 128, 0, 255)
+    lo, hi = np.percentile(flat, 1), np.percentile(flat, 99)
+    return Image.fromarray(np.clip((flat - lo) * 255 / max(hi - lo, 1), 0, 255).astype("uint8"))
+
+
 class TesseractOcr:
     def __init__(self, lang: str = "eng"):
         self.lang = lang
@@ -61,3 +84,11 @@ class TesseractOcr:
             raise OcrUnavailable(INSTALL_HINT) from exc
         with Image.open(image_path) as img:
             return pytesseract.image_to_string(prepare_image(img), lang=self.lang)
+
+    def extract_text_alt(self, image_path: str | Path) -> str:
+        """The second, lighting-corrected reading (see flatten_lighting)."""
+        import pytesseract
+        from PIL import Image
+
+        with Image.open(image_path) as img:
+            return pytesseract.image_to_string(flatten_lighting(img), lang=self.lang)

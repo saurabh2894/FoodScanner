@@ -13,8 +13,8 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import (count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, starts_with_denied_label,
-                     suspect_section_items)
+from .parser import (count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
+                     suspect_section_items, unclosed_openers)
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -72,13 +72,39 @@ def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
 
 
-def _split_pairs(raw: str) -> list[str]:
+_CODE_ONLY = re.compile(
+    r"^\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*"
+    r"(?:\s*(?:,|;|and|&|/)\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*)*\s*$", re.IGNORECASE)
+
+
+def _shared_code_list(parts: list[str]) -> bool:
+    """"emulsifiers and stabilizers [INS 460(i), INS 471]": ONE code list at the end that belongs to both classes. Which class a
+    code belongs to is not stated, so the item is not split (splitting would pin every code on the last class)."""
+    last = parts[-1].rstrip()
+    if len(parts) < 2 or not last or last[-1] not in ")]}" or any(c in p for p in parts[:-1] for c in "([{"):
+        return False
+    depth = 0
+    for i in range(len(last) - 1, -1, -1):
+        depth += last[i] in ")]}"
+        depth -= last[i] in "([{"
+        if depth == 0:
+            return bool(_CODE_ONLY.match(last[i + 1:-1]))
+    return False
+
+
+def _split_pairs_ex(raw: str) -> tuple[list[str], int]:
     """"emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, but only when EVERY side is a recognisable
-    ingredient, so "Spices and Condiments" or "Natural and Nature Identical Flavours" stay whole."""
-    parts = split_top_level_and(raw)
-    if len(parts) > 1 and all(_recognisable(normalise_list([p])[0]) for p in parts):
-        return parts
-    return [raw]
+    ingredient, so "Spices and Condiments" or "Natural and Nature Identical Flavours" stay whole. One shared trailing code list
+    keeps the item whole (see _shared_code_list). Also returns how many words were the joiners ("and"), so the completeness
+    accounting counts only those as removed."""
+    parts, connectors = split_top_level_and_ex(raw)
+    if len(parts) > 1 and not _shared_code_list(parts) and all(_recognisable(normalise_list([p])[0]) for p in parts):
+        return parts, sum(count_words(c) for c in connectors)
+    return [raw], 0
+
+
+def _split_pairs(raw: str) -> list[str]:
+    return _split_pairs_ex(raw)[0]
 
 
 def _declared_additives(declarations: list[str], ings: list[Ingredient]) -> list[dict]:
@@ -204,10 +230,10 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                 return _abstain(f"no ingredient list found in the text; {RETAKE}", text)
             parsed.heading_kind = "inferred"
 
-    split = [[(raw, _split_pairs(raw)) for raw in sec.items] for sec in parsed.sections]
-    sections = [(sec.label, [p for _, parts in grp for p in parts]) for sec, grp in zip(parsed.sections, split)]
+    split = [[(raw, *_split_pairs_ex(raw)) for raw in sec.items] for sec in parsed.sections]
+    sections = [(sec.label, [p for _, parts, _j in grp for p in parts]) for sec, grp in zip(parsed.sections, split)]
     items = [raw for _, its in sections for raw in its]
-    joiners = sum(count_words(raw) - sum(count_words(p) for p in parts) for grp in split for raw, parts in grp if len(parts) > 1)
+    joiners = sum(j for grp in split for _raw, _parts, j in grp)       # only the joiner words; any other word a split dropped stays "unaccounted"
     heads: list[str] = []
     ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads)
     declared = _declared_additives(parsed.declarations, ings)
@@ -222,6 +248,10 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                        for seg in unread_like]
     section_warnings += unread_warnings
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
+    if parsed.unbalanced_brackets:
+        # No auto-close: any close point would be a guess. The text after the stray bracket stays together, in the item that holds it.
+        section_warnings += [f'A bracket near "{snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)'
+                             for it in items for snip in unclosed_openers(it)]
     common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
                   ignored=list(parsed.ignored), declared=declared, heading={"kind": parsed.heading_kind, "text": parsed.heading_text},
                   sections=[(label, list(its)) for label, its in sections])
@@ -298,4 +328,15 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
 def analyse_image(path: str | Path, ocr: OcrEngine | None = None) -> Analysis:
     """Raises ocr.OcrUnavailable if the OCR backend cannot run (an error, not an abstention)."""
     engine = ocr or TesseractOcr()
-    return analyse_text(engine.extract_text(path), source="ocr")
+    first = analyse_text(engine.extract_text(path), source="ocr")
+    alt = getattr(engine, "extract_text_alt", None)
+    if alt is None or (first.answered and first.completeness["status"] == "complete"):
+        return first
+    # One bounded second pass for photos that did not read cleanly. The better yield is kept; ties keep the first reading.
+    second = analyse_text(alt(path), source="ocr")
+    return second if _ocr_yield(second) > _ocr_yield(first) else first
+
+
+def _ocr_yield(a: Analysis) -> int:
+    """Ingredients found minus those outside the vocabulary; 0 when no list was found."""
+    return max(0, len(a.ingredients) - len(a.unassessed)) if a.ingredients else 0

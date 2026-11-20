@@ -162,8 +162,24 @@ CORPUS = [
     "Ingredients: Rice, salt, turmeric (colouring agent).", "Ingredients: Rice, salt, turmeric (as colourant), added flavour.",
     "Ingredients: Rice, salt, turmeric (as colourant). Contains permitted natural colour.", "Ingredients: Rice, salt, turmeric (as colourant), colour (INS 150d).",
     "Ingredients: Rice, salt, turmeric (as colourant), raising agent (INS 500(ii)).",
+    "Ingredients: Rice, salt, turmeric (colour & flavour).", "Ingredients: Rice, salt, turmeric (colouring and flavouring).", "Ingredients: Rice, salt, turmeric (flavour & colour).",
+    "Ingredients: Rice, salt, turmeric (colour & flavour), added flavour.", "Ingredients: Rice, salt, turmeric (colour & flavour), colour (INS 150d).",
+    "Ingredients: Rice, salt, turmeric (colour & flavour), emulsifier (INS 322).", "Ingredients: Rice, salt, turmeric (colour & flavour), flavour enhancer (INS 627).",
+    "Ingredients: Rice, salt, turmeric (colour & flavour). Contains added flavour.", "Ingredients: Rice, salt, turmeric (colour & flavour). Contains permitted natural colour.",
+    # combined follow-up fixes (tests/test_followup_fixes.py)
+    "Ingredients: Water, sugar, emulsifiers and stabilizers [INS 460(i), INS 471, INS 466], salt.", "Ingredients: Sugar, emulsifier [472e] and flour treatment agent [1101(ii)], salt.",
+    "Ingredients: Rice, Corn (3%, salt, sugar, added flavour. Store in a cool place.", "Ingredients: Rice, Corn {wheat flour (3%), sugar, salt, added flavour, palm oil.",
+    "Ingredients: Rice, salt, Sugar [aged, flavour enhancer (INS 627), oil. Contains milk.", "Ingredients: Rice,\nCorn (3%,\nsalt),\nsugar [a (b)], oil.",
+    "Ingredients: Rice, salt. Sprinkler Mix (Topping): chilli, cumin, garlic.", "Ingredients: Seasoning: salt, sugar. Seasoning: chilli, cumin. Seasoning: pepper, clove.",
+    "Ingredients: Rice, salt. Topping 2: chilli, cumin, garlic.", "Ingredients: Noodles: wheat flour, salt. Seasoning: Masala Mix: sugar, flavour. Sprinkler Mix (Topping): chilli, cumin.",
+    "Pasteurized Toned Milk & Active Lactic Culture", "Ingredients: Double Toned Milk, Active Culture.", "Ingredients: Dahi.", "Ingredients: Milk, live cultures.",
+    "Ingredients: Bengal Gram Flour (Besan), Refined Palmolein Oil, Edible Common Salt.", "Ingredients: Gram flour, salt.", "Ingredients: Sugar, refined wheat flo",
+    "Ingredients: Rice, salt, turmeric (colour), added flavour.", "Ingredients: Rice, salt, turmeric (colour), colour (INS 150d).", "Ingredients: Butter, colour (INS 160b).",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
+_f07 = Path(__file__).resolve().parent.parent / 'evaluation/dev_regression_15/inputs/F07.txt'
+if _f07.exists():
+    CORPUS.append('Ingredients: ' + _f07.read_text())
 
 
 def py_result(text, source="ocr"):

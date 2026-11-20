@@ -122,3 +122,34 @@ def test_butter_with_a_declared_colour_gives_the_documented_provisional_result()
 def test_plain_and_salted_butter_do_not_trigger_the_marker():
     for t in ("Ingredients: Butter.", "Ingredients: Butter, salt.", "Ingredients: Milk fat, salt."):
         assert not colour_driver(a(t)), t
+
+
+# ---- markers that are only part of the recognised function note decide nothing ("colour & flavour") -----------------------
+@pytest.mark.parametrize("text", [
+    "Ingredients: Rice, salt, turmeric (colour & flavour).",
+    "Ingredients: Rice, salt, turmeric (colouring and flavouring).",
+    "Ingredients: Rice, salt, turmeric (flavour & colour).",
+])
+def test_flavour_inside_the_same_function_note_cannot_decide_group_4(text):
+    r = a(text)
+    assert not r.answered and r.group is None, text
+    assert not r.drivers or not any('"flavour"' in d.detail or '"colour"' in d.detail for d in r.drivers), text
+    assert any("not counted as an added colour" in w for w in r.warnings), text
+
+
+@pytest.mark.parametrize("extra, expect", [
+    (", added flavour", '"flavour"'),                               # separately declared added flavour
+    (", colour (INS 150d)", '"colour"'),                            # explicit colour declaration
+    (", emulsifier (INS 322)", '"emulsifier"'),                     # genuinely independent strong evidence
+    (", flavour enhancer (INS 627)", '"enhancer"'),
+])
+def test_independent_evidence_next_to_a_colour_and_flavour_note_still_gives_group_4(extra, expect):
+    r = a(f"Ingredients: Rice, salt, turmeric (colour & flavour){extra}.")
+    assert r.group == 4 and any(expect in d.detail for d in r.drivers)
+    assert all(d.ingredient != "turmeric (colour & flavour)" for d in r.drivers)    # the note itself is never the driver
+
+
+def test_contains_line_flavour_declaration_next_to_a_colour_and_flavour_note_still_counts():
+    r = a("Ingredients: Rice, salt, turmeric (colour & flavour). Contains added flavour.")
+    assert r.group == 4 and any("Contains" in d.detail for d in r.drivers)
+    assert any(not d["in_list"] for d in r.declared)       # the flavour in the note does not count as "in the list"

@@ -116,9 +116,10 @@ class _Hit:
 # "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
 # is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
 # "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
-_COLOUR_NOTE = re.compile(
-    r"^(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
-    r"colou?r(?:ant)?(?: agent)?(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$")
+_NOTE_PREFIX = r"(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
+_NOTE_COLOUR = r"colou?r(?:ant)?(?: agent)?"
+_NOTE_OTHER = r"(?:spices?|seasoning|flavou?rs?)"
+_COLOUR_NOTE = re.compile(rf"^{_NOTE_PREFIX}(?:{_NOTE_COLOUR}(?: (?:and|&) {_NOTE_OTHER})?|{_NOTE_OTHER} (?:and|&) {_NOTE_COLOUR})$")
 
 
 def is_colour_note(inner: str) -> bool:
@@ -133,11 +134,8 @@ def colour_note_only(ing: Ingredient) -> bool:
 
 
 def ingredient_marker_terms(ing: Ingredient) -> set[str]:
-    """marker_terms for an ingredient in the list, without a colour that is only a function note."""
-    terms = marker_terms(ing.text)
-    if colour_note_only(ing):
-        terms.discard("colour")
-    return terms
+    """marker_terms for an ingredient in the list. When its bracket is only a function note, nothing in it is a marker."""
+    return set() if colour_note_only(ing) else marker_terms(ing.text)
 
 
 def marker_terms(text: str) -> set[str]:
@@ -149,8 +147,8 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
     hits: list[_Hit] = []
     note_only = colour_note_only(ing)
     for pat, row in _markers():
-        if note_only and flatten(row["term"]) == "colour":
-            continue
+        if note_only:
+            break          # the name has no marker and the bracket is only a function note: its words ("colour & flavour") decide nothing
         if pat.search(ing.text):
             hits.append(_Hit(row["strength"], row["marker_class"], f'"{row["term"]}" ({row["marker_class"]})', row["source"]))
     ins_table = {r["ins"].lower(): r for r in load_table("ins_map.csv")}

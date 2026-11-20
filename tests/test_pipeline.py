@@ -42,7 +42,7 @@ def test_truncated_list_with_strong_marker_is_group4_with_warning():
 
 def test_unclosed_bracket_with_strong_marker_is_group4_with_warning():
     a = analyse_text("Ingredients: Sugar, emulsifier (INS 471, salt")
-    assert a.answered and a.group == 4 and "unclosed bracket" in a.warnings[0]
+    assert a.answered and a.group == 4 and any("unclosed bracket" in w for w in a.warnings)     # the new "bracket never closed" warning may come first
 
 
 def test_option_a_does_not_loosen_other_truncation_cases():

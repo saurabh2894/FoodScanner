@@ -55,7 +55,7 @@
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
     const LEAD_IN = /(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019\/\-]{0,40}:)\s*$/id;
-    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(?:\s+(\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)/;
+    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(\s*\([A-Za-z][A-Za-z ]{0,18}\))?(?:\s+(\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)/;
     const DENY = /^(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)$/i;
 
     function bracketDepth(text) {
@@ -102,7 +102,7 @@
       if (!/^\p{L}/u.test(seg.slice(m[0].length))) return null;
       const flat = flatten(label);
       if (isRecognised(flat)) return null;
-      const shown = label + (m[2] ? " " + m[2].replace(/\s+/g, "") : "");   // "Seasoning 12%"
+      const shown = label + (m[2] ? " " + m[2].trim() : "") + (m[3] ? " " + m[3].replace(/\s+/g, "") : "");   // "Sprinkler Mix (Topping)", "Seasoning 12%"
       return { label: shown, off: m[0].length, strip: !CLASS_WORD_RE.test(flat) };
     }
     const MARKER_TERMS = new Set(T.markers.map((r) => flatten(r.term)));
@@ -167,7 +167,14 @@
       for (;;) {
         const info = labelInfo(body.slice(pos));
         let label = null, segStart = pos;
-        if (info && info.strip) { label = info.label; segStart = pos + info.off; }
+        if (info && info.strip) {
+          label = info.label; segStart = pos + info.off;
+          for (;;) {      // "Seasoning: Masala Mix: ...": a second label right after the first names the same section
+            const nxt = labelInfo(body.slice(segStart));
+            if (!nxt || !nxt.strip) break;
+            label = label + ": " + nxt.label; segStart += nxt.off;
+          }
+        }
         const [end, kind] = nextBoundary(body, segStart);
         sections.push([label, body.slice(segStart, end)]);
         if (kind === "end") break;
@@ -192,7 +199,8 @@
       return out.map((seg) => collapse(seg).replace(ALLERGEN_LABEL, "")).filter((seg) => /^contains\b/i.test(seg));
     }
     // "a and b" / "a & b" at bracket depth 0; the caller decides whether both sides are ingredients
-    function splitTopLevelAnd(raw) {
+    function splitTopLevelAnd(raw) { return splitTopLevelAndEx(raw)[0]; }
+    function splitTopLevelAndEx(raw) {
       const cuts = []; let depth = 0, m;
       const re = /[(\[{)\]}]|\s+(?:and|&)\s+/gi;
       while ((m = re.exec(raw))) {
@@ -201,11 +209,11 @@
         else if (tok.length === 1 && CLOSE.includes(tok)) depth = Math.max(depth - 1, 0);
         else if (depth === 0) cuts.push([m.index, m.index + tok.length]);
       }
-      const parts = []; let last = 0;
-      for (const [a, b] of cuts) { parts.push(raw.slice(last, a).trim()); last = b; }
+      const parts = [], connectors = []; let last = 0;
+      for (const [a, b] of cuts) { parts.push(raw.slice(last, a).trim()); connectors.push(raw.slice(a, b).trim()); last = b; }
       parts.push(raw.slice(last).trim());
       const kept = parts.filter(Boolean);
-      return kept.length > 1 ? kept : [raw];
+      return kept.length > 1 && kept.length === parts.length ? [kept, connectors] : [[raw], []];
     }
     const countWords = (t) => (t.match(/[\p{L}\p{N}]+/gu) || []).length;
     function parseIngredientList(text, opts) {
@@ -375,14 +383,15 @@
 
     /* ---------- classify ---------- */
     // A colour word that is only a short bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)") is not a declared ADDED colour.
-    const COLOUR_NOTE = /^(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*colou?r(?:ant)?(?: agent)?(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$/;
+    const NOTE_PREFIX = "(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*", NOTE_COLOUR = "colou?r(?:ant)?(?: agent)?", NOTE_OTHER = "(?:spices?|seasoning|flavou?rs?)";
+    const COLOUR_NOTE = new RegExp(`^${NOTE_PREFIX}(?:${NOTE_COLOUR}(?: (?:and|&) ${NOTE_OTHER})?|${NOTE_OTHER} (?:and|&) ${NOTE_COLOUR})$`);
     const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
     const colourNoteOnly = (ing) => !!ing.name && isColourNote(ing.inner) && !markers.some(({ re }) => re.test(ing.name));
     function hitsFor(ing) {
       let hits = [];
       const noteOnly = colourNoteOnly(ing);
       for (const { re, row } of markers) {
-        if (noteOnly && row.term.toLowerCase() === "colour") continue;
+        if (noteOnly) break;      // the name has no marker and the bracket is only a function note: its words decide nothing
         if (re.test(ing.text)) hits.push({ strength: row.strength, marker_class: row.marker_class, detail: `"${row.term}" (${row.marker_class})`, source: row.source });
       }
       for (const use of ing.ins) {
@@ -454,13 +463,33 @@
     }
     const splitItemsText = (t) => splitTopLevel(collapse(t)).items;
     const markerTerms = (text) => new Set(markers.filter(({ re }) => re.test(text)).map(({ row }) => row.term));
-    const ingredientMarkerTerms = (ing) => { const t = markerTerms(ing.text); if (colourNoteOnly(ing)) t.delete("colour"); return t; };
+    const ingredientMarkerTerms = (ing) => (colourNoteOnly(ing) ? new Set() : markerTerms(ing.text));
     const subset = (a, b) => [...a].every((x) => b.has(x));
     // "emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, only when EVERY side is recognisable
-    function splitPairs(raw) {
-      const parts = splitTopLevelAnd(raw);
-      return parts.length > 1 && parts.every((p) => recognisableIng(normaliseIngredient(p))) ? parts : [raw];
+    const CODE_ONLY = /^\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*(?:\s*(?:,|;|and|&|\/)\s*(?:(?:ins|e)\s*[-:.]?\s*)?\d{3,4}[a-z]?(?:\([ivxl]+\))*)*\s*$/i;
+    function sharedCodeList(parts) {     // "emulsifiers and stabilizers [INS 460(i), INS 471]": one code list for both classes; not split
+      const last = parts[parts.length - 1].trimEnd();
+      if (parts.length < 2 || !last || !")]}".includes(last[last.length - 1]) || parts.slice(0, -1).some((p) => /[(\[{]/.test(p))) return false;
+      let depth = 0;
+      for (let i = last.length - 1; i >= 0; i--) {
+        if (")]}".includes(last[i])) depth++;
+        if ("([{".includes(last[i])) depth--;
+        if (depth === 0) return CODE_ONLY.test(last.slice(i + 1, -1));
+      }
+      return false;
     }
+    function splitPairsEx(raw) {
+      const [parts, connectors] = splitTopLevelAndEx(raw);
+      if (parts.length > 1 && !sharedCodeList(parts) && parts.every((p) => recognisableIng(normaliseIngredient(p))))
+        return [parts, connectors.reduce((n, c) => n + countWords(c), 0)];
+      return [[raw], 0];
+    }
+    const splitPairs = (raw) => splitPairsEx(raw)[0];
+    const unclosedOpeners = (text) => {
+      const stack = [];
+      for (let i = 0; i < text.length; i++) { if (OPEN.includes(text[i])) stack.push(i); else if (CLOSE.includes(text[i]) && stack.length) stack.pop(); }
+      return stack.map((i) => text.slice(Math.max(0, i - 15), i + 45).replace(/\s+/g, " ").trim());
+    };
     // additive/flavour clauses of the "Contains ..." lines, marked as in or missing from the list; allergens are dropped
     function declaredAdditives(declarations, ings) {
       const listTerms = new Set(); const listCodes = new Set();
@@ -534,8 +563,8 @@
       }
       let joiners = 0;
       const sections = parsed.sections.map((sec) => ({ label: sec.label, items: sec.items.flatMap((raw) => {
-        const parts = splitPairs(raw);
-        if (parts.length > 1) joiners += countWords(raw) - parts.reduce((n, x) => n + countWords(x), 0);
+        const [parts, j] = splitPairsEx(raw);
+        joiners += j;          // only the joiner words; any other word a split dropped stays "unaccounted"
         return parts;
       }) }));
       const items = sections.flatMap((sec) => sec.items);
@@ -549,6 +578,7 @@
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
+      if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
       const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
