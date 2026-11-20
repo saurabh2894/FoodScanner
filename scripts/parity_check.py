@@ -137,6 +137,17 @@ CORPUS = [
     "Ingredients: Rice, salt.\nContains wheat, milk and soy.\nMay contain traces of nuts.", "Ingredients: Rice, salt. Contains wheat and milk, permitted natural colour (160c) and added flavour.",
     "Ingredients: Rice, salt. Contains soy. Contains permitted colour. Manufactured by X.", "Ingredients: Rice, salt.\nManufactured by Example Foods.\nAllergen information: Contains wheat.\nContains added flavours",
     "Ingredients: Rice. May contain traces of nuts. Contains milk.", "Ingredients: raising agents [500(ii), 503(ii)], Colour [150d], rice.",
+    # photo-path resilience (tests/test_photo_path_resilience.py)
+    "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
+    "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
+    "lNGREDlENTS: Rice, salt, sugar, maltodextrin, water.", "INGREDIEN: Rice, salt, sugar.", "INGREDIENT5: Rice, salt, sugar, water.",
+    "Nutrients: energy 450 kcal, protein 8 g, fat 20 g, sugar 10 g.", "Recipients: please send the whole panel, closer.",
+    "We love fine redients in our kitchen, rice, salt, sugar, oil and more.",
+    "NEW! Tasty crunchy snack. Buy now and get a free gift inside, limited offer, enjoy the taste!\n\nWheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).\n\nNutritional information per 100 g\nEnergy 450 kcal\nProtein 8 g\n\nContains: wheat, milk, soy.",
+    "NEW! Tasty crunchy snack. Buy now and get a free gift inside, limited offer, enjoy the taste!\n\nRice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.\n\nNutritional information per 100 g\nEnergy 450 kcal",
+    "Nutritional information per 100 g\nEnergy 450 kcal\nProtein 8 g\nCarbohydrate 60 g\nTotal fat 20 g\nSodium 600 mg",
+    "Contains: wheat, milk, soy, gluten, peanuts, tree nuts.", "NEW, tasty, crunchy, buy now, free gift, limited offer, enjoy the taste",
+    "Energy 450 kcal, Protein 8 g, Carbohydrate 60 g, Total fat 20 g, Sodium 600 mg, Fibre 2 g",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -145,7 +156,7 @@ def py_result(text, source="ocr"):
     a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored, "declared": a.declared,
+        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored, "declared": a.declared, "heading": a.heading, "completeness": a.completeness,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
@@ -155,7 +166,7 @@ def py_result(text, source="ocr"):
 
 # pasted-text path (source="text"): the regression fixtures, plus every corpus text above, must also match
 PASTE = [
-    "Puff 88%: Rice, Rice Bran Oil. Seasoning 12%: Salt, Flavour.", "Rice, Rice Bran Oil Seasoning : Onion, Garlic, Flavour",
+    "Puff 88%: Rice, Rice Bran Oil. Seasoning 12%: Salt, Flavour.", "REDIENTS: Rice, salt, sugar, water, cumin, oil.", "Rice, Rice Bran Oil Seasoning : Onion, Garlic, Flavour",
     "Ingredients: Milk", "Milk", "milk.", "INGREDIENTS : MILK", "  ingredients:milk  ", "Ingredients: milk.", "MILK, SALT",
     "", "   ", "\n \t\n", "Ingredients:", "Ingredients:   ", "###", "#### ~~ 1234 !!!! 5678", "1234 5678",
     "Salt", "Sugar, refined wheat flo", "Ingredients: Sugar, refined wheat flo", "Rice, salt", "rice,salt,sugar",
@@ -173,7 +184,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, declared: a.declared, sections: a.sections, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, declared: a.declared, heading: a.heading, completeness: a.completeness, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
 

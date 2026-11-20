@@ -67,6 +67,12 @@
     <p class="src">Counts as evidence. Allergen statements are not shown and never become ingredients.</p>
     <ul>{% for d in result.declared %}<li>{{ d.text }} <span class="src">{{ 'also in the ingredient list' if d.in_list else 'NOT in the ingredient list' }}</span></li>{% endfor %}</ul>
   {% endif %}
+  {% if result.completeness.words.in_list %}
+    {% set c = result.completeness %}
+    <h3>Completeness: {{ c.status }}</h3>
+    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed.items }} items are outside the vocabulary. This is text coverage, not proof that the list is complete.</p>
+    {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
+  {% endif %}
   {% if result.ignored %}
     <h3>Not read as ingredients</h3>
     <p class="src">Text after the list, kept here so nothing is hidden.</p>

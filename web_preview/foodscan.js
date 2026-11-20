@@ -19,7 +19,39 @@
     // Mirrors src/foodscan/parser.py. A full stop does not end the list by itself: a following
     // "Label:" section continues it (unless the label names non-ingredient text), and a line break
     // before a "Label:" starts a new section. See the module docstring there.
-    const HEADING = /(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
+    const HEADING = /(?:ingredient[s5]?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
+    const HEADING_WORDS = ["ingredients", "ingredient"];
+    const OCR_DIGITS = { "5": "s", "1": "i", "0": "o", "3": "e" };       // digits OCR often puts where letters are
+    function lev(a, b) {
+      let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+      for (let i = 1; i <= a.length; i++) {
+        const cur = [i];
+        for (let j = 1; j <= b.length; j++) cur.push(Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] !== b[j - 1] ? 1 : 0)));
+        prev = cur;
+      }
+      return prev[prev.length - 1];
+    }
+    // a damaged "INGREDIENTS": cropped at an edge ("REDIENTS", "INGREDIEN") or off by up to two OCR letters
+    function headingLike(tok) {
+      const t = tok.toLowerCase().replace(/[5103]/g, (d) => OCR_DIGITS[d]);
+      if (t.length < 6) return false;
+      if (HEADING_WORDS.some((w) => w.endsWith(t) || w.startsWith(t))) return true;
+      return t.length >= 8 && HEADING_WORDS.some((w) => lev(t, w) <= 2);
+    }
+    // {end, kind, text}: "exact", or "fuzzy" for a damaged heading, which must start a line or be followed by a colon/dash
+    function findHeading(norm) {
+      const m = HEADING.exec(norm);
+      if (m) return { end: m.index + m[0].length, kind: "exact", text: stripChars(m[0], " :-–—") };
+      const re = /[A-Za-z0-9]{6,}/g; let t;
+      while ((t = re.exec(norm))) {
+        if (!headingLike(t[0])) continue;
+        const before = norm.slice(0, t.index), after = norm.slice(t.index + t[0].length);
+        if (/^\s*[:\-–—]/.test(after) || /(?:^|\n)[\s*•\-]*$/.test(before)) {
+          return { end: t.index + t[0].length + /^\s*[:\-–—]?\s*/.exec(after)[0].length, kind: "fuzzy", text: t[0] };
+        }
+      }
+      return null;
+    }
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
     const LEAD_IN = /(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019\/\-]{0,40}:)\s*$/id;
@@ -175,15 +207,17 @@
       const kept = parts.filter(Boolean);
       return kept.length > 1 ? kept : [raw];
     }
+    const countWords = (t) => (t.match(/[\p{L}\p{N}]+/gu) || []).length;
     function parseIngredientList(text, opts) {
       const assumeList = !!(opts && opts.assumeList);
       const norm = normaliseWs(text);
-      const m = HEADING.exec(norm);
-      let body;
-      if (m) body = norm.slice(m.index + m[0].length);
-      else if (assumeList) body = norm;
+      const hf = findHeading(norm);
+      let body, headingKind, headingText;
+      if (hf) { body = norm.slice(hf.end); headingKind = hf.kind; headingText = hf.text; }
+      else if (assumeList) { body = norm; headingKind = "assumed"; headingText = ""; }
       else return { found: false };
       let terminated = false; const declarations = [];
+      const regionWords = countWords(body);
       const stop = STOP.exec(body);
       const bodyWithTail = stop ? body.slice(stop.index) : "";
       if (stop) {
@@ -194,6 +228,7 @@
         terminated = true;
         declarations.push(...containsSentences(bodyWithTail));
       }
+      const keptWords = countWords(body);
       const read = readSections(body);
       terminated = terminated || read.ended;
       const sections = [], items = []; let unbalanced = false;
@@ -212,7 +247,7 @@
         if (cur.length) { sections.push({ label: curLabel, items: cur }); items.push(...cur); }
       }
       if (!items.length) return { found: false };
-      return { found: true, items, terminated, unbalanced, declarations, sections, ignored: read.unread ? [collapse(read.unread)] : [] };
+      return { found: true, items, terminated, unbalanced, declarations, sections, ignored: read.unread ? [collapse(read.unread)] : [], headingKind, headingText, regionWords, keptWords, tailWords: regionWords - keptWords };
     }
 
     function* bracketGroups(raw) {
@@ -385,7 +420,7 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], declared: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], declared: [], heading: { kind: "none", text: "" }, completeness: { status: "uncertain", heading: "none", reasons: ["no ingredient list was read"], list_share: 0.0, words: { region: 0, in_list: 0, declared: 0, excluded: 0, not_read: 0, unaccounted: 0 }, assessed: { items: 0, not_assessed: 0 } }, text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
     function expand(items, depth, heads) {   // items: [raw, section label] pairs
@@ -436,6 +471,26 @@
       const parts = splitTopLevel(collapse(seg)).items;
       return parts.length >= 2 || parts.some((part) => recognisableIng(normaliseIngredient(part)));
     }
+    const NUTRITION = ["kcal", "energy", "carbohydrate", "per 100", "serving size", "cholesterol", "nutrition", "rda", "calories", "total fat", "trans fat"];
+    const MARKETING = ["buy", "offer", "free", "mrp", "enjoy", "tasty", "crunchy", "delicious", "limited", "new!", "gift", "price", "taste", "extra"];
+    const RETAKE = 'retake the photo with the ingredient panel (and its "Ingredients" heading) in frame';
+    // no heading: the most plausible ingredient block, never a nutrition table, marketing copy or allergen statement (see pipeline._infer_block)
+    function inferBlock(text) {
+      let best = null, bestScore = 0;
+      for (const block of text.replace(/\r\n/g, "\n").split(/\n\s*\n/)) {
+        const flat = block.replace(/\s+/g, " ").trim(), low = flat.toLowerCase();
+        if (!flat || /^(?:(?:may\s+)?contains?\b|allerg)/.test(low)) continue;
+        if (NUTRITION.filter((k) => low.includes(k)).length >= 2 || MARKETING.filter((k) => low.includes(k)).length >= 2) continue;
+        const parts = splitItemsText(flat);
+        if (parts.length < 4 || parts.reduce((n, x) => n + x.split(/\s+/).filter(Boolean).length, 0) / parts.length > 6) continue;
+        const ings = parts.map(normaliseIngredient);
+        const recognised = ings.filter(recognisableIng).length;
+        const marked = ings.filter((i) => i.ins.length > 0 || hitsFor(i).length > 0).length;
+        const score = recognised + 2 * marked;
+        if (recognised / parts.length >= 0.4 && score >= 3 && score > bestScore) { best = flat; bestScore = score; }
+      }
+      return best;
+    }
     const NO_TEXT = "No text to analyse", NO_INGREDIENTS = "No ingredients found in this text";
     // source "ocr" (default, photo path): short/noisy text is blamed on OCR and the heading is required.
     // source "text" (typed or pasted): no length gate, a heading-less text is the list, messages are about the text.
@@ -452,12 +507,22 @@
         parsed = parseIngredientList(text, { assumeList: true });
         if (!parsed.found) return abstain(NO_INGREDIENTS, text);
       } else {
-        if (chars.length < MIN_CHARS) return abstain("OCR produced little text", text);
-        if (alphaShare() < MIN_ALPHA_RATIO) return abstain("extracted text looks like noise, not a readable label", text);
+        if (chars.length < MIN_CHARS) return abstain("OCR produced little text; retake the photo closer and in focus", text);
+        if (alphaShare() < MIN_ALPHA_RATIO) return abstain("extracted text looks like noise, not a readable label; retake a clearer photo", text);
         parsed = parseIngredientList(text);
-        if (!parsed.found) return abstain("no ingredient list found in the text", text);
+        if (!parsed.found) {
+          const block = inferBlock(text);
+          parsed = block ? parseIngredientList(block, { assumeList: true }) : null;
+          if (!parsed || !parsed.found) return abstain(`no ingredient list found in the text; ${RETAKE}`, text);
+          parsed.headingKind = "inferred";
+        }
       }
-      const sections = parsed.sections.map((sec) => ({ label: sec.label, items: sec.items.flatMap(splitPairs) }));
+      let joiners = 0;
+      const sections = parsed.sections.map((sec) => ({ label: sec.label, items: sec.items.flatMap((raw) => {
+        const parts = splitPairs(raw);
+        if (parts.length > 1) joiners += countWords(raw) - parts.reduce((n, x) => n + countWords(x), 0);
+        return parts;
+      }) }));
       const items = sections.flatMap((sec) => sec.items);
       const heads = [];
       const ings = expand(sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads);
@@ -468,19 +533,44 @@
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
-      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, sections: sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
         truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${items[items.length - 1]}")`;
       // unlabelled text after a full stop that looks like more of the list: like truncation, only a strong-marker Group 4 stands
       const unread = unreadLike.length ? `text after a full stop looks like more ingredients and was not read: "${shortText(unreadLike[0])}"` : null;
-      const blocking = truncation || unread;
+      let headingRisk = null;
+      if (source === "ocr" && parsed.headingKind === "fuzzy")
+        headingRisk = `the "Ingredients" heading was read as "${parsed.headingText}" (the photo may be cut off at the left edge), so the start of the list may be missing; ${RETAKE}`;
+      else if (source === "ocr" && parsed.headingKind === "inferred")
+        headingRisk = `no "Ingredients" heading was found, so the text block used may not be the ingredient list; ${RETAKE}`;
+      const inList = sections.reduce((n, sec) => n + countWords(sec.label || "") + sec.items.reduce((m, x) => m + countWords(x), 0), 0) + joiners;
+      const notRead = parsed.ignored.reduce((n, x) => n + countWords(x), 0);
+      const declaredW = parsed.declarations.reduce((n, x) => n + countWords(x), 0);
+      const unaccounted = Math.max(0, parsed.keptWords - inList - notRead);
+      const reasons = [];
+      if (source === "ocr" && parsed.headingKind === "fuzzy") reasons.push(`the heading was read as "${parsed.headingText}": the photo may be cut off at the left edge`);
+      if (source === "ocr" && parsed.headingKind === "inferred") reasons.push('no "Ingredients" heading was found: the most list-like text block was used');
+      if (parsed.unbalanced) reasons.push("brackets are not balanced: text may be cut off or misread");
+      if (truncation) reasons.push("the list looks truncated");
+      if (unreadLike.length) reasons.push("text after a full stop looks like more ingredients and was not read");
+      if (unaccounted) reasons.push(`${unaccounted} word(s) after the heading were neither read as ingredients nor set aside`);
+      if (suspectSectionItems(items).length) reasons.push("a section label may not have been split from an ingredient");
+      const denom = inList + notRead + unaccounted;
+      common.completeness = {
+        status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
+        list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
+        words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW), not_read: notRead, unaccounted },
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => !recognisableIng(i)).length } };
+      const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
+      const blocking = truncation || unread || headingRisk || lost;
       const r = classifyIngredients(ings, parsed.declarations);
       // Option A (user decision): a strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
       if (blocking && r.group !== 4) return abstain(blocking, text, Object.assign({ drivers: r.drivers }, common));
       if (r.group === null) return abstain(r.reason || "classification uncertain", text, Object.assign({ drivers: r.drivers }, common));
       const warnings = [...sectionWarnings];
+      if (headingRisk) warnings.push(headingRisk[0].toUpperCase() + headingRisk.slice(1).split("; retake")[0] + ". Group 4 stands because the markers found are already enough.");
       if (truncation) warnings.push("List may be incomplete (" + stripChars(truncation.replace(/^ingredient list looks truncated /, ""), "()") + "). Group 4 stands because the markers found are already enough.");
       return Object.assign({}, common, { answered: true, group: r.group, reason: null, drivers: r.drivers, warnings, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` });
     }

@@ -13,7 +13,7 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import (parse_ingredient_list, split_compound, split_items, split_top_level_and, starts_with_denied_label,
+from .parser import (count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, starts_with_denied_label,
                      suspect_section_items)
 
 NOT_ENOUGH = "Not enough information"
@@ -48,6 +48,14 @@ class Analysis:
     # additive / flavour declarations from "Contains ..." lines: [{"text", "in_list"}]. in_list False: stated there but
     # missing from the ingredient list. They count as evidence but are never added to the list; allergens are dropped.
     declared: list[dict] = field(default_factory=list)
+    heading: dict = field(default_factory=lambda: {"kind": "none", "text": ""})   # how the list was located
+    # Completeness signal. Text-span coverage over the words after the heading plus explicit reasons for doubt; it never
+    # claims exact completeness (the true item count is unknown): {"status": complete|uncertain, "heading", "words":
+    # {region, in_list, declared, excluded, not_read, unaccounted}, "list_share", "assessed": {items, not_assessed}, "reasons"}
+    completeness: dict = field(default_factory=lambda: {
+        "status": "uncertain", "heading": "none", "reasons": ["no ingredient list was read"], "list_share": 0.0,
+        "words": {"region": 0, "in_list": 0, "declared": 0, "excluded": 0, "not_read": 0, "unaccounted": 0},
+        "assessed": {"items": 0, "not_assessed": 0}})
 
     @property
     def headline(self) -> str:
@@ -91,6 +99,34 @@ def _declared_additives(declarations: list[str], ings: list[Ingredient]) -> list
                 if entry not in out:
                     out.append(entry)
     return out
+
+
+_NUTRITION = ("kcal", "energy", "carbohydrate", "per 100", "serving size", "cholesterol", "nutrition", "rda", "calories", "total fat", "trans fat")
+_MARKETING = ("buy", "offer", "free", "mrp", "enjoy", "tasty", "crunchy", "delicious", "limited", "new!", "gift", "price", "taste", "extra")
+RETAKE = 'retake the photo with the ingredient panel (and its "Ingredients" heading) in frame'
+
+
+def _infer_block(text: str) -> str | None:
+    """No heading was found: the most plausible ingredient text block, or None. Never a nutrition table, marketing copy
+    or an allergen statement, and it must look like a list (four or more short items, mostly recognisable)."""
+    best, best_score = None, 0
+    for block in re.split(r"\n\s*\n", text.replace("\r\n", "\n")):
+        flat = re.sub(r"\s+", " ", block).strip()
+        low = flat.lower()
+        if not flat or re.match(r"(?:may\s+)?contains?\b|allerg", low):
+            continue
+        if sum(k in low for k in _NUTRITION) >= 2 or sum(k in low for k in _MARKETING) >= 2:
+            continue
+        parts = split_items(flat)
+        if len(parts) < 4 or sum(len(x.split()) for x in parts) / len(parts) > 6:
+            continue
+        ings = normalise_list(parts)
+        recognised = sum(_recognisable(i) for i in ings)
+        marked = sum(bool(i.ins) or bool(_hits_for(i)) for i in ings)
+        score = recognised + 2 * marked
+        if recognised / len(parts) >= 0.4 and score >= 3 and score > best_score:
+            best, best_score = flat, score
+    return best
 
 
 def _short(text: str, limit: int = 100) -> str:
@@ -155,15 +191,21 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
             return _abstain(NO_INGREDIENTS, text)
     else:
         if len(compact) < MIN_CHARS:
-            return _abstain("OCR produced little text", text)
+            return _abstain("OCR produced little text; retake the photo closer and in focus", text)
         if sum(c.isalpha() for c in compact) / len(compact) < MIN_ALPHA_RATIO:
-            return _abstain("extracted text looks like noise, not a readable label", text)
+            return _abstain("extracted text looks like noise, not a readable label; retake a clearer photo", text)
         parsed = parse_ingredient_list(text)
         if not parsed.found:
-            return _abstain("no ingredient list found in the text", text)
+            block = _infer_block(text)
+            parsed = parse_ingredient_list(block, assume_list=True) if block else None
+            if parsed is None or not parsed.found:
+                return _abstain(f"no ingredient list found in the text; {RETAKE}", text)
+            parsed.heading_kind = "inferred"
 
-    sections = [(sec.label, [p for raw in sec.items for p in _split_pairs(raw)]) for sec in parsed.sections]
+    split = [[(raw, _split_pairs(raw)) for raw in sec.items] for sec in parsed.sections]
+    sections = [(sec.label, [p for _, parts in grp for p in parts]) for sec, grp in zip(parsed.sections, split)]
     items = [raw for _, its in sections for raw in its]
+    joiners = sum(count_words(raw) - sum(count_words(p) for p in parts) for grp in split for raw, parts in grp if len(parts) > 1)
     heads: list[str] = []
     ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads)
     declared = _declared_additives(parsed.declarations, ings)
@@ -178,7 +220,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                        for seg in unread_like]
     section_warnings += unread_warnings
     common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
-                  ignored=list(parsed.ignored), declared=declared,
+                  ignored=list(parsed.ignored), declared=declared, heading={"kind": parsed.heading_kind, "text": parsed.heading_text},
                   sections=[(label, list(its)) for label, its in sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
@@ -193,7 +235,43 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     # already decides (Group 4); otherwise a Group 1-3 call could hide a missing ingredient or marker.
     unread = (f'text after a full stop looks like more ingredients and was not read: "{_short(unread_like[0])}"'
               if unread_like else None)
-    blocking = truncation or unread
+    heading_risk = None
+    if source == "ocr" and parsed.heading_kind == "fuzzy":
+        heading_risk = (f'the "Ingredients" heading was read as "{parsed.heading_text}" (the photo may be cut off at the left edge), '
+                        f"so the start of the list may be missing; {RETAKE}")
+    elif source == "ocr" and parsed.heading_kind == "inferred":
+        heading_risk = f'no "Ingredients" heading was found, so the text block used may not be the ingredient list; {RETAKE}'
+    blocking = truncation or unread or heading_risk
+
+    in_list = sum(count_words(label or "") + sum(count_words(i) for i in its) for label, its in sections) + joiners
+    not_read = sum(count_words(x) for x in parsed.ignored)
+    declared_w = sum(count_words(d) for d in parsed.declarations)
+    unaccounted = max(0, parsed.kept_words - in_list - not_read)
+    reasons = []
+    if source == "ocr" and parsed.heading_kind == "fuzzy":
+        reasons.append(f'the heading was read as "{parsed.heading_text}": the photo may be cut off at the left edge')
+    if source == "ocr" and parsed.heading_kind == "inferred":
+        reasons.append('no "Ingredients" heading was found: the most list-like text block was used')
+    if parsed.unbalanced_brackets:
+        reasons.append("brackets are not balanced: text may be cut off or misread")
+    if truncation:
+        reasons.append("the list looks truncated")
+    if unread_like:
+        reasons.append("text after a full stop looks like more ingredients and was not read")
+    if unaccounted:
+        reasons.append(f"{unaccounted} word(s) after the heading were neither read as ingredients nor set aside")
+    if suspect_section_items(items):
+        reasons.append("a section label may not have been split from an ingredient")
+    denom = in_list + not_read + unaccounted
+    completeness = {
+        "status": "uncertain" if reasons else "complete", "heading": parsed.heading_kind, "reasons": reasons,
+        "list_share": round(in_list / denom, 3) if denom else 0.0,
+        "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
+                  "excluded": max(0, parsed.tail_words - declared_w), "not_read": not_read, "unaccounted": unaccounted},
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i))}}
+    common["completeness"] = completeness
+    if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
+        blocking = blocking or f"{unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost"
 
     result = classify_ingredients(ings, parsed.declarations)
 
@@ -205,6 +283,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     if result.group is None:
         return _abstain(result.reason or "classification uncertain", text, drivers=result.drivers, **common)
     warnings = list(section_warnings)
+    if heading_risk:
+        warnings.append(heading_risk[0].upper() + heading_risk[1:].split("; retake")[0] + ". Group 4 stands because the markers found are already enough.")
     if truncation:
         warnings.append("List may be incomplete (" + truncation.removeprefix("ingredient list looks truncated ").strip("()") +
                         "). Group 4 stands because the markers found are already enough.")

@@ -270,6 +270,14 @@
         }))
       ]));
     }
+    if (a.completeness && a.completeness.words && a.completeness.words.in_list) {
+      var c = a.completeness, w = c.words;
+      card.appendChild(el("div", {}, [
+        el("h3", { text: "Completeness: " + c.status }),
+        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are outside the vocabulary. This is text coverage, not proof that the list is complete." }),
+        el("ul", { "class": "plain" }, c.reasons.map(function (r) { return el("li", { text: r }); }))
+      ]));
+    }
     if (a.ignored && a.ignored.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not read as ingredients" }),

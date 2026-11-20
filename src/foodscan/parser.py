@@ -20,7 +20,45 @@ from functools import cache
 from .tables import load_table
 
 # English plus the Hindi headings common on Indian packs (research/02 "Indian label specifics").
-_HEADING = re.compile(r"(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*", re.IGNORECASE)
+_HEADING = re.compile(r"(?:ingredient[s5]?|सामग्री|अवयव)\s*[:\-–—]?\s*", re.IGNORECASE)
+_HEADING_WORDS = ("ingredients", "ingredient")
+_OCR_DIGITS = str.maketrans("5103", "sioe")      # digits OCR often puts where letters are
+
+
+def _lev(a: str, b: str) -> int:
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+def _heading_like(tok: str) -> bool:
+    """A damaged "INGREDIENTS": cropped at an edge ("REDIENTS", "INGREDIEN") or off by up to two OCR letters."""
+    t = tok.lower().translate(_OCR_DIGITS)
+    if len(t) < 6:
+        return False
+    if any(w.endswith(t) or w.startswith(t) for w in _HEADING_WORDS):
+        return True
+    return len(t) >= 8 and any(_lev(t, w) <= 2 for w in _HEADING_WORDS)
+
+
+def _find_heading(norm: str) -> tuple[int, str, str] | None:
+    """(end of heading, kind, heading text). kind "exact", or "fuzzy" for a damaged heading. A fuzzy heading must
+    sit at the start of a line or be followed by a colon or dash, so a look-alike word inside a sentence is not one."""
+    m = _HEADING.search(norm)
+    if m:
+        return m.end(), "exact", m.group().strip(" :-–—")
+    for t in re.finditer(r"[A-Za-z0-9]{6,}", norm):
+        if not _heading_like(t.group()):
+            continue
+        before, after = norm[: t.start()], norm[t.end():]
+        if re.match(r"\s*[:\-–—]", after) or re.search(r"(?:^|\n)[\s*•\-]*$", before):
+            end = t.end() + len(re.match(r"\s*[:\-–—]?\s*", after).group())
+            return end, "fuzzy", t.group()
+    return None
 
 # Phrases that end the list. "contains" statements are kept separately (see below).
 _STOP = re.compile(
@@ -66,6 +104,11 @@ class ParsedList:
     # Text after the list that was NOT read as ingredients (unlabelled text after a full stop). Never dropped
     # silently: it is kept here so the result can show it and, if it looks like more ingredients, say so.
     ignored: list[str] = field(default_factory=list)
+    heading_kind: str = "none"        # exact / fuzzy (damaged heading) / assumed (pasted list, no heading) / inferred (set by the pipeline)
+    heading_text: str = ""
+    region_words: int = 0             # words after the heading
+    kept_words: int = 0               # of those, words in the part kept as the list region (before any stop phrase)
+    tail_words: int = 0               # words set aside after the list: stop-phrase tail and its lead-in
 
 
 def _flat(s: str) -> str:
@@ -179,6 +222,10 @@ def _normalise_ws(text: str) -> str:
     lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     out = "\n".join(re.sub(r"[ \t\u00a0]+", " ", ln).strip() for ln in lines)
     return re.sub(r"\n{2,}", "\n", out).strip()
+
+
+def count_words(text: str) -> int:
+    return len(re.findall(r"[^\W_]+", text))
 
 
 def _collapse(text: str) -> str:
@@ -336,16 +383,17 @@ def split_top_level_and(raw: str) -> list[str]:
 
 def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:
     norm = _normalise_ws(text)
-    m = _HEADING.search(norm)
-    if m:
-        body = norm[m.end():]
+    found = _find_heading(norm)
+    if found:
+        body, heading_kind, heading_text = norm[found[0]:], found[1], found[2]
     elif assume_list:
-        body = norm            # pasted text with no "Ingredients" heading: the whole text is the list
+        body, heading_kind, heading_text = norm, "assumed", ""      # pasted text with no heading: the whole text is the list
     else:
         return ParsedList(found=False)
 
     terminated = False
     declarations: list[str] = []
+    region_words = count_words(body)
 
     stop = _STOP.search(body)
     body_with_tail = body[stop.start():] if stop else ""
@@ -361,6 +409,7 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         # (allergen cross-contact) is never a declaration.
         declarations = _contains_sentences(body_with_tail)
 
+    kept_words = count_words(body)
     raw_sections, ended, unread = _read_sections(body)
     terminated = terminated or ended
     ignored = [_collapse(unread)] if unread else []
@@ -396,6 +445,11 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         declarations=declarations,
         sections=sections,
         ignored=ignored,
+        heading_kind=heading_kind,
+        heading_text=heading_text,
+        region_words=region_words,
+        kept_words=kept_words,
+        tail_words=region_words - kept_words,
     )
 
 

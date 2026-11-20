@@ -11,8 +11,13 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
   marker. The result carries a "List may be incomplete" warning. All other truncated cases abstain.
 - "Contains ..." statements count as evidence ONLY when they declare an additive class (colour, flavour,
   sweetener, emulsifier, ...). Allergen statements ("Contains soy, milk") and "May contain" never do.
-  Known gap: only the first sentence after the ingredient list is read, so a later "Contains permitted colour"
-  is missed (this errs on the cautious side).
+  Every "Contains ..." sentence after the list is read (allergen clauses are dropped; additive clauses are shown as
+  "Declared on a Contains line" and count as evidence, never as list items).
+- Completeness signal: each result carries `completeness` (text-span coverage: words read as ingredients / not read /
+  set aside / unaccounted, plus reasons). It is never a claim of exact completeness. Unaccounted words, a damaged
+  or inferred heading, unbalanced brackets or unread ingredient-like text make it "uncertain" and block every answer
+  except a strong-marker Group 4 (Option A). Photo path: a damaged heading ("REDIENTS") is matched tolerantly; with
+  no heading the most list-like block is used, never a nutrition table or allergen-only line; else ask for a clearer photo.
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.

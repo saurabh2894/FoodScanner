@@ -38,6 +38,12 @@ def format_analysis(a: Analysis) -> str:
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
         lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
+    c = a.completeness
+    w = c["words"]
+    lines.append(f"Completeness: {c['status']}. {w['in_list']} words read as ingredients ({round(c['list_share'] * 100)}% of the list region); "
+                 f"{w['not_read']} not read, {w['unaccounted']} unaccounted, {w['excluded']} set aside after the list, {w['declared']} declared; "
+                 f"{c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary.")
+    lines += [f"  - check: {r}" for r in c["reasons"]]
     if a.declared:
         lines.append("Declared on a 'Contains' line (counts as evidence; allergen statements are not shown):")
         lines += [f"  - {d['text']}  [{'also in the ingredient list' if d['in_list'] else 'NOT in the ingredient list'}]" for d in a.declared]
