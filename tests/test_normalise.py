@@ -26,8 +26,15 @@ def test_mapped_ins_records_name_and_source():
 
 
 def test_unmapped_ins_has_no_name_and_no_invented_source():
-    (use,) = normalise_ingredient("Preservative (INS 211)").ins
-    assert use.code == "211" and use.name is None and use.source is None
+    (use,) = normalise_ingredient("Preservative (INS 202)").ins
+    assert use.code == "202" and use.name is None and use.source is None
+
+
+def test_user_approved_ins_entries_carry_their_source():
+    (u171,) = normalise_ingredient("Colour (E171)").ins
+    (u211,) = normalise_ingredient("Preservative (INS 211)").ins
+    assert u171.name == "titanium dioxide" and "USER-APPROVED" in u171.source
+    assert u211.name == "sodium benzoate" and "USER-APPROVED" in u211.source
 
 
 def test_synonyms_and_spelling():

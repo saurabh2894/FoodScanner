@@ -113,3 +113,13 @@ def test_never_returns_a_health_word():
         r = cls(t)
         blob = (r.reason or "") + " ".join(d.detail for d in r.drivers)
         assert not any(w in blob.lower() for w in ("healthy", "unhealthy", "unsafe", "should not"))
+
+
+def test_ins171_titanium_dioxide_is_strong_marker():
+    r = cls("Ingredients: Sugar, gelatin substitute (INS 171).")
+    assert r.group == 4 and any("171" in d.detail for d in r.drivers)
+
+
+def test_ins211_alone_stays_uncertain():
+    r = cls("Ingredients: Cucumber, salt, preservative (INS 211).")
+    assert r.group is None and "211" in r.reason
