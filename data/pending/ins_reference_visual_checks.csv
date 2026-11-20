@@ -1,0 +1,15 @@
+code,pdf_page,printed_page,classes_seen_on_rendered_page,decision,reason
+500(i),51,49,acidity regulator; anticaking agent; emulsifying salt; raising agent; stabilizer; thickener,corrected,numerical text reading lacked acidity regulator and thickener (they sat in the 500 group row's block); alphabetical reading was right
+501(i),51,49,acidity regulator; stabilizer,corrected,numerical reading had only stabilizer
+451(i),41,39,acidity regulator; emulsifier; emulsifying salt; humectant; sequestrant; stabilizer; thickener,corrected,numerical reading lacked acidity regulator
+105,7,5,colour,corrected,alphabetical reading added 'emulsifier' from a neighbouring row; page shows colour only
+499,51,49,stabilizer,confirmed,single row; flagged as a group heading by the extractor and lacked an alphabetical match; page shows one class
+550(i),55,53,anticaking agent,confirmed,extractor flagged it as a group heading; page shows a leaf row with one class
+554,56,54,anticaking agent,confirmed,withheld by the text check; page shows one class
+557,56,54,anticaking agent,confirmed,only in the numerical list; page shows one class
+650,58,56,flavour enhancer,confirmed,only in the numerical list; page shows one class
+161h(i),9,7,colour,confirmed,only in the numerical list; page shows colour
+161h(ii),9,7,colour,confirmed,only in the numerical list; page shows colour
+161h,9,7,(none),group heading,bold heading row with no functional class: not shipped as an entry
+500 / 501 / 451,51,49 / 49 / 39,(none),group heading,bold heading rows with no functional class in the source; the text extraction had bled neighbouring classes into them
+"106,108,112,114,116,118,126,128,136,138",-,even printed page numbers,(none),not additives,"read as codes from the page-number text in the alphabetical list; absent from the table pages (e.g. page 7 runs 105,107,110,120...)"

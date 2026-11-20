@@ -1,0 +1,51 @@
+# 05 - INS reference table (Codex CXG 36-1989): provenance, counts, checks. STATUS: NOT RELEASED (licence unresolved)
+
+The derived table lives in data/pending/ins_reference.csv. It is NOT in src/foodscan/resources/, so no release or web build
+contains it (the loader and scripts/web_tables.py read it only if it is placed in resources/ deliberately).
+It is display data only. It never feeds ins_map.csv, a marker, or a NOVA decision, and it does not state what a code does
+in any scanned food: the source itself says a single additive "can often be used for a range of technological purposes"
+and that the manufacturer declares the most descriptive class; "Inclusion in the INS does not imply approval by Codex".
+
+## Source and version (verified 2026-11-20)
+- Document: FAO and WHO. 2026. Class names and the international numbering system for food additives. Codex Alimentarius
+  Guideline CXG 36-1989. Rome. Cover text inside the PDF: "ADOPTED 1989 ... REVISED 2026", "The 2026 revisions were adopted
+  during the Forty-ninth Session of the Codex Alimentarius Commission"; "reformatted and published in 2026"; earlier
+  amendments 2018, 2019, 2021, 2023, 2024, 2025; revised 2008. Sections 3 and 4 are "regularly updated".
+- Repository record: https://openknowledge.fao.org/handle/20.500.14283/cd8953en (year of publication 2026)
+- PDF URL: https://openknowledge.fao.org/server/api/core/bitstreams/4b45b280-e32e-4a0d-ace4-c4c1b8770142/content
+  (original file name CXG_036e_CAC49.pdf; HTTP Last-Modified Thu, 20 Aug 2026 14:05:25 GMT; PDF CreationDate 14 Aug 2026)
+- Downloaded 2026-11-20 (twice; the two downloads are byte-identical). 142 pages, 1,776,386 bytes.
+- SHA-256 658caf6ad82412dfe8910e531c43e131894642bcfcdad49e763a56fe2cd417bb
+- OPEN DISCREPANCY: the repository API lists MD5 16517e3f10e4d113c5f521a9521a5416 (equal to the HTTP ETag) for the same
+  bitstream, but the bytes received here have MD5 aece6cfa016ece4d65fc35815053f748 at the same size. Not explained
+  (transfer path unknown). The text content is internally consistent, but the file integrity is NOT confirmed.
+
+## Licence: UNRESOLVED
+- The PDF's rights page says: "Some rights reserved. This work is made available under the Creative Commons
+  Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0)", (c) FAO and WHO, 2026.
+- The repository record page for the same item links its "Copyright licence" to
+  https://creativecommons.org/licenses/by/4.0/legalcode.en , which is CC BY 4.0 (no NonCommercial clause).
+- The two disagree. "Free of charge" does not establish non-commercial use, and nothing here settles which applies or whether
+  the project is non-commercial. Needed before release: written confirmation from FAO/WHO (or the Codex Secretariat) of
+  the licence for this item and of whether derived tables may be redistributed, OR an alternative source with a clear licence.
+
+## Counting policy and reconciliation (one policy: one row per distinct INS identifier as printed)
+Identifiers counted as printed: plain (457), letter-suffix such as 150a (46) and sub-codes such as 500(i) (171) = 674 rows
+in the numerical list (Section 3), of which 50 are bold group headings with no functional class (e.g. 500, 501, 451, 161h).
+- Numerical list: 674 rows. Alphabetical list (Section 4): 679 rows.
+- Matching rows: 669. Only in numerical: 5 (161h, 161h(i), 161h(ii), 557, 650: all real, verified on the rendered pages).
+  Only in alphabetical: 10 (106, 108, 112, 114, 116, 118, 126, 128, 136, 138): these are NOT additives, they are even
+  printed page numbers read as codes, so the alphabetical list has 669 real rows.
+- Earlier figures: "669" was the matching count; "608 complete + 58 partial = 666 included + 18 withheld = 684" mixed
+  group headings, page-number artefacts and one-list-only rows. Reconciled, nothing dropped to force a total:
+  684 raw = 674 real rows + 10 page-number artefacts; 674 = 624 leaf entries kept + 50 group headings.
+- Current build (data/pending): 624 entries = 562 where both text readings agree + 51 partial (classes both readings agree on;
+  not checked visually; the source may list more) + 11 checked against the rendered PDF (list in
+  data/pending/ins_reference_visual_checks.csv, with page numbers and reasons).
+- Aliases/ranges: the source prints optional parenthetical synonyms (e.g. "Natamycin (Pimaricin)"); they are part of the
+  name, not separate rows. There are no code ranges in the lists. No duplicate identifiers occur within a list.
+
+## What the checks do and do not show
+- Agreement between the numerical and alphabetical readings is an extraction-consistency check on the same PDF, not
+  independent corroboration of the science. The visual checks compare the extraction with the rendered page images.
+- NOT done: a visual check of the 51 partial rows. They stay marked "partial". No missing class was invented.

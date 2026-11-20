@@ -29,6 +29,23 @@ SOURCE = ("Codex CXG 36-1989 Class names and the International Numbering System 
           "(FAO and WHO, 2026; https://openknowledge.fao.org/handle/20.500.14283/cd8953en), licence CC BY-NC 4.0")
 
 
+# Rows checked by eye against the rendered PDF pages (pdftoppm), not against text extractions. code -> (classes, pdf page, printed page).
+# Source of truth where the two text readings disagreed or one list lacked the code; logged in data/pending/ins_reference_visual_checks.csv.
+VISUAL = {
+    "500(i)": (["acidity regulator", "anticaking agent", "emulsifying salt", "raising agent", "stabilizer", "thickener"], 51, 49),
+    "501(i)": (["acidity regulator", "stabilizer"], 51, 49),
+    "451(i)": (["acidity regulator", "emulsifier", "emulsifying salt", "humectant", "sequestrant", "stabilizer", "thickener"], 41, 39),
+    "105": (["colour"], 7, 5),
+    "499": (["stabilizer"], 51, 49),
+    "550(i)": (["anticaking agent"], 55, 53),
+    "554": (["anticaking agent"], 56, 54),
+    "557": (["anticaking agent"], 56, 54),
+    "650": (["flavour enhancer"], 58, 56),
+    "161h(i)": (["colour"], 9, 7),
+    "161h(ii)": (["colour"], 9, 7),
+}
+
+
 def read_words(pdf: Path) -> list[list[dict]]:
     xml = subprocess.run(["pdftotext", "-bbox", str(pdf), "-"], check=True, capture_output=True, text=True).stdout
     xml = re.sub(r"<!DOCTYPE[^>]*>", "", xml).replace('xmlns="http://www.w3.org/1999/xhtml"', "")
@@ -256,16 +273,21 @@ def main() -> int:
     rows, withheld = [], []
     for r in n_rows:
         o = by_a.get(r["ins"])
+        if r["ins"] in VISUAL:
+            r["classes"] = VISUAL[r["ins"]][0]; r["reading"] = f"checked against the rendered PDF (page {VISUAL[r['ins']][1]})"; rows.append(r); continue
+        if r["is_group"]:      # group headings (e.g. 500 Sodium carbonates) carry no classes in the source; text extraction bleeds neighbours into them
+            continue
         if not o:
             withheld.append(r["ins"]); continue
         both = sorted(set(o["classes"]) & set(r["classes"]))
         if sorted(o["classes"]) == sorted(r["classes"]) and both:
-            r["reading"] = "both lists agree"; rows.append(r)
+            r["reading"] = "both text readings agree"; rows.append(r)
         elif both:        # the readings differ (a row's text can bleed into its neighbour): keep only what both readings show
-            r["classes"] = both; r["reading"] = "partial: only the classes both readings agree on; the source may list more"; rows.append(r)
+            r["classes"] = both; r["reading"] = "partial: only the classes both text readings agree on; not checked visually; the source may list more"; rows.append(r)
         else:
             withheld.append(r["ins"])
-    withheld += sorted(set(by_a) - {r["ins"] for r in n_rows})
+    # alphabetical-only "codes" 106..138 are even printed page numbers read as codes (see the extraction anomalies), not additives
+    withheld += sorted(c for c in set(by_a) - {r["ins"] for r in n_rows} if not (c.isdigit() and int(c) < 140 and int(c) % 2 == 0 and int(c) >= 106))
     rows.sort(key=lambda r: (int(re.match(r"\d+", r["ins"]).group()), r["ins"]))
     print(f"withheld (readings disagree or one list lacks the code): {len(withheld)}: {withheld}")
     for a in anomalies:
