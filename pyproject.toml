@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foodscan"
+version = "0.1.0"
+description = "Local NOVA processing-level estimator for Indian packaged-food labels"
+requires-python = ">=3.12"
+dependencies = ["pytesseract", "pillow", "flask"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+foodscan = "foodscan.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+foodscan = ["resources/*.csv", "web/templates/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["ocr: needs the tesseract binary (skipped if absent)"]
