@@ -1,14 +1,23 @@
-"""Locate the ingredient list in OCR text and split it into ingredients.
+"""Locate the ingredient list in text and split it into ingredients, keeping section boundaries.
 
 Structural facts only (no classification). Whether the list *looks truncated*
 is decided in the pipeline, because it also needs the vocabulary; the parser
 reports the structural evidence: was the list closed by a full stop or a
 stop-phrase, and are brackets balanced.
+
+A full stop is NOT the end of the list by itself. Labels often split a list into sections
+("Noodles: ... . Masala tastemaker: ..."), and a line break can do the same. After a full stop the
+list continues when the next text starts with a section label ("Label:", at most four words), unless
+the label names non-ingredient text (Note, Directions, ...). Unlabelled text after a full stop still
+ends the list, as do the stop phrases (Contains, Allergen, Manufactured, Best before, Nutrition, ...).
 """
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from functools import cache
+
+from .tables import load_table
 
 # English plus the Hindi headings common on Indian packs (research/02 "Indian label specifics").
 _HEADING = re.compile(r"(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*", re.IGNORECASE)
@@ -23,22 +32,74 @@ _STOP = re.compile(
 
 _OPEN, _CLOSE = "([{", ")]}"
 
-# Packs often split the list into labelled sections after a full stop:
-# "... Rice Bran Oil. Seasoning : Iodised Salt, ..." The section is still part of the ingredient
-# list. Only these section labels are absorbed, so "Note: store cool." still ends the list.
-_SECTION = re.compile(
-    r"\s*(?:seasoning|coating|filling|topping|sauce|masala|dressing|marinade|glaze|base|premix|spice\s+mix|tadka|chutney)"
-    r"(?:\s+(?:mix|powder|blend))?\s*:\s*", re.IGNORECASE)
+# "Label:" at the start of a section: 1 to 4 words, then a colon, then more text.
+_LABEL = re.compile(r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})\s*:\s*(?=\S)")
+# Labels that introduce non-ingredient text: the list ends before them.
+_DENY = re.compile(
+    r"(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|"
+    r"serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)", re.IGNORECASE)
+_ADDITIVE_CLASSES = {"cosmetic_additive", "ordinary_additive", "unlisted_additive"}
+
+
+@dataclass
+class Section:
+    label: str | None      # e.g. "Noodles", "Masala tastemaker"; None when the list has no label
+    items: list[str]
 
 
 @dataclass
 class ParsedList:
     found: bool
-    items: list[str] = field(default_factory=list)
+    items: list[str] = field(default_factory=list)       # all sections, flat
     list_text: str = ""
     terminated: bool = False          # closed by full stop or stop-phrase
     unbalanced_brackets: bool = False
     declarations: list[str] = field(default_factory=list)  # "Contains ..." sentences after the list
+    sections: list[Section] = field(default_factory=list)
+
+
+def _flat(s: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[-\u2013\u2014_/]", " ", s.lower())).strip()
+
+
+@cache
+def _class_word_re() -> re.Pattern:
+    terms = sorted({r["term"].lower() for r in load_table("markers.csv") if r["marker_class"] in _ADDITIVE_CLASSES},
+                   key=len, reverse=True)
+    return re.compile(r"(?<![a-z])(?:" + "|".join(re.escape(t) for t in terms) + r")(?:s|ing|ings)?(?![a-z])")
+
+
+@cache
+def _lexicon_terms() -> frozenset:
+    return frozenset(_flat(r["term"]) for r in load_table("lexicon.csv"))
+
+
+def _label_info(seg: str) -> tuple[str, int, bool] | None:
+    """If `seg` starts with a section label: (label, offset where the content starts, strip_label).
+
+    Not a label: non-ingredient labels (Note, Directions, ...), labels that are themselves a recognised
+    food, and labels followed by a digit or bracket ("Rice: 60%"). A label that contains an additive class
+    word ("Colour:", "Sweetener:") continues the list but is kept in the text, so its marker is not lost.
+    """
+    m = _LABEL.match(seg)
+    if not m:
+        return None
+    label = m.group("label").strip()
+    if _DENY.fullmatch(label):
+        return None
+    if not seg[m.end():m.end() + 1].isalpha():
+        return None
+    flat = _flat(label)
+    if flat in _lexicon_terms():
+        return None
+    return label, m.end(), not _class_word_re().search(flat)
+
+
+def _normalise_ws(text: str) -> str:
+    """Collapse spaces but KEEP line breaks (they can separate sections)."""
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    out = "\n".join(re.sub(r"[ \t\u00a0]+", " ", ln).strip() for ln in lines)
+    return re.sub(r"\n{2,}", "\n", out).strip()
 
 
 def _collapse(text: str) -> str:
@@ -91,30 +152,76 @@ def _find_terminator(text: str) -> int | None:
     return None
 
 
-def _join_sections(body: str) -> str:
+def _next_boundary(body: str, start: int) -> tuple[int, str]:
+    """First section boundary at bracket depth 0 after `start`: ("stop" = full stop, "break" = line
+    break before a section label) or (len(body), "end")."""
+    depth = 0
+    for i in range(start, len(body)):
+        ch = body[i]
+        if ch in _OPEN:
+            depth += 1
+        elif ch in _CLOSE:
+            depth = max(depth - 1, 0)
+        elif depth == 0:
+            if ch == ".":
+                prev_digit = i > 0 and body[i - 1].isdigit()
+                next_digit = i + 1 < len(body) and body[i + 1].isdigit()
+                if not (prev_digit and next_digit):
+                    return i, "stop"
+            elif ch == "\n" and _label_info(body[i + 1:]) is not None:
+                return i, "break"
+    if depth > 0:
+        # A bracket the pack never closes (seen on a real label) hides the full stop from the depth-0
+        # scan, so footnotes would be absorbed into the last ingredient. Fall back to the first full
+        # stop that directly follows a closing bracket.
+        m = re.search(r"[)\]}]\.(?=\s|$)", body[start:])
+        if m:
+            return start + m.end() - 1, "stop"
+    return len(body), "end"
+
+
+def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool]:
+    """Cut the body into (label, text) sections. Returns (sections, ended_by_full_stop)."""
+    sections: list[tuple[str | None, str]] = []
+    pos, ended = 0, False
     while True:
-        end = _find_terminator(body)
-        if end is None:
-            return body
-        m = _SECTION.match(body, end + 1)
-        if not m:
-            return body
-        body = body[:end] + ", " + body[m.end():]
+        info = _label_info(body[pos:])
+        label, seg_start = None, pos
+        if info:
+            lab, off, strip = info
+            if strip:
+                label, seg_start = lab, pos + off
+        end, kind = _next_boundary(body, seg_start)
+        sections.append((label, body[seg_start:end]))
+        if kind == "end":
+            break
+        if kind == "break":
+            pos = end + 1
+            continue
+        rest = body[end + 1:]
+        if not rest.strip() or _label_info(rest) is None:
+            ended = True            # trailing full stop, or unlabelled text after it: the list is over
+            break
+        pos = end + 1
+    return sections, ended
 
 
-def parse_ingredient_list(text: str) -> ParsedList:
-    flat = _collapse(text)
-    m = _HEADING.search(flat)
-    if not m:
+def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:
+    norm = _normalise_ws(text)
+    m = _HEADING.search(norm)
+    if m:
+        body = norm[m.end():]
+    elif assume_list:
+        body = norm            # pasted text with no "Ingredients" heading: the whole text is the list
+    else:
         return ParsedList(found=False)
-    body = flat[m.end():]
 
     terminated = False
     declarations: list[str] = []
 
     stop = _STOP.search(body)
     if stop:
-        tail = body[stop.start():]
+        tail = _collapse(body[stop.start():])
         body = body[: stop.start()]
         terminated = True
         # Keep "Contains ..." statements: they can declare additive classes
@@ -124,28 +231,28 @@ def parse_ingredient_list(text: str) -> ParsedList:
             end = _find_terminator(tail)
             declarations.append(tail[:end] if end is not None else tail)
 
-    body = _join_sections(body)
-    end = _find_terminator(body)
-    if end is None and _bracket_depth(body) > 0:
-        # A bracket the pack never closes (seen on a real label) hides the full stop from the
-        # depth-0 scan, so footnotes would be absorbed into the last ingredient. Fall back to
-        # the first full stop that directly follows a closing bracket.
-        m = re.search(r"[)\]}]\.(?=\s|$)", body)
-        end = m.end() - 1 if m else None
-    if end is not None:
-        body = body[:end]
-        terminated = True
+    raw_sections, ended = _read_sections(body)
+    terminated = terminated or ended
 
-    items, unbalanced = _split_top_level(body)
+    sections: list[Section] = []
+    items: list[str] = []
+    unbalanced = False
+    for label, content in raw_sections:
+        its, unb = _split_top_level(_collapse(content))
+        unbalanced = unbalanced or unb
+        if its:
+            sections.append(Section(label, its))
+            items.extend(its)
     if not items:
         return ParsedList(found=False)
     return ParsedList(
         found=True,
         items=items,
-        list_text=body.strip(),
+        list_text=_collapse(body),
         terminated=terminated,
         unbalanced_brackets=unbalanced,
         declarations=declarations,
+        sections=sections,
     )
 
 

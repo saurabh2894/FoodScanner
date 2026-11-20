@@ -35,19 +35,24 @@
     <h3>Driven by</h3>
     <ul>
     {% for d in result.drivers %}
-      <li><strong>{{ d.ingredient }}</strong>: {{ d.detail }} <span class="src">[{{ d.source }}]</span></li>
+      <li><strong>{{ d.ingredient }}</strong>{% if d.section %} <em>({{ d.section }})</em>{% endif %}: {{ d.detail }} <span class="src">[{{ d.source }}]</span></li>
     {% endfor %}
     </ul>
   {% endif %}
   {% if not result.answered and result.drivers %}
     <h3>Weak evidence seen (not enough to decide)</h3>
-    <ul>{% for d in result.drivers %}<li>{{ d.ingredient }}: {{ d.detail }}</li>{% endfor %}</ul>
+    <ul>{% for d in result.drivers %}<li>{{ d.ingredient }}{% if d.section %} <em>({{ d.section }})</em>{% endif %}: {{ d.detail }}</li>{% endfor %}</ul>
   {% endif %}
 </div>
 
 <div class="card">
   <h3>Extracted ingredients</h3>
-  {% if result.ingredients %}
+  {% if result.ingredients and result.sections|selectattr(0)|list %}
+    {% for label, items in result.sections %}
+      <p><strong>{{ label or 'No section label' }}</strong></p>
+      <ul>{% for i in items %}<li>{{ i }}</li>{% endfor %}</ul>
+    {% endfor %}
+  {% elif result.ingredients %}
     <ol>{% for i in result.ingredients %}<li>{{ i }}</li>{% endfor %}</ol>
   {% else %}
     <p>None found.</p>

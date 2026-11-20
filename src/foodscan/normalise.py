@@ -47,6 +47,7 @@ class Ingredient:
     name: str                      # normalised text outside brackets
     inner: str                     # normalised text inside brackets
     ins: list[InsUse] = field(default_factory=list)
+    section: str | None = None     # label of the list section it came from ("Masala tastemaker"), if any
 
     @property
     def text(self) -> str:

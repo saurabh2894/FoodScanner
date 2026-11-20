@@ -9,9 +9,21 @@ from .ocr import OcrUnavailable
 from .pipeline import Analysis, analyse_image, analyse_text
 
 
+def _where(d) -> str:
+    return f" (section: {d.section})" if d.section else ""
+
+
 def format_analysis(a: Analysis) -> str:
     lines = []
-    if a.ingredients:
+    if a.ingredients and any(label for label, _ in a.sections):
+        lines.append("Ingredients found:")
+        n = 0
+        for label, items in a.sections:
+            lines.append(f"  [{label or 'no section label'}]")
+            for i in items:
+                n += 1
+                lines.append(f"  {n}. {i}")
+    elif a.ingredients:
         lines.append("Ingredients found:")
         lines += [f"  {n}. {i}" for n, i in enumerate(a.ingredients, 1)]
     else:
@@ -22,10 +34,10 @@ def format_analysis(a: Analysis) -> str:
         lines.append(f"Warning: {w}")
     if a.answered and a.drivers:
         lines.append("Driven by:")
-        lines += [f"  - {d.ingredient}: {d.detail}  [{d.source}]" for d in a.drivers]
+        lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}  [{d.source}]" for d in a.drivers]
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
-        lines += [f"  - {d.ingredient}: {d.detail}" for d in a.drivers]
+        lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
     if a.ins_mappings:
         lines.append("INS mappings used:")
         for u in a.ins_mappings:

@@ -28,6 +28,7 @@ class Driver:
     ingredient: str       # raw ingredient text
     detail: str           # what about it drove the decision
     source: str
+    section: str | None = None   # list section the ingredient came from, if the label had sections
 
 
 @dataclass
@@ -88,7 +89,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     weak: list[Driver] = []
     for ing in ings:
         for h in _hits_for(ing):
-            d = Driver(ing.raw, h.detail, h.source)
+            d = Driver(ing.raw, h.detail, h.source, ing.section)
             (strong if h.strength == "strong" else weak).append(d)
     for decl in declarations or []:
         text = normalise_ingredient(decl).text   # same spelling/plural handling as ingredients (color -> colour)
@@ -110,15 +111,15 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     kinds = [lexicon()[i.name]["kind"] for i in ings]
     substantive = [(i, k) for i, k in zip(ings, kinds) if k != "neutral"]
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
-        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lexicon()[ings[0].name]["source"])])
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lexicon()[ings[0].name]["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
-        return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lexicon()[ings[0].name]["source"])])
+        return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lexicon()[ings[0].name]["source"], ings[0].section)])
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k == "whole_food" for _, k in substantive)
     has_culinary = any(k == "culinary" for _, k in substantive)
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {k.replace('_', ' ')}", lexicon()[i.name]["source"]) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {k.replace('_', ' ')}", lexicon()[i.name]["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 

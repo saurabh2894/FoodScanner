@@ -37,6 +37,7 @@ class Analysis:
     ins_mappings: list[InsUse] = field(default_factory=list)
     extracted_text: str = ""
     warnings: list[str] = field(default_factory=list)   # answered, but with a caveat
+    sections: list[tuple[str | None, list[str]]] = field(default_factory=list)   # (label, items) per list section
 
     @property
     def headline(self) -> str:
@@ -53,20 +54,22 @@ def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
 
 
-def _expand(items: list[str], depth: int = 0) -> list[Ingredient]:
-    """Normalise items, expanding unknown compound ingredients into their sub-items.
+def _expand(items: list[tuple[str, str | None]], depth: int = 0) -> list[Ingredient]:
+    """Normalise (item, section label) pairs, expanding unknown compound ingredients into their sub-items.
 
     "Seasoning (Sugar, Maltodextrin, ...)" is judged by its contents, so drivers
     name the specific ingredient. A compound whose head is already recognised
     ("edible vegetable oil (palm, coconut)") or carries a marker/INS code
-    ("raising agents (INS 500(ii), INS 503(ii))") is left whole.
+    ("raising agents (INS 500(ii), INS 503(ii))") is left whole. Sub-items keep the
+    section label of the item they came from.
     """
     out: list[Ingredient] = []
-    for raw in items:
+    for raw, section in items:
         ing = normalise_list([raw])[0]
+        ing.section = section
         split = split_compound(raw) if depth < 3 else None
         if split and not _recognisable(normalise_list([split[0]])[0]):
-            out.extend(_expand(split[1], depth + 1))
+            out.extend(_expand([(sub, section) for sub in split[1]], depth + 1))
         else:
             out.append(ing)
     return out
@@ -83,9 +86,10 @@ def analyse_text(text: str) -> Analysis:
     if not parsed.found:
         return _abstain("no ingredient list found in the text", text)
 
-    ings = _expand(parsed.items)
+    ings = _expand([(raw, sec.label) for sec in parsed.sections for raw in sec.items])
     uses = [u for i in ings for u in i.ins]
-    common = dict(ingredients=parsed.items, ins_mappings=uses)
+    common = dict(ingredients=parsed.items, ins_mappings=uses,
+                  sections=[(sec.label, list(sec.items)) for sec in parsed.sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
     # (no full stop / stop phrase) on a word we cannot recognise ("refined wheat flo").

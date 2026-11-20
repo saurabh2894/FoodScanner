@@ -82,6 +82,17 @@ CORPUS = [
     "Ingredients: Potato, *Seasoning (Sugar, Salt, Edible Vegetable Oil (Palm, Coconut). *As flavouring agent.",
     "Ingredients: Potato, *Seasoning (Sugar, Maltodextrin, Edible Vegetable Oil (Palm, Coconut). *As flavouring agent.",
     "Ingredients: Rice, salt (iodised. Contains soy",
+    # synthetic fixtures for the section / short-input regression tests (tests/test_regression_sections_and_short_input.py)
+    "Ingredients: Noodles: wheat flour, palm oil, salt, stabiliser (INS 452(i)). Masala tastemaker: mixed spices, salt, sugar, flavour enhancers (INS 627, INS 631), added flavour, colour (INS 150d). Contains wheat. Manufactured by Example Foods Pvt Ltd.",
+    "Ingredients: wheat flour, palm oil, salt, stabiliser (INS 452(i)), mixed spices, salt, sugar, flavour enhancers (INS 627, INS 631), added flavour, colour (INS 150d). Contains wheat. Manufactured by Example Foods Pvt Ltd.",
+    "Ingredients: Noodles: wheat flour, palm oil, salt, stabiliser (INS 452(i))\nMasala tastemaker: mixed spices, salt, sugar, flavour enhancers (INS 627, INS 631), added flavour, colour (INS 150d)\nContains wheat.",
+    "INGREDIENTS :\r\n  Noodles:   wheat flour ,  palm oil,\r\n\r\n salt, stabiliser (INS 452(i)).  Masala   tastemaker :  mixed spices, salt,\nsugar, flavour enhancers (INS 627, INS 631), added flavour, colour (INS 150d).  CONTAINS wheat.",
+    "Ingredients: Wheat flour, palm\noil, salt", "Ingredients: Rice, salt. Tastemaker: sugar, flavour.",
+    "Ingredients: Rice, salt. Directions: add hot water, stir.", "Ingredients: Rice, salt. Serving suggestion: with butter.",
+    "Ingredients: Rice, salt. Enjoy hot with butter.", "Ingredients: Rice, salt. Colour: INS 150d.",
+    "Ingredients: Fruit: mango. Set: sugar, pectin (INS 440).", "Ingredients: Sugar (min. 10%), salt (approx. 2%), flavour.",
+    "Ingredients: Sugar (12.5%), emulsifier (INS 322), milk solids, salt.", "Ingredients: Rice: 60%, salt.",
+    "Ingredients: Milk: skimmed milk, cream, salt.", "Ingredients: Spices:\nTurmeric, cumin\nSeasoning: salt, flavour",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -91,7 +102,8 @@ def py_result(text):
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
         "ingredients": a.ingredients, "warnings": a.warnings,
-        "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source} for d in a.drivers],
+        "sections": [[label, list(items)] for label, items in a.sections],
+        "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source} for u in a.ins_mappings],
     }
 
@@ -101,7 +113,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map((t) => pick(E.analyseText(t)))));
 """
 

@@ -168,6 +168,7 @@
         el("ul", { "class": "plain" }, a.drivers.map(function (d) {
           var li = el("li", {});
           li.appendChild(el("span", { "class": "mono", text: d.ingredient }));
+          if (d.section) li.appendChild(el("em", { text: " (" + d.section + ")" }));
           li.appendChild(document.createTextNode(": " + d.detail));
           if (a.answered) li.appendChild(el("span", { "class": "src", text: d.source }));
           return li;
@@ -175,12 +176,16 @@
       ]));
     }
     var cols = el("div", { "class": "twocol" });
-    cols.appendChild(el("div", {}, [
-      el("h3", { text: "Extracted ingredients" }),
-      a.ingredients.length
-        ? el("ol", { "class": "plain" }, a.ingredients.map(function (i) { return el("li", { "class": "mono", text: i }); }))
-        : el("p", { "class": "hint", text: "None found." })
-    ]));
+    var labelled = (a.sections || []).some(function (sec) { return sec[0]; });
+    var listBox = el("div", {}, [el("h3", { text: "Extracted ingredients" })]);
+    if (!a.ingredients.length) listBox.appendChild(el("p", { "class": "hint", text: "None found." }));
+    else if (labelled) {
+      a.sections.forEach(function (sec) {
+        listBox.appendChild(el("p", { "class": "hint", text: sec[0] || "No section label" }));
+        listBox.appendChild(el("ul", { "class": "plain" }, sec[1].map(function (i) { return el("li", { "class": "mono", text: i }); })));
+      });
+    } else listBox.appendChild(el("ol", { "class": "plain" }, a.ingredients.map(function (i) { return el("li", { "class": "mono", text: i }); })));
+    cols.appendChild(listBox);
     if (a.ins.length) {
       var rows = a.ins.map(function (u) {
         return el("tr", {}, [el("td", { "class": "mono", text: "INS " + u.code }), el("td", { text: u.name || "not in local mapping" }), el("td", { "class": "src", text: u.source || "" })]);

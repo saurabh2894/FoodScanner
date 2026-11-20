@@ -16,11 +16,14 @@
     };
 
     /* ---------- parser ---------- */
+    // Mirrors src/foodscan/parser.py. A full stop does not end the list by itself: a following
+    // "Label:" section continues it (unless the label names non-ingredient text), and a line break
+    // before a "Label:" starts a new section. See the module docstring there.
     const HEADING = /(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
-    // labelled sections after a full stop stay part of the list (see parser.py)
-    const SECTION = /\s*(?:seasoning|coating|filling|topping|sauce|masala|dressing|marinade|glaze|base|premix|spice\s+mix|tadka|chutney)(?:\s+(?:mix|powder|blend))?\s*:\s*/iy;
+    const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})\s*:\s*(?=\S)/;
+    const DENY = /^(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)$/i;
 
     function bracketDepth(text) {
       let depth = 0;
@@ -55,25 +58,68 @@
       items.push(buf);
       return { items: items.map((i) => stripChars(i, " .")).filter((i) => i), unbalanced: bracketDepth(text) !== 0 };
     }
-    function joinSections(body) {
-      for (;;) {
-        const end = findTerminator(body);
-        if (end === null) return body;
-        SECTION.lastIndex = end + 1;
-        const m = SECTION.exec(body);
-        if (!m) return body;
-        body = body.slice(0, end) + ", " + body.slice(SECTION.lastIndex);
-      }
+    const normaliseWs = (text) => text.replace(/\r\n?/g, "\n").split("\n")
+      .map((ln) => ln.replace(/[ \t ]+/g, " ").trim()).join("\n").replace(/\n{2,}/g, "\n").trim();
+
+    function labelInfo(seg) {
+      const m = LABEL.exec(seg);
+      if (!m) return null;
+      const label = m[1].trim();
+      if (DENY.test(label)) return null;
+      if (!/^\p{L}/u.test(seg.slice(m[0].length))) return null;
+      const flat = flatten(label);
+      if (isRecognised(flat)) return null;
+      return { label, off: m[0].length, strip: !CLASS_WORD_RE.test(flat) };
     }
-    function parseIngredientList(text) {
-      const flat = collapse(text);
-      const m = HEADING.exec(flat);
-      if (!m) return { found: false };
-      let body = flat.slice(m.index + m[0].length);
+    function nextBoundary(body, start) {
+      let depth = 0;
+      for (let i = start; i < body.length; i++) {
+        const ch = body[i];
+        if (OPEN.includes(ch)) depth++;
+        else if (CLOSE.includes(ch)) depth = Math.max(depth - 1, 0);
+        else if (depth === 0) {
+          if (ch === ".") {
+            const prevDigit = i > 0 && /\d/.test(body[i - 1]);
+            const nextDigit = i + 1 < body.length && /\d/.test(body[i + 1]);
+            if (!(prevDigit && nextDigit)) return [i, "stop"];
+          } else if (ch === "\n" && labelInfo(body.slice(i + 1)) !== null) return [i, "break"];
+        }
+      }
+      if (depth > 0) {
+        // unclosed bracket on the pack: fall back to the first full stop right after a closing bracket
+        const m = /[)\]}]\.(?=\s|$)/.exec(body.slice(start));
+        if (m) return [start + m.index + m[0].length - 1, "stop"];
+      }
+      return [body.length, "end"];
+    }
+    function readSections(body) {
+      const sections = []; let pos = 0, ended = false;
+      for (;;) {
+        const info = labelInfo(body.slice(pos));
+        let label = null, segStart = pos;
+        if (info && info.strip) { label = info.label; segStart = pos + info.off; }
+        const [end, kind] = nextBoundary(body, segStart);
+        sections.push([label, body.slice(segStart, end)]);
+        if (kind === "end") break;
+        if (kind === "break") { pos = end + 1; continue; }
+        const rest = body.slice(end + 1);
+        if (!rest.trim() || labelInfo(rest) === null) { ended = true; break; }
+        pos = end + 1;
+      }
+      return { sections, ended };
+    }
+    function parseIngredientList(text, opts) {
+      const assumeList = !!(opts && opts.assumeList);
+      const norm = normaliseWs(text);
+      const m = HEADING.exec(norm);
+      let body;
+      if (m) body = norm.slice(m.index + m[0].length);
+      else if (assumeList) body = norm;
+      else return { found: false };
       let terminated = false; const declarations = [];
       const stop = STOP.exec(body);
       if (stop) {
-        const tail = body.slice(stop.index);
+        const tail = collapse(body.slice(stop.index));
         body = body.slice(0, stop.index);
         terminated = true;
         if (/^contains\b/i.test(tail)) {
@@ -81,17 +127,16 @@
           declarations.push(e !== null ? tail.slice(0, e) : tail);
         }
       }
-      body = joinSections(body);
-      let end = findTerminator(body);
-      if (end === null && bracketDepth(body) > 0) {
-        // unclosed bracket on the pack: fall back to the first full stop right after a closing bracket
-        const m = /[)\]}]\.(?=\s|$)/.exec(body);
-        end = m ? m.index + m[0].length - 1 : null;
+      const read = readSections(body);
+      terminated = terminated || read.ended;
+      const sections = [], items = []; let unbalanced = false;
+      for (const [label, content] of read.sections) {
+        const r = splitTopLevel(collapse(content));
+        unbalanced = unbalanced || r.unbalanced;
+        if (r.items.length) { sections.push({ label, items: r.items }); items.push(...r.items); }
       }
-      if (end !== null) { body = body.slice(0, end); terminated = true; }
-      const { items, unbalanced } = splitTopLevel(body);
       if (!items.length) return { found: false };
-      return { found: true, items, terminated, unbalanced, declarations };
+      return { found: true, items, terminated, unbalanced, declarations, sections };
     }
 
     function* bracketGroups(raw) {
@@ -139,6 +184,7 @@
     const ADDITIVE_CLASSES = new Set(["cosmetic_additive", "ordinary_additive", "unlisted_additive"]);
     const bareTerms = [...new Set(T.markers.filter((r) => ADDITIVE_CLASSES.has(r.marker_class)).map((r) => r.term.toLowerCase()))]
       .sort((a, b) => b.length - a.length).map(esc).join("|");
+    const CLASS_WORD_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?![a-z])");
     // "Flavour Enhancers (627, 631)": bare codes, only right after an additive class word
     const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?\\s*\\(\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*\\)", "g");
 
@@ -199,12 +245,12 @@
     }
     function classifyIngredients(ings, declarations) {
       const strong = [], weak = [];
-      for (const ing of ings) for (const h of hitsFor(ing)) (h.strength === "strong" ? strong : weak).push({ ingredient: ing.raw, detail: h.detail, source: h.source });
+      for (const ing of ings) for (const h of hitsFor(ing)) (h.strength === "strong" ? strong : weak).push({ ingredient: ing.raw, detail: h.detail, source: h.source, section: ing.section ?? null });
       for (const decl of declarations || []) {
         const text = normaliseIngredient(decl).text;
         for (const { re, row } of markers)
           if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(text))
-            strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source });
+            strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source, section: null });
       }
       if (strong.length) return { group: 4, drivers: strong, reason: null };
       if (weak.length) {
@@ -216,14 +262,14 @@
       const kinds = ings.map((i) => lexicon[i.name].kind);
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral");
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
-        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lexicon[ings[0].name].source }], reason: null };
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lexicon[ings[0].name].source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
-        return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lexicon[ings[0].name].source }], reason: null };
+        return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lexicon[ings[0].name].source, section: ings[0].section ?? null }], reason: null };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
       const hasFood = substantive.some(([, k]) => k === "whole_food");
       const hasCulinary = substantive.some(([, k]) => k === "culinary");
       if (hasFood && hasCulinary)
-        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + k.replace(/_/g, " "), source: lexicon[i.name].source })), reason: null };
+        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + k.replace(/_/g, " "), source: lexicon[i.name].source, section: i.section ?? null })), reason: null };
       return { group: null, drivers: [], reason: "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern" };
     }
 
@@ -233,15 +279,16 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
-    function expand(items, depth) {
+    function expand(items, depth) {          // items: [raw, section label] pairs
       const out = [];
-      for (const raw of items) {
+      for (const [raw, section] of items) {
         const ing = normaliseIngredient(raw);
+        ing.section = section;
         const split = depth < 3 ? splitCompound(raw) : null;
-        if (split && !recognisableIng(normaliseIngredient(split[0]))) out.push(...expand(split[1], depth + 1));
+        if (split && !recognisableIng(normaliseIngredient(split[0]))) out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1));
         else out.push(ing);
       }
       return out;
@@ -254,8 +301,8 @@
         return abstain("extracted text looks like noise, not a readable label", text);
       const parsed = parseIngredientList(text);
       if (!parsed.found) return abstain("no ingredient list found in the text", text);
-      const ings = expand(parsed.items, 0);
-      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins) };
+      const ings = expand(parsed.sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0);
+      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
