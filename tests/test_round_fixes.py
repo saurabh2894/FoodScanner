@@ -208,11 +208,35 @@ def test_each_flag_alone_and_no_digit_similarity_guessing():
 def test_display_names_say_recognised_code_no_rule_and_stay_unknown_for_classification():
     r = t("Ingredients: Rice, Acidity Regulators (INS330, INS296, INS334), Rosemary Extract (INS 392), Potassium Chloride (INS 508), salt, INS 382.")
     by = {u.code: u for u in r.ins_mappings}
-    for c, name in (("296", "Malic acid, DL-"), ("330", "Citric acid"), ("334", "Tartaric acid, L(+)-"), ("392", "Rosemary extract")):
+    for c, name in (("296", "DL-Malic acid"), ("330", "Citric acid"), ("334", "L(+)-Tartaric acid"), ("392", "Rosemary extract"), ("508", "Potassium chloride")):
         assert by[c].name is None and by[c].strength is None and by[c].ref_name == name and by[c].ref_url, c      # name and URL only, no rule
-    assert by["508"].ref_name is None and by["382"].ref_name is None          # 508: primary page not yet checked; 382: identity not sourced
+    assert by["382"].ref_name is None                                           # identity not sourced: no metadata
     rows = {x["ins"]: x["source"] for x in load_table("ins_names.csv")}
-    assert all("PROVISIONAL" in v and "http" in v for v in rows.values()) and set(rows) == {"296", "330", "334", "392"}
+    assert set(rows) == {"296", "330", "334", "392", "508"}
+    assert all(v.startswith("Checked 2026-11-20: JECFA database page read in full by me") and "apps.who.int" in v for v in rows.values())
+
+
+def test_hint_rows_cite_only_pages_read_individually_and_no_codex_rows_remain():
+    rows = {x["ins"]: x["source"] for x in load_table("ins_functions.csv")}
+    assert set(rows) == {"236", "296", "330", "334", "392", "508"}
+    assert all("JECFA database page read in full by me" in v and "Codex" not in v for v in rows.values())
+    assert "Chemical/1561" in rows["236"] and "Chemical/6311" in rows["392"]
+
+
+def test_jecfa_wording_acid_is_consistent_with_a_label_saying_acidity_regulator_so_the_users_own_label_is_not_flagged():
+    assert misreads(label("296", "392")) == []          # 330 and 334 are listed as "acid" on their JECFA pages, 296 as acidity regulator
+    assert misreads(t("Ingredients: Rice, preservative (INS 236).")) == []                # 236 is listed as a preservative
+    assert misreads(t("Ingredients: Rice, antioxidant (INS 330).")) == []                 # "antioxidant synergist" starts with antioxidant
+
+
+def test_provisional_role_phrase_mapping_stays_visible_and_other_phrases_are_not_added():
+    r = t("Ingredients: Rice, salt, emulsifying & stabilizing agent (INS 1422, INS 415).")
+    assert r.group == 4 and any('"emulsifying & stabilizing agent" is read as the emulsifier class by a provisional mapping' in w for w in r.warnings)
+    assert any("provisional mapping" in w for w in t("Ingredients: Rice, emulsifying agent.").warnings)
+    assert not any("provisional mapping" in w for w in t("Ingredients: Rice, emulsifier (INS 322).").warnings)       # the class word itself is not a role phrase
+    phrases = {x["from"] for x in load_table("synonyms.csv") if x["source"].startswith("PROVISIONAL role phrase")}
+    assert phrases == {"emulsifying & stabilizing agent", "emulsifying & stabilising agent", "emulsifying and stabilizing agent", "emulsifying and stabilising agent",
+                       "emulsifying agents", "emulsifying agent", "stabilizing agents", "stabilizing agent", "stabilising agents", "stabilising agent"}
 
 
 def test_completeness_explanation_says_it_is_not_a_guarantee(tmp_path, capsys):

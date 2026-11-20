@@ -1,0 +1,23 @@
+{
+ "N13": {
+  "product": "Hellmann's real mayonnaise (single-serve sachet)",
+  "top": [
+   "Refined soybean oil (fortified with vitamin A & D)",
+   "Water",
+   "Sugar",
+   "Thickeners-E1442, E1450",
+   "Natural vinegar",
+   "Iodised salt",
+   "Spices & condiments",
+   "Lemon juice concentrate",
+   "Preservative-E202",
+   "Nature identical and natural flavouring substances",
+   "Sequestrant-E385"
+  ],
+  "declared": [],
+  "exp": 4,
+  "basis": "nature identical and natural flavouring substances, modified-starch thickeners E1442/E1450 (NUPENS-USP Group 4 classes)",
+  "traps": "'Nature identical AND natural flavouring substances' is one phrase for two items; heading line 'MAYONNAISE-EMULSIFIED SAUCES AND DIPS (PROPRIETARY FOOD...)' above; 'Name-E123' separators; nutrition block and company text after",
+  "errata": "v1: one item, not two (see ERRATA.md)"
+ }
+}

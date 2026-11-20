@@ -1,3 +1,5 @@
+> **See ERRATA.md (v1): the re-run's denominator is 120 reference items (N13 counts one item for the flavouring phrase), not 121.**
+
 # Batch 1 re-run as REGRESSION against the fix-round build (code commit 9c00962)
 
 This batch was used to find the failures, then the fixes were written against it. This re-run therefore shows what changed, it is NOT validation, and the

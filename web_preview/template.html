@@ -208,7 +208,7 @@
         if (refOnly) {      // display only: a recognised code with no processing rule; never a decision input
           var refUrl = /https?:\/\/\S+/.exec(u.ref_source || "");
           main.appendChild(el("span", { "class": "src", text: "Recognised code, no processing rule yet. Classification treats it as unknown." +
-            (u.ref_source ? " Name is provisional" + (refUrl ? " (source: " + refUrl[0] + ")" : "") + "." : "") +
+            (u.ref_source ? (/PROVISIONAL/.test(u.ref_source) ? " Name is provisional" : " Name checked against its source page") + (refUrl ? " (" + refUrl[0] + ")" : "") + "." : "") +
             (u.ref_classes && u.ref_classes.length ? " Possible functions listed elsewhere: " + u.ref_classes.join(", ") + "." : "") }));
         }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));

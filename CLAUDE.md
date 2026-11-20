@@ -30,7 +30,8 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
   text that merely contains it is not a heading. Section labels may carry a bracketed percentage ("Noodles (88.5%):"). A text block with few recognised items
   and no code or marker on the photo path is flagged "uncertain" (it may not be an ingredient list).
 - INS codes: a code is never replaced and never reclassified by a review hint ("Possible misread, check the pack"). ins_names.csv rows are display names only
-  ("Recognised code, no processing rule yet"); ins_functions.csv is used only for the hints. The photo path runs a second reading when the first holds codes and
+  ("Recognised code, no processing rule yet"); ins_functions.csv is used only for the hints. Both hold ONLY rows from source pages that were individually read
+  (WHO JECFA database, research/04); no Codex-derived rows. Anything not read stays provisional and is not built on. Agreement of two readings is not reassurance. The photo path runs a second reading when the first holds codes and
   shows a disagreement on codes as a hint. The completeness line is text coverage, not a guarantee that characters, digits or the list are correct.
 - Role phrases "emulsifying agent" and "stabilizing agent" map to their class words (PROVISIONAL). "probiotic culture" is NOT a starter culture (research/04).
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or

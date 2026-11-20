@@ -62,7 +62,7 @@ def format_analysis(a: Analysis) -> str:
         for u in a.ins_mappings:
             lines.append(f"  - INS {u.code} -> {u.name or '(not in local mapping)'}" + (f"  [{u.source}]" if u.source else ""))
             if u.name is None and u.ref_name:      # display only: it never decides a group
-                lines.append(f"      {u.ref_name} (provisional name). Recognised code, no processing rule yet; classification treats it as unknown."
+                lines.append(f"      {u.ref_name}. Recognised code, no processing rule yet; classification treats it as unknown."
                              + (f" Source: {u.ref_url}" if u.ref_url else ""))
     return "\n".join(lines)
 

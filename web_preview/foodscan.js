@@ -594,6 +594,21 @@
     // source "text" (typed or pasted): no length gate, a heading-less text is the list, messages are about the text.
     const SUSPECT_PCT = /\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]/i;
     const LABEL_CLASS_ALIAS = { stabiliser: "stabilizer", enhancer: "flavour enhancer", flavour: "flavouring", colour: "colour" };
+    const FUNCTION_ALIAS = { "acidity regulator": ["acid"] };     // JECFA writes "acid" where a label says "acidity regulator" (PROVISIONAL reading)
+    const classListed = (c, fn) => fn.map((f) => f.toLowerCase()).some((f) => f === c || f.startsWith(c) || (FUNCTION_ALIAS[c] || []).includes(f));
+    function roleNotes(ings) {      // a role phrase read as its class word is a PROVISIONAL mapping: keep that visible
+      const out = [];
+      for (const i of ings) {
+        const low = i.raw.toLowerCase();
+        for (const r of T.synonyms) {
+          if (r.source.startsWith("PROVISIONAL role phrase") && new RegExp("(?<![a-z])" + r.from.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![a-z])").test(low)) {
+            out.push(`"${shortText(i.raw)}": "${r.from}" is read as the ${r.to.split(" & ")[0]} class by a provisional mapping (no source names the phrase)`);
+            break;
+          }
+        }
+      }
+      return out;
+    }
     function isImplausible(ings) {   // few recognised items and no additive code or marker at all (photo path)
       if (!ings.length) return false;
       if (ings.some((i) => i.ins.length > 0 || hitsFor(i).length > 0)) return false;
@@ -614,11 +629,11 @@
           if (tied) {
             seen.add(key);
             const url = /https?:\/\/\S+/.exec(insRef[tied].source || "");
-            out.push(`Read as INS ${u.code}. The label text says ${head}, and the source recorded for ${insRef[tied].name.toLowerCase()} gives INS ${tied}${url ? " (" + url[0] + ", provisional)" : ""}. Possible misread, check the pack.`);
+            out.push(`Read as INS ${u.code}. The label text says ${head}, and the source page for ${insRef[tied].name.toLowerCase()} gives INS ${tied}${url ? " (" + url[0] + ")" : ""}. Possible misread, check the pack.`);
             continue;
           }
           const fn = insFunctions[u.code];
-          if (fn && labelClasses.size && ![...labelClasses].some((c) => fn.map((f) => f.toLowerCase()).includes(c))) {
+          if (fn && labelClasses.size && ![...labelClasses].some((c) => classListed(c, fn))) {
             seen.add(key);
             out.push(`Read as INS ${u.code}. The label text says ${head}. Possible misread, check the pack. Retake a clearer photo of this line or type the code.`);
           }
@@ -666,6 +681,7 @@
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
+      sectionWarnings.push(...roleNotes(ings));
       const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
       sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));
       const implausible = source === "ocr" && isImplausible(ings);

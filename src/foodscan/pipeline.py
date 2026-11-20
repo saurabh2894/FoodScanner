@@ -14,6 +14,7 @@ from .classify import Driver, _hits_for, classify_ingredients, colour_note_only,
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference, ins_functions
+from .tables import load_table
 from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, unclosed_openers)
 
@@ -111,6 +112,25 @@ def _ends_in_code_bracket(part: str) -> bool:
 
 _SUSPECT_PCT = re.compile(r"\(\s*\d+(?:\.\d+)?\s*%\s*\)\s+(?!and\b|or\b|with\b|of\b|in\b|&|\(|\[|\{)[A-Za-z]", re.IGNORECASE)
 _LABEL_CLASS_ALIAS = {"stabiliser": "stabilizer", "enhancer": "flavour enhancer", "flavour": "flavouring", "colour": "colour"}
+# JECFA writes "acid" where a label says "acidity regulator" (and "antioxidant synergist" for an antioxidant helper): treated as consistent, PROVISIONAL reading
+_FUNCTION_ALIAS = {"acidity regulator": {"acid"}}
+
+
+def _class_listed(label_class: str, functions) -> bool:
+    fl = {f.lower() for f in functions}
+    return any(f == label_class or f.startswith(label_class) or f in _FUNCTION_ALIAS.get(label_class, set()) for f in fl)
+
+
+def _role_phrase_notes(ings) -> list[str]:
+    """A role phrase ("emulsifying agent") read as its class word is a PROVISIONAL mapping (no source names the phrase): keep that visible."""
+    out = []
+    for i in ings:
+        low = i.raw.lower()
+        for r in load_table("synonyms.csv"):
+            if r["source"].startswith("PROVISIONAL role phrase") and re.search(rf"(?<![a-z]){re.escape(r['from'])}(?![a-z])", low):
+                out.append(f'"{_short(i.raw)}": "{r["from"]}" is read as the {r["to"].split(" & ")[0]} class by a provisional mapping (no source names the phrase)')
+                break
+    return out
 
 
 def _implausible(ings) -> bool:
@@ -143,11 +163,11 @@ def _possible_misreads(ings) -> list[str]:
             if tied:
                 seen.add(key)
                 url = re.search(r"https?://\S+", names[tied]["source"])
-                out.append(f'Read as INS {u.code}. The label text says {head}, and the source recorded for {names[tied]["name"].lower()} gives INS {tied}'
-                           f'{" (" + url.group(0) + ", provisional)" if url else ""}. Possible misread, check the pack.')
+                out.append(f'Read as INS {u.code}. The label text says {head}, and the source page for {names[tied]["name"].lower()} gives INS {tied}'
+                           f'{" (" + url.group(0) + ")" if url else ""}. Possible misread, check the pack.')
                 continue
             fn = funcs.get(u.code)
-            if fn and label_classes and not (label_classes & {f.lower() for f in fn}):
+            if fn and label_classes and not any(_class_listed(c, fn) for c in label_classes):
                 seen.add(key)
                 out.append(f"Read as INS {u.code}. The label text says {head}. Possible misread, check the pack. "
                            "Retake a clearer photo of this line or type the code.")
@@ -318,6 +338,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
                        for seg in unread_like]
     section_warnings += unread_warnings
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
+    section_warnings += _role_phrase_notes(ings)
     pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
     section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]
     implausible = source == "ocr" and _implausible(ings)

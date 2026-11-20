@@ -104,7 +104,7 @@
           <li><code>INS {{ u.code }}</code>
             <span class="{{ 'missing' if u.name is none and not u.ref_name }}">{{ u.name or u.ref_name or 'Code not in the table' }}</span>
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
-            {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} Name is provisional (source: {{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
+            {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} {{ 'Name is provisional' if 'PROVISIONAL' in u.ref_source else 'Name checked against its source page' }} ({{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
             <span class="effect">{{ effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>
