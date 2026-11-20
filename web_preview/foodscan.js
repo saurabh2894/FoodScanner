@@ -375,7 +375,7 @@
 
     /* ---------- classify ---------- */
     // A colour word that is only a short bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)") is not a declared ADDED colour.
-    const COLOUR_NOTE = /^(?:(?:for|as|added|natural|permitted|food|synthetic|artificial) )*colour(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$/;
+    const COLOUR_NOTE = /^(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*colou?r(?:ant)?(?: agent)?(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$/;
     const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
     const colourNoteOnly = (ing) => !!ing.name && isColourNote(ing.inner) && !markers.some(({ re }) => re.test(ing.name));
     function hitsFor(ing) {
@@ -404,6 +404,9 @@
             strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source, section: null });
       }
       if (strong.length) return { group: 4, drivers: strong, reason: null };
+      // A colour note on a named food leaves open whether a colour is added: without an independent marker (above) the result stays uncertain.
+      const colourNotes = ings.filter(colourNoteOnly).map((i) => i.raw);
+      if (colourNotes.length) return { group: null, drivers: weak, reason: `a colour note on a named ingredient (${colourNotes.join("; ")}) leaves open whether a colour is added, and no other marker decides the group` };
       if (weak.length) {
         const names = [...new Set(weak.map((d) => `${d.ingredient} -> ${d.detail}`))].sort().join("; ");
         return { group: null, drivers: weak, reason: `only weak or unlisted markers present (${names}); not enough to call a group` };

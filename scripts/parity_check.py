@@ -157,6 +157,11 @@ CORPUS = [
     "Ingredients: Butter, salt, colour (INS 160b annatto).", "Ingredients: Sugar, food colour - E122.", "Ingredients: Rice, spices & condiments (salt, colour (INS 150d)).",
     "Ingredients: Rice, spices (salt, natural colour, cumin).", "Ingredients: Rice, salt, turmeric (colouring & spices). Contains permitted natural colour.",
     "Ingredients: Rice, salt, turmeric (colouring & spices), added flavour.",
+    "Ingredients: Rice, salt, turmeric (as colourant).", "Ingredients: Rice, salt, turmeric (as colouring).", "Ingredients: Rice, salt, turmeric (for colour).",
+    "Ingredients: Rice, salt, turmeric (colour & spices).", "Ingredients: Rice, salt, turmeric (natural colour).", "Ingredients: Rice, salt, paprika (as colorant).",
+    "Ingredients: Rice, salt, turmeric (colouring agent).", "Ingredients: Rice, salt, turmeric (as colourant), added flavour.",
+    "Ingredients: Rice, salt, turmeric (as colourant). Contains permitted natural colour.", "Ingredients: Rice, salt, turmeric (as colourant), colour (INS 150d).",
+    "Ingredients: Rice, salt, turmeric (as colourant), raising agent (INS 500(ii)).",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

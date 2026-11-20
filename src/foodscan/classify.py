@@ -116,7 +116,9 @@ class _Hit:
 # "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
 # is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
 # "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
-_COLOUR_NOTE = re.compile(r"^(?:(?:for|as|added|natural|permitted|food|synthetic|artificial) )*colour(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$")
+_COLOUR_NOTE = re.compile(
+    r"^(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
+    r"colou?r(?:ant)?(?: agent)?(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$")
 
 
 def is_colour_note(inner: str) -> bool:
@@ -181,6 +183,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
 
     if strong:
         return Classification(4, drivers=strong)
+
+    # A colour note on a named food ("Turmeric (as colourant)") leaves open whether a colour is added. Without an independent
+    # marker (checked above) the result stays uncertain; it is never read as a confident group from the foods alone.
+    notes = [i.raw for i in ings if colour_note_only(i)]
+    if notes:
+        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group")
 
     if weak:
         names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in weak}))
