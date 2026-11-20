@@ -136,17 +136,32 @@ def test_a_genuinely_cut_off_list_still_flags_truncated():
 def test_named_terms_are_recognised_with_their_kind():
     assert lookup("besan")["kind"] == "flour"                                  # milled chickpea flour: flour kind, not a whole food
     assert lookup("toned milk")["kind"] == "whole_food" and lookup("dahi")["kind"] == "whole_food"
-    assert lookup("active lactic culture")["kind"] == "neutral"
+    assert lookup("active lactic culture")["kind"] == "culture"
     for t in ("bengal gram flour", "gram flour", "chickpea flour"):
         r = a(f"Ingredients: {t}.")
         assert r.ingredients and not r.unassessed, t
 
 
-def test_each_new_term_cites_its_source_and_states_the_distinction():
-    rows = {r["term"]: r["source"] for r in load_table("lexicon.csv")}
-    for t in ("besan", "toned milk", "dahi", "active lactic culture"):
-        assert "PROVISIONAL" in rows[t] and "research/04" in rows[t]
-    assert "milled" in rows["besan"] and "standardised" in rows["toned milk"] and "not assessed separately" in rows["toned milk"].lower()
+def test_new_rows_follow_the_citation_rule():
+    """Every new row: the cited source names that exact term, or the row stays PROVISIONAL with the missing source stated.
+    The NUPENS-USP page is the NOVA METHOD source only; it never backs a term's identity."""
+    lex = {r["term"]: r["source"] for r in load_table("lexicon.csv")}
+    for t in ("toned milk", "double toned milk", "dahi"):                 # named in the FSSAI dairy chapter (exact term, section given)
+        assert "FSSAI" in lex[t] and "2.1." in lex[t] and "SHA-256" in lex[t], t
+        assert "PROVISIONAL" in lex[t] and "NOVA method only" in lex[t], t     # the NOVA step stays provisional
+    assert "milled" not in lex["toned milk"] and "standardised to 3.0% fat" in lex["toned milk"]
+    assert "standardised to 1.5% fat" in lex["double toned milk"] and "plain dahi" in lex["dahi"].lower()
+    assert lex["besan"].startswith("PROVISIONAL, source missing") and "NUPENS" in lex["besan"] and "FSSAI" in lex["besan"]
+    for t in ("active lactic culture", "lactic culture", "live culture", "active culture", "yoghurt culture"):
+        assert lex[t].startswith("PROVISIONAL, exact term not in a source") and "not the phrase" in lex[t], t
+    assert "curd culture" not in lex                                         # unreachable (curd is rewritten to dahi) and unsourced
+    syn = {r["from"]: r["source"] for r in load_table("synonyms.csv")}
+    for t in ("bengal gram flour", "gram flour", "chickpea flour"):
+        assert syn[t].startswith("PROVISIONAL, source missing"), t
+    assert syn["curd"].startswith("PROVISIONAL") and "omits the word (Curd)" in syn["curd"]
+    assert "double toned milk" not in syn and "double-toned milk" not in syn      # double toned milk has its own entry, not a synonym of toned milk
+    r = a("Ingredients: Double-Toned Milk.")
+    assert r.answered and r.group == 1 and not r.unassessed        # the hyphenated spelling reaches its own entry
 
 
 def test_no_broad_batch_unknown_terms_still_abstain():

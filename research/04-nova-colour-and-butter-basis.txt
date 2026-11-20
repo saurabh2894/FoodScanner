@@ -52,3 +52,19 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
   and the result carries the warning.
 - Open for the project owner, not for this pass: whether thickeners/stabilisers/anti-caking agents, which source 2 also
   lists as group-4 classes, should become markers. Not done; no new rules are approved.
+
+## Vocabulary citations and the milk-plus-culture rule (2026-11-20)
+- NUPENS-USP page = NOVA METHOD source only (what group a food falls in). It does not define besan, toned milk or dahi.
+- FSSAI, Food Safety and Standards regulations, Chapter 2 Food Product Standards, 2.1 Dairy products and analogues:
+  https://www.fssai.gov.in/upload/uploadfiles/files/2_%20Chapter%202_1%20(Dairy%20products%20and%20analogues).pdf
+  (fetched 2026-11-20; 105 pages; PDF created 2023-05-23; SHA-256 94a52a70248b15e346a53a4b532259552868296e00f7336517258e9d685944bc;
+  amendments noted in the text as in force 1 Aug 2023). Names, with section: "Toned Milk" 3.0% fat / 8.5% SNF and "Double Toned Milk"
+  1.5% fat / 9.0% SNF (1.3% from 1 Aug 2023) in 2.1.2 item 1(c) and its table; "Dahi" characterised by lactic acid bacteria in 2.1.13
+  item 1(a), where "Dahi (Curd)" is printed and an amendment omits the word (Curd). It names starter cultures of harmless
+  microorganisms (2.1.13) but none of the exact phrases in the culture rows, and it does not mention besan.
+- Rule for every vocabulary row: the cited source names that exact term, or the row stays PROVISIONAL with the missing source stated.
+  besan, gram flour, chickpea flour: PROVISIONAL, source missing. curd -> dahi: PROVISIONAL. Culture rows: PROVISIONAL, exact term not in a source.
+- Milk-plus-culture rule (classify.py): when the WHOLE list is recognised and consists only of milk (milk, toned milk, double toned milk)
+  and starter culture(s), with nothing else, the result is Group 1 citing the NUPENS-USP page (plain yoghurt with no added sugar or
+  artificial sweeteners; fermentation of milk to make yoghurt). Any other item, marker or unrecognised word keeps the existing behaviour.
+  It is not keyed off the words yoghurt, dahi or curd.

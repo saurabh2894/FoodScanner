@@ -175,6 +175,9 @@ CORPUS = [
     "Pasteurized Toned Milk & Active Lactic Culture", "Ingredients: Double Toned Milk, Active Culture.", "Ingredients: Dahi.", "Ingredients: Milk, live cultures.",
     "Ingredients: Bengal Gram Flour (Besan), Refined Palmolein Oil, Edible Common Salt.", "Ingredients: Gram flour, salt.", "Ingredients: Sugar, refined wheat flo",
     "Ingredients: Rice, salt, turmeric (colour), added flavour.", "Ingredients: Rice, salt, turmeric (colour), colour (INS 150d).", "Ingredients: Butter, colour (INS 160b).",
+    "Ingredients: Milk, live cultures.", "Ingredients: Double toned milk, active culture.", "Ingredients: Toned milk, active culture, xyzgum.",
+    "Ingredients: Milk, active culture, sugar.", "Ingredients: Milk, active culture, sweetener (INS 950).", "Ingredients: Milk, active culture, stabilizer (INS 440).",
+    "Ingredients: Dahi, active culture.", "Ingredients: Active culture.", "Ingredients: Milk, water.", "Ingredients: Milk, yoghurt culture, lactic culture.", "Ingredients: Curd.", "Ingredients: Double-toned milk, live culture.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 _f07 = Path(__file__).resolve().parent.parent / 'evaluation/dev_regression_15/inputs/F07.txt'

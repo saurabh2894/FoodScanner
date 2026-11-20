@@ -116,6 +116,7 @@ class _Hit:
 # "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
 # is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
 # "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
+_MILK_TERMS = frozenset({"milk", "toned milk", "double toned milk"})      # lexicon terms that count as the milk of the milk-plus-culture rule
 _NOTE_PREFIX = r"(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
 _NOTE_COLOUR = r"colou?r(?:ant)?(?: agent)?"
 _NOTE_OTHER = r"(?:spices?|seasoning|flavou?rs?)"
@@ -197,11 +198,18 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    substantive = [(i, k) for i, k in zip(ings, kinds) if k != "neutral"]
+    substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
         return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
+    rows = [lookup(i.name) for i in ings]
+    if any(r["kind"] == "culture" for r in rows) and any(r["term"] in _MILK_TERMS for r in rows) \
+            and all(r["kind"] == "culture" or r["term"] in _MILK_TERMS for r in rows):
+        # Narrow rule (research/04): the WHOLE list is recognised and is only milk plus starter culture(s): fermented milk with nothing
+        # else in it (no sugar, sweetener, flavour or other marker: those returned above or fall outside this rule). Not keyed off product words.
+        return Classification(1, drivers=[Driver(i.raw, "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or "
+                                                 "artificial sweeteners; fermentation of milk to make yoghurt)", "NUPENS-USP classification page (research/04)", i.section) for i in ings])
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k == "whole_food" for _, k in substantive)

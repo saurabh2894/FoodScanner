@@ -23,6 +23,9 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
   food ("Turmeric (Colouring & Spices)", "Annatto (colour)") is not read as an added colour; the result says so. Results are
   label-based NOVA classifications, never safety or health findings.
 - The INS reference table (Codex CXG 36) is parked in data/pending/ and must not be shipped (licence and edition unresolved, research/05).
+- Milk-plus-culture rule (research/04): a list that is recognised in full and is only milk (milk, toned milk, double toned milk) plus starter
+  culture(s) is Group 1 (NUPENS-USP: plain yoghurt with no added sugar or sweeteners). Anything else keeps its existing behaviour; not keyed off product words.
+- Vocabulary rows: the cited source must name that exact term, else the row stays PROVISIONAL with the missing source stated. The NUPENS-USP page is a NOVA method source only.
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.
