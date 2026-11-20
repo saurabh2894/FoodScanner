@@ -1,0 +1,742 @@
+{
+ "F01": {
+  "text": "Flavoured\nSandwich BiscuitsINGREDIENTS: REFINED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr\nREFINED PALM OIL, EDIBLE MAIZE STARCH, COCOA SOLIDS (2:7% Per 1\nMILK SOLIDS, RAISING AGENTS (500i)& 503(0)1, EMULSIRERS r\n(471& 322(0)) AND IODISED SALT,\nCONTAINS PERMITTED HATURAL (150a&150d)&SYNTHETIC\n(122,110, 133&102) FOOD COLOURS AND ADDED FLAVOURS\n(NATURE IDENTICAL&ARTIFICIAL (VANILLA, CHOCOLATE MILK\nMILKY COCOA) FLAVOURING SUBSTANCES\n(Numbers in brackets as per International Numbering System\nCONTAINS WHEAT, MILK AND SOYA\nSTORE IN A CO00L, HYGIENIC AND DRY PLACE TRANSFER wChole\nCONTENTS T0 A CLEAN AIRTIGHT CONTAINER ONCE OPENEDof wFatEner",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (unclosed bracket)",
+  "items": [
+   "Flavoured",
+   "REFINED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STARCH, COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i)& 503(0)1, EMULSIRERS r (471& 322(0)) AND IODISED SALT,"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Flavoured"
+    ]
+   ],
+   [
+    "Sandwich BiscuitsINGREDIENTS",
+    [
+     "REFINED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STARCH, COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i)& 503(0)1, EMULSIRERS r (471& 322(0)) AND IODISED SALT,"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Flavoured"
+  ],
+  "declared": [],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"raising agent\" (ordinary_additive)",
+   "INS 500i (not in local mapping)"
+  ]
+ },
+ "F02": {
+  "text": "Multigrain Flour Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar) Flour (3%), Rice Flour (3 Corn Meal (3%)), Sugar, Cocoa Solids (5.3%), Minerals, Cereal Extract, lodized Salt, Colours (INS 150a, INS 150d), Edible Vegetable Oil (Palmolein), Flavours (Nature Identical & Artificial (Cream)), Vitamins, Antioxidant (INS 307b). ALLERGEN DECLARATION: CONTAINS WHEAT & BARLEY. MAY CONTAIN SOY, MILK, OATS & NUTS.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Multigrain Flour Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar) Flour (3%), Rice Flour (3 Corn Meal (3%)), Sugar, Cocoa Solids (5.3%), Minerals, Cereal Extract, lodized Salt, Colours (INS 150a, INS 150d), Edible Vegetable Oil (Palmolein), Flavours (Nature Identical & Artificial (Cream)), Vitamins, Antioxidant (INS 307b)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Multigrain Flour Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar) Flour (3%), Rice Flour (3 Corn Meal (3%)), Sugar, Cocoa Solids (5.3%), Minerals, Cereal Extract, lodized Salt, Colours (INS 150a, INS 150d), Edible Vegetable Oil (Palmolein), Flavours (Nature Identical & Artificial (Cream)), Vitamins, Antioxidant (INS 307b)"
+    ]
+   ]
+  ],
+  "warnings": [
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "Wheat Flour (Atta) (55.8%)",
+   "Sorghum (Jowar) Flour (3%)",
+   "Cocoa Solids (5.3%)",
+   "Minerals",
+   "Cereal Extract",
+   "lodized Salt",
+   "Vitamins",
+   "Multigrain Flour Mix (64.8%) (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "INS 150d (caramel IV (sulfite ammonia caramel))",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "F03": {
+  "text": "Rolled Oats (73.9 %), Maltodectrin, Salt, Spices and Condiments (34%) (Onions, Tumeric, Pepper, Cumin, Garlic, Fenugreek, Clove, Nutmeg, Red Chili), Dried Vegetables (Carrots (1.15%), Onions Flakes (1.15%), Green Peas(0.69%)), Sugar, Starch, Hydrolysed Vegetable Protein, Wheat Powder, Flavour Enhancers NS 627,631), Anlioxidant (320). \r\nCONTAINS ADDED FLAVOUR-NATURAL AND NATURE IDENTICAL FLAVOURING SUBSTANCES.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Rolled Oats (73.9 %)",
+   "Maltodectrin",
+   "Salt",
+   "Spices and Condiments (34%) (Onions, Tumeric, Pepper, Cumin, Garlic, Fenugreek, Clove, Nutmeg, Red Chili)",
+   "Dried Vegetables (Carrots (1.15%), Onions Flakes (1.15%), Green Peas(0.69%))",
+   "Sugar",
+   "Starch",
+   "Hydrolysed Vegetable Protein",
+   "Wheat Powder",
+   "Flavour Enhancers NS 627",
+   "631)",
+   "Anlioxidant (320)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Rolled Oats (73.9 %)",
+     "Maltodectrin",
+     "Salt",
+     "Spices and Condiments (34%) (Onions, Tumeric, Pepper, Cumin, Garlic, Fenugreek, Clove, Nutmeg, Red Chili)",
+     "Dried Vegetables (Carrots (1.15%), Onions Flakes (1.15%), Green Peas(0.69%))",
+     "Sugar",
+     "Starch",
+     "Hydrolysed Vegetable Protein",
+     "Wheat Powder",
+     "Flavour Enhancers NS 627",
+     "631)",
+     "Anlioxidant (320)"
+    ]
+   ]
+  ],
+  "warnings": [
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "Maltodectrin",
+   "Tumeric",
+   "Pepper",
+   "Fenugreek",
+   "Nutmeg",
+   "Red Chili",
+   "Onions Flakes (1.15%)",
+   "Starch",
+   "Hydrolysed Vegetable Protein",
+   "631)",
+   "Anlioxidant (320)",
+   "Spices and Condiments (34%) (group name; its contents were assessed separately)",
+   "Dried Vegetables (group name; its contents were assessed separately)"
+  ],
+  "declared": [
+   "ADDED FLAVOUR-NATURAL",
+   "NATURE IDENTICAL FLAVOURING SUBSTANCES"
+  ],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "declared in \"Contains\" statement: \"flavour\""
+  ]
+ },
+ "F04": {
+  "text": "Sugar, hydrogenated edible vegetable oil (palm kernel oil), milk solids, cocoa solids, emulsifiers (492, 322), artificial flavouring substances (cocoa, vanilla).\nAllergen Information: Contains milk.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Sugar",
+   "hydrogenated edible vegetable oil (palm kernel oil)",
+   "milk solids",
+   "cocoa solids",
+   "emulsifiers (492, 322)",
+   "artificial flavouring substances (cocoa, vanilla)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Sugar",
+     "hydrogenated edible vegetable oil (palm kernel oil)",
+     "milk solids",
+     "cocoa solids",
+     "emulsifiers (492, 322)",
+     "artificial flavouring substances (cocoa, vanilla)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "milk solids",
+   "cocoa solids"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"hydrogenated\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "F05": {
+  "text": "Pasteurized Toned Milk & Active Lactic Culture",
+  "answered": false,
+  "group": null,
+  "reason": "ingredient list looks truncated (ends mid-word or unrecognised: \"Pasteurized Toned Milk & Active Lactic Culture\")",
+  "items": [
+   "Pasteurized Toned Milk & Active Lactic Culture"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Pasteurized Toned Milk & Active Lactic Culture"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Pasteurized Toned Milk & Active Lactic Culture"
+  ],
+  "declared": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": []
+ },
+ "F06": {
+  "text": "WATER, DOUBLE TONED MILK (40%), SUGAR, WHEY POWDER, MILK SOLIDS, COCOA SOLIDS (1%), MALT EXTRACT, EMULSIFIERS AND STABILIZERS [INS 460(1), INS 471, INS 466, INS 407, INS 340, INS 452], NATURE IDENTICAL FLAVOURING SUBSTANCE (CHOCOLATE) AND IODISED SALT. (INS-INTERNATIONAL NUMBERING SYSTEM) ALLERGEN INFORMATION: CONTAINS MILK, BARLEY, WHEAT AND MILLET: N\u00daTRITIONAL INFORMATION (TYPICAL VALUES) PER SERVE",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WATER",
+   "DOUBLE TONED MILK (40%)",
+   "SUGAR",
+   "WHEY POWDER",
+   "MILK SOLIDS",
+   "COCOA SOLIDS (1%)",
+   "MALT EXTRACT",
+   "EMULSIFIERS",
+   "STABILIZERS [INS 460(1), INS 471, INS 466, INS 407, INS 340, INS 452]",
+   "NATURE IDENTICAL FLAVOURING SUBSTANCE (CHOCOLATE)",
+   "IODISED SALT"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "WATER",
+     "DOUBLE TONED MILK (40%)",
+     "SUGAR",
+     "WHEY POWDER",
+     "MILK SOLIDS",
+     "COCOA SOLIDS (1%)",
+     "MALT EXTRACT",
+     "EMULSIFIERS",
+     "STABILIZERS [INS 460(1), INS 471, INS 466, INS 407, INS 340, INS 452]",
+     "NATURE IDENTICAL FLAVOURING SUBSTANCE (CHOCOLATE)",
+     "IODISED SALT"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "DOUBLE TONED MILK (40%)",
+   "WHEY POWDER",
+   "MILK SOLIDS",
+   "COCOA SOLIDS (1%)",
+   "MALT EXTRACT"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 471 (emulsifier)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "F07": {
+  "text": "Instant noodles: maida (refined wheat flour) (78.7%), edible vegetable oil, iodized salt, wheat gluten (0.4%), thickeners (508, 412), acidity regulators [501(i), 500(i)], stabilizer [339(ii)]. Seasoning: masala mix: dehydrated vegetables [beans (9.5%), carrot (7.1%), onion (4.6%), cabbage (3.8%)], instant noodle powder {maida (refined wheat flour) (15.9%), edible vegetable oil, iodized salt, wheat gluten (0.07%)}, spices and condiments (17.6%) [garlic, coriander, cumin, dried ginger, chillies, aniseed, fenugreek, black pepper, cardamom, nutmeg, caraway, cinnamon, cloves, turmeric], sugar, iodized salt, hydrolyzed vegetable protein (defatted soya, maltodextrin), natural flavours and natural flavouring substances, yeast extract, acidity regulator (330), nature identical flavouring substances, flavour enhancer (635). Sprinkler mix (topping): spices & condiments (67.8%) [garlic, chilli flakes, black pepper bits], dehydrated onion, iodized salt, flavour enhancer (635), acidity regulator (330), nature identical flavouring substances.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "maida (refined wheat flour) (78.7%)",
+   "edible vegetable oil",
+   "iodized salt",
+   "wheat gluten (0.4%)",
+   "thickeners (508, 412)",
+   "acidity regulators [501(i), 500(i)]",
+   "stabilizer [339(ii)]",
+   "masala mix: dehydrated vegetables [beans (9.5%), carrot (7.1%), onion (4.6%), cabbage (3.8%)]",
+   "instant noodle powder {maida (refined wheat flour) (15.9%), edible vegetable oil, iodized salt, wheat gluten (0.07%)}",
+   "spices and condiments (17.6%) [garlic, coriander, cumin, dried ginger, chillies, aniseed, fenugreek, black pepper, cardamom, nutmeg, caraway, cinnamon, cloves, turmeric]",
+   "sugar",
+   "iodized salt",
+   "hydrolyzed vegetable protein (defatted soya, maltodextrin)",
+   "natural flavours",
+   "natural flavouring substances",
+   "yeast extract",
+   "acidity regulator (330)",
+   "nature identical flavouring substances",
+   "flavour enhancer (635)"
+  ],
+  "sections": [
+   [
+    "Instant noodles",
+    [
+     "maida (refined wheat flour) (78.7%)",
+     "edible vegetable oil",
+     "iodized salt",
+     "wheat gluten (0.4%)",
+     "thickeners (508, 412)",
+     "acidity regulators [501(i), 500(i)]",
+     "stabilizer [339(ii)]"
+    ]
+   ],
+   [
+    "Seasoning",
+    [
+     "masala mix: dehydrated vegetables [beans (9.5%), carrot (7.1%), onion (4.6%), cabbage (3.8%)]",
+     "instant noodle powder {maida (refined wheat flour) (15.9%), edible vegetable oil, iodized salt, wheat gluten (0.07%)}",
+     "spices and condiments (17.6%) [garlic, coriander, cumin, dried ginger, chillies, aniseed, fenugreek, black pepper, cardamom, nutmeg, caraway, cinnamon, cloves, turmeric]",
+     "sugar",
+     "iodized salt",
+     "hydrolyzed vegetable protein (defatted soya, maltodextrin)",
+     "natural flavours",
+     "natural flavouring substances",
+     "yeast extract",
+     "acidity regulator (330)",
+     "nature identical flavouring substances",
+     "flavour enhancer (635)"
+    ]
+   ]
+  ],
+  "warnings": [
+   "\"masala mix: dehydrated vegetables [beans (9.5%), carrot (7.1%), onion (4.6%), cabbage (3.8%)]\" contains a colon, so a section label may not have been split from the ingredient before it",
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"Sprinkler mix (topping): spices & condiments (67.8%) [garlic, chilli flakes, black pepper bits], ...\""
+  ],
+  "unassessed": [
+   "maida (refined wheat flour) (78.7%)",
+   "iodized salt",
+   "wheat gluten (0.4%)",
+   "beans (9.5%)",
+   "cabbage (3.8%)",
+   "maida (refined wheat flour) (15.9%)",
+   "wheat gluten (0.07%)",
+   "chillies",
+   "aniseed",
+   "fenugreek",
+   "nutmeg",
+   "caraway",
+   "defatted soya",
+   "yeast extract",
+   "masala mix: dehydrated vegetables (group name; its contents were assessed separately)",
+   "instant noodle powder (group name; its contents were assessed separately)",
+   "spices and condiments (17.6%) (group name; its contents were assessed separately)",
+   "hydrolyzed vegetable protein (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "uncertain",
+  "creasons": [
+   "text after a full stop looks like more ingredients and was not read",
+   "a section label may not have been split from an ingredient"
+  ],
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "F08": {
+  "text": "Refined Wheat Flour (Maida) (96%), Wheat Gluten, lodised Salt, Raising Agents (INS 500 (ii), INS 500(i)), Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412), Acidity Regulators (INS 450 (iii), INS 501 (i)). Allergen Advice: Contains Wheat. May contain Soy, Mustard, Milk and Celery",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Refined Wheat Flour (Maida) (96%)",
+   "Wheat Gluten",
+   "lodised Salt",
+   "Raising Agents (INS 500 (ii), INS 500(i))",
+   "Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)",
+   "Acidity Regulators (INS 450 (iii), INS 501 (i))"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Refined Wheat Flour (Maida) (96%)",
+     "Wheat Gluten",
+     "lodised Salt",
+     "Raising Agents (INS 500 (ii), INS 500(i))",
+     "Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)",
+     "Acidity Regulators (INS 450 (iii), INS 501 (i))"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Wheat Gluten",
+   "lodised Salt",
+   "Thickening & Stabilizing Agents (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "INS 471 (emulsifier)"
+  ]
+ },
+ "F09": {
+  "text": "Bengal Gram Flour (Besan), Refined Palmolein Oil, Ajwain, Cumin, Black Pepper, Clove, Edible Common Salt, Red Chilli, Turmeric & Asafoetida.",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Bengal Gram Flour (Besan), Refined Palmolein Oil, Ajwain",
+  "items": [
+   "Bengal Gram Flour (Besan)",
+   "Refined Palmolein Oil",
+   "Ajwain",
+   "Cumin",
+   "Black Pepper",
+   "Clove",
+   "Edible Common Salt",
+   "Red Chilli",
+   "Turmeric",
+   "Asafoetida"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Bengal Gram Flour (Besan)",
+     "Refined Palmolein Oil",
+     "Ajwain",
+     "Cumin",
+     "Black Pepper",
+     "Clove",
+     "Edible Common Salt",
+     "Red Chilli",
+     "Turmeric",
+     "Asafoetida"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Bengal Gram Flour (Besan)",
+   "Refined Palmolein Oil",
+   "Ajwain"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": []
+ },
+ "F10": {
+  "text": "Rice Flakes (37%), Edible Vegetable Oil (Palmolein Oil, Cottonseed Oil), Roasted Gram (25%), Corn Flakes (6%), Ground Spices & Condiments (lodised Salt, Red Chilli, Dried Mango Black Salt, Ginger, Clove, Nutmeg, Black Pepper, Long Pepper, Cardamom, Asafoetida, Cumin, Mace, Cinnamon, Coriander, Mint, Fenugreek, Fennel Seeds, Turmeric (Colouring & Spices), Dehydrated Vegetable Powder (Onion, Garlic), Bishop's Seed, Mustard Seeds), Dried Curry Leaves (0.5%) CONTAINS: MUSTARD ALLERGEN ADVICE: This product is made in a facility that processes food containing peanut, treenut, soy, milk, cereals containing gluten, sesame, mustard and sulphites.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Rice Flakes (37%)",
+   "Edible Vegetable Oil (Palmolein Oil, Cottonseed Oil)",
+   "Roasted Gram (25%)",
+   "Corn Flakes (6%)",
+   "Ground Spices & Condiments (lodised Salt, Red Chilli, Dried Mango Black Salt, Ginger, Clove, Nutmeg, Black Pepper, Long Pepper, Cardamom, Asafoetida, Cumin, Mace, Cinnamon, Coriander, Mint, Fenugreek, Fennel Seeds, Turmeric (Colouring & Spices), Dehydrated Vegetable Powder (Onion, Garlic), Bishop's Seed, Mustard Seeds)",
+   "Dried Curry Leaves (0.5%)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Rice Flakes (37%)",
+     "Edible Vegetable Oil (Palmolein Oil, Cottonseed Oil)",
+     "Roasted Gram (25%)",
+     "Corn Flakes (6%)",
+     "Ground Spices & Condiments (lodised Salt, Red Chilli, Dried Mango Black Salt, Ginger, Clove, Nutmeg, Black Pepper, Long Pepper, Cardamom, Asafoetida, Cumin, Mace, Cinnamon, Coriander, Mint, Fenugreek, Fennel Seeds, Turmeric (Colouring & Spices), Dehydrated Vegetable Powder (Onion, Garlic), Bishop's Seed, Mustard Seeds)",
+     "Dried Curry Leaves (0.5%)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Rice Flakes (37%)",
+   "Roasted Gram (25%)",
+   "Corn Flakes (6%)",
+   "lodised Salt",
+   "Dried Mango Black Salt",
+   "Nutmeg",
+   "Long Pepper",
+   "Mace",
+   "Mint",
+   "Fenugreek",
+   "Fennel Seeds",
+   "Bishop's Seed",
+   "Dried Curry Leaves (0.5%)",
+   "Ground Spices & Condiments (group name; its contents were assessed separately)",
+   "Dehydrated Vegetable Powder (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "F11": {
+  "text": "Green mangoes, edible common salt, edible rice bran oil, mustard, chilli powder, fenugreek, turmeric powder, acidity regulator, compounded Asafoetida, preservative (INS 211)",
+  "answered": false,
+  "group": null,
+  "reason": "only weak or unlisted markers present (acidity regulator -> \"acidity regulator\" (unlisted_additive); preservative (INS 211) -> \"preservative\" (unlisted_additive); preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group",
+  "items": [
+   "Green mangoes",
+   "edible common salt",
+   "edible rice bran oil",
+   "mustard",
+   "chilli powder",
+   "fenugreek",
+   "turmeric powder",
+   "acidity regulator",
+   "compounded Asafoetida",
+   "preservative (INS 211)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Green mangoes",
+     "edible common salt",
+     "edible rice bran oil",
+     "mustard",
+     "chilli powder",
+     "fenugreek",
+     "turmeric powder",
+     "acidity regulator",
+     "compounded Asafoetida",
+     "preservative (INS 211)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "mustard",
+   "fenugreek",
+   "compounded Asafoetida"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"acidity regulator\" (unlisted_additive)",
+   "\"preservative\" (unlisted_additive)",
+   "INS 211 (sodium benzoate)"
+  ]
+ },
+ "F12": {
+  "text": "potato, edible vegetable oil (sunflower oil, corn oil, and/or canola oil), spices and condiments (onion powder, chilli powder, dry mango powder, coriander powder, ginger powder, garlic powder, black pepper powder, turmeric powder, cumin powder, salt, black salt, sugar, tomato powder, citric acid, tartaric acid, natural flavors (e160b)",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "potato",
+   "edible vegetable oil (sunflower oil, corn oil, and/or canola oil)",
+   "spices and condiments (onion powder, chilli powder, dry mango powder, coriander powder, ginger powder, garlic powder, black pepper powder, turmeric powder, cumin powder, salt, black salt, sugar, tomato powder, citric acid, tartaric acid, natural flavors (e160b)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "potato",
+     "edible vegetable oil (sunflower oil, corn oil, and/or canola oil)",
+     "spices and condiments (onion powder, chilli powder, dry mango powder, coriander powder, ginger powder, garlic powder, black pepper powder, turmeric powder, cumin powder, salt, black salt, sugar, tomato powder, citric acid, tartaric acid, natural flavors (e160b)"
+    ]
+   ]
+  ],
+  "warnings": [
+   "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "citric acid",
+   "tartaric acid",
+   "spices and condiments (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "uncertain",
+  "creasons": [
+   "brackets are not balanced: text may be cut off or misread",
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ },
+ "F13": {
+  "text": "Water, lodised Salt, Soybean (10%), Sugar, Natural Colour (INS 150c), Wheat, Acidity Regulator (INS 260), Preservative (INS 202). \r\nAllergen Advice: Contains Wheat & Soy. May contain Nuts, Sesame seeds, Mustard and Milk. DA",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Water",
+   "lodised Salt",
+   "Soybean (10%)",
+   "Sugar",
+   "Natural Colour (INS 150c)",
+   "Wheat",
+   "Acidity Regulator (INS 260)",
+   "Preservative (INS 202)"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Water",
+     "lodised Salt",
+     "Soybean (10%)",
+     "Sugar",
+     "Natural Colour (INS 150c)",
+     "Wheat",
+     "Acidity Regulator (INS 260)",
+     "Preservative (INS 202)"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "lodised Salt",
+   "Soybean (10%)"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "F14": {
+  "text": "SUGAR, MIXED FRUIT PULP BLEND - 60% (PAPAYA PULP, PEAR PULP, APPLE JUICE, BANANA PULP, PINEAPPLE JUICE, ORANGE JUICE, MANGO PULP, GRAPE JUICE), ACIDITY REGULATOR E330, THICKENER E440, IODISED SALT, VITAMINS & MINERAL, PRESERVATIVE-E202, NATURAL FLAVOURING SUBSTANCES, FOOD COLOUR-E122.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "SUGAR",
+   "MIXED FRUIT PULP BLEND - 60% (PAPAYA PULP, PEAR PULP, APPLE JUICE, BANANA PULP, PINEAPPLE JUICE, ORANGE JUICE, MANGO PULP, GRAPE JUICE)",
+   "ACIDITY REGULATOR E330",
+   "THICKENER E440",
+   "IODISED SALT",
+   "VITAMINS & MINERAL",
+   "PRESERVATIVE-E202",
+   "NATURAL FLAVOURING SUBSTANCES",
+   "FOOD COLOUR-E122"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "SUGAR",
+     "MIXED FRUIT PULP BLEND - 60% (PAPAYA PULP, PEAR PULP, APPLE JUICE, BANANA PULP, PINEAPPLE JUICE, ORANGE JUICE, MANGO PULP, GRAPE JUICE)",
+     "ACIDITY REGULATOR E330",
+     "THICKENER E440",
+     "IODISED SALT",
+     "VITAMINS & MINERAL",
+     "PRESERVATIVE-E202",
+     "NATURAL FLAVOURING SUBSTANCES",
+     "FOOD COLOUR-E122"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "PAPAYA PULP",
+   "PEAR PULP",
+   "APPLE JUICE",
+   "BANANA PULP",
+   "PINEAPPLE JUICE",
+   "ORANGE JUICE",
+   "MANGO PULP",
+   "GRAPE JUICE",
+   "VITAMINS & MINERAL",
+   "MIXED FRUIT PULP BLEND - 60% (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)"
+  ]
+ },
+ "F15": {
+  "text": "Water, Cotton Seed Oil, Sugar, iodised Salt, Chilli, Garlic, Onion, Thickener (INS 1422), Ginger, Acidity Regulator (INS 260), Flavour Enhancer (INS 635), Spices (White Pepper, Schezwan Pepper), Preservatives (INS 202, INS 211), Natural Flavouring Substances. _Contains: Celery. May contain: Wheat, Soy, Nuts, Sesame Seeds, Mustard and Milk._",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Water",
+   "Cotton Seed Oil",
+   "Sugar",
+   "iodised Salt",
+   "Chilli",
+   "Garlic",
+   "Onion",
+   "Thickener (INS 1422)",
+   "Ginger",
+   "Acidity Regulator (INS 260)",
+   "Flavour Enhancer (INS 635)",
+   "Spices (White Pepper, Schezwan Pepper)",
+   "Preservatives (INS 202, INS 211)",
+   "Natural Flavouring Substances"
+  ],
+  "sections": [
+   [
+    null,
+    [
+     "Water",
+     "Cotton Seed Oil",
+     "Sugar",
+     "iodised Salt",
+     "Chilli",
+     "Garlic",
+     "Onion",
+     "Thickener (INS 1422)",
+     "Ginger",
+     "Acidity Regulator (INS 260)",
+     "Flavour Enhancer (INS 635)",
+     "Spices (White Pepper, Schezwan Pepper)",
+     "Preservatives (INS 202, INS 211)",
+     "Natural Flavouring Substances"
+    ]
+   ]
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Cotton Seed Oil",
+   "White Pepper",
+   "Schezwan Pepper",
+   "Spices (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"enhancer\" (cosmetic_additive)",
+   "\"flavour\" (cosmetic_additive)"
+  ]
+ }
+}

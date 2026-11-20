@@ -1,0 +1,137 @@
+[
+ {
+  "id": "F01",
+  "code": "8901063139329",
+  "record": "https://in.openfoodfacts.org/product/8901063139329",
+  "image": "https://images.openfoodfacts.org/images/products/890/106/313/9329/ingredients_en.4.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Britannia Bourbon",
+  "paste_input_file": "inputs/F01.txt"
+ },
+ {
+  "id": "F02",
+  "code": "8901499008169",
+  "record": "https://in.openfoodfacts.org/product/8901499008169",
+  "image": "https://images.openfoodfacts.org/images/products/890/149/900/8169/ingredients_en.19.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Kellogg's Chocos",
+  "paste_input_file": "inputs/F02.txt"
+ },
+ {
+  "id": "F03",
+  "code": "8901088068734",
+  "record": "https://in.openfoodfacts.org/product/8901088068734",
+  "image": "https://images.openfoodfacts.org/images/products/890/108/806/8734/ingredients_en.13.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Saffola Masala Oats",
+  "paste_input_file": "inputs/F03.txt"
+ },
+ {
+  "id": "F04",
+  "code": "8901262070546",
+  "record": "https://in.openfoodfacts.org/product/8901262070546",
+  "image": "https://images.openfoodfacts.org/images/products/890/126/207/0546/ingredients_en.26.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Amul Chocominis",
+  "paste_input_file": "inputs/F04.txt"
+ },
+ {
+  "id": "F05",
+  "code": "8904083303077",
+  "record": "https://in.openfoodfacts.org/product/8904083303077",
+  "image": "https://images.openfoodfacts.org/images/products/890/408/330/3077/ingredients_en.5.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Milky Mist plain yoghurt",
+  "paste_input_file": "inputs/F05.txt"
+ },
+ {
+  "id": "F06",
+  "code": "8902579002299",
+  "record": "https://in.openfoodfacts.org/product/8902579002299",
+  "image": "https://images.openfoodfacts.org/images/products/890/257/900/2299/ingredients_en.9.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Parle Agro Smoodh chocolate milk",
+  "paste_input_file": "inputs/F06.txt"
+ },
+ {
+  "id": "F07",
+  "code": "8909081005251",
+  "record": "https://in.openfoodfacts.org/product/8909081005251",
+  "image": "https://images.openfoodfacts.org/images/products/890/908/100/5251/ingredients_en.18.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Sunfeast Yippee noodles",
+  "paste_input_file": "inputs/F07.txt"
+ },
+ {
+  "id": "F08",
+  "code": "8901595851218",
+  "record": "https://in.openfoodfacts.org/product/8901595851218",
+  "image": "https://images.openfoodfacts.org/images/products/890/159/585/1218/ingredients_en.29.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Ching's Hakka noodles",
+  "paste_input_file": "inputs/F08.txt"
+ },
+ {
+  "id": "F09",
+  "code": "8904004400410",
+  "record": "https://in.openfoodfacts.org/product/8904004400410",
+  "image": "https://images.openfoodfacts.org/images/products/890/400/440/0410/ingredients_en.7.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Haldiram's Ratlami Sev",
+  "paste_input_file": "inputs/F09.txt"
+ },
+ {
+  "id": "F10",
+  "code": "8906005509284",
+  "record": "https://in.openfoodfacts.org/product/8906005509284",
+  "image": "https://images.openfoodfacts.org/images/products/890/600/550/9284/ingredients_en.13.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Bikaji Lite Chiwda",
+  "paste_input_file": "inputs/F10.txt"
+ },
+ {
+  "id": "F11",
+  "code": "8903553601613",
+  "record": "https://in.openfoodfacts.org/product/8903553601613",
+  "image": "https://images.openfoodfacts.org/images/products/890/355/360/1613/ingredients_en.12.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Ram Bandhu mango pickle",
+  "paste_input_file": "inputs/F11.txt"
+ },
+ {
+  "id": "F12",
+  "code": "8901491101844",
+  "record": "https://in.openfoodfacts.org/product/8901491101844",
+  "image": "https://images.openfoodfacts.org/images/products/890/149/110/1844/ingredients_en.22.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Lay's potato chips (imported label)",
+  "paste_input_file": "inputs/F12.txt"
+ },
+ {
+  "id": "F13",
+  "code": "8901595862818",
+  "record": "https://in.openfoodfacts.org/product/8901595862818",
+  "image": "https://images.openfoodfacts.org/images/products/890/159/586/2818/ingredients_en.11.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Ching's Dark Soy sauce",
+  "paste_input_file": "inputs/F13.txt"
+ },
+ {
+  "id": "F14",
+  "code": "8901030831690",
+  "record": "https://in.openfoodfacts.org/product/8901030831690",
+  "image": "https://images.openfoodfacts.org/images/products/890/103/083/1690/ingredients_en.35.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Kissan mixed fruit jam",
+  "paste_input_file": "inputs/F14.txt"
+ },
+ {
+  "id": "F15",
+  "code": "8901595863280",
+  "record": "https://in.openfoodfacts.org/product/8901595863280",
+  "image": "https://images.openfoodfacts.org/images/products/890/159/586/3280/ingredients_en.15.full.jpg",
+  "terms": "Open Food Facts: database ODbL, images CC BY-SA per OFF's stated terms (not independently verified here)",
+  "product": "Ching's Schezwan chutney",
+  "paste_input_file": "inputs/F15.txt"
+ }
+]
