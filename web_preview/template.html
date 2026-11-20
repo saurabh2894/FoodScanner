@@ -330,6 +330,7 @@
   $("tab-photo").addEventListener("click", function () { selectTab("photo"); });
 
   var photoFile = null;
+  var ROTATIONS = [];   // clockwise degrees to retry when no list is found; empty = off (set [90, 270, 180] to enable). Mirrors pipeline.ROTATIONS.
 
   // Enlarge small photos and stretch contrast before OCR (mirrors the Python app's prepare_image).
   // mode "flat": second reading with uneven lighting and glare flattened (divide by the local mean, then stretch 1st-99th percentile), no sharpening.
@@ -475,12 +476,13 @@
         var c1 = codesOf(a1), c2 = codesOf(a2), only1 = c1.filter(function (c) { return c2.indexOf(c) < 0; }), only2 = c2.filter(function (c) { return c1.indexOf(c) < 0; });
         if (only1.length || only2.length) ocrNotes.push("Two readings of the photo disagree on additive codes: " + (only1.length ? "INS " + only1.sort().join(", INS ") : "none") + " in the first reading, " + (only2.length ? "INS " + only2.sort().join(", INS ") : "none") + " in the second. Possible misread, check the pack.");
       }
-      // Fallback only when the readings so far found no ingredient list: the same reader on the photo turned 90, 270, 180 degrees clockwise.
+      // Rotated retries are OFF (ROTATIONS empty): the measurement in evaluation/ocr_rotation_addendum recovered 0 of 22 photos in this path. When on: the same reader on the photo turned
+      // by each listed angle (clockwise), only when no ingredient list was found.
       // A rotated reading is used only when it finds a list; the first with at least 3 recognised items stops the retries. Mirrors pipeline.analyse_image.
       var bestA = engine.analyseText(text, { source: "ocr" }), rotUsed = 0, retake = null;
       if (!bestA.ingredients.length) {
         var bestY = 0;
-        for (var ri = 0, rots = [90, 270, 180]; ri < rots.length; ri++) {
+        for (var ri = 0, rots = ROTATIONS; ri < rots.length; ri++) {
           stage = "Retry with the photo turned " + rots[ri] + " degrees"; lastEvent = Date.now();
           var resR = await worker.recognize(await prepare(photoFile, undefined, rots[ri]));
           if (over) return;
@@ -488,7 +490,7 @@
           if (yieldOf(aR) > bestY) { bestY = yieldOf(aR); text = resR.data.text; rotUsed = rots[ri]; if (bestY >= 3) break; }
         }
         if (rotUsed) { ocrNotes.push("The text was read after turning the photo " + rotUsed + " degrees clockwise (sideways or upside-down text). Check the extracted ingredients against the pack."); note = " (read after turning the photo " + rotUsed + " degrees)"; }
-        else retake = "No ingredient list could be read from this photo, even after trying it turned 90, 270 and 180 degrees. Retake it: put the pack on a flat surface (or hold it still), use good even light with no glare or shadow across the text, shoot straight-on and close so the ingredients panel fills the frame with the text upright. Or paste the label text instead.";
+        else retake = "No ingredient list could be read from this photo. Retake it: put the pack on a flat surface (or hold it still), use good even light with no glare or shadow across the text, shoot straight-on and close so the ingredients panel fills the frame with the text upright. Or paste the label text instead.";
       }
       over = true; clearInterval(tick); btn.disabled = false;
       try { await worker.terminate(); } catch (e) {}

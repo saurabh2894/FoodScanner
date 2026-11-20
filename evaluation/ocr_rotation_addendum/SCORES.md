@@ -50,3 +50,8 @@ Negation paste results are covered by tests/test_negation_real_labels.py (unchan
 ## Reading
 The measured benefit of the rotated retries on our failure sets is nil in the browser and marginal (two garbled partial lists, no classification change) with the native binary, at a cost of roughly 3x OCR time on failed photos. The retake guidance costs nothing and is the part that helps a user act.
 `ROTATIONS = ()` in src/foodscan/pipeline.py (and `rots` in web_preview/template.html) switches the retries off while keeping the guidance; the guidance sentence would then need its "even after trying it turned..." clause dropped.
+
+## Decision (owner, after review): rotated retries OFF, retake guidance kept
+`ROTATIONS = ()` in src/foodscan/pipeline.py and `ROTATIONS = []` in web_preview/template.html; the rotation code stays behind that switch and is covered by tests with the switch turned on. The retake guidance is shown whenever no list is read, and its sentence no longer mentions rotation.
+**The remaining dominant cause of no-list photos is upright text damaged by blur, size or glare, not orientation.** In this measurement 17 of the 20 retried photos had upright text read as damaged characters, and a rotated reading beat the unrotated ones on only 3 photos, by 1 to 2 vocabulary words.
+That is the real next OCR problem (image quality before and during recognition: sharpness, resolution, glare handling, cropping to the ingredients panel), not orientation.
