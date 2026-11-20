@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import Driver, _hits_for, classify_ingredients, is_recognised, marker_terms
+from .classify import Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .parser import (count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, starts_with_denied_label,
@@ -84,7 +84,7 @@ def _split_pairs(raw: str) -> list[str]:
 def _declared_additives(declarations: list[str], ings: list[Ingredient]) -> list[dict]:
     """Additive/flavour clauses of the "Contains ..." lines, each marked as present in or missing from the list.
     A clause with no additive class word and no INS code (an allergen, "37% millets") is not an additive: dropped."""
-    list_terms = set().union(*[marker_terms(i.text) for i in ings]) if ings else set()
+    list_terms = set().union(*[ingredient_marker_terms(i) for i in ings]) if ings else set()
     list_codes = {u.code for i in ings for u in i.ins}
     out: list[dict] = []
     for decl in declarations:
@@ -158,6 +158,8 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
         ing.section = section
         ing.ins = [replace(u, section=section) for u in ing.ins]
         split = split_compound(raw) if depth < 3 else None
+        if split and len(split[1]) == 1 and is_colour_note(normalise_list([split[1][0]])[0].text):
+            split = None          # "Annatto (colour)": a function note on a named food, not a colour ingredient: keep whole
         if split and not _recognisable(normalise_list([split[0]])[0]):
             if heads is not None:
                 heads.append(split[0])          # the group name itself is not classified: keep it visible
@@ -219,6 +221,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
                        for seg in unread_like]
     section_warnings += unread_warnings
+    section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
     common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
                   ignored=list(parsed.ignored), declared=declared, heading={"kind": parsed.heading_kind, "text": parsed.heading_text},
                   sections=[(label, list(its)) for label, its in sections])

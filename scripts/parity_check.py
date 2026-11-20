@@ -151,6 +151,12 @@ CORPUS = [
     "Ingredients: SUGAR, EMULSIFIER OF VEGETABLE ORIGIN [472e] AND FLOUR TREATMENT AGENT [1101(ii)]. CONTAINS: WHEAT, MILK",
     "Ingredients: Sugar, colour of natural origin (160b), SPICES AND CONDIMENTS, SALT.",
     "Ingredients: Rice, acidity regulators (330, 508), stabilizer (412), raising agent (500(i), 501(i)), emulsifier (451(i)), flavour enhancer (635), salt, colour (INS 105), preservative (INS 999).",
+    # failure-1 fix: a colour that is only a function note on a named ingredient is not an added colour (tests/test_colour_note_scope.py)
+    "Ingredients: Rice flakes (37%), Roasted gram (25%), Ground spices & condiments (iodised salt, red chilli, turmeric (colouring & spices), cumin), Dried curry leaves (0.5%).",
+    "Ingredients: Milk fat, salt, annatto (colour).", "Ingredients: Rice, salt, beetroot powder (for natural colours).", "Ingredients: Rice, salt, turmeric (colour).",
+    "Ingredients: Butter, salt, colour (INS 160b annatto).", "Ingredients: Sugar, food colour - E122.", "Ingredients: Rice, spices & condiments (salt, colour (INS 150d)).",
+    "Ingredients: Rice, spices (salt, natural colour, cumin).", "Ingredients: Rice, salt, turmeric (colouring & spices). Contains permitted natural colour.",
+    "Ingredients: Rice, salt, turmeric (colouring & spices), added flavour.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

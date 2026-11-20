@@ -18,6 +18,11 @@ Reports processing level only. Local only (localhost), no paid APIs, no network 
   or inferred heading, unbalanced brackets or unread ingredient-like text make it "uncertain" and block every answer
   except a strong-marker Group 4 (Option A). Photo path: a damaged heading ("REDIENTS") is matched tolerantly; with
   no heading the most list-like block is used, never a nutrition table or allergen-only line; else ask for a clearer photo.
+- Declared colour marker (provisional, research/04): counts only as a declared ADDED colour ("Colour (INS 150d)", "Natural
+  colour (annatto)", "Food colour - E122", a Contains line). A colour word that is only a bracketed function note on a named
+  food ("Turmeric (Colouring & Spices)", "Annatto (colour)") is not read as an added colour; the result says so. Results are
+  label-based NOVA classifications, never safety or health findings.
+- The INS reference table (Codex CXG 36) is parked in data/pending/ and must not be shipped (licence and edition unresolved, research/05).
 - yeast extract and pea protein are NOT markers (in no research/ file; pea protein does not say concentrate or
   isolate). They stay outside the vocabulary and appear under "Not assessed". Adding either needs a cited source.
 - Results list what could not be judged ("Not assessed"); unrecognised ingredients are never invisible.

@@ -1,4 +1,4 @@
-# 05 - INS reference table (Codex CXG 36-1989): provenance, counts, checks. STATUS: NOT RELEASED (licence unresolved)
+# 05 - INS reference table (Codex CXG 36-1989): provenance, counts, checks. STATUS: NOT RELEASED, PARKED (licence and edition unresolved)
 
 The derived table lives in data/pending/ins_reference.csv. It is NOT in src/foodscan/resources/, so no release or web build
 contains it (the loader and scripts/web_tables.py read it only if it is placed in resources/ deliberately).
@@ -6,7 +6,7 @@ It is display data only. It never feeds ins_map.csv, a marker, or a NOVA decisio
 in any scanned food: the source itself says a single additive "can often be used for a range of technological purposes"
 and that the manufacturer declares the most descriptive class; "Inclusion in the INS does not imply approval by Codex".
 
-## Source and version (verified 2026-11-20)
+## Source and version (what the downloaded file itself shows, 2026-11-20). The 2026 edition is NOT verified.
 - Document: FAO and WHO. 2026. Class names and the international numbering system for food additives. Codex Alimentarius
   Guideline CXG 36-1989. Rome. Cover text inside the PDF: "ADOPTED 1989 ... REVISED 2026", "The 2026 revisions were adopted
   during the Forty-ninth Session of the Codex Alimentarius Commission"; "reformatted and published in 2026"; earlier
@@ -20,7 +20,9 @@ and that the manufacturer declares the most descriptive class; "Inclusion in the
   bitstream, but the bytes received here have MD5 aece6cfa016ece4d65fc35815053f748 at the same size. Not explained
   (transfer path unknown). The text content is internally consistent, but the file integrity is NOT confirmed.
 
-## Licence: UNRESOLVED
+## Licence: UNRESOLVED and PARKED (no confirmation is being chased for now)
+- CC BY-NC 4.0 deed (the conditions only): https://creativecommons.org/licenses/by-nc/4.0/ . The deed sets conditions; it does not prove
+  which licence applies to this exact PDF or that a given use qualifies as non-commercial.
 - The PDF's rights page says: "Some rights reserved. This work is made available under the Creative Commons
   Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0)", (c) FAO and WHO, 2026.
 - The repository record page for the same item links its "Copyright licence" to
@@ -44,6 +46,10 @@ in the numerical list (Section 3), of which 50 are bold group headings with no f
   data/pending/ins_reference_visual_checks.csv, with page numbers and reasons).
 - Aliases/ranges: the source prints optional parenthetical synonyms (e.g. "Natamycin (Pimaricin)"); they are part of the
   name, not separate rows. There are no code ranges in the lists. No duplicate identifiers occur within a list.
+
+## Origin of ins_map.csv names and classes
+ins_map.csv rows say "name/class as listed in a Codex INS list (edition not recorded: unknown)". The edition those entries were
+first taken from was not recorded and is unknown. They are not derived from the 2026 file above.
 
 ## What the checks do and do not show
 - Agreement between the numerical and alphabetical readings is an extraction-consistency check on the same PDF, not

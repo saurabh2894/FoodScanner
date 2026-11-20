@@ -1,4 +1,4 @@
-"""Review items 4 to 6: the Contains policy, user-approved vocabulary/INS additions, and what stays unmapped.
+"""Review items 4 to 6: the Contains policy, project-maintained vocabulary/INS additions, and what stays unmapped.
 
 Policy pinned here (also in CLAUDE.md):
   * A "Contains ..." statement counts as evidence only when it declares an additive class (colour, flavour,
@@ -32,7 +32,7 @@ def test_declared_additive_classes_do_count(statement):
     assert a.group == 4 and any("Contains" in d.detail for d in a.drivers), statement
 
 
-# ---- user-approved additions ("fix all", 2026-11-20) --------------------------------------------------
+# ---- project-maintained additions (2026-11-20) --------------------------------------------------
 def test_jaggery_is_a_culinary_ingredient():
     a = analyse_text("Ingredients: Jaggery.")
     assert a.group == 2

@@ -7,7 +7,7 @@ maltodextrin,derived_substance,strong,research/02 marker class 1
 dextrose,derived_substance,strong,research/02 marker class 1
 modified starch,derived_substance,strong,research/02 marker class 1 (modified starches)
 protein isolate,derived_substance,strong,research/02 marker class 1 (soy / whey protein isolate)
-colour,cosmetic_additive,strong,"research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 Public Health Nutr 22:936 abstract and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only"
+colour,cosmetic_additive,strong,"research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only"
 flavour,cosmetic_additive,strong,research/02 marker class 2 (flavourings)
 enhancer,cosmetic_additive,strong,research/02 marker class 2 (flavour enhancers)
 sweetener,cosmetic_additive,strong,research/02 marker class 2 (non-sugar sweeteners)

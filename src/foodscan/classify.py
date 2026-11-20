@@ -112,6 +112,32 @@ class _Hit:
     source: str
 
 
+# A colour word that is only a bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)",
+# "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
+# is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
+# "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
+_COLOUR_NOTE = re.compile(r"^(?:(?:for|as|added|natural|permitted|food|synthetic|artificial) )*colour(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$")
+
+
+def is_colour_note(inner: str) -> bool:
+    return bool(_COLOUR_NOTE.match(inner.strip()))
+
+
+def colour_note_only(ing: Ingredient) -> bool:
+    """The only colour wording on this ingredient is a short bracketed note, and its own name is no additive class."""
+    if not ing.name or not is_colour_note(ing.inner):
+        return False
+    return not any(pat.search(ing.name) for pat, _ in _markers())
+
+
+def ingredient_marker_terms(ing: Ingredient) -> set[str]:
+    """marker_terms for an ingredient in the list, without a colour that is only a function note."""
+    terms = marker_terms(ing.text)
+    if colour_note_only(ing):
+        terms.discard("colour")
+    return terms
+
+
 def marker_terms(text: str) -> set[str]:
     """The marker terms (markers.csv) found in a normalised text."""
     return {row["term"] for pat, row in _markers() if pat.search(text)}
@@ -119,7 +145,10 @@ def marker_terms(text: str) -> set[str]:
 
 def _hits_for(ing: Ingredient) -> list[_Hit]:
     hits: list[_Hit] = []
+    note_only = colour_note_only(ing)
     for pat, row in _markers():
+        if note_only and flatten(row["term"]) == "colour":
+            continue
         if pat.search(ing.text):
             hits.append(_Hit(row["strength"], row["marker_class"], f'"{row["term"]}" ({row["marker_class"]})', row["source"]))
     ins_table = {r["ins"].lower(): r for r in load_table("ins_map.csv")}

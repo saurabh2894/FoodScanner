@@ -10,7 +10,8 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
    22(5):936-941. doi:10.1017/S1368980018003762, PMID 30744710 (PMC10260459 is its PubMed Central copy).
    READ: the abstract only, via the Europe PMC API (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID:PMC10260459&resultType=core).
    NOT READ: the full text (pmc.ncbi.nlm.nih.gov answered with a browser-check challenge, which was not bypassed).
-   Note: this is the NOVA group's 2019 identification guide, not the first (2010) NOVA paper.
+   Label: this is the NOVA group's 2019 identification paper. It is NOT the 2010 NOVA paper and should not be cited as such.
+   What I could read is the abstract only; statements below that go beyond the abstract rest on source 2, not on this paper.
    Abstract wording used: ultra-processed products can be identified by "at least one item characteristic of the NOVA
    ultra-processed food group, ... either food substances never or rarely used in kitchens (such as high-fructose corn
    syrup, hydrogenated or interesterified oils, and hydrolysed proteins), or classes of additives designed to make the
@@ -25,11 +26,11 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
      additives, such as plain yoghurt with added artificial sweeteners, and breads with added emulsifiers, they are
      classified here in group 4." Listed classes restricted to group 4 include "colourings" (and also thickeners,
      stabilisers, anti-caking agents, which foodscan treats as "unlisted"/uncertain: a known difference, not changed here).
-3. FAO/WHO GSFA Online, additives by technological function ("colour"):
+3. FAO/WHO GSFA Online, additives by technological function (colour):
    https://www.fao.org/gsfaonline/additives/results.html?d-49489-o=1&d-49489-s=2&lang=&searchBy=tf&techFunction=9
-   NOT READ: fao.org answered HTTP 403 (bot protection), not bypassed. It would only show which additives carry the
-   "colour" function in the GSFA; it is not a NOVA source. Needed: an export of that page from the user, or a
-   reachable alternative.
+   URL recorded. The project owner states that GSFA lists annatto extracts under the Colour functional class. I could NOT
+   read the page myself (fao.org answered HTTP 403 bot protection; not bypassed), so that statement is the owner's, not
+   verified here. It concerns additive function, not NOVA grouping.
 
 ## What the sources do and do not establish
 - Plain or salted butter (milk fat, with or without salt) is a Group 2 example (source 2).

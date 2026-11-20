@@ -374,9 +374,15 @@
     }
 
     /* ---------- classify ---------- */
+    // A colour word that is only a short bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)") is not a declared ADDED colour.
+    const COLOUR_NOTE = /^(?:(?:for|as|added|natural|permitted|food|synthetic|artificial) )*colour(?: (?:and|&) (?:spices?|seasoning|flavou?rs?))?$/;
+    const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
+    const colourNoteOnly = (ing) => !!ing.name && isColourNote(ing.inner) && !markers.some(({ re }) => re.test(ing.name));
     function hitsFor(ing) {
       let hits = [];
+      const noteOnly = colourNoteOnly(ing);
       for (const { re, row } of markers) {
+        if (noteOnly && row.term.toLowerCase() === "colour") continue;
         if (re.test(ing.text)) hits.push({ strength: row.strength, marker_class: row.marker_class, detail: `"${row.term}" (${row.marker_class})`, source: row.source });
       }
       for (const use of ing.ins) {
@@ -433,7 +439,8 @@
         const ing = normaliseIngredient(raw);
         ing.section = section;
         ing.ins.forEach((u) => { u.section = section; });
-        const split = depth < 3 ? splitCompound(raw) : null;
+        let split = depth < 3 ? splitCompound(raw) : null;
+        if (split && split[1].length === 1 && isColourNote(normaliseIngredient(split[1][0]).text)) split = null;   // "Annatto (colour)": a function note on a named food
         if (split && !recognisableIng(normaliseIngredient(split[0]))) {
           if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible
           out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1, heads));
@@ -444,6 +451,7 @@
     }
     const splitItemsText = (t) => splitTopLevel(collapse(t)).items;
     const markerTerms = (text) => new Set(markers.filter(({ re }) => re.test(text)).map(({ row }) => row.term));
+    const ingredientMarkerTerms = (ing) => { const t = markerTerms(ing.text); if (colourNoteOnly(ing)) t.delete("colour"); return t; };
     const subset = (a, b) => [...a].every((x) => b.has(x));
     // "emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, only when EVERY side is recognisable
     function splitPairs(raw) {
@@ -453,7 +461,7 @@
     // additive/flavour clauses of the "Contains ..." lines, marked as in or missing from the list; allergens are dropped
     function declaredAdditives(declarations, ings) {
       const listTerms = new Set(); const listCodes = new Set();
-      for (const i of ings) { markerTerms(i.text).forEach((t) => listTerms.add(t)); i.ins.forEach((u) => listCodes.add(u.code)); }
+      for (const i of ings) { ingredientMarkerTerms(i).forEach((t) => listTerms.add(t)); i.ins.forEach((u) => listCodes.add(u.code)); }
       const out = [];
       for (const decl of declarations) {
         const body = decl.replace(/^contains\s*:?\s*/i, "");
@@ -537,6 +545,7 @@
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
+      sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
       const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
