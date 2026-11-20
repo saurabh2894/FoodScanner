@@ -32,6 +32,11 @@ _STOP = re.compile(
 
 _OPEN, _CLOSE = "([{", ")]}"
 
+# What may sit between the end of the list and a stop phrase without being ingredients.
+_LEAD_IN = re.compile(
+    r"(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019/\-]{0,40}:)\s*$",
+    re.IGNORECASE)
+
 # "Label:" at the start of a section: 1 to 4 words, then a colon, then more text.
 _LABEL = re.compile(
     r"\s*(?P<label>[A-Za-z][A-Za-z&'\u2019/\-]*(?:[ ][A-Za-z&'\u2019/\-]+){0,3})"
@@ -58,6 +63,9 @@ class ParsedList:
     unbalanced_brackets: bool = False
     declarations: list[str] = field(default_factory=list)  # "Contains ..." sentences after the list
     sections: list[Section] = field(default_factory=list)
+    # Text after the list that was NOT read as ingredients (unlabelled text after a full stop). Never dropped
+    # silently: it is kept here so the result can show it and, if it looks like more ingredients, say so.
+    ignored: list[str] = field(default_factory=list)
 
 
 def _flat(s: str) -> str:
@@ -251,10 +259,10 @@ def _next_boundary(body: str, start: int) -> tuple[int, str]:
     return len(body), "end"
 
 
-def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool]:
-    """Cut the body into (label, text) sections. Returns (sections, ended_by_full_stop)."""
+def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool, str]:
+    """Cut the body into (label, text) sections. Returns (sections, ended_by_full_stop, unread_text)."""
     sections: list[tuple[str | None, str]] = []
-    pos, ended = 0, False
+    pos, ended, unread = 0, False, ""
     while True:
         info = _label_info(body[pos:])
         label, seg_start = None, pos
@@ -272,9 +280,10 @@ def _read_sections(body: str) -> tuple[list[tuple[str | None, str]], bool]:
         rest = body[end + 1:]
         if not rest.strip() or _label_info(rest) is None:
             ended = True            # trailing full stop, or unlabelled text after it: the list is over
+            unread = rest.strip()   # whatever follows is kept, not dropped
             break
         pos = end + 1
-    return sections, ended
+    return sections, ended, unread
 
 
 def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:
@@ -293,7 +302,10 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
     stop = _STOP.search(body)
     if stop:
         tail = _collapse(body[stop.start():])
-        body = body[: stop.start()]
+        # The stop phrase takes its own lead-in with it: a label right before it ("Note: store in ...") or a
+        # claim opener ("THIS PRODUCT contains ..."), so those fragments are not left behind as unread text.
+        lead = _LEAD_IN.search(body[: stop.start()])
+        body = body[: lead.start(1) if lead else stop.start()]
         terminated = True
         # Keep "Contains ..." statements: they can declare additive classes
         # (e.g. "Contains added flavour") that are classification evidence.
@@ -302,8 +314,9 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
             end = _find_terminator(tail)
             declarations.append(tail[:end] if end is not None else tail)
 
-    raw_sections, ended = _read_sections(body)
+    raw_sections, ended, unread = _read_sections(body)
     terminated = terminated or ended
+    ignored = [_collapse(unread)] if unread else []
 
     sections: list[Section] = []
     items: list[str] = []
@@ -335,6 +348,7 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         unbalanced_brackets=unbalanced,
         declarations=declarations,
         sections=sections,
+        ignored=ignored,
     )
 
 
@@ -375,3 +389,13 @@ def split_compound(raw: str) -> tuple[str, list[str]] | None:
             return None
         return raw[:idx].strip(" *"), subs
     return None
+
+
+def starts_with_denied_label(seg: str) -> bool:
+    """True for text that opens with a non-ingredient label such as "Note:" or "Directions:"."""
+    m = _LABEL.match(seg)
+    return bool(m) and bool(_DENY.fullmatch(m.group("label").strip()))
+
+
+def split_items(text: str) -> list[str]:
+    return _split_top_level(_collapse(text))[0]

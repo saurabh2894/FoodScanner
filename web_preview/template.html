@@ -196,6 +196,13 @@
       ]));
     }
     card.appendChild(cols);
+    if (a.ignored && a.ignored.length) {
+      card.appendChild(el("div", {}, [
+        el("h3", { text: "Not read as ingredients" }),
+        el("p", { "class": "hint", text: "Text after the list, shown here so nothing is hidden." }),
+        el("ul", { "class": "plain" }, a.ignored.map(function (u) { return el("li", { "class": "mono", text: u }); }))
+      ]));
+    }
     if (a.unassessed && a.unassessed.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not assessed" }),

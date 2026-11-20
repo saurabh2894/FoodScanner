@@ -109,6 +109,16 @@ CORPUS = [
     "Ingredients: Rice, yeast extract, pea protein, natural flavour.", "Ingredients: Rice, salt. Contains soy, milk, wheat, gluten.",
     "Ingredients: Rice, salt. Contains soy. Contains permitted colour.", "Ingredients: Rice, salt. Contains artificial sweetener.",
     "Ingredients: Rice, 10il, salt.", "Ingredients: Rice, 0ils, o111, salt.", "Ingredients: Rice Bran 0il (16%), salt.", "Ingredients: Edible Vegetable 0il, Rice Bran O11.",
+    # percentage headings and silent-loss regressions (tests/test_percentage_headings_regression.py)
+    "Ingredients: Seasoning 12%: Vegetables and Spices (Onion, Garlic, Tomato, Chilli, Amchur, Tamarind), Salt, Natural and Nature Identical Flavours, Raw Sugar, Acidity Regulators (INS330, INS296, INS334), Potassium Chloride - Salt Substitute (INS 508), Rosemary Extract - Antioxidant (INS 392). Puff 88%: Supergrain Blend (Jowar, Foxtail Millet, Corn, Rice)(72%), Rice Bran Oil (16%). THIS PRODUCT CONTAINS 37% MILLETS",
+    "Ingredients: Puff: Supergrain Blend (Jowar, Foxtail Millet, Corn, Rice)(72%), Rice Bran Oil (16%). Seasoning: Vegetables and Spices (Onion, Garlic), Salt, Natural and Nature Identical Flavours. THIS PRODUCT CONTAINS 37% MILLETS",
+    "Seasoning 12%: Salt, Raw Sugar, Natural and Nature Identical Flavours.",
+    "Ingredients: Rice, salt. Sugar, natural flavour.", "Ingredients: Rice, salt. Sugar, vinegar.", "Ingredients: Rice, salt. Khaand, amchur, tamarind.",
+    "Ingredients: Rice, natural flavour. Sugar, vinegar.", "Ingredients: Rice, salt. Enjoy hot with butter.",
+    "Ingredients: Rice, salt. Note: store in a cool place, away from light.", "Ingredients: Rice, salt. Directions: add hot water, stir.",
+    "Ingredients: Rice, salt. *As flavouring agent.", "Ingredients: Rice, salt. Serving suggestion: with butter.",
+    "Ingredients: Rice. Seasoning 12%: Salt. Enjoy hot. Coating: Sugar.", "Ingredients: Rice, salt. THIS PRODUCT CONTAINS 37% MILLETS",
+    "Ingredients: Rice, salt. Allergen advice: contains soy.", "Ingredients: Rice Manufactured by Example Foods",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 
@@ -117,7 +127,7 @@ def py_result(text, source="ocr"):
     a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed,
+        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source} for u in a.ins_mappings],
@@ -144,7 +154,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, sections: a.sections, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
 

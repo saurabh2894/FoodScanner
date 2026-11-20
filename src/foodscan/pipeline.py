@@ -13,7 +13,7 @@ from pathlib import Path
 from .classify import Driver, _hits_for, classify_ingredients, is_recognised
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .parser import parse_ingredient_list, split_compound, suspect_section_items
+from .parser import parse_ingredient_list, split_compound, split_items, starts_with_denied_label, suspect_section_items
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -43,6 +43,7 @@ class Analysis:
     # What the classifier could not judge (not in the vocabulary, no marker, no INS code), plus compound
     # group names that were expanded. Shown so nothing is invisible once a strong marker is found.
     unassessed: list[str] = field(default_factory=list)
+    ignored: list[str] = field(default_factory=list)    # text after the list that was not read as ingredients
 
     @property
     def headline(self) -> str:
@@ -57,6 +58,20 @@ def _abstain(reason: str, text: str, **kw) -> Analysis:
 
 def _recognisable(ing: Ingredient) -> bool:
     return is_recognised(ing.name) or bool(ing.ins) or bool(_hits_for(ing))
+
+
+def _short(text: str, limit: int = 100) -> str:
+    return text if len(text) <= limit else text[: limit - 3] + "..."
+
+
+def _looks_like_more_ingredients(seg: str) -> bool:
+    """Unread text after a full stop that could be the rest of the list: it is list-shaped (two or more
+    comma-separated items) or holds a recognised ingredient, marker or INS code. Footnotes (*, #) and
+    non-ingredient labels (Note:, Directions:, ...) are not."""
+    if seg.lstrip().startswith(("*", "\u2020", "#")) or starts_with_denied_label(seg):
+        return False
+    parts = split_items(seg)
+    return len(parts) >= 2 or any(_recognisable(normalise_list([part])[0]) for part in parts)
 
 
 def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str] | None = None) -> list[Ingredient]:
@@ -121,7 +136,12 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(parsed.items)]
+    unread_like = [seg for seg in parsed.ignored if _looks_like_more_ingredients(seg)]
+    unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
+                       for seg in unread_like]
+    section_warnings += unread_warnings
     common = dict(ingredients=parsed.items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
+                  ignored=list(parsed.ignored),
                   sections=[(sec.label, list(sec.items)) for sec in parsed.sections])
 
     # Truncation: brackets left open, or the list runs off the end of the text
@@ -131,14 +151,20 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         truncation = "ingredient list looks truncated (unclosed bracket)"
     elif not parsed.terminated and not _recognisable(ings[-1]):
         truncation = f'ingredient list looks truncated (ends mid-word or unrecognised: "{parsed.items[-1]}")'
+    # Unlabelled text after a full stop that looks like more of the list was not read (never dropped silently:
+    # it is in `ignored` and in the warnings). Like truncation, it can only be answered when a strong marker
+    # already decides (Group 4); otherwise a Group 1-3 call could hide a missing ingredient or marker.
+    unread = (f'text after a full stop looks like more ingredients and was not read: "{_short(unread_like[0])}"'
+              if unread_like else None)
+    blocking = truncation or unread
 
     result = classify_ingredients(ings, parsed.declarations)
 
     # Option A (decided by the user): missing text can never remove a marker, so a
     # strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
     # Every other truncated case abstains.
-    if truncation and result.group != 4:
-        return _abstain(truncation, text, drivers=result.drivers, **common)
+    if blocking and result.group != 4:
+        return _abstain(blocking, text, drivers=result.drivers, **common)
     if result.group is None:
         return _abstain(result.reason or "classification uncertain", text, drivers=result.drivers, **common)
     warnings = list(section_warnings)

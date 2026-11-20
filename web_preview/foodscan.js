@@ -22,6 +22,7 @@
     const HEADING = /(?:ingredients?|सामग्री|अवयव)\s*[:\-–—]?\s*/i;
     const STOP = /\b(?:may\s+contain|contains|allergen(?:s)?(?:\s+information)?|nutrition(?:al)?|manufactured|manufacturer|mfd|marketed|packed\s+by|best\s+before|use\s+by|net\s+(?:wt|weight|qty|quantity)|storage|store\s+in|fssai|customer\s+care)\b/i;
     const OPEN = "([{", CLOSE = ")]}";
+    const LEAD_IN = /(?:^|[.\n])\s*((?:this\s+|the\s+|our\s+)?product|allerg(?:en|y)\s+advice|[A-Za-z][A-Za-z &'\u2019\/\-]{0,40}:)\s*$/id;
     const LABEL = /^\s*([A-Za-z][A-Za-z&'’\/\-]*(?: [A-Za-z&'’\/\-]+){0,3})(?:\s+(\d+(?:\.\d+)?\s*%))?\s*:\s*(?=\S)/;
     const DENY = /^(?:notes?|directions?|instructions?|cooking instructions|preparation|how to \w+(?: \w+)?|serving suggestions?|warning|caution|tips?|usage|mrp|price|address|batch(?: no)?)$/i;
 
@@ -130,7 +131,7 @@
       return [body.length, "end"];
     }
     function readSections(body) {
-      const sections = []; let pos = 0, ended = false;
+      const sections = []; let pos = 0, ended = false, unread = "";
       for (;;) {
         const info = labelInfo(body.slice(pos));
         let label = null, segStart = pos;
@@ -140,10 +141,10 @@
         if (kind === "end") break;
         if (kind === "break") { pos = end + 1; continue; }
         const rest = body.slice(end + 1);
-        if (!rest.trim() || labelInfo(rest) === null) { ended = true; break; }
+        if (!rest.trim() || labelInfo(rest) === null) { ended = true; unread = rest.trim(); break; }   // kept, not dropped
         pos = end + 1;
       }
-      return { sections, ended };
+      return { sections, ended, unread };
     }
     function parseIngredientList(text, opts) {
       const assumeList = !!(opts && opts.assumeList);
@@ -157,7 +158,9 @@
       const stop = STOP.exec(body);
       if (stop) {
         const tail = collapse(body.slice(stop.index));
-        body = body.slice(0, stop.index);
+        // the stop phrase takes its lead-in with it: a label right before it, or a claim opener (see parser.py)
+        const lead = LEAD_IN.exec(body.slice(0, stop.index));
+        body = body.slice(0, lead ? lead.indices[1][0] : stop.index);
         terminated = true;
         if (/^contains\b/i.test(tail)) {
           const e = findTerminator(tail);
@@ -182,7 +185,7 @@
         if (cur.length) { sections.push({ label: curLabel, items: cur }); items.push(...cur); }
       }
       if (!items.length) return { found: false };
-      return { found: true, items, terminated, unbalanced, declarations, sections };
+      return { found: true, items, terminated, unbalanced, declarations, sections, ignored: read.unread ? [collapse(read.unread)] : [] };
     }
 
     function* bracketGroups(raw) {
@@ -329,7 +332,7 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
     function expand(items, depth, heads) {   // items: [raw, section label] pairs
@@ -345,6 +348,14 @@
         else out.push(ing);
       }
       return out;
+    }
+    const shortText = (t, limit = 100) => (t.length <= limit ? t : t.slice(0, limit - 3) + "...");
+    const startsWithDeniedLabel = (seg) => { const m = LABEL.exec(seg); return !!m && DENY.test(m[1].trim()); };
+    // unread text after a full stop that could be the rest of the list (mirrors pipeline._looks_like_more_ingredients)
+    function looksLikeMoreIngredients(seg) {
+      if (/^\s*[*\u2020#]/.test(seg) || startsWithDeniedLabel(seg)) return false;
+      const parts = splitTopLevel(collapse(seg)).items;
+      return parts.length >= 2 || parts.some((part) => recognisableIng(normaliseIngredient(part)));
     }
     const NO_TEXT = "No text to analyse", NO_INGREDIENTS = "No ingredients found in this text";
     // source "ocr" (default, photo path): short/noisy text is blamed on OCR and the heading is required.
@@ -373,14 +384,19 @@
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const sectionWarnings = suspectSectionItems(parsed.items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
-      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
+      const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
+      sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
+      const common = { ingredients: parsed.items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], sections: parsed.sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null;
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1]))
         truncation = `ingredient list looks truncated (ends mid-word or unrecognised: "${parsed.items[parsed.items.length - 1]}")`;
+      // unlabelled text after a full stop that looks like more of the list: like truncation, only a strong-marker Group 4 stands
+      const unread = unreadLike.length ? `text after a full stop looks like more ingredients and was not read: "${shortText(unreadLike[0])}"` : null;
+      const blocking = truncation || unread;
       const r = classifyIngredients(ings, parsed.declarations);
       // Option A (user decision): a strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
-      if (truncation && r.group !== 4) return abstain(truncation, text, Object.assign({ drivers: r.drivers }, common));
+      if (blocking && r.group !== 4) return abstain(blocking, text, Object.assign({ drivers: r.drivers }, common));
       if (r.group === null) return abstain(r.reason || "classification uncertain", text, Object.assign({ drivers: r.drivers }, common));
       const warnings = [...sectionWarnings];
       if (truncation) warnings.push("List may be incomplete (" + stripChars(truncation.replace(/^ingredient list looks truncated /, ""), "()") + "). Group 4 stands because the markers found are already enough.");

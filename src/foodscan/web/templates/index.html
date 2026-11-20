@@ -57,6 +57,11 @@
   {% else %}
     <p>None found.</p>
   {% endif %}
+  {% if result.ignored %}
+    <h3>Not read as ingredients</h3>
+    <p class="src">Text after the list, kept here so nothing is hidden.</p>
+    <ul>{% for t in result.ignored %}<li>{{ t }}</li>{% endfor %}</ul>
+  {% endif %}
   {% if result.unassessed %}
     <h3>Not assessed</h3>
     <p class="src">Not in the vocabulary, or a group name whose contents were assessed.</p>

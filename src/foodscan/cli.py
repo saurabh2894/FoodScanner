@@ -38,6 +38,9 @@ def format_analysis(a: Analysis) -> str:
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
         lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
+    if a.ignored:
+        lines.append("Not read as ingredients (text after the list):")
+        lines += [f"  - {t}" for t in a.ignored]
     if a.unassessed:
         lines.append("Not assessed (not in the vocabulary, or a group name whose contents were assessed):")
         lines += [f"  - {u}" for u in a.unassessed]
