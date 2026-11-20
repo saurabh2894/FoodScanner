@@ -1,1 +1,2 @@
 2026-11-20T17:06:29Z | Fast-forwarded main to 8a4e2e7 (errata rendering fix); prepared vocabulary/enrichment scope proposal (no implementation); recorded this completion-signal convention | 8a4e2e7
+2026-11-20T17:55:29Z | Senior review of PR #2 (head 94a7695, base 8a4e2e7): verdict changes-requested; suite 592 passed, parity 388/388 (391/391 with extra new-row texts); independent base-vs-PR run shows groups 0/66, reason 1, unassessed 7, ins display 22; junior before-artifact equals PR build not 8a4e2e7; 12 JECFA names verified; one inert role row | b161ada
