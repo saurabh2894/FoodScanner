@@ -148,6 +148,9 @@
       }
       return -1;
     }
+    // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
+    const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
+    const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => descriptors.has(t) || FORM_WORDS_EXTRA.has(t));
     // "Rice Bran Oil Seasoning : Onion" -> [prefix, label, rest]; mirrors parser._peel_label
     function peelLabel(item) {
       const colon = colonAtDepth0(item);
@@ -163,7 +166,7 @@
         const labelWords = words.slice(k);
         if (labelWords.length > 4 || !labelWords.every((w) => /^[A-Za-z&'\u2019\/\-]+$/.test(w))) continue;
         const label = labelWords.join(" "), flat = flatten(label);
-        if (DENY.test(label) || isRecognised(flat) || CLASS_WORD_RE.test(flat)) continue;
+        if (DENY.test(label) || isRecognised(flat) || CLASS_WORD_RE.test(flat) || labelHasFormWord(label)) continue;
         const prefix = words.slice(0, k).join(" ");
         if (knownPhrase(flatten(prefix))) return [prefix, label + (pct ? " " + pct : ""), rest];
       }

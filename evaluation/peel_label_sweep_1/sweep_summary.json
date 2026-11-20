@@ -1,0 +1,271 @@
+{
+ "new_prefixes": {
+  "NAME|POWDER FLAKE (0.6%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|POWDER FLAKE": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|FLAKE": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|FLAKES (2%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|POWDER (3%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|DRIED": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|EXTRACT (5%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|EXTRACT": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|MIX (10%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|MIX": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|BLEND": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|BLEND (2%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "NAME|PASTE": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 0,
+   "n": 20
+  },
+  "OTHER|OLEORESIN": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "OTHER|OIL": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "OTHER|MASALA": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "OTHER|TOPPING": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "OTHER|GARNISH": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "GENUINE|SEASONING": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "GENUINE|SEASONING (12%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "GENUINE|SOUP (22.7%)": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  },
+  "GENUINE|SAUCE": {
+   "main_peels": 20,
+   "newly_peels_vs_before": 20,
+   "guard_peels": 20,
+   "n": 20
+  }
+ },
+ "n_old_prefixes": 115,
+ "old_prefixes": {
+  "NAME|POWDER FLAKE (0.6%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|POWDER FLAKE": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|FLAKE": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|FLAKES (2%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|POWDER (3%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|DRIED": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|EXTRACT (5%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|EXTRACT": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|MIX (10%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|MIX": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|BLEND": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|BLEND (2%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "NAME|PASTE": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 0,
+   "n": 115
+  },
+  "OTHER|OLEORESIN": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "OTHER|OIL": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "OTHER|MASALA": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "OTHER|TOPPING": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "OTHER|GARNISH": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "GENUINE|SEASONING": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "GENUINE|SEASONING (12%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "GENUINE|SOUP (22.7%)": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  },
+  "GENUINE|SAUCE": {
+   "main_peels": 115,
+   "newly_peels_vs_before": 0,
+   "guard_peels": 115,
+   "n": 115
+  }
+ }
+}

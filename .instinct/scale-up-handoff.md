@@ -29,6 +29,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 - [x] Integration prep on the feature branch: gate rows merged into lexicon.csv/synonyms.csv (6cf9a99), tests/test_herb_spice_bulk_1.py (synthetic), research/07 held-category note (sources and clause fit only, no rows).
 - [x] Challenge-set results: 32 labels, 7 of 24 targets with no label; 40 recognised / 24 not / 2 inside another item; see evaluation/out_of_sample_herb_spice_1/FINDINGS.md.
 
+- [x] Peel-label guard (branch claude/peel-label-guard-1, off main 5ce13fa): release-exposed regression repair in parser._peel_label + JS port; sweep in evaluation/peel_label_sweep_1/. Awaiting owner verification; NOT merged.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
