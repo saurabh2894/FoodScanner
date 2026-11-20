@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>foodscan</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+  .card { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-top: 1.5rem; }
+  .answer { border-left: 6px solid #2a6; }
+  .abstain { border-left: 6px solid #888; }
+  .error { border-left: 6px solid #c33; }
+  small, .src { color: #555; }
+  code { background: #f3f3f3; padding: 0 .25rem; }
+</style>
+</head>
+<body>
+<h1>foodscan</h1>
+<p>Upload a photo of an Indian packaged-food ingredient label. This page reports how processed the product is (NOVA group) from the ingredient list only. Runs locally; nothing leaves this computer.</p>
+
+<form method="post" enctype="multipart/form-data">
+  <input type="file" name="photo" accept="image/*" required>
+  <button type="submit">Analyse</button>
+</form>
+
+{% if error %}
+<div class="card error"><strong>Error:</strong> {{ error }}</div>
+{% endif %}
+
+{% if result %}
+<div class="card {{ 'answer' if result.answered else 'abstain' }}">
+  <h2>{{ result.headline }}</h2>
+  {% if result.answered and result.drivers %}
+    <h3>Driven by</h3>
+    <ul>
+    {% for d in result.drivers %}
+      <li><strong>{{ d.ingredient }}</strong>: {{ d.detail }} <span class="src">[{{ d.source }}]</span></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {% if not result.answered and result.drivers %}
+    <h3>Weak evidence seen (not enough to decide)</h3>
+    <ul>{% for d in result.drivers %}<li>{{ d.ingredient }}: {{ d.detail }}</li>{% endfor %}</ul>
+  {% endif %}
+</div>
+
+<div class="card">
+  <h3>Extracted ingredients</h3>
+  {% if result.ingredients %}
+    <ol>{% for i in result.ingredients %}<li>{{ i }}</li>{% endfor %}</ol>
+  {% else %}
+    <p>None found.</p>
+  {% endif %}
+  {% if result.ins_mappings %}
+    <h3>INS numbers</h3>
+    <ul>
+    {% for u in result.ins_mappings %}
+      <li>INS {{ u.code }} &rarr; {{ u.name or '(not in local mapping)' }}{% if u.source %} <span class="src">[{{ u.source }}]</span>{% endif %}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  <details><summary>Raw OCR text</summary><pre style="white-space: pre-wrap">{{ result.extracted_text }}</pre></details>
+</div>
+{% endif %}
+
+<p><small>Reports processing level only, from the ingredient list. Based on the NOVA classification; labels read by OCR can be wrong, so check the extracted ingredients.</small></p>
+</body>
+</html>
