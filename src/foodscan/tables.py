@@ -15,3 +15,7 @@ def load_table(name: str) -> tuple[dict[str, str], ...]:
         if not (r.get("source") or "").strip():
             raise ValueError(f"{name}: row without a source: {r}")
     return tuple(rows)
+
+
+def has_table(name: str) -> bool:
+    return resources.files("foodscan.resources").joinpath(name).is_file()

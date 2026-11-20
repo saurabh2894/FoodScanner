@@ -80,7 +80,12 @@ def test_temp_file_deleted(tmp_path):
 
 
 
-def test_additive_codes_are_grouped_with_plain_effect_labels():
+def test_additive_codes_are_grouped_with_plain_effect_labels(monkeypatch):
+    import csv
+    from pathlib import Path
+    from foodscan import normalise
+    ref = Path(__file__).resolve().parent.parent / 'data/pending/ins_reference.csv'
+    monkeypatch.setattr(normalise, '_ins_reference', lambda: {normalise.canonical_code(r['ins']): r for r in csv.DictReader(ref.open(encoding='utf-8'))})
     text = "Ingredients: Rice, Acidity Regulators(INS330, INS296), colour (INS 102), preservative (INS 211), salt."
     html = post(create_app(FakeOcr(text)).test_client()).get_data(as_text=True)
     assert "Additive codes" in html and "4 found: 2 with a decision rule, 2 without." in html

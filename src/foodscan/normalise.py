@@ -86,6 +86,11 @@ def _ins_map() -> dict[str, dict[str, str]]:
 
 @cache
 def _ins_reference() -> dict[str, dict[str, str]]:
+    """Display-only Codex data. NOT SHIPPED while its licence is unresolved (data/pending/, research/05): the table is
+    read only if src/foodscan/resources/ins_reference.csv exists, so a release without the file simply shows nothing."""
+    from .tables import has_table
+    if not has_table("ins_reference.csv"):
+        return {}
     return {canonical_code(r["ins"]): r for r in load_table("ins_reference.csv")}
 
 

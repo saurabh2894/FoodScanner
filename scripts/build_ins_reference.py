@@ -244,7 +244,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf", type=Path)
     ap.add_argument("--verify", action="store_true", help="cross-check the numerical list against the alphabetical one and exit")
-    ap.add_argument("--out", type=Path, default=Path(__file__).resolve().parent.parent / "src/foodscan/resources/ins_reference.csv")
+    ap.add_argument("--out", type=Path, default=Path(__file__).resolve().parent.parent / "data/pending/ins_reference.csv")
     args = ap.parse_args()
     if args.verify:
         return verify(args.pdf)
