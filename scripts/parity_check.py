@@ -108,7 +108,7 @@ CORPUS = [
     "Ingredients: Milk, stabiliser (INS 452(i)).", "Ingredients: Rice, yeast extract, salt.", "Ingredients: Rice, pea protein.",
     "Ingredients: Rice, yeast extract, pea protein, natural flavour.", "Ingredients: Rice, salt. Contains soy, milk, wheat, gluten.",
     "Ingredients: Rice, salt. Contains soy. Contains permitted colour.", "Ingredients: Rice, salt. Contains artificial sweetener.",
-    "Ingredients: Rice Bran 0il (16%), salt.", "Ingredients: Edible Vegetable 0il, Rice Bran O11.",
+    "Ingredients: Rice, 10il, salt.", "Ingredients: Rice, 0ils, o111, salt.", "Ingredients: Rice Bran 0il (16%), salt.", "Ingredients: Edible Vegetable 0il, Rice Bran O11.",
     "ingredients: PEAS, WATER, SALT", "Ingredients : Rice ; salt ; sugar.", "Ingredient: Rice, salt, sugar, ghee",
 ]
 

@@ -215,7 +215,11 @@
     for (const r of T.ins_map) insTable[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
     const synonyms = [...T.synonyms]
       .sort((a, b) => b.from.length - a.from.length)
-      .map((r) => ({ re: new RegExp("(?<![a-z])" + esc(r.from.toLowerCase()) + "(?![a-z])", "g"), to: r.to.toLowerCase() }));
+      .map((r) => {
+        const term = r.from.toLowerCase();   // a term starting or ending with a digit must not match inside a longer alphanumeric run
+        const left = /^\d/.test(term) ? "(?<![a-z0-9])" : "(?<![a-z])", right = /\d$/.test(term) ? "(?![a-z0-9])" : "(?![a-z])";
+        return { re: new RegExp(left + esc(term) + right, "g"), to: r.to.toLowerCase() };
+      });
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(flatten(r.term)) + "(?![a-z])"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;

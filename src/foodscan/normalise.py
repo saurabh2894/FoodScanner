@@ -66,10 +66,17 @@ def _ins_map() -> dict[str, dict[str, str]]:
 @cache
 def _synonyms() -> list[tuple[re.Pattern, str]]:
     rows = sorted(load_table("synonyms.csv"), key=lambda r: -len(r["from"]))
-    return [
-        (re.compile(rf"(?<![a-z]){re.escape(r['from'].lower())}(?![a-z])"), r["to"].lower())
-        for r in rows
-    ]
+    def boundary(term: str) -> tuple[str, str]:
+        # a term that starts or ends with a digit ("0il", "o11") must not match inside a longer alphanumeric run
+        return ("(?<![a-z0-9])" if term[0].isdigit() else "(?<![a-z])",
+                "(?![a-z0-9])" if term[-1].isdigit() else "(?![a-z])")
+
+    out = []
+    for r in rows:
+        term = r["from"].lower()
+        left, right = boundary(term)
+        out.append((re.compile(f"{left}{re.escape(term)}{right}"), r["to"].lower()))
+    return out
 
 
 
