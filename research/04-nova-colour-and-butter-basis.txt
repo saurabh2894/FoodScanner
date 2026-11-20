@@ -101,3 +101,7 @@ PROVISIONALLY. Foodscan gives a label-based NOVA classification. It is not a fin
 - cow milk: FSSAI 2.1.2 item 1(a) names "cow milk" (identity). The NOVA page names "milk" only. No row added: "Pasteurized Cow Milk" abstains as outside the vocabulary.
 - Vitamins: FSSAI 2.1.1 item 4 allows milk to be fortified with "vitamins, minerals, etc." (permission only; names no vitamin for milk). No read NOVA page says fortified milk stays in group 1. Lists with vitamins keep abstaining.
 - Existing rows carry the same kind of inference (toned milk, double toned milk, buffalo milk treated as milk; milk solids treated as powdered milk; all PROVISIONAL): flagged to the owner for a decision, not changed here.
+
+## Owner decision (2026-11-20): existing PROVISIONAL dairy rows stay
+- toned milk, double toned milk, buffalo milk are read as milk: two-part basis = identity (FSSAI 2.1.2 item 1(a)/(c) and the composition table) plus method (NUPENS-USP page: milk, pasteurised or powdered, is group 1). milk solids is read as powdered milk: identity (FSSAI 2.1.13 item 2(a)(ii) lists dried and concentrated milk) plus the same NUPENS-USP example. All four stay visibly PROVISIONAL (the word appears in the source text shown with each driver).
+- Not covered by that two-part basis, so no rule: milk with added milk solids, cow milk, fortified milk. No new dairy cases.
