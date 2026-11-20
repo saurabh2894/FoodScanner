@@ -1,0 +1,627 @@
+{
+ "M01": {
+  "text": "Butter, common salt. CONTAINS PERMITTED NATURAL COLOUR [ANNATTO]",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Butter",
+   "common salt"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [],
+  "declared": [
+   "PERMITTED NATURAL COLOUR [ANNATTO]"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "declared in \"Contains\" statement: \"colour\""
+  ],
+  "ins": []
+ },
+ "M03": {
+  "text": "Pasteurised double toned milk, Milk Solids, Active Lactic Cultures (L.bacillus delbrueckii subsp. bulgaricus, S.thermophilus),",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Pasteurised double toned milk, Milk Solids",
+  "items": [
+   "Pasteurised double toned milk",
+   "Milk Solids",
+   "Active Lactic Cultures (L.bacillus delbrueckii subsp. bulgaricus, S.thermophilus)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Pasteurised double toned milk",
+   "Milk Solids"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [],
+  "ins": []
+ },
+ "M04": {
+  "text": "WATER, DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE), IODISED SALT, STABILIZER (INS 466), NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA) AND ACIDITY REGULATOR (INS 330).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WATER",
+   "DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE)",
+   "IODISED SALT",
+   "STABILIZER (INS 466)",
+   "NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA)",
+   "ACIDITY REGULATOR (INS 330)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "MILK SOLIDS",
+   "STARTER CULTURE",
+   "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "466",
+    null
+   ],
+   [
+    "330",
+    "Citric acid"
+   ]
+  ]
+ },
+ "M05": {
+  "text": "WATER, DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE), IODISED SALT, STABILIZER (INS 466), NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA) AND ACIDITY REGULATOR (INS 330).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WATER",
+   "DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE)",
+   "IODISED SALT",
+   "STABILIZER (INS 466)",
+   "NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA)",
+   "ACIDITY REGULATOR (INS 330)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "MILK SOLIDS",
+   "STARTER CULTURE",
+   "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "466",
+    null
+   ],
+   [
+    "330",
+    "Citric acid"
+   ]
+  ]
+ },
+ "M06": {
+  "text": "Pasteurised Toned Milk & Active Lactic Cultures, Made from Toned Milk Allergen Information: Contains Milk",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Made from Toned Milk",
+  "items": [
+   "Pasteurised Toned Milk",
+   "Active Lactic Cultures",
+   "Made from Toned Milk"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Made from Toned Milk"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [],
+  "ins": []
+ },
+ "M07": {
+  "text": "Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [
+   "List may be incomplete (ends mid-word or unrecognised: \"Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)\"). Group 4 stands because the markers found are already enough."
+  ],
+  "unassessed": [
+   "lodised Salt",
+   "Microbial Cultures and Microbial Rennet",
+   "Mozzarella Cheese (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "uncertain",
+  "creasons": [
+   "the list looks truncated"
+  ],
+  "drivers": [
+   "\"firming\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "509",
+    null
+   ]
+  ]
+ },
+ "M08": {
+  "text": "Milk solids and Sugar.",
+  "answered": false,
+  "group": null,
+  "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Milk solids and Sugar",
+  "items": [
+   "Milk solids and Sugar"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Milk solids and Sugar"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [],
+  "ins": []
+ },
+ "M09": {
+  "text": "WHEAT FLOUR (63%), REFINED PALM OIL, SUGAR, WHEAT BRAN (4.7%), LIQUID GLUCOSE, MILK SOLIDS, MALTODEXTRIN, RAISING AGENTS (INS 500, INS 503), IODISED SALT, EMULSIFIERS (INS 322, INS 471, INS 472c), MALT EXTRACT AND DOUGH CONDITIONER (INS 223). CONTAINS WHEAT, MILK, SOYA, BARLEY AND SULPHITE",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WHEAT FLOUR (63%)",
+   "REFINED PALM OIL",
+   "SUGAR",
+   "WHEAT BRAN (4.7%)",
+   "LIQUID GLUCOSE",
+   "MILK SOLIDS",
+   "MALTODEXTRIN",
+   "RAISING AGENTS (INS 500, INS 503)",
+   "IODISED SALT",
+   "EMULSIFIERS (INS 322, INS 471, INS 472c)",
+   "MALT EXTRACT AND DOUGH CONDITIONER (INS 223)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "WHEAT FLOUR (63%)",
+   "WHEAT BRAN (4.7%)",
+   "LIQUID GLUCOSE",
+   "MILK SOLIDS"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)",
+   "\"emulsifier\" (cosmetic_additive)",
+   "INS 322 (lecithin)",
+   "INS 471 (emulsifier)"
+  ],
+  "ins": [
+   [
+    "500",
+    null
+   ],
+   [
+    "503",
+    null
+   ],
+   [
+    "322",
+    null
+   ],
+   [
+    "471",
+    null
+   ],
+   [
+    "472c",
+    null
+   ],
+   [
+    "223",
+    null
+   ]
+  ]
+ },
+ "M10": {
+  "text": "Refined wheat flour (Maida), Palm oil, lodized salt, Wheat gluten, Thickeners (508&412), Acidity regulators (501 (i) & 500 (i)) and Humectant (451). Masala *TASTEMAKER\u24c7: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder, Spice extract blend, Curry spice extract blend, Star anise powder Rosemary extract & Capsicum extract), Sugar, lodized salt, Thickener (508), Flavour enhancer (635), Palm oil, Starch and Acidity regulator (330). Allergen Note: Contains Wheat and Sesame. May Contain Oats, Milk and Soy.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Refined wheat flour (Maida)",
+   "Palm oil",
+   "lodized salt",
+   "Wheat gluten",
+   "Thickeners (508&412)",
+   "Acidity regulators (501 (i) & 500 (i))",
+   "Humectant (451)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"Masala *TASTEMAKER\u24c7: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder...\"",
+   "Read as INS 508. The label text says Thickeners. Possible misread, check the pack. Retake a clearer photo of this line or type the code."
+  ],
+  "unassessed": [
+   "lodized salt",
+   "Wheat gluten"
+  ],
+  "declared": [],
+  "ignored": [
+   "Masala *TASTEMAKER\u24c7: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder, Spice extract blend, Curry spice extract blend, Star anise powder Rosemary extract & Capsicum extract), Sugar, lodized salt, Thickener (508), Flavour enhancer (635), Palm oil, Starch and Acidity regulator (330)."
+  ],
+  "compl": "uncertain",
+  "creasons": [
+   "text after a full stop looks like more ingredients and was not read"
+  ],
+  "drivers": [
+   "\"humectant\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "508",
+    "Potassium chloride"
+   ],
+   [
+    "412",
+    null
+   ],
+   [
+    "501(i)",
+    null
+   ],
+   [
+    "500(i)",
+    null
+   ],
+   [
+    "451",
+    null
+   ]
+  ]
+ },
+ "M11": {
+  "text": "POTATO (88%), EDIBLE VEGETABLE OIL (PALMOLEIN), EDIBLE COMMON SALT, MALTODEXTRIN, SPICES & CONDIMENTS 2 % (CUMIN, CORIANDER. CINNAMON), DEHYDRATED VEGETABLE POWDER (ONION, GARLIC), SUGAR, BLACK SALT, ACIDITY REGULATOR (INS 330), ANTICAKING AGENT (INS 551). FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT ).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "POTATO (88%)",
+   "EDIBLE VEGETABLE OIL (PALMOLEIN)",
+   "EDIBLE COMMON SALT",
+   "MALTODEXTRIN",
+   "SPICES & CONDIMENTS 2 % (CUMIN, CORIANDER. CINNAMON)",
+   "DEHYDRATED VEGETABLE POWDER (ONION, GARLIC)",
+   "SUGAR",
+   "BLACK SALT",
+   "ACIDITY REGULATOR (INS 330)",
+   "ANTICAKING AGENT (INS 551)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [
+   "Text after a full stop was not read as ingredients but looks like more of the list: \"FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT ).\""
+  ],
+  "unassessed": [
+   "CORIANDER. CINNAMON",
+   "SPICES & CONDIMENTS 2 % (group name; its contents were assessed separately)",
+   "DEHYDRATED VEGETABLE POWDER (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [
+   "FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT )."
+  ],
+  "compl": "uncertain",
+  "creasons": [
+   "text after a full stop looks like more ingredients and was not read"
+  ],
+  "drivers": [
+   "\"maltodextrin\" (derived_substance)"
+  ],
+  "ins": [
+   [
+    "330",
+    "Citric acid"
+   ],
+   [
+    "551",
+    null
+   ]
+  ]
+ },
+ "M12": {
+  "text": "WATER, SUGAR, TOMATO PASTE (28\u00b0B) 24.7%, EDIBLE COMMON SALT, EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415), ACETIC ACID (INS 260), ONION POWDER, GARLIC POWDER, MIXED SPICES (CLOVE, CINNAMON, CHILLI) PRESERVATIVE (INS 211). CONTAINS PERMITTED CLASS II PRESERVATIVE (INS 211).",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "WATER",
+   "SUGAR",
+   "TOMATO PASTE (28\u00b0B) 24.7%",
+   "EDIBLE COMMON SALT",
+   "EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)",
+   "ACETIC ACID (INS 260)",
+   "ONION POWDER",
+   "GARLIC POWDER",
+   "MIXED SPICES (CLOVE, CINNAMON, CHILLI) PRESERVATIVE (INS 211)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [
+   "\"EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+  ],
+  "unassessed": [
+   "TOMATO PASTE (28\u00b0B) 24.7%",
+   "MIXED SPICES (group name; its contents were assessed separately)"
+  ],
+  "declared": [
+   "PERMITTED CLASS II PRESERVATIVE (INS 211)"
+  ],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"emulsifier\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "1422",
+    null
+   ],
+   [
+    "415",
+    null
+   ],
+   [
+    "260",
+    null
+   ]
+  ]
+ },
+ "M13": {
+  "text": "Carbonated water,color (150d),acidity regulators(338,330), sweeteners(955,950),preservative (211), caffeine (13mg/100g), flavour (natural flavouring substance), stabilizer (436)",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Carbonated water",
+   "color (150d)",
+   "acidity regulators(338,330)",
+   "sweeteners(955,950)",
+   "preservative (211)",
+   "caffeine (13mg/100g)",
+   "flavour (natural flavouring substance)",
+   "stabilizer (436)"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "Carbonated water",
+   "caffeine (13mg/100g)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"colour\" (cosmetic_additive)",
+   "\"sweetener\" (cosmetic_additive)",
+   "INS 950 (acesulfame potassium)",
+   "\"flavour\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "338",
+    null
+   ],
+   [
+    "330",
+    "Citric acid"
+   ],
+   [
+    "955",
+    null
+   ],
+   [
+    "950",
+    null
+   ],
+   [
+    "211",
+    null
+   ]
+  ]
+ },
+ "M14": {
+  "text": "Sugar, mixed fruit pulp blend - 60% (papaya pulp, pear pulp, apple juice, banana pulp, pineapple juice, orange juice, mango pulp, grape juice), acidity regulator - E330, thickener - E440, iodised salt, vitamins & mineral, preservative - E202, natural flavouring substances, food colour - E122.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Sugar",
+   "mixed fruit pulp blend - 60% (papaya pulp, pear pulp, apple juice, banana pulp, pineapple juice, orange juice, mango pulp, grape juice)",
+   "acidity regulator - E330",
+   "thickener - E440",
+   "iodised salt",
+   "vitamins & mineral",
+   "preservative - E202",
+   "natural flavouring substances",
+   "food colour - E122"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "papaya pulp",
+   "pear pulp",
+   "apple juice",
+   "banana pulp",
+   "pineapple juice",
+   "orange juice",
+   "mango pulp",
+   "grape juice",
+   "vitamins & mineral",
+   "mixed fruit pulp blend - 60% (group name; its contents were assessed separately)"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)"
+  ],
+  "ins": [
+   [
+    "330",
+    "Citric acid"
+   ],
+   [
+    "440",
+    null
+   ],
+   [
+    "202",
+    null
+   ],
+   [
+    "122",
+    null
+   ]
+  ]
+ },
+ "M15": {
+  "text": "Sugar, liquid glucose, invert sugar syrup, raw mango pulp (5%), caster sugar, acidity regulators (INS 296, INS 331, INS 334, INS 297), thickener (INS 440), iodized salt, artificial flavouring substances - raw mango, potassium sorbate (INS 202), synthetic food colour (INS 102, INS 133), chilli powder, cumin powder.",
+  "answered": true,
+  "group": 4,
+  "reason": null,
+  "items": [
+   "Sugar",
+   "liquid glucose",
+   "invert sugar syrup",
+   "raw mango pulp (5%)",
+   "caster sugar",
+   "acidity regulators (INS 296, INS 331, INS 334, INS 297)",
+   "thickener (INS 440)",
+   "iodized salt",
+   "artificial flavouring substances - raw mango",
+   "potassium sorbate (INS 202)",
+   "synthetic food colour (INS 102, INS 133)",
+   "chilli powder",
+   "cumin powder"
+  ],
+  "sections": [
+   null
+  ],
+  "warnings": [],
+  "unassessed": [
+   "liquid glucose",
+   "raw mango pulp (5%)",
+   "caster sugar",
+   "iodized salt"
+  ],
+  "declared": [],
+  "ignored": [],
+  "compl": "complete",
+  "creasons": [],
+  "drivers": [
+   "\"invert sugar\" (derived_substance)",
+   "\"flavour\" (cosmetic_additive)",
+   "\"colour\" (cosmetic_additive)",
+   "INS 102 (tartrazine)"
+  ],
+  "ins": [
+   [
+    "296",
+    "DL-Malic acid"
+   ],
+   [
+    "331",
+    null
+   ],
+   [
+    "334",
+    "L(+)-Tartaric acid"
+   ],
+   [
+    "297",
+    null
+   ],
+   [
+    "440",
+    null
+   ],
+   [
+    "202",
+    null
+   ],
+   [
+    "102",
+    null
+   ],
+   [
+    "133",
+    null
+   ]
+  ]
+ }
+}
