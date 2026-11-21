@@ -1,0 +1,46 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,168589,"Nuts, chestnuts, japanese, boiled and steamed",boiled_steamed,cooked/boiled/steamed: prepared form
+sr_legacy,168592,"Nuts, almonds, honey roasted, unblanched",sweetened,sweetened/candied/glazed: conditioned form with added sugar/syrup
+sr_legacy,168593,"Seeds, sunflower seed kernels, oil roasted, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,168594,"Seeds, sunflower seed kernels, toasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168595,"Seeds, sunflower seed butter, with salt added (Includes foods for USDA's Food Distribution Program)",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168596,"Nuts, almonds, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168597,"Nuts, cashew butter, plain, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168598,"Nuts, macadamia nuts, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168599,"Nuts, mixed nuts, dry roasted, with peanuts, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168600,"Nuts, mixed nuts, oil roasted, with peanuts, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,168601,"Seeds, pumpkin and squash seeds, whole, roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,168602,"Nuts, almonds, oil roasted, lightly salted",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,168603,"Nuts, almond butter, plain, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169411,"Nuts, formulated, wheat-based, all flavors except macadamia, without salt",formulated,formulated wheat-based nut imitation product
+sr_legacy,169415,"Seeds, pumpkin and squash seed kernels, roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169416,"Seeds, sesame seed kernels, toasted, with salt added (decorticated)",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169417,"Seeds, sunflower seed kernels from shell, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169418,"Seeds, sunflower seed kernels, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169419,"Nuts, almonds, oil roasted, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,169420,"Nuts, almonds, oil roasted, with salt added, smoke flavor",flavored_seasoned,flavored/seasoned/smoked: conditioned form with cosmetic/flavor additives
+sr_legacy,169421,"Nuts, cashew nuts, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169422,"Nuts, cashew nuts, oil roasted, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,169423,"Nuts, mixed nuts, oil roasted, without peanuts, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,169424,"Nuts, pecans, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169425,"Nuts, pecans, oil roasted, with salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,169426,"Nuts, pistachio nuts, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,169427,"Nuts, mixed nuts, oil roasted, with peanuts, lightly salted",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,169428,"Nuts, mixed nuts, oil roasted, without peanuts, lightly salted",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170145,"Seeds, breadfruit seeds, boiled",boiled_steamed,cooked/boiled/steamed: prepared form
+sr_legacy,170159,"Nuts, almonds, oil roasted, without salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170166,"Nuts, chestnuts, chinese, boiled and steamed",boiled_steamed,cooked/boiled/steamed: prepared form
+sr_legacy,170168,"Nuts, chestnuts, european, boiled and steamed",boiled_steamed,cooked/boiled/steamed: prepared form
+sr_legacy,170176,"Nuts, ginkgo nuts, canned",canned,canned: preserved processed form
+sr_legacy,170180,"Nuts, formulated, wheat-based, unflavored, with salt added",formulated,formulated wheat-based nut imitation product
+sr_legacy,170181,"Nuts, mixed nuts, dry roasted, with peanuts, salt added, CHOSEN ROASTER",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,170564,"Seeds, sunflower seed kernels, oil roasted, without salt",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170572,"Nuts, cashew nuts, oil roasted, without salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170586,"Nuts, mixed nuts, dry roasted, with peanuts, salt added, PLANTERS pistachio blend",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+sr_legacy,170587,"Nuts, mixed nuts, oil roasted, with peanuts, without salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170588,"Nuts, mixed nuts, oil roasted, without peanuts, without salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170589,"Nuts, pecans, oil roasted, without salt added",oil_roasted,oil roasted: processed with added oil/fat
+sr_legacy,170593,"Nuts, walnuts, glazed",sweetened,sweetened/candied/glazed: conditioned form with added sugar/syrup
+sr_legacy,170594,"Nuts, walnuts, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+foundation,323294,"Nuts, almonds, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause
+foundation,325524,"Seeds, sunflower seed kernels, dry roasted, with salt added",salted,salted or with salt added: conditioned form outside plain unconditioned clause

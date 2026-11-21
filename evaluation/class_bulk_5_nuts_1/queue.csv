@@ -1,0 +1,60 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,168585,"Nuts, coconut meat, dried (desiccated), creamed",queue_coconut,coconut in every form is on standing hold
+sr_legacy,168586,"Nuts, coconut meat, dried (desiccated), sweetened, shredded",queue_coconut,coconut in every form is on standing hold
+sr_legacy,168588,"Nuts, almond butter, plain, without salt added",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,168590,"Nuts, chestnuts, japanese, roasted",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,168604,"Seeds, sesame butter, tahini, type of kernels unspecified",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,169406,"Seeds, sesame butter, tahini, from unroasted kernels (non-chemically removed seed coat)",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,169409,"Nuts, coconut milk, frozen (liquid expressed from grated meat and water)",queue_coconut,coconut in every form is on standing hold
+sr_legacy,169410,"Seeds, sesame butter, tahini, from raw and stone ground kernels",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170146,"Seeds, cottonseed flour, low fat (glandless)",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170147,"Seeds, cottonseed meal, partially defatted (glandless)",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170148,"Seeds, hemp seed, hulled",plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes
+sr_legacy,170151,"Seeds, sesame seeds, whole, roasted and toasted",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170152,"Seeds, sesame seed kernels, toasted, without salt added (decorticated)",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170153,"Seeds, sesame flour, partially defatted",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170154,"Seeds, sunflower seed kernels, toasted, without salt",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170155,"Seeds, sunflower seed butter, without salt",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170156,"Seeds, sunflower seed flour, partially defatted",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170158,"Nuts, almonds, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170160,"Nuts, almond paste",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170163,"Nuts, cashew butter, plain, without salt added",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170169,"Nuts, coconut meat, raw",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170170,"Nuts, coconut meat, dried (desiccated), not sweetened",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170171,"Nuts, coconut cream, canned, sweetened",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170172,"Nuts, coconut milk, raw (liquid expressed from grated meat and water)",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170173,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170174,"Nuts, coconut water (liquid from coconuts)",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170179,"Nuts, macadamia nuts, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170182,"Nuts, pecans",plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes
+sr_legacy,170183,"Nuts, pecans, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170185,"Nuts, pistachio nuts, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170188,"Seeds, pumpkin and squash seeds, whole, roasted, without salt",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170189,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170190,"Nuts, chestnuts, european, roasted",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170191,"Seeds, sesame butter, paste",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+sr_legacy,170192,"Seeds, sesame flour, high-fat",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170555,"Seeds, cottonseed flour, partially defatted (glandless)",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170557,"Seeds, pumpkin and squash seed kernels, roasted, without salt",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170559,"Seeds, safflower seed meal, partially defatted",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170560,"Seeds, sesame flour, low-fat",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170561,"Seeds, sesame meal, partially defatted",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170563,"Seeds, sunflower seed kernels, dry roasted, without salt",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170566,"Nuts, acorn flour, full fat",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+sr_legacy,170571,"Nuts, cashew nuts, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170573,"Nuts, chestnuts, chinese, roasted",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170577,"Nuts, coconut meat, dried (desiccated), sweetened, flaked, packaged",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170578,"Nuts, coconut meat, dried (desiccated), sweetened, flaked, canned",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170579,"Nuts, coconut meat, dried (desiccated), toasted",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170580,"Nuts, coconut cream, raw (liquid expressed from grated meat)",queue_coconut,coconut in every form is on standing hold
+sr_legacy,170582,"Nuts, hazelnuts or filberts, blanched",plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes
+sr_legacy,170583,"Nuts, hazelnuts or filberts, dry roasted, without salt added",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170585,"Nuts, mixed nuts, dry roasted, with peanuts, without salt added",queue_mixed,blended/mixed records: mixture of multiple nuts/seeds (pending blend policy)
+sr_legacy,170595,"Seeds, breadfruit seeds, roasted",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+sr_legacy,170596,"Seeds, cottonseed kernels, roasted (glandless)",queue_roasted_plain,"roasted/toasted/dry-roasted plain forms (per-form owner decision pending, same as grains)"
+foundation,2261420,"Flour, almond",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+foundation,2262073,"Sesame butter, creamy",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+foundation,2262074,"Almond butter, creamy",queue_butter_paste,nut/seed butters and pastes (per-form decision pending)
+foundation,2262075,"Flaxseed, ground",plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes
+foundation,2515377,"Flour, chestnut",queue_flour_meal,nut/seed flours and meals (flour-kind extension decision)
+foundation,2515382,"Flour, coconut",queue_coconut,coconut in every form is on standing hold
