@@ -228,6 +228,10 @@ CORPUS = [
     # per-form-2b (tests/test_species_milk_2b.py, SYNTHETIC): species-head milk recognition (cow milk, goat milk); species words alone and milk solids stay abstained
     "Ingredients: Cow Milk", "Ingredients: Goat Milk", "Ingredients: Goat Milk (Pasteurized)", "Ingredients: Pasteurised Cow Milk", "Ingredients: Cow Milk Powder", "Ingredients: Goat Milk Powder", "Ingredients: Cow",
     "Ingredients: Rice (Cow Milk)", "Ingredients: Rice (Buffalo Milk)", "Ingredients: Milk Solids (Pasteurized Skimmed Cow Milk)", "Ingredients: Cow Milk, Starter Culture", "Ingredients: Sheep Milk", "Ingredients: Cow Milk Solids",
+    # class-bulk-5 (tests/test_class_bulk_5_nuts.py, SYNTHETIC): 20 nut_seed rows; item-level salt/sugar guard; held seeds and nut forms stay unrecognised
+    "Ingredients: Cashew Nuts", "Ingredients: Walnuts", "Ingredients: Sesame Seeds", "Ingredients: Chia Seeds", "Ingredients: Chestnuts", "Ingredients: Pistachio Nuts", "Ingredients: Salted Cashew Nuts",
+    "Ingredients: Walnuts, Sugar", "Ingredients: Sesame Seeds, Salt", "Ingredients: Roasted Cashew Nuts", "Ingredients: Oil Roasted Cashew Nuts", "Ingredients: Lotus Seeds", "Ingredients: Breadfruit Seeds",
+    "Ingredients: Almond Butter", "Ingredients: Cashew Nuts (salted)", "Ingredients: Hazelnuts, Pecans, Brazil Nuts",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
