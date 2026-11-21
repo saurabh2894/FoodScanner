@@ -18,3 +18,29 @@ Status words: READ = read in full by this pass; NOT READ = named as a candidate 
 
 ## What this pass did NOT do
 No row, synonym, candidate file or staged batch for these categories; no classification change; no source beyond the FAO report and USDA FDC was read.
+
+# Reading pass 2 (2026-11-21): the sources this note named as NOT READ, and what they say verbatim
+
+## What was reachable and read, with licence status
+| Source | Status | Licence / terms status |
+|---|---|---|
+| FAO 2019 ca5644en (already used) | READ | as recorded in data/ingest/SOURCES.md |
+| Monteiro et al. 2018, Public Health Nutr 21(1):5-17, "The UN Decade of Nutrition, the NOVA food classification and the trouble with ultra-processing" (PMC10261019) | READ in full (PMC copy) | "(c) The Authors 2017"; the PMC OAI record carries no licence element: licence UNVERIFIED, so used only for short verbatim quotation of names and clauses, nothing redistributed; not assumed CC BY |
+| Monteiro et al. 2019, Public Health Nutr 22(5):936-941, "Ultra-processed foods: what they are and how to identify them" (PMC10260459) | READ in full (PMC copy) | "(c) The Authors 2019"; same status as above |
+| NUPENS-USP pages (nupens.fsp.usp.br: a-classificacao-nova, quest-nova, nova) | READ | site terms not read; descriptive pages, quoted only for naming |
+| FSSAI texts (fssai.gov.in, fortification compendium PDF) | NOT READ: HTTP 502 on three URLs | would be NAMING sources only, never classification authority |
+| Brazilian Dietary Guidelines (bvsms.saude.gov.br, gov.br), PAHO IRIS, Cambridge Core, Europe PMC, doi.org | NOT READ: not reachable through this environment's proxy | not requested; an allowlist change would need your approval |
+| JECFA monographs for vitamin/mineral compounds | NOT READ | compound-name sources only; not needed until a recognition-only kind exists |
+
+## Verbatim findings
+- Sprouting: the words sprout, sprouted and germination occur in NONE of FAO 2019, Monteiro 2018, Monteiro 2019 or the three NUPENS pages (0 mentions each; also 0 for "fortif" in FAO-2019-section-3 prose and in Monteiro 2019). The only wording that could cover a sprouting step is the open clause, FAO Table 1: "and other methods that do not add salt, sugar, oils or fats or other food substances to the original food." That is an inference for sprouting, not a source statement, so sprouted forms are NOT given a row.
+- Fruit and vegetable powders: FAO p.10, Group 1 definition: "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging." Monteiro 2018: "fresh, squeezed, chilled, frozen or dried fruits and leafy and root vegetables ... milk, pasteurized or powdered". FDC (CC0) names one exactly: SR Legacy 173945 "Bananas, dehydrated, or banana powder". The definition names the PROCESS 'powdering' of natural foods, so a single powdered fruit or vegetable is covered as a form: rows added for banana powder, strawberry powder, beetroot powder (PROVISIONAL, exact terms not named by the clause).
+- Vitamins and minerals: FAO Table 1 Group 1: "foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid" (purpose-conditioned); Group 2: "group 2 items with added vitamins or minerals, such as iodised salt"; Group 4 (Monteiro 2018): "'health' and 'slimming' products such as powdered or 'fortified' meal and dish substitutes", and "notwithstanding the fortification of some ultra-processed products with some micronutrients". No source names the compounds. Fortification stays purpose-conditioned: no row, the list abstains.
+- Also new for the next batch: Monteiro 2018: "Some of these are directly extracted from foods, such as casein, lactose, whey and gluten." (names whey and lactose as Group 4 ingredient sources).
+
+## The two outcomes, kept apart (owner acceptance label, merged-build run)
+(a) Forms recognised: banana powder, strawberry powder, beetroot powder (unassessed items 6 -> 3, plus the group-name entry). Still unrecognised and visible: "Sprouted Ragi & Jowar" (a sprouted form plus an '&' pair), "Rice & Oat" (two recognised foods joined by '&' inside a bracket and kept as one item: an extraction convention), "Vitamins and Minerals".
+(b) Group: still abstains, for the stated reason "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> "antioxidant" (unlisted_additive)); not enough to call a group", with unplaced items still visible. Nothing was done to make this case answer.
+
+## Open design decision for you (needs a code change, so not made here)
+There is no kind that means "recognised by name, placement unsupported, the list must abstain". `neutral` (water) is ignored by the group logic, which would silently let fortification or a sprouted form drop out of the decision. A recognition-only kind (for example `unplaced`) would put "Vitamins and Minerals" and sprouted forms in the vocabulary while the group still abstains and the reason names them. It changes classify.py and the JS port; it is conservative (it only adds named abstentions) but is classification code, so I have not built it without your approval.

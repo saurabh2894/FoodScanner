@@ -1,0 +1,66 @@
+{
+ "decisions_id": "held-decisions-1",
+ "inventory": "evaluation/held_sources_1/label_terms.csv",
+ "filter": "the 6 unassessed items of the owner's acceptance label",
+ "decisions": [
+  {
+   "term": "sprouted ragi & jowar",
+   "rank": 1,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "source_not_found",
+   "reason": "two grains joined by '&' (an extraction convention) and a sprouted form: no source read names sprouting or germination (FAO Table 1 and the Group 1 definition, Monteiro 2018 and 2019, NUPENS pages: 0 mentions); only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; recognition-only needs the unplaced kind (owner decision)"
+  },
+  {
+   "term": "rice & oat",
+   "rank": 2,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "extraction_not_vocabulary",
+   "reason": "two recognised foods joined by '&' inside a bracket and kept as one item: an extraction convention, not a vocabulary gap"
+  },
+  {
+   "term": "banana powder",
+   "rank": 3,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
+   "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
+   "named": "exact term named by FDC (\"Bananas, dehydrated, or banana powder\"), not by the clause: the clause names the process 'powdering' of natural foods, so a single powdered fruit is covered as a form; a powder with added carriers is a different list and keeps its own items",
+   "fdc": [
+    "fdc_sr_legacy:173945"
+   ]
+  },
+  {
+   "term": "strawberry powder",
+   "rank": 4,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
+   "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
+   "named": "exact term not named by the clause or by FDC; the form (a single fruit, powdered) is covered by the process 'powdering' of natural foods",
+   "fdc": []
+  },
+  {
+   "term": "vitamins and minerals",
+   "rank": 5,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "fortification_purpose",
+   "reason": "FAO Table 1 Group 1: 'foods with vitamins and minerals added generally to replace nutrients lost during processing' is purpose-conditioned and Group 4 lists 'powdered or fortified meal and dish substitutes'; the label cannot show the purpose, so it stays unplaced and the list abstains; recognition-only needs the unplaced kind (owner decision)"
+  },
+  {
+   "term": "beetroot powder",
+   "rank": 6,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
+   "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
+   "named": "exact term not named by the clause or by FDC; the form (a single vegetable, powdered) is covered by the process 'powdering' of natural foods; a colour-note use ('for colour') is a separate rule and unchanged",
+   "fdc": []
+  }
+ ]
+}

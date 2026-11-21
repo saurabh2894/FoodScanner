@@ -45,10 +45,10 @@ def standing_exclusions() -> set[str]:
     return {n.value.lower() for n in ast.walk(fn) if isinstance(n, ast.Constant) and isinstance(n.value, str)}
 
 
-def source_row(d: dict, candidates: dict) -> str:
+def source_row(d: dict, candidates: dict, batch_id: str = "demand-decisions-1") -> str:
     fdc = "; ".join(f"{candidates[i]['dataset']} FDC id {candidates[i]['fdc_id']} \"{candidates[i]['description']}\"" for i in d["fdc"])
     return (f"PROVISIONAL: {d['group_label']} \"{d['clause']}\"; {d['named']}" + (f"; name from USDA FoodData Central (CC0 1.0): {fdc}" if fdc else "")
-            + "; demand-driven row (demand-decisions-1)")
+            + f"; demand-driven row ({batch_id})")
 
 
 def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_src: Path, evaluation: Path, work: Path) -> dict:
@@ -60,7 +60,9 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
     cands = {r["candidate_id"]: r for r in vb.read_csv(candidates_csv)}
     lex = {vb.flat(r["term"]): r for r in vb.read_csv(res / "lexicon.csv")}
     syn = {vb.flat(r["from"]): r for r in vb.read_csv(res / "synonyms.csv")}
-    table = fao_table_text(fao_text.read_text(encoding="utf-8"))
+    raw = fao_text.read_text(encoding="utf-8")
+    table = fao_table_text(raw)
+    prose = re.sub(r"\s+", " ", raw)           # single-column prose passages (e.g. the Group 1 definition on p.10) are checked here
     errors, decisions = [], dec["decisions"]
     terms = [r["term"] for r in inv]
     got = Counter(d["term"] for d in decisions)
@@ -73,14 +75,14 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
         if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM") and {d["term"].lower(), d.get("row_term", "").lower()} & held:
             errors.append(f"{d['term']}: is a standing exclusion of the lexicon-1 senior review; it may not be staged without an owner decision")
         if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM"):
-            if re.sub(r"\s+", " ", d["clause"]) not in table:
-                errors.append(f"{d['term']}: clause not found verbatim in FAO Table 1")
+            if re.sub(r"\s+", " ", d["clause"]) not in table and re.sub(r"\s+", " ", d["clause"]) not in prose:
+                errors.append(f"{d['term']}: clause not found verbatim in the FAO text")
             for i in d["fdc"]:
                 if i not in cands:
                     errors.append(f"{d['term']}: {i} not in the FDC candidates")
         if d["disposition"] == "ACCEPT_ROW":
             term = d.get("row_term", d["term"])
-            r = {"term": term, "kind": d["kind"], "source": source_row(d, cands), "demand_term": d["term"]}
+            r = {"term": term, "kind": d["kind"], "source": source_row(d, cands, dec['decisions_id']), "demand_term": d["term"]}
             if d["kind"] not in KINDS:
                 errors.append(f"{term}: kind {d['kind']!r} invalid")
             if not r["source"].startswith("PROVISIONAL") or d["clause"] not in r["source"]:
@@ -93,7 +95,7 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
                 errors.append(f"{d['term']} -> {d['to']}: target is not an existing lexicon row")
             if vb.flat(d["term"]) in lex or vb.flat(d["term"]) in syn:
                 errors.append(f"{d['term']}: already a lexicon term or synonym")
-            syns.append({"from": d["term"], "to": d["to"], "source": source_row(d, cands)})
+            syns.append({"from": d["term"], "to": d["to"], "source": source_row(d, cands, dec['decisions_id'])})
         elif d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL"):
             if not (d.get("reason") or "").strip():
                 errors.append(f"{d['term']}: no one-line reason")

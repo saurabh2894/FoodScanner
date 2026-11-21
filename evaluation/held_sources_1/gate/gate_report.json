@@ -1,0 +1,69 @@
+{
+ "decisions_id": "held-decisions-1",
+ "n_terms": 6,
+ "by_disposition": {
+  "PARK": 3,
+  "ACCEPT_ROW": 3
+ },
+ "paste_inputs_by_disposition": {
+  "PARK": 3,
+  "ACCEPT_ROW": 3
+ },
+ "rows": [
+  {
+   "term": "banana powder",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition) \"Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.\"; exact term named by FDC (\"Bananas, dehydrated, or banana powder\"), not by the clause: the clause names the process 'powdering' of natural foods, so a single powdered fruit is covered as a form; a powder with added carriers is a different list and keeps its own items; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 173945 \"Bananas, dehydrated, or banana powder\"; demand-driven row (held-decisions-1)",
+   "demand_term": "banana powder"
+  },
+  {
+   "term": "strawberry powder",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition) \"Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.\"; exact term not named by the clause or by FDC; the form (a single fruit, powdered) is covered by the process 'powdering' of natural foods; demand-driven row (held-decisions-1)",
+   "demand_term": "strawberry powder"
+  },
+  {
+   "term": "beetroot powder",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition) \"Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.\"; exact term not named by the clause or by FDC; the form (a single vegetable, powdered) is covered by the process 'powdering' of natural foods; a colour-note use ('for colour') is a separate rule and unchanged; demand-driven row (held-decisions-1)",
+   "demand_term": "beetroot powder"
+  }
+ ],
+ "synonyms": [],
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 0,
+   "warnings": 0,
+   "ingredients": 0,
+   "unassessed": 0,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [],
+   "warnings": [],
+   "ingredients": [],
+   "unassessed": [],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {},
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 139,
+   "lexicon_rows_after": 142,
+   "synonym_rows_added": 0,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 3
+  }
+ },
+ "errors": [],
+ "verdict": "READY_FOR_REVIEW"
+}
