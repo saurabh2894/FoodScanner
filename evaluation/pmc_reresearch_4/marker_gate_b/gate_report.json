@@ -1,0 +1,47 @@
+{
+ "batch_id": "marker-proposals-4b",
+ "rows": [
+  {
+   "term": "texturized soy protein",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "INFERENCE: instance of the NUPENS class 'protein isolates or concentrates' (exact term not named); not placed by FAO or PMC10127522",
+   "source": "PROVISIONAL: NUPENS, Food classification Nova (nupens.fsp.usp.br/en/food-classification-nova/), Group 4 paragraph \"These substances include sugar, oils, and fats for domestic use, protein isolates or concentrates, interesterified oils, hydrogenated fat, modified starches, and various substances for exclusive industrial use.\"; classification basis NUPENS, Food classification Nova, Group 4 paragraph \"Ultra-processed foods – which can be foods and drinks – are not really foods but formulations of substances obtained by fractionating foods from the first group.\"; INFERENCE: instance of the NUPENS class 'protein isolates or concentrates' (exact term not named); not placed by FAO or PMC10127522"
+  }
+ ],
+ "errors": [],
+ "results": {
+  "frozen_66": {
+   "changed": [
+    {
+     "input": "b1/N14",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"texturized soy protein\" (derived_substance)"
+     ],
+     "markers": [
+      "texturized soy protein"
+     ]
+    }
+   ],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  },
+  "out_of_sample_32": {
+   "changed": [],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  }
+ },
+ "verdict": "READY_FOR_REVIEW"
+}

@@ -1,0 +1,24 @@
+{
+ "batch_id": "marker-proposals-4a",
+ "note": "PROPOSAL ONLY (not merged; owner decision). Strong derived-substance markers for two sugar syrups, CLASSIFICATION-BEARING. Source: FAO p.9 class 'varieties of sugars' (glucose syrup / liquid glucose are instances; class-level coverage) corroborated by PMC10127522 table footnote 12 ('sugar substitutes, sweeteners, and all syrups (excluding 100% maple syrup)'; paraphrase, identifier cited). FAO Group 2 names only maple syrup among syrups: no conflict found.",
+ "marker_class": "derived_substance",
+ "strength": "strong",
+ "clause": {
+  "where": "FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods)",
+  "text": "include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)"
+ },
+ "basis": {
+  "where": "FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods)",
+  "text": "The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed."
+ },
+ "rows": [
+  {
+   "term": "glucose syrup",
+   "coverage": "class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); corroborated by PMC10127522 fn12 (all syrups except 100% maple syrup, paraphrase)"
+  },
+  {
+   "term": "liquid glucose",
+   "coverage": "class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); liquid form of glucose syrup is an INFERENCE; corroborated by PMC10127522 fn12 (paraphrase)"
+  }
+ ]
+}

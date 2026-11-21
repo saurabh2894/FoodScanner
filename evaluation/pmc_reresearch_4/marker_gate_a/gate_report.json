@@ -1,0 +1,195 @@
+{
+ "batch_id": "marker-proposals-4a",
+ "rows": [
+  {
+   "term": "glucose syrup",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); corroborated by PMC10127522 fn12 (all syrups except 100% maple syrup, paraphrase)",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); corroborated by PMC10127522 fn12 (all syrups except 100% maple syrup, paraphrase)"
+  },
+  {
+   "term": "liquid glucose",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); liquid form of glucose syrup is an INFERENCE; corroborated by PMC10127522 fn12 (paraphrase)",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; class-instance of the FAO class 'varieties of sugars' (exact term not named by the clause); liquid form of glucose syrup is an INFERENCE; corroborated by PMC10127522 fn12 (paraphrase)"
+  }
+ ],
+ "errors": [],
+ "results": {
+  "frozen_66": {
+   "changed": [
+    {
+     "input": "b1/N02",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "b1/N12",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "b2/M09",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "b2/M15",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "b3/Q14",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "neg/R5",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"glucose syrup\" (derived_substance)"
+     ],
+     "markers": [
+      "glucose syrup"
+     ]
+    }
+   ],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  },
+  "out_of_sample_32": {
+   "changed": [
+    {
+     "input": "S17",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    },
+    {
+     "input": "S20",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"liquid glucose\" (derived_substance)"
+     ],
+     "markers": [
+      "liquid glucose"
+     ]
+    }
+   ],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  }
+ },
+ "verdict": "READY_FOR_REVIEW"
+}

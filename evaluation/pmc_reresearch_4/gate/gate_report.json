@@ -1,0 +1,268 @@
+{
+ "decisions_id": "pmc-decisions-4",
+ "n_terms": 24,
+ "by_disposition": {
+  "ACCEPT_ROW": 9,
+  "PARK": 8,
+  "ACCEPT_SYNONYM": 3,
+  "HELD": 3,
+  "CONFLICT": 1
+ },
+ "paste_inputs_by_disposition": {
+  "ACCEPT_ROW": 9,
+  "PARK": 8,
+  "ACCEPT_SYNONYM": 3,
+  "HELD": 3,
+  "CONFLICT": 1
+ },
+ "rows": [
+  {
+   "term": "yeast",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods') \"yeast; dried fruits (without added sugars) and vegetables\"; exact term IS named (placed with the unprocessed or minimally processed foods); demand-driven row (pmc-decisions-4)",
+   "demand_term": "yeast"
+  },
+  {
+   "term": "sorghum flour",
+   "kind": "flour",
+   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods') \"flours; tapioca\"; exact term not named (class-instance of the named class 'flours': flour of a grain: class-instance of the generic 'flours'; the NUPENS Nova page also places grain flours in group 1); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy); demand-driven row (pmc-decisions-4)",
+   "demand_term": "sorghum flour"
+  },
+  {
+   "term": "soya flour",
+   "kind": "flour",
+   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods') \"flours; tapioca\"; exact term not named (class-instance of the named class 'flours': flour of a legume: class-instance of the generic 'flours'); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy); demand-driven row (pmc-decisions-4)",
+   "demand_term": "soya flour"
+  },
+  {
+   "term": "split pulse urad flour",
+   "kind": "flour",
+   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods') \"flours; tapioca\"; exact term not named (class-instance of the named class 'flours': flour of a pulse: class-instance of the generic 'flours'); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy); demand-driven row (pmc-decisions-4)",
+   "demand_term": "split pulse urad flour"
+  },
+  {
+   "term": "cocoa butter",
+   "kind": "culinary",
+   "source": "PROVISIONAL: NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/), group 2 \"Processed culinary ingredients are substances extracted from foods of the first group by physical procedures such as pressing, centrifugation, and concentration\"; exact term not named (class-instance inference: cocoa butter is a fat pressed from cocoa beans); FDC names 'Oil, cocoa butter' (sr_legacy 171421; naming only); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171421 \"Oil, cocoa butter\"; demand-driven row (pmc-decisions-4)",
+   "demand_term": "cocoa butter"
+  },
+  {
+   "term": "roasted gram",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named (class-instance inference: gram is a pulse; FDC names 'bengal gram' as chickpea; roasting is a process named in the Group 1 definition on p.6); every pulse is Group 1, so the ambiguity between bengal, green and black gram does not change the placement; demand-driven row (pmc-decisions-4)",
+   "demand_term": "roasted gram"
+  },
+  {
+   "term": "refined oil",
+   "kind": "culinary",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"Vegetable oils crushed from seeds, nuts or fruit (notably olives)\"; exact term not named (class-instance: an oil; the plant is not stated on the label, which does not change the Group 2 placement of culinary oils); demand-driven row (pmc-decisions-4)",
+   "demand_term": "refined oil"
+  },
+  {
+   "term": "butter oil",
+   "kind": "culinary",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"butter and lard obtained from milk and pork\"; exact term not named (class-instance inference: a fat obtained from butter; whether it is anhydrous milk fat or ghee is not stated); demand-driven row (pmc-decisions-4)",
+   "demand_term": "butter oil"
+  },
+  {
+   "term": "dehydrated vegetable",
+   "kind": "whole_food",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named (a class phrase: dried vegetables are named; 'dehydrated' read as dried is a definitional step; the contents are unstated, so this is a class-level row); demand-driven row (pmc-decisions-4)",
+   "demand_term": "dehydrated vegetable"
+  }
+ ],
+ "synonyms": [
+  {
+   "from": "caster sugar",
+   "to": "sugar",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"sugar and molasses obtained from cane or beet\"; exact term not named (same ingredient, fine granulation form: an inference; FDC names 'Sugars, granulated' and powdered forms, naming only); demand-driven row (pmc-decisions-4)"
+  },
+  {
+   "from": "natural vinegar",
+   "to": "vinegar",
+   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 5 (row 'Other processed culinary ingredients') \"vinegar; baking powder and baking soda\"; exact term not named (the named term is 'vinegar'; reading 'natural' as the fermentation-derived kind is an inference); demand-driven row (pmc-decisions-4)"
+  },
+  {
+   "from": "mango pieces",
+   "to": "mango",
+   "source": "PROVISIONAL: Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) (Group 1 process list) \"cutting, drying, crushing, grinding, fractioning, roasting,\"; exact term not named (same fruit, cut form: 'cutting' is a named Group 1 process; the 'pieces' form is an inference); demand-driven row (pmc-decisions-4)"
+  }
+ ],
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 2,
+   "warnings": 0,
+   "ingredients": 0,
+   "unassessed": 13,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [
+    "b1/N07",
+    "b1/N10"
+   ],
+   "warnings": [],
+   "ingredients": [],
+   "unassessed": [
+    "b1/N01",
+    "b1/N02",
+    "b1/N05",
+    "b1/N06",
+    "b1/N07",
+    "b1/N10",
+    "b1/N13",
+    "b2/M11",
+    "b2/M15",
+    "neg/R5",
+    "dev/F02",
+    "dev/F07",
+    "dev/F10"
+   ],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {
+   "b1/N01": {
+    "recognised_now": [
+     "Yeast"
+    ],
+    "attributed_to_rows": [
+     "yeast"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N02": {
+    "recognised_now": [
+     "refined (palm & palmolein) oil",
+     "dehydrated vegetable (chives) (1%)"
+    ],
+    "attributed_to_rows": [
+     "dehydrated vegetable",
+     "refined oil"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N05": {
+    "recognised_now": [
+     "Soya Flour (9%)",
+     "Split Pulse Urad (Urad Dal) Flour"
+    ],
+    "attributed_to_rows": [
+     "soya flour",
+     "split pulse urad flour"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N06": {
+    "recognised_now": [
+     "COCOA BUTTER"
+    ],
+    "attributed_to_rows": [
+     "cocoa butter"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N07": {
+    "recognised_now": [
+     "cocoa butter (10%)"
+    ],
+    "attributed_to_rows": [
+     "cocoa butter"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N10": {
+    "recognised_now": [
+     "Mango Pieces"
+    ],
+    "attributed_to_rows": [
+     "mango pieces"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N13": {
+    "recognised_now": [
+     "natural vinegar"
+    ],
+    "attributed_to_rows": [
+     "natural vinegar"
+    ],
+    "newly_unassessed": []
+   },
+   "b2/M11": {
+    "recognised_now": [
+     "DEHYDRATED VEGETABLE POWDER (group name; its contents were assessed separately)"
+    ],
+    "attributed_to_rows": [
+     "dehydrated vegetable"
+    ],
+    "newly_unassessed": []
+   },
+   "b2/M15": {
+    "recognised_now": [
+     "caster sugar"
+    ],
+    "attributed_to_rows": [
+     "caster sugar"
+    ],
+    "newly_unassessed": []
+   },
+   "neg/R5": {
+    "recognised_now": [
+     "butter oil (MILK)"
+    ],
+    "attributed_to_rows": [
+     "butter oil"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F02": {
+    "recognised_now": [
+     "Sorghum (Jowar) Flour (3%)"
+    ],
+    "attributed_to_rows": [
+     "sorghum flour"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F07": {
+    "recognised_now": [
+     "dehydrated vegetables (group name; its contents were assessed separately)"
+    ],
+    "attributed_to_rows": [
+     "dehydrated vegetable"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F10": {
+    "recognised_now": [
+     "Roasted Gram (25%)",
+     "Dehydrated Vegetable Powder (group name; its contents were assessed separately)"
+    ],
+    "attributed_to_rows": [
+     "dehydrated vegetable",
+     "roasted gram"
+    ],
+    "newly_unassessed": []
+   }
+  },
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 151,
+   "lexicon_rows_after": 160,
+   "synonym_rows_added": 3,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 12
+  }
+ },
+ "errors": [],
+ "verdict": "READY_FOR_REVIEW"
+}
