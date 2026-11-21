@@ -61,7 +61,9 @@ def test_every_frozen_paste_input_keeps_its_group():
         # whole_food unknown-bracket abstention moves it Group 1 -> None (the same class as 'Rice (XQ9)'). Evidence: evaluation/per_form_1/.
         # Intended, attributed exception (per-form-2b): b2/M02 'PASTEURISED COW MILK' and b3/Q06 'Pasteurized Cow Milk' are single species-qualified milk items; 'cow milk' is now a recognised milk row (FAO Group 1 milk
         # without species restriction; species not named by a verified NOVA source), so both move None -> Group 1. Evidence: evaluation/per_form_2b/.
-        expected = 3 if key == "b3/Q03" else (None if key == "b3/Q10" else (1 if key in ("b2/M02", "b3/Q06") else group))
+        # Intended, attributed exception (whole-food-guard-1): b3/Q04 'Milk solids (Toned Milk) & Active Culture' names a different recognised food inside a whole_food bracket; no clause read establishes that a milk named in the
+        # bracket of 'milk solids' is the same food, and a frozen expectation is not evidence, so the item now abstains (Group 1 -> None). Evidence: evaluation/whole_food_guard_1/.
+        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04") else (1 if key in ("b2/M02", "b3/Q06") else group))
         assert (a.group if a.answered else None) == expected, key
 
 
