@@ -1,0 +1,371 @@
+dataset,fdc_id,record_name,junior,senior,canonical_or_reason,note
+sr_legacy,171881,"Beverages, coffee, brewed, breakfast blend",accept,accept (stage candidate),coffee,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,171890,"Beverages, coffee, brewed, prepared with tap water",accept,accept (stage candidate),coffee,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,171891,"Beverages, coffee, brewed, espresso, restaurant-prepared",accept,accept (stage candidate),coffee,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,171911,"Beverages, tea, green, ready to drink, unsweetened",accept,queue (hold),tea,"ready-to-drink bottled/brand product: ingredients (acidulants, preservatives) not stated by the name; one rule for every RTD record (decaf RTD was already queued)"
+sr_legacy,171917,"Beverages, tea, green, brewed, regular",accept,accept (stage candidate),tea,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,171922,"Beverages, water, bottled, non-carbonated, EVIAN",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,171924,"Beverages, WENDY'S, tea, ready-to-drink, unsweetened",accept,queue (hold),tea,"ready-to-drink bottled/brand product: ingredients (acidulants, preservatives) not stated by the name; one rule for every RTD record (decaf RTD was already queued)"
+sr_legacy,173227,"Beverages, tea, black, brewed, prepared with tap water",accept,accept (stage candidate),tea,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,173234,"Beverages, water, bottled, POLAND SPRING",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,173647,"Beverages, water, tap, drinking",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,173655,"Beverages, water, bottled, non-carbonated, DANNON",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,173656,"Beverages, water, bottled, non-carbonated, PEPSI, AQUAFINA",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,173657,"Water, bottled, non-carbonated, NAYA",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,174120,"Beverages, tea, Oolong, brewed",accept,accept (stage candidate),tea,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,174144,"Beverages, tea, black, ready to drink",accept,queue (hold),tea,"ready-to-drink bottled/brand product: ingredients (acidulants, preservatives) not stated by the name; one rule for every RTD record (decaf RTD was already queued)"
+sr_legacy,174155,"Beverages, tea, black, brewed, prepared with distilled water",accept,accept (stage candidate),tea,"brewed plain tea/coffee named in the Group 1 example 'tea, coffee, and drinking water'; kind whole_food proposed, not neutral"
+sr_legacy,174158,"Water, bottled, generic",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,175096,"Beverages, water, tap, well",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,175103,"Beverages, water, tap, municipal",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,175104,"Beverages, The COCA-COLA company, DASANI, water, bottled, non-carbonated",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,175106,"Beverages, water, bottled, non-carbonated, CALISTOGA",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,175107,"Beverages, water, bottled, non-carbonated, CRYSTAL GEYSER",accept,accept (existing row; no change),water,existing `water` row (neutral); evidence only; brand composition claims in the junior text are not in the FDC names
+sr_legacy,171889,"Beverages, coffee, brewed, prepared with tap water, decaffeinated",queue,queue,synonym_candidates,unchanged
+sr_legacy,171893,"Beverages, coffee, instant, regular, powder",queue,queue,synonym_candidates,unchanged
+sr_legacy,171894,"Beverages, coffee, instant, decaffeinated, prepared with water",queue,queue,synonym_candidates,unchanged
+sr_legacy,171897,"Beverages, coffee, instant, with chicory",queue,queue,queue_coffee_substitute,unchanged
+sr_legacy,171910,"Beverages, tea, green, brewed, decaffeinated",queue,queue,synonym_candidates,unchanged
+sr_legacy,171933,"Beverages, V8 V-FUSION Juices, Peach Mango",queue,queue,roadmap_parked,unchanged
+sr_legacy,171934,"Beverages, V8 V-FUSION Juices, Strawberry Banana",queue,queue,roadmap_parked,unchanged
+sr_legacy,171942,"Beverages, rice milk, unsweetened",queue,queue,queue_plant_milk,unchanged
+sr_legacy,171946,"Beverages, tea, hibiscus, brewed",queue,queue,queue_herbal_infusion,unchanged
+sr_legacy,173183,"Beverages, GEROLSTEINER BRUNNEN GmbH & Co. KG (Gerolsteiner), naturally sparkling, mineral bottled water",queue,queue,queue_carbonated_water,unchanged
+sr_legacy,173212,"Beverages, tea, black, ready to drink, decaffeinated",queue,queue,synonym_candidates,unchanged
+sr_legacy,173230,"Beverages, tea, instant, unsweetened, powder",queue,queue,synonym_candidates,unchanged
+sr_legacy,173232,"Beverages, tea, herb, other than chamomile, brewed",queue,queue,queue_herbal_infusion,unchanged
+sr_legacy,173233,"Beverages, water, bottled, PERRIER",queue,queue,queue_carbonated_water,unchanged
+sr_legacy,174125,"Beverages, coffee, brewed, espresso, restaurant-prepared, decaffeinated",queue,queue,synonym_candidates,unchanged
+sr_legacy,174126,"Beverages, coffee, instant, regular, half the caffeine",queue,queue,synonym_candidates,unchanged
+sr_legacy,174130,"Beverages, coffee, instant, regular, prepared with water",queue,queue,synonym_candidates,unchanged
+sr_legacy,174133,"Beverages, coffee, instant, decaffeinated, powder",queue,queue,synonym_candidates,unchanged
+sr_legacy,174134,"Beverages, coffee, instant, chicory",queue,queue,queue_coffee_substitute,unchanged
+sr_legacy,174138,"Beverages, coffee substitute, cereal grain beverage, powder",queue,queue,queue_coffee_substitute,unchanged
+sr_legacy,174139,"Beverages, coffee substitute, cereal grain beverage, prepared with water",queue,queue,queue_coffee_substitute,unchanged
+sr_legacy,174156,"Beverages, tea, herb, brewed, chamomile",queue,queue,queue_herbal_infusion,unchanged
+sr_legacy,174169,"Beverages, V8 V-FUSION Juices, Tropical",queue,queue,roadmap_parked,unchanged
+sr_legacy,174170,"Beverages, V8 V- FUSION Juices, Acai Berry",queue,queue,roadmap_parked,unchanged
+sr_legacy,174827,"Beverages, GEROLSTEINER BRUNNEN GmbH & Co. KG,Gerolsteiner naturally sparkling mineral water,",queue,queue,queue_carbonated_water,unchanged
+sr_legacy,174831,"Beverages, Coconut water, ready-to-drink, unsweetened",queue,queue,queue_coconut_water,unchanged
+sr_legacy,174832,"Beverages, almond milk, unsweetened, shelf stable",queue,queue,queue_plant_milk,unchanged
+sr_legacy,174871,"Beverages, tea, black, brewed, prepared with tap water, decaffeinated",queue,queue,synonym_candidates,unchanged
+sr_legacy,174872,"Beverages, tea, instant, decaffeinated, unsweetened",queue,queue,synonym_candidates,unchanged
+sr_legacy,174873,"Beverages, tea, instant, unsweetened, prepared with water",queue,queue,synonym_candidates,unchanged
+foundation,1750338,"Almond milk, unsweetened, plain, shelf stable",queue,queue,queue_plant_milk,unchanged
+foundation,1999631,"Almond milk, unsweetened, plain, shelf stable",queue,queue,queue_plant_milk,unchanged
+foundation,2257045,"Almond milk, unsweetened, plain, refrigerated",queue,queue,queue_plant_milk,unchanged
+foundation,2257046,"Oat milk, unsweetened, plain, refrigerated",queue,queue,queue_plant_milk,unchanged
+sr_legacy,167681,"Beverages, fruit-flavored drink, dry powdered mix, low calorie, with aspartame",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,167707,"Beverages, fruit-flavored drink, powder, with high vitamin C with other added vitamins, low calorie",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,167711,"Beverages, Chocolate-flavored drink, whey and milk based",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,167723,"Alcoholic beverage, rice (sake)",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,167727,"Beverages, ABBOTT, ENSURE PLUS, ready-to-drink",reject,reject,formulated_beverage,unchanged
+sr_legacy,167739,"Beverages, Cocktail mix, non-alcoholic, concentrated, frozen",reject,reject,mix_powder_syrup,reason code corrected: not an alcoholic beverage
+sr_legacy,168122,"Beverages, coffee, instant, with whitener, reduced calorie",reject,reject,conditioned_with,unchanged
+sr_legacy,168123,"Beverages, cranberry-apple juice drink, low calorie, with vitamin C added",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,168746,"Alcoholic beverage, beer, regular, all",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,168747,"Alcoholic beverage, beer, regular, BUDWEISER",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,168748,"Alcoholic beverage, beer, light, BUDWEISER SELECT",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,168749,"Alcoholic beverage, beer, light",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,168750,"Alcoholic beverage, pina colada, canned",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,168751,"Beverages, almond milk, sweetened, vanilla flavor, ready-to-drink",reject,reject,sweetened_diet,unchanged
+sr_legacy,168752,"Alcoholic beverage, pina colada, prepared-from-recipe",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,168753,"Alcoholic beverage, tequila sunrise, canned",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,169044,"Beverages, Orange juice drink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,169070,"Alcoholic beverage, wine, cooking",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,169071,"Alcoholic beverage, wine, light",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,169572,"Alcoholic beverage, beer, light, BUD LIGHT",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,169573,"Alcoholic beverage, daiquiri, canned",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,169574,"Alcoholic beverage, daiquiri, prepared-from-recipe",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,169575,"Alcoholic beverage, beer, light, low carb",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171869,"Beverages, carbonated, tonic water",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171870,"Beverages, Energy drink, RED BULL, sugar free, with added caffeine, niacin, pantothenic acid, vitamins B6 and B12",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171871,"Beverages, carbonated, root beer",reject,reject,carbonated_soft_drink,reason code corrected: not an alcoholic beverage
+sr_legacy,171872,"Alcoholic Beverage, wine, table, red, Gamay",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171873,"Beverages, chocolate drink, milk and soy based, ready to drink, fortified",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171874,"Beverages, chocolate malt powder, prepared with 1% milk, fortified",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171875,"Beverages, carbonated, limeade, high caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171876,"Beverages, carbonated, low calorie, cola or pepper-types, with sodium saccharin, contains caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171877,"Beverages, coffee, ready to drink, vanilla, light, milk based, sweetened",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,171878,"Beverages, Lemonade fruit juice drink light, fortified with vitamin E and C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171879,"Beverages, chocolate-flavor beverage mix, powder, prepared with whole milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171880,"Beverages, coffee, ready to drink, milk based, sweetened",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,171882,"Beverages, Clam and tomato juice, canned",reject,reject,formulated_beverage,unchanged
+sr_legacy,171883,"Beverages, tea, green, ready to drink, ginseng and honey, sweetened",reject,reject,sweetened_diet,reason code corrected: not an alcoholic beverage
+sr_legacy,171884,"Beverages, The COCA-COLA company, Minute Maid, Lemonade",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171885,"Beverages, tea, green, ready-to-drink, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,171886,"Beverages, Cocoa mix, no sugar added, powder",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,171887,"Cocoa mix, NESTLE, Rich Chocolate Hot Cocoa Mix",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171888,"Beverages, tea, black, ready-to-drink, lemon, sweetened",reject,reject,sweetened_diet,unchanged
+sr_legacy,171892,"Beverages, tea, black, ready-to-drink, lemon, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,171895,"Beverages, OCEAN SPRAY, Cranberry-Apple Juice Drink, bottled",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171896,"Beverages, OCEAN SPRAY, Diet Cranberry Juice",reject,reject,sweetened_diet,unchanged
+sr_legacy,171898,"Beverages, KRAFT, coffee, instant, French Vanilla Cafe",reject,reject,formulated_beverage,unchanged
+sr_legacy,171899,"Beverages, OCEAN SPRAY, Cran Raspberry Juice Drink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171900,"Beverages, OCEAN SPRAY, Cran Lemonade",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171901,"Beverages, OCEAN SPRAY, Diet Cran Cherry",reject,reject,sweetened_diet,unchanged
+sr_legacy,171902,"Beverages, cranberry-grape juice drink, bottled",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171903,"Cranberry juice cocktail, bottled",reject,reject,juice_drink_cocktail,reason code corrected: not an alcoholic beverage
+sr_legacy,171904,"Cranberry juice cocktail, bottled, low calorie, with calcium, saccharin and corn sweetener",reject,reject,juice_drink_cocktail,reason code corrected: not an alcoholic beverage
+sr_legacy,171905,"Beverages, Eggnog-flavor mix, powder, prepared with whole milk",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,171906,"Alcoholic beverages, beer, higher alcohol",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171907,"Beverages, Malt liquor beverage",reject,reject,formulated_beverage,unchanged
+sr_legacy,171908,"Alcoholic beverages, wine, rose",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171909,"Beverages, OCEAN SPRAY, Cran Pomegranate",reject,reject,formulated_beverage,unchanged
+sr_legacy,171912,"Beverages, citrus fruit juice drink, frozen concentrate",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171913,"Beverages, citrus fruit juice drink, frozen concentrate, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171914,"Beverages, fruit punch drink, without added nutrients, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171915,"Beverages, Tropical Punch, ready-to-drink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171916,"Beverages, grape drink, canned",reject,reject,formulated_beverage,unchanged
+sr_legacy,171918,"Beverages, tea, instant, lemon, with added ascorbic acid",reject,reject,conditioned_with,unchanged
+sr_legacy,171919,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 86 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171920,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 90 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171921,"Carbonated beverage, chocolate-flavored soda",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171923,"Beverages, Powerade Zero Ion4, calorie-free, assorted flavors",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171925,"Alcoholic Beverage, wine, table, red, Merlot",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,171926,"Water, non-carbonated, bottles, natural fruit flavors, sweetened with low calorie sweetener",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,171927,"Beverages, V8 SPLASH Juice Drinks, Diet Tropical Blend",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171928,"Beverages, V8 SPLASH Juice Drinks, Berry Blend",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171929,"Beverages, V8 SPLASH Juice Drinks, Fruit Medley",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171930,"Beverages, V8 SPLASH Juice Drinks, Guava Passion Fruit",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171931,"Beverages, V8 SPLASH Juice Drinks, Strawberry Kiwi",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171932,"Beverages, V8 SPLASH Juice Drinks, Tropical Blend",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171935,"Beverages, Energy Drink, Monster, fortified with vitamins C, B2, B3, B6, B12",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171936,"Beverages, Energy drink, AMP, sugar free",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171937,"Beverages, Energy drink, ROCKSTAR",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171938,"Beverages, Energy drink, ROCKSTAR, sugar free",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171939,"Beverages, Meal supplement drink, canned, peanut flavor",reject,reject,fortified_supplement,unchanged
+sr_legacy,171940,"Water, with corn syrup and/or sugar and low calorie sweetener, fruit flavored",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,171941,"Beverages, Horchata, as served in restaurant",reject,reject,formulated_beverage,unchanged
+sr_legacy,171943,"Beverages, Energy drink, VAULT, citrus flavor",reject,reject,energy_sports_drink,unchanged
+sr_legacy,171944,"Beverages, Fruit flavored drink, reduced sugar, greater than 3% fruit juice, high vitamin C, added calcium",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171945,"Beverages, fruit juice drink, greater than 3% fruit juice, high vitamin C and added thiamin",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,171947,"Beverages, fruit juice drink, greater than 3% juice, high vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173162,"Beverages, MONSTER energy drink, low carb",reject,reject,energy_sports_drink,unchanged
+sr_legacy,173163,"Beverages, Whiskey sour mix, powder",reject,reject,mix_powder_syrup,reason code corrected: not an alcoholic beverage
+sr_legacy,173164,"Alcoholic beverage, whiskey sour, prepared with water, whiskey and powder mix",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,173165,"Beverages, THE COCA-COLA COMPANY, NOS energy drink, Original, grape, loaded cherry, charged citrus, fortified with vitamins B6 and B12",reject,reject,energy_sports_drink,reason code corrected: not an alcoholic beverage
+sr_legacy,173166,"Beverages, water, bottled, yumberry, pomegranate with anti-oxidants, zero calories",reject,reject,sweetened_diet,unchanged
+sr_legacy,173167,"Beverages, ABBOTT, EAS whey protein powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173168,"Alcoholic beverage, creme de menthe, 72 proof",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,173169,"Beverages, NESTLE, Boost plus, nutritional drink, ready-to-drink",reject,reject,formulated_beverage,unchanged
+sr_legacy,173170,"Beverages, SLIMFAST, Meal replacement,  High Protein Shake, Ready-To-Drink, 3-2-1 plan",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,173171,"Beverages, UNILEVER, SLIMFAST, meal replacement, regular, ready-to-drink,  3-2-1 Plan",reject,reject,formulated_beverage,unchanged
+sr_legacy,173172,"Beverages, UNILEVER, SLIMFAST Shake Mix, powder, 3-2-1 Plan",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,173173,"Beverages, FUZE, orange mango, fortified with vitamins A, C, E, B6",reject,reject,fortified_supplement,unchanged
+sr_legacy,173174,"Beverages, UNILEVER, SLIMFAST Shake Mix, high protein, whey powder, 3-2-1 Plan,",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,173175,"Beverages, Acai berry drink, fortified",reject,reject,fortified_supplement,unchanged
+sr_legacy,173176,"Alcoholic beverage, wine, dessert, sweet",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173177,"Beverages, Whey protein powder isolate",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173178,"Beverages, Orange juice, light, No pulp",reject,reject,formulated_beverage,unchanged
+sr_legacy,173179,"Beverages, The COCA-COLA company, Hi-C Flashin' Fruit Punch",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173180,"Beverages, Protein powder whey based",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173181,"Beverages, Protein powder soy based",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173182,"Beverages, rich chocolate, powder",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173184,"Beverages, chocolate malt, powder, prepared with fat free milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173185,"Alcoholic beverage, wine, table, all",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173186,"Beverages, V8 SPLASH Smoothies, Peach Mango",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,173187,"Beverages, chocolate almond milk, unsweetened, shelf-stable, fortified with vitamin D2 and E",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173188,"Beverages, The COCA-COLA company, Glaceau Vitamin Water, Revive Fruit Punch, fortified",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173189,"Beverages, MINUTE MAID, Lemonada, Limeade",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173190,"Alcoholic beverage, wine, table, red",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173191,"Alcoholic Beverage, wine, table, red, Barbera",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173192,"Alcoholic Beverage, wine, table, red, Zinfandel",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173193,"Alcoholic Beverage, wine, table, red, Petite Sirah",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173194,"Alcoholic Beverage, wine, table, red, Claret",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173195,"Alcoholic beverage, wine, table, white, Chenin Blanc",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173196,"Alcoholic beverage, wine, table, white, Fume Blanc",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173197,"Beverages, Mixed vegetable and fruit juice drink, with added nutrients",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173198,"Alcoholic beverage, wine, table, white, Muller Thurgau",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173199,"Carbonated beverage, cream soda",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173200,"Alcoholic beverage, wine, table, white, Riesling",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173201,"Alcoholic beverage, wine, table, white, Sauvignon Blanc",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173202,"Alcoholic beverage, wine, table, white, late harvest",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173203,"Beverages, carbonated, grape soda",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173204,"Beverages, carbonated, low calorie, other than cola or pepper,  without caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173205,"Beverages, carbonated, lemon-lime soda, no caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173206,"Beverages, carbonated, SPRITE, lemon-lime, without caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173207,"Beverages, carbonated, low calorie, other than cola or pepper, with aspartame, contains caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173208,"Alcoholic Beverage, wine, table, red, Burgundy",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173209,"Beverages, carbonated, pepper-type, contains caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173210,"Beverages, Energy drink, RED BULL",reject,reject,energy_sports_drink,unchanged
+sr_legacy,173211,"Beverages, tea, black, ready to drink, decaffeinated, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,173213,"Beverages, grape juice drink, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173214,"Beverages, Cranberry juice cocktail",reject,reject,juice_drink_cocktail,reason code corrected: not an alcoholic beverage
+sr_legacy,173215,"Beverages, SNAPPLE, tea, black and green, ready to drink, peach, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,173216,"Lemonade, frozen concentrate, white",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173217,"Lemonade, frozen concentrate, white, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173218,"Beverages, SNAPPLE, tea, black and green, ready to drink, lemon, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,173219,"Beverages, Malted drink mix, natural, with added nutrients, powder, prepared with whole milk",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173220,"Beverages, Malted drink mix, natural, powder, dairy based.",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173221,"Beverages, Malted drink mix, natural, powder, prepared with whole milk",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173222,"Beverages, OVALTINE, chocolate malt powder",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173223,"Beverages, orange and apricot juice drink, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173224,"Beverages, pineapple and grapefruit juice drink, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173225,"Beverages, pineapple and orange juice drink, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173226,"Shake, fast food, vanilla",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,173228,"Beverages, tea, instant, decaffeinated, lemon, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,173229,"Beverages, tea, instant, decaffeinated, lemon, sweetened",reject,reject,sweetened_diet,unchanged
+sr_legacy,173231,"Beverages, tea, instant, lemon, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,173235,"Beverages, orange-flavor drink, breakfast type, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173236,"Beverages, orange-flavor drink, breakfast type, powder, prepared with water",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173237,"Beverages, Orange-flavor drink, breakfast type, low calorie, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173648,"Beverages, coffee substitute, cereal grain beverage, powder, prepared with whole milk",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173649,"Beverages, Dairy drink mix, chocolate, reduced calorie, with low-calorie sweeteners, powder",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173650,"Beverages, dairy drink mix, chocolate, reduced calorie, with aspartame, powder, prepared with water and ice",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173651,"Beverages, Orange-flavor drink, breakfast type, with pulp, frozen concentrate.",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173652,"Beverages, Orange-flavor drink, breakfast type, with pulp, frozen concentrate, prepared with water",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,173653,"Cranberry juice cocktail, frozen concentrate",reject,reject,juice_drink_cocktail,reason code corrected: not an alcoholic beverage
+sr_legacy,173654,"Cranberry juice cocktail, frozen concentrate, prepared with water",reject,reject,juice_drink_cocktail,reason code corrected: not an alcoholic beverage
+sr_legacy,173658,"Beverages, DANNON, water, bottled, non-carbonated, with Fluoride",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173659,"Beverages, drink mix, QUAKER OATS, GATORADE, orange flavor, powder",reject,reject,energy_sports_drink,unchanged
+sr_legacy,173660,"Beverages, PEPSICO QUAKER, Gatorade, G performance O 2, ready-to-drink.",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,173661,"Whiskey sour mix, bottled, with added potassium and sodium",reject,reject,mix_powder_syrup,reason code corrected: not an alcoholic beverage
+sr_legacy,173662,"Alcoholic beverage, whiskey sour",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,173663,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 94 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173664,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 100 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,173665,"Alcoholic beverage, liqueur, coffee, 63 proof",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,173666,"Lemonade, frozen concentrate, pink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,173667,"Beverages, lemonade, frozen concentrate, pink, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174108,"Beverages,  Energy drink, Citrus",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174109,"Alcoholic Beverage, wine, table, red, Mouvedre",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174110,"Alcoholic beverage, wine, table, white, Chardonnay",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174111,"Beverages, Kiwi Strawberry Juice Drink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174112,"Beverages, Apple juice drink, light, fortified with vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174113,"Beverages, POWERADE, Zero, Mixed Berry",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174114,"Beverages, Carob-flavor beverage mix, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,174115,"Beverages, Carob-flavor beverage mix, powder, prepared with whole milk",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,174116,"Beverages, coconut milk, sweetened, fortified with calcium, vitamins A, B12, D2",reject,reject,sweetened_diet,unchanged
+sr_legacy,174117,"Beverages, chocolate syrup",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174118,"Beverages, chocolate syrup, prepared with whole milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174119,"Beverages, coffee, ready to drink, iced, mocha, milk based",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174121,"Beverages, tea, green, ready-to-drink, citrus, diet, fortified with vitamin C",reject,reject,sweetened_diet,unchanged
+sr_legacy,174122,"Beverages, Cocoa mix, powder",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174123,"Beverages, Cocoa mix, powder, prepared with water",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174124,"Beverages, Cocoa mix, NESTLE, Hot Cocoa Mix Rich Chocolate With Marshmallows",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174127,"Beverages, coffee and cocoa, instant, decaffeinated, with whitener and low calorie sweetener",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174128,"Beverages, tea, green, ready-to-drink, sweetened",reject,reject,sweetened_diet,unchanged
+sr_legacy,174129,"Beverages, tea, ready-to-drink, lemon, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,174131,"Beverages, aloe vera juice drink, fortified with Vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174132,"Beverages, OCEAN SPRAY, Cran Grape",reject,reject,formulated_beverage,unchanged
+sr_legacy,174135,"Beverages, coffee, instant, mocha, sweetened",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174136,"Beverages, OCEAN SPRAY, Light Cranberry and Raspberry Flavored Juice",reject,reject,flavoured_infused,unchanged
+sr_legacy,174137,"Beverages, OCEAN SPRAY, White Cranberry Strawberry Flavored Juice Drink",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174140,"Beverages, cranberry-apple juice drink, bottled",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174141,"Alcoholic beverage, malt beer, hard lemonade",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174142,"Beverages, cranberry-apricot juice drink, bottled",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174143,"Beverages, tea, green, instant, decaffeinated, lemon, unsweetened, fortified with vitamin C",reject,reject,sweetened_diet,unchanged
+sr_legacy,174145,"Alcoholic beverage, beer, light, higher alcohol",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174146,"Beverages, AMBER, hard cider",reject,reject,formulated_beverage,unchanged
+sr_legacy,174147,"Beverages, OCEAN SPRAY, Cran Cherry",reject,reject,formulated_beverage,unchanged
+sr_legacy,174148,"Beverages, OCEAN SPRAY, Light Cranberry",reject,reject,formulated_beverage,unchanged
+sr_legacy,174149,"Beverages, OCEAN SPRAY, White Cranberry Peach",reject,reject,formulated_beverage,unchanged
+sr_legacy,174150,"Beverages, OCEAN SPRAY, Light Cranberry, Concord Grape",reject,reject,formulated_beverage,unchanged
+sr_legacy,174151,"Beverages, Fruit punch drink, with added nutrients, canned",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174152,"Beverages, Fruit punch drink, frozen concentrate",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174153,"Beverages, Fruit punch drink, frozen concentrate, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174154,"Beverages, coffee, instant, vanilla, sweetened, decaffeinated, with non dairy creamer",reject,reject,sweetened_diet,unchanged
+sr_legacy,174157,"Beverages, Wine, non-alcoholic",reject,reject,formulated_beverage,reason code corrected: not an alcoholic beverage
+sr_legacy,174159,"Beverages, chocolate-flavor beverage mix for milk, powder, with added nutrients",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174160,"Beverages, chocolate-flavor beverage mix for milk, powder, with added nutrients, prepared with whole milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174161,"Beverages, Water with added vitamins and minerals, bottles, sweetened, assorted fruit flavors",reject,reject,sweetened_diet,unchanged
+sr_legacy,174162,"Beverages, V8 SPLASH Juice Drinks, Diet Berry Blend",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174163,"Beverages, V8 SPLASH Juice Drinks, Diet Fruit Medley",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174164,"Beverages, V8 SPLASH Juice Drinks, Diet Strawberry Kiwi",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174165,"Beverages, V8 SPLASH Juice Drinks, Mango Peach",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174166,"Beverages, V8 SPLASH Juice Drinks, Orange Pineapple",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174167,"Beverages, V8 SPLASH Juice Drinks, Orchard Blend",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174168,"Beverages, V8 SPLASH Juice Drinks, Strawberry Banana",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174171,"Beverages, Energy drink, AMP",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174172,"Beverages, Energy drink, FULL THROTTLE",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174173,"Beverages, Vegetable and fruit juice drink, reduced calorie, with low-calorie sweetener, added vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174174,"Beverages, milk beverage, reduced fat, flavored and sweetened, Ready-to-drink,  added calcium, vitamin A and vitamin D",reject,reject,sweetened_diet,unchanged
+sr_legacy,174175,"Beverages, vegetable and fruit juice blend, 100% juice, with added vitamins A, C, E",reject,reject,fortified_supplement,unchanged
+sr_legacy,174176,"Beverages, fruit juice drink, reduced sugar, with vitamin E added",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174177,"Beverages, Energy drink, VAULT Zero, sugar-free, citrus flavor",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174178,"Beverages, PEPSICO QUAKER, Gatorade G2, low calorie",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174179,"Beverages, Fruit flavored drink, less than 3% juice, not fortified with vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174180,"Beverages, Fruit flavored drink containing less than 3% fruit juice, with high vitamin C",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174181,"Beverages, nutritional shake mix, high protein, powder",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174809,"Beverages, THE COCA-COLA COMPANY, NOS Zero, energy drink, sugar-free with guarana, fortified with vitamins B6 and B12",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174810,"Alcoholic beverage, whiskey sour, canned",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,174811,"Beverages, Whiskey sour mix, bottled",reject,reject,mix_powder_syrup,reason code corrected: not an alcoholic beverage
+sr_legacy,174812,"Alcoholic beverage, whiskey sour, prepared from item 14028",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,174813,"Beverages, ABBOTT, EAS soy protein powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,174814,"Beverages, CYTOSPORT, Muscle Milk, ready-to-drink",reject,reject,formulated_beverage,unchanged
+sr_legacy,174815,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174816,"Beverages, OCEAN SPRAY, Cran-Energy, Cranberry Energy Juice Drink",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174817,"Alcoholic beverage, distilled, rum, 80 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174818,"Alcoholic beverage, distilled, vodka, 80 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174819,"Alcoholic beverage, distilled, whiskey, 86 proof",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174820,"Beverages, almond milk, chocolate, ready-to-drink",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174821,"Beverages, Energy Drink with carbonated water and high fructose corn syrup",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174822,"Beverages, Energy Drink, sugar free",reject,reject,energy_sports_drink,unchanged
+sr_legacy,174823,"Beverages, ABBOTT, ENSURE, Nutritional Shake, Ready-to-Drink",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174824,"Beverages, chocolate powder, no sugar added",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174825,"Beverages, ZEVIA, cola",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174826,"Beverages, ZEVIA, cola, caffeine free",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174828,"Beverages, yellow green colored citrus soft drink with caffeine",reject,reject,conditioned_with,unchanged
+sr_legacy,174829,"Beverages, V8 SPLASH Smoothies, Strawberry Banana",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174830,"Beverages, V8 SPLASH Smoothies, Tropical Colada",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174833,"Alcoholic Beverage, wine, table, red, Cabernet Sauvignon",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174834,"Alcoholic Beverage, wine, table, red, Cabernet Franc",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174835,"Alcoholic Beverage, wine, table, red, Pinot Noir",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174836,"Alcoholic Beverage, wine, table, red, Syrah",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174837,"Alcoholic beverage, wine, table, white",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174838,"Alcoholic Beverage, wine, table, red, Lemberger",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174839,"Alcoholic Beverage, wine, table, red, Sangiovese",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174840,"Alcoholic Beverage, wine, table, red, Carignane",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174841,"Alcoholic beverage, wine, table, white, Pinot Gris (Grigio)",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174842,"Beverages, carbonated, club soda",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174843,"Alcoholic beverage, wine, table, white, Gewurztraminer",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174844,"Alcoholic beverage, wine, table, white, late harvest, Gewurztraminer",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174845,"Alcoholic beverage, wine, table, white, Semillon",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174846,"Beverages, carbonated, ginger ale",reject,reject,carbonated_soft_drink,reason code corrected: not an alcoholic beverage
+sr_legacy,174847,"Beverages, NESTEA, tea, black, ready-to-drink, lemon",reject,reject,formulated_beverage,unchanged
+sr_legacy,174848,"Alcoholic beverage, wine, table, white, Pinot Blanc",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174849,"Alcoholic beverage, wine, table, white, Muscat",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,174850,"Beverages, carbonated, low calorie, cola or pepper-type, with aspartame, without caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174851,"Beverages, carbonated, cola, without caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174852,"Beverages, carbonated, cola, regular",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174853,"Beverages, carbonated, reduced sugar, cola, contains caffeine and sweeteners",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174854,"Beverages, carbonated, orange",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174855,"Beverages, tea, black, ready-to-drink, peach, diet",reject,reject,sweetened_diet,unchanged
+sr_legacy,174856,"Beverages, OCEAN SPRAY, Ruby Red cranberry",reject,reject,formulated_beverage,unchanged
+sr_legacy,174857,"Beverages, MOTTS, Apple juice light, fortified with vitamin C",reject,reject,fortified_supplement,unchanged
+sr_legacy,174858,"Beverages, Lemonade, powder",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174859,"Lemonade, powder, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174860,"Beverages, lemonade-flavor drink, powder",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174861,"Beverages, lemonade-flavor drink, powder, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174862,"Limeade, frozen concentrate, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,174863,"Malt beverage, includes non-alcoholic beer",reject,reject,formulated_beverage,reason code corrected: not an alcoholic beverage
+sr_legacy,174864,"Beverages, OVALTINE, Classic Malt powder",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,174865,"Beverages, Malted drink mix, chocolate, with added nutrients, powder, prepared with whole milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174866,"Beverages, malted drink mix, chocolate, powder",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174867,"Beverages, Malted drink mix, chocolate, powder, prepared with whole milk",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,174868,"Beverages, orange drink, canned, with added vitamin C",reject,reject,fortified_supplement,unchanged
+sr_legacy,174869,"Strawberry-flavor beverage mix, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,174870,"Beverages, Strawberry-flavor beverage mix, powder, prepared with whole milk",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,175088,"Beverages, tea, instant, lemon, unsweetened",reject,reject,sweetened_diet,unchanged
+sr_legacy,175089,"Beverages, tea, instant, lemon, sweetened, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,175090,"Beverages, tea, instant, lemon, sweetened, prepared with water",reject,reject,sweetened_diet,unchanged
+sr_legacy,175091,"Beverages, tea, instant, sweetened with sodium saccharin, lemon-flavored, powder",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,175092,"Beverages, cocoa mix, with aspartame, powder, prepared with water",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,175093,"Beverages, carbonated, cola, fast-food cola",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,175094,"Beverages, fruit punch juice drink, frozen concentrate",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,175095,"Beverages, fruit punch juice drink, frozen concentrate, prepared with water",reject,reject,juice_drink_cocktail,unchanged
+sr_legacy,175097,"Alcoholic beverage, liqueur, coffee, 53 proof",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,175098,"Alcoholic beverage, liqueur, coffee with cream, 34 proof",reject,reject,alcoholic_cocktail_or_liqueur,formulated mixed drink or liqueur (added sugar/juice/cream); stays reject
+sr_legacy,175099,"Beverages, carbonated, low calorie, cola or pepper-type, with aspartame, contains caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,175100,"Beverages, Orange drink, breakfast type, with juice and pulp, frozen concentrate",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,175101,"Beverages, Orange drink, breakfast type, with juice and pulp, frozen concentrate, prepared with water",reject,reject,mix_powder_syrup,unchanged
+sr_legacy,175102,"Beverages, shake, fast food, strawberry",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,175105,"Beverages, orange breakfast drink, ready-to-drink, with added nutrients",reject,reject,conditioned_with,unchanged
+sr_legacy,175108,"Beverages, COCA-COLA, POWERADE, lemon-lime flavored, ready-to-drink",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,175109,"Beverages, Propel Zero, fruit-flavored, non-carbonated",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,175110,"Beverages, ARIZONA, tea, ready-to-drink, lemon",reject,reject,formulated_beverage,unchanged
+sr_legacy,175111,"Beverages, LIPTON BRISK, tea, black, ready-to-drink, lemon",reject,reject,formulated_beverage,unchanged
+sr_legacy,175112,"Alcoholic beverage, wine, dessert, dry",reject,queue,queue_alcohol_source_silent,"the FAO 2019 text read names no alcoholic beverage (only 'non-alcoholic fermentation'): source-silent is a queue state, not a conditioned reject"
+sr_legacy,175113,"Carbonated beverage, low calorie, other than cola or pepper, with sodium saccharin, without caffeine",reject,reject,carbonated_soft_drink,unchanged
+sr_legacy,175114,"Beverages, Cocoa mix, low calorie, powder, with added calcium, phosphorus, aspartame, without added sodium or vitamin A",reject,reject,dairy_shake_mix,unchanged
+sr_legacy,175115,"Beverages, fruit punch-flavor drink, powder, without added sodium, prepared with water",reject,reject,juice_drink_cocktail,unchanged
