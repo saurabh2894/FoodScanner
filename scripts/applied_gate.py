@@ -61,7 +61,6 @@ def main(argv=None) -> int:
     ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
     ap.add_argument("--synonym-rows", type=Path, default=None, help="synonym_rows.csv (from,to,source): the gate then expects synonyms.csv to be ADDITIONS-ONLY with exactly these rows, and checks alias == target behaviour in every form")
     ap.add_argument("--allow-source-change", nargs="*", default=[], help="existing lexicon terms whose SOURCE (provenance text) may differ (an owner-approved provenance-only change); nothing else may change")
-    ap.add_argument("--salted-surface", action="store_true", help="probe 'salted X', 'roasted salted X', 'toasted salted X' for every whole_food/flour row before/after and report changes and NEWLY Group 1 forms")
     ap.add_argument("--salted-surface", action="store_true", help="probe 'salted X', 'roasted salted X', 'toasted salted X' for every whole_food/flour row before/after; report changes and NEWLY Group 1 forms (a blocker)")
     ap.add_argument("--descriptor-surface", nargs="*", default=[], help="descriptor words (e.g. roasted toasted): probe '<word> <term>' for EVERY lexicon row before/after and report every change by kind")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
@@ -137,19 +136,6 @@ def main(argv=None) -> int:
                          "newly_group1": [l for l in ls if sb_[l]["group"] != 1 and sa_[l]["group"] == 1]}
             out["salted_surface"] = {"rows_probed": len(gr), "probed": len(lines), "changed": len(chs), "newly_group1": sorted(l for l in lines if sb_[l]["group"] != 1 and sa_[l]["group"] == 1), "by_form": fm,
                                      "group1_before": sum(1 for l in lines if sb_[l]["group"] == 1), "group1_after": sum(1 for l in lines if sa_[l]["group"] == 1), "changes": chs}
-        if a.salted_surface:
-            gr = [r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in ("whole_food", "flour")]
-            forms = ["salted {x}", "roasted salted {x}", "toasted salted {x}"]
-            lines = [f.format(x=t) for t in sorted(gr) for f in forms]
-            sb_, sa_ = run_probe(a.base_src, lines, td, "slb"), run_probe(a.after_src, lines, td, "sla")
-            chs = {l: [sb_[l]["group"], sa_[l]["group"]] for l in lines if (sb_[l]["group"], sb_[l]["unassessed"]) != (sa_[l]["group"], sa_[l]["unassessed"])}
-            fm = {}
-            for f in forms:
-                ls = [f.format(x=t) for t in sorted(gr)]
-                fm[f] = {"probed": len(ls), "group1_before": sum(1 for l in ls if sb_[l]["group"] == 1), "group1_after": sum(1 for l in ls if sa_[l]["group"] == 1), "changed": sum(1 for l in ls if l in chs),
-                         "newly_group1": [l for l in ls if sb_[l]["group"] != 1 and sa_[l]["group"] == 1]}
-            out["salted_surface"] = {"rows_probed": len(gr), "probed": len(lines), "changed": len(chs), "newly_group1": sorted(l for l in lines if sb_[l]["group"] != 1 and sa_[l]["group"] == 1), "by_form": fm,
-                                     "group1_before": sum(1 for l in lines if sb_[l]["group"] == 1), "group1_after": sum(1 for l in lines if sa_[l]["group"] == 1), "changes": chs}
         if a.powder_surface:
             kinds = {"whole_food", "legume", "vegetable", "food_powder"}
             names = sorted({r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in kinds})
@@ -184,9 +170,6 @@ def main(argv=None) -> int:
             blockers.append(f"{k}: abstain->4")
     if out["drift"]["differences"]:
         blockers.append(f"drift: {out['drift']['differences']}")
-    ss = out.get("salted_surface")
-    if ss and ss["newly_group1"]:
-        blockers.append(f"salted surface: {len(ss['newly_group1'])} form(s) NEWLY Group 1 through the salted path")
     ss = out.get("salted_surface")
     if ss and ss["newly_group1"]:
         blockers.append(f"salted surface: {len(ss['newly_group1'])} form(s) NEWLY Group 1 through the salted path")

@@ -62,13 +62,45 @@
  },
  "descriptor_surface": {
   "probed": 768,
-  "changed": 44,
+  "changed": 21,
   "by_word_and_kind": {
-   "toasted|flour": 18,
-   "toasted|whole_food": 26
+   "toasted|flour": 14,
+   "toasted|whole_food": 7
   },
   "changed_kinds_outside_scope": [],
   "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 47,
+  "probed": 141,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 47,
+    "group1_before": 47,
+    "group1_after": 47,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 47,
+    "group1_before": 47,
+    "group1_after": 47,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 47,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 94,
+  "group1_after": 94,
+  "changes": {}
  },
  "powder_surface": {
   "probed": 552,
@@ -369,6 +401,183 @@
    "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
    "unassessed_after": []
   },
+  "milk (cow)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (cow): cow), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (cow milk)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (cow)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (cow): cow), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "egg (cow milk)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goat milk (pasteurized)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: goat milk (pasteurized)",
+   "unassessed_after": [
+    "goat milk (pasteurized)"
+   ]
+  },
+  "cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cow milk",
+   "unassessed_after": [
+    "cow milk"
+   ]
+  },
+  "milk (cow milk, xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (cow milk, xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk solids (pasteurized skimmed cow milk)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (pasteurized skimmed cow milk): pasteurized skimmed cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk solids (cow milk)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "toasted milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted milk\")",
+   "unassessed_after": [
+    "toasted milk"
+   ]
+  },
+  "toasted egg": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted egg",
+   "unassessed_after": [
+    "toasted egg"
+   ]
+  },
+  "toasted sweetened oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted sweetened oat flour",
+   "unassessed_after": [
+    "toasted sweetened oat flour"
+   ]
+  },
+  "toasted honey oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted honey oat flour",
+   "unassessed_after": [
+    "toasted honey oat flour"
+   ]
+  },
+  "toasted flavoured oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted flavoured oat flour",
+   "unassessed_after": [
+    "toasted flavoured oat flour"
+   ]
+  },
+  "toasted spiced oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted spiced oat flour",
+   "unassessed_after": [
+    "toasted spiced oat flour"
+   ]
+  },
+  "toasted oats": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted oats",
+   "unassessed_after": [
+    "toasted oats"
+   ]
+  },
+  "toasted wheat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted wheat\")",
+   "unassessed_after": [
+    "toasted wheat"
+   ]
+  },
   "roasted buckwheat": {
    "group_before": 1,
    "group_after": 1,
@@ -583,6 +792,97 @@
    "row_after": {
     "term": "almonds",
     "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (pasteurized cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (buffalo milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (goat milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted brown rice": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted whole wheat flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "whole wheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
    },
    "drivers_after": [
     "single recognised unprocessed food"
