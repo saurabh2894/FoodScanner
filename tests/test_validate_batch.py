@@ -215,5 +215,6 @@ def test_append_synonyms_keeps_existing_bytes_and_quotes(tmp_path):
     f = tmp_path / "synonyms.csv"
     f.write_bytes(b"from,to,source\r\na,b,c")
     vb.append_synonyms(f, [{"from": "x seed", "to": "x", "source": 'has "quotes", commas'}])
-    rows = list(csv.DictReader(f.read_text(newline="").splitlines()))
+    with f.open(encoding="utf-8", newline="") as fh:               # portable on 3.12 (Path.read_text(newline=) is 3.13+); newline="" keeps the CRLF and the quoting intact
+        rows = list(csv.DictReader(fh))
     assert rows[-1] == {"from": "x seed", "to": "x", "source": 'has "quotes", commas'} and rows[0]["from"] == "a"
