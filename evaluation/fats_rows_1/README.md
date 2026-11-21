@@ -19,8 +19,8 @@ No row is purity-claiming (FDC names only 'Oil, X'); none is NAMED beyond lard. 
 | lexicon | 411 -> 431 (+20 culinary rows; none changed or removed); synonyms.csv, markers.csv byte-identical; no code change |
 | frozen 66 | changed 0; unexplained 0; abstain->4 0 |
 | out-of-sample 32 | changed 1: S01 (pasta salad label): 'canola oil' moves from the Not-assessed list to recognised, reason text changes, group stays abstain; attributed to the row `canola oil`; unexplained 0; abstain->4 0 |
-| drift (556) | 0 differences |
-| salted (147) / descriptor (812) / powder (558) surfaces | 0 changed |
+| drift (561) | 0 differences |
+| salted (162) / descriptor (822) / powder (573) surfaces (base rows now include the dairy additions) | 0 changed |
 | after-build proof | all 20 rows recognised after, none before |
 | suite | **1909 passed, 5 xfailed** (main 1833 + 76 new fats tests; earlier 1825 and 1886 are stale) |
 | parity | **819/819** identical (main 801 + 18 added entries, 0 removed; reason and driver compared; earlier 778 and 807 are stale) |
