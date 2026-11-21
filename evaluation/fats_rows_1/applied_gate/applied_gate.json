@@ -256,15 +256,15 @@
   "by_form": {
    "salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "roasted salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
@@ -276,8 +276,8 @@
     "newly_group1": []
    }
   },
-  "group1_before": 56,
-  "group1_after": 56,
+  "group1_before": 10,
+  "group1_after": 10,
   "changes": {}
  },
  "powder_surface": {

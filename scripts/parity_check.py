@@ -239,6 +239,10 @@ CORPUS = [
     "Ingredients: Walnut Oil", "Ingredients: Lard", "Ingredients: Wheat Germ Oil", "Ingredients: Hydrogenated Lard", "Ingredients: Partially Hydrogenated Palm Kernel Oil", "Ingredients: Interesterified Corn Oil",
     "Ingredients: Rice, Almond Oil", "Ingredients: Walnuts (walnut oil)", "Ingredients: Corn and Canola Oil", "Ingredients: Corn Oil (XQ9)", "Ingredients: Corn Oil Powder", "Ingredients: Salted Lard", "Ingredients: Nutmeg Butter",
     "Ingredients: Shea Butter", "Ingredients: Rapeseed Oil", "Ingredients: Beef Tallow", "Ingredients: Lard, Salt", "Ingredients: Milk, Lard",
+    # whole-food-guard-1 (tests/test_whole_food_guard_1.py, SYNTHETIC): added-substance and distinct-nested-food abstentions on whole_food rows; same-food and species brackets unchanged
+    "Ingredients: Salted Milk", "Ingredients: Milk (sugar)", "Ingredients: Milk (sunflower oil)", "Ingredients: Eggs (canned)", "Ingredients: Eggs (brine)", "Ingredients: Ragi (preserved)", "Ingredients: Salted Egg",
+    "Ingredients: Rice (Egg)", "Ingredients: Eggs (Rice)", "Ingredients: Milk (Rice)", "Ingredients: Milk (Buffalo Milk)", "Ingredients: Eggs (Egg)", "Ingredients: Dehydrated Vegetable (Onion)", "Ingredients: Milk (Salted), Water",
+    "Ingredients: Milk, Eggs (Rice)", "Ingredients: Unsalted Milk", "Ingredients: Salted Rice", "Ingredients: Rice (sugar)", "Ingredients: Rice (salt, sunflower oil)", "Ingredients: Salted Rice (canned)", "Ingredients: Rice (salt, sugar)", "Ingredients: Salted Buckwheat (brine)", "Ingredients: Rice (Wheat)", "Ingredients: Rice (Walnuts)", "Ingredients: Milk (Milk Solids)", "Ingredients: Milk (Toned Milk)", "Ingredients: Milk solids (Toned Milk) & Active Culture", "Ingredients: Dehydrated Vegetable (Peas)", "Ingredients: Toned Milk (Goat Milk)",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
