@@ -1,0 +1,1177 @@
+{
+  "gate": "real_label_browser_acceptance",
+  "runTimestamp": "2026-11-21T16:27:23.034Z",
+  "target": "http://127.0.0.1:33169/index.html",
+  "browser": "157.0.8103.78",
+  "provenance": {
+    "gitHead": "4e626f9cc4775bed7ff4426c10eedcc6c93eb3ae",
+    "sourcesModifiedVsHead": false,
+    "distFiles": {
+      "index.html": {
+        "sha256": "ab0988e78bf36a412b1310358d2f2749a97e2295f7cbbb6c4ed14d157be0f785",
+        "bytes": 587830
+      },
+      "foodscan-preview.html": {
+        "sha256": "6b01019add4ed818ddf3e12632560ab9c9a94fb1454374defa7de82b51effc11",
+        "bytes": 587053
+      }
+    },
+    "status": "exact_rebuild_match",
+    "reason": null,
+    "expectedParityTotal": 921,
+    "rebuildSha256": {
+      "foodscan-preview.html": "6b01019add4ed818ddf3e12632560ab9c9a94fb1454374defa7de82b51effc11",
+      "index.html": "ab0988e78bf36a412b1310358d2f2749a97e2295f7cbbb6c4ed14d157be0f785"
+    }
+  },
+  "build": {
+    "status": "exact_rebuild_match",
+    "footerStamp": {
+      "text": "This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; 921 of 921 matched at build time.",
+      "matched": 921,
+      "total": 921,
+      "note": "a static string written at build time: a stamp, not proof of which commit built the page"
+    }
+  },
+  "labels": {
+    "L01": {
+      "name": "Multigrain flour blend pack",
+      "kind": "REAL_LABEL",
+      "provenance": "Owner's pack photo as received through a chat relay: a 57260-byte 607x494 copy, NOT the owner's original camera file (the owner's original is 81439 bytes and is not in the repository). Reference text is the owner's transcription.",
+      "why": "Bracketed blend pair split with shared modifier, footnote marks, powders and unplaced grains: honest abstention.",
+      "hasPhysicalPhoto": true,
+      "imageSha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+      "paste": {
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group; other open items: recognised by name only, no source read places Sprouted Ragi, Sprouted Jowar, Vitamins#, Minerals##; a powder is named and its composition is not established: Date Powder (9%), Banana Powder, Strawberry Powder (5%), Beetroot Powder",
+        "group": null,
+        "completeness": "COMPLETE",
+        "drivers": [
+          "Antioxidant (Natural Tocopherol): \"antioxidant\" (unlisted_additive)"
+        ],
+        "pixels": {
+          "w": 704,
+          "h": 1255,
+          "nonBackgroundFraction": 0.1807,
+          "distinctColours": 48
+        },
+        "screenshot": {
+          "file": "paste_l01.png",
+          "bytes": 149416,
+          "sha256": "487dee4a1a245957ab6a2405bb60760ce20e721c06b1eace0f292074dcccc474"
+        }
+      },
+      "photo": {
+        "durationMs": 3305,
+        "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "extractedWords": 62,
+        "referenceWordRecall": 1,
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group; other open items: recognised by name only, no source read places Sprouted Ragi, Sprouted Jowar, Vitamins”, Minerals**; a powder is named and its composition is not established: Date Powder (9%), Banana Powder, Strawberry Powder (5%), Beetroot Powder",
+        "group": null,
+        "completeness": "COMPLETE",
+        "completenessNote": "recorded, not part of the group check",
+        "drivers": [
+          "Antioxidant (Natural Tocopherol): \"antioxidant\" (unlisted_additive)"
+        ],
+        "extractedTextFirst400": "INGREDIENTS\n\nMultigrain Flour Blend (45.7%) [Sprouted Ragi &\nJowar (23.4%), Rice & Oat (22.3%)], Whole Milk\nPowder (29.5%), Date Powder (9%), Banana\nPowder, Strawberry Powder (5%), Skimmed Milk\nPowder, Vitamins” and Minerals** , Beetroot\nPowder, Antioxidant (Natural Tocopherol).\n\nTHIS PRODUCT CONTAINS 23% MILLETS\nContains Milk & Oats. Made in a facility that\nalso processes Soy, Wheat & Nuts. May c",
+        "screenshot": {
+          "file": "photo_l01.png",
+          "bytes": 149670,
+          "sha256": "5f37aeceeff0011ce43b26884c847e16ad3eb64ccee999c3f5a78dc7d81ec61d"
+        }
+      },
+      "ocrCorrection": {
+        "status": "run",
+        "replacements": [
+          "Vitamins” -> Vitamins#",
+          "Minerals** -> Minerals##"
+        ],
+        "basis": "the owner's reference transcription reads \"Vitamins# and Minerals##\"",
+        "beforeGroup": null,
+        "afterGroup": null,
+        "screenshot": {
+          "file": "l01_ocr_corrected_paste.png",
+          "bytes": 136641,
+          "sha256": "8f38b9b08473d669aca55320e20c1cfce254277392c77be7f0dd5ced5219b762"
+        }
+      }
+    },
+    "L02": {
+      "name": "Millet puff snack pack",
+      "kind": "REAL_LABEL",
+      "provenance": "Real pack photo in tests/fixtures, cropped to the ingredient panel. Reference text transcribed from it.",
+      "why": "Section headings with percentages, INS codes, unassessed terms, flavour marker.",
+      "hasPhysicalPhoto": true,
+      "imageSha256": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+      "paste": {
+        "headline": "NOVA group 4: ultra-processed foods",
+        "group": 4,
+        "completeness": "COMPLETE",
+        "drivers": [
+          "Natural and Nature Identical Flavours (Seasoning 12%): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)"
+        ],
+        "pixels": {
+          "w": 704,
+          "h": 1832,
+          "nonBackgroundFraction": 0.0944,
+          "distinctColours": 72
+        },
+        "screenshot": {
+          "file": "paste_l02.png",
+          "bytes": 127446,
+          "sha256": "85d8e3985c1b858822e5b4f71273f5dfb6c2453fe069e60f7839fccb06962b75"
+        }
+      },
+      "photo": {
+        "durationMs": 4228,
+        "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "extractedWords": 58,
+        "referenceWordRecall": 1,
+        "headline": "NOVA group 4: ultra-processed foods",
+        "group": 4,
+        "completeness": "COMPLETE",
+        "completenessNote": "recorded, not part of the group check",
+        "drivers": [
+          "Natural and Nature Identical Flavours (Seasoning 12%): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)"
+        ],
+        "extractedTextFirst400": "| ~ INGREDIENTS:\n\nPuff 88%: Supergrain Blend (Jowar, Foxtail Millet,\nCorn, Rice)(72%), Rice Bran 0il (16%).\nSeasoning 12%: Vegetables and Spices (Onion,\nGarlic, Tomato, Chilli, Amchur, Tamarind), Salt,\nNatural and Nature Identical Flavours, Raw Sugar,\nAcidity Regulators (INS330, INS236, INS334),\nPotassium Chloride - Salt Substitute (INS 508),\nRosemary Extract - Antioxidant (INS 382).\nTHIS PRODUCT ",
+        "screenshot": {
+          "file": "photo_l02.png",
+          "bytes": 140741,
+          "sha256": "15cd5a13b076ac8be081099f9c8d2934762d4a399e64551e84334b27587fc6db"
+        }
+      }
+    },
+    "L03": {
+      "name": "Potato chips pack",
+      "kind": "REAL_LABEL",
+      "provenance": "Real pack photo in tests/fixtures at small scale. Reference text transcribed from it.",
+      "why": "Unclosed bracket: structural warning present and Group 4 only through the strong-marker exception (Option A).",
+      "hasPhysicalPhoto": true,
+      "imageSha256": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+      "paste": {
+        "headline": "NOVA group 4: ultra-processed foods",
+        "group": 4,
+        "completeness": "UNCERTAIN",
+        "drivers": [
+          "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+          "Flavour (Natural and Nature Identical Flavouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+          "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+          "Flavour Enhancers (627, 631): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+          "Flavour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+          "Flavour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+          "Flavour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+        ],
+        "pixels": {
+          "w": 704,
+          "h": 1956,
+          "nonBackgroundFraction": 0.1665,
+          "distinctColours": 73
+        },
+        "screenshot": {
+          "file": "paste_l03.png",
+          "bytes": 174369,
+          "sha256": "d0f3a047b0547ad35df37cd2e4005e1d6685f67a069bed6666a058e8c70db8dd"
+        }
+      },
+      "photo": {
+        "durationMs": 3352,
+        "status": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "extractedWords": 93,
+        "referenceWordRecall": 0.867,
+        "headline": "NOVA group 4: ultra-processed foods",
+        "group": 4,
+        "completeness": "UNCERTAIN",
+        "completenessNote": "recorded, not part of the group check",
+        "drivers": [
+          "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+          "Flavour (Natural and Nature identical Ravouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+          "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+          "Ravour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+          "Ravour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+          "Ravour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+        ],
+        "extractedTextFirst400": "VP. UY VRS RAP FW EEF WYNN Tvyve Sw yYyyvw\nINGREDIENTS: Potato (83%), Edible Vegetable OI\",\n\"Seasoning (Sugar, lodsed Salt, Mik Sods (1.2%), Spices\nand Condiments, Maltodextrin, Flavour (Natural and Nature\nidentical Ravouring Substances), Cheese Powder (0.3%),\nHydrolysed Vegetable Protein, Ravour Enhancers (627,\n631), Edible Vegetable Ol (Pam, Coconut).\n\n*As flavouring agent.\n\n“To know the specifi",
+        "screenshot": {
+          "file": "photo_l03.png",
+          "bytes": 172177,
+          "sha256": "2621433b2bdbf5b5f4946d8a496c684f766e8b16b4df92f63eda1e24f0b04f5a"
+        }
+      }
+    },
+    "L04": {
+      "name": "Cheese/milk product with 'contains no' statement (R1)",
+      "kind": "REAL_LABEL",
+      "provenance": "Open Food Facts India text (barcode prefix 890); no photo in the repository.",
+      "why": "The negated 'contains no added flavour' span declares nothing; the abstention comes from an unlisted stabiliser code and a cut-off item.",
+      "hasPhysicalPhoto": false,
+      "imageSha256": null,
+      "paste": {
+        "headline": "Not enough information: only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group; other open items: not in the local vocabulary: MICROBIAL CULTU",
+        "group": null,
+        "completeness": "COMPLETE",
+        "drivers": [
+          "PAST STABILIZER (INS 509): \"stabiliser\" (unlisted_additive)",
+          "PAST STABILIZER (INS 509): INS 509 (not in local mapping)"
+        ],
+        "pixels": {
+          "w": 704,
+          "h": 813,
+          "nonBackgroundFraction": 0.092,
+          "distinctColours": 43
+        },
+        "screenshot": {
+          "file": "paste_l04.png",
+          "bytes": 141087,
+          "sha256": "2582b0290d2d8a96a1eafaa86bd90ea31bf547349b61303c60dc79ae7003e383"
+        }
+      }
+    },
+    "L05": {
+      "name": "Potato snack with 'no artificial ...' statement (R2)",
+      "kind": "REAL_LABEL",
+      "provenance": "Open Food Facts India text; no photo in the repository.",
+      "why": "The absence statement declares nothing; the abstention is a vocabulary gap (named), not a negation effect.",
+      "hasPhysicalPhoto": false,
+      "imageSha256": null,
+      "paste": {
+        "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Spices & Condiments",
+        "group": null,
+        "completeness": "COMPLETE",
+        "drivers": [],
+        "pixels": {
+          "w": 704,
+          "h": 614,
+          "nonBackgroundFraction": 0.0749,
+          "distinctColours": 42
+        },
+        "screenshot": {
+          "file": "paste_l05.png",
+          "bytes": 113315,
+          "sha256": "1fb4ad81c38443cdf109c5d29731fb36952ac318a881dd6cd907b97b0f5214aa"
+        }
+      }
+    },
+    "L06": {
+      "name": "Flavoured curd, mixed positive and negative statement (R3)",
+      "kind": "REAL_LABEL",
+      "provenance": "Open Food Facts India text; no photo in the repository.",
+      "why": "Positive added-flavour span drives Group 4; the 'no preservatives' span does not suppress it.",
+      "hasPhysicalPhoto": false,
+      "imageSha256": null,
+      "paste": {
+        "headline": "NOVA group 4: ultra-processed foods",
+        "group": 4,
+        "completeness": "COMPLETE",
+        "drivers": [
+          "CONTAINS ADDED FLAVOUR(S) (NATURE IDENTICAL & ARTIFICIAL FLAVOURING SUBSTANCES-ROSE FLAVOUR): declared in \"Contains\" statement: \"flavour\"research/02 marker class 2 (flavourings)"
+        ],
+        "pixels": {
+          "w": 704,
+          "h": 707,
+          "nonBackgroundFraction": 0.0912,
+          "distinctColours": 70
+        },
+        "screenshot": {
+          "file": "paste_l06.png",
+          "bytes": 122625,
+          "sha256": "489a951cd858d34d92ab87470f45d9fa6027c82553d245e8dcd2515566f6bf0c"
+        }
+      }
+    }
+  },
+  "controls": {
+    "synthetic_edit_reanalyse": {
+      "kind": "SYNTHETIC_MUTATION_CONTROL",
+      "action": "appended \", Sugar, Maltodextrin.\" to the L01 reference text",
+      "beforeGroup": null,
+      "afterGroup": 4,
+      "afterDrivers": [
+        "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1"
+      ],
+      "screenshot": {
+        "file": "control_edit_reanalyse.png",
+        "bytes": 126141,
+        "sha256": "9c7ee3a59b9be39fa42aed2df8a83f5b1c26bf56ec0d65e686babcae0f10652a"
+      }
+    },
+    "empty": {
+      "kind": "SYNTHETIC_CONTROL",
+      "headline": "Not enough information: No text to analyse"
+    },
+    "unknown": {
+      "kind": "SYNTHETIC_CONTROL",
+      "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: SyntheticChemicalX999, FakeCompoundZ404"
+    }
+  },
+  "viewport": {
+    "mobile_390x844": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "analyse": {
+        "width": 92,
+        "height": 35,
+        "visible": true
+      },
+      "result": {
+        "width": 358,
+        "height": 1785,
+        "visible": true
+      },
+      "pixels": {
+        "w": 358,
+        "h": 1787,
+        "nonBackgroundFraction": 0.2232,
+        "distinctColours": 48
+      },
+      "screenshot": {
+        "file": "viewport_mobile_390x844.png",
+        "sha256": "d505849fd07c9fd357d3fe7e1367190c93bee1763938423ca7d0cc39184363d6"
+      }
+    },
+    "desktop_1280x720": {
+      "clientWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "analyse": {
+        "width": 92,
+        "height": 35,
+        "visible": true
+      },
+      "result": {
+        "width": 704,
+        "height": 1255,
+        "visible": true
+      },
+      "pixels": {
+        "w": 704,
+        "h": 1255,
+        "nonBackgroundFraction": 0.1807,
+        "distinctColours": 48
+      },
+      "screenshot": {
+        "file": "viewport_desktop_1280x720.png",
+        "sha256": "487dee4a1a245957ab6a2405bb60760ce20e721c06b1eace0f292074dcccc474"
+      }
+    }
+  },
+  "liveSmoke": null,
+  "limitations": [
+    "Files are attached with the browser automation file-input API; the operating-system picker (and its cancel) is not exercised.",
+    "Pixel checks are screenshot decodes (not blank, content present) plus DOM metrics; they do not prove visual correctness of every element.",
+    "OCR runs the page's bundled Tesseract: output can vary between runs and browsers; photo expectations name only items that were stable and label-visible."
+  ],
+  "checks": [
+    {
+      "name": "local build identity: dist is an exact rebuild of the current sources",
+      "pass": true,
+      "detail": {
+        "status": "exact_rebuild_match"
+      }
+    },
+    {
+      "name": "footer stamp equals the parity total of the current sources (stamp consistency only)",
+      "pass": true,
+      "detail": {
+        "observed": {
+          "text": "This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; 921 of 921 matched at build time.",
+          "matched": 921,
+          "total": 921,
+          "note": "a static string written at build time: a stamp, not proof of which commit built the page"
+        },
+        "expected": 921
+      }
+    },
+    {
+      "name": "L01 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": null,
+        "observed": null,
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \""
+      }
+    },
+    {
+      "name": "L01 paste: driver/weak-evidence item \"Antioxidant (Natural Tocopherol)\"",
+      "pass": true,
+      "detail": [
+        "Antioxidant (Natural Tocopherol): \"antioxidant\" (unlisted_additive)"
+      ]
+    },
+    {
+      "name": "L01 paste: result mentions \"recognised by name only\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"Sprouted Ragi\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"Sprouted Jowar\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"was read as shared by both sides of \"Sprouted Ragi & Jowar\"\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"applies to the pair\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"Date Powder\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"Banana Powder\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result mentions \"Beetroot Powder\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result does not contain \"NOVA group 4\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: result does not contain \"DRIVEN BY\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "COMPLETE",
+        "observed": "COMPLETE"
+      }
+    },
+    {
+      "name": "L01 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1255,
+        "nonBackgroundFraction": 0.1807,
+        "distinctColours": 48
+      }
+    },
+    {
+      "name": "L02 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": 4,
+        "observed": 4,
+        "headline": "NOVA group 4: ultra-processed foods"
+      }
+    },
+    {
+      "name": "L02 paste: driver/weak-evidence item \"Natural and Nature Identical Flavours\"",
+      "pass": true,
+      "detail": [
+        "Natural and Nature Identical Flavours (Seasoning 12%): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)"
+      ]
+    },
+    {
+      "name": "L02 paste: result mentions \"Puff 88%\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"Seasoning 12%\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"INS 330\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"INS 296\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"INS 334\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"INS 508\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"INS 392\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"Amchur\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result mentions \"Tamarind\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "COMPLETE",
+        "observed": "COMPLETE"
+      }
+    },
+    {
+      "name": "L02 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1832,
+        "nonBackgroundFraction": 0.0944,
+        "distinctColours": 72
+      }
+    },
+    {
+      "name": "L03 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": 4,
+        "observed": 4,
+        "headline": "NOVA group 4: ultra-processed foods"
+      }
+    },
+    {
+      "name": "L03 paste: driver/weak-evidence item \"Maltodextrin\"",
+      "pass": true,
+      "detail": [
+        "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+        "Flavour (Natural and Nature Identical Flavouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+        "Flavour Enhancers (627, 631): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Flavour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+        "Flavour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+        "Flavour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+      ]
+    },
+    {
+      "name": "L03 paste: driver/weak-evidence item \"Hydrolysed Vegetable Protein\"",
+      "pass": true,
+      "detail": [
+        "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+        "Flavour (Natural and Nature Identical Flavouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+        "Flavour Enhancers (627, 631): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Flavour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+        "Flavour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+        "Flavour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+      ]
+    },
+    {
+      "name": "L03 paste: driver/weak-evidence item \"Flavour Enhancers (627, 631)\"",
+      "pass": true,
+      "detail": [
+        "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+        "Flavour (Natural and Nature Identical Flavouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+        "Flavour Enhancers (627, 631): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Flavour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+        "Flavour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+        "Flavour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+      ]
+    },
+    {
+      "name": "L03 paste: result mentions \"was never closed\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: result mentions \"List may be incomplete (unclosed bracket)\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: result mentions \"Group 4 stands because the markers found are already enough\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: result mentions \"Cheese Powder (0.3%)\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: result mentions \"Spices and Condiments\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "UNCERTAIN",
+        "observed": "UNCERTAIN"
+      }
+    },
+    {
+      "name": "L03 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1956,
+        "nonBackgroundFraction": 0.1665,
+        "distinctColours": 73
+      }
+    },
+    {
+      "name": "L04 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": null,
+        "observed": null,
+        "headline": "Not enough information: only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabili"
+      }
+    },
+    {
+      "name": "L04 paste: driver/weak-evidence item \"PAST STABILIZER (INS 509)\"",
+      "pass": true,
+      "detail": [
+        "PAST STABILIZER (INS 509): \"stabiliser\" (unlisted_additive)",
+        "PAST STABILIZER (INS 509): INS 509 (not in local mapping)"
+      ]
+    },
+    {
+      "name": "L04 paste: result mentions \"INS 509\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: result mentions \"MICROBIAL CULTU\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: result mentions \"Not in the table yet\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: result does not contain \"NOVA group 4\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: result does not contain \"DECLARED ON A CONTAINS LINE\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L04 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "COMPLETE",
+        "observed": "COMPLETE"
+      }
+    },
+    {
+      "name": "L04 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 813,
+        "nonBackgroundFraction": 0.092,
+        "distinctColours": 43
+      }
+    },
+    {
+      "name": "L05 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": null,
+        "observed": null,
+        "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judge"
+      }
+    },
+    {
+      "name": "L05 paste: result mentions \"not in the local vocabulary\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: result mentions \"Refined Palmolien Oil\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: result mentions \"Spices & Condiments\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: result does not contain \"NOVA group 4\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: result does not contain \"DECLARED ON A CONTAINS LINE\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: result does not contain \"DRIVEN BY\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L05 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "COMPLETE",
+        "observed": "COMPLETE"
+      }
+    },
+    {
+      "name": "L05 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 614,
+        "nonBackgroundFraction": 0.0749,
+        "distinctColours": 42
+      }
+    },
+    {
+      "name": "L06 paste: the textarea held exactly the fixture text that was analysed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L06 paste: group",
+      "pass": true,
+      "detail": {
+        "expected": 4,
+        "observed": 4,
+        "headline": "NOVA group 4: ultra-processed foods"
+      }
+    },
+    {
+      "name": "L06 paste: driver/weak-evidence item \"CONTAINS ADDED FLAVOUR(S)\"",
+      "pass": true,
+      "detail": [
+        "CONTAINS ADDED FLAVOUR(S) (NATURE IDENTICAL & ARTIFICIAL FLAVOURING SUBSTANCES-ROSE FLAVOUR): declared in \"Contains\" statement: \"flavour\"research/02 marker class 2 (flavourings)"
+      ]
+    },
+    {
+      "name": "L06 paste: result mentions \"DECLARED ON A CONTAINS LINE\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L06 paste: result mentions \"ROSE FLAVOUR\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L06 paste: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L06 paste: completeness (separate from group)",
+      "pass": true,
+      "detail": {
+        "expected": "COMPLETE",
+        "observed": "COMPLETE"
+      }
+    },
+    {
+      "name": "L06 paste: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 707,
+        "nonBackgroundFraction": 0.0912,
+        "distinctColours": 70
+      }
+    },
+    {
+      "name": "CONTROL edit-and-reanalyse: submitted text is exactly the edited text and differs from the original",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CONTROL edit-and-reanalyse: the result changed with the input (group and driver)",
+      "pass": true,
+      "detail": {
+        "before": null,
+        "after": 4
+      }
+    },
+    {
+      "name": "CONTROL empty input: abstains with \"No text to analyse\" and no stale group",
+      "pass": true,
+      "detail": "Not enough information: No text to analyse"
+    },
+    {
+      "name": "CONTROL unknown compounds: abstain and name them",
+      "pass": true,
+      "detail": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: SyntheticChemical"
+    },
+    {
+      "name": "L01: fixture image is the recorded file (sha256)",
+      "pass": true,
+      "detail": {
+        "observed": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+        "expected": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18"
+      }
+    },
+    {
+      "name": "L01 photo: reading finished with \"Done\" (not failed/stalled/timeout)",
+      "pass": true,
+      "detail": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again."
+    },
+    {
+      "name": "L01 photo: extracted text is non-empty (>= 20 words)",
+      "pass": true,
+      "detail": {
+        "words": 62
+      }
+    },
+    {
+      "name": "L01 photo: group",
+      "pass": true,
+      "detail": {
+        "expected": null,
+        "observed": null,
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \""
+      }
+    },
+    {
+      "name": "L01 photo: driver/weak-evidence item \"Antioxidant (Natural Tocopherol)\"",
+      "pass": true,
+      "detail": [
+        "Antioxidant (Natural Tocopherol): \"antioxidant\" (unlisted_additive)"
+      ]
+    },
+    {
+      "name": "L01 photo: result mentions \"Sprouted\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 photo: result does not contain \"NOVA group 4\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 photo: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 photo: extracted text contains \"Multigrain Flour Blend\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 photo: extracted text contains \"Date Powder\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 photo: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1256,
+        "nonBackgroundFraction": 0.1802,
+        "distinctColours": 48
+      }
+    },
+    {
+      "name": "L01 OCR correction: corrected text differs from the OCR text and is exactly what was submitted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L01 OCR correction: result reflects the correction (footnote items now read Vitamins#/Minerals##, still honest abstention)",
+      "pass": true,
+      "detail": {
+        "changed": true
+      }
+    },
+    {
+      "name": "L02: fixture image is the recorded file (sha256)",
+      "pass": true,
+      "detail": {
+        "observed": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+        "expected": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb"
+      }
+    },
+    {
+      "name": "L02 photo: reading finished with \"Done\" (not failed/stalled/timeout)",
+      "pass": true,
+      "detail": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again."
+    },
+    {
+      "name": "L02 photo: extracted text is non-empty (>= 20 words)",
+      "pass": true,
+      "detail": {
+        "words": 58
+      }
+    },
+    {
+      "name": "L02 photo: group",
+      "pass": true,
+      "detail": {
+        "expected": 4,
+        "observed": 4,
+        "headline": "NOVA group 4: ultra-processed foods"
+      }
+    },
+    {
+      "name": "L02 photo: driver/weak-evidence item \"Natural and Nature Identical Flavours\"",
+      "pass": true,
+      "detail": [
+        "Natural and Nature Identical Flavours (Seasoning 12%): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)"
+      ]
+    },
+    {
+      "name": "L02 photo: result mentions \"Seasoning 12%\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 photo: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 photo: extracted text contains \"Supergrain Blend\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 photo: extracted text contains \"Natural and Nature Identical Flavours\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L02 photo: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1874,
+        "nonBackgroundFraction": 0.1566,
+        "distinctColours": 72
+      }
+    },
+    {
+      "name": "L03: fixture image is the recorded file (sha256)",
+      "pass": true,
+      "detail": {
+        "observed": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+        "expected": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9"
+      }
+    },
+    {
+      "name": "L03 photo: reading finished with \"Done\" (not failed/stalled/timeout)",
+      "pass": true,
+      "detail": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again."
+    },
+    {
+      "name": "L03 photo: extracted text is non-empty (>= 20 words)",
+      "pass": true,
+      "detail": {
+        "words": 93
+      }
+    },
+    {
+      "name": "L03 photo: group",
+      "pass": true,
+      "detail": {
+        "expected": 4,
+        "observed": 4,
+        "headline": "NOVA group 4: ultra-processed foods"
+      }
+    },
+    {
+      "name": "L03 photo: driver/weak-evidence item \"Maltodextrin\"",
+      "pass": true,
+      "detail": [
+        "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+        "Flavour (Natural and Nature identical Ravouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+        "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+        "Ravour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+        "Ravour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+        "Ravour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+      ]
+    },
+    {
+      "name": "L03 photo: result mentions \"List may be incomplete (unclosed bracket)\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 photo: result does not contain \"NOVA group 3\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 photo: extracted text contains \"Maltodextrin\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 photo: extracted text contains \"Hydrolysed Vegetable Protein\"",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "L03 photo: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1998,
+        "nonBackgroundFraction": 0.1866,
+        "distinctColours": 73
+      }
+    },
+    {
+      "name": "viewport mobile_390x844: no horizontal overflow and Analyse button inside the viewport",
+      "pass": true,
+      "detail": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "overflow": false,
+        "analyse": {
+          "width": 92,
+          "height": 35,
+          "visible": true
+        },
+        "result": {
+          "width": 358,
+          "height": 1785,
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "viewport mobile_390x844: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 358,
+        "h": 1787,
+        "nonBackgroundFraction": 0.2232,
+        "distinctColours": 48
+      }
+    },
+    {
+      "name": "viewport desktop_1280x720: no horizontal overflow and Analyse button inside the viewport",
+      "pass": true,
+      "detail": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "overflow": false,
+        "analyse": {
+          "width": 92,
+          "height": 35,
+          "visible": true
+        },
+        "result": {
+          "width": 704,
+          "height": 1255,
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "viewport desktop_1280x720: result card screenshot has content",
+      "pass": true,
+      "detail": {
+        "w": 704,
+        "h": 1255,
+        "nonBackgroundFraction": 0.1807,
+        "distinctColours": 48
+      }
+    },
+    {
+      "name": "no uncaught page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "missingEvidence": [],
+  "inventory": {
+    "realLabels": 6,
+    "withPhysicalPhoto": 3,
+    "pasteOnly": 3,
+    "photoKeys": [
+      "L01",
+      "L02",
+      "L03"
+    ]
+  },
+  "summary": {
+    "checks": 116,
+    "passed": 116,
+    "failed": 0,
+    "failedNames": [],
+    "missingEvidence": [],
+    "partial": null,
+    "buildStatus": "exact_rebuild_match"
+  }
+}

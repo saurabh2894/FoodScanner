@@ -1,0 +1,21 @@
+{
+  "gitHead": "1c793219be4285729d89797d883c813131847f8a",
+  "sourcesModifiedVsHead": false,
+  "distFiles": {
+    "index.html": {
+      "sha256": "8d618cbc960a9d2045d7dad36c1849c894870586b2c83305768099eaec25718b",
+      "bytes": 590477
+    },
+    "foodscan-preview.html": {
+      "sha256": "d116a7430452f1d28c70dba6f4aca971fe4290e9a2c1e79182ec4e184a726d50",
+      "bytes": 589700
+    }
+  },
+  "status": "exact_rebuild_match",
+  "reason": null,
+  "expectedParityTotal": 921,
+  "rebuildSha256": {
+    "foodscan-preview.html": "d116a7430452f1d28c70dba6f4aca971fe4290e9a2c1e79182ec4e184a726d50",
+    "index.html": "8d618cbc960a9d2045d7dad36c1849c894870586b2c83305768099eaec25718b"
+  }
+}
