@@ -220,11 +220,12 @@ def fat_powder(ing, kind: str) -> bool:
     return kind == "culinary" and is_fat_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS) and not fat_powder_stated(ing)
 
 
-# animal-guard-1 (owner Priority 3): rows of ANIMAL foods (a whole_food row whose source records the class-instance placement under the FAO Group 1 example below) get two bounded rules. (1) 'dried' or 'dehydrated' animal food is
-# Group 3: the FAO Group 3 example names it ("salted, dried, cured, or smoked meats and fish"), so a generic drying allowance must not read it as plain Group 1. (2) The powder of an animal food abstains whatever else the item
-# states (a 100% in the text cannot establish form or composition: powdered meat or fish is named by no source read). Every other form is untouched: ground, roasted, boiled and steamed X stay under the existing whole-food rules
-# (grinding, steaming, boiling and roasting are named minimal processes WITH their no-added-substance condition, which the observed-condition guard keeps); salted, smoked, cured, canned, breaded, fried and generic cooked forms abstain
-# as before; plant, dairy and fat rows are not animal rows.
+# animal-guard-1 (owner Priority 3): rows of ANIMAL foods (a whole_food row whose source records the class-instance placement under the FAO Group 1 example below) get bounded rules. (1) DRIED, scoped: 'dried' or 'dehydrated' is
+# Group 3 ONLY for a row whose source records 'DRIED-G3-SCOPE: meat' or 'DRIED-G3-SCOPE: finfish', because the FAO Group 3 example names "salted, dried, cured, or smoked meats and fish" (meats and fish, not seafood). A dried form of
+# any other animal row (scope none: crab, lobster, mussel, oyster, octopus, scallop) ABSTAINS and never falls back to Group 1; see animal_dried / animal_dried_unscoped below. (2) The powder of an animal food abstains whatever else the
+# item states (a 100% in the text cannot establish form or composition: powdered meat or fish is named by no source read). Every other form is untouched: ground, roasted, boiled and steamed X stay under the existing whole-food rules
+# (grinding, steaming, boiling and roasting are named minimal processes WITH their no-added-substance condition, which the observed-condition guard keeps); salted, smoked, cured, canned, breaded, fried and generic cooked forms
+# abstain as before; plant, dairy and fat rows are not animal rows.
 _ANIMAL_MARK = "meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"
 _ANIMAL_DRIED = frozenset({"dried", "dehydrated"})
 

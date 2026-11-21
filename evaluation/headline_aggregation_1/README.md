@@ -1,6 +1,6 @@
 # headline_aggregation_1: complete one-line abstention reasons (PROPOSAL, revision 2; reason text only; merge stops with the owner)
 
-Branch claude/headline-aggregation-1 off main a6cacbc (independent of claude/label-parser-16-senior; the two touch different regions and merge cleanly). Decision reference: owner instruction 2026-11-22, Priority 2.
+Branch claude/headline-aggregation-1 off main a6cacbc (independent of claude/label-parser-16-senior; the two touch different regions and merge cleanly). Decision reference: owner instruction 2026-11-21, Priority 2.
 
 ## 0. Revision 2 (owner review of 324ac6f)
 Revision 1 missed the explicit `food_powder` rows (banana, strawberry, beetroot powder) because its helper checked only newly routed powders, and it ran only on the weak-marker, colour-note and sweetener exits. Now: (a) the powder condition is the classifier's own: any item whose final kind is food_powder (routed or an explicit row) is named unless it is the sole item and states its composition; the powder of an oil or fat unless its own name states 100%; a 100% inside a list does not resolve it; (b) the helper also runs on the not-in-vocabulary, recognised-by-name-only and powder exits, so `Vitamins, XQ9`, `Vitamins, Banana Powder` and `XQ9, Vitamins, Banana Powder` show every layer without any antioxidant. Wording of the powder item: "a powder is named and its composition is not established" (no carrier-frequency claim). The original normalised multigrain headline now names Date, Banana, Strawberry and Beetroot Powder and the unplaced items.
