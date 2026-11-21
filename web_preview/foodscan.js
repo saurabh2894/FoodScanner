@@ -540,12 +540,16 @@
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+      if (ings.length === 1 && kinds[0] === "food_powder")
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
         return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       const rows = ings.map((i) => lookup(i.name));
       if (rows.some((r) => r.kind === "culture") && rows.some((r) => MILK_TERMS.includes(r.term)) && rows.every((r) => r.kind === "culture" || MILK_TERMS.includes(r.term)))
         // Narrow rule (research/04): the WHOLE list is recognised and is only milk plus starter culture(s). Not keyed off product words.
         return { group: 1, drivers: ings.map((i) => ({ ingredient: i.raw, detail: "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)", source: "NUPENS-USP classification page (research/04)", section: i.section ?? null })), reason: null };
+      const powders = ings.filter((i, n) => kinds[n] === "food_powder").map((i) => i.raw);
+      if (powders.length) return { group: null, drivers: [], reason: "a powder of a food (" + powders.join("; ") + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
       const hasFood = substantive.some(([, k]) => k === "whole_food");
       const hasCulinary = substantive.some(([, k]) => k === "culinary");

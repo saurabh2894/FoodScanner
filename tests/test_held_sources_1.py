@@ -29,15 +29,25 @@ def grp(text: str):
 
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] == "ACCEPT_ROW"], ids=lambda d: d["term"])
-def test_synthetic_powder_rows_are_whole_food_provisional_with_the_verbatim_definition(d):
+def test_synthetic_powder_rows_are_conditioned_food_powder_provisional_with_the_verbatim_definition(d):
     r = LEX[d["term"]]
-    assert r["kind"] == "whole_food" and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "held-decisions-1" in r["source"] and rec(d["term"])
+    assert r["kind"] == "food_powder" and "CONDITIONED" in r["source"] and "carriers or anti-caking agents" in r["source"] and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "held-decisions-1" in r["source"] and rec(d["term"])
 
 
-def test_synthetic_powders_behave_like_the_single_foods_they_are():
-    assert grp("Ingredients: Banana powder")[0] == 1
-    assert grp("Ingredients: Rice, banana powder, salt.")[0] == 3
-    assert grp("Ingredients: Banana powder, maltodextrin.")[0] == 4          # an existing strong marker keeps priority
+def test_synthetic_a_powder_is_group_1_only_as_the_sole_item_and_otherwise_abstains_naming_the_composition_uncertainty():
+    g, a = grp("Ingredients: Banana powder")
+    assert g == 1 and "nothing else listed" in a.drivers[0].detail
+    for text in ("Ingredients: Rice, banana powder, salt.", "Ingredients: Banana powder, strawberry powder.", "Ingredients: Milk, banana powder."):
+        g, a = grp(text)
+        assert g is None and "named without its composition" in a.reason and "carriers or anti-caking agents" in a.reason, text      # never answered from the term alone
+    assert grp("Ingredients: Banana powder, maltodextrin.")[0] == 4          # an existing strong marker keeps priority over the powder abstention
+    assert grp("Ingredients: Banana powder, salt.")[0] is None               # a Group 2 item does not turn the unresolved powder into Group 3
+
+
+def test_synthetic_a_powder_never_counts_as_a_whole_food_in_a_group_3_combination():
+    g, a = grp("Ingredients: Rice, banana powder, salt.")
+    assert g is None                                                           # rice + salt alone would be Group 3; the powder blocks the answer instead of joining it
+    assert grp("Ingredients: Rice, salt.")[0] == 3
 
 
 @pytest.mark.parametrize("t", ["vitamins and minerals", "sprouted ragi", "sprouted ragi & jowar", "rice & oat", "fortified wheat flour"])
@@ -46,7 +56,7 @@ def test_synthetic_negative_unplaced_forms_are_not_recognised(t):
 
 
 def test_synthetic_a_list_with_vitamins_and_minerals_abstains_never_forced():
-    g, a = grp("Ingredients: Rice, banana powder, vitamins and minerals.")
+    g, a = grp("Ingredients: Rice, banana powder, vitamins and minerals.")      # also holds a powder: abstains either way
     assert g is None and any("vitamins and minerals" in u for u in a.unassessed)
 
 

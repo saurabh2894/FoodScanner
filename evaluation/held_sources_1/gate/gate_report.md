@@ -16,9 +16,9 @@ Nothing was merged.
 
 ## Candidate rows
 
-- `banana powder` (whole_food) for demand term `banana powder`
-- `strawberry powder` (whole_food) for demand term `strawberry powder`
-- `beetroot powder` (whole_food) for demand term `beetroot powder`
+- `banana powder` (food_powder) for demand term `banana powder`
+- `strawberry powder` (food_powder) for demand term `strawberry powder`
+- `beetroot powder` (food_powder) for demand term `beetroot powder`
 
 ## Marker proposals (classification-bearing: owner decision, not staged)
 

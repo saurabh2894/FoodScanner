@@ -24,10 +24,10 @@
    "rank": 3,
    "paste_inputs": 1,
    "disposition": "ACCEPT_ROW",
-   "kind": "whole_food",
+   "kind": "food_powder",
    "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
    "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
-   "named": "exact term named by FDC (\"Bananas, dehydrated, or banana powder\"), not by the clause: the clause names the process 'powdering' of natural foods, so a single powdered fruit is covered as a form; a powder with added carriers is a different list and keeps its own items",
+   "named": "exact term named by FDC (\"Bananas, dehydrated, or banana powder\"), not by the clause: the clause names the process 'powdering' of natural foods, so a single powdered fruit is covered as a form; a powder with added carriers is a different list and keeps its own items; CONDITIONED: a bare term does not establish a single-ingredient powder free of carriers or anti-caking agents, so kind food_powder answers Group 1 only as the sole item of a list and makes every multi-item list abstain with the composition uncertainty stated",
    "fdc": [
     "fdc_sr_legacy:173945"
    ]
@@ -37,10 +37,10 @@
    "rank": 4,
    "paste_inputs": 1,
    "disposition": "ACCEPT_ROW",
-   "kind": "whole_food",
+   "kind": "food_powder",
    "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
    "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
-   "named": "exact term not named by the clause or by FDC; the form (a single fruit, powdered) is covered by the process 'powdering' of natural foods",
+   "named": "exact term not named by the clause or by FDC; the form (a single fruit, powdered) is covered by the process 'powdering' of natural foods; CONDITIONED: a bare term does not establish a single-ingredient powder free of carriers or anti-caking agents, so kind food_powder answers Group 1 only as the sole item of a list and makes every multi-item list abstain with the composition uncertainty stated",
    "fdc": []
   },
   {
@@ -56,10 +56,10 @@
    "rank": 6,
    "paste_inputs": 1,
    "disposition": "ACCEPT_ROW",
-   "kind": "whole_food",
+   "kind": "food_powder",
    "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition)",
    "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
-   "named": "exact term not named by the clause or by FDC; the form (a single vegetable, powdered) is covered by the process 'powdering' of natural foods; a colour-note use ('for colour') is a separate rule and unchanged",
+   "named": "exact term not named by the clause or by FDC; the form (a single vegetable, powdered) is covered by the process 'powdering' of natural foods; a colour-note use ('for colour') is a separate rule and unchanged; CONDITIONED: a bare term does not establish a single-ingredient powder free of carriers or anti-caking agents, so kind food_powder answers Group 1 only as the sole item of a list and makes every multi-item list abstain with the composition uncertainty stated",
    "fdc": []
   }
  ]
