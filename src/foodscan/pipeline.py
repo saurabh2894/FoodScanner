@@ -311,12 +311,14 @@ def _looks_like_more_ingredients(seg: str) -> bool:
 
 
 def _split_amp_pair(raw: str) -> tuple[list[str], list[str]]:
-    """An '&'-joined pair INSIDE a bracket ("Sprouted Ragi & Jowar (23.4%)") becomes two items ONLY when each side is independently recognised WITH its shared modifier attached
+    """An '&'- or 'and'-joined pair INSIDE a bracket ("Sprouted Ragi & Jowar (23.4%)", "Rice and Oat (22.3%)") becomes two items ONLY when each side is independently recognised WITH its shared modifier attached
     (a leading modifier of the left side applies to both: 'sprouted ragi' AND 'sprouted jowar', never bare 'jowar'). Anything else stays whole: an unrecognised side or modified form, a bracket
-    other than a shared trailing percentage, more than two parts, or a connector other than '&'. The shared percentage is NOT copied onto the items: it is returned as a note (the pair's
-    context, not a measurement of each item). A split of recognised-but-unplaced sides is recognition only: classification stays unresolved because those items still abstain."""
+    other than a shared trailing percentage, more than two parts, or an unsupported connector. Culinary blends ('Corn and Canola Oil') and shared code lists stay whole.
+    The shared percentage is NOT copied onto the items: it is returned as a note (the pair's context, not a measurement of each item). Preserves the actual connector in notes. A split of recognised-but-unplaced sides is recognition only: classification stays unresolved because those items still abstain."""
     parts, connectors = split_top_level_and_ex(raw)
-    if len(parts) != 2 or any(c != "&" for c in connectors):
+    if len(parts) != 2 or len(connectors) != 1 or connectors[0].lower() not in ("&", "and"):
+        return [raw], []
+    if _shared_code_list(parts):
         return [raw], []
     left, right = parts
     pct = None
@@ -334,11 +336,14 @@ def _split_amp_pair(raw: str) -> tuple[list[str], list[str]]:
     right_full = f"{mod} {right}" if mod and not right.lower().startswith(mod.lower() + " ") else right
     if not (_recognisable(normalise_list([left])[0]) and _recognisable(normalise_list([right_full])[0])):
         return [raw], []
+    if _names_two_oils([left, right_full]):
+        return [raw], []
+    conn = connectors[0]
     notes = []
     if mod:
-        notes.append(f'"{mod}" was read as shared by both sides of "{left} & {right}"')
+        notes.append(f'"{mod}" was read as shared by both sides of "{left} {conn} {right}"')
     if pct:
-        notes.append(f'The {pct} after "{left} & {right}" applies to the pair, not to each item separately')
+        notes.append(f'The {pct} after "{left} {conn} {right}" applies to the pair, not to each item separately')
     return [left, right_full], notes
 
 
