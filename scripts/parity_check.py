@@ -165,6 +165,8 @@ CORPUS = [
     "Ingredients: Coconut fat", "Ingredients: Rice, coconut fat.", "Ingredients: Rice, hydrogenated coconut fat.", "Ingredients: Rice, glucose syrup.", "Ingredients: Rice, dehydrated onion, caster sugar, natural vinegar.",
     # dehydrated-policy-1 (tests/test_dehydrated_forms_1.py, SYNTHETIC)
     "Ingredients: Dehydrated onion", "Ingredients: Rice, onion flakes, salt.", "Ingredients: Rice, onions flakes.", "Ingredients: Dehydrated vegetable, rice.", "Ingredients: Dehydrated potato flakes, rice.", "Ingredients: Rice, fried onion flakes.", "Ingredients: Rice, corn flakes, chilli flakes.",
+    # marker-rows-2 (tests/test_marker_rows_2.py, SYNTHETIC): whey powder / whey solids are strong markers; whey protein bars and look-alikes are not read as them
+    "Ingredients: Rice, whey powder, salt.", "Ingredients: Rice, whey solids.", "Ingredients: Milk, whey.", "Ingredients: Rice, Whey Powder (from milk).", "Ingredients: Rice, whey protein.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
