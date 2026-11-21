@@ -1,0 +1,202 @@
+{
+ "policy_id": "dehydrated-policy-1",
+ "rows": [
+  {
+   "from": "dehydrated onion",
+   "to": "onion",
+   "rule": "dehydrated-term",
+   "basis": "same ingredient, same part, dried form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); that 'dehydrated' means dried is a definitional step stated here, not by a source read",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names the food 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim",
+   "source": "PROVISIONAL: alias of existing lexicon row \"onion\" (same ingredient, same part, dried form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); that 'dehydrated' means dried is a definitional step stated here, not by a source read); dehydrated-policy-1 rule dehydrated-term; USDA FoodData Central (CC0 1.0) names the food 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "onions flakes",
+   "to": "onion",
+   "rule": "flakes-term",
+   "basis": "same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim",
+   "source": "PROVISIONAL: alias of existing lexicon row \"onion\" (same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own); dehydrated-policy-1 rule flakes-term; USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "onion flakes",
+   "to": "onion",
+   "rule": "flakes-term",
+   "basis": "same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim",
+   "source": "PROVISIONAL: alias of existing lexicon row \"onion\" (same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own); dehydrated-policy-1 rule flakes-term; USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim; the row it points to carries the FAO clause and its own provenance"
+  }
+ ],
+ "dropped": [],
+ "errors": [],
+ "probe_terms": 303,
+ "negative_controls": {
+  "dehydrated vegetable": {
+   "before": {
+    "name": "dehydrated vegetable",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated vegetable",
+    "recognised": false
+   }
+  },
+  "dehydrated vegetables": {
+   "before": {
+    "name": "dehydrated vegetables",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated vegetables",
+    "recognised": false
+   }
+  },
+  "dehydrated potato flakes": {
+   "before": {
+    "name": "dehydrated potato flakes",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated potato flakes",
+    "recognised": false
+   }
+  },
+  "dehydrated garlic": {
+   "before": {
+    "name": "dehydrated garlic",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated garlic",
+    "recognised": false
+   }
+  },
+  "dehydrated milk": {
+   "before": {
+    "name": "dehydrated milk",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated milk",
+    "recognised": false
+   }
+  },
+  "dehydrated mango": {
+   "before": {
+    "name": "dehydrated mango",
+    "recognised": false
+   },
+   "after": {
+    "name": "dehydrated mango",
+    "recognised": false
+   }
+  },
+  "corn flakes": {
+   "before": {
+    "name": "corn flakes",
+    "recognised": false
+   },
+   "after": {
+    "name": "corn flakes",
+    "recognised": false
+   }
+  },
+  "rice flakes": {
+   "before": {
+    "name": "rice flakes",
+    "recognised": false
+   },
+   "after": {
+    "name": "rice flakes",
+    "recognised": false
+   }
+  },
+  "chilli flakes": {
+   "before": {
+    "name": "chilli flakes",
+    "recognised": true
+   },
+   "after": {
+    "name": "chilli flakes",
+    "recognised": true
+   }
+  },
+  "fried onion flakes": {
+   "before": {
+    "name": "fried onion flakes",
+    "recognised": false
+   },
+   "after": {
+    "name": "fried onion",
+    "recognised": false
+   }
+  },
+  "fried dehydrated onion": {
+   "before": {
+    "name": "fried dehydrated onion",
+    "recognised": false
+   },
+   "after": {
+    "name": "fried onion",
+    "recognised": false
+   }
+  }
+ },
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 0,
+   "warnings": 0,
+   "ingredients": 0,
+   "unassessed": 2,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [],
+   "warnings": [],
+   "ingredients": [],
+   "unassessed": [
+    "dev/F03",
+    "dev/F07"
+   ],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {
+   "dev/F03": {
+    "recognised_now": [
+     "Onions Flakes (1.15%)"
+    ],
+    "attributed_to_rows": [
+     "onion flakes",
+     "onions flakes"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F07": {
+    "recognised_now": [
+     "dehydrated onion"
+    ],
+    "attributed_to_rows": [
+     "dehydrated onion"
+    ],
+    "newly_unassessed": []
+   }
+  },
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 151,
+   "lexicon_rows_after": 151,
+   "synonym_rows_added": 3,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 3
+  }
+ },
+ "verdict": "READY_FOR_REVIEW"
+}

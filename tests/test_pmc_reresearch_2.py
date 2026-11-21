@@ -35,6 +35,8 @@ def test_synthetic_every_other_re_researched_term_stays_out_with_a_recorded_reas
     for d in DEC:
         if d["disposition"] == "ACCEPT_ROW":
             assert d["term"] in LEX
+        elif d["term"] in ("dehydrated onion", "onions flakes"):
+            assert normalise_ingredient(d["term"]).name == "onion"                      # dehydrated-policy-1: term-level synonym, owner-approved; no descriptor
         else:
             assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
             assert d["code"] in ("single_source_flag", "owner_decision_descriptor", "no_source_for_qualifier", "no_source_for_form") and d["reason"]

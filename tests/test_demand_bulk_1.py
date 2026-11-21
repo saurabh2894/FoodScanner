@@ -61,6 +61,9 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] in ("dehydrated onion", "onions flakes") and rec(d["term"]):
+        assert normalise_ingredient(d["term"]).name == "onion", d["term"]         # dehydrated-policy-1: term-level mapping to the source-supported dried onion, one per term
+        return
     if d["term"] == "coconut fat" and rec(d["term"]):
         # pmc-decisions-2: recognised ONLY as the plain culinary row (FAO Group 2 oils clause + PMC10127522 corroboration)
         from foodscan.classify import lookup
