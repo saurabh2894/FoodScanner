@@ -179,6 +179,10 @@ CORPUS = [
     "Ingredients: Unsalted Pinto Beans", "Ingredients: Pinto Beans (no added salt)", "Ingredients: Kidney Beans (canned)", "Ingredients: Chickpeas (pickled)", "Ingredients: Beans (bottled)",
     "Ingredients: Chickpeas (canned, salted)", "Ingredients: Roasted Soybeans", "Ingredients: Boiled Lentils", "Ingredients: Rice, Salt, Pinto Beans.", "Ingredients: Rice, Pinto Beans.",
     "Ingredients: Rice, Kidney Beans (canned).", "Ingredients: Salted Peas", "Ingredients: Moong Dal (salted)", "Ingredients: Baked Beans", "Ingredients: Sweeteners (Moong Dal, Jaggery Powder).",
+    # class-bulk-2 vegetable kind (tests/test_class_bulk_2.py, SYNTHETIC): same item-level guard as the legume kind
+    "Ingredients: Salted Potatoes", "Ingredients: Potatoes (in brine)", "Ingredients: Carrots (sweetened)", "Ingredients: Cucumber (pickled)", "Ingredients: Tomatoes (canned)", "Ingredients: Spinach (tinned)",
+    "Ingredients: Unsalted Carrots", "Ingredients: Carrots (no added salt)", "Ingredients: Boiled Potatoes", "Ingredients: Shiitake Mushrooms", "Ingredients: Rice, Salt, Carrots.", "Ingredients: Rice, Tomatoes (canned).",
+    "Ingredients: Spinach", "Ingredients: Kale (frozen)", "Ingredients: Sweeteners (Carrot, Jaggery Powder).", "Ingredients: Tomato Sauce",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

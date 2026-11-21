@@ -1,0 +1,100 @@
+from,to,basis,origin,fdc_id
+grape tomatoes,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,321360
+cos or romaine lettuce,romaine lettuce,"FDC 'Lettuce, cos or romaine': cos and romaine are one lettuce; one canonical row",dedupe,327923
+red onions,onions,cultivar/size/cut variant of one food; one canonical row,dedupe,790577
+yellow onions,onions,cultivar/size/cut variant of one food; one canonical row,dedupe,790646
+white onions,onions,cultivar/size/cut variant of one food; one canonical row,dedupe,1104962
+oyster mushroom,oyster mushrooms,"same food, singular/plural FDC entries",dedupe,1999627
+roma tomato,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,1999634
+baby carrots,carrots,size/cut variant (a plain cut); one canonical row,dedupe,2258587
+green bell peppers,bell peppers,colour-shade variant of one food; one canonical row,dedupe,2258588
+yellow bell peppers,bell peppers,colour-shade variant of one food; one canonical row,dedupe,2258589
+red bell peppers,bell peppers,colour-shade variant of one food; one canonical row,dedupe,2258590
+orange bell peppers,bell peppers,colour-shade variant of one food; one canonical row,dedupe,2258591
+green romaine lettuce,romaine lettuce,"FDC 'Lettuce, cos or romaine': cos and romaine are one lettuce; one canonical row",dedupe,2346389
+red lettuce,leaf lettuce,colour-shade variant of one food; one canonical row,dedupe,2346390
+green lettuce,leaf lettuce,colour-shade variant of one food; one canonical row,dedupe,2346391
+green snap beans,snap beans,colour-shade variant of one food; one canonical row,dedupe,2346400
+russet potatoes,potatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,2346401
+red potatoes,potatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,2346402
+gold potatoes,potatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,2346403
+orange flesh sweet potatoes,sweet potatoes,same food (FDC singular/plural and flesh-colour entries); one canonical row,dedupe,2346404
+green cabbage,cabbage,colour-shade variant of one food; one canonical row,dedupe,2346407
+red cabbage,cabbage,colour-shade variant of one food; one canonical row,dedupe,2346408
+zucchini green summer squash,zucchini,"FDC 'Squash, summer, zucchini'; one canonical row",dedupe,2685568
+yellow summer squash,summer squash,"FDC 'Squash, summer' series; cultivar variants of one food; one canonical row",dedupe,2685569
+butternut winter squash,butternut squash,named winter squash,dedupe,2685570
+acorn winter squash,acorn squash,"named winter squash, kept as its own food name",dedupe,2685571
+baby arugula,arugula,size variant; one canonical row,dedupe,2710822
+green asparagus,asparagus,colour-shade variant of one food; one canonical row,dedupe,2710823
+pie pumpkin squash,pumpkin,"FDC 'Squash, pie pumpkin' and 'Pumpkin, raw'; one canonical row (INFERENCE: owner to confirm)",dedupe,2727578
+rutabaga,rutabagas,"same food, singular/plural FDC entries; one canonical row",dedupe,2727580
+green onion,green onions,"FDC 'Onions, spring or scallions' and 'Green onion, (scallion)': one food; one canonical row",dedupe,2727585
+scallion,green onions,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,2727585
+banana or hungarian wax peppers,banana peppers,"FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)",dedupe,2747660
+red radishes,radishes,colour-shade variant of one food; one canonical row,dedupe,2747665
+globe or french,artichokes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168387
+bitter gourd,leafy tips balsam-pear,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168391
+pods balsam-pear,balsam-pear,"FDC 'Balsam-pear (bitter gourd), pods'; the bracketed alternate 'bitter gourd' is a synonym candidate",dedupe,168393
+bitter gourd,balsam-pear,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168393
+towelgourd,dishcloth gourd,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168414
+harseradish tree leaves,drumstick leaves,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168416
+potherb jute,jute,"FDC 'Jute, potherb' (a leafy vegetable); one canonical row",dedupe,168419
+red leaf lettuce,leaf lettuce,colour-shade variant of one food; one canonical row,dedupe,168431
+or crimini italian brown mushrooms,crimini mushrooms,"FDC 'Mushrooms, brown, italian, or crimini': crimini is the label name; one canonical row",dedupe,168434
+tendergreen,mustard spinach,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168438
+crookneck and straightneck summer squash,summer squash,"FDC 'Squash, summer' series; cultivar variants of one food; one canonical row",dedupe,168464
+zucchini summer squash,zucchini,"FDC 'Squash, summer, zucchini'; one canonical row",dedupe,168469
+hubbard winter squash,hubbard squash,named winter squash,dedupe,168475
+sweet potato,sweet potatoes,same food (FDC singular/plural and flesh-colour entries); one canonical row,dedupe,168482
+sweetpotato,sweet potatoes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168482
+red sweet peppers,sweet peppers,colour-shade variant of one food; one canonical row,dedupe,168547
+baby zucchini squash,zucchini,size variant; one canonical row,dedupe,168565
+hungarian peppers,banana peppers,"FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)",dedupe,168578
+calabash,white-flowered gourd,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169232
+sunchokes,jerusalem-artichokes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169236
+pepeao,jew's ear,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169237
+bulb and lower leaf-portion,leeks,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169246
+green leaf lettuce,leaf lettuce,colour-shade variant of one food; one canonical row,dedupe,169249
+portabello,portabella mushrooms,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169255
+vegetable oyster,salsify,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169277
+scallop summer squash,summer squash,"FDC 'Squash, summer' series; cultivar variants of one food; one canonical row",dedupe,169289
+spaghetti winter squash,spaghetti squash,"same food as 'Squash, spaghetti'",dedupe,169298
+kangkong,water convolvulus,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169301
+water spinach,water convolvulus,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169301
+sweetpotato leaves,sweet potato leaves,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169303
+tahitian taro,taro,cultivar variant of taro; one canonical row,dedupe,169310
+yellow snap beans,snap beans,colour-shade variant of one food; one canonical row,dedupe,169320
+yellow sweet peppers,sweet peppers,colour-shade variant of one food; one canonical row,dedupe,169383
+green cauliflower,cauliflower,colour-shade variant of one food; one canonical row,dedupe,169389
+banana pepper,banana peppers,"FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)",dedupe,169394
+tannier,yautia,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169401
+gai-lan,chinese broccoli,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169404
+kai-lan,chinese broccoli,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169404
+pe-tsai,chinese cabbage,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169979
+spring or scallions onions,green onions,"FDC 'Onions, spring or scallions' and 'Green onion, (scallion)': one food; one canonical row",dedupe,170005
+welsh onions,onions,cultivar/size/cut variant of one food; one canonical row,dedupe,170007
+sweet onions,onions,cultivar/size/cut variant of one food; one canonical row,dedupe,170008
+green sweet peppers,sweet peppers,colour-shade variant of one food; one canonical row,dedupe,170022
+white potatoes,potatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,170028
+matai,chinese waterchestnuts,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170066
+chinese preserving melon,waxgourd,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170069
+jicama,yambean,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170073
+white icicle radishes,radishes,cultivar variant of radishes; one canonical row,dedupe,170081
+yellow tomatoes,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,170096
+red hot chili peppers,hot chili peppers,colour-shade variant of one food; one canonical row,dedupe,170106
+broccoli rabe,broccoli raab,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170381
+rapini,broccoli raab,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170381
+fuki,butterbur,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170385
+pak-choi,chinese cabbage,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170390
+pak choi,chinese cabbage,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170390
+bok choy,chinese cabbage,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170390
+fruit chayote,chayote,"FDC 'Chayote, fruit'",dedupe,170402
+christophine,chayote,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170402
+poke,pokeberry shoots,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170432
+green tomatoes,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,170456
+red tomatoes,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,170457
+basella,vinespinach,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170474
+horseradish tree pods,drumstick pods,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,170483
+green hot chili peppers,hot chili peppers,colour-shade variant of one food; one canonical row,dedupe,170497
+orange tomatoes,tomatoes,cultivar/size/cut variant of one food; one canonical row,dedupe,170502

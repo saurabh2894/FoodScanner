@@ -76,14 +76,17 @@ def load_attributes(cache: Path, cand: list[dict]) -> dict[str, dict]:
 
 def derive_term(parts: list[str], rule: dict) -> tuple[str | None, list[str], bool]:
     """(label term, alternate names found in brackets, plain_form_seen). Form parts are removed; qualifiers are reversed in front of the head ('kidney, red' -> 'red kidney beans')."""
-    forms = set(rule["form_tokens"])
+    plain_tokens = set(rule.get("plain_tokens", ["raw", "dry"]))
+    ignorable = rule.get("ignorable_qualifiers", [])
     plain, kept, alts = False, [], []
     for p in parts:
         p2 = re.sub(r"\(0% moisture\)", "", p).strip()
         if p2 != p:
             plain = True
-        if p2 in ("raw", "dry", "mature seeds", "mature seed", "all types"):
-            plain = plain or p2 in ("raw", "dry")
+        if p2 in plain_tokens or p2 in ("mature seeds", "mature seed", "all types"):
+            plain = plain or p2 in plain_tokens
+            continue
+        if any(p2 == x or (x.endswith("*") and p2.startswith(x[:-1])) for x in ignorable):
             continue
         m = re.fullmatch(r"([^()]*)\((.*)\)", p2)
         if m:
@@ -124,6 +127,14 @@ def decide(row: dict, attrs: dict, rule: dict) -> dict:
         if w in all_words or (" " in w and w in phrase):
             return done("QUEUE", f"queue_{w.replace(' ', '_')}", why)
     term, alts, plain = derive_term(parts, rule)
+    for pair in rule.get("plain_pairs", []):
+        if all(any(x == p or p.startswith(x) for p in parts) for x in pair):
+            plain = True                                                  # e.g. 'frozen' + 'unprepared': a form the clause itself names
+    attr_raw = rule.get("plain_by_attribute")
+    if not plain and attr_raw and attr_raw in (attrs.get("foodon") or "").lower():
+        plain = True                                                      # Foundation FoodOn name states the raw form where the description does not
+    if plain and rule.get("plain_pairs"):
+        parts = [p for p in parts]
     if term is None:
         return done("QUEUE", "no_head", "no item name after removing form parts")
     if not plain:
@@ -136,22 +147,32 @@ def decide(row: dict, attrs: dict, rule: dict) -> dict:
     return done("ACCEPT", "plain_seed", "plain raw/dry seed in the category; no guard, product or queue word; attributes consistent", term, alts)
 
 
+def route_for(term: str, rule: dict) -> dict:
+    """The clause that applies to a term: the first alternative clause whose head words occur in the term, else the default clause."""
+    for c in rule.get("clauses_alt", []):
+        if set(words(term)) & set(c["head_words"]):
+            return c
+    return rule["clause"]
+
+
 def named_status(term: str, rule: dict) -> str:
-    named = rule["clause"]["named_terms"]
-    cw = set(words(rule["clause"]["text"]))
+    c = route_for(term, rule)
+    named = c["named_terms"]
+    cw = set(words(c["text"]))
     assert all(n in cw for n in named)
+    cls = rule.get("class_name", "legumes")
     if term in named:
         return "exact term IS named by the clause"
-    if any(w in named or w.rstrip("s") + "s" in named for w in term.split()):
-        w = [w for w in term.split() if w in named or w.rstrip("s") + "s" in named][0]
-        return f"exact term not named by the clause (an instance of the class 'legumes'; the clause names the broader term '{w}')"
-    return "exact term not named by the clause (an instance of the class 'legumes')"
+    hit = [w for w in term.split() if w in named or w.rstrip("s") + "s" in named]
+    if hit:
+        return f"exact term not named by the clause (an instance of the class '{cls}'; the clause names the broader term '{hit[0]}')"
+    return f"exact term not named by the clause (an instance of the class '{cls}'" + (f"; {c['basis']}" if c.get("basis") else "") + ")"
 
 
 def source_text(rule: dict, recs: list[dict], term: str) -> str:
     prov = "; ".join(f"{r['dataset']} FDC id {r['fdc_id']} \"{r['description']}\"" for r in recs)
     cat = recs[0]["food_category"]
-    return (f"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"{rule['clause']['text']}\"; {named_status(term, rule)}; plain dry/raw seed form "
+    return (f"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"{route_for(term, rule)['text']}\"; {named_status(term, rule)}; {rule.get('form_phrase', 'plain dry/raw seed form')} "
             f"(inference level: class-instance); FDC category '{cat}' (naming evidence only, CC0); {rule.get('condition_note', '')}{'; ' if rule.get('condition_note') else ''}name from USDA FoodData Central (CC0 1.0): {prov}")
 
 

@@ -1,0 +1,636 @@
+{
+  "rule_id": "class-vegetables-1",
+  "status": "DRAFT for review (Batch 2). Maps USDA FoodData Central NAMES (plus record attributes) of the category 'Vegetables and Vegetable Products' to candidate lexicon rows of kind vegetable. It never decides a NOVA group: FDC supplies naming evidence only; placement comes from the FAO clauses below.",
+  "kind": "vegetable",
+  "class_name": "vegetables",
+  "form_phrase": "plain raw or frozen-unprepared form",
+  "clause": {
+    "id": "V1",
+    "text": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+    "where": "FAO 2019 (Monteiro et al.), Table 1, Group 1 examples, p. 11 (first example of the Group 1 row)",
+    "url": "https://www.fao.org/3/ca5644en/ca5644en.pdf",
+    "pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+    "named_terms": [
+      "fruit",
+      "vegetables"
+    ],
+    "basis": "inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example",
+    "scope": "The clause is unconditioned and names the forms fresh, squeezed, chilled, frozen or dried. A plain raw or frozen-unprepared vegetable is an instance. Cooked, canned, pickled, salted, sauced, fried, mashed or otherwise prepared forms, vegetable products (sauce, juice, puree, chips, fries, flour, powder, dishes) and mixtures are not instances of this clause."
+  },
+  "clauses_alt": [
+    {
+      "id": "V2",
+      "text": "starchy roots and tubers such as potatoes, sweet potatoes and cassava",
+      "where": "FAO 2019, Table 1, Group 1 examples, p. 11",
+      "named_terms": [
+        "potatoes",
+        "cassava"
+      ],
+      "head_words": [
+        "potato",
+        "potatoes",
+        "cassava",
+        "yam",
+        "yams",
+        "taro",
+        "yautia",
+        "arrowroot",
+        "arrowhead",
+        "jicama",
+        "yambean",
+        "rutabaga",
+        "rutabagas",
+        "salsify",
+        "burdock",
+        "parsnip",
+        "parsnips",
+        "turnip",
+        "turnips",
+        "beet",
+        "beets",
+        "radish",
+        "radishes"
+      ],
+      "basis": "inference level: class-instance of starchy roots and tubers (the clause names potatoes, sweet potatoes and cassava)"
+    },
+    {
+      "id": "V3",
+      "text": "fungi such as fresh or dried mushrooms",
+      "where": "FAO 2019, Table 1, Group 1 examples, p. 11",
+      "named_terms": [
+        "mushrooms"
+      ],
+      "head_words": [
+        "mushroom",
+        "mushrooms",
+        "shiitake",
+        "chanterelle",
+        "morel",
+        "enoki",
+        "maitake",
+        "portabella",
+        "crimini",
+        "oyster",
+        "pioppini",
+        "jew"
+      ],
+      "basis": "inference level: class-instance of fungi (the clause names fresh or dried mushrooms)"
+    }
+  ],
+  "category_gate": "Vegetables and Vegetable Products",
+  "acceptance": [
+    "A1. The FDC food category is exactly 'Vegetables and Vegetable Products'.",
+    "A2. The plain form is established by the name ('raw', or 'frozen' + 'unprepared', both forms the clause names) OR by the record attribute: a Foundation record whose FoodOn item name states '(raw)' where the description does not.",
+    "A3. The name holds no word from the word guard, no product word and no queue word; the head is a single food (a head naming two foods with 'and' is a mixture: QUEUE).",
+    "A4. Record attributes do not contradict the plain form (no portion descriptor holding a guard word).",
+    "A5. The derived label term is a distinct food name: else QUEUE.",
+    "A6. Canonical deduplication: cut, grade, colour-shade and cultivar variants of one food collapse into ONE row (table 'canonical' and the collapse-word rule); the rest are synonym CANDIDATES (synonyms.csv is not touched)."
+  ],
+  "word_guard": {
+    "words": [
+      "canned",
+      "pickled",
+      "salted",
+      "salt",
+      "sweetened",
+      "sugar",
+      "cooked",
+      "boiled",
+      "fried",
+      "stir-fried",
+      "roasted",
+      "grilled",
+      "sauteed",
+      "steamed",
+      "microwaved",
+      "baked",
+      "mashed",
+      "creamed",
+      "scalloped",
+      "stuffed",
+      "glazed",
+      "candied",
+      "flavored",
+      "flavoured",
+      "fortified",
+      "seasoned",
+      "marinated",
+      "smoked",
+      "cured",
+      "concentrate",
+      "concentrated",
+      "juice",
+      "sauce",
+      "soup",
+      "mix",
+      "mixed",
+      "blend",
+      "prepared",
+      "supplement",
+      "drained",
+      "solids",
+      "liquid",
+      "sodium",
+      "low",
+      "reduced",
+      "regular",
+      "pack",
+      "home-prepared",
+      "commercial",
+      "restaurant",
+      "instant",
+      "butter",
+      "cheese",
+      "cream",
+      "oil",
+      "dressing",
+      "gravy",
+      "pork",
+      "bacon",
+      "sausage",
+      "egg",
+      "milk",
+      "ultraviolet",
+      "hash",
+      "o'brien",
+      "wedges",
+      "sticks",
+      "patties",
+      "pancakes",
+      "fries",
+      "puffs",
+      "tots",
+      "chips",
+      "souffle",
+      "pudding",
+      "salsa",
+      "succotash",
+      "tempura",
+      "relish",
+      "catsup",
+      "ketchup",
+      "paste",
+      "puree",
+      "salad",
+      "kimchi",
+      "sauerkraut",
+      "pickles",
+      "jam",
+      "chutney",
+      "poi",
+      "unsalted"
+    ],
+    "phrases": [
+      "baby food",
+      "food distribution",
+      "french fried",
+      "par fried",
+      "home prepared",
+      "no salt added",
+      "with salt",
+      "without salt",
+      "o'brien"
+    ],
+    "why": "The category-wide extension of the Spices and Herbs word guard (owner rule 3): any treatment, addition, cooking/canning liquid, product or dish word puts the name outside a plain raw or frozen-unprepared vegetable. 'baby' is NOT guarded (baby carrots are a plain cut); 'unprepared' is the clause-compatible frozen form (tokenised separately from 'prepared'); UV-exposed mushrooms (a treatment) are rejected."
+  },
+  "product_words": {
+    "words": [
+      "flour",
+      "starch",
+      "powder",
+      "flakes",
+      "granules",
+      "tomato products"
+    ],
+    "why": "A flour, starch or powder of a vegetable is a different form: flours belong to the flour batch; powders are food_powder candidates. REJECT here (not an instance of the fresh/frozen vegetable clause)."
+  },
+  "queue_words": {
+    "sprouted": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+    "seaweed": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+    "corn": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+    "immature": "immature legume seeds overlap the legume rows (Batch 1).",
+    "mature seeds": "mature legume seeds belong to the legume batch.",
+    "soybeans": "legume overlap (Batch 1).",
+    "edamame": "legume overlap (Batch 1).",
+    "cowpeas": "legume overlap (Batch 1).",
+    "peas": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+    "fava": "legume overlap (Batch 1).",
+    "yardlong": "legume overlap (Batch 1).",
+    "winged": "legume overlap (Batch 1).",
+    "dried": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+    "dehydrated": "dehydrated forms: per-term only (dehydrated-policy-1).",
+    "hearts of palm": "stem of a palm: the plant-part basis is not named by the clause; QUEUE.",
+    "fiddlehead": "fern shoots: not named by the clause; QUEUE.",
+    "lemon grass": "an herb or spice (Spices and Herbs clause), not a vegetable; routed to that category's rule.",
+    "ginger": "an herb or spice (Spices and Herbs clause), not a vegetable.",
+    "garlic": "an herb or spice per FDC in other records; kept out of this batch until the owner decides garlic's class (existing label vocabulary).",
+    "parsley": "an herb (Spices and Herbs clause).",
+    "coriander": "an herb (Spices and Herbs clause).",
+    "epazote": "an herb (Spices and Herbs clause).",
+    "chives": "an herb (Spices and Herbs clause).",
+    "wasabi": "a condiment root (Spices and Herbs clause).",
+    "yeast": "not a vegetable.",
+    "turnip greens and turnips": "a mixture of two foods in one record (a head naming two foods with 'and'): not a single ingredient.",
+    "peas and": "a mixture of two foods in one record: not a single ingredient.",
+    "flowers": "an edible flower is not established as a vegetable by the clause; QUEUE.",
+    "flower": "an edible flower is not established as a vegetable by the clause; QUEUE."
+  },
+  "plain_tokens": [
+    "raw"
+  ],
+  "plain_pairs": [
+    [
+      "frozen",
+      "unprepared"
+    ]
+  ],
+  "plain_by_attribute": "(raw)",
+  "form_tokens": [
+    "raw"
+  ],
+  "ignorable_qualifiers": [
+    "unprepared",
+    "frozen",
+    "fresh",
+    "mature",
+    "ripe",
+    "whole",
+    "stored",
+    "freshly harvest",
+    "year round average",
+    "chopped",
+    "chopped or leaf",
+    "spears",
+    "all styles",
+    "with peel",
+    "peeled",
+    "without skin",
+    "with skin",
+    "flesh and skin",
+    "flesh",
+    "includes skin",
+    "skin",
+    "seeded",
+    "dehusked",
+    "destemmed",
+    "root removed",
+    "bulb and greens, root removed",
+    "kernels on cob",
+    "kernels cut off cob",
+    "all varieties",
+    "leaf",
+    "bulb",
+    "bulb and greens",
+    "includes*",
+    "(includes*",
+    "common*"
+  ],
+  "generic_queue": {
+    "terms": [],
+    "why": ""
+  },
+  "alt_name_ignore": {},
+  "canonical": {
+    "green bell peppers": {
+      "to": "bell peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red bell peppers": {
+      "to": "bell peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "yellow bell peppers": {
+      "to": "bell peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "orange bell peppers": {
+      "to": "bell peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "green sweet peppers": {
+      "to": "sweet peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red sweet peppers": {
+      "to": "sweet peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "yellow sweet peppers": {
+      "to": "sweet peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "green hot chili peppers": {
+      "to": "hot chili peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red hot chili peppers": {
+      "to": "hot chili peppers",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "banana pepper": {
+      "to": "banana peppers",
+      "basis": "FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "banana or hungarian wax peppers": {
+      "to": "banana peppers",
+      "basis": "FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "hungarian peppers": {
+      "to": "banana peppers",
+      "basis": "FDC names banana, Hungarian wax and Hungarian peppers in the same 'Peppers' series; cultivar variants of one food; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "green leaf lettuce": {
+      "to": "leaf lettuce",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "green lettuce": {
+      "to": "leaf lettuce",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red leaf lettuce": {
+      "to": "leaf lettuce",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red lettuce": {
+      "to": "leaf lettuce",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "cos or romaine lettuce": {
+      "to": "romaine lettuce",
+      "basis": "FDC 'Lettuce, cos or romaine': cos and romaine are one lettuce; one canonical row"
+    },
+    "green romaine lettuce": {
+      "to": "romaine lettuce",
+      "basis": "FDC 'Lettuce, cos or romaine': cos and romaine are one lettuce; one canonical row"
+    },
+    "red tomatoes": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "green tomatoes": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "yellow tomatoes": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "orange tomatoes": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "roma tomato": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "grape tomatoes": {
+      "to": "tomatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "gold potatoes": {
+      "to": "potatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "red potatoes": {
+      "to": "potatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "russet potatoes": {
+      "to": "potatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "white potatoes": {
+      "to": "potatoes",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "sweet potato": {
+      "to": "sweet potatoes",
+      "basis": "same food (FDC singular/plural and flesh-colour entries); one canonical row"
+    },
+    "orange flesh sweet potatoes": {
+      "to": "sweet potatoes",
+      "basis": "same food (FDC singular/plural and flesh-colour entries); one canonical row"
+    },
+    "red onions": {
+      "to": "onions",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "white onions": {
+      "to": "onions",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "yellow onions": {
+      "to": "onions",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "sweet onions": {
+      "to": "onions",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "welsh onions": {
+      "to": "onions",
+      "basis": "cultivar/size/cut variant of one food; one canonical row"
+    },
+    "spring or scallions onions": {
+      "to": "green onions",
+      "basis": "FDC 'Onions, spring or scallions' and 'Green onion, (scallion)': one food; one canonical row"
+    },
+    "green onion": {
+      "to": "green onions",
+      "basis": "FDC 'Onions, spring or scallions' and 'Green onion, (scallion)': one food; one canonical row"
+    },
+    "green cabbage": {
+      "to": "cabbage",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red cabbage": {
+      "to": "cabbage",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "red radishes": {
+      "to": "radishes",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "white icicle radishes": {
+      "to": "radishes",
+      "basis": "cultivar variant of radishes; one canonical row"
+    },
+    "rutabaga": {
+      "to": "rutabagas",
+      "basis": "same food, singular/plural FDC entries; one canonical row"
+    },
+    "green asparagus": {
+      "to": "asparagus",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "green cauliflower": {
+      "to": "cauliflower",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "baby arugula": {
+      "to": "arugula",
+      "basis": "size variant; one canonical row"
+    },
+    "baby carrots": {
+      "to": "carrots",
+      "basis": "size/cut variant (a plain cut); one canonical row"
+    },
+    "baby zucchini squash": {
+      "to": "zucchini",
+      "basis": "size variant; one canonical row"
+    },
+    "zucchini summer squash": {
+      "to": "zucchini",
+      "basis": "FDC 'Squash, summer, zucchini'; one canonical row"
+    },
+    "zucchini green summer squash": {
+      "to": "zucchini",
+      "basis": "FDC 'Squash, summer, zucchini'; one canonical row"
+    },
+    "yellow summer squash": {
+      "to": "summer squash",
+      "basis": "FDC 'Squash, summer' series; cultivar variants of one food; one canonical row"
+    },
+    "crookneck and straightneck summer squash": {
+      "to": "summer squash",
+      "basis": "FDC 'Squash, summer' series; cultivar variants of one food; one canonical row"
+    },
+    "scallop summer squash": {
+      "to": "summer squash",
+      "basis": "FDC 'Squash, summer' series; cultivar variants of one food; one canonical row"
+    },
+    "acorn winter squash": {
+      "to": "acorn squash",
+      "basis": "named winter squash, kept as its own food name"
+    },
+    "butternut winter squash": {
+      "to": "butternut squash",
+      "basis": "named winter squash"
+    },
+    "hubbard winter squash": {
+      "to": "hubbard squash",
+      "basis": "named winter squash"
+    },
+    "spaghetti winter squash": {
+      "to": "spaghetti squash",
+      "basis": "same food as 'Squash, spaghetti'"
+    },
+    "pie pumpkin squash": {
+      "to": "pumpkin",
+      "basis": "FDC 'Squash, pie pumpkin' and 'Pumpkin, raw'; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "green snap beans": {
+      "to": "snap beans",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "yellow snap beans": {
+      "to": "snap beans",
+      "basis": "colour-shade variant of one food; one canonical row"
+    },
+    "oyster mushroom": {
+      "to": "oyster mushrooms",
+      "basis": "same food, singular/plural FDC entries"
+    },
+    "or crimini italian brown mushrooms": {
+      "to": "crimini mushrooms",
+      "basis": "FDC 'Mushrooms, brown, italian, or crimini': crimini is the label name; one canonical row"
+    },
+    "leaves broccoli": {
+      "to": null,
+      "basis": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon"
+    },
+    "stalks broccoli": {
+      "to": null,
+      "basis": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon"
+    },
+    "leaves fireweed": {
+      "to": null,
+      "basis": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon"
+    },
+    "leafy tips balsam-pear": {
+      "to": null,
+      "basis": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon"
+    },
+    "pods balsam-pear": {
+      "to": "balsam-pear",
+      "basis": "FDC 'Balsam-pear (bitter gourd), pods'; the bracketed alternate 'bitter gourd' is a synonym candidate"
+    },
+    "potherb jute": {
+      "to": "jute",
+      "basis": "FDC 'Jute, potherb' (a leafy vegetable); one canonical row"
+    },
+    "fruit chayote": {
+      "to": "chayote",
+      "basis": "FDC 'Chayote, fruit'"
+    },
+    "tahitian taro": {
+      "to": "taro",
+      "basis": "cultivar variant of taro; one canonical row"
+    },
+    "beets": {
+      "to": null,
+      "basis": "NAME COLLISION (observed in out-of-sample label S30 'Beet Red Powder'): 'red' and 'powder' are descriptors, so 'beet red powder' (the beetroot red colour, E162) would be read as the vegetable beets and leave the unassessed list; QUEUED for an owner decision on descriptor handling. 'beet greens' is unaffected."
+    },
+    "celery": {
+      "to": null,
+      "basis": "NAME COLLISION (observed in out-of-sample label S12 'Celery Powder'): 'powder' is a descriptor, so a celery powder (used as a curing/nitrite source) would be read as the plain vegetable celery and leave the unassessed list; QUEUED for an owner decision on the powder descriptor."
+    },
+    "arrowroot": {
+      "to": null,
+      "basis": "NAME COLLISION (measured): 'powder' is a descriptor, so 'arrowroot powder' (a starch extracted from the root, a FAO Group 2 'starch' example) would be read as the plain root and answer Group 1; QUEUED for an owner decision on descriptor handling."
+    }
+  },
+  "negative_controls": [
+    "salted potatoes",
+    "potatoes (salted)",
+    "potatoes (in brine)",
+    "pickled cucumber",
+    "cucumber (pickled)",
+    "onions (pickled)",
+    "tomatoes (canned)",
+    "canned tomatoes",
+    "tomato puree",
+    "tomato sauce",
+    "mushrooms in brine",
+    "carrots (in brine)",
+    "sweetened carrots",
+    "carrots (sweetened)",
+    "potato chips",
+    "french fries",
+    "mashed potatoes",
+    "potato flour",
+    "vegetable juice",
+    "sauerkraut",
+    "kimchi",
+    "spinach (tinned)",
+    "beets (bottled)",
+    "salted kale",
+    "cabbage (preserved)",
+    "corn on the cob",
+    "tomato ketchup"
+  ],
+  "positive_controls": [
+    "spinach",
+    "kale",
+    "tomatoes",
+    "tomato",
+    "potato",
+    "onion",
+    "carrot",
+    "cucumber",
+    "cabbage",
+    "shiitake mushrooms",
+    "sweet potatoes",
+    "bell peppers",
+    "unsalted carrots",
+    "carrots (no added salt)",
+    "carrots (salt free)",
+    "boiled potatoes",
+    "carrots (frozen)",
+    "spinach (cooked)",
+    "rice, salt, carrots",
+    "rice, carrots",
+    "okra",
+    "green onions"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "policy_id": "variant-policy-class-vegetables-1",
+ "applies_to": "class-vegetables-1 staged batches",
+ "policy": "Named vegetable types and different plant parts are separate canonical rows next to the untouched generic rows (cabbage, beans, celery seed, mustard, pumpkin seeds, water). Colour-shade, cultivar, size and cut variants are collapsed by the rule's canonical table and listed as synonym CANDIDATES (synonyms.csv untouched).",
+ "synonyms": {},
+ "separate_rows": {
+  "bok choy cabbage": "a named cabbage type kept as its own food name next to the untouched generic 'cabbage' row",
+  "chinese cabbage": "a named cabbage type (pe-tsai) next to the generic 'cabbage' row",
+  "napa cabbage": "a named cabbage type next to the generic 'cabbage' row (whether napa and chinese cabbage are one food is not stated by FDC; both kept)",
+  "savoy cabbage": "a named cabbage type next to the generic 'cabbage' row",
+  "snap beans": "a named bean pod vegetable next to the untouched generic 'beans' legume row",
+  "mustard greens": "the leaf vegetable; 'mustard' is the seed spice, a different plant part, left untouched",
+  "mustard spinach": "a leaf vegetable (tendergreen); 'mustard' is the seed spice, left untouched",
+  "pumpkin": "the fruit-vegetable; 'pumpkin seeds' is a different plant part (nut_seed row), left untouched",
+  "water convolvulus": "a leaf vegetable; the shared word 'water' with the existing 'water' row is incidental (false variant match)"
+ },
+ "parked": {}
+}

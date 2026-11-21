@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import clause_tier  # noqa: E402
 
-KINDS = {"whole_food", "culinary", "flour", "herb_spice", "neutral", "culture", "food_powder", "unplaced", "nut_seed", "legume"}
+KINDS = {"whole_food", "culinary", "flour", "herb_spice", "neutral", "culture", "food_powder", "unplaced", "nut_seed", "legume", "vegetable"}
 REQUIRED = ["term", "kind", "source", "fdc_ids", "rule_id"]
 COMPARE = ["group", "drivers", "status", "reason", "warnings", "ingredients", "unassessed", "ins_mappings"]
 
@@ -60,7 +60,7 @@ def check_schema(staged: list[dict], rule: dict) -> dict[str, list[str]]:
         s = r.get("source") or ""
         if not s.startswith("PROVISIONAL"):
             e.append("source does not start with PROVISIONAL")
-        if clause not in s:
+        if clause not in s and not any(c["text"] in s for c in rule.get("clauses_alt", [])):
             e.append("source does not hold the verbatim clause")
         if e:
             errs.setdefault(t or "?", []).extend(e)          # two bad rows with the same term must not hide each other
