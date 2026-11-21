@@ -1,6 +1,6 @@
-# class_bulk_1 / Batch 1: FDC 'Legumes and Legume Products' (PROPOSAL, merge-stop)
+# class_bulk_1 / Batch 1: FDC 'Legumes and Legume Products' (OWNER-APPROVED, 21 rows merged)
 
-Status: STAGED proposal on branch claude/class-bulk-1. Nothing is in lexicon.csv, synonyms.csv or markers.csv. Gate verdict: **READY_FOR_REVIEW** (validate_batch) and **READY_FOR_REVIEW** (class_gate).
+Status: APPROVED 2026-11-21; the 21 new rows are in lexicon.csv (the 5 already-covered terms created no duplicate). synonyms.csv and markers.csv are untouched; synonym candidates stay candidates. Gate verdict: **READY_FOR_REVIEW** (validate_batch) and **READY_FOR_REVIEW** (class_gate).
 Rule: `data/ingest/class_legumes_1.json` (class-legumes-1). Mapper: `scripts/class_batch.py`. FDC: Foundation 2026-10-29 + SR Legacy 2018-04 (CC0, hashes in scope_summary.json). FDC supplies NAMING and record attributes only; placement comes from the FAO clause.
 
 ## 1. Category source rules (written BEFORE any acceptance)

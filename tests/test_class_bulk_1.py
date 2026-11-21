@@ -1,4 +1,4 @@
-"""class-bulk-1 / Batch 1 Legumes (PROPOSAL record; nothing is merged). SYNTHETIC unit cases for scripts/class_batch.py and checks on the committed batch outputs."""
+"""class-bulk-1 / Batch 1 Legumes (owner-approved 2026-11-21; the 21 new rows are merged into lexicon.csv, synonyms.csv and markers.csv are untouched). SYNTHETIC unit cases for scripts/class_batch.py and checks on the committed batch outputs."""
 from __future__ import annotations
 
 import csv
@@ -61,16 +61,20 @@ def test_synthetic_the_committed_decisions_match_the_rule_and_every_row_repeats_
         assert (again["decision"] == "ACCEPT") == (d["decision"] == "ACCEPT") or d["reason_code"] == "dedupe_stays_out", d["description"]
 
 
-def test_synthetic_the_gate_results_are_clean_and_the_proposal_is_not_merged():
+def test_synthetic_the_gate_results_are_clean_and_exactly_the_21_rows_are_merged_without_synonym_or_marker_changes():
     C = json.loads((OUT / "class_gate" / "class_gate.json").read_text(encoding="utf-8"))
     assert C["verdict"] == "READY_FOR_REVIEW" and not C["blockers"] and C["drift"]["differences"] == []
     for k in ("frozen_66", "out_of_sample"):
         assert C[k]["unexplained"] == [] and C[k]["abstain_to_4"] == []
     lex = {r["term"] for r in csv.DictReader((RES / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
-    assert not (set(C["rows"]) & lex)                       # proposal only: no staged row is in the shipped lexicon
+    assert len(C["rows"]) == 21 and set(C["rows"]) <= lex                       # merged: every approved row is in the shipped lexicon exactly once
+    assert all(r["kind"] == "whole_food" and RULE["clause"]["text"] in r["source"] for r in csv.DictReader((RES / "lexicon.csv").open(encoding="utf-8-sig", newline="")) if r["term"] in C["rows"])
+    for t in ("chickpeas", "lentils", "split green peas"):
+        assert t not in lex                                                       # the 5 already-covered terms created no duplicate row
     syn = {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}
     cand = list(csv.DictReader((OUT / "synonym_candidates.csv").open(encoding="utf-8", newline="")))
     assert cand and not ({r["from"] for r in cand} & syn)   # synonym candidates are not merged (synonyms.csv untouched)
+    assert "black turtle beans" not in syn
 
 
 def test_synthetic_negative_controls_are_not_read_as_a_staged_term():
