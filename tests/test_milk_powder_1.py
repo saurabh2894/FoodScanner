@@ -43,3 +43,15 @@ def test_synthetic_milk_solids_alone_is_unchanged_and_non_milk_powders_still_abs
 def test_synthetic_milk_powder_in_lists_follows_the_plain_row_behaviour_again():
     assert g("Rice, Salt, Milk Powder")[0] == 3
     assert g("Rice, Milk Powder")[0] is None
+
+
+def test_synthetic_the_committed_gate_shows_exactly_the_six_milk_powder_forms_moving_abstain_to_group_1():
+    import json
+    from pathlib import Path
+    C = json.loads((Path(__file__).resolve().parent.parent / "evaluation" / "milk_powder_1" / "applied_gate" / "applied_gate.json").read_text(encoding="utf-8"))
+    assert C["verdict"] == "READY_FOR_REVIEW" and not C["blockers"]
+    assert C["powder_surface"]["changed"] == {f: [None, 1] for f in ("milk powder", "whole milk powder", "toned milk powder", "whole toned milk powder", "buffalo milk powder", "whole buffalo milk powder")}
+    assert C["powder_surface"]["group1_after_forms_not_stated"] == [] and C["powder_surface"]["newly_group4_or_other"] == {}
+    for k in ("frozen_66", "out_of_sample"):
+        assert C[k]["unexplained"] == [] and C[k]["abstain_to_4"] == [] and C[k]["changed"] == []
+    assert C["drift"]["differences"] == {}
