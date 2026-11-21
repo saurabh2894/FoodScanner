@@ -1,0 +1,38 @@
+{
+ "rule_id": "per-form-2a",
+ "status": "Controls for the salted-grain guard (per-form-2a). Nut/legume/vegetable/fruit guards unchanged.",
+ "negative_controls": [
+  "salted buckwheat",
+  "roasted salted buckwheat",
+  "salted rice",
+  "salted wheat flour",
+  "salted oat flour",
+  "rice (salted)",
+  "rice (rice, salt)",
+  "salted parboiled rice",
+  "toasted salted oat flour",
+  "salted rice powder",
+  "salted wheat flour, water",
+  "rice, salted buckwheat"
+ ],
+ "positive_controls": [
+  "rice",
+  "buckwheat",
+  "wheat flour",
+  "unsalted rice",
+  "rice (no added salt)",
+  "rice (salt free)",
+  "roasted buckwheat",
+  "toasted oat flour",
+  "salted milk",
+  "salted egg",
+  "salted almonds",
+  "salted pinto beans",
+  "salted potatoes",
+  "salted mango",
+  "mango (preserved)",
+  "kidney beans (canned)",
+  "salted lychee",
+  "salted kale"
+ ]
+}

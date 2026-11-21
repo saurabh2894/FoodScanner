@@ -571,6 +571,9 @@
       return !!row && MILK_POWDER_ROWS.includes(row.term) && (toks.includes("powder") || toks.includes("powdered")) && toks.every((t) => MILK_POWDER_WORDS.has(t));
     }
     const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
+    // salted grain guard (per-form-2a; mirrors classify.grain_added_salt): the 23 Batch-4 terms with salt added in the item's own name or bracket
+    const GRAIN_SALT_WORDS = new Set(["salt", "salted"]);
+    const grainAddedSalt = (ing, kind) => (kind === "whole_food" || kind === "flour") && addedIn(ing, GRAIN_SALT_WORDS) && (() => { const row = lookup(ing.name); return !!row && SCOPED_TERMS.toasted.has(row.term); })();
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED) || (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).some((p) => p.trim() && isRecognised(p.trim()) && lookup(p.trim()).kind === "culinary");
     function hitsFor(ing) {
@@ -621,7 +624,7 @@
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
-      const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
+      const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i)) || grainAddedSalt(i, kinds[n])).map((i) => i.raw);
       if (bracketUnknown.length) return { group: null, drivers: [], reason: "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed" };
       const legumePreserved = ings.filter((i, n) => BRINE_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume, vegetable or fruit (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established" };
@@ -629,6 +632,8 @@
         return nutSalted.length
           ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+      if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour") && nutSalted.length)
+        return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: milkPowderNamed(ings[0]) ? "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')" : "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "food_powder" && powderCompositionStated(ings[0]))
