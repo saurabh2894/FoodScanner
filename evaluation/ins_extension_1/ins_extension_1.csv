@@ -1,0 +1,67 @@
+code,official_name,inchem_url,functional_classes_quoted,multifunctional,fetch_date,selection_source,evidence_status
+100,CURCUMIN,https://www.inchem.org/documents/jecfa/jeceval/jec_460.htm,COLOUR,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S21.txt,OK
+101,RIBOFLAVIN,https://www.inchem.org/documents/jecfa/jeceval/jec_2099.htm,COLOUR,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S19.txt,OK
+122,AZORUBINE,https://www.inchem.org/documents/jecfa/jeceval/jec_171.htm,COLOUR,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+123,AMARANTH,https://www.inchem.org/documents/jecfa/jeceval/jec_94.htm,COLOUR,no,2026-11-21,evaluation/fresh_batch_1/reference.errata-v1.json,OK
+124,PONCEAU 4R,https://www.inchem.org/documents/jecfa/jeceval/jec_1959.htm,COLOUR,no,2026-11-21,evaluation/negation_addendum/inputs/R6.txt,OK
+133,BRILLIANT BLUE FCF,https://www.inchem.org/documents/jecfa/jeceval/jec_236.htm,COLOUR,no,2026-11-21,evaluation/fresh_batch_2/inputs/M15.txt,OK
+150a,"CARAMEL COLOUR, CLASS I",https://www.inchem.org/documents/jecfa/jeceval/jec_347.htm,FOOD COLOUR,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S04.txt,OK
+150c,"CARAMEL COLOUR, CLASS III",https://www.inchem.org/documents/jecfa/jeceval/jec_349.htm,FOOD COLOUR,no,2026-11-21,evaluation/dev_regression_15/inputs/F13.txt,OK
+160(ci),PAPRIKA OLEORESIN,https://www.inchem.org/documents/jecfa/jeceval/jec_1820.htm,FOOD COLOUR; FLAVOURING AGENT,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S19.txt,OK
+160a,CAROTENES (VEGETABLE),https://www.inchem.org/documents/jecfa/jeceval/jec_373.htm,COLOUR,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S21.txt,OK
+160b,ANNATTO EXTRACT (ALKALI-PROCESSED NORBIXIN),https://www.inchem.org/documents/jecfa/jeceval/jec_146.htm,COLOUR,no,2026-11-21,evaluation/dev_regression_15/inputs/F12.txt,OK
+160c,PAPRIKA OLEORESIN,https://www.inchem.org/documents/jecfa/jeceval/jec_1820.htm,FOOD COLOUR; FLAVOURING AGENT,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N05.txt,OK
+161h,CITRANAXANTHIN,https://www.inchem.org/documents/jecfa/jeceval/jec_435.htm,COLOUR,no,2026-11-21,research/05-ins-reference-provenance.txt,OK
+170,CALCIUM CARBONATE,https://www.inchem.org/documents/jecfa/jeceval/jec_304.htm,ANTICAKING AGENT; SURFACE COLORANT; STABILIZER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S26.txt,OK
+196,Not found in JECFA/INCHEM,,,no,2026-11-21,evaluation/fresh_batch_1/inputs/N04.txt,EVIDENCE-MISSING
+223,SODIUM METABISULFITE,https://www.inchem.org/documents/jecfa/jeceval/jec_2159.htm,ANTIBROWNING AGENT; ANTIOXIDANT; FLOUR TREATMENT AGENT; PRESERVATIVE,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N02.txt,OK
+236,FORMIC ACID,https://www.inchem.org/documents/jecfa/jeceval/jec_867.htm,PRESERVATIVE; FLAVOURING AGENT,yes,2026-11-21,research/04-nova-colour-and-butter-basis.txt,OK
+262(i),SODIUM ACETATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2127.htm,BUFFER; ANTIMICROBIAL PRESERVATIVE,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N05.txt,OK
+297,FUMARIC ACID,https://www.inchem.org/documents/jecfa/jeceval/jec_869.htm,ACIDITY REGULATOR; FLAVOURING AGENT,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M15.txt,OK
+300,ASCORBIC ACID,https://www.inchem.org/documents/jecfa/jeceval/jec_162.htm,ANTIOXIDANT,no,2026-11-21,evaluation/fresh_batch_3/inputs/Q13.txt,OK
+306,MIXED TOCOPHEROLS CONCENTRATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2281.htm,ANTIOXIDANT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+307,dl-alpha-TOCOPHEROL,https://www.inchem.org/documents/jecfa/jeceval/jec_2280.htm,ANTIOXIDANT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S24.txt,OK
+307b,MIXED TOCOPHEROLS CONCENTRATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2281.htm,ANTIOXIDANT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S21.txt,OK
+319,TERTIARY BUTYLHYDROQUINONE,https://www.inchem.org/documents/jecfa/jeceval/jec_2240.htm,ANTIOXIDANT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S15.txt,OK
+320,BUTYLATED HYDROXYANISOLE,https://www.inchem.org/documents/jecfa/jeceval/jec_258.htm,ANTIOXIDANT,no,2026-11-21,evaluation/dev_regression_15/references.md,OK
+322(i),LECITHIN,https://www.inchem.org/documents/jecfa/jeceval/jec_1261.htm,ANTIOXIDANT; EMULSIFIER,yes,2026-11-21,evaluation/dev_regression_15/references.md,OK
+331,TRISODIUM CITRATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2346.htm,EMULSION STABILIZER; BUFFER; SEQUESTRANT,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M15.txt,OK
+331(iii),TRISODIUM CITRATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2346.htm,EMULSION STABILIZER; BUFFER; SEQUESTRANT,yes,2026-11-21,evaluation/negation_addendum/inputs/R4.txt,OK
+338,PHOSPHORIC ACID,https://www.inchem.org/documents/jecfa/jeceval/jec_1924.htm,ACIDULANT; SEQUESTRANT; SYNERGIST FOR ANTIOXIDANTS,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M13.txt,OK
+339(iii),TRISODIUM PHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2348.htm,SEQUESTRANT; EMULSION STABILIZER; BUFFER,yes,2026-11-21,evaluation/fresh_batch_3/reference.json,OK
+340,POTASSIUM DIHYDROGEN PHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1974.htm,BUFFER; SEQUESTRANT; NEUTRALIZING AGENT; YEAST FOOD,yes,2026-11-21,evaluation/dev_regression_15/inputs/F06.txt,OK
+341(ii),CALCIUM HYDROGEN PHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_318.htm,DOUGH CONDITIONER; YEAST FOOD,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N02.txt,OK
+341(iii),TRICALCIUM PHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2306.htm,BUFFER; ANTICAKING AGENT,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S04.txt,OK
+385,CALCIUM DISODIUM ETHYLENEDIAMINETETRAACETATE,https://www.inchem.org/documents/jecfa/jeceval/jec_311.htm,ANTIOXIDANT; PRESERVATIVE; SEQUESTRANT,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N13.txt,OK
+407,CARRAGEENAN,https://www.inchem.org/documents/jecfa/jeceval/jec_377.htm,THICKENER; GELLING AGENT; STABILIZER; EMULSIFIER,yes,2026-11-21,evaluation/dev_regression_15/inputs/F06.txt,OK
+414,GUM ARABIC,https://www.inchem.org/documents/jecfa/jeceval/jec_948.htm,THICKENER; STABILIZER; EMULSIFIER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+418,GELLAN GUM,https://www.inchem.org/documents/jecfa/jeceval/jec_896.htm,THICKENING AGENT; STABILIZER; GELLING AGENT,yes,2026-11-21,evaluation/fresh_batch_3/inputs/Q11.txt,OK
+422,GLYCEROL,https://www.inchem.org/documents/jecfa/jeceval/jec_925.htm,HUMECTANT; BODYING AGENT; SOLVENT; PLASTICIZER; FLAVOURING AGENT,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+436,POLYOXYETHYLENE (20) SORBITAN TRISTEARATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1954.htm,EMULSIFIER; DISPERSING AGENT,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M13.txt,OK
+442,AMMONIUM SALTS OF PHOSPHATIDIC ACID,https://www.inchem.org/documents/jecfa/jeceval/jec_110.htm,EMULSIFIER,no,2026-11-21,evaluation/negation_addendum/inputs/R5.txt,OK
+450(i),DISODIUM PYROPHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_671.htm,BUFFERING AGENT; SEQUESTRANT; LEAVENING AGENT,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N02.txt,OK
+450(iii),TETRASODIUM PYROPHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2259.htm,EMULSIFIER; BUFFERING AGENT; SEQUESTRANT,yes,2026-11-21,evaluation/dev_regression_15/inputs/F08.txt,OK
+451,PENTASODIUM TRIPHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1838.htm,SEQUESTRANT; TEXTURIZER,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M10.txt,OK
+451(i),PENTASODIUM TRIPHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1838.htm,SEQUESTRANT; TEXTURIZER,yes,2026-11-21,evaluation/dev_regression_15/inputs/F08.txt,OK
+452,"SODIUM POLYPHOSPHATES, GLASSY",https://www.inchem.org/documents/jecfa/jeceval/jec_2168.htm,EMULSIFIER; SEQUESTRANT; TEXTURIZER,yes,2026-11-21,evaluation/dev_regression_15/inputs/F06.txt,OK
+460(i),MICROCRYSTALLINE CELLULOSE,https://www.inchem.org/documents/jecfa/jeceval/jec_1653.htm,EMULSIFIER; STABILIZER; ANTICAKING AGENT; DISPERSING AGENT,yes,2026-11-21,evaluation/dev_regression_15/inputs/F06.txt,OK
+472c,CITRIC AND FATTY ACID ESTERS OF GLYCEROL,https://www.inchem.org/documents/jecfa/jeceval/jec_437.htm,EMULSIFIER; STABILIZER; DOUGH CONDITIONER; ANTIOXIDANT SYNERGIST,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M09.txt,OK
+472e,DIACETYLTARTARIC AND FATTY ACID ESTERS OF GLYCEROL,https://www.inchem.org/documents/jecfa/jeceval/jec_532.htm,EMULSIFIER,no,2026-11-21,evaluation/fresh_batch_2/reference.json,OK
+492,SORBITAN TRISTEARATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2186.htm,EMULSIFIER,no,2026-11-21,evaluation/dev_regression_15/inputs/F04.txt,OK
+500,SODIUM CARBONATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2137.htm,ALKALI,no,2026-11-21,evaluation/fresh_batch_2/inputs/M09.txt,OK
+501,POTASSIUM CARBONATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1970.htm,ALKALI,no,2026-11-21,evaluation/fresh_batch_1/inputs/N16.txt,OK
+501(ii),POTASSIUM HYDROGEN CARBONATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1979.htm,ALKALI; LEAVENING AGENT; BUFFER,yes,2026-11-21,evaluation/fresh_batch_1/reference.json,OK
+503,AMMONIUM CARBONATE,https://www.inchem.org/documents/jecfa/jeceval/jec_102.htm,ACIDITY REGULATOR; RAISING AGENT,yes,2026-11-21,evaluation/fresh_batch_2/inputs/M09.txt,OK
+509,CALCIUM CHLORIDE,https://www.inchem.org/documents/jecfa/jeceval/jec_305.htm,FIRMING AGENT,no,2026-11-21,evaluation/fresh_batch_2/inputs/M07.txt,OK
+516,CALCIUM SULFATE,https://www.inchem.org/documents/jecfa/jeceval/jec_337.htm,YEAST FOOD; DOUGH CONDITIONER; SEQUESTRANT; FIRMING AGENT,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N01.txt,OK
+552,CALCIUM SILICATE,https://www.inchem.org/documents/jecfa/jeceval/jec_333.htm,ANTICAKING AGENT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S04.txt,OK
+621,MONOSODIUM L-GLUTAMATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1671.htm,FLAVOUR ENHANCER,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S19.txt,OK
+635,DISODIUM 5'-RIBONUCLEOTIDES,https://www.inchem.org/documents/jecfa/jeceval/jec_672.htm,FLAVOUR ENHANCER,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S03.txt,OK
+640,GLYCINE,https://www.inchem.org/documents/jecfa/jeceval/jec_935.htm,FLAVOURING AGENT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S30.txt,OK
+903,CARNAUBA WAX,https://www.inchem.org/documents/jecfa/jeceval/jec_367.htm,GLAZING AGENT; BULKING AGENT; ACIDITY REGULATOR; CARRIER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+904,"SHELLAC, BLEACHED",https://www.inchem.org/documents/jecfa/jeceval/jec_2122.htm,COATING AGENT; GLAZING AGENT; SURFACE FINISHING AGENT,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S17.txt,OK
+951,ASPARTAME,https://www.inchem.org/documents/jecfa/jeceval/jec_165.htm,SWEETENING AGENT; FLAVOUR ENHANCER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S04.txt,OK
+955,SUCRALOSE,https://www.inchem.org/documents/jecfa/jeceval/jec_2206.htm,SWEETENING AGENT,no,2026-11-21,data/cache/oos_herb_spice_1/inputs/S04.txt,OK
+1420,STARCH ACETATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2194.htm,STABILIZER; THICKENING AGENT; BINDER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S19.txt,OK
+1442,HYDROXYPROPYL DISTARCH PHOSPHATE,https://www.inchem.org/documents/jecfa/jeceval/jec_1109.htm,STABILIZER; THICKENER; BINDER,yes,2026-11-21,evaluation/fresh_batch_1/inputs/N13.txt,OK
+1450,STARCH SODIUM OCTENYLSUCCINATE,https://www.inchem.org/documents/jecfa/jeceval/jec_2195.htm,STABILIZER; THICKENING AGENT; BINDER,yes,2026-11-21,data/cache/oos_herb_spice_1/inputs/S24.txt,OK
