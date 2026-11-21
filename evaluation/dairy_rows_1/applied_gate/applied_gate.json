@@ -1,0 +1,4655 @@
+{
+ "rule_id": "dairy-rows-1",
+ "base_src": "/tmp/base_d/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 406,
+  "after": 411,
+  "added": [
+   "duck eggs",
+   "goose eggs",
+   "quail eggs",
+   "sheep milk",
+   "turkey eggs"
+  ],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "sheep milk": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   }
+  },
+  "duck eggs": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   }
+  },
+  "goose eggs": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   }
+  },
+  "quail eggs": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   }
+  },
+  "turkey eggs": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 556,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 812,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 49,
+  "probed": 147,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 49,
+    "group1_before": 5,
+    "group1_after": 5,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 49,
+    "group1_before": 5,
+    "group1_after": 5,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 49,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 10,
+  "group1_after": 10,
+  "changes": {}
+ },
+ "powder_surface": {
+  "probed": 558,
+  "group1_before": 364,
+  "group1_after": 364,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "cow milk powder",
+   "goat milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "new_rows_surface": {
+  "rows": [
+   "duck eggs",
+   "goose eggs",
+   "quail eggs",
+   "sheep milk",
+   "turkey eggs"
+  ],
+  "kinds": {
+   "duck eggs": "whole_food",
+   "goose eggs": "whole_food",
+   "quail eggs": "whole_food",
+   "sheep milk": "whole_food",
+   "turkey eggs": "whole_food"
+  },
+  "forms": {
+   "duck eggs": 1,
+   "roasted duck eggs": 1,
+   "toasted duck eggs": null,
+   "dry roasted duck eggs": 1,
+   "oil roasted duck eggs": null,
+   "honey roasted duck eggs": null,
+   "salted duck eggs": null,
+   "roasted salted duck eggs": null,
+   "toasted salted duck eggs": null,
+   "sugared duck eggs": null,
+   "unsalted duck eggs": 1,
+   "duck eggs (no added salt)": 1,
+   "duck eggs (sugar)": null,
+   "duck eggs (canned)": null,
+   "duck eggs (XQ9)": null,
+   "Rice, duck eggs": null,
+   "duck eggs, salt": 3,
+   "duck eggs flour": null,
+   "duck eggs butter": null,
+   "duck eggs oil": null,
+   "duck eggs powder": null,
+   "100% duck eggs powder": 1,
+   "whole duck eggs powder": 1,
+   "goose eggs": 1,
+   "roasted goose eggs": 1,
+   "toasted goose eggs": null,
+   "dry roasted goose eggs": 1,
+   "oil roasted goose eggs": null,
+   "honey roasted goose eggs": null,
+   "salted goose eggs": null,
+   "roasted salted goose eggs": null,
+   "toasted salted goose eggs": null,
+   "sugared goose eggs": null,
+   "unsalted goose eggs": 1,
+   "goose eggs (no added salt)": 1,
+   "goose eggs (sugar)": null,
+   "goose eggs (canned)": null,
+   "goose eggs (XQ9)": null,
+   "Rice, goose eggs": null,
+   "goose eggs, salt": 3,
+   "goose eggs flour": null,
+   "goose eggs butter": null,
+   "goose eggs oil": null,
+   "goose eggs powder": null,
+   "100% goose eggs powder": 1,
+   "whole goose eggs powder": 1,
+   "quail eggs": 1,
+   "roasted quail eggs": 1,
+   "toasted quail eggs": null,
+   "dry roasted quail eggs": 1,
+   "oil roasted quail eggs": null,
+   "honey roasted quail eggs": null,
+   "salted quail eggs": null,
+   "roasted salted quail eggs": null,
+   "toasted salted quail eggs": null,
+   "sugared quail eggs": null,
+   "unsalted quail eggs": 1,
+   "quail eggs (no added salt)": 1,
+   "quail eggs (sugar)": null,
+   "quail eggs (canned)": null,
+   "quail eggs (XQ9)": null,
+   "Rice, quail eggs": null,
+   "quail eggs, salt": 3,
+   "quail eggs flour": null,
+   "quail eggs butter": null,
+   "quail eggs oil": null,
+   "quail eggs powder": null,
+   "100% quail eggs powder": 1,
+   "whole quail eggs powder": 1,
+   "sheep milk": 1,
+   "roasted sheep milk": 1,
+   "toasted sheep milk": null,
+   "dry roasted sheep milk": 1,
+   "oil roasted sheep milk": null,
+   "honey roasted sheep milk": null,
+   "salted sheep milk": null,
+   "roasted salted sheep milk": null,
+   "toasted salted sheep milk": null,
+   "sugared sheep milk": null,
+   "unsalted sheep milk": 1,
+   "sheep milk (no added salt)": 1,
+   "sheep milk (sugar)": null,
+   "sheep milk (canned)": null,
+   "sheep milk (XQ9)": null,
+   "Rice, sheep milk": null,
+   "sheep milk, salt": 3,
+   "sheep milk flour": null,
+   "sheep milk butter": null,
+   "sheep milk oil": null,
+   "sheep milk powder": null,
+   "100% sheep milk powder": 1,
+   "whole sheep milk powder": null,
+   "turkey eggs": 1,
+   "roasted turkey eggs": 1,
+   "toasted turkey eggs": null,
+   "dry roasted turkey eggs": 1,
+   "oil roasted turkey eggs": null,
+   "honey roasted turkey eggs": null,
+   "salted turkey eggs": null,
+   "roasted salted turkey eggs": null,
+   "toasted salted turkey eggs": null,
+   "sugared turkey eggs": null,
+   "unsalted turkey eggs": 1,
+   "turkey eggs (no added salt)": 1,
+   "turkey eggs (sugar)": null,
+   "turkey eggs (canned)": null,
+   "turkey eggs (XQ9)": null,
+   "Rice, turkey eggs": null,
+   "turkey eggs, salt": 3,
+   "turkey eggs flour": null,
+   "turkey eggs butter": null,
+   "turkey eggs oil": null,
+   "turkey eggs powder": null,
+   "100% turkey eggs powder": 1,
+   "whole turkey eggs powder": 1
+  }
+ },
+ "controls": {
+  "human milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: human milk",
+   "unassessed_after": [
+    "human milk"
+   ]
+  },
+  "instant skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: instant skimmed milk powder",
+   "unassessed_after": [
+    "instant skimmed milk powder"
+   ]
+  },
+  "sheep": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sheep\")",
+   "unassessed_after": [
+    "sheep"
+   ]
+  },
+  "duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"duck\")",
+   "unassessed_after": [
+    "duck"
+   ]
+  },
+  "egg powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (egg powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "plain yoghurt": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"plain yoghurt\")",
+   "unassessed_after": [
+    "plain yoghurt"
+   ]
+  },
+  "sheep cheese": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sheep cheese",
+   "unassessed_after": [
+    "sheep cheese"
+   ]
+  },
+  "duck egg yolk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: duck egg yolk",
+   "unassessed_after": [
+    "duck egg yolk"
+   ]
+  },
+  "sheep milk solids": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sheep milk solids",
+   "unassessed_after": [
+    "sheep milk solids"
+   ]
+  },
+  "fortified sheep milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified sheep milk powder",
+   "unassessed_after": [
+    "fortified sheep milk powder"
+   ]
+  },
+  "sheep milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted sheep milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sheep milk, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared sheep milk",
+   "unassessed_after": [
+    "sugared sheep milk"
+   ]
+  },
+  "sheep milk, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sheep milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sheep milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sheep milk (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "roasted sheep milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted sheep milk",
+   "unassessed_after": [
+    "toasted sheep milk"
+   ]
+  },
+  "dried sheep milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (sheep milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% sheep milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole sheep milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (whole sheep milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "sheep milk (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sheep milk (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sheep milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sheep milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sheep milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sheep milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sheep milk (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk (raw)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "unsalted sheep milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "Rice, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sheep milk, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sheep milk, salt, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sheep milk, milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sheep milk, eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sheep milk, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sheep milk, cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck egg": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose egg": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail egg": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey egg": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted duck eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck eggs, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared duck eggs",
+   "unassessed_after": [
+    "sugared duck eggs"
+   ]
+  },
+  "duck eggs, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck eggs (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck eggs (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck eggs (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "roasted duck eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted duck eggs",
+   "unassessed_after": [
+    "toasted duck eggs"
+   ]
+  },
+  "dried duck eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (duck eggs powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% duck eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole duck eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (duck eggs (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "duck eggs (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (duck eggs (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "duck eggs (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (duck eggs (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "duck eggs (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (raw)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "unsalted duck eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "Rice, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck eggs, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck eggs, salt, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck eggs, milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck eggs, eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck eggs, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck eggs, cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted goose eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted goose eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose eggs, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared goose eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared goose eggs",
+   "unassessed_after": [
+    "sugared goose eggs"
+   ]
+  },
+  "goose eggs, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose eggs (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose eggs (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose eggs (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "roasted goose eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted goose eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted goose eggs",
+   "unassessed_after": [
+    "toasted goose eggs"
+   ]
+  },
+  "dried goose eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (goose eggs powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% goose eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole goose eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goose eggs (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goose eggs (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goose eggs (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goose eggs (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goose eggs (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goose eggs (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (raw)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "unsalted goose eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "Rice, goose eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs, salt, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose eggs, milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs, eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose eggs, cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted quail eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted quail eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "quail eggs, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared quail eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared quail eggs",
+   "unassessed_after": [
+    "sugared quail eggs"
+   ]
+  },
+  "quail eggs, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "quail eggs (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "quail eggs (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "quail eggs (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "roasted quail eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted quail eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted quail eggs",
+   "unassessed_after": [
+    "toasted quail eggs"
+   ]
+  },
+  "dried quail eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (quail eggs powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% quail eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole quail eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (quail eggs (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "quail eggs (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (quail eggs (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "quail eggs (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (quail eggs (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "quail eggs (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (raw)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "unsalted quail eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quail eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "Rice, quail eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs, salt, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quail eggs, milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs, eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "quail eggs, cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted turkey eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted turkey eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey eggs, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared turkey eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared turkey eggs",
+   "unassessed_after": [
+    "sugared turkey eggs"
+   ]
+  },
+  "turkey eggs, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey eggs (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey eggs (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey eggs (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "roasted turkey eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted turkey eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted turkey eggs",
+   "unassessed_after": [
+    "toasted turkey eggs"
+   ]
+  },
+  "dried turkey eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (turkey eggs powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% turkey eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole turkey eggs powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (turkey eggs (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "turkey eggs (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (turkey eggs (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "turkey eggs (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (turkey eggs (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "turkey eggs (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (raw)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "unsalted turkey eggs": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "Rice, turkey eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs, salt, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey eggs, milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs, eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey eggs, cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared milk",
+   "unassessed_after": [
+    "sugared milk"
+   ]
+  },
+  "milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted milk\")",
+   "unassessed_after": [
+    "toasted milk"
+   ]
+  },
+  "dried milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "rice (sheep milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (rice (sheep milk): sheep milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "egg (duck eggs)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (egg (duck eggs): duck eggs): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk (sheep milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (milk (sheep milk): sheep milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "eggs": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "eggs, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "eggs (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared eggs",
+   "unassessed_after": [
+    "sugared eggs"
+   ]
+  },
+  "eggs (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "eggs (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "eggs (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "eggs (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (eggs (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted eggs": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted eggs",
+   "unassessed_after": [
+    "toasted eggs"
+   ]
+  },
+  "dried eggs": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "eggs powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (eggs powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% eggs powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "eggs (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (eggs (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "eggs (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (eggs (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "eggs, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "eggs, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "eggs, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "egg": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted egg": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted egg: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "egg, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "egg (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared egg": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared egg",
+   "unassessed_after": [
+    "sugared egg"
+   ]
+  },
+  "egg (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "egg (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "egg (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "egg (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted egg": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted egg": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted egg",
+   "unassessed_after": [
+    "toasted egg"
+   ]
+  },
+  "dried egg": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% egg powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "egg (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "egg (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "egg, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "egg, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "egg, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "buffalo milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted buffalo milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted buffalo milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "buffalo milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared buffalo milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared buffalo milk",
+   "unassessed_after": [
+    "sugared buffalo milk"
+   ]
+  },
+  "buffalo milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "buffalo milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "buffalo milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "buffalo milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (buffalo milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted buffalo milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted buffalo milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted buffalo milk",
+   "unassessed_after": [
+    "toasted buffalo milk"
+   ]
+  },
+  "dried buffalo milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% buffalo milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (buffalo milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "buffalo milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "buffalo milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "buffalo milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted toned milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "toned milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sugared toned milk\")",
+   "unassessed_after": [
+    "sugared toned milk"
+   ]
+  },
+  "toned milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "toned milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "toned milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "toned milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (toned milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted toned milk\")",
+   "unassessed_after": [
+    "toasted toned milk"
+   ]
+  },
+  "dried toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% toned milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (toned milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "toned milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "toned milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "toned milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "double toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted double toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted double toned milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "double toned milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "double toned milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared double toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sugared double toned milk\")",
+   "unassessed_after": [
+    "sugared double toned milk"
+   ]
+  },
+  "double toned milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "double toned milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "double toned milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "double toned milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (double toned milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted double toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted double toned milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted double toned milk\")",
+   "unassessed_after": [
+    "toasted double toned milk"
+   ]
+  },
+  "dried double toned milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "double toned milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: double toned milk powder",
+   "unassessed_after": [
+    "double toned milk powder"
+   ]
+  },
+  "100% double toned milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: 100% double toned milk powder",
+   "unassessed_after": [
+    "100% double toned milk powder"
+   ]
+  },
+  "double toned milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "double toned milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "double toned milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (double toned milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "double toned milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "double toned milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "double toned milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk solids": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted milk solids": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk solids: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk solids, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk solids (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared milk solids": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared milk solids",
+   "unassessed_after": [
+    "sugared milk solids"
+   ]
+  },
+  "milk solids (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk solids (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk solids (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk solids (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted milk solids": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted milk solids": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted milk solids",
+   "unassessed_after": [
+    "toasted milk solids"
+   ]
+  },
+  "dried milk solids": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk solids powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% milk solids powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk solids (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk solids (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk solids, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk solids, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk solids, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dahi": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted dahi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted dahi: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "dahi, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dahi (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared dahi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared dahi",
+   "unassessed_after": [
+    "sugared dahi"
+   ]
+  },
+  "dahi (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "dahi (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "dahi (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "dahi (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (dahi (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted dahi": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted dahi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted dahi",
+   "unassessed_after": [
+    "toasted dahi"
+   ]
+  },
+  "dried dahi": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dahi powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (dahi powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% dahi powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dahi (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (dahi (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dahi (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "dahi",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (dahi (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dahi, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "dahi, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "dahi, starter culture": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "salted milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk powder: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk powder, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared milk powder",
+   "unassessed_after": [
+    "sugared milk powder"
+   ]
+  },
+  "milk powder (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk powder (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk powder (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk powder (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk powder (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (roasted milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "toasted milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted milk powder",
+   "unassessed_after": [
+    "toasted milk powder"
+   ]
+  },
+  "dried milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (dried milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "milk powder powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% milk powder powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk powder (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk powder, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk powder, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "milk powder, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted skimmed milk powder: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "skimmed milk powder, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared skimmed milk powder",
+   "unassessed_after": [
+    "sugared skimmed milk powder"
+   ]
+  },
+  "skimmed milk powder (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "skimmed milk powder (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "skimmed milk powder (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "skimmed milk powder (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (skimmed milk powder (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (roasted skimmed milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "toasted skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted skimmed milk powder",
+   "unassessed_after": [
+    "toasted skimmed milk powder"
+   ]
+  },
+  "dried skimmed milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (dried skimmed milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "skimmed milk powder powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% skimmed milk powder powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (skimmed milk powder (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "skimmed milk powder, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "skimmed milk powder, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "skimmed milk powder, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted cow milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "cow milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared cow milk",
+   "unassessed_after": [
+    "sugared cow milk"
+   ]
+  },
+  "cow milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "cow milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "cow milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "cow milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cow milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted cow milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted cow milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted cow milk",
+   "unassessed_after": [
+    "toasted cow milk"
+   ]
+  },
+  "dried cow milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% cow milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cow milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "cow milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "cow milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "cow milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted goat milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted goat milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goat milk, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk (salted)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "sugared goat milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared goat milk",
+   "unassessed_after": [
+    "sugared goat milk"
+   ]
+  },
+  "goat milk (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goat milk (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goat milk (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goat milk (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goat milk (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted goat milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted goat milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted goat milk",
+   "unassessed_after": [
+    "toasted goat milk"
+   ]
+  },
+  "dried goat milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% goat milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk (sheep)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goat milk (sheep): sheep), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goat milk, sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goat milk, duck eggs": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goat milk, starter culture": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
