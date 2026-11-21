@@ -1,0 +1,157 @@
+dataset,fdc_id,record_name,junior,senior,canonical_or_reason,note
+sr_legacy,168587,"Seeds, sisymbrium sp. seeds, whole, dried",accept,queue (hold),sisymbrium seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,168591,"Seeds, lotus seeds, raw",accept,queue (hold),lotus seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,169407,"Seeds, watermelon seed kernels, dried",accept,accept (stage),watermelon seeds,name/attribute form evidence
+sr_legacy,169408,"Nuts, chestnuts, japanese, dried",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,169412,"Seeds, sesame seed kernels, dried (decorticated)",accept,accept (stage),sesame seeds,name/attribute form evidence
+sr_legacy,169413,"Nuts, chestnuts, japanese, raw",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,169414,"Seeds, flaxseed",accept,accept (already in lexicon; no row change),flax seeds,existing row
+sr_legacy,170144,"Seeds, breadfruit seeds, raw",accept,queue (hold),breadfruit seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,170149,"Seeds, lotus seeds, dried",accept,queue (hold),lotus seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,170150,"Seeds, sesame seeds, whole, dried",accept,accept (stage),sesame seeds,name/attribute form evidence
+sr_legacy,170157,"Nuts, acorns, raw",accept,accept (stage),acorns,name/attribute form evidence
+sr_legacy,170161,"Nuts, beechnuts, dried",accept,accept (stage),beechnuts,name/attribute form evidence
+sr_legacy,170162,"Nuts, cashew nuts, raw",accept,accept (stage),cashew nuts,name/attribute form evidence
+sr_legacy,170164,"Nuts, chestnuts, chinese, raw",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170165,"Nuts, chestnuts, chinese, dried",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170167,"Nuts, chestnuts, european, dried, peeled",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170175,"Nuts, ginkgo nuts, dried",accept,accept (stage),ginkgo nuts,name/attribute form evidence
+sr_legacy,170177,"Nuts, hickorynuts, dried",accept,accept (stage),hickory nuts,name/attribute form evidence
+sr_legacy,170178,"Nuts, macadamia nuts, raw",accept,accept (stage),macadamia nuts,name/attribute form evidence
+sr_legacy,170184,"Nuts, pistachio nuts, raw",accept,accept (stage),pistachio nuts,name/attribute form evidence
+sr_legacy,170186,"Nuts, walnuts, black, dried",accept,accept (stage),walnuts,name/attribute form evidence
+sr_legacy,170187,"Nuts, walnuts, english",accept,accept (stage),walnuts,"portion-only evidence: kept as supporting record, not form evidence"
+sr_legacy,170552,"Seeds, breadnut tree seeds, raw",accept,queue (hold),breadnut seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,170553,"Seeds, breadnut tree seeds, dried",accept,queue (hold),breadnut seeds,"oily-seed membership unsupported: FDC total fat 0.5-5.6 g/100 g (naming-adjacent measurement, not placement)"
+sr_legacy,170554,"Seeds, chia seeds, dried",accept,accept (stage),chia seeds,name/attribute form evidence
+sr_legacy,170556,"Seeds, pumpkin and squash seed kernels, dried",accept,accept (already in lexicon; no row change),pumpkin seeds,existing row
+sr_legacy,170558,"Seeds, safflower seed kernels, dried",accept,accept (stage),safflower seeds,name/attribute form evidence
+sr_legacy,170562,"Seeds, sunflower seed kernels, dried",accept,accept (stage),sunflower seeds,name/attribute form evidence
+sr_legacy,170565,"Nuts, acorns, dried",accept,accept (stage),acorns,name/attribute form evidence
+sr_legacy,170567,"Nuts, almonds",accept,accept (already in lexicon; no row change),almonds,existing row
+sr_legacy,170568,"Nuts, almonds, blanched",accept,accept (already in lexicon; no row change),almonds,existing row
+sr_legacy,170569,"Nuts, brazilnuts, dried, unblanched",accept,accept (stage),brazil nuts,name/attribute form evidence
+sr_legacy,170570,"Nuts, butternuts, dried",accept,accept (stage),butternuts,name/attribute form evidence
+sr_legacy,170574,"Nuts, chestnuts, european, raw, unpeeled",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170575,"Nuts, chestnuts, european, raw, peeled",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170576,"Nuts, chestnuts, european, dried, unpeeled",accept,accept (stage),chestnuts,name/attribute form evidence
+sr_legacy,170581,"Nuts, hazelnuts or filberts",accept,accept (stage),hazelnuts,"portion-only evidence: kept as supporting record, not form evidence"
+sr_legacy,170584,"Nuts, ginkgo nuts, raw",accept,accept (stage),ginkgo nuts,name/attribute form evidence
+sr_legacy,170590,"Nuts, pilinuts, dried",accept,accept (stage),pili nuts,name/attribute form evidence
+sr_legacy,170591,"Nuts, pine nuts, dried",accept,accept (stage),pine nuts,name/attribute form evidence
+sr_legacy,170592,"Nuts, pine nuts, pinyon, dried",accept,accept (stage),pine nuts,name/attribute form evidence
+foundation,2346392,"Nuts, pine nuts, raw",accept,accept (stage),pine nuts,name/attribute form evidence
+foundation,2346393,"Nuts, almonds, whole, raw",accept,accept (already in lexicon; no row change),almonds,existing row
+foundation,2346394,"Nuts, walnuts, English, halves, raw",accept,accept (stage),walnuts,name/attribute form evidence
+foundation,2346395,"Nuts, pecans, halves, raw",accept,accept (stage),pecans,name/attribute form evidence
+foundation,2515373,"Nuts, brazilnuts, raw",accept,accept (stage),brazil nuts,name/attribute form evidence
+foundation,2515374,"Nuts, cashew nuts, raw",accept,accept (stage),cashew nuts,name/attribute form evidence
+foundation,2515375,"Nuts, hazelnuts or filberts, raw",accept,accept (stage),hazelnuts,name/attribute form evidence
+foundation,2515378,"Nuts, macadamia nuts, raw",accept,accept (stage),macadamia nuts,name/attribute form evidence
+foundation,2515379,"Nuts, pistachio nuts, raw",accept,accept (stage),pistachio nuts,name/attribute form evidence
+foundation,2515380,"Seeds, pumpkin seeds (pepitas), raw",accept,accept (already in lexicon; no row change),pumpkin seeds,existing row
+foundation,2515381,"Seeds, sunflower seed, kernel, raw",accept,accept (stage),sunflower seeds,name/attribute form evidence
+sr_legacy,168585,"Nuts, coconut meat, dried (desiccated), creamed",queue,queue,queue_coconut,unchanged
+sr_legacy,168586,"Nuts, coconut meat, dried (desiccated), sweetened, shredded",queue,queue,queue_coconut,unchanged
+sr_legacy,168588,"Nuts, almond butter, plain, without salt added",queue,queue,queue_butter_paste,unchanged
+sr_legacy,168590,"Nuts, chestnuts, japanese, roasted",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,168604,"Seeds, sesame butter, tahini, type of kernels unspecified",queue,queue,queue_butter_paste,unchanged
+sr_legacy,169406,"Seeds, sesame butter, tahini, from unroasted kernels (non-chemically removed seed coat)",queue,queue,queue_butter_paste,unchanged
+sr_legacy,169409,"Nuts, coconut milk, frozen (liquid expressed from grated meat and water)",queue,queue,queue_coconut,unchanged
+sr_legacy,169410,"Seeds, sesame butter, tahini, from raw and stone ground kernels",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170146,"Seeds, cottonseed flour, low fat (glandless)",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170147,"Seeds, cottonseed meal, partially defatted (glandless)",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170148,"Seeds, hemp seed, hulled",queue,queue,plain_form_not_stated,unchanged
+sr_legacy,170151,"Seeds, sesame seeds, whole, roasted and toasted",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170152,"Seeds, sesame seed kernels, toasted, without salt added (decorticated)",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170153,"Seeds, sesame flour, partially defatted",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170154,"Seeds, sunflower seed kernels, toasted, without salt",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170155,"Seeds, sunflower seed butter, without salt",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170156,"Seeds, sunflower seed flour, partially defatted",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170158,"Nuts, almonds, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170160,"Nuts, almond paste",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170163,"Nuts, cashew butter, plain, without salt added",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170169,"Nuts, coconut meat, raw",queue,queue,queue_coconut,unchanged
+sr_legacy,170170,"Nuts, coconut meat, dried (desiccated), not sweetened",queue,queue,queue_coconut,unchanged
+sr_legacy,170171,"Nuts, coconut cream, canned, sweetened",queue,queue,queue_coconut,unchanged
+sr_legacy,170172,"Nuts, coconut milk, raw (liquid expressed from grated meat and water)",queue,queue,queue_coconut,unchanged
+sr_legacy,170173,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",queue,queue,queue_coconut,unchanged
+sr_legacy,170174,"Nuts, coconut water (liquid from coconuts)",queue,queue,queue_coconut,unchanged
+sr_legacy,170179,"Nuts, macadamia nuts, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170182,"Nuts, pecans",queue,queue,plain_form_not_stated,unchanged
+sr_legacy,170183,"Nuts, pecans, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170185,"Nuts, pistachio nuts, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170188,"Seeds, pumpkin and squash seeds, whole, roasted, without salt",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170189,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170190,"Nuts, chestnuts, european, roasted",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170191,"Seeds, sesame butter, paste",queue,queue,queue_butter_paste,unchanged
+sr_legacy,170192,"Seeds, sesame flour, high-fat",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170555,"Seeds, cottonseed flour, partially defatted (glandless)",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170557,"Seeds, pumpkin and squash seed kernels, roasted, without salt",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170559,"Seeds, safflower seed meal, partially defatted",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170560,"Seeds, sesame flour, low-fat",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170561,"Seeds, sesame meal, partially defatted",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170563,"Seeds, sunflower seed kernels, dry roasted, without salt",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170566,"Nuts, acorn flour, full fat",queue,queue,queue_flour_meal,unchanged
+sr_legacy,170571,"Nuts, cashew nuts, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170573,"Nuts, chestnuts, chinese, roasted",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170577,"Nuts, coconut meat, dried (desiccated), sweetened, flaked, packaged",queue,queue,queue_coconut,unchanged
+sr_legacy,170578,"Nuts, coconut meat, dried (desiccated), sweetened, flaked, canned",queue,queue,queue_coconut,unchanged
+sr_legacy,170579,"Nuts, coconut meat, dried (desiccated), toasted",queue,queue,queue_coconut,unchanged
+sr_legacy,170580,"Nuts, coconut cream, raw (liquid expressed from grated meat)",queue,queue,queue_coconut,unchanged
+sr_legacy,170582,"Nuts, hazelnuts or filberts, blanched",queue,queue,plain_form_not_stated,unchanged
+sr_legacy,170583,"Nuts, hazelnuts or filberts, dry roasted, without salt added",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170585,"Nuts, mixed nuts, dry roasted, with peanuts, without salt added",queue,queue,queue_mixed,unchanged
+sr_legacy,170595,"Seeds, breadfruit seeds, roasted",queue,queue,queue_roasted_plain,unchanged
+sr_legacy,170596,"Seeds, cottonseed kernels, roasted (glandless)",queue,queue,queue_roasted_plain,unchanged
+foundation,2261420,"Flour, almond",queue,queue,queue_flour_meal,unchanged
+foundation,2262073,"Sesame butter, creamy",queue,queue,queue_butter_paste,unchanged
+foundation,2262074,"Almond butter, creamy",queue,queue,queue_butter_paste,unchanged
+foundation,2262075,"Flaxseed, ground",queue,queue,plain_form_not_stated,unchanged
+foundation,2515377,"Flour, chestnut",queue,queue,queue_flour_meal,unchanged
+foundation,2515382,"Flour, coconut",queue,queue,queue_coconut,unchanged
+sr_legacy,168589,"Nuts, chestnuts, japanese, boiled and steamed",reject,queue,queue_boiled_steamed,"overlap rule: FAO-listed process or canning alone, nothing added stated -> queue"
+sr_legacy,168592,"Nuts, almonds, honey roasted, unblanched",reject,reject,sweetened,unchanged
+sr_legacy,168593,"Seeds, sunflower seed kernels, oil roasted, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,168594,"Seeds, sunflower seed kernels, toasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,168595,"Seeds, sunflower seed butter, with salt added (Includes foods for USDA's Food Distribution Program)",reject,reject,salted,unchanged
+sr_legacy,168596,"Nuts, almonds, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,168597,"Nuts, cashew butter, plain, with salt added",reject,reject,salted,unchanged
+sr_legacy,168598,"Nuts, macadamia nuts, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,168599,"Nuts, mixed nuts, dry roasted, with peanuts, with salt added",reject,reject,salted,unchanged
+sr_legacy,168600,"Nuts, mixed nuts, oil roasted, with peanuts, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,168601,"Seeds, pumpkin and squash seeds, whole, roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,168602,"Nuts, almonds, oil roasted, lightly salted",reject,reject,oil_roasted,unchanged
+sr_legacy,168603,"Nuts, almond butter, plain, with salt added",reject,reject,salted,unchanged
+sr_legacy,169411,"Nuts, formulated, wheat-based, all flavors except macadamia, without salt",reject,reject,formulated,unchanged
+sr_legacy,169415,"Seeds, pumpkin and squash seed kernels, roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169416,"Seeds, sesame seed kernels, toasted, with salt added (decorticated)",reject,reject,salted,unchanged
+sr_legacy,169417,"Seeds, sunflower seed kernels from shell, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169418,"Seeds, sunflower seed kernels, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169419,"Nuts, almonds, oil roasted, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,169420,"Nuts, almonds, oil roasted, with salt added, smoke flavor",reject,reject,flavored_seasoned,unchanged
+sr_legacy,169421,"Nuts, cashew nuts, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169422,"Nuts, cashew nuts, oil roasted, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,169423,"Nuts, mixed nuts, oil roasted, without peanuts, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,169424,"Nuts, pecans, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169425,"Nuts, pecans, oil roasted, with salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,169426,"Nuts, pistachio nuts, dry roasted, with salt added",reject,reject,salted,unchanged
+sr_legacy,169427,"Nuts, mixed nuts, oil roasted, with peanuts, lightly salted",reject,reject,oil_roasted,unchanged
+sr_legacy,169428,"Nuts, mixed nuts, oil roasted, without peanuts, lightly salted",reject,reject,oil_roasted,unchanged
+sr_legacy,170145,"Seeds, breadfruit seeds, boiled",reject,queue,queue_boiled_steamed,"overlap rule: FAO-listed process or canning alone, nothing added stated -> queue"
+sr_legacy,170159,"Nuts, almonds, oil roasted, without salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,170166,"Nuts, chestnuts, chinese, boiled and steamed",reject,queue,queue_boiled_steamed,"overlap rule: FAO-listed process or canning alone, nothing added stated -> queue"
+sr_legacy,170168,"Nuts, chestnuts, european, boiled and steamed",reject,queue,queue_boiled_steamed,"overlap rule: FAO-listed process or canning alone, nothing added stated -> queue"
+sr_legacy,170176,"Nuts, ginkgo nuts, canned",reject,queue,queue_canned,"overlap rule: FAO-listed process or canning alone, nothing added stated -> queue"
+sr_legacy,170180,"Nuts, formulated, wheat-based, unflavored, with salt added",reject,reject,formulated,unchanged
+sr_legacy,170181,"Nuts, mixed nuts, dry roasted, with peanuts, salt added, CHOSEN ROASTER",reject,reject,salted,unchanged
+sr_legacy,170564,"Seeds, sunflower seed kernels, oil roasted, without salt",reject,reject,oil_roasted,unchanged
+sr_legacy,170572,"Nuts, cashew nuts, oil roasted, without salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,170586,"Nuts, mixed nuts, dry roasted, with peanuts, salt added, PLANTERS pistachio blend",reject,reject,salted,unchanged
+sr_legacy,170587,"Nuts, mixed nuts, oil roasted, with peanuts, without salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,170588,"Nuts, mixed nuts, oil roasted, without peanuts, without salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,170589,"Nuts, pecans, oil roasted, without salt added",reject,reject,oil_roasted,unchanged
+sr_legacy,170593,"Nuts, walnuts, glazed",reject,reject,sweetened,unchanged
+sr_legacy,170594,"Nuts, walnuts, dry roasted, with salt added",reject,reject,salted,unchanged
+foundation,323294,"Nuts, almonds, dry roasted, with salt added",reject,reject,salted,unchanged
+foundation,325524,"Seeds, sunflower seed kernels, dry roasted, with salt added",reject,reject,salted,unchanged
