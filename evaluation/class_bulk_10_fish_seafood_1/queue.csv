@@ -1,0 +1,13 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,167744,"Mollusks, snail, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
+sr_legacy,167745,"Turtle, green, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
+sr_legacy,168148,"Frog legs, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
+sr_legacy,171971,"Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
+sr_legacy,171990,"Fish, cod, Pacific, cooked, dry heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
+sr_legacy,173681,"Fish, pollock, Alaska, cooked, dry heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
+sr_legacy,173720,"Mollusks, conch, baked or broiled",queue_fish_oil,Fish/marine oil record; defer to fats reading (Task 7 review outcome)
+sr_legacy,174188,"Fish, caviar, black and red, granular",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
+sr_legacy,174210,"Crustaceans, shrimp, mixed species, raw (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
+sr_legacy,174239,"Fish, roe, mixed species, cooked, dry heat",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
+sr_legacy,175130,"Fish, pollock, Alaska, raw (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
+sr_legacy,175132,"Fish, roe, mixed species, raw",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
