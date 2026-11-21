@@ -1,0 +1,35 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,171889,"Beverages, coffee, brewed, prepared with tap water, decaffeinated",synonym_candidates,Decaffeinated brewed coffee without additives; synonym candidate for coffee
+sr_legacy,171893,"Beverages, coffee, instant, regular, powder",synonym_candidates,Regular instant coffee powder without additives; synonym candidate for coffee
+sr_legacy,171894,"Beverages, coffee, instant, decaffeinated, prepared with water",synonym_candidates,Decaffeinated instant coffee prepared with water; synonym candidate for coffee
+sr_legacy,171897,"Beverages, coffee, instant, with chicory",queue_coffee_substitute,Instant coffee with chicory; blended coffee/root substitute
+sr_legacy,171910,"Beverages, tea, green, brewed, decaffeinated",synonym_candidates,Decaffeinated green tea brewed; synonym candidate for tea
+sr_legacy,171933,"Beverages, V8 V-FUSION Juices, Peach Mango",roadmap_parked,100% fruit juice blend; juices deliberately parked in Batch 3
+sr_legacy,171934,"Beverages, V8 V-FUSION Juices, Strawberry Banana",roadmap_parked,100% fruit juice blend; juices deliberately parked in Batch 3
+sr_legacy,171942,"Beverages, rice milk, unsweetened",queue_plant_milk,Unsweetened rice milk; plant-based milk beverage; queued pending plant milk policy
+sr_legacy,171946,"Beverages, tea, hibiscus, brewed",queue_herbal_infusion,Hibiscus flower infusion; SOURCE-SILENT in FAO 2019 Table 1 Group 1
+sr_legacy,173183,"Beverages, GEROLSTEINER BRUNNEN GmbH & Co. KG (Gerolsteiner), naturally sparkling, mineral bottled water",queue_carbonated_water,Naturally sparkling mineral water; carbonated water is distinct from plain still water; queued pending carbonation policy
+sr_legacy,173212,"Beverages, tea, black, ready to drink, decaffeinated",synonym_candidates,Decaffeinated black tea ready-to-drink; synonym candidate for tea
+sr_legacy,173230,"Beverages, tea, instant, unsweetened, powder",synonym_candidates,Unsweetened instant tea powder; synonym candidate for tea
+sr_legacy,173232,"Beverages, tea, herb, other than chamomile, brewed",queue_herbal_infusion,Herbal infusion; SOURCE-SILENT in FAO 2019 Table 1 Group 1
+sr_legacy,173233,"Beverages, water, bottled, PERRIER",queue_carbonated_water,Bottled carbonated mineral water (Perrier); queued pending carbonation policy
+sr_legacy,174125,"Beverages, coffee, brewed, espresso, restaurant-prepared, decaffeinated",synonym_candidates,Decaffeinated brewed espresso without additives; synonym candidate for coffee
+sr_legacy,174126,"Beverages, coffee, instant, regular, half the caffeine",synonym_candidates,Half-caffeine instant coffee without additives; synonym candidate for coffee
+sr_legacy,174130,"Beverages, coffee, instant, regular, prepared with water",synonym_candidates,Regular instant coffee prepared with water; synonym candidate for coffee
+sr_legacy,174133,"Beverages, coffee, instant, decaffeinated, powder",synonym_candidates,Decaffeinated instant coffee powder; synonym candidate for coffee
+sr_legacy,174134,"Beverages, coffee, instant, chicory",queue_coffee_substitute,Instant chicory beverage; coffee substitute
+sr_legacy,174138,"Beverages, coffee substitute, cereal grain beverage, powder",queue_coffee_substitute,Cereal grain coffee substitute powder; roasted grain beverage
+sr_legacy,174139,"Beverages, coffee substitute, cereal grain beverage, prepared with water",queue_coffee_substitute,Cereal grain coffee substitute prepared with water; roasted grain beverage
+sr_legacy,174156,"Beverages, tea, herb, brewed, chamomile",queue_herbal_infusion,Chamomile herb infusion; SOURCE-SILENT in FAO 2019 Table 1 Group 1
+sr_legacy,174169,"Beverages, V8 V-FUSION Juices, Tropical",roadmap_parked,100% fruit juice blend; juices deliberately parked in Batch 3
+sr_legacy,174170,"Beverages, V8 V- FUSION Juices, Acai Berry",roadmap_parked,100% fruit juice blend; juices deliberately parked in Batch 3
+sr_legacy,174827,"Beverages, GEROLSTEINER BRUNNEN GmbH & Co. KG,Gerolsteiner naturally sparkling mineral water,",queue_carbonated_water,Naturally sparkling mineral water; queued pending carbonation policy
+sr_legacy,174831,"Beverages, Coconut water, ready-to-drink, unsweetened",queue_coconut_water,Unsweetened coconut water; queued pending coconut water policy
+sr_legacy,174832,"Beverages, almond milk, unsweetened, shelf stable",queue_plant_milk,Unsweetened almond milk; plant-based milk beverage; queued pending plant milk policy
+sr_legacy,174871,"Beverages, tea, black, brewed, prepared with tap water, decaffeinated",synonym_candidates,Decaffeinated black tea brewed; synonym candidate for tea
+sr_legacy,174872,"Beverages, tea, instant, decaffeinated, unsweetened",synonym_candidates,Decaffeinated unsweetened instant tea; synonym candidate for tea
+sr_legacy,174873,"Beverages, tea, instant, unsweetened, prepared with water",synonym_candidates,Unsweetened instant tea prepared with water; synonym candidate for tea
+foundation,1750338,"Almond milk, unsweetened, plain, shelf stable",queue_plant_milk,Unsweetened plain almond milk; plant-based milk beverage; queued pending plant milk policy
+foundation,1999631,"Almond milk, unsweetened, plain, shelf stable",queue_plant_milk,Unsweetened plain almond milk; plant-based milk beverage; queued pending plant milk policy
+foundation,2257045,"Almond milk, unsweetened, plain, refrigerated",queue_plant_milk,Unsweetened plain almond milk; plant-based milk beverage; queued pending plant milk policy
+foundation,2257046,"Oat milk, unsweetened, plain, refrigerated",queue_plant_milk,Unsweetened plain oat milk; plant-based milk beverage; queued pending plant milk policy

@@ -1,0 +1,315 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,167681,"Beverages, fruit-flavored drink, dry powdered mix, low calorie, with aspartame",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,167707,"Beverages, fruit-flavored drink, powder, with high vitamin C with other added vitamins, low calorie",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,167711,"Beverages, Chocolate-flavored drink, whey and milk based",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,167723,"Alcoholic beverage, rice (sake)",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,167727,"Beverages, ABBOTT, ENSURE PLUS, ready-to-drink",formulated_beverage,Formulated beverage product
+sr_legacy,167739,"Beverages, Cocktail mix, non-alcoholic, concentrated, frozen",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168122,"Beverages, coffee, instant, with whitener, reduced calorie",conditioned_with,Beverage formulation with added ingredients or additives
+sr_legacy,168123,"Beverages, cranberry-apple juice drink, low calorie, with vitamin C added",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,168746,"Alcoholic beverage, beer, regular, all",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168747,"Alcoholic beverage, beer, regular, BUDWEISER",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168748,"Alcoholic beverage, beer, light, BUDWEISER SELECT",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168749,"Alcoholic beverage, beer, light",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168750,"Alcoholic beverage, pina colada, canned",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168751,"Beverages, almond milk, sweetened, vanilla flavor, ready-to-drink",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,168752,"Alcoholic beverage, pina colada, prepared-from-recipe",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,168753,"Alcoholic beverage, tequila sunrise, canned",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169044,"Beverages, Orange juice drink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,169070,"Alcoholic beverage, wine, cooking",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169071,"Alcoholic beverage, wine, light",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169572,"Alcoholic beverage, beer, light, BUD LIGHT",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169573,"Alcoholic beverage, daiquiri, canned",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169574,"Alcoholic beverage, daiquiri, prepared-from-recipe",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,169575,"Alcoholic beverage, beer, light, low carb",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171869,"Beverages, carbonated, tonic water",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171870,"Beverages, Energy drink, RED BULL, sugar free, with added caffeine, niacin, pantothenic acid, vitamins B6 and B12",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171871,"Beverages, carbonated, root beer",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171872,"Alcoholic Beverage, wine, table, red, Gamay",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171873,"Beverages, chocolate drink, milk and soy based, ready to drink, fortified",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171874,"Beverages, chocolate malt powder, prepared with 1% milk, fortified",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171875,"Beverages, carbonated, limeade, high caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171876,"Beverages, carbonated, low calorie, cola or pepper-types, with sodium saccharin, contains caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171877,"Beverages, coffee, ready to drink, vanilla, light, milk based, sweetened",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,171878,"Beverages, Lemonade fruit juice drink light, fortified with vitamin E and C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171879,"Beverages, chocolate-flavor beverage mix, powder, prepared with whole milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171880,"Beverages, coffee, ready to drink, milk based, sweetened",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,171882,"Beverages, Clam and tomato juice, canned",formulated_beverage,Formulated beverage product
+sr_legacy,171883,"Beverages, tea, green, ready to drink, ginseng and honey, sweetened",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171884,"Beverages, The COCA-COLA company, Minute Maid, Lemonade",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171885,"Beverages, tea, green, ready-to-drink, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,171886,"Beverages, Cocoa mix, no sugar added, powder",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,171887,"Cocoa mix, NESTLE, Rich Chocolate Hot Cocoa Mix",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171888,"Beverages, tea, black, ready-to-drink, lemon, sweetened",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,171892,"Beverages, tea, black, ready-to-drink, lemon, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,171895,"Beverages, OCEAN SPRAY, Cranberry-Apple Juice Drink, bottled",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171896,"Beverages, OCEAN SPRAY, Diet Cranberry Juice",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,171898,"Beverages, KRAFT, coffee, instant, French Vanilla Cafe",formulated_beverage,Formulated beverage product
+sr_legacy,171899,"Beverages, OCEAN SPRAY, Cran Raspberry Juice Drink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171900,"Beverages, OCEAN SPRAY, Cran Lemonade",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171901,"Beverages, OCEAN SPRAY, Diet Cran Cherry",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,171902,"Beverages, cranberry-grape juice drink, bottled",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171903,"Cranberry juice cocktail, bottled",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171904,"Cranberry juice cocktail, bottled, low calorie, with calcium, saccharin and corn sweetener",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171905,"Beverages, Eggnog-flavor mix, powder, prepared with whole milk",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,171906,"Alcoholic beverages, beer, higher alcohol",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171907,"Beverages, Malt liquor beverage",formulated_beverage,Formulated beverage product
+sr_legacy,171908,"Alcoholic beverages, wine, rose",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171909,"Beverages, OCEAN SPRAY, Cran Pomegranate",formulated_beverage,Formulated beverage product
+sr_legacy,171912,"Beverages, citrus fruit juice drink, frozen concentrate",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171913,"Beverages, citrus fruit juice drink, frozen concentrate, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171914,"Beverages, fruit punch drink, without added nutrients, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171915,"Beverages, Tropical Punch, ready-to-drink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171916,"Beverages, grape drink, canned",formulated_beverage,Formulated beverage product
+sr_legacy,171918,"Beverages, tea, instant, lemon, with added ascorbic acid",conditioned_with,Beverage formulation with added ingredients or additives
+sr_legacy,171919,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 86 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171920,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 90 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171921,"Carbonated beverage, chocolate-flavored soda",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171923,"Beverages, Powerade Zero Ion4, calorie-free, assorted flavors",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171925,"Alcoholic Beverage, wine, table, red, Merlot",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,171926,"Water, non-carbonated, bottles, natural fruit flavors, sweetened with low calorie sweetener",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171927,"Beverages, V8 SPLASH Juice Drinks, Diet Tropical Blend",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171928,"Beverages, V8 SPLASH Juice Drinks, Berry Blend",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171929,"Beverages, V8 SPLASH Juice Drinks, Fruit Medley",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171930,"Beverages, V8 SPLASH Juice Drinks, Guava Passion Fruit",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171931,"Beverages, V8 SPLASH Juice Drinks, Strawberry Kiwi",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171932,"Beverages, V8 SPLASH Juice Drinks, Tropical Blend",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171935,"Beverages, Energy Drink, Monster, fortified with vitamins C, B2, B3, B6, B12",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171936,"Beverages, Energy drink, AMP, sugar free",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171937,"Beverages, Energy drink, ROCKSTAR",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171938,"Beverages, Energy drink, ROCKSTAR, sugar free",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171939,"Beverages, Meal supplement drink, canned, peanut flavor",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,171940,"Water, with corn syrup and/or sugar and low calorie sweetener, fruit flavored",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,171941,"Beverages, Horchata, as served in restaurant",formulated_beverage,Formulated beverage product
+sr_legacy,171943,"Beverages, Energy drink, VAULT, citrus flavor",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171944,"Beverages, Fruit flavored drink, reduced sugar, greater than 3% fruit juice, high vitamin C, added calcium",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171945,"Beverages, fruit juice drink, greater than 3% fruit juice, high vitamin C and added thiamin",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,171947,"Beverages, fruit juice drink, greater than 3% juice, high vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173162,"Beverages, MONSTER energy drink, low carb",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173163,"Beverages, Whiskey sour mix, powder",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173164,"Alcoholic beverage, whiskey sour, prepared with water, whiskey and powder mix",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173165,"Beverages, THE COCA-COLA COMPANY, NOS energy drink, Original, grape, loaded cherry, charged citrus, fortified with vitamins B6 and B12",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173166,"Beverages, water, bottled, yumberry, pomegranate with anti-oxidants, zero calories",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173167,"Beverages, ABBOTT, EAS whey protein powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173168,"Alcoholic beverage, creme de menthe, 72 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173169,"Beverages, NESTLE, Boost plus, nutritional drink, ready-to-drink",formulated_beverage,Formulated beverage product
+sr_legacy,173170,"Beverages, SLIMFAST, Meal replacement,  High Protein Shake, Ready-To-Drink, 3-2-1 plan",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,173171,"Beverages, UNILEVER, SLIMFAST, meal replacement, regular, ready-to-drink,  3-2-1 Plan",formulated_beverage,Formulated beverage product
+sr_legacy,173172,"Beverages, UNILEVER, SLIMFAST Shake Mix, powder, 3-2-1 Plan",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,173173,"Beverages, FUZE, orange mango, fortified with vitamins A, C, E, B6",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,173174,"Beverages, UNILEVER, SLIMFAST Shake Mix, high protein, whey powder, 3-2-1 Plan,",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,173175,"Beverages, Acai berry drink, fortified",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,173176,"Alcoholic beverage, wine, dessert, sweet",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173177,"Beverages, Whey protein powder isolate",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173178,"Beverages, Orange juice, light, No pulp",formulated_beverage,Formulated beverage product
+sr_legacy,173179,"Beverages, The COCA-COLA company, Hi-C Flashin' Fruit Punch",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173180,"Beverages, Protein powder whey based",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173181,"Beverages, Protein powder soy based",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173182,"Beverages, rich chocolate, powder",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173184,"Beverages, chocolate malt, powder, prepared with fat free milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173185,"Alcoholic beverage, wine, table, all",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173186,"Beverages, V8 SPLASH Smoothies, Peach Mango",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,173187,"Beverages, chocolate almond milk, unsweetened, shelf-stable, fortified with vitamin D2 and E",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173188,"Beverages, The COCA-COLA company, Glaceau Vitamin Water, Revive Fruit Punch, fortified",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173189,"Beverages, MINUTE MAID, Lemonada, Limeade",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173190,"Alcoholic beverage, wine, table, red",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173191,"Alcoholic Beverage, wine, table, red, Barbera",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173192,"Alcoholic Beverage, wine, table, red, Zinfandel",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173193,"Alcoholic Beverage, wine, table, red, Petite Sirah",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173194,"Alcoholic Beverage, wine, table, red, Claret",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173195,"Alcoholic beverage, wine, table, white, Chenin Blanc",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173196,"Alcoholic beverage, wine, table, white, Fume Blanc",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173197,"Beverages, Mixed vegetable and fruit juice drink, with added nutrients",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173198,"Alcoholic beverage, wine, table, white, Muller Thurgau",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173199,"Carbonated beverage, cream soda",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173200,"Alcoholic beverage, wine, table, white, Riesling",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173201,"Alcoholic beverage, wine, table, white, Sauvignon Blanc",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173202,"Alcoholic beverage, wine, table, white, late harvest",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173203,"Beverages, carbonated, grape soda",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173204,"Beverages, carbonated, low calorie, other than cola or pepper,  without caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173205,"Beverages, carbonated, lemon-lime soda, no caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173206,"Beverages, carbonated, SPRITE, lemon-lime, without caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173207,"Beverages, carbonated, low calorie, other than cola or pepper, with aspartame, contains caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173208,"Alcoholic Beverage, wine, table, red, Burgundy",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173209,"Beverages, carbonated, pepper-type, contains caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173210,"Beverages, Energy drink, RED BULL",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173211,"Beverages, tea, black, ready to drink, decaffeinated, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173213,"Beverages, grape juice drink, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173214,"Beverages, Cranberry juice cocktail",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173215,"Beverages, SNAPPLE, tea, black and green, ready to drink, peach, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173216,"Lemonade, frozen concentrate, white",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173217,"Lemonade, frozen concentrate, white, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173218,"Beverages, SNAPPLE, tea, black and green, ready to drink, lemon, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173219,"Beverages, Malted drink mix, natural, with added nutrients, powder, prepared with whole milk",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173220,"Beverages, Malted drink mix, natural, powder, dairy based.",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173221,"Beverages, Malted drink mix, natural, powder, prepared with whole milk",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173222,"Beverages, OVALTINE, chocolate malt powder",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173223,"Beverages, orange and apricot juice drink, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173224,"Beverages, pineapple and grapefruit juice drink, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173225,"Beverages, pineapple and orange juice drink, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173226,"Shake, fast food, vanilla",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,173228,"Beverages, tea, instant, decaffeinated, lemon, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173229,"Beverages, tea, instant, decaffeinated, lemon, sweetened",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173231,"Beverages, tea, instant, lemon, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,173235,"Beverages, orange-flavor drink, breakfast type, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173236,"Beverages, orange-flavor drink, breakfast type, powder, prepared with water",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173237,"Beverages, Orange-flavor drink, breakfast type, low calorie, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173648,"Beverages, coffee substitute, cereal grain beverage, powder, prepared with whole milk",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173649,"Beverages, Dairy drink mix, chocolate, reduced calorie, with low-calorie sweeteners, powder",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173650,"Beverages, dairy drink mix, chocolate, reduced calorie, with aspartame, powder, prepared with water and ice",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173651,"Beverages, Orange-flavor drink, breakfast type, with pulp, frozen concentrate.",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173652,"Beverages, Orange-flavor drink, breakfast type, with pulp, frozen concentrate, prepared with water",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,173653,"Cranberry juice cocktail, frozen concentrate",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173654,"Cranberry juice cocktail, frozen concentrate, prepared with water",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173658,"Beverages, DANNON, water, bottled, non-carbonated, with Fluoride",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173659,"Beverages, drink mix, QUAKER OATS, GATORADE, orange flavor, powder",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173660,"Beverages, PEPSICO QUAKER, Gatorade, G performance O 2, ready-to-drink.",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173661,"Whiskey sour mix, bottled, with added potassium and sodium",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173662,"Alcoholic beverage, whiskey sour",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173663,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 94 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173664,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 100 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173665,"Alcoholic beverage, liqueur, coffee, 63 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,173666,"Lemonade, frozen concentrate, pink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,173667,"Beverages, lemonade, frozen concentrate, pink, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174108,"Beverages,  Energy drink, Citrus",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174109,"Alcoholic Beverage, wine, table, red, Mouvedre",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174110,"Alcoholic beverage, wine, table, white, Chardonnay",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174111,"Beverages, Kiwi Strawberry Juice Drink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174112,"Beverages, Apple juice drink, light, fortified with vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174113,"Beverages, POWERADE, Zero, Mixed Berry",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174114,"Beverages, Carob-flavor beverage mix, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,174115,"Beverages, Carob-flavor beverage mix, powder, prepared with whole milk",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,174116,"Beverages, coconut milk, sweetened, fortified with calcium, vitamins A, B12, D2",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174117,"Beverages, chocolate syrup",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174118,"Beverages, chocolate syrup, prepared with whole milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174119,"Beverages, coffee, ready to drink, iced, mocha, milk based",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174121,"Beverages, tea, green, ready-to-drink, citrus, diet, fortified with vitamin C",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174122,"Beverages, Cocoa mix, powder",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174123,"Beverages, Cocoa mix, powder, prepared with water",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174124,"Beverages, Cocoa mix, NESTLE, Hot Cocoa Mix Rich Chocolate With Marshmallows",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174127,"Beverages, coffee and cocoa, instant, decaffeinated, with whitener and low calorie sweetener",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174128,"Beverages, tea, green, ready-to-drink, sweetened",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174129,"Beverages, tea, ready-to-drink, lemon, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174131,"Beverages, aloe vera juice drink, fortified with Vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174132,"Beverages, OCEAN SPRAY, Cran Grape",formulated_beverage,Formulated beverage product
+sr_legacy,174135,"Beverages, coffee, instant, mocha, sweetened",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174136,"Beverages, OCEAN SPRAY, Light Cranberry and Raspberry Flavored Juice",flavoured_infused,Flavored or infused beverage formulation
+sr_legacy,174137,"Beverages, OCEAN SPRAY, White Cranberry Strawberry Flavored Juice Drink",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174140,"Beverages, cranberry-apple juice drink, bottled",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174141,"Alcoholic beverage, malt beer, hard lemonade",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174142,"Beverages, cranberry-apricot juice drink, bottled",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174143,"Beverages, tea, green, instant, decaffeinated, lemon, unsweetened, fortified with vitamin C",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174145,"Alcoholic beverage, beer, light, higher alcohol",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174146,"Beverages, AMBER, hard cider",formulated_beverage,Formulated beverage product
+sr_legacy,174147,"Beverages, OCEAN SPRAY, Cran Cherry",formulated_beverage,Formulated beverage product
+sr_legacy,174148,"Beverages, OCEAN SPRAY, Light Cranberry",formulated_beverage,Formulated beverage product
+sr_legacy,174149,"Beverages, OCEAN SPRAY, White Cranberry Peach",formulated_beverage,Formulated beverage product
+sr_legacy,174150,"Beverages, OCEAN SPRAY, Light Cranberry, Concord Grape",formulated_beverage,Formulated beverage product
+sr_legacy,174151,"Beverages, Fruit punch drink, with added nutrients, canned",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174152,"Beverages, Fruit punch drink, frozen concentrate",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174153,"Beverages, Fruit punch drink, frozen concentrate, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174154,"Beverages, coffee, instant, vanilla, sweetened, decaffeinated, with non dairy creamer",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174157,"Beverages, Wine, non-alcoholic",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174159,"Beverages, chocolate-flavor beverage mix for milk, powder, with added nutrients",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174160,"Beverages, chocolate-flavor beverage mix for milk, powder, with added nutrients, prepared with whole milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174161,"Beverages, Water with added vitamins and minerals, bottles, sweetened, assorted fruit flavors",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174162,"Beverages, V8 SPLASH Juice Drinks, Diet Berry Blend",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174163,"Beverages, V8 SPLASH Juice Drinks, Diet Fruit Medley",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174164,"Beverages, V8 SPLASH Juice Drinks, Diet Strawberry Kiwi",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174165,"Beverages, V8 SPLASH Juice Drinks, Mango Peach",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174166,"Beverages, V8 SPLASH Juice Drinks, Orange Pineapple",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174167,"Beverages, V8 SPLASH Juice Drinks, Orchard Blend",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174168,"Beverages, V8 SPLASH Juice Drinks, Strawberry Banana",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174171,"Beverages, Energy drink, AMP",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174172,"Beverages, Energy drink, FULL THROTTLE",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174173,"Beverages, Vegetable and fruit juice drink, reduced calorie, with low-calorie sweetener, added vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174174,"Beverages, milk beverage, reduced fat, flavored and sweetened, Ready-to-drink,  added calcium, vitamin A and vitamin D",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174175,"Beverages, vegetable and fruit juice blend, 100% juice, with added vitamins A, C, E",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,174176,"Beverages, fruit juice drink, reduced sugar, with vitamin E added",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174177,"Beverages, Energy drink, VAULT Zero, sugar-free, citrus flavor",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174178,"Beverages, PEPSICO QUAKER, Gatorade G2, low calorie",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174179,"Beverages, Fruit flavored drink, less than 3% juice, not fortified with vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174180,"Beverages, Fruit flavored drink containing less than 3% fruit juice, with high vitamin C",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174181,"Beverages, nutritional shake mix, high protein, powder",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174809,"Beverages, THE COCA-COLA COMPANY, NOS Zero, energy drink, sugar-free with guarana, fortified with vitamins B6 and B12",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174810,"Alcoholic beverage, whiskey sour, canned",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174811,"Beverages, Whiskey sour mix, bottled",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174812,"Alcoholic beverage, whiskey sour, prepared from item 14028",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174813,"Beverages, ABBOTT, EAS soy protein powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,174814,"Beverages, CYTOSPORT, Muscle Milk, ready-to-drink",formulated_beverage,Formulated beverage product
+sr_legacy,174815,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174816,"Beverages, OCEAN SPRAY, Cran-Energy, Cranberry Energy Juice Drink",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174817,"Alcoholic beverage, distilled, rum, 80 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174818,"Alcoholic beverage, distilled, vodka, 80 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174819,"Alcoholic beverage, distilled, whiskey, 86 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174820,"Beverages, almond milk, chocolate, ready-to-drink",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174821,"Beverages, Energy Drink with carbonated water and high fructose corn syrup",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174822,"Beverages, Energy Drink, sugar free",energy_sports_drink,Energy or sports drink: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174823,"Beverages, ABBOTT, ENSURE, Nutritional Shake, Ready-to-Drink",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174824,"Beverages, chocolate powder, no sugar added",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174825,"Beverages, ZEVIA, cola",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174826,"Beverages, ZEVIA, cola, caffeine free",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174828,"Beverages, yellow green colored citrus soft drink with caffeine",conditioned_with,Beverage formulation with added ingredients or additives
+sr_legacy,174829,"Beverages, V8 SPLASH Smoothies, Strawberry Banana",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174830,"Beverages, V8 SPLASH Smoothies, Tropical Colada",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174833,"Alcoholic Beverage, wine, table, red, Cabernet Sauvignon",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174834,"Alcoholic Beverage, wine, table, red, Cabernet Franc",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174835,"Alcoholic Beverage, wine, table, red, Pinot Noir",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174836,"Alcoholic Beverage, wine, table, red, Syrah",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174837,"Alcoholic beverage, wine, table, white",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174838,"Alcoholic Beverage, wine, table, red, Lemberger",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174839,"Alcoholic Beverage, wine, table, red, Sangiovese",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174840,"Alcoholic Beverage, wine, table, red, Carignane",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174841,"Alcoholic beverage, wine, table, white, Pinot Gris (Grigio)",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174842,"Beverages, carbonated, club soda",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174843,"Alcoholic beverage, wine, table, white, Gewurztraminer",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174844,"Alcoholic beverage, wine, table, white, late harvest, Gewurztraminer",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174845,"Alcoholic beverage, wine, table, white, Semillon",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174846,"Beverages, carbonated, ginger ale",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174847,"Beverages, NESTEA, tea, black, ready-to-drink, lemon",formulated_beverage,Formulated beverage product
+sr_legacy,174848,"Alcoholic beverage, wine, table, white, Pinot Blanc",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174849,"Alcoholic beverage, wine, table, white, Muscat",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174850,"Beverages, carbonated, low calorie, cola or pepper-type, with aspartame, without caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174851,"Beverages, carbonated, cola, without caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174852,"Beverages, carbonated, cola, regular",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174853,"Beverages, carbonated, reduced sugar, cola, contains caffeine and sweeteners",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174854,"Beverages, carbonated, orange",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174855,"Beverages, tea, black, ready-to-drink, peach, diet",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,174856,"Beverages, OCEAN SPRAY, Ruby Red cranberry",formulated_beverage,Formulated beverage product
+sr_legacy,174857,"Beverages, MOTTS, Apple juice light, fortified with vitamin C",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,174858,"Beverages, Lemonade, powder",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174859,"Lemonade, powder, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174860,"Beverages, lemonade-flavor drink, powder",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174861,"Beverages, lemonade-flavor drink, powder, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174862,"Limeade, frozen concentrate, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,174863,"Malt beverage, includes non-alcoholic beer",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,174864,"Beverages, OVALTINE, Classic Malt powder",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,174865,"Beverages, Malted drink mix, chocolate, with added nutrients, powder, prepared with whole milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174866,"Beverages, malted drink mix, chocolate, powder",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174867,"Beverages, Malted drink mix, chocolate, powder, prepared with whole milk",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,174868,"Beverages, orange drink, canned, with added vitamin C",fortified_supplement,Fortified beverage or nutrient supplement formulation
+sr_legacy,174869,"Strawberry-flavor beverage mix, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,174870,"Beverages, Strawberry-flavor beverage mix, powder, prepared with whole milk",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,175088,"Beverages, tea, instant, lemon, unsweetened",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,175089,"Beverages, tea, instant, lemon, sweetened, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,175090,"Beverages, tea, instant, lemon, sweetened, prepared with water",sweetened_diet,Sweetened or artificially sweetened (diet/zero) beverage formulation
+sr_legacy,175091,"Beverages, tea, instant, sweetened with sodium saccharin, lemon-flavored, powder",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,175092,"Beverages, cocoa mix, with aspartame, powder, prepared with water",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,175093,"Beverages, carbonated, cola, fast-food cola",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,175094,"Beverages, fruit punch juice drink, frozen concentrate",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,175095,"Beverages, fruit punch juice drink, frozen concentrate, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
+sr_legacy,175097,"Alcoholic beverage, liqueur, coffee, 53 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,175098,"Alcoholic beverage, liqueur, coffee with cream, 34 proof",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,175099,"Beverages, carbonated, low calorie, cola or pepper-type, with aspartame, contains caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,175100,"Beverages, Orange drink, breakfast type, with juice and pulp, frozen concentrate",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,175101,"Beverages, Orange drink, breakfast type, with juice and pulp, frozen concentrate, prepared with water",mix_powder_syrup,"Beverage mix, powder, frozen concentrate, or syrup: formulated beverage intermediate"
+sr_legacy,175102,"Beverages, shake, fast food, strawberry",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,175105,"Beverages, orange breakfast drink, ready-to-drink, with added nutrients",conditioned_with,Beverage formulation with added ingredients or additives
+sr_legacy,175108,"Beverages, COCA-COLA, POWERADE, lemon-lime flavored, ready-to-drink",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,175109,"Beverages, Propel Zero, fruit-flavored, non-carbonated",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,175110,"Beverages, ARIZONA, tea, ready-to-drink, lemon",formulated_beverage,Formulated beverage product
+sr_legacy,175111,"Beverages, LIPTON BRISK, tea, black, ready-to-drink, lemon",formulated_beverage,Formulated beverage product
+sr_legacy,175112,"Alcoholic beverage, wine, dessert, dry",alcoholic_beverage,Alcoholic beverage: out of scope / Ultra-processed or fermented alcoholic product
+sr_legacy,175113,"Carbonated beverage, low calorie, other than cola or pepper, with sodium saccharin, without caffeine",carbonated_soft_drink,Carbonated soft drink / soda / cola: Ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,175114,"Beverages, Cocoa mix, low calorie, powder, with added calcium, phosphorus, aspartame, without added sodium or vitamin A",dairy_shake_mix,"Milk-based drink, shake, smoothie, or chocolate/cocoa mix: formulated beverage product"
+sr_legacy,175115,"Beverages, fruit punch-flavor drink, powder, without added sodium, prepared with water",juice_drink_cocktail,Juice drink / cocktail / punch / lemonade: formulated sweetened beverage with <100% juice
