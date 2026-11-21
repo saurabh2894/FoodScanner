@@ -496,20 +496,26 @@
     function sweetenerFoodsOnly(ing) {
       if (ing.ins.length || !ing.inner || (ing.name !== "sweetener" && ing.name !== "natural sweetener")) return false;
       const parts = ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim()).filter(Boolean);
-      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "culinary"); });
+      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "legume" || r.kind === "culinary"); });
     }
     // item-level condition for the nut/seed rows (mirrors classify.nut_added_salt_or_sugar)
     const NUT_ADDED = new Set(["salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup"]);
-    function nutAddedSaltOrSugar(ing) {
+    // legume rows (kind legume): the same item-level condition plus brine (mirrors classify.legume_added_salt_sugar_or_brine)
+    const LEGUME_ADDED = new Set([...NUT_ADDED, "brine", "brined"]);
+    function addedIn(ing, words) {
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
       for (let i = 0; i < toks.length; i++) {
-        if (NUT_ADDED.has(toks[i])) {
+        if (words.has(toks[i])) {
           if (toks.slice(Math.max(0, i - 2), i).some((x) => ["no", "without", "non", "free"].includes(x)) || (i + 1 < toks.length && toks[i + 1] === "free")) continue;
           return true;
         }
       }
       return false;
     }
+    const LEGUME_PRESERVED = new Set(["canned", "tinned", "bottled", "jarred", "preserved", "pickled"]);
+    const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
+    const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
+    const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED);
     function hitsFor(ing) {
       let hits = [];
       const noteOnly = colourNoteOnly(ing), sweetFoods = sweetenerFoodsOnly(ing);
@@ -557,10 +563,12 @@
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
-      const nutSalted = ings.filter((i, n) => kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)).map((i) => i.raw);
-      if (ings.length === 1 && kinds[0] === "nut_seed")
+      const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (kinds[n] === "legume" && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
+      const legumePreserved = ings.filter((i, n) => kinds[n] === "legume" && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
+      if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume (" + legumePreserved.join("; ") + "): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established" };
+      if (ings.length === 1 && (kinds[0] === "nut_seed" || kinds[0] === "legume"))
         return nutSalted.length
-          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
+          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
@@ -575,10 +583,10 @@
       const powders = ings.filter((i, n) => kinds[n] === "food_powder").map((i) => i.raw);
       if (powders.length) return { group: null, drivers: [], reason: "a powder of a food (" + powders.join("; ") + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
-      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed");
+      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed" || k === "legume");
       const hasCulinary = substantive.some(([, k]) => k === "culinary") || nutSalted.length > 0;
       if (hasFood && hasCulinary)
-        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + (k === "nut_seed" ? "whole food" : k.replace(/_/g, " ")), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
+        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + (k === "nut_seed" || k === "legume" ? "whole food" : k.replace(/_/g, " ")), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
       return { group: null, drivers: [], reason: "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern" };
     }
 

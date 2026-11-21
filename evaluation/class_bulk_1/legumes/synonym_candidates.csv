@@ -1,0 +1,18 @@
+from,to,basis,origin,fdc_id
+dark red kidney beans,kidney beans,"cultivar-shade variant of the FDC umbrella record 'Beans, kidney, all types'; one canonical row",dedupe,335245
+light red kidney beans,kidney beans,"cultivar-shade variant of 'Beans, kidney, all types'; one canonical row",dedupe,335422
+garbanzo beans,chickpeas,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,2644282
+blackeye pea,cowpeas,"FDC lists 'blackeyes' as an alternate name of 'Cowpeas, common' (record attribute); same food, one canonical row",dedupe,2644284
+mat bean,mothbeans,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,172425
+moth bean,mothbeans,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,172425
+california red kidney beans,kidney beans,"cultivar variant of 'Beans, kidney, all types'; one canonical row",dedupe,173742
+red kidney beans,kidney beans,"cultivar-shade variant of 'Beans, kidney, all types'; one canonical row",dedupe,173744
+common cowpeas,cowpeas,"FDC record 'Cowpeas, common (blackeyes, crowder, southern)': 'common' is the species group qualifier; one canonical row",dedupe,173758
+blackeyes,cowpeas,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,173758
+crowder,cowpeas,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,173758
+large lima beans,lima beans,size-grade variant of lima beans (FDC 'large' vs 'thin seeded (baby)'); one canonical row,dedupe,174252
+thin seeded lima beans,lima beans,size-grade variant of lima beans; one canonical row,dedupe,174255
+pink or red lentils,lentils,market-grade variant of lentils (existing term); duplicate semantics,dedupe,174284
+black turtle beans,black beans,INFERENCE (owner to confirm): black turtle is a black-bean cultivar group; FDC files both as plain dry black beans; one canonical row,dedupe,175186
+royal red kidney beans,kidney beans,"cultivar variant of 'Beans, kidney, all types'; one canonical row",dedupe,175196
+fava beans,broadbeans,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,175205

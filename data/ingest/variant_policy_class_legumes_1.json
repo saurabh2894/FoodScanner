@@ -1,0 +1,26 @@
+{
+ "policy_id": "variant-policy-class-legumes-1",
+ "applies_to": "class-legumes-1 staged batches",
+ "policy": "Named bean/pea species or market classes are separate canonical rows next to the untouched generic 'beans' and 'peas' rows. Cultivar-shade, size-grade and alternate-name variants are NOT rows: they are collapsed by the rule's 'canonical' table and listed as synonym CANDIDATES (synonyms.csv is not touched in this workstream).",
+ "synonyms": {},
+ "separate_rows": {
+  "adzuki beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "black beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "cannellini beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "carioca beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "cranberry beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "flor de mayo beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "great northern beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "hyacinth beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "kidney beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "lima beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "navy beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "pink beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "pinto beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "small white beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "winged beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "yardlong beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+  "pigeon peas": "a named pulse (red gram), not the generic 'peas' row (a vegetable-style term), which is left untouched"
+ },
+ "parked": {}
+}

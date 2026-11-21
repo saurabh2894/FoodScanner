@@ -114,14 +114,37 @@ def lookup(name: str) -> dict[str, str] | None:
 _NUT_ADDED = frozenset({"salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup"})
 
 
-def nut_added_salt_or_sugar(ing) -> bool:
+# Same item-level condition for LEGUME rows (kind legume, class-bulk-1): FAO Group 3 covers "canned or bottled vegetables or legumes (pulses) preserved in brine" (p. 7 prose;
+# Table 1 continuation p. 12, Group 3 "Canned or bottled vegetables and legumes in brine") and its definition is "adding salt, oil, sugar or other group 2 ingredients to group 1 foods". Salt, sugar and brine are
+# read from the item's OWN name and bracket, never from the rest of the product. Roasting and boiling are NOT part of this guard (minimal processing, separate source treatment).
+_LEGUME_ADDED = _NUT_ADDED | frozenset({"brine", "brined"})
+
+
+def _added(ing, words) -> bool:
     toks = re.findall(r"[a-z]+", ing.text.lower())
     for i, t in enumerate(toks):
-        if t in _NUT_ADDED:
+        if t in words:
             if any(x in ("no", "without", "non", "free") for x in toks[max(0, i - 2):i]) or (i + 1 < len(toks) and toks[i + 1] == "free"):
                 continue                                           # "no added salt", "salt free": the condition is met, not broken
             return True
     return False
+
+
+# A canned/bottled/preserved legume that does NOT say salt, sugar or brine: FAO Group 3 names such legumes only "in brine", so Group 3 is not established, and the plain-legume Group 1
+# answer is not supported either. The item abstains (class-bulk-1; never an invented rule).
+_LEGUME_PRESERVED = frozenset({"canned", "tinned", "bottled", "jarred", "preserved", "pickled"})
+
+
+def legume_preserved_form(ing) -> bool:
+    return _added(ing, _LEGUME_PRESERVED)
+
+
+def nut_added_salt_or_sugar(ing) -> bool:
+    return _added(ing, _NUT_ADDED)
+
+
+def legume_added_salt_sugar_or_brine(ing) -> bool:
+    return _added(ing, _LEGUME_ADDED)
 
 
 def is_recognised(name: str) -> bool:
@@ -165,7 +188,7 @@ def sweetener_foods_only(ing: Ingredient) -> bool:
     if ing.ins or not ing.inner or ing.name not in ("sweetener", "natural sweetener"):
         return False
     parts = [p.strip() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner) if p.strip()]
-    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "culinary") for p in parts)
+    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "legume", "culinary") for p in parts)
 
 
 def ingredient_marker_terms(ing: Ingredient) -> set[str]:
@@ -258,10 +281,15 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if k == "nut_seed" and nut_added_salt_or_sugar(i)]
-    if len(ings) == 1 and kinds[0] == "nut_seed":
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k == "legume" and legume_added_salt_sugar_or_brine(i))]
+    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k == "legume" and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
+    if legume_preserved:
+        return Classification(None, reason="a canned, bottled or preserved legume (" + "; ".join(legume_preserved) + "): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established")
+    if len(ings) == 1 and kinds[0] in ("nut_seed", "legume"):
         if nut_salted:
-            return Classification(3, drivers=[Driver(ings[0].raw, "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')", lookup(ings[0].name)["source"], ings[0].section)])
+            what = ("nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" if kinds[0] == "nut_seed"
+                    else "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)")
+            return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
@@ -283,10 +311,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
-    has_food = any(k in ("whole_food", "nut_seed") for _, k in substantive)
+    has_food = any(k in ("whole_food", "nut_seed", "legume") for _, k in substantive)
     has_culinary = any(k == "culinary" for _, k in substantive) or bool(nut_salted)           # salt or sugar added to the nuts themselves is a Group 2 substance on a Group 1 food: Group 3
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {'whole food' if k == 'nut_seed' else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {'whole food' if k in ('nut_seed', 'legume') else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 

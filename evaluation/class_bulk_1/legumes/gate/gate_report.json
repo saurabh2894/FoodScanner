@@ -1,0 +1,446 @@
+{
+  "rule_id": "class-legumes-1",
+  "staged": 26,
+  "ready": [
+    "adzuki beans",
+    "black beans",
+    "broadbeans",
+    "cannellini beans",
+    "carioca beans",
+    "cowpeas",
+    "cranberry beans",
+    "flor de mayo beans",
+    "great northern beans",
+    "hyacinth beans",
+    "kidney beans",
+    "lima beans",
+    "lupins",
+    "mothbeans",
+    "navy beans",
+    "pigeon peas",
+    "pink beans",
+    "pinto beans",
+    "small white beans",
+    "winged beans",
+    "yardlong beans"
+  ],
+  "duplicates": {
+    "adzuki beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "black beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "cannellini beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "carioca beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "chickpeas": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "cranberry beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "flor de mayo beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "great northern beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "hyacinth beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "kidney beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "lentils": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "lima beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "mung beans": {
+      "duplicate": "synonyms.csv alias of 'moong dal'",
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "navy beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "pigeon peas": {
+      "variant_of": [
+        "peas"
+      ]
+    },
+    "pink beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "pinto beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "small white beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "soybeans": {
+      "duplicate": "synonyms.csv alias of 'soybean'"
+    },
+    "split green peas": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)",
+      "variant_of": [
+        "peas"
+      ]
+    },
+    "winged beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "yardlong beans": {
+      "variant_of": [
+        "beans"
+      ]
+    }
+  },
+  "synonym_rows": [],
+  "separate_rows": {
+    "adzuki beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "black beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "cannellini beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "carioca beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "cranberry beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "flor de mayo beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "great northern beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "hyacinth beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "kidney beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "lima beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "navy beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "pink beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "pinto beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "small white beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "winged beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "yardlong beans": "a named bean species or market class (FDC names it as its own food); the bare generic row 'beans' is left untouched and not widened",
+    "pigeon peas": "a named pulse (red gram), not the generic 'peas' row (a vegetable-style term), which is left untouched"
+  },
+  "policy_id": "variant-policy-class-legumes-1",
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [
+    {
+      "term": "brown beans",
+      "source_row": "fdc_foundation:335425",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Brown (0% moisture)"
+    },
+    {
+      "term": "tan beans",
+      "source_row": "fdc_foundation:335442",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Tan (0% moisture)"
+    },
+    {
+      "term": "small red beans",
+      "source_row": "fdc_foundation:335774",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Small Red (0% moisture)"
+    },
+    {
+      "term": "medium red beans",
+      "source_row": "fdc_foundation:335777",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Medium Red (0% moisture)"
+    },
+    {
+      "term": "light tan beans",
+      "source_row": "fdc_foundation:335785",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Light Tan (0% moisture)"
+    },
+    {
+      "term": "red beans",
+      "source_row": "fdc_foundation:335930",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Red (0% moisture)"
+    },
+    {
+      "term": "medium red beans",
+      "source_row": "fdc_foundation:747430",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Medium Red (0% moisture)"
+    },
+    {
+      "term": "red beans",
+      "source_row": "fdc_foundation:747431",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Red (0% moisture)"
+    },
+    {
+      "term": "brown beans",
+      "source_row": "fdc_foundation:747433",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Brown (0% moisture)"
+    },
+    {
+      "term": "tan beans",
+      "source_row": "fdc_foundation:747434",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Tan (0% moisture)"
+    },
+    {
+      "term": "light tan beans",
+      "source_row": "fdc_foundation:747435",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Light Tan (0% moisture)"
+    },
+    {
+      "term": "small red beans",
+      "source_row": "fdc_foundation:747443",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, Dry, Small Red (0% moisture)"
+    },
+    {
+      "term": "Flour, soy, defatted",
+      "source_row": "fdc_foundation:1104705",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Flour, soy, defatted"
+    },
+    {
+      "term": "Flour, soy, full-fat",
+      "source_row": "fdc_foundation:1104766",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Flour, soy, full-fat"
+    },
+    {
+      "term": "Peanuts, raw",
+      "source_row": "fdc_foundation:2515376",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanuts",
+      "reason": "same as peanut",
+      "description": "Peanuts, raw"
+    },
+    {
+      "term": "Peanuts, all types, raw",
+      "source_row": "fdc_sr_legacy:172430",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanuts",
+      "reason": "same as peanut",
+      "description": "Peanuts, all types, raw"
+    },
+    {
+      "term": "Peanuts, valencia, raw",
+      "source_row": "fdc_sr_legacy:172432",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanuts",
+      "reason": "same as peanut",
+      "description": "Peanuts, valencia, raw"
+    },
+    {
+      "term": "Peanuts, virginia, raw",
+      "source_row": "fdc_sr_legacy:172434",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanuts",
+      "reason": "same as peanut",
+      "description": "Peanuts, virginia, raw"
+    },
+    {
+      "term": "Soy flour, low-fat",
+      "source_row": "fdc_sr_legacy:172444",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Soy flour, low-fat"
+    },
+    {
+      "term": "Soy meal, defatted, raw",
+      "source_row": "fdc_sr_legacy:172445",
+      "origin": "clause_tier",
+      "reason_code": "queue_meal",
+      "reason": "defatted/ground fraction: not established as a plain flour or a whole legume.",
+      "description": "Soy meal, defatted, raw"
+    },
+    {
+      "term": "french beans",
+      "source_row": "fdc_sr_legacy:173738",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, french, mature seeds, raw"
+    },
+    {
+      "term": "yellow beans",
+      "source_row": "fdc_sr_legacy:173751",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, yellow, mature seeds, raw"
+    },
+    {
+      "term": "Carob flour",
+      "source_row": "fdc_sr_legacy:173755",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Carob flour"
+    },
+    {
+      "term": "mungo beans",
+      "source_row": "fdc_sr_legacy:174259",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "'mungo' vs 'mung' beans: the FDC record does not establish which pulse a label word means (black gram vs green gram); stays out",
+      "description": "Mungo beans, mature seeds, raw"
+    },
+    {
+      "term": "Peanuts, spanish, raw",
+      "source_row": "fdc_sr_legacy:174263",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanuts",
+      "reason": "same as peanut",
+      "description": "Peanuts, spanish, raw"
+    },
+    {
+      "term": "Peanut flour, defatted",
+      "source_row": "fdc_sr_legacy:174267",
+      "origin": "clause_tier",
+      "reason_code": "queue_peanut",
+      "reason": "overlaps the CONDITIONED FAO nuts/seeds clause ('tree and ground nuts and other oily seeds (with no added salt or sugar)'); FDC files peanuts under Legumes. Boundary and kind (nut_seed) belong to the Nut and Seed batch.",
+      "description": "Peanut flour, defatted"
+    },
+    {
+      "term": "Soy flour, full-fat, raw",
+      "source_row": "fdc_sr_legacy:174273",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Soy flour, full-fat, raw"
+    },
+    {
+      "term": "Soy flour, defatted",
+      "source_row": "fdc_sr_legacy:174275",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Soy flour, defatted"
+    },
+    {
+      "term": "Chickpea flour (besan)",
+      "source_row": "fdc_sr_legacy:174288",
+      "origin": "clause_tier",
+      "reason_code": "queue_flour",
+      "reason": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+      "description": "Chickpea flour (besan)"
+    },
+    {
+      "term": "white beans",
+      "source_row": "fdc_sr_legacy:175202",
+      "origin": "clause_tier",
+      "reason_code": "generic_name",
+      "reason": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food).",
+      "description": "Beans, white, mature seeds, raw"
+    },
+    {
+      "term": "catjang cowpeas",
+      "source_row": "fdc_sr_legacy:175208",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "subspecies distinction (catjang) is not established as a label term; stays out rather than inflating the lexicon",
+      "description": "Cowpeas, catjang, mature seeds, raw"
+    }
+  ],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 0,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {},
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 160,
+      "lexicon_rows_after": 181,
+      "synonym_rows_added": 0,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 21
+    }
+  },
+  "clause_check": "PASS",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}

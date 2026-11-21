@@ -1,0 +1,25 @@
+{
+ "rule_id": "class-legumes-1",
+ "rule_sha256": "aead48075ca755592f4d93d1bbca664789a4b5ae47a341e33bb567a268371be2",
+ "candidates_sha256": "6c55551720017e1f487d8c8cd1127591e02c069e454cc97264f176a805041cfb",
+ "category": "Legumes and Legume Products",
+ "candidates_in_category": 351,
+ "decisions": {
+  "REJECT": 265,
+  "ACCEPT": 55,
+  "QUEUE": 31
+ },
+ "reason_codes": {
+  "processed_word": 237,
+  "plain_seed": 55,
+  "generic_name": 15,
+  "queue_flour": 7,
+  "queue_peanuts": 5,
+  "product_word": 28,
+  "queue_meal": 1,
+  "dedupe_stays_out": 2,
+  "queue_peanut": 1
+ },
+ "staged_rows": 26,
+ "synonym_candidates": 17
+}
