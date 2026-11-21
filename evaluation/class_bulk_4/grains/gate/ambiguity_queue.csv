@@ -1,0 +1,43 @@
+term,source_row,origin,reason_code,reason,description
+"Flour, 00",fdc_foundation:2003586,clause_tier,queue_00,a flour grade name; no label word established.,"Flour, 00"
+"Oats, whole grain, rolled, old fashioned",fdc_foundation:2346396,clause_tier,queue_rolled,rolled oats are flaked (process); the clause names 'flakes' of oats: per-term decision (existing 'oat' row).,"Oats, whole grain, rolled, old fashioned"
+"Oats, whole grain, steel cut",fdc_foundation:2346397,clause_tier,queue_steel,steel cut oats: per-term decision.,"Oats, whole grain, steel cut"
+"Chia seeds, dry, raw",fdc_foundation:2710819,clause_tier,queue_chia,a seed (nut_seed batch).,"Chia seeds, dry, raw"
+"Bulgur, dry, raw",fdc_foundation:2710820,clause_tier,queue_bulgur,parboiled cracked wheat: the clause names 'parboiled' rice; per-term decision.,"Bulgur, dry, raw"
+"Einkorn, grain, dry, raw",fdc_foundation:2710827,clause_tier,queue_einkorn,rare grain; QUEUE per-term.,"Einkorn, grain, dry, raw"
+"Farro, pearled, dry, raw",fdc_foundation:2710828,clause_tier,queue_pearled,pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.,"Farro, pearled, dry, raw"
+"Fonio, grain, dry, raw",fdc_foundation:2710829,clause_tier,queue_fonio,rare grain; QUEUE per-term.,"Fonio, grain, dry, raw"
+"Khorasan, grain, dry, raw",fdc_foundation:2710830,clause_tier,queue_khorasan,a trademarked wheat (Kamut); rare; QUEUE.,"Khorasan, grain, dry, raw"
+"Sorghum flour, white, pearled, unenriched, dry, raw",fdc_foundation:2710840,clause_tier,queue_pearled,pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.,"Sorghum flour, white, pearled, unenriched, dry, raw"
+"Sorghum grain, white, pearled, unenriched, dry, raw",fdc_foundation:2710841,clause_tier,queue_pearled,pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.,"Sorghum grain, white, pearled, unenriched, dry, raw"
+"Quinoa, uncooked",fdc_sr_legacy:168874,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Quinoa, uncooked"
+"Rice, brown, parboiled, dry, UNCLE BEN'S",fdc_sr_legacy:168876,clause_tier,queue_uncle,"a brand-name record (Uncle Ben's), not a food term.","Rice, brown, parboiled, dry, UNCLE BEN'S"
+Rye grain,fdc_sr_legacy:168884,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,Rye grain
+"Triticale flour, whole-grain",fdc_sr_legacy:168888,clause_tier,queue_triticale,hybrid grain; rare; QUEUE per-term.,"Triticale flour, whole-grain"
+"Wheat, hard red spring",fdc_sr_legacy:168889,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, hard red spring"
+"Wheat, hard red winter",fdc_sr_legacy:168890,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, hard red winter"
+"Wheat, soft red winter",fdc_sr_legacy:168891,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, soft red winter"
+"Corn grain, white",fdc_sr_legacy:168920,clause_tier,queue_corn,"corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.","Corn grain, white"
+"Corn flour, whole-grain, blue (harina de maiz morado)",fdc_sr_legacy:168921,clause_tier,queue_corn,"corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.","Corn flour, whole-grain, blue (harina de maiz morado)"
+Cornstarch,fdc_sr_legacy:169698,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,Cornstarch
+"Couscous, dry",fdc_sr_legacy:169699,clause_tier,queue_couscous,"couscous is named in the Group 1 DEFINITION ('pasta, couscous and polenta made with flours, flakes or grits and water'), not in the examples: per-term decision.","Couscous, dry"
+Oats (Includes foods for USDA's Food Distribution Program),fdc_sr_legacy:169705,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,Oats (Includes foods for USDA's Food Distribution Program)
+Sorghum grain,fdc_sr_legacy:169716,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,Sorghum grain
+Triticale,fdc_sr_legacy:169718,clause_tier,queue_triticale,hybrid grain; rare; QUEUE per-term.,Triticale
+"Wheat, hard white",fdc_sr_legacy:169719,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, hard white"
+"Wheat, soft white",fdc_sr_legacy:169720,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, soft white"
+"Wheat, durum",fdc_sr_legacy:169721,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Wheat, durum"
+"Wheat, sprouted",fdc_sr_legacy:169725,clause_tier,queue_sprouted,sprouted grains: process-terms review proposes per-term inference rows from the general method clause; owner decision pending (P-A).,"Wheat, sprouted"
+Barley malt flour,fdc_sr_legacy:169740,clause_tier,queue_malt,malted product: malt forms are parked/unplaced in this project (malt extract PARK); QUEUE.,Barley malt flour
+"Oat flour, partially debranned",fdc_sr_legacy:169741,clause_tier,queue_debranned,a milling fraction (bran partly removed): not the plain whole flour.,"Oat flour, partially debranned"
+"Wheat, KAMUT khorasan, uncooked",fdc_sr_legacy:169743,clause_tier,queue_khorasan,a trademarked wheat (Kamut); rare; QUEUE.,"Wheat, KAMUT khorasan, uncooked"
+"Spelt, uncooked",fdc_sr_legacy:169745,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Spelt, uncooked"
+"Teff, uncooked",fdc_sr_legacy:169747,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Teff, uncooked"
+"Corn flour, whole-grain, white",fdc_sr_legacy:169748,clause_tier,queue_corn,"corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.","Corn flour, whole-grain, white"
+"Barley, pearled, raw",fdc_sr_legacy:170284,clause_tier,queue_pearled,pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.,"Barley, pearled, raw"
+Buckwheat,fdc_sr_legacy:170286,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,Buckwheat
+"Corn grain, yellow",fdc_sr_legacy:170288,clause_tier,queue_corn,"corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.","Corn grain, yellow"
+"Corn flour, whole-grain, yellow",fdc_sr_legacy:170290,clause_tier,queue_corn,"corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.","Corn flour, whole-grain, yellow"
+"Amaranth grain, uncooked",fdc_sr_legacy:170682,clause_tier,plain_form_not_stated,the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes,"Amaranth grain, uncooked"
+Arrowroot flour,fdc_sr_legacy:170684,clause_tier,queue_arrowroot,"arrowroot flour is a starch product (FAO Group 2 starch example), not a grain flour.",Arrowroot flour
+"Bulgur, dry",fdc_sr_legacy:170688,clause_tier,queue_bulgur,parboiled cracked wheat: the clause names 'parboiled' rice; per-term decision.,"Bulgur, dry"

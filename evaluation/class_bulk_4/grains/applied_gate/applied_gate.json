@@ -1,0 +1,686 @@
+{
+ "rule_id": "class-grains-1",
+ "base_src": "/tmp/main_wt4/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 370,
+  "after": 384,
+  "added": [
+   "amaranth flour",
+   "barley flour",
+   "black rice",
+   "buckwheat",
+   "buckwheat flour",
+   "cornmeal",
+   "millet flour",
+   "oat flour",
+   "quinoa flour",
+   "rye flour",
+   "semolina",
+   "sorghum",
+   "spelt flour",
+   "wild rice"
+  ],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "amaranth flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "amaranth flour",
+    "kind": "flour"
+   }
+  },
+  "barley flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "barley flour",
+    "kind": "flour"
+   }
+  },
+  "black rice": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "black rice",
+    "kind": "whole_food"
+   }
+  },
+  "buckwheat": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   }
+  },
+  "buckwheat flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "buckwheat flour",
+    "kind": "flour"
+   }
+  },
+  "cornmeal": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cornmeal",
+    "kind": "flour"
+   }
+  },
+  "millet flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "millet flour",
+    "kind": "flour"
+   }
+  },
+  "oat flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   }
+  },
+  "quinoa flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "quinoa flour",
+    "kind": "flour"
+   }
+  },
+  "rye flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "rye flour",
+    "kind": "flour"
+   }
+  },
+  "semolina": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "semolina",
+    "kind": "flour"
+   }
+  },
+  "sorghum": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sorghum",
+    "kind": "whole_food"
+   }
+  },
+  "spelt flour": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "spelt flour",
+    "kind": "flour"
+   }
+  },
+  "wild rice": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "wild rice",
+    "kind": "whole_food"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S30",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Barley Flour"
+    ],
+    "staged_terms": [
+     "barley flour"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 496,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 350,
+  "group1_after": 358,
+  "changed": {
+   "black rice powder": [
+    null,
+    null
+   ],
+   "buckwheat powder": [
+    null,
+    null
+   ],
+   "sorghum powder": [
+    null,
+    null
+   ],
+   "wild rice powder": [
+    null,
+    null
+   ],
+   "100% black rice powder": [
+    null,
+    1
+   ],
+   "100% buckwheat powder": [
+    null,
+    1
+   ],
+   "100% sorghum powder": [
+    null,
+    1
+   ],
+   "100% wild rice powder": [
+    null,
+    1
+   ],
+   "whole black rice powder": [
+    null,
+    1
+   ],
+   "whole buckwheat powder": [
+    null,
+    1
+   ],
+   "whole sorghum powder": [
+    null,
+    1
+   ],
+   "whole wild rice powder": [
+    null,
+    1
+   ]
+  },
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "enriched wheat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: enriched wheat flour",
+   "unassessed_after": [
+    "enriched wheat flour"
+   ]
+  },
+  "bleached wheat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: bleached wheat flour",
+   "unassessed_after": [
+    "bleached wheat flour"
+   ]
+  },
+  "fortified wheat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified wheat flour",
+   "unassessed_after": [
+    "fortified wheat flour"
+   ]
+  },
+  "roasted buckwheat": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted oat flour",
+   "unassessed_after": [
+    "toasted oat flour"
+   ]
+  },
+  "pre-gelatinized oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pre-gelatinized oat flour",
+   "unassessed_after": [
+    "pre-gelatinized oat flour"
+   ]
+  },
+  "wheat gluten": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"wheat gluten\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "arrowroot flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: arrowroot flour",
+   "unassessed_after": [
+    "arrowroot flour"
+   ]
+  },
+  "semolina pasta": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: semolina pasta",
+   "unassessed_after": [
+    "semolina pasta"
+   ]
+  },
+  "cornflakes": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cornflakes",
+   "unassessed_after": [
+    "cornflakes"
+   ]
+  },
+  "masa harina": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: masa harina",
+   "unassessed_after": [
+    "masa harina"
+   ]
+  },
+  "hominy": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: hominy",
+   "unassessed_after": [
+    "hominy"
+   ]
+  },
+  "rice noodles": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: rice noodles",
+   "unassessed_after": [
+    "rice noodles"
+   ]
+  },
+  "puffed rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: puffed rice",
+   "unassessed_after": [
+    "puffed rice"
+   ]
+  },
+  "oat flour (xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (oat flour (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rye flour (xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rye flour",
+    "kind": "flour"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rye flour (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "oat flour, xq9": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: xq9",
+   "unassessed_after": [
+    "xq9"
+   ]
+  },
+  "rice, oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "oat flour, salt": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "oat flour, sugar": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "sprouted ragi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sprouted ragi",
+    "kind": "unplaced"
+   },
+   "drivers_after": [],
+   "reason_after": "recognised by name only, and no source read places sprouted ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+   "unassessed_after": []
+  },
+  "rye flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "rye flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "oat flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buckwheat": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buckwheat flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "wild rice": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "wild rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "black rice": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "black rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sorghum": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sorghum",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cornmeal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cornmeal",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "semolina": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "semolina",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "spelt flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spelt flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "quinoa flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "quinoa flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "wheat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "wheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole wheat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "whole wheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "millet": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "millet",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "barley": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "barley",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

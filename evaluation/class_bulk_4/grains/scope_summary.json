@@ -1,0 +1,37 @@
+{
+ "rule_id": "class-grains-1",
+ "rule_sha256": "543cc158affcb765e243d96b1c761296a76ac246320ab40aad1f64f8db93b3ae",
+ "candidates_sha256": "6c55551720017e1f487d8c8cd1127591e02c069e454cc97264f176a805041cfb",
+ "category": "Cereal Grains and Pasta",
+ "candidates_in_category": 254,
+ "decisions": {
+  "REJECT": 162,
+  "ACCEPT": 50,
+  "QUEUE": 42
+ },
+ "reason_codes": {
+  "product_word": 75,
+  "plain_seed": 50,
+  "queue_00": 1,
+  "queue_rolled": 1,
+  "queue_steel": 1,
+  "queue_chia": 1,
+  "queue_bulgur": 2,
+  "queue_einkorn": 1,
+  "queue_pearled": 4,
+  "queue_fonio": 1,
+  "queue_khorasan": 2,
+  "processed_word": 87,
+  "plain_form_not_stated": 15,
+  "queue_uncle": 1,
+  "queue_triticale": 2,
+  "queue_corn": 5,
+  "queue_couscous": 1,
+  "queue_sprouted": 1,
+  "queue_malt": 1,
+  "queue_debranned": 1,
+  "queue_arrowroot": 1
+ },
+ "staged_rows": 23,
+ "synonym_candidates": 6
+}

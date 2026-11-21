@@ -591,13 +591,13 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const bracketUnknown = ings.filter((i) => BRINE_KINDS.includes(lookup(i.name).kind) && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
+      const bracketUnknown = ings.filter((i) => (BRINE_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
-      if (bracketUnknown.length) return { group: null, drivers: [], reason: "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed" };
+      if (bracketUnknown.length) return { group: null, drivers: [], reason: "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed" };
       const legumePreserved = ings.filter((i, n) => BRINE_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume, vegetable or fruit (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established" };
       if (ings.length === 1 && (kinds[0] === "nut_seed" || BRINE_KINDS.includes(kinds[0])))

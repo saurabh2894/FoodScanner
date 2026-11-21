@@ -201,6 +201,9 @@ CORPUS = [
     "Ingredients: Dried Mango", "Ingredients: Dried Mango (Sugar)", "Ingredients: Dried Mango (XQ9)", "Ingredients: Dried Pineapple (Sugar, XQ9)", "Ingredients: Dried Blueberries (Sunflower Oil)",
     "Ingredients: Dried Mango (Sulphur Dioxide)", "Ingredients: Sweetened Dried Mango", "Ingredients: Candied Pineapple", "Ingredients: Dried Cranberries (Sugar)", "Ingredients: Rice, Dried Mango (XQ9).",
     "Ingredients: Pinto Beans (XQ9)", "Ingredients: Carrots (Sunflower Oil)", "Ingredients: Dried Banana (Honey)", "Ingredients: Kidney Beans (cooked)",
+    # class-bulk-4 flour kind joins the unknown-bracket abstention (tests/test_class_bulk_4.py, SYNTHETIC)
+    "Ingredients: Oat Flour (XQ9)", "Ingredients: Rye Flour (XQ9)", "Ingredients: Wheat Flour (XQ9)", "Ingredients: Whole Wheat Flour (Atta)", "Ingredients: Wheat Flour (Organic)", "Ingredients: Oat Flour",
+    "Ingredients: Rye Flour", "Ingredients: Wild Rice", "Ingredients: Buckwheat", "Ingredients: Rice, Oat Flour.", "Ingredients: Oat Flour, XQ9.", "Ingredients: Enriched Wheat Flour",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

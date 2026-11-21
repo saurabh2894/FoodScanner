@@ -127,6 +127,8 @@ def decide(row: dict, attrs: dict, rule: dict) -> dict:
         if w in all_words or (" " in w and w in phrase):
             return done("QUEUE", f"queue_{w.replace(' ', '_')}", why)
     term, alts, plain = derive_term(parts, rule)
+    if not plain and (set(parts) & set(rule.get("plain_parts", [])) or all_words & set(rule.get("plain_head_words", []))):
+        plain = True                                                      # e.g. a whole-grain or flour entry: the plain commodity form is stated by the name itself
     for pair in rule.get("plain_pairs", []):
         if all(any(x == p or p.startswith(x) for p in parts) for x in pair):
             plain = True                                                  # e.g. 'frozen' + 'unprepared': a form the clause itself names
@@ -203,6 +205,7 @@ def main(argv: list[str] | None = None) -> int:
         rows = [r for r in csv.DictReader(a.candidates.open(encoding="utf-8", newline="")) if r["food_category"] == rule["category_gate"]]
         attrs = load_attributes(a.cache, rows)
         decisions, by_term, syn = [], defaultdict(list), []
+        kind_words = rule.get("kind_by_word", {})
         canon = rule.get("canonical", {})
         for r in rows:
             d = decide(r, attrs[r["fdc_id"]], rule)
@@ -227,7 +230,13 @@ def main(argv: list[str] | None = None) -> int:
                 if alt.lower() in rule.get("alt_name_ignore", {}):
                     continue                                               # qualifier words in brackets ('baby', 'roman', 'southern'), not names of the food
                 syn.append({"from": alt.lower(), "to": term or "", "basis": "FDC bracketed/alternate name of the same record (naming evidence)", "origin": "fdc_alt_name", "fdc_id": r["fdc_id"]})
-        staged = [{"term": t, "kind": rule["kind"], "source": source_text(rule, recs, t), "fdc_ids": ";".join(x["candidate_id"] for x in recs), "rule_id": rule["rule_id"]} for t, recs in sorted(by_term.items())]
+        def kind_of(t, recs):
+            ws = set(words(t)) | {w for x in recs for w in words(x["description"])}
+            for w, k in kind_words.items():
+                if w in ws:
+                    return k
+            return rule["kind"]
+        staged = [{"term": t, "kind": kind_of(t, recs), "source": source_text(rule, recs, t), "fdc_ids": ";".join(x["candidate_id"] for x in recs), "rule_id": rule["rule_id"]} for t, recs in sorted(by_term.items())]
         dcols = ["candidate_id", "dataset", "data_type", "fdc_id", "description", "food_category", "decision", "reason_code", "reason", "term", "foodon", "taxon", "alt_names", "portions"]
         write_csv(a.out / "decisions.csv", decisions, dcols, a.force)
         write_csv(a.out / "staged_rows.csv", staged, ["term", "kind", "source", "fdc_ids", "rule_id"], a.force)

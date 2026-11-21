@@ -1,0 +1,16 @@
+{
+ "policy_id": "variant-policy-class-grains-1",
+ "applies_to": "class-grains-1 staged batches",
+ "policy": "A flour is a different form from its whole grain, and rice types (black, red, wild, parboiled) are named rice varieties: separate canonical rows next to the untouched existing rows. Grade, grain-length and cut variants are collapsed by the rule's canonical table (synonym CANDIDATES only; synonyms.csv untouched).",
+ "synonyms": {},
+ "separate_rows": {
+  "barley flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['barley']; kept as its own row, the existing row is left untouched and not widened",
+  "black rice": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['rice']; kept as its own row, the existing row is left untouched and not widened",
+  "millet flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['millet']; kept as its own row, the existing row is left untouched and not widened",
+  "oat flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['oat']; kept as its own row, the existing row is left untouched and not widened",
+  "quinoa flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['quinoa']; kept as its own row, the existing row is left untouched and not widened",
+  "sorghum": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['sorghum flour']; kept as its own row, the existing row is left untouched and not widened",
+  "wild rice": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['rice']; kept as its own row, the existing row is left untouched and not widened"
+ },
+ "parked": {}
+}
