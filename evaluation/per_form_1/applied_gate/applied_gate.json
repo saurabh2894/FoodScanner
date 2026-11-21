@@ -1,0 +1,596 @@
+{
+ "rule_id": "per-form-1",
+ "base_src": "/tmp/base_229/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 384,
+  "after": 384,
+  "added": [],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {},
+ "frozen_66": {
+  "changed": [
+   {
+    "input": "b3/Q10",
+    "changed": [
+     "group",
+     "reason",
+     "drivers"
+    ],
+    "group": [
+     1,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [],
+    "staged_terms": [
+     "names content the vocabulary does not recognise"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": [
+   "b3/Q10"
+  ]
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 534,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 768,
+  "changed": 44,
+  "by_word_and_kind": {
+   "toasted|flour": 18,
+   "toasted|whole_food": 26
+  },
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 358,
+  "group1_after": 358,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "enriched wheat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: enriched wheat flour",
+   "unassessed_after": [
+    "enriched wheat flour"
+   ]
+  },
+  "fortified wheat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified wheat flour",
+   "unassessed_after": [
+    "fortified wheat flour"
+   ]
+  },
+  "enriched flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: enriched flour",
+   "unassessed_after": [
+    "enriched flour"
+   ]
+  },
+  "fortified rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified rice",
+   "unassessed_after": [
+    "fortified rice"
+   ]
+  },
+  "sprouted ragi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sprouted ragi",
+    "kind": "unplaced"
+   },
+   "drivers_after": [],
+   "reason_after": "recognised by name only, and no source read places sprouted ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+   "unassessed_after": []
+  },
+  "sprouted jowar": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sprouted jowar",
+    "kind": "unplaced"
+   },
+   "drivers_after": [],
+   "reason_after": "recognised by name only, and no source read places sprouted jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+   "unassessed_after": []
+  },
+  "sprouted wheat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sprouted wheat",
+   "unassessed_after": [
+    "sprouted wheat"
+   ]
+  },
+  "pearled barley": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pearled barley",
+   "unassessed_after": [
+    "pearled barley"
+   ]
+  },
+  "vitamins and minerals": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "vitamins and minerals",
+    "kind": "unplaced"
+   },
+   "drivers_after": [],
+   "reason_after": "recognised by name only, and no source read places vitamins; minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+   "unassessed_after": []
+  },
+  "rice, vitamins and minerals": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised by name only, and no source read places vitamins; minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+   "unassessed_after": []
+  },
+  "oat flour (xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (oat flour (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "wheat (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "wheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (wheat (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "egg (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "toasted oat flour (xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (toasted oat flour (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "roasted buckwheat (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (roasted buckwheat (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "toasted salted oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted salted oat flour",
+   "unassessed_after": [
+    "toasted salted oat flour"
+   ]
+  },
+  "toasted almonds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted almonds",
+   "unassessed_after": [
+    "toasted almonds"
+   ]
+  },
+  "toasted soybeans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"toasted soybeans\")",
+   "unassessed_after": [
+    "toasted soybeans"
+   ]
+  },
+  "toasted lychee": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted lychee",
+   "unassessed_after": [
+    "toasted lychee"
+   ]
+  },
+  "toasted carrot": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted carrot",
+   "unassessed_after": [
+    "toasted carrot"
+   ]
+  },
+  "mango powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (mango powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "spinach powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (spinach powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "banana powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (banana powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "rice, toasted oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "toasted oat flour, salt": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "toasted oat flour, sugar": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "roasted buckwheat": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted oat flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted buckwheat": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted oat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted rice": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted unsalted oat flour": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (basmati)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (parboiled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (skimmed)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "oat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buckwheat": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% mango powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole banana powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted soybeans": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "soybean",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted almonds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
