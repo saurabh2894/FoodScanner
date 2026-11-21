@@ -58,7 +58,7 @@ Branch claude/per-form-2a off main 0ceb941. Scope: the 23 Batch-4 grain/flour te
 | `toasted salted X` | 47 | 0 | 0 | 0 | 0 |
 | total | 141 | 94 | 52 | 42 | 0 |
 
-Reconciliation: 47 whole_food/flour rows = 21 in-scope lexicon rows (7 grain whole_food: barley, black rice, buckwheat, millet, rice, sorghum, wild rice; 14 flours; `red rice` and `parboiled rice` are not separate rows, they resolve to `rice`) + 26 out-of-scope rows (milk, egg, dals-as-whole_food, cereals not in the set, etc.). All 42 changes are Group 1 -> Group 3 (21 `salted X` + 21 `roasted salted X`), each attributed to the guard; 94 - 42 = 52 Group 1 answers remain, all on the 26 out-of-scope rows (`Salted Milk`, `Salted Egg` stay Group 1: measured-unchanged, outside the 23-term scope, parked).
+Reconciliation: 47 whole_food/flour rows = 21 in-scope lexicon rows (7 grain whole_food: barley, black rice, buckwheat, millet, rice, sorghum, wild rice; 14 flours; `red rice` and `parboiled rice` are not separate rows, they resolve to `rice`) + 26 out-of-scope rows (refined wheat flour, milk, egg, eggs, ragi, potato flour, oat, wheat, maize, corn, jowar, bajra, foxtail millet, pearl millet, quinoa, besan, toned milk, dahi, double toned milk, buffalo milk, milk solids, yeast, soya flour, split pulse urad flour, roasted gram, dehydrated vegetable). All 42 changes are Group 1 -> Group 3 (21 `salted X` + 21 `roasted salted X`), each attributed to the guard; 94 - 42 = 52 Group 1 answers remain, all on the 26 out-of-scope rows (`Salted Milk`, `Salted Egg` stay Group 1: measured-unchanged, outside the 23-term scope, parked).
 
 ## 5. Gates (committed tree)
 
@@ -116,5 +116,4 @@ Nut, legume, vegetable and fruit salted controls are unchanged (the same before 
 
 ## 8. Exact diff vs main 0ceb941
 
-7 files: `data/ingest/per_form_2a.json`, `evaluation/per_form_2a/README.md`, `evaluation/per_form_2a/fao_quotes.txt`, `scripts/parity_check.py`, `src/foodscan/classify.py`, `tests/test_salted_grain_guard.py`, `web_preview/foodscan.js`. normalise.py, lexicon.csv, synonyms.csv, markers.csv, descriptors.csv: untouched.
-
+9 files: `.instinct/scale-up-handoff.md`, `data/ingest/per_form_2a.json`, `evaluation/per_form_2a/README.md`, `evaluation/per_form_2a/applied_gate/applied_gate.json`, `evaluation/per_form_2a/fao_quotes.txt`, `scripts/parity_check.py`, `src/foodscan/classify.py`, `tests/test_salted_grain_guard.py`, `web_preview/foodscan.js`. normalise.py, lexicon.csv, synonyms.csv, markers.csv, descriptors.csv: untouched.
