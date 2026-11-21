@@ -52,7 +52,7 @@ def test_synthetic_existing_culinary_rows_are_unchanged():
     for t in ("Olive Oil", "Sunflower Oil", "Palm Oil", "Ghee", "Butter", "Cocoa Butter", "Edible Vegetable Oil"):
         assert g(t)[0] == 2, t
     assert g("Hydrogenated Vegetable Oil")[0] == 4
-    # UPDATED (culinary-guard-1, merged): an unrecognised bracket on an oil or fat row now abstains (it answered Group 2 when this batch was first staged), for the 14 existing and the 20 new rows alike
+    # UPDATED (culinary-guard-1, merged): an unrecognised bracket on an oil or fat row now abstains (it answered Group 2 when this batch was first staged), for the 20 existing (is_fat_row on main bbc54e3) and the 20 new rows alike
     assert g("Sunflower Oil (XQ9)")[0] is None and g("Corn Oil (XQ9)")[0] is None and g("Corn Oil Powder")[0] is None
 
 
