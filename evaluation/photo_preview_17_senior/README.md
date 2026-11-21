@@ -34,8 +34,14 @@ The independent repro of the first two junior-state rows (actual 81439-byte imag
 - `cancel`: re-syncs to `input.files`; nothing changes if it still holds the photo in use (native cancel semantics differ by browser; synthetic events are harmless).
 - The reading captures `file` at click; all passes (`prepare`, flat, rotations) use it; `over` is checked after every await including `prepare` and `createWorker`; the stopped run renders nothing and shows no failure card.
 
+## Revision 2 (independent review of 91e9a38)
+Two further defects, both reproduced on 91e9a38 with a delayed `terminate()` promise / held image decode (`tests/js/photo_races_17.js`, T9-T11):
+- Final cleanup: the success path set `over = true; activeRun = null` before `await worker.terminate()`, so a cancel or replacement during that await found no cancellable run; the old run then resumed and wrote its NOVA card, "Done" and the OCR text into the Paste tab (reproduced for cancel and for replace).
+- Second pass: `recognize(await prepare(...))` could start the reader on an already terminated worker when the photo was replaced during preparation (`ocrCalls` 2 on 91e9a38).
+Fix: the run stays cancellable across the terminate await and is finished (`over`, `activeRun = null`) only after it, and only if still current; `prepare` and `recognize` are separate awaits with an `over` check between them (second pass and rotation retries). Rotations are off (`ROTATIONS` empty), so that branch has the same code change but no UI test. After the fix: ocrCalls 1, no result, no status "Done", Paste text unchanged.
+
 ## Tests
-`tests/test_photo_races_17.py` (7 tests, skip when node/playwright/dist are missing; no platform-specific browser or image path). `tests/test_photo_preview.py` unchanged and passing.
+`tests/test_photo_races_17.py` (10 tests, skip when node/playwright/dist are missing; no platform-specific browser or image path). `tests/test_photo_preview.py` unchanged and passing.
 
 ## Unresolved
 Original root cause of the owner's failed preview is not established: the owner's failed preview used the actual 81439-byte original, and it works locally. High-resolution mobile memory is not claimed.

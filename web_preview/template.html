@@ -528,7 +528,9 @@
       if (!(a1.answered && a1.completeness.status === "complete" && a1.ins.length === 0)) {
         // One bounded second pass for photos that did not read cleanly: uneven lighting and glare flattened. The better yield is kept; ties keep the first reading.
         stage = "Second reading with lighting correction"; lastEvent = Date.now();
-        var res2 = await worker.recognize(await prepare(file, "flat"));
+        var prep2 = await prepare(file, "flat");
+        if (over) return;                                   // replaced during preparation: the reader is already released, do not start it
+        var res2 = await worker.recognize(prep2);
         if (over) return;
         var a2 = engine.analyseText(res2.data.text, { source: "ocr" });
         if (yieldOf(a2) > yieldOf(a1)) { text = res2.data.text; note = " (the second reading, with lighting correction, gave more and was used)"; }
@@ -544,7 +546,9 @@
         var bestY = 0;
         for (var ri = 0, rots = ROTATIONS; ri < rots.length; ri++) {
           stage = "Retry with the photo turned " + rots[ri] + " degrees"; lastEvent = Date.now();
-          var resR = await worker.recognize(await prepare(file, undefined, rots[ri]));
+          var prepR = await prepare(file, undefined, rots[ri]);
+          if (over) return;
+          var resR = await worker.recognize(prepR);
           if (over) return;
           var aR = engine.analyseText(resR.data.text, { source: "ocr" });
           if (yieldOf(aR) > bestY) { bestY = yieldOf(aR); text = resR.data.text; rotUsed = rots[ri]; if (bestY >= 3) break; }
@@ -552,8 +556,11 @@
         if (rotUsed) { ocrNotes.push("The text was read after turning the photo " + rotUsed + " degrees clockwise (sideways or upside-down text). Check the extracted ingredients against the pack."); note = " (read after turning the photo " + rotUsed + " degrees)"; }
         else retake = "No ingredient list could be read from this photo. Retake it: put the pack on a flat surface (or hold it still), use good even light with no glare or shadow across the text, shoot straight-on and close so the ingredients panel fills the frame with the text upright. Or paste the label text instead.";
       }
-      over = true; clearInterval(tick); btn.disabled = false; activeRun = null;
+      // Still cancellable while the reader is released: the run is only finished (over, activeRun cleared) after this await, and only if the selection did not change meanwhile.
+      clearInterval(tick);
       try { await worker.terminate(); } catch (e) {}
+      if (over) return;
+      over = true; btn.disabled = false; activeRun = null;
       $("label-text").value = text;
       var finalA = engine.analyseText(text, { source: "ocr" });
       finalA.retake = retake;

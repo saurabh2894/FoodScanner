@@ -20,7 +20,7 @@ const LIST = 'Ingredients: Wheat flour, Sugar, Acidity regulator (INS 330)';   /
         set(v) { if (window.__holdImg && typeof v === 'string' && v.startsWith('blob:')) window.__held.push(() => d.set.call(this, v)); else d.set.call(this, v); } });
       window.__imgRelease = () => { const h = window.__held; window.__held = []; h.forEach(f => f()); };
       window.__ocrRelease = (i, text) => window.__ocr[i].resolve({ data: { text } });
-      const stub = { createWorker: async () => ({ recognize: () => new Promise((resolve) => { window.__ocr.push({ resolve }); window.__ocrCalls++; }), terminate: async () => { window.__terminated = (window.__terminated || 0) + 1; } }) };
+      const stub = { createWorker: async () => ({ recognize: () => new Promise((resolve) => { window.__ocr.push({ resolve }); window.__ocrCalls++; }), terminate: () => { window.__terminated = (window.__terminated || 0) + 1; return window.__holdTerminate ? new Promise((r) => { window.__termRelease = r; }) : Promise.resolve(); } }) };
       Object.defineProperty(window, 'Tesseract', { configurable: true, get() { return stub; }, set() {} });
     });
     await pg.goto(base + '/index.html'); await pg.click('#tab-photo');
@@ -105,6 +105,31 @@ const LIST = 'Ingredients: Wheat flour, Sugar, Acidity regulator (INS 330)';   /
     const done = await info(pg);
     await pg.setInputFiles('#photo', B); await settle(pg);
     out.result_after_replace = { done, afterReplace: await info(pg) }; await pg.close(); }
+
+  const RICE = 'Ingredients: rice, sugar.';   // read cleanly: no second pass, goes straight to the final cleanup (worker.terminate)
+  // T9/T10 the selection is cancelled / replaced while the finished run is awaiting worker.terminate(): the old result must not be written afterwards
+  for (const mode of ['cancel', 'replace']) {
+    const pg = await fresh(); const A = await mk(pg, 'A.png', 300, 200, '#ff0000'), B = await mk(pg, 'B.png', 300, 200, '#0000ff');
+    await pg.setInputFiles('#photo', A); await settle(pg);
+    await pg.evaluate(() => { window.__holdTerminate = true; });
+    await pg.click('#photo-analyse'); await settle(pg);
+    await pg.evaluate((t) => window.__ocrRelease(0, t), RICE); await settle(pg, 600);
+    const mid = await pg.evaluate(() => window.__terminated || 0);
+    if (mode === 'cancel') await pg.evaluate(() => { const i = document.getElementById('photo'); i.value = ''; i.dispatchEvent(new Event('cancel')); });
+    else await pg.setInputFiles('#photo', B);
+    await settle(pg, 300);
+    await pg.evaluate(() => window.__termRelease()); await settle(pg, 800);
+    out['terminate_boundary_' + mode] = { terminatedWhenPending: mid, final: await info(pg), pasteText: await pg.evaluate(() => document.getElementById('label-text').value), ocrCalls: await pg.evaluate(() => window.__ocrCalls) }; await pg.close();
+  }
+  // T11 the photo is replaced while the second pass is still preparing its image: the reader must not be started for it
+  { const pg = await fresh(); const A = await mk(pg, 'A.png', 300, 200, '#ff0000'), B = await mk(pg, 'B.png', 300, 200, '#0000ff');
+    await pg.setInputFiles('#photo', A); await settle(pg);
+    await pg.click('#photo-analyse'); await settle(pg);
+    await pg.evaluate(() => { window.__holdImg = true; });
+    await pg.evaluate((t) => window.__ocrRelease(0, t), LIST); await settle(pg, 600);
+    await pg.setInputFiles('#photo', B); await settle(pg, 200);
+    await pg.evaluate(() => { window.__holdImg = false; window.__imgRelease(); }); await settle(pg, 800);
+    out.replace_during_second_prepare = { ocrCalls: await pg.evaluate(() => window.__ocrCalls), final: await info(pg), pasteText: await pg.evaluate(() => document.getElementById('label-text').value) }; await pg.close(); }
 
   console.log(JSON.stringify(out)); await b.close();
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });

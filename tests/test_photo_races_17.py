@@ -80,3 +80,17 @@ def test_a_finished_result_is_removed_when_another_photo_is_chosen(races):
     r = races["result_after_replace"]
     assert r["done"]["status"].startswith(DONE) and r["done"]["result"]
     assert r["afterReplace"]["result"] == "" and r["afterReplace"]["status"] == READY
+
+
+@pytest.mark.parametrize("mode", ["cancel", "replace"])
+def test_selection_changed_while_the_finished_run_awaits_terminate_writes_nothing(races, mode):
+    r = races["terminate_boundary_" + mode]
+    assert r["terminatedWhenPending"] >= 1 and r["ocrCalls"] == 1
+    assert r["final"]["result"] == "" and r["final"]["status"] == (READY if mode == "replace" else "")
+    assert "rice, sugar" not in r["pasteText"].lower()                                           # old OCR text must not be written to the Paste tab
+    assert r["final"]["analyse"] is (mode == "replace")
+
+
+def test_replacing_during_the_second_pass_preparation_never_starts_the_reader(races):
+    r = races["replace_during_second_prepare"]
+    assert r["ocrCalls"] == 1 and r["final"]["result"] == "" and r["final"]["status"] == READY
