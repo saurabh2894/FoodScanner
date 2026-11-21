@@ -67,4 +67,28 @@ def test_synthetic_row_provenance_is_class_instance_with_the_verified_example_an
     for t in ROWS:
         s = rows[t]
         assert s.startswith("PROVISIONAL (animal-guard-1)") and '"meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"' in s, t
-        assert "class-instance" in s and "never NAMED" in s and "no taxonomic resolution" in s and "no alias" in s and "FDC id" in s and "Unprocessed (or natural)" not in s, t
+        assert "DRIED-G3-SCOPE: meat" in s and "class-instance" in s and "never NAMED" in s and "no taxonomic resolution" in s and "no alias" in s and "FDC id" in s and "Unprocessed (or natural)" not in s, t
+
+
+def test_synthetic_dried_scope_is_meat_and_finfish_only_other_seafood_abstains_and_never_falls_back_to_group_1(tmp_path):
+    """FAO Group 3 names dried 'meats and fish'. A row records its scope; an animal row with scope none (crab, mussel, ...) abstains when dried: neither Group 3 nor Group 1. Measured on a COPY of the lexicon with three test rows."""
+    import json
+    import shutil
+    import subprocess
+    import sys
+
+    root = Path(__file__).resolve().parent.parent
+    src = tmp_path / "src"
+    shutil.copytree(root / "src", src, ignore=shutil.ignore_patterns("__pycache__", "*.egg-info"))
+    lex = src / "foodscan" / "resources" / "lexicon.csv"
+    base = 'PROVISIONAL (test overlay): ""meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"" '
+    lex.write_text(lex.read_text(encoding="utf-8").rstrip("\n") + "\n" + f'testfish,whole_food,"{base}DRIED-G3-SCOPE: finfish."\ntestcrab,whole_food,"{base}DRIED-G3-SCOPE: none."\ntestmeat,whole_food,"{base}DRIED-G3-SCOPE: meat."\n', encoding="utf-8")
+    texts = ["testfish", "dried testfish", "dried testcrab", "dehydrated testcrab", "testcrab", "testcrab powder", "dried testcrab, salt", "dried testmeat", "dried testfish powder", "dried rice"]
+    code = ("import json,sys; from foodscan.pipeline import analyse_text; "
+            "print(json.dumps({t: (lambda a: a.group if a.answered else None)(analyse_text('Ingredients: '+t+'.', source='text')) for t in json.loads(sys.argv[1])}))")
+    r = subprocess.run([sys.executable, "-c", code, json.dumps(texts)], capture_output=True, text=True, env={"PYTHONPATH": str(src), "PATH": "/usr/bin:/bin:/usr/local/bin"}, cwd=str(tmp_path))
+    assert r.returncode == 0, r.stderr[-400:]
+    out = json.loads(r.stdout)
+    assert out["testfish"] == 1 and out["testcrab"] == 1 and out["dried testfish"] == 3 and out["dried testmeat"] == 3
+    assert out["dried testcrab"] is None and out["dehydrated testcrab"] is None and out["dried testcrab, salt"] is None, out
+    assert out["testcrab powder"] is None and out["dried testfish powder"] is None and out["dried rice"] == 1

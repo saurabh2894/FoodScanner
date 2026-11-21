@@ -233,8 +233,19 @@ def is_animal_row(row) -> bool:
     return bool(row) and row["kind"] == "whole_food" and _ANIMAL_MARK in row["source"]
 
 
+# The FAO Group 3 example names "meats and fish". The row records its scope: 'DRIED-G3-SCOPE: meat' (meat and poultry rows) or 'DRIED-G3-SCOPE: finfish' (a fish label); every other animal row (crab, lobster, mussel, oyster,
+# octopus, scallop) carries 'DRIED-G3-SCOPE: none': the Group 1 example groups seafood with fish, but the dried example does not, so a dried form of such a row neither takes Group 3 nor falls back to Group 1: it abstains.
+_DRIED_SCOPES = ("DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish")
+
+
 def animal_dried(ing, kind: str) -> bool:
-    return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _ANIMAL_DRIED)
+    row = lookup(ing.name)
+    return kind == "whole_food" and is_animal_row(row) and any(m in row["source"] for m in _DRIED_SCOPES) and _added(ing, _ANIMAL_DRIED)
+
+
+def animal_dried_unscoped(ing, kind: str) -> bool:
+    row = lookup(ing.name)
+    return kind == "whole_food" and is_animal_row(row) and not any(m in row["source"] for m in _DRIED_SCOPES) and _added(ing, _ANIMAL_DRIED)
 
 
 def animal_powder(ing, kind: str) -> bool:
@@ -531,6 +542,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     fat_powders = [i.raw for i, k in zip(ings, kinds) if fat_powder(i, k)]
     animal_powders = [i.raw for i, k in zip(ings, kinds) if animal_powder(i, k)]
     animal_dry = [i.raw for i, k in zip(ings, kinds) if animal_dried(i, k)]
+    animal_dry_unscoped = [i.raw for i, k in zip(ings, kinds) if animal_dried_unscoped(i, k)]
     wf_condition = [(i.raw, whole_food_observed(i, k)) for i, k in zip(ings, kinds) if whole_food_observed(i, k)]
     wf_nested = [(i.raw, whole_food_nested(i, k)) for i, k in zip(ings, kinds) if whole_food_nested(i, k)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
@@ -554,6 +566,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason=what + names + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown) + tail)
     if animal_powders:
         return Classification(None, reason="a powder of an animal food is named (" + "; ".join(animal_powders) + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states")
+    if animal_dry_unscoped:
+        return Classification(None, reason="a dried form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1")
     if fat_powders:
         return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%")
     if wf_nested:
