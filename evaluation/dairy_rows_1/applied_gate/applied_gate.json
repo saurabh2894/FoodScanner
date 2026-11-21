@@ -1,6 +1,6 @@
 {
  "rule_id": "dairy-rows-1",
- "base_src": "/tmp/base_d1/src",
+ "base_src": "/tmp/base_d/src",
  "after_src": "/home/user/FoodScanner/src",
  "lexicon_rows": {
   "before": 406,
@@ -99,15 +99,15 @@
   "by_form": {
    "salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "roasted salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
@@ -119,8 +119,8 @@
     "newly_group1": []
    }
   },
-  "group1_before": 56,
-  "group1_after": 56,
+  "group1_before": 10,
+  "group1_after": 10,
   "changes": {}
  },
  "powder_surface": {
@@ -160,14 +160,14 @@
    "dry roasted duck eggs": 1,
    "oil roasted duck eggs": null,
    "honey roasted duck eggs": null,
-   "salted duck eggs": 1,
-   "roasted salted duck eggs": 1,
+   "salted duck eggs": null,
+   "roasted salted duck eggs": null,
    "toasted salted duck eggs": null,
    "sugared duck eggs": null,
    "unsalted duck eggs": 1,
    "duck eggs (no added salt)": 1,
-   "duck eggs (sugar)": 1,
-   "duck eggs (canned)": 1,
+   "duck eggs (sugar)": null,
+   "duck eggs (canned)": null,
    "duck eggs (XQ9)": null,
    "Rice, duck eggs": null,
    "duck eggs, salt": 3,
@@ -183,14 +183,14 @@
    "dry roasted goose eggs": 1,
    "oil roasted goose eggs": null,
    "honey roasted goose eggs": null,
-   "salted goose eggs": 1,
-   "roasted salted goose eggs": 1,
+   "salted goose eggs": null,
+   "roasted salted goose eggs": null,
    "toasted salted goose eggs": null,
    "sugared goose eggs": null,
    "unsalted goose eggs": 1,
    "goose eggs (no added salt)": 1,
-   "goose eggs (sugar)": 1,
-   "goose eggs (canned)": 1,
+   "goose eggs (sugar)": null,
+   "goose eggs (canned)": null,
    "goose eggs (XQ9)": null,
    "Rice, goose eggs": null,
    "goose eggs, salt": 3,
@@ -206,14 +206,14 @@
    "dry roasted quail eggs": 1,
    "oil roasted quail eggs": null,
    "honey roasted quail eggs": null,
-   "salted quail eggs": 1,
-   "roasted salted quail eggs": 1,
+   "salted quail eggs": null,
+   "roasted salted quail eggs": null,
    "toasted salted quail eggs": null,
    "sugared quail eggs": null,
    "unsalted quail eggs": 1,
    "quail eggs (no added salt)": 1,
-   "quail eggs (sugar)": 1,
-   "quail eggs (canned)": 1,
+   "quail eggs (sugar)": null,
+   "quail eggs (canned)": null,
    "quail eggs (XQ9)": null,
    "Rice, quail eggs": null,
    "quail eggs, salt": 3,
@@ -229,14 +229,14 @@
    "dry roasted sheep milk": 1,
    "oil roasted sheep milk": null,
    "honey roasted sheep milk": null,
-   "salted sheep milk": 1,
-   "roasted salted sheep milk": 1,
+   "salted sheep milk": null,
+   "roasted salted sheep milk": null,
    "toasted salted sheep milk": null,
    "sugared sheep milk": null,
    "unsalted sheep milk": 1,
    "sheep milk (no added salt)": 1,
-   "sheep milk (sugar)": 1,
-   "sheep milk (canned)": 1,
+   "sheep milk (sugar)": null,
+   "sheep milk (canned)": null,
    "sheep milk (XQ9)": null,
    "Rice, sheep milk": null,
    "sheep milk, salt": 3,
@@ -252,14 +252,14 @@
    "dry roasted turkey eggs": 1,
    "oil roasted turkey eggs": null,
    "honey roasted turkey eggs": null,
-   "salted turkey eggs": 1,
-   "roasted salted turkey eggs": 1,
+   "salted turkey eggs": null,
+   "roasted salted turkey eggs": null,
    "toasted salted turkey eggs": null,
    "sugared turkey eggs": null,
    "unsalted turkey eggs": 1,
    "turkey eggs (no added salt)": 1,
-   "turkey eggs (sugar)": 1,
-   "turkey eggs (canned)": 1,
+   "turkey eggs (sugar)": null,
+   "turkey eggs (canned)": null,
    "turkey eggs (XQ9)": null,
    "Rice, turkey eggs": null,
    "turkey eggs, salt": 3,
@@ -388,15 +388,13 @@
   },
   "salted sheep milk": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted sheep milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sheep milk, salt": {
@@ -412,15 +410,13 @@
   },
   "sheep milk (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared sheep milk": {
@@ -446,54 +442,46 @@
   },
   "sheep milk (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sheep milk (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sheep milk (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sheep milk (preserved)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "roasted sheep milk": {
@@ -641,15 +629,13 @@
   },
   "sheep milk (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "sheep milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (sheep milk (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted sheep milk": {
@@ -792,15 +778,13 @@
   },
   "salted duck eggs": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted duck eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "duck eggs, salt": {
@@ -816,15 +800,13 @@
   },
   "duck eggs (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared duck eggs": {
@@ -850,54 +832,46 @@
   },
   "duck eggs (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "duck eggs (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "duck eggs (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "duck eggs (preserved)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "roasted duck eggs": {
@@ -1047,15 +1021,13 @@
   },
   "duck eggs (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "duck eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted duck eggs": {
@@ -1146,15 +1118,13 @@
   },
   "salted goose eggs": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted goose eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goose eggs, salt": {
@@ -1170,15 +1140,13 @@
   },
   "goose eggs (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared goose eggs": {
@@ -1204,54 +1172,46 @@
   },
   "goose eggs (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goose eggs (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goose eggs (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goose eggs (preserved)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "roasted goose eggs": {
@@ -1401,15 +1361,13 @@
   },
   "goose eggs (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "goose eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted goose eggs": {
@@ -1500,15 +1458,13 @@
   },
   "salted quail eggs": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted quail eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "quail eggs, salt": {
@@ -1524,15 +1480,13 @@
   },
   "quail eggs (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared quail eggs": {
@@ -1558,54 +1512,46 @@
   },
   "quail eggs (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "quail eggs (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "quail eggs (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "quail eggs (preserved)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "roasted quail eggs": {
@@ -1755,15 +1701,13 @@
   },
   "quail eggs (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "quail eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (quail eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted quail eggs": {
@@ -1854,15 +1798,13 @@
   },
   "salted turkey eggs": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted turkey eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "turkey eggs, salt": {
@@ -1878,15 +1820,13 @@
   },
   "turkey eggs (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared turkey eggs": {
@@ -1912,54 +1852,46 @@
   },
   "turkey eggs (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "turkey eggs (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "turkey eggs (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "turkey eggs (preserved)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "roasted turkey eggs": {
@@ -2109,15 +2041,13 @@
   },
   "turkey eggs (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "turkey eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey eggs (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted turkey eggs": {
@@ -2207,16 +2137,14 @@
    "unassessed_after": []
   },
   "salted milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk, salt": {
@@ -2231,16 +2159,14 @@
    "unassessed_after": []
   },
   "milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared milk": {
@@ -2254,42 +2180,36 @@
    ]
   },
   "milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk (XQ9)": {
@@ -2407,41 +2327,35 @@
   },
   "rice (sheep milk)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "rice",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (rice (sheep milk): sheep milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "egg (duck eggs)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (egg (duck eggs): duck eggs): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk (sheep milk)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (milk (sheep milk): sheep milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk, starter culture": {
@@ -2469,16 +2383,14 @@
    "unassessed_after": []
   },
   "salted eggs": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted eggs: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "eggs, salt": {
@@ -2493,16 +2405,14 @@
    "unassessed_after": []
   },
   "eggs (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared eggs": {
@@ -2516,42 +2426,36 @@
    ]
   },
   "eggs (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "eggs (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "eggs (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "eggs",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (eggs (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "eggs (XQ9)": {
@@ -2685,16 +2589,14 @@
    "unassessed_after": []
   },
   "salted egg": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted egg: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "egg, salt": {
@@ -2709,16 +2611,14 @@
    "unassessed_after": []
   },
   "egg (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared egg": {
@@ -2732,42 +2632,36 @@
    ]
   },
   "egg (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "egg (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "egg (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "egg",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (egg (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "egg (XQ9)": {
@@ -2890,16 +2784,14 @@
    "unassessed_after": []
   },
   "salted buffalo milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "buffalo milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted buffalo milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "buffalo milk, salt": {
@@ -2914,16 +2806,14 @@
    "unassessed_after": []
   },
   "buffalo milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "buffalo milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared buffalo milk": {
@@ -2937,42 +2827,36 @@
    ]
   },
   "buffalo milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "buffalo milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "buffalo milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "buffalo milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "buffalo milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "buffalo milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (buffalo milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "buffalo milk (XQ9)": {
@@ -3113,16 +2997,14 @@
    "unassessed_after": []
   },
   "salted toned milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted toned milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "toned milk, salt": {
@@ -3137,16 +3019,14 @@
    "unassessed_after": []
   },
   "toned milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared toned milk": {
@@ -3160,42 +3040,36 @@
    ]
   },
   "toned milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "toned milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "toned milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (toned milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "toned milk (XQ9)": {
@@ -3336,16 +3210,14 @@
    "unassessed_after": []
   },
   "salted double toned milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "double toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted double toned milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "double toned milk, salt": {
@@ -3360,16 +3232,14 @@
    "unassessed_after": []
   },
   "double toned milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "double toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared double toned milk": {
@@ -3383,42 +3253,36 @@
    ]
   },
   "double toned milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "double toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "double toned milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "double toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "double toned milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "double toned milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (double toned milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "double toned milk (XQ9)": {
@@ -3553,16 +3417,14 @@
    "unassessed_after": []
   },
   "salted milk solids": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk solids: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk solids, salt": {
@@ -3577,16 +3439,14 @@
    "unassessed_after": []
   },
   "milk solids (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared milk solids": {
@@ -3600,42 +3460,36 @@
    ]
   },
   "milk solids (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk solids (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk solids (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (milk solids (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk solids (XQ9)": {
@@ -3772,16 +3626,14 @@
    "unassessed_after": []
   },
   "salted dahi": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "dahi",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted dahi: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "dahi, salt": {
@@ -3796,16 +3648,14 @@
    "unassessed_after": []
   },
   "dahi (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "dahi",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared dahi": {
@@ -3819,42 +3669,36 @@
    ]
   },
   "dahi (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "dahi",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "dahi (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "dahi",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "dahi (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "dahi",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (dahi (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "dahi (XQ9)": {
@@ -3982,7 +3826,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (salted milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk powder: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk powder, salt": {
@@ -4004,7 +3848,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (milk powder (salted)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared milk powder": {
@@ -4025,7 +3869,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (milk powder (sugar)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk powder (canned)": {
@@ -4036,7 +3880,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (milk powder (canned)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk powder (brine)": {
@@ -4047,7 +3891,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (milk powder (brine)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (milk powder (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk powder (XQ9)": {
@@ -4191,7 +4035,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (salted skimmed milk powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (salted skimmed milk powder: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "skimmed milk powder, salt": {
@@ -4213,7 +4057,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (skimmed milk powder (salted)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared skimmed milk powder": {
@@ -4234,7 +4078,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (skimmed milk powder (sugar)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "skimmed milk powder (canned)": {
@@ -4245,7 +4089,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (skimmed milk powder (canned)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "skimmed milk powder (brine)": {
@@ -4256,7 +4100,7 @@
     "kind": "whole_food"
    },
    "drivers_after": [],
-   "reason_after": "a powder of a food (skimmed milk powder (brine)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "reason_after": "an item whose own text names an added or preserving condition (skimmed milk powder (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "skimmed milk powder (XQ9)": {
@@ -4393,16 +4237,14 @@
    "unassessed_after": []
   },
   "salted cow milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cow milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted cow milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "cow milk, salt": {
@@ -4417,16 +4259,14 @@
    "unassessed_after": []
   },
   "cow milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cow milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared cow milk": {
@@ -4440,42 +4280,36 @@
    ]
   },
   "cow milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cow milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "cow milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cow milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "cow milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cow milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (cow milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "cow milk (XQ9)": {
@@ -4616,16 +4450,14 @@
    "unassessed_after": []
   },
   "salted goat milk": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "goat milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted goat milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goat milk, salt": {
@@ -4640,16 +4472,14 @@
    "unassessed_after": []
   },
   "goat milk (salted)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "goat milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "sugared goat milk": {
@@ -4663,42 +4493,36 @@
    ]
   },
   "goat milk (sugar)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "goat milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goat milk (canned)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "goat milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goat milk (brine)": {
-   "group_before": 1,
-   "group_after": 1,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "goat milk",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goat milk (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "goat milk (XQ9)": {
