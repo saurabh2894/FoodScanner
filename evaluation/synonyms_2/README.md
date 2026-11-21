@@ -64,7 +64,7 @@ The 12 forms compared per alias (alias line vs target line, group and unassessed
 | out-of-sample 32 | changed 2 (S01: 'mandarin oranges' recognised; S24: 'Sucrose' recognised), group changes 0, status changes 0, unexplained 0, abstain->4 0 |
 | drift (existing lexicon terms and synonyms, 510 probes) | 0 differences |
 | powder surface (552 forms) | changed 0; bare X powder Group 1 after 0 |
-| controls | 28 negative (the 14 parked aliases plus conditioned forms) and 26 positive in `applied_gate.json` 'controls' |
+| controls | 24 negative (the 14 parked aliases plus 10 conditioned forms) and 26 positive in `applied_gate.json` 'controls' |
 | suite | 1491 passed, 5 xfailed |
 | parity | 641/641 identical (additions-only: +38 inputs over 603, 0 lines removed) |
 
