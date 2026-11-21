@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-11-21T15:54:48.834Z",
+  "browser": "Google Chrome (Headless)",
+  "results": {
+    "original_jpeg_desktop": {
+      "status": "Photo ready. Press Read photo and analyse.",
+      "previewHidden": false,
+      "previewSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA",
+      "previewComplete": true,
+      "naturalWidth": 607,
+      "naturalHeight": 494,
+      "btnDisabled": false,
+      "clientWidth": 1247,
+      "scrollWidth": 1247,
+      "hasResultCard": false
+    },
+    "original_jpeg_mobile": {
+      "status": "Photo ready. Press Read photo and analyse.",
+      "previewHidden": false,
+      "previewSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA",
+      "previewComplete": true,
+      "naturalWidth": 607,
+      "naturalHeight": 494,
+      "btnDisabled": false,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "hasResultCard": false
+    },
+    "valid_png": {
+      "status": "Photo ready. Press Read photo and analyse.",
+      "previewHidden": false,
+      "previewSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA",
+      "previewComplete": true,
+      "naturalWidth": 1,
+      "naturalHeight": 1,
+      "btnDisabled": false,
+      "clientWidth": 1247,
+      "scrollWidth": 1247,
+      "hasResultCard": false
+    },
+    "invalid_file": {
+      "status": "Photo ready (no preview could be shown). Press Read photo and analyse.",
+      "previewHidden": true,
+      "previewSrc": "",
+      "previewComplete": true,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "btnDisabled": false,
+      "clientWidth": 1247,
+      "scrollWidth": 1247,
+      "hasResultCard": false
+    },
+    "cleared_selection": {
+      "status": "",
+      "previewHidden": true,
+      "previewSrc": "",
+      "previewComplete": true,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "btnDisabled": true,
+      "clientWidth": 1247,
+      "scrollWidth": 1247,
+      "hasResultCard": false
+    },
+    "replacement": {
+      "loadingStateObserved": true,
+      "oldPreviewClearedImmediately": true,
+      "settled": {
+        "status": "Photo ready. Press Read photo and analyse.",
+        "previewHidden": false,
+        "previewSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA",
+        "previewComplete": true,
+        "naturalWidth": 607,
+        "naturalHeight": 494,
+        "btnDisabled": false,
+        "clientWidth": 1247,
+        "scrollWidth": 1247,
+        "hasResultCard": false
+      }
+    },
+    "reselect_same": {
+      "reselectEventFired": true,
+      "previewHidden": false,
+      "status": "Photo ready. Press Read photo and analyse."
+    },
+    "tab_switch": {
+      "status": "Photo ready. Press Read photo and analyse.",
+      "previewHidden": false,
+      "previewSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA",
+      "previewComplete": true,
+      "naturalWidth": 1,
+      "naturalHeight": 1,
+      "btnDisabled": false,
+      "clientWidth": 1247,
+      "scrollWidth": 1247,
+      "hasResultCard": false
+    },
+    "ocr_end_to_end": {
+      "ocrCompleted": true,
+      "extractedText": "INGREDIENTS\n\nMultigrain Flour Blend (45.7%) [Sprouted Ragi &\nJowar (23.4%), Rice & Oat (22.3%)], Whole Milk\nPowder (29.5%), Date Powder (9%), Banana\nPowder, Strawberry Powder (5%), Skimmed Milk\nPowder, Vitamins\u201d and Minerals** , Beetroot\nPowder, Antioxidant (Natural Tocopherol).\n\nTHIS PRODUCT CONTAINS 23% MILLETS\nContains Milk & Oats. Made in a facility that\nalso processes Soy, Wheat & Nuts. May contain\ntrace elements.\n",
+      "resultCardRendered": true,
+      "newSelectionClearedPriorResult": true
+    }
+  }
+}

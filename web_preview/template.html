@@ -47,7 +47,7 @@
   .btn:disabled { opacity: .55; cursor: default; }
   .chip { appearance: none; background: var(--accent-soft); color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: .25rem .7rem; font: 500 .8rem var(--font-body); cursor: pointer; }
   .hint { color: var(--muted); font-size: .85rem; }
-  #photo-preview { max-width: 100%; max-height: 14rem; border: 1px solid var(--line); border-radius: 8px; justify-self: start; }
+  #photo-preview { max-width: 100%; max-height: 14rem; border: 1px solid var(--line); border-radius: 8px; justify-self: start; object-fit: contain; image-orientation: from-image; display: block; box-sizing: border-box; }
   .warn { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: .5rem .75rem; border-radius: 0 6px 6px 0; font-size: .88rem; }
   .status { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
   /* result */
@@ -421,33 +421,92 @@
   var THUMB_MAX = 640;
   function makeThumb(file) {
     return new Promise(function (resolve) {
+      if (!file) { resolve(null); return; }
       var url = URL.createObjectURL(file), img = new Image(), done = false;
       function finish(v) { if (!done) { done = true; URL.revokeObjectURL(url); resolve(v); } }
-      setTimeout(function () { finish(null); }, 10000);
+      var timer = setTimeout(function () { finish(null); }, 10000);
       img.onload = function () {
         try {
-          var k = Math.min(1, THUMB_MAX / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement("canvas");
-          c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
-          c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
-          finish(c.toDataURL("image/jpeg", 0.8));
+          var nw = img.naturalWidth || img.width, nh = img.naturalHeight || img.height;
+          if (!nw || !nh) { finish(null); return; }
+          var k = Math.min(1, THUMB_MAX / Math.max(nw, nh)), c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(nw * k)); c.height = Math.max(1, Math.round(nh * k));
+          var ctx = c.getContext("2d");
+          if (!ctx) { finish(null); return; }
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          var dataUrl = c.toDataURL("image/jpeg", 0.8);
+          clearTimeout(timer);
+          finish(dataUrl);
         } catch (e) { finish(null); }
       };
-      img.onerror = function () { finish(null); };
+      img.onerror = function () { clearTimeout(timer); finish(null); };
       img.src = url;
     });
   }
+
+  function clearPhotoPreview() {
+    var pv = $("photo-preview");
+    pv.hidden = true;
+    pv.removeAttribute("src");
+  }
+
+  function clearResults() {
+    var res = $("result");
+    if (res) res.replaceChildren();
+  }
+
   var previewToken = 0;
+  $("photo").addEventListener("click", function () {
+    // Reset file input value on click so selecting the same file again triggers the change event
+    this.value = "";
+  });
+
+  $("photo").addEventListener("cancel", function () {
+    if (!this.files || !this.files.length) {
+      photoFile = null;
+      $("photo-analyse").disabled = true;
+      clearPhotoPreview();
+      clearResults();
+      $("photo-status").textContent = "";
+    }
+  });
+
   $("photo").addEventListener("change", function (ev) {
     photoFile = ev.target.files && ev.target.files[0] || null;
     $("photo-analyse").disabled = !photoFile;
     var pv = $("photo-preview"), token = ++previewToken;
-    pv.onerror = function () { pv.hidden = true; pv.removeAttribute("src"); if (photoFile) $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; };
-    if (!photoFile) { pv.hidden = true; pv.removeAttribute("src"); return; }
-    $("photo-status").textContent = "Photo ready. Press Read photo and analyse.";
+    pv.onerror = function () {
+      if (token !== previewToken) return;
+      clearPhotoPreview();
+      if (photoFile && !$("photo-analyse").disabled) {
+        $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse.";
+      }
+    };
+    if (!photoFile) {
+      clearPhotoPreview();
+      clearResults();
+      $("photo-status").textContent = "";
+      return;
+    }
+    // New file selected: clear old preview and previous analysis results immediately
+    clearPhotoPreview();
+    clearResults();
+    $("photo-status").textContent = "Loading preview…";
     makeThumb(photoFile).then(function (dataUrl) {
       if (token !== previewToken) return;                       // a newer selection replaced this one
-      if (dataUrl) { pv.src = dataUrl; pv.hidden = false; }
-      else { pv.hidden = true; pv.removeAttribute("src"); $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; }
+      if (dataUrl) {
+        pv.src = dataUrl;
+        pv.hidden = false;
+        // Only set status if analyse has not already started
+        if ($("photo-analyse").disabled === false) {
+          $("photo-status").textContent = "Photo ready. Press Read photo and analyse.";
+        }
+      } else {
+        clearPhotoPreview();
+        if (photoFile && $("photo-analyse").disabled === false) {
+          $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse.";
+        }
+      }
     });
   });
 
