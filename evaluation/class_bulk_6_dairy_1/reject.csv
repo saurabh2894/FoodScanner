@@ -1,0 +1,100 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,167687,"Whipped topping, frozen, low fat",whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,167688,"Cream substitute, powdered, light",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,167730,"Milk, imitation, non-soy",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,168089,"Imitation cheese, american or cheddar, low cholesterol",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,168097,"Cream substitute, liquid, light",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,169073,"Beverage, instant breakfast powder, chocolate, not reconstituted",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,169081,"Cheese spread, cream cheese base",spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,169897,"Beverage, instant breakfast powder, chocolate, sugar-free, not reconstituted",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,169899,"Whipped cream substitute, dietetic, made from powdered mix",whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,169901,"Cheese, american cheddar, imitation",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,169904,"Eggs, scrambled, frozen mixture",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,170860,"Cream, whipped, cream topping, pressurized",whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,170861,"Milk, filled, fluid, with blend of hydrogenated vegetable oils",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,170862,"Milk, filled, fluid, with lauric acid oil",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,170865,"Dessert topping, powdered",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170866,"Dessert topping, powdered, 1.5 ounce prepared with 1/2 cup milk",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170867,"Dessert topping, pressurized",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170868,"Dessert topping, semi solid, frozen",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170869,"Sour cream, imitation, cultured",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,170879,"Milk, chocolate, fluid, commercial, whole, with added vitamin A and vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170880,"Milk, chocolate, fluid, commercial, reduced fat, with added vitamin A and vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170881,"Milk, chocolate, lowfat, with added vitamin A and vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170883,"Milk shakes, thick chocolate",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170884,"Milk shakes, thick vanilla",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170888,"Yogurt, vanilla, low fat.",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170890,"Milk dessert bar, frozen, made from lowfat milk",dessert_pudding_shake,"dessert, pudding, shake or smoothie formulation"
+sr_legacy,170892,"Nutritional supplement for people with diabetes, liquid",supplement_protein_isolate,"dietary supplement, protein isolate or powder blend"
+sr_legacy,170893,"Egg, whole, raw, frozen, salted, pasteurized",salted,salted dairy or egg product
+sr_legacy,170896,"Cheese spread, American or Cheddar cheese base, reduced fat",spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,170901,"Yogurt, Greek, strawberry, nonfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170902,"Yogurt, Greek, vanilla, nonfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170906,"Yogurt, vanilla, non-fat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170907,"Yogurt, Greek, vanilla, lowfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170908,"Yogurt, frozen, flavors other than chocolate, lowfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170910,"Milk, chocolate, lowfat, reduced sugar",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170911,"Ice cream, lowfat, no sugar added, cone, added peanuts and chocolate sauce",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,170912,"Yogurt, Greek, 2% fat, strawberry banana, CHOBANI",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,170915,"Yogurt, Greek, nonfat, Fruit on Bottom, Strawberry, CHOBANI",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171254,"Cheese spread, pasteurized process, American",spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,171258,Eggnog,flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171259,"Sour dressing, non-butterfat, cultured, filled cream-type",spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,171261,"Cream substitute, liquid, with hydrogenated vegetable oil and soy protein",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,171262,"Cream substitute, liquid, with lauric acid oil and sodium caseinate",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,171263,"Cream substitute, powdered",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,171264,"Milk substitutes, fluid, with lauric acid oil",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,171275,"Milk, canned, condensed, sweetened",sweetened_condensed,sweetened condensed milk or confection with added sugar
+sr_legacy,171277,"Milk, chocolate beverage, hot cocoa, homemade",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171293,"Ice cream, light, soft serve, chocolate",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,171294,"Ice cream bar, stick or nugget, with crunch coating",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,171296,"Yogurt, Greek, nonfat, vanilla, CHOBANI",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171297,"Yogurt, Greek, strawberry, DANNON OIKOS",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171298,"Yogurt, Greek, nonfat, vanilla, DANNON OIKOS",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171299,"Yogurt, Greek, nonfat, strawberry, DANNON OIKOS",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171300,"Yogurt, Greek, strawberry, lowfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171301,"Kefir, lowfat, strawberry, LIFEWAY",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171303,"Milk, chocolate, fat free, with added vitamin A and vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,171305,"Ice cream bar, covered with chocolate and nuts",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,171306,Ice cream sundae cone,ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,171307,"Light ice cream, Creamsicle",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,172185,"Egg, whole, cooked, omelet",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,172186,"Egg, whole, cooked, poached",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,172187,"Egg, whole, cooked, scrambled",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,172198,"Cheese substitute, mozzarella",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,172200,"Cheese sauce, prepared from recipe",spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,172206,"Parmesan cheese topping, fat free",whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,172208,"Yogurt, chocolate, nonfat milk",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,172209,KRAFT CHEEZ WHIZ Pasteurized Process Cheese Sauce,spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,172213,Reddi Wip Fat Free Whipped Topping,whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,172214,"Cream substitute, flavored, powdered",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,172219,"Yogurt, vanilla, low fat, fortified with vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,172220,"Yogurt, vanilla or lemon flavor, nonfat milk, sweetened with low-calorie sweetener, fortified with vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,172221,"Yogurt, chocolate, nonfat milk, fortified with vitamin D",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,172226,Ice cream sandwich,ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,172227,Ice cream cookie sandwich,ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,172228,"Ice cream cone, chocolate covered, with nuts, flavors other than chocolate",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,172229,"Ice cream sandwich, made with light ice cream, vanilla",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,172230,"Ice cream sandwich, vanilla, light, no sugar added",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,173410,"Butter, salted",salted,salted dairy or egg product
+sr_legacy,173411,"Butter, whipped, with salt",whipped_spray_topping,whipped topping or aerosol dairy formulation
+sr_legacy,173423,"Egg, whole, cooked, fried",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,173424,"Egg, whole, cooked, hard-boiled",cooked_egg,"cooked, scrambled, fried or prepared egg dish"
+sr_legacy,173429,"Egg substitute, powder",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,173436,"Egg, yolk, raw, frozen, salted, pasteurized",salted,salted dairy or egg product
+sr_legacy,173445,"Yogurt, vanilla or lemon flavor, nonfat milk, sweetened with low-calorie sweetener",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,173448,KRAFT VELVEETA Pasteurized Process Cheese Spread,spread_dip_sauce,"formulated dairy spread, dip, sauce or dressing"
+sr_legacy,173450,"Milk, chocolate, fluid, commercial, reduced fat, with added calcium",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,173453,"Cream substitute, flavored, liquid",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,173459,"Protein supplement, milk based, Muscle Milk, powder",supplement_protein_isolate,"dietary supplement, protein isolate or powder blend"
+sr_legacy,173460,"Protein supplement, milk based, Muscle Milk Light, powder",supplement_protein_isolate,"dietary supplement, protein isolate or powder blend"
+sr_legacy,173461,Dulce de Leche,sweetened_condensed,sweetened condensed milk or confection with added sugar
+sr_legacy,173462,"Egg substitute, liquid or frozen, fat free",imitation_substitute,"imitation dairy, filled milk or synthetic substitute"
+sr_legacy,173463,"Yogurt, vanilla flavor, lowfat milk, sweetened with low calorie sweetener",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,173464,"Yogurt, frozen, flavors not chocolate, nonfat milk, with low-calorie sweetener",flavored_dairy,flavored dairy beverage or product with added flavoring
+sr_legacy,173465,"Ice cream, soft serve, chocolate",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,173466,"Ice cream, bar or stick, chocolate covered",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+sr_legacy,173467,"Fat free ice cream, no sugar added, flavors other than chocolate",ice_cream,ice cream or frozen dairy dessert (ultra-processed formulation)
+foundation,330415,"Yogurt, Greek, strawberry, nonfat",flavored_dairy,flavored dairy beverage or product with added flavoring
+foundation,790508,"Butter, stick, salted",salted,salted dairy or egg product
+foundation,2758990,Sweetened condensed milk,sweetened_condensed,sweetened condensed milk or confection with added sugar
