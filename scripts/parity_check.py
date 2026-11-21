@@ -235,6 +235,10 @@ CORPUS = [
     # nut-guard-1 (tests/test_nut_guard_1.py, SYNTHETIC): canned/bottled/preserved, brine and unrecognised-bracket guards also apply to kind nut_seed
     "Ingredients: Almonds (canned)", "Ingredients: Almonds (brine)", "Ingredients: Almonds (XQ9)", "Ingredients: Walnuts (preserved)", "Ingredients: Walnuts (sunflower oil)", "Ingredients: Cashew Nuts (no added salt)",
     "Ingredients: Pumpkin Seeds (XQ9)", "Ingredients: Flax Seeds (bottled)", "Ingredients: Sesame Seeds (raw)", "Ingredients: Almonds (skin removed)", "Ingredients: Almonds, Cashew Nuts (XQ9)", "Ingredients: Chia Seeds (in brine)", "Ingredients: Almonds (XQ9), Rice (XQ9)", "Ingredients: Almonds (canned), Kidney Beans (canned)", "Ingredients: Kidney Beans (canned)", "Ingredients: Rice (XQ9)", "Ingredients: Walnuts (brine)", "Ingredients: Walnuts (sunflower oil)", "Ingredients: Walnuts (salted)", "Ingredients: Walnuts (sugar)", "Ingredients: Walnuts (honey)", "Ingredients: Almonds (salt, sunflower oil)",
+    # fats-rows-1 (tests/test_fats_rows_1.py, SYNTHETIC): 20 culinary rows (19 oils and lard); hydrogenated forms stay Group 4; held, synonym and animal-fat terms stay unrecognised
+    "Ingredients: Walnut Oil", "Ingredients: Lard", "Ingredients: Wheat Germ Oil", "Ingredients: Hydrogenated Lard", "Ingredients: Partially Hydrogenated Palm Kernel Oil", "Ingredients: Interesterified Corn Oil",
+    "Ingredients: Rice, Almond Oil", "Ingredients: Walnuts (walnut oil)", "Ingredients: Corn and Canola Oil", "Ingredients: Corn Oil (XQ9)", "Ingredients: Corn Oil Powder", "Ingredients: Salted Lard", "Ingredients: Nutmeg Butter",
+    "Ingredients: Shea Butter", "Ingredients: Rapeseed Oil", "Ingredients: Beef Tallow", "Ingredients: Lard, Salt", "Ingredients: Milk, Lard",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
