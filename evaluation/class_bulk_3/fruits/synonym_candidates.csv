@@ -1,0 +1,58 @@
+from,to,basis,origin,fdc_id
+green kiwifruit,kiwifruit,cultivar variant of one fruit; one canonical row,dedupe,327046
+chinese gooseberry,kiwifruit,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,327046
+bartlett pears,pears,cultivar variant of one fruit; one canonical row,dedupe,332597
+ripe and slightly ripe bananas,bananas,ripeness grade of one fruit; one canonical row,dedupe,790991
+red delicious apples,apples,cultivar variant of one fruit; one canonical row,dedupe,1105430
+honeycrisp apples,apples,cultivar variant of one fruit; one canonical row,dedupe,1105547
+granny smith apples,apples,cultivar variant of one fruit; one canonical row,dedupe,1105664
+gala apples,apples,cultivar variant of one fruit; one canonical row,dedupe,1105781
+fuji apples,apples,cultivar variant of one fruit; one canonical row,dedupe,1105897
+red grapes,grapes,colour-shade variant of one fruit; one canonical row,dedupe,2263890
+green grapes,grapes,colour-shade variant of one fruit; one canonical row,dedupe,2263891
+dark red sweet cherries,cherries,"FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)",dedupe,2346399
+apricot,apricots,"same fruit, singular/plural FDC entries; one canonical row",dedupe,2710815
+hass avocado,avocados,cultivar variant of one fruit; one canonical row,dedupe,2710824
+kiwi,kiwifruit,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,2710831
+tommy atkins mango,mangos,cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural),dedupe,2710833
+ataulfo mango,mangos,cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural),dedupe,2710834
+green anjou pear,pears,cultivar variant of one fruit; one canonical row,dedupe,2710836
+black plum,plums,cultivar variant of one fruit; one canonical row,dedupe,2710837
+mamey colorado,mamey sapote,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,167760
+marmalade plum,mamey sapote,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,167760
+red anjou pears,pears,cultivar variant of one fruit; one canonical row,dedupe,167777
+bosc pears,pears,cultivar variant of one fruit; one canonical row,dedupe,167778
+green anjou pears,pears,cultivar variant of one fruit; one canonical row,dedupe,167779
+garlic pear,abiyuch,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,167782
+yellow cherries,nance,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,167789
+jambolan,java-plum,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168150
+sweetsop,sugar-apples,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168175
+golden delicious apples,apples,cultivar variant of one fruit; one canonical row,dedupe,168202
+red raspberries,raspberries,colour-shade variant of one fruit; one canonical row,dedupe,168209
+zespri sungold kiwifruit,kiwifruit,cultivar variant of one fruit; one canonical row,dedupe,168211
+gold3,kiwifruit,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,168211
+green plantains,plantains,colour-shade variant of one fruit; one canonical row,dedupe,168215
+lychee,litchis,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169086
+mandarin oranges,tangerines,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169105
+purple passion-fruit,passion-fruit,colour-shade variant of one fruit; one canonical row,dedupe,169108
+granadilla,passion-fruit,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169108
+surinam-cherry,pitanga,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169129
+yellow plantains,plantains,colour-shade variant of one fruit; one canonical row,dedupe,169130
+mamey,mammy-apple,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,169909
+japanese persimmons,persimmons,species variants of persimmon; one canonical row (label term 'persimmon'),dedupe,169941
+native persimmons,persimmons,species variants of persimmon; one canonical row (label term 'persimmon'),dedupe,169943
+west indian cherry,acerola,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,171686
+unheated apples,apples,cultivar variant of one fruit; one canonical row,dedupe,171694
+starfruit,carambola,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,171715
+red sour cherries,sour cherries,colour-shade variant of sour cherries; one canonical row,dedupe,171718
+sweet cherries,cherries,"FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)",dedupe,171719
+bullock's-heart,custard-apple,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,171725
+white grapefruit,grapefruit,colour-shade variant of one fruit; one canonical row,dedupe,173034
+cape-gooseberries or poha,groundcherries,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,173043
+natal-plum,carissa,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,173952
+european black currants,black currants,"FDC 'Currants, european black'; label term 'black currants'",dedupe,173963
+red and white currants,red currants,"FDC 'Currants, red and white' (one record for both colours); INFERENCE: owner to confirm",dedupe,173964
+slip skin,american type grapes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,174682
+red or green grapes,grapes,colour-shade variant of one fruit; one canonical row,dedupe,174683
+european type,grapes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,174683
+such as thompson seedless,grapes,FDC bracketed/alternate name of the same record (naming evidence),fdc_alt_name,174683

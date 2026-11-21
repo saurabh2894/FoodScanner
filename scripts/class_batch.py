@@ -139,7 +139,7 @@ def decide(row: dict, attrs: dict, rule: dict) -> dict:
         return done("QUEUE", "no_head", "no item name after removing form parts")
     if not plain:
         return done("QUEUE", "plain_form_not_stated", "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes")
-    bad = sorted({w for p in attrs.get("portions", []) for w in words(p)} & set(rule["word_guard"]["words"]))
+    bad = sorted({w for p in attrs.get("portions", []) for w in words(p)} & set(rule.get("portion_guard", rule["word_guard"]["words"])))
     if bad:
         return done("QUEUE", "attribute_contradicts_plain", f"FDC portion attribute(s) mention {bad}: the record may describe a prepared form")
     if term in rule["generic_queue"]["terms"]:

@@ -38,7 +38,7 @@ ADDED_TERMS = {
     "schezwan pepper": "herb_spice",
     "dried curry leaves": "herb_spice",
     # Package D (dried fruit)
-    "black raisin": "whole_food",
+    "black raisin": "fruit",         # retyped whole_food -> fruit by class-bulk-3 (same behaviour plus the item-level sugar/syrup/salt guard; source unchanged)
 }
 # Package E (plain juices: apple, grape, orange, pineapple juice) is HELD, not added: see test_juice_rows_are_held below and evaluation/lexicon_1_flip_check/README.md.
 
@@ -114,7 +114,7 @@ def test_condition_handling_processed_forms_stay_unassessed():
 
 def test_normalise_ingredient_maps_new_terms_to_kind():
     # Test that normalise_ingredient together with lookup maps new terms to their kind
-    for term, expected_kind in [("Almonds", "nut_seed"), ("Ajwain", "herb_spice"), ("Black Raisin", "whole_food")]:
+    for term, expected_kind in [("Almonds", "nut_seed"), ("Ajwain", "herb_spice"), ("Black Raisin", "fruit")]:      # class-bulk-3 retype (kind column only)
         norm = normalise_ingredient(term)
         assert norm.name == term.lower()
         info = lookup(norm.name)

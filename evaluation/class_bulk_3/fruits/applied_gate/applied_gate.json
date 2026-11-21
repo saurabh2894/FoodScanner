@@ -1,0 +1,1619 @@
+{
+ "rule_id": "class-fruits-1",
+ "base_src": "/tmp/main_wt3/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 295,
+  "after": 370,
+  "added": [
+   "abiyuch",
+   "acerola",
+   "apples",
+   "apricots",
+   "asian pears",
+   "avocados",
+   "bananas",
+   "black currants",
+   "blackberries",
+   "blueberries",
+   "boysenberries",
+   "breadfruit",
+   "cantaloupe melons",
+   "carambola",
+   "carissa",
+   "casaba melons",
+   "cherimoya",
+   "cherries",
+   "clementines",
+   "crabapples",
+   "custard-apple",
+   "elderberries",
+   "feijoa",
+   "figs",
+   "gooseberries",
+   "grapefruit",
+   "grapes",
+   "groundcherries",
+   "guavas",
+   "honeydew melons",
+   "jackfruit",
+   "java-plum",
+   "jujube",
+   "kiwifruit",
+   "kumquats",
+   "limes",
+   "litchis",
+   "longans",
+   "loquats",
+   "mamey sapote",
+   "mammy-apple",
+   "mandarin",
+   "mulberries",
+   "muscadine grapes",
+   "nance",
+   "nectarines",
+   "oheloberries",
+   "oranges",
+   "papayas",
+   "passion-fruit",
+   "pawpaw",
+   "pears",
+   "persimmons",
+   "pineapple",
+   "pitanga",
+   "plantains",
+   "plums",
+   "pomegranates",
+   "prickly pears",
+   "pummelo",
+   "quinces",
+   "raspberries",
+   "red currants",
+   "rhubarb",
+   "rose-apples",
+   "rowal",
+   "sapodilla",
+   "sour cherries",
+   "soursop",
+   "strawberries",
+   "strawberry guavas",
+   "sugar-apples",
+   "tangerines",
+   "watermelon",
+   "yellow peaches"
+  ],
+  "removed": [],
+  "kind_changed": {
+   "mango": [
+    "whole_food",
+    "fruit"
+   ],
+   "lemon": [
+    "whole_food",
+    "fruit"
+   ],
+   "dates": [
+    "whole_food",
+    "fruit"
+   ],
+   "black raisin": [
+    "whole_food",
+    "fruit"
+   ]
+  },
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "abiyuch": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "abiyuch",
+    "kind": "fruit"
+   }
+  },
+  "acerola": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "acerola",
+    "kind": "fruit"
+   }
+  },
+  "apples": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "apples",
+    "kind": "fruit"
+   }
+  },
+  "apricots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "apricots",
+    "kind": "fruit"
+   }
+  },
+  "asian pears": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "asian pears",
+    "kind": "fruit"
+   }
+  },
+  "avocados": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "avocados",
+    "kind": "fruit"
+   }
+  },
+  "bananas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   }
+  },
+  "black currants": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "black currants",
+    "kind": "fruit"
+   }
+  },
+  "blackberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "blackberries",
+    "kind": "fruit"
+   }
+  },
+  "blueberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "blueberries",
+    "kind": "fruit"
+   }
+  },
+  "boysenberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "boysenberries",
+    "kind": "fruit"
+   }
+  },
+  "breadfruit": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "breadfruit",
+    "kind": "fruit"
+   }
+  },
+  "cantaloupe melons": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cantaloupe melons",
+    "kind": "fruit"
+   }
+  },
+  "carambola": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "carambola",
+    "kind": "fruit"
+   }
+  },
+  "carissa": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "carissa",
+    "kind": "fruit"
+   }
+  },
+  "casaba melons": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "casaba melons",
+    "kind": "fruit"
+   }
+  },
+  "cherimoya": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cherimoya",
+    "kind": "fruit"
+   }
+  },
+  "cherries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cherries",
+    "kind": "fruit"
+   }
+  },
+  "clementines": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "clementines",
+    "kind": "fruit"
+   }
+  },
+  "crabapples": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "crabapples",
+    "kind": "fruit"
+   }
+  },
+  "custard-apple": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "custard-apple",
+    "kind": "fruit"
+   }
+  },
+  "elderberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "elderberries",
+    "kind": "fruit"
+   }
+  },
+  "feijoa": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "feijoa",
+    "kind": "fruit"
+   }
+  },
+  "figs": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "figs",
+    "kind": "fruit"
+   }
+  },
+  "gooseberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "gooseberries",
+    "kind": "fruit"
+   }
+  },
+  "grapefruit": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "grapefruit",
+    "kind": "fruit"
+   }
+  },
+  "grapes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "grapes",
+    "kind": "fruit"
+   }
+  },
+  "groundcherries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "groundcherries",
+    "kind": "fruit"
+   }
+  },
+  "guavas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "guavas",
+    "kind": "fruit"
+   }
+  },
+  "honeydew melons": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "honeydew melons",
+    "kind": "fruit"
+   }
+  },
+  "jackfruit": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jackfruit",
+    "kind": "fruit"
+   }
+  },
+  "java-plum": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "java-plum",
+    "kind": "fruit"
+   }
+  },
+  "jujube": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jujube",
+    "kind": "fruit"
+   }
+  },
+  "kiwifruit": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kiwifruit",
+    "kind": "fruit"
+   }
+  },
+  "kumquats": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kumquats",
+    "kind": "fruit"
+   }
+  },
+  "limes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "limes",
+    "kind": "fruit"
+   }
+  },
+  "litchis": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   }
+  },
+  "longans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "longans",
+    "kind": "fruit"
+   }
+  },
+  "loquats": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "loquats",
+    "kind": "fruit"
+   }
+  },
+  "mamey sapote": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mamey sapote",
+    "kind": "fruit"
+   }
+  },
+  "mammy-apple": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mammy-apple",
+    "kind": "fruit"
+   }
+  },
+  "mandarin": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mandarin",
+    "kind": "fruit"
+   }
+  },
+  "mulberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mulberries",
+    "kind": "fruit"
+   }
+  },
+  "muscadine grapes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "muscadine grapes",
+    "kind": "fruit"
+   }
+  },
+  "nance": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "nance",
+    "kind": "fruit"
+   }
+  },
+  "nectarines": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "nectarines",
+    "kind": "fruit"
+   }
+  },
+  "oheloberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "oheloberries",
+    "kind": "fruit"
+   }
+  },
+  "oranges": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "oranges",
+    "kind": "fruit"
+   }
+  },
+  "papayas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "papayas",
+    "kind": "fruit"
+   }
+  },
+  "passion-fruit": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "passion-fruit",
+    "kind": "fruit"
+   }
+  },
+  "pawpaw": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pawpaw",
+    "kind": "fruit"
+   }
+  },
+  "pears": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pears",
+    "kind": "fruit"
+   }
+  },
+  "persimmons": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "persimmons",
+    "kind": "fruit"
+   }
+  },
+  "pineapple": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   }
+  },
+  "pitanga": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pitanga",
+    "kind": "fruit"
+   }
+  },
+  "plantains": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "plantains",
+    "kind": "fruit"
+   }
+  },
+  "plums": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "plums",
+    "kind": "fruit"
+   }
+  },
+  "pomegranates": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pomegranates",
+    "kind": "fruit"
+   }
+  },
+  "prickly pears": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "prickly pears",
+    "kind": "fruit"
+   }
+  },
+  "pummelo": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pummelo",
+    "kind": "fruit"
+   }
+  },
+  "quinces": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "quinces",
+    "kind": "fruit"
+   }
+  },
+  "raspberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "raspberries",
+    "kind": "fruit"
+   }
+  },
+  "red currants": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "red currants",
+    "kind": "fruit"
+   }
+  },
+  "rhubarb": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "rhubarb",
+    "kind": "fruit"
+   }
+  },
+  "rose-apples": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "rose-apples",
+    "kind": "fruit"
+   }
+  },
+  "rowal": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "rowal",
+    "kind": "fruit"
+   }
+  },
+  "sapodilla": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sapodilla",
+    "kind": "fruit"
+   }
+  },
+  "sour cherries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sour cherries",
+    "kind": "fruit"
+   }
+  },
+  "soursop": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "soursop",
+    "kind": "fruit"
+   }
+  },
+  "strawberries": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   }
+  },
+  "strawberry guavas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "strawberry guavas",
+    "kind": "fruit"
+   }
+  },
+  "sugar-apples": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sugar-apples",
+    "kind": "fruit"
+   }
+  },
+  "tangerines": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "tangerines",
+    "kind": "fruit"
+   }
+  },
+  "watermelon": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "watermelon",
+    "kind": "fruit"
+   }
+  },
+  "yellow peaches": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "yellow peaches",
+    "kind": "fruit"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S01",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "diced apples"
+    ],
+    "staged_terms": [
+     "apple",
+     "apples"
+    ]
+   },
+   {
+    "input": "S24",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Lime"
+    ],
+    "staged_terms": [
+     "lime"
+    ]
+   },
+   {
+    "input": "S31",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Dry Grapes",
+     "Watermelon"
+    ],
+    "staged_terms": [
+     "grape",
+     "grapes",
+     "watermelon"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 421,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "powder_surface": {
+  "probed": 540,
+  "group1_before": 346,
+  "group1_after": 350,
+  "changed": {
+   "banana powder powder": [
+    null,
+    null
+   ],
+   "strawberry powder powder": [
+    null,
+    null
+   ],
+   "100% banana powder powder": [
+    null,
+    1
+   ],
+   "100% strawberry powder powder": [
+    null,
+    1
+   ],
+   "whole banana powder powder": [
+    null,
+    1
+   ],
+   "whole strawberry powder powder": [
+    null,
+    1
+   ]
+  },
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "salted plums": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "plums",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "plums (in syrup)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "plums",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mango (sweetened)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mango (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (mango (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "apples (bottled)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "apples",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (apples (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "lemon (pickled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "lemon",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (lemon (pickled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pineapple (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pineapple (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "canned peaches": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned peaches",
+   "unassessed_after": [
+    "canned peaches"
+   ]
+  },
+  "peaches in syrup": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: peaches in syrup",
+   "unassessed_after": [
+    "peaches in syrup"
+   ]
+  },
+  "apple juice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"apple juice\")",
+   "unassessed_after": [
+    "apple juice"
+   ]
+  },
+  "orange juice concentrate": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: orange juice concentrate",
+   "unassessed_after": [
+    "orange juice concentrate"
+   ]
+  },
+  "applesauce": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: applesauce",
+   "unassessed_after": [
+    "applesauce"
+   ]
+  },
+  "fruit cocktail": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fruit cocktail",
+   "unassessed_after": [
+    "fruit cocktail"
+   ]
+  },
+  "dried apricots": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "apricots",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "strawberry jam": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: strawberry jam",
+   "unassessed_after": [
+    "strawberry jam"
+   ]
+  },
+  "banana chips": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: banana chips",
+   "unassessed_after": [
+    "banana chips"
+   ]
+  },
+  "strawberries (sweetened)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "strawberries (with sugar)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "raisins in syrup": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: raisins in syrup",
+   "unassessed_after": [
+    "raisins in syrup"
+   ]
+  },
+  "mango powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (mango powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "banana powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (banana powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "strawberry powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "strawberry powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (strawberry powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "apple powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "apples",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (apple powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "pineapple powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (pineapple powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "lemon peel": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"lemon peel\")",
+   "unassessed_after": [
+    "lemon peel"
+   ]
+  },
+  "orange peel": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"orange peel\")",
+   "unassessed_after": [
+    "orange peel"
+   ]
+  },
+  "spinach & apple powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (apple powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "apple extract powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: apple extract powder",
+   "unassessed_after": [
+    "apple extract powder"
+   ]
+  },
+  "tamarind pulp": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tamarind pulp",
+   "unassessed_after": [
+    "tamarind pulp"
+   ]
+  },
+  "coconut": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"coconut\")",
+   "unassessed_after": [
+    "coconut"
+   ]
+  },
+  "sweetened dried mango": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sweetened dried mango\")",
+   "unassessed_after": [
+    "sweetened dried mango"
+   ]
+  },
+  "candied pineapple": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: candied pineapple",
+   "unassessed_after": [
+    "candied pineapple"
+   ]
+  },
+  "dried cranberries (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried cranberries (sugar)",
+   "unassessed_after": [
+    "dried cranberries (sugar)"
+   ]
+  },
+  "dried mango (sugar)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried pineapple (sugar, xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried pineapple (sugar, xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried banana (honey)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried papaya (jaggery)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "papayas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried cherries (syrup)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "cherries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried blueberries (sunflower oil)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "blueberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried mango (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried mango (sulphur dioxide)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried mango (sulphur dioxide): sulphur dioxide), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried mango slices (glazed)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried mango slices (glazed)",
+   "unassessed_after": [
+    "dried mango slices (glazed)"
+   ]
+  },
+  "dried cranberries": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried cranberries",
+   "unassessed_after": [
+    "dried cranberries"
+   ]
+  },
+  "apples": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "apples",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "bananas": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "strawberries": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "strawberries (frozen)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "unsweetened strawberries": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: unsweetened strawberries",
+   "unassessed_after": [
+    "unsweetened strawberries"
+   ]
+  },
+  "strawberries (no added sugar)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "strawberries (sugar free)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "strawberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dates": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "dates",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "black raisin": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "black raisin",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mango": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lemon": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "lemon",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% mango powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole banana powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "oranges": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "oranges",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, salt, apples": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, apples": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "dried pineapple": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried papaya": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "papayas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried banana": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried blueberries": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "blueberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried cherries": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cherries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango (organic)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dry grapes": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "grapes",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

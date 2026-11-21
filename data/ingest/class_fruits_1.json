@@ -1,0 +1,469 @@
+{
+  "rule_id": "class-fruits-1",
+  "status": "DRAFT for review (Batch 3). Maps USDA FoodData Central NAMES (plus record attributes) of the category 'Fruits and Fruit Juices' to candidate lexicon rows of kind fruit: WHOLE/SIMPLE forms only (raw, or frozen-unsweetened). Juices, concentrates, sweetened, canned, dried and prepared forms are NOT this batch. It never decides a NOVA group: FDC supplies naming evidence only; placement comes from the FAO clause.",
+  "kind": "fruit",
+  "class_name": "fruit",
+  "form_phrase": "plain raw or frozen-unsweetened form",
+  "clause": {
+    "id": "F1",
+    "text": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+    "where": "FAO 2019 (Monteiro et al.), Table 1, Group 1 examples, p. 11 (first example of the Group 1 row)",
+    "url": "https://www.fao.org/3/ca5644en/ca5644en.pdf",
+    "pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+    "named_terms": [
+      "fruit"
+    ],
+    "basis": "inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named",
+    "scope": "The clause is unconditioned and names the forms fresh, squeezed, chilled, frozen or dried. In THIS batch only the plain raw and the frozen-unsweetened whole/cut fruit are instances: 'squeezed' (juice) and 'dried' forms, juices, concentrates, purees, sauces, jams, canned or syrup-packed or sweetened fruit, fruit cocktails and salads, smoothies and dishes are not accepted here (juices are a CONDITIONED clause: 'fresh or pasteurized fruit or vegetable juices (with no added sugar, sweeteners or flavours)'; fruit in syrup is Group 3: 'whole fruit preserved in syrup')."
+  },
+  "clauses_alt": [],
+  "category_gate": "Fruits and Fruit Juices",
+  "acceptance": [
+    "A1. The FDC food category is exactly 'Fruits and Fruit Juices'.",
+    "A2. The plain form is established by the name ('raw', or 'frozen' + 'unsweetened') OR by the record attribute: a Foundation record whose FoodOn item name states '(raw)' where the description does not.",
+    "A3. The name holds no word from the word guard, no product word and no queue word.",
+    "A4. Record attributes do not contradict the plain form (no portion descriptor holding a guard word).",
+    "A5. The derived label term is a distinct food name: else QUEUE.",
+    "A6. Canonical deduplication: cultivar, grade, colour-shade, region and cut variants of one fruit collapse into ONE row; the rest are synonym CANDIDATES (synonyms.csv is not touched)."
+  ],
+  "word_guard": {
+    "words": [
+      "ade",
+      "applesauce",
+      "ascorbic",
+      "baked",
+      "blend",
+      "boiled",
+      "bottled",
+      "candied",
+      "canned",
+      "chutney",
+      "cocktail",
+      "commercial",
+      "concentrate",
+      "concentrated",
+      "cooked",
+      "creamed",
+      "cured",
+      "diet",
+      "diluted",
+      "drained",
+      "drink",
+      "enriched",
+      "extra",
+      "filling",
+      "flavored",
+      "flavoured",
+      "fortified",
+      "fried",
+      "from",
+      "frozen-concentrate",
+      "glace",
+      "glazed",
+      "grilled",
+      "halves",
+      "heated",
+      "heavy",
+      "home-prepared",
+      "infusion",
+      "instant",
+      "jam",
+      "jelly",
+      "juice",
+      "leather",
+      "light",
+      "lime-flavored",
+      "liquid",
+      "marinated",
+      "marmalade",
+      "mashed",
+      "microwaved",
+      "mix",
+      "mixed",
+      "nectar",
+      "paste",
+      "pickled",
+      "pie",
+      "pieces",
+      "pimiento",
+      "prepared",
+      "preserves",
+      "puree",
+      "reconstituted",
+      "restaurant",
+      "roasted",
+      "salad",
+      "salt",
+      "salted",
+      "sauce",
+      "sauteed",
+      "scalloped",
+      "seasoned",
+      "sections",
+      "segments",
+      "slices",
+      "smoked",
+      "smoothie",
+      "sodium",
+      "solids",
+      "soup",
+      "spread",
+      "steamed",
+      "stewed",
+      "stir-fried",
+      "stuffed",
+      "sugar",
+      "sulfured",
+      "supplement",
+      "sweetened",
+      "syrup",
+      "tinned",
+      "topping",
+      "uncooked",
+      "undiluted",
+      "vitamin",
+      "water"
+    ],
+    "phrases": [
+      "baby food",
+      "food distribution",
+      "water pack",
+      "juice pack",
+      "heavy syrup",
+      "light syrup",
+      "from concentrate",
+      "with added",
+      "without added",
+      "added sugar",
+      "no sugar added"
+    ],
+    "why": "The category-wide extension of the Spices and Herbs word guard (owner rule 3): any treatment, addition, packing medium, concentrate or product word puts the name outside a plain raw or frozen-unsweetened fruit. 'unsweetened' is NOT guarded (it is the clause-compatible frozen form; 'sweetened' is). 'Includes foods for USDA's Food Distribution Program' is a programme note and is removed before the check."
+  },
+  "product_words": {
+    "words": [
+      "juice",
+      "powder",
+      "flour",
+      "starch",
+      "flakes",
+      "granules",
+      "applesauce",
+      "smoothie",
+      "cocktail",
+      "salad",
+      "leather",
+      "puree",
+      "sauce",
+      "jam",
+      "jelly",
+      "raisins",
+      "prunes",
+      "dates"
+    ],
+    "why": "A juice, powder, flour, puree, sauce, jam, cocktail, salad or smoothie of fruit is a product, not the fruit: REJECT. Raisins, prunes and dates are DRIED fruit: dried forms are per-term only (dehydrated-policy-1), routed to the owner."
+  },
+  "queue_words": {
+    "dried": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+    "dehydrated": "dehydrated forms: per-term only (dehydrated-policy-1).",
+    "peel": "a plant-part variant (peel, rind) of a fruit: not established as a label term.",
+    "rind": "a plant-part variant (rind) of a fruit.",
+    "seeds": "seed variant: nut_seed batch.",
+    "stalk": "plant-part variant.",
+    "olives": "olives are eaten brined or processed; the raw fruit is not a label term and FAO Group 3 names preserved fruit; QUEUE.",
+    "carob": "not a fruit example of the clause; no source read places it.",
+    "roselle": "calyces used as a hibiscus herb/tea; not established as a fruit term.",
+    "tamarinds": "tamarind is a culinary pulp/sourcing ingredient on Indian labels (tamarind pulp, paste): the raw fruit name is queued until the pulp/paste forms are decided (owner).",
+    "coconut": "coconut is a nut/seed in this project's vocabulary (Nut and Seed batch).",
+    "pulp": "a fruit pulp is a processed mass (a puree-like product), not the whole or cut fruit; per-item decision."
+  },
+  "plain_tokens": [
+    "raw"
+  ],
+  "plain_pairs": [
+    [
+      "frozen",
+      "unsweetened"
+    ]
+  ],
+  "plain_by_attribute": "(raw)",
+  "form_tokens": [
+    "raw"
+  ],
+  "ignorable_qualifiers": [
+    "unsweetened",
+    "frozen",
+    "fresh",
+    "mature",
+    "ripe",
+    "overripe",
+    "underripe",
+    "whole",
+    "with skin",
+    "without skin",
+    "with peel",
+    "without peel",
+    "peeled",
+    "seeded",
+    "seedless",
+    "flesh only",
+    "includes skin",
+    "skin",
+    "all commercial varieties",
+    "all varieties",
+    "all areas",
+    "florida",
+    "california",
+    "arizona",
+    "california and arizona",
+    "pink and red and white",
+    "pink and red",
+    "traditional varieties",
+    "extra sweet variety",
+    "includes*",
+    "(includes*",
+    "common*",
+    "navels",
+    "valencias",
+    "california, valencias"
+  ],
+  "generic_queue": {
+    "terms": [],
+    "why": ""
+  },
+  "alt_name_ignore": {},
+  "canonical": {
+    "fuji apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "gala apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "golden delicious apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "granny smith apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "honeycrisp apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red delicious apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "unheated apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "bartlett pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "bosc pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red anjou pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "green anjou pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "green anjou pear": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "green grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "red or green grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "american type grapes": {
+      "to": null,
+      "basis": "a grape type descriptor (slip skin) that is not a label term; stays out rather than inflating the lexicon"
+    },
+    "sweet cherries": {
+      "to": "cherries",
+      "basis": "FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "dark red sweet cherries": {
+      "to": "cherries",
+      "basis": "FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "red sour cherries": {
+      "to": "sour cherries",
+      "basis": "colour-shade variant of sour cherries; one canonical row"
+    },
+    "ataulfo mango": {
+      "to": "mangos",
+      "basis": "cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural)"
+    },
+    "tommy atkins mango": {
+      "to": "mangos",
+      "basis": "cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural)"
+    },
+    "hass avocado": {
+      "to": "avocados",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "ripe and slightly ripe bananas": {
+      "to": "bananas",
+      "basis": "ripeness grade of one fruit; one canonical row"
+    },
+    "green plantains": {
+      "to": "plantains",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "yellow plantains": {
+      "to": "plantains",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "green kiwifruit": {
+      "to": "kiwifruit",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "zespri sungold kiwifruit": {
+      "to": "kiwifruit",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "white grapefruit": {
+      "to": "grapefruit",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "apricot": {
+      "to": "apricots",
+      "basis": "same fruit, singular/plural FDC entries; one canonical row"
+    },
+    "black plum": {
+      "to": "plums",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red raspberries": {
+      "to": "raspberries",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "european black currants": {
+      "to": "black currants",
+      "basis": "FDC 'Currants, european black'; label term 'black currants'"
+    },
+    "red and white currants": {
+      "to": "red currants",
+      "basis": "FDC 'Currants, red and white' (one record for both colours); INFERENCE: owner to confirm"
+    },
+    "japanese persimmons": {
+      "to": "persimmons",
+      "basis": "species variants of persimmon; one canonical row (label term 'persimmon')"
+    },
+    "native persimmons": {
+      "to": "persimmons",
+      "basis": "species variants of persimmon; one canonical row (label term 'persimmon')"
+    },
+    "purple passion-fruit": {
+      "to": "passion-fruit",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "cranberries": {
+      "to": null,
+      "basis": "STANDING EXCLUSION (lexicon-1 senior review, tests/test_lexicon_1.py): 'cranberry' on b1/N14 does not establish plain dried status (cranberries are typically sweetened when dried), so the term must stay out; the raw FDC record is queued, not staged."
+    }
+  },
+  "portion_guard": [
+    "cooked",
+    "canned",
+    "boiled",
+    "drained",
+    "syrup",
+    "sweetened",
+    "stewed",
+    "baked",
+    "fried",
+    "roasted"
+  ],
+  "portion_guard_why": "Portion descriptors of RAW fruit legitimately say slices, sections, pieces, halves, cubes, pureed or juice (measuring units); only descriptors naming a preparation or packing medium contradict the plain form.",
+  "negative_controls": [
+    "salted plums",
+    "plums (in syrup)",
+    "mango (sweetened)",
+    "mango (preserved)",
+    "apples (bottled)",
+    "lemon (pickled)",
+    "pineapple (canned)",
+    "canned peaches",
+    "peaches in syrup",
+    "apple juice",
+    "orange juice concentrate",
+    "applesauce",
+    "fruit cocktail",
+    "dried apricots",
+    "strawberry jam",
+    "banana chips",
+    "strawberries (sweetened)",
+    "strawberries (with sugar)",
+    "raisins in syrup",
+    "mango powder",
+    "banana powder",
+    "strawberry powder",
+    "apple powder",
+    "pineapple powder",
+    "lemon peel",
+    "orange peel",
+    "spinach & apple powder",
+    "apple extract powder",
+    "tamarind pulp",
+    "coconut",
+    "sweetened dried mango",
+    "candied pineapple",
+    "dried cranberries (sugar)",
+    "dried mango (sugar)",
+    "dried pineapple (sugar, xq9)",
+    "dried banana (honey)",
+    "dried papaya (jaggery)",
+    "dried cherries (syrup)",
+    "dried blueberries (sunflower oil)",
+    "dried mango (xq9)",
+    "dried mango (sulphur dioxide)",
+    "dried mango slices (glazed)",
+    "dried cranberries"
+  ],
+  "positive_controls": [
+    "apples",
+    "bananas",
+    "strawberries",
+    "strawberries (frozen)",
+    "unsweetened strawberries",
+    "strawberries (no added sugar)",
+    "strawberries (sugar free)",
+    "dates",
+    "black raisin",
+    "mango",
+    "lemon",
+    "100% mango powder",
+    "whole banana powder",
+    "oranges",
+    "rice, salt, apples",
+    "rice, apples",
+    "dried pineapple",
+    "dried mango",
+    "dried papaya",
+    "dried banana",
+    "dried blueberries",
+    "dried cherries",
+    "dried mango (organic)",
+    "dried apricots",
+    "dry grapes"
+  ]
+}
