@@ -42,6 +42,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] main 95546b9: unplaced-kind merged. Branch claude/source-survey-1: research/08 admissible-source survey (report only; PMC throttles bulk reads; new candidate PMC10127522 partly read; FSSAI 502). Standing protocol: EVERY stop ends with a pushed status line.
 
+- [x] main 0463b45: source-survey-1 merged (starch/tapioca starch rows, modified-starch guard, research/08). Branch claude/pmc-reresearch-2: coconut fat row + parks/proposals (evaluation/pmc_reresearch_2); awaiting owner verification, NOT merged.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
