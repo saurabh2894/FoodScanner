@@ -17,7 +17,7 @@ Used only the verified example. Not used: the junior's spliced 'Group 1 definiti
 | drift (556) | 0 differences |
 | salted (147) / descriptor (812) / powder (558) surfaces | 0 changed |
 | after-build proof | both rows recognised after, neither before |
-| suite | 1861 passed, 5 xfailed (main 1810 + 51 new tea/coffee tests... see parity line for the harness count) |
+| suite | 1861 passed, 5 xfailed (main 1810 + 51 new tests) |
 | parity | 804/804 identical (main 789 + 15 added entries, 0 removed; reason and driver compared) |
 
 ## 3. Measured forms (tea and coffee identical; before = unrecognised; `applied_gate.json` controls; the whole-food guard is in the base)
@@ -40,3 +40,10 @@ Other beverages and held aliases stay unrecognised: hibiscus tea, chamomile tea,
 `tests/test_tea_coffee_rows_1.py` (new): plain forms, sugar/salt/flavour lists, milk and unknown-bracket abstentions, held forms and aliases, conditioned and nested forms (through the guard), the green-descriptor observation, and row provenance (verified clause, no spliced definition, no purity claim).
 
 ## 6. Exact diff vs main 342e662
+- `data/ingest/tea_coffee_rows_1.json`
+- `evaluation/tea_coffee_rows_1/README.md`
+- `evaluation/tea_coffee_rows_1/applied_gate/applied_gate.json`
+- `evaluation/tea_coffee_rows_1/staged_rows.csv`
+- `scripts/parity_check.py`
+- `src/foodscan/resources/lexicon.csv`
+- `tests/test_tea_coffee_rows_1.py`
