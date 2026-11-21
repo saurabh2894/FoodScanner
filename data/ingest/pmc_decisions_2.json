@@ -1,0 +1,112 @@
+{
+ "decisions_id": "pmc-decisions-2",
+ "inventory": "evaluation/pmc_reresearch_2/terms.csv",
+ "filter": "remaining parked demand terms re-read against PMC10127522 (cached read-only copy; row labels confirmed in research/08)",
+ "conditions": [
+  "read-only use, no bulk import of its tables",
+  "paraphrase only, identifier cited with 'licence unverified'",
+  "never the sole support for a placement beyond FAO 2019 / Monteiro: then park and flag",
+  "dietary-recall evidence about the food; label-context conditions still apply"
+ ],
+ "decisions": [
+  {
+   "term": "coconut fat",
+   "rank": 1,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "Vegetable oils crushed from seeds, nuts or fruit (notably olives)",
+   "named": "exact term not named by the clause (a class phrase: coconut is a nut or fruit); a hydrogenated or fractionated form is a different entry: the existing 'hydrogenated' strong marker still decides when the label says so",
+   "corroboration": "corroborated, not solely supported, by PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241; licence unverified): the NHANES Nova description lists coconut and animal fats among the processed culinary ingredients (a paraphrase; dietary-recall items, not ingredient-list parsing)",
+   "fdc": [
+    "fdc_sr_legacy:171412"
+   ],
+   "pmc_row": "Processed culinary ingredients (Nova description list)"
+  },
+  {
+   "term": "liquid glucose",
+   "rank": 2,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other ultraprocessed foods",
+   "pmc_says": "sugar substitutes, sweeteners and all syrups (excluding 100% maple syrup) are coded with the ultra-processed foods",
+   "fao_status": "FAO 2019 names 'syrup from maple trees' (Group 2) and 'high-fructose corn syrup' (Group 4 marker) but not glucose syrup",
+   "reason": "PMC10127522 stands ALONE for glucose syrup and its 'all syrups' coding is broader than FAO; any placement would be a strong-marker proposal (classification-bearing): parked and flagged until a second admissible source agrees",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "glucose syrup",
+   "rank": 3,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other ultraprocessed foods",
+   "pmc_says": "sugar substitutes, sweeteners and all syrups (excluding 100% maple syrup) are coded with the ultra-processed foods",
+   "fao_status": "FAO 2019 names 'syrup from maple trees' (Group 2) and 'high-fructose corn syrup' (Group 4 marker) but not glucose syrup",
+   "reason": "PMC10127522 stands ALONE for glucose syrup and its 'all syrups' coding is broader than FAO; any placement would be a strong-marker proposal (classification-bearing): parked and flagged until a second admissible source agrees",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "dehydrated onion",
+   "rank": 4,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "owner_decision_descriptor",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "dried fruits (without added sugars) and vegetables are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1: 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' AGREES for dried vegetables",
+   "reason": "two sources agree for DRIED vegetables, but 'dehydrated' and 'flakes' are not the word 'dried' and a descriptor word would change every recognition: needs the owner's decision on a 'dehydrated' descriptor (proposal only)",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "dehydrated vegetable",
+   "rank": 5,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "owner_decision_descriptor",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "dried fruits (without added sugars) and vegetables are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1: 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' AGREES for dried vegetables",
+   "reason": "two sources agree for DRIED vegetables, but 'dehydrated' and 'flakes' are not the word 'dried' and a descriptor word would change every recognition: needs the owner's decision on a 'dehydrated' descriptor (proposal only)",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "onions flakes",
+   "rank": 6,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "owner_decision_descriptor",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "dried fruits (without added sugars) and vegetables are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1: 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' AGREES for dried vegetables",
+   "reason": "two sources agree for DRIED vegetables, but 'dehydrated' and 'flakes' are not the word 'dried' and a descriptor word would change every recognition: needs the owner's decision on a 'dehydrated' descriptor (proposal only)",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "natural vinegar",
+   "rank": 7,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_source_for_qualifier",
+   "pmc_row": "Other processed culinary ingredients",
+   "pmc_says": "vinegar is coded with the processed culinary ingredients (the existing 'vinegar' row is corroborated)",
+   "fao_status": "FAO silent on vinegar by name",
+   "reason": "no source read says what the qualifier 'natural' means for vinegar; the plain vinegar row is unchanged",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "caster sugar",
+   "rank": 8,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_source_for_form",
+   "pmc_row": "Table sugar",
+   "pmc_says": "the 'Table sugar' row holds honey, molasses and maple syrup (100%)",
+   "fao_status": "FAO Group 2 names sugar from cane or beet",
+   "reason": "no source names 'caster' as a form of sugar; the PMC row does not name it",
+   "standing_reason": "single admissible source or broader than FAO"
+  }
+ ]
+}

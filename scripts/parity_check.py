@@ -161,6 +161,8 @@ CORPUS = [
     # plain starch rows (tests/test_starch_rows.py, SYNTHETIC): plain starch is Group 2; every modified form stays the strong marker
     "Ingredients: Starch", "Ingredients: Rice, starch.", "Ingredients: Rice, Starch (Modified).", "Ingredients: Rice, starch (acid treated).", "Ingredients: Rice, Tapioca Starch (Oxidised).", "Ingredients: Rice, starch (modified) (INS 1422).",
     "Ingredients: Rice, modified corn starch.", "Ingredients: Rice, corn starch, salt.", "Ingredients: Rice, tapioca starch, salt.",
+    # pmc-decisions-2 (tests/test_pmc_reresearch_2.py, SYNTHETIC)
+    "Ingredients: Coconut fat", "Ingredients: Rice, coconut fat.", "Ingredients: Rice, hydrogenated coconut fat.", "Ingredients: Rice, glucose syrup.", "Ingredients: Rice, dehydrated onion, caster sugar, natural vinegar.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
