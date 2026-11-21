@@ -13,7 +13,7 @@ Source: no new source. FAO 2019 Table 1 Group 3 definition "Products made by add
 | nut/seed items only, unrecognised bracket | "a bracket on a nut or seed item names content the vocabulary does not recognise (...), so neither Group 1 nor Group 3 is established while part of the item is unassessed" |
 | a list mixing nut and other flagged items | kind-neutral: "a canned, bottled or preserved food (...)" / "a bracket on a food item names ..." with the same explanations |
 | non-nut cases | the original text, byte-for-byte unchanged (pinned by a test against the pre-change string) |
-Group 3 for brine, oil, salt and sugar keeps the existing drivers ('nut or seed with added salt or sugar'); the oil-in-bracket Group 3 rests on the general Group 1-plus-oil definition, class-instance only, no new source claim. Text changes are confined to nut cases: frozen 66 and out-of-sample 32 show no reason change.
+Group 3 drivers name the observed added substance (section 1b); salt and sugar keep the example text. The oil-in-bracket Group 3 rests on the general Group 1-plus-oil definition, class-instance only, no new source claim. Text changes are confined to nut cases: frozen 66 and out-of-sample 32 show no reason change.
 
 ## 1b. Group 3 drivers (owner review: name the observed substance)
 | case | driver |
@@ -47,7 +47,7 @@ Controls on other kinds (`kidney beans (canned)`, `rice (XQ9)`, `mango (preserve
 ## 4. Consequences and decisions for the owner
 1. `X (sunflower oil)` (a recognised culinary substance in the item's own bracket) now takes Group 3, as for the other kinds (Group 3 definition: adding oil to a group 1 food). The alternative is an abstain for nuts; one condition in `legume_added_salt_sugar_or_brine` decides it.
 2. `X (skin removed)` now abstains: 'removed' is not a recognised bracket word (the same for 'almonds (blanched)'-style notes on legumes and vegetables). Skin or shell removal is an FAO-listed minimal process; adding 'removed', 'shelled', 'skinned' to the benign bracket words would need a source-cited decision and is not done here.
-3. Observed, not changed: `X powder` for nut_seed rows (e.g. `chia seeds powder`, `almonds powder`) answers Group 1 because `nut_seed` is not in `_POWDER_ROUTED`, unlike whole_food, legume, vegetable and fruit under the powder standard. This predates the class-bulk-5 batch (it holds for almonds on main) but now covers 23 rows. Decision: route nut_seed powders under the same standard (abstain unless the item states '100%' or 'whole').
+3. Observed, not changed: `X powder` for nut_seed rows (e.g. `chia seeds powder`, `almonds powder`) answers Group 1 because `nut_seed` is not in `_POWDER_ROUTED`, unlike whole_food, legume, vegetable and fruit under the powder standard. This predates the class-bulk-5 batch (it holds for almonds on main) but now covers 23 rows. Powder routing for nut_seed is PARKED (a separate follow-up, not a decided change and not part of this batch).
 
 ## 5. Exact diff vs main 46ad81c
 `data/ingest/nut_guard_1.json`, `evaluation/nut_guard_1/{README.md,applied_gate/applied_gate.json}`, `scripts/parity_check.py` (+22 inputs), `src/foodscan/classify.py`, `tests/test_nut_guard_1.py` (new), `web_preview/foodscan.js`.
