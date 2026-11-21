@@ -31,6 +31,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] Peel-label guard (branch claude/peel-label-guard-1, off main 5ce13fa): release-exposed regression repair in parser._peel_label + JS port; sweep in evaluation/peel_label_sweep_1/. Awaiting owner verification; NOT merged.
 
+- [x] Cycle 2 workstream A (branch claude/plural-synonyms-1, off main d1bc5d5): 37 plural/leaf/plural-spelling synonyms via data/ingest/plural_policy_1.json + scripts/synonym_batch.py; evaluation/plural_synonyms_1/. Awaiting owner verification; NOT merged. Next: B (demand-driven bulk batches from evaluation/demand_inventory_1), then C (held-category sources).
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
