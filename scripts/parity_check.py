@@ -256,6 +256,9 @@ CORPUS = [
     # animal-guard-1 (tests/test_animal_guard_1.py, SYNTHETIC): eight meat rows; dried animal food is Group 3, animal powders abstain, other conditioned forms follow the existing guards
     "Ingredients: Chicken.", "Ingredients: Beef.", "Ingredients: Dried Beef.", "Ingredients: Dried Chicken, Salt.", "Ingredients: Beef Powder.", "Ingredients: 100% Beef Powder.", "Ingredients: Chicken Powder, Rice.", "Ingredients: Ground Beef.",
     "Ingredients: Roasted Chicken.", "Ingredients: Salted Beef.", "Ingredients: Smoked Chicken.", "Ingredients: Breaded Chicken.", "Ingredients: Chicken (XQ9).", "Ingredients: Beef (Rice).", "Ingredients: Chicken, Salt.", "Ingredients: Dried Mango.",
+    # animal-fish-rows-1 (tests/test_animal_fish_rows_1.py, SYNTHETIC): 68 fish/seafood rows on the animal guard
+    "Ingredients: Haddock.", "Ingredients: Dried Haddock.", "Ingredients: Haddock Powder.", "Ingredients: 100% Haddock Powder.", "Ingredients: Salted Haddock.", "Ingredients: Atlantic Salmon.", "Ingredients: Queen Crab.", "Ingredients: Snow Crab.",
+    "Ingredients: Spot.", "Ingredients: Sea Scallop, Salt.", "Ingredients: Haddock (Rice).", "Ingredients: Fried Haddock.", "Ingredients: Salmon.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
