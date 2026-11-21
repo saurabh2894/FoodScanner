@@ -107,7 +107,9 @@ def test_flip_harness_reports_a_harmless_row_with_attributed_unassessed_drops_on
 def test_flip_harness_detects_and_blocks_a_group_flip():
     # UPDATED (per-form-2b): 'cow milk' became a lexicon row (species-head milk recognition), so the probe term moved, as the run_flip assertion instructs. 'synthetic vinegar' is the one unassessed item of the
     # frozen b1/N10 list; with a row for it that list becomes fully recognised and moves None -> 3. Same purpose: the harness detects and blocks a group flip.
-    rows = [{"term": "synthetic vinegar", "kind": "whole_food", "source": "PROVISIONAL: test"}]
+    # UPDATED (culinary-guard-1): the frozen list holds 'Sesame Oil (Gingelly Oil)'; 'Gingelly Oil' is not an identity the lexicon knows (no alias is assumed), so the oil's bracket now counts as unassessed content. The probe therefore
+    # stages BOTH open terms: 'gingelly oil' (a culinary test row) and 'synthetic vinegar'; with both recognised the list moves None -> 3 as before.
+    rows = [{"term": "synthetic vinegar", "kind": "whole_food", "source": "PROVISIONAL: test"}, {"term": "gingelly oil", "kind": "culinary", "source": "PROVISIONAL: test"}]
     _, a = run_flip(rows)
     assert a["flips"] == ["b1/N10"] and a["group_flips"] == {"b1/N10": [None, 3]} and a["unexplained"] == []
 
