@@ -250,6 +250,44 @@ def bracket_residual(ing) -> list:
     return residual
 
 
+# whole-food-guard-1 (owner proposal; abstention only, no new group): a recognised whole_food item is no longer answered Group 1 when (a) its OWN name or bracket names an added or preserving condition (salt, sugar, honey,
+# syrup, brine, a recognised culinary substance such as an oil, or a canned/bottled/preserved form), or (b) its own bracket names a different food that is not explicitly known to be the same food. The one exemption inside (a) is the
+# positively supported case: for the 23 grain/flour terms of the per-form-2a guard, SALT alone keeps its Group 3 answer; any other observed condition on such an item still abstains. No source read or rule states the final group
+# for salted or sugared milk or eggs (an open owner decision), so none is asserted. The general Group 3 definition ("adding salt, oil, sugar or other group 2 ingredients to group 1 foods") is not denied: what is not established is
+# this item's form and composition from the label evidence.
+# Same-food equivalences (explicit, not a taxonomy): the identical row; egg and eggs; a plain milk row with milk, cow milk, buffalo milk or goat milk (the species-milk brackets of per-form-1 and per-form-2b); and the class-phrase row
+# 'dehydrated vegetable' with a vegetable row (its source names dried vegetables as a class). Everything else, including two different plants, a milk fraction IN milk, or a species milk not listed, stays distinct.
+_SAME_MILK_PARTS = frozenset({"milk", "cow milk", "buffalo milk", "goat milk"})
+
+
+
+def whole_food_observed(ing, kind: str) -> list:
+    if kind != "whole_food":
+        return []
+    obs = nut_added_observed(ing) + [w for w in sorted(_LEGUME_PRESERVED) if _added(ing, {w})]
+    obs = list(dict.fromkeys(obs))
+    if grain_added_salt(ing, kind):                                  # per-form-2a: salt on these 23 terms is a supported Group 3; only salt itself (the words 'salt'/'salted' or a lexicon salt row) is exempt
+        salt_rows = {r["term"] for r in load_table("lexicon.csv") if r["kind"] == "culinary" and (r["term"] == "salt" or r["term"].endswith(" salt"))}
+        obs = [o for o in obs if o not in ("salt", "salted") and not ((lookup(o) or {}).get("term") in salt_rows)]
+    return obs
+
+
+def whole_food_nested(ing, kind: str) -> list:
+    head = lookup(ing.name)
+    if kind != "whole_food" or not head or not ing.inner:
+        return []
+    out = []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
+        row = lookup(part.strip()) if part.strip() else None
+        if not row or row["kind"] in ("neutral", "culture", "culinary"):
+            continue
+        ht, pt = head["term"], row["term"]
+        if pt == ht or {ht, pt} <= {"egg", "eggs"} or (ht in (_MILK_TERMS - {"milk solids"}) and pt in _SAME_MILK_PARTS) or (ht == "dehydrated vegetable" and row["kind"] == "vegetable"):
+            continue
+        out.append(part.strip())
+    return out
+
+
 # Salted grain guard (per-form-2a): the 23 Batch-4 grain/flour terms (the _SCOPED_TERMS set) with salt added in the item's OWN name or bracket take Group 3, never Group 1 through the global 'salted' descriptor.
 # Source (FAO 2019 ca5644en, quoted in evaluation/per_form_2a/README.md): "They are made by adding salt, oil, sugar or other substances from group 2 to group 1 foods." (p.7 prose); "Some of what are now
 # ultra-processed foods were originally manufactured only with group 1 foods and salt or sugar or other substances from group 2, and thus would be classed in NOVA group 3 as processed foods." (p.9). INFERENCE
@@ -424,6 +462,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
 
     kinds = [lookup(i.name)["kind"] for i in ings]
     bracket_unknown = [(i.raw, bracket_residual(i), k) for i, k in zip(ings, kinds) if k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
+    wf_condition = [(i.raw, whole_food_observed(i, k)) for i, k in zip(ings, kinds) if whole_food_observed(i, k)]
+    wf_nested = [(i.raw, whole_food_nested(i, k)) for i, k in zip(ings, kinds) if whole_food_nested(i, k)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -437,6 +477,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
         return Classification(None, reason=what + " names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
+    if wf_nested:
+        return Classification(None, reason="a bracket names a different food inside the item (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in wf_nested)
+                              + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted")
+    if wf_condition:
+        return Classification(None, reason="an item whose own text names an added or preserving condition (" + "; ".join(f"{raw}: {', '.join(o)}" for raw, o in wf_condition)
+                              + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted")
     nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:

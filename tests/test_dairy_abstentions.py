@@ -17,7 +17,9 @@ def test_no_method_basis_means_abstain(text):
 
 def test_single_milk_solids_and_culture_rule_unchanged():
     assert analyse_text("Ingredients: Milk solids", source="text").group == 1
-    assert analyse_text("Ingredients: Milk solids (Toned Milk) & Active Culture", source="text").group == 1
+    # whole-food-guard-1: a milk named in the bracket of 'milk solids' is a different recognised food and no clause establishes equivalence (a frozen expectation is not evidence), so this abstains (was Group 1).
+    assert analyse_text("Ingredients: Milk solids (Toned Milk) & Active Culture", source="text").group is None
+    assert analyse_text("Ingredients: Milk solids, Active Culture", source="text").group == 1
 
 
 def test_species_qualified_milk_is_group_1_since_per_form_2b():

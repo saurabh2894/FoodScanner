@@ -1,6 +1,6 @@
 """tea-coffee-rows-1 (SYNTHETIC): two whole_food rows, `tea` and `coffee` (FAO Table 1 Group 1 example "tea, coffee, and drinking water", exact-named ingredient terms; no purity claim).
-Held and unrecognised: instant, decaf, extract, leaves/beans, black/oolong tea, espresso, herbal infusions, ready-to-drink, aliases, coffee substitutes. Forms that need the separate whole-food-guard-1 proposal to abstain are
-marked xfail (non-strict): without that guard a recognised whole_food row answers Group 1 for 'Tea (sugar)', 'Tea (milk)', 'Salted Tea' and similar (a widened hole, reported in the evaluation README)."""
+Held and unrecognised: instant, decaf, extract, leaves/beans, black/oolong tea, espresso, herbal infusions, ready-to-drink, aliases, coffee substitutes. Conditioned and nested forms ('Tea (sugar)', 'Tea (milk)', 'Salted Tea', 'Tea (egg)')
+abstain through the whole-food guard (merged in main 342e662); before it, a recognised whole_food row answered Group 1 for them (a widened hole measured and reported in the evaluation README)."""
 from __future__ import annotations
 
 import csv
@@ -40,9 +40,8 @@ def test_synthetic_held_forms_aliases_and_other_beverages_stay_unrecognised(t):
     assert g(t)[0] is None, t
 
 
-@pytest.mark.xfail(strict=False, reason="widened hole until whole-food-guard-1 merges: a recognised whole_food row answers Group 1 for an added condition or a distinct food in its own bracket")
 @pytest.mark.parametrize("t", ["Tea (sugar)", "Tea (milk)", "Coffee (milk)", "Tea (egg)", "Tea (rice)", "Salted Tea", "Tea (salted)", "Tea (canned)", "Tea (brine)", "Tea (sunflower oil)", "Coffee (sugar)"])
-def test_synthetic_conditioned_and_nested_forms_abstain_once_the_whole_food_guard_is_in(t):
+def test_synthetic_conditioned_and_nested_forms_abstain_through_the_whole_food_guard(t):
     assert g(t)[0] is None, t
 
 

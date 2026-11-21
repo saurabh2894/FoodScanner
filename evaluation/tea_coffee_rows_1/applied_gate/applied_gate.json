@@ -72,15 +72,15 @@
   "by_form": {
    "salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "roasted salted {x}": {
     "probed": 49,
-    "group1_before": 28,
-    "group1_after": 28,
+    "group1_before": 5,
+    "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
@@ -92,8 +92,8 @@
     "newly_group1": []
    }
   },
-  "group1_before": 56,
-  "group1_after": 56,
+  "group1_before": 10,
+  "group1_after": 10,
   "changes": {}
  },
  "powder_surface": {
@@ -127,14 +127,14 @@
    "dry roasted coffee": 1,
    "oil roasted coffee": null,
    "honey roasted coffee": null,
-   "salted coffee": 1,
-   "roasted salted coffee": 1,
+   "salted coffee": null,
+   "roasted salted coffee": null,
    "toasted salted coffee": null,
    "sugared coffee": null,
    "unsalted coffee": 1,
    "coffee (no added salt)": 1,
-   "coffee (sugar)": 1,
-   "coffee (canned)": 1,
+   "coffee (sugar)": null,
+   "coffee (canned)": null,
    "coffee (XQ9)": null,
    "Rice, coffee": null,
    "coffee, salt": 3,
@@ -150,14 +150,14 @@
    "dry roasted tea": 1,
    "oil roasted tea": null,
    "honey roasted tea": null,
-   "salted tea": 1,
-   "roasted salted tea": 1,
+   "salted tea": null,
+   "roasted salted tea": null,
    "toasted salted tea": null,
    "sugared tea": null,
    "unsalted tea": 1,
    "tea (no added salt)": 1,
-   "tea (sugar)": 1,
-   "tea (canned)": 1,
+   "tea (sugar)": null,
+   "tea (canned)": null,
    "tea (XQ9)": null,
    "Rice, tea": null,
    "tea, salt": 3,
@@ -442,28 +442,24 @@
   },
   "tea (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (tea (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (milk)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (tea (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (XQ9)": {
@@ -512,28 +508,24 @@
   },
   "tea (egg)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (tea (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (rice)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (tea (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "instant tea": {
@@ -760,67 +752,57 @@
   },
   "salted tea": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted tea: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (tea (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (tea (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (tea (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "tea (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "tea",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (tea (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted tea": {
@@ -985,28 +967,24 @@
   },
   "coffee (sugar)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (coffee (sugar): sugar): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (milk)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (coffee (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (XQ9)": {
@@ -1044,28 +1022,24 @@
   },
   "coffee (egg)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (coffee (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (rice)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (coffee (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "decaffeinated coffee": {
@@ -1295,67 +1269,57 @@
   },
   "salted coffee": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted coffee: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (salted)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (coffee (salted): salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (canned)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (coffee (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (brine)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (coffee (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "coffee (sunflower oil)": {
    "group_before": null,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "coffee",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (coffee (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "unsalted coffee": {

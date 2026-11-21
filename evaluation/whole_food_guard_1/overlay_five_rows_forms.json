@@ -1,0 +1,292 @@
+{
+ "rows": [
+  "sheep milk",
+  "duck eggs",
+  "goose eggs",
+  "quail eggs",
+  "turkey eggs"
+ ],
+ "note": "Group per row (null = abstain) for the five held dairy rows appended to a copy of the lexicon, measured with this branch's guard; Python and JS identical (989/989 incl. 200 overlay texts)",
+ "forms": {
+  "{x}": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "roasted {x}": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "dried {x}": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "salted {x}": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (salted)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "sugared {x}": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (sugar)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (canned)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (brine)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (preserved)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (sunflower oil)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (salt, sunflower oil)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x}, salt": [
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "{x}, sugar": [
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "{x}, sunflower oil": [
+   3,
+   3,
+   3,
+   3,
+   3
+  ],
+  "{x} (XQ9)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (milk)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (egg)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (eggs)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (rice)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (wheat)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (sheep milk)": [
+   1,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (duck eggs)": [
+   null,
+   1,
+   null,
+   null,
+   null
+  ],
+  "{x} (cow milk)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} (milk solids)": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "Milk ({x})": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "Eggs ({x})": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "Rice ({x})": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x} powder": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "100% {x} powder": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "whole {x} powder": [
+   null,
+   1,
+   1,
+   1,
+   1
+  ],
+  "unsalted {x}": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "{x} (no added salt)": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "{x} (pasteurized)": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "{x} (raw)": [
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "Rice, {x}": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x}, rice": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x}, starter culture": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x}, milk": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "{x}, eggs": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ]
+ }
+}

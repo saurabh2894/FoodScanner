@@ -26,9 +26,9 @@ def test_synthetic_plain_negated_and_roasted_forms_keep_group_1(t):
     assert g(t)[0] == 1, t
 
 
-@pytest.mark.parametrize("t,expected", [("Salted Milk", 1), ("Salted Egg", 1), ("Salted Almonds", 3), ("Salted Pinto Beans", 3), ("Salted Potatoes", 3), ("Salted Mango", 3), ("Mango (preserved)", None), ("Kidney Beans (canned)", None)])
+@pytest.mark.parametrize("t,expected", [("Salted Milk", None), ("Salted Egg", None), ("Salted Almonds", 3), ("Salted Pinto Beans", 3), ("Salted Potatoes", 3), ("Salted Mango", 3), ("Mango (preserved)", None), ("Kidney Beans (canned)", None)])
 def test_synthetic_other_rows_and_the_nut_legume_vegetable_fruit_guards_are_unchanged(t, expected):
-    assert g(t)[0] == expected, t                   # salted milk/egg stay Group 1: outside the 23-term scope (measured-unchanged, parked)
+    assert g(t)[0] == expected, t                   # salted milk/egg: outside the 23-term scope; whole-food-guard-1 turns the former Group 1 into an abstention (no Group 3 is asserted; that decision stays with the owner)
 
 
 def test_synthetic_a_salted_grain_inside_a_list_and_the_flour_list_rule():
