@@ -1,6 +1,6 @@
-# class_bulk_1 / Batch 1: FDC 'Legumes and Legume Products' (OWNER-APPROVED, 21 rows merged)
+# class_bulk_1 / Batch 1: FDC 'Legumes and Legume Products' (OWNER-APPROVED; legume guard added before merge)
 
-Status: APPROVED 2026-11-21; the 21 new rows are in lexicon.csv (the 5 already-covered terms created no duplicate). synonyms.csv and markers.csv are untouched; synonym candidates stay candidates. Gate verdict: **READY_FOR_REVIEW** (validate_batch) and **READY_FOR_REVIEW** (class_gate).
+Status: rows APPROVED 2026-11-21; the merge was HELD by the owner for the legume guard (section 6a) and applied-state gate proof (section 6). 21 new rows of kind `legume` + 12 existing legume rows retyped to `legume`; synonyms.csv and markers.csv untouched; synonym candidates stay candidates.
 Rule: `data/ingest/class_legumes_1.json` (class-legumes-1). Mapper: `scripts/class_batch.py`. FDC: Foundation 2026-10-29 + SR Legacy 2018-04 (CC0, hashes in scope_summary.json). FDC supplies NAMING and record attributes only; placement comes from the FAO clause.
 
 ## 1. Category source rules (written BEFORE any acceptance)
@@ -26,7 +26,7 @@ Scope of the clause: The clause is unconditioned and names a CLASS (legumes) wit
 
 **Queue words** (QUEUE, conditional): `peanut` (overlaps the CONDITIONED FAO nuts/seeds clause ('tree and ground nuts and other oily seeds...); `peanuts` (same as peanut...); `flour` (a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clau...); `meal` (defatted/ground fraction: not established as a plain flour or a whole legume....); `defatted` (a fractionated (defatted) form: composition changed by an industrial step; not an instance...); `carob` (carob is not a Group 1 legume example of the clause (a pod used as a cocoa substitute); no...); `soy` ('soy' forms other than the plain raw seed are products; see the product words....)
 
-**Kind**: `whole_food` for every accepted row (a plain legume seed). Inference level of every row: class-instance of the class 'legumes' (the clause names beans, lentils and chickpeas; other legumes are instances of the class, not named).
+**Kind**: `legume` for every accepted row (a plain legume seed): whole-food behaviour everywhere plus the item-level condition of section 6a. Inference level of every row: class-instance of the class 'legumes' (the clause names beans, lentils and chickpeas; other legumes are instances of the class, not named).
 
 ## 2. Measured results
 
@@ -168,14 +168,66 @@ Possible overlap NOT collapsed (no source read states equivalence, so both stay)
 
 Attribute use: Foundation records give a FoodOn name and NCBI taxon; SR records give 'alternate names' (used only as synonym candidates and to confirm dedupe, e.g. 'blackeyes' for cowpeas); portion descriptors are checked for guard words (a record named raw whose portions say cooked would be QUEUED; 0 such cases here). Where the name alone could not establish the plain form (colour-only market classes, pod versus seed, subspecies), the case was QUEUED, not accepted.
 
-## 6. Gates
+## 6a. The legume guard (item-level condition), per form, against the quoted clauses
+Why: `descriptors.csv` drops salted/sugared words, so `salted soybeans` answered Group 1 (pre-existing). Adding 21 legume rows would have extended that. The guard is NOT the nut rule copied: each form is reasoned against the quoted clauses.
+- FAO Group 3 definition (Table 1, p.12): "Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods". Example (p.12; prose p.7 'canned or bottled vegetables or legumes (pulses) preserved in brine'): "Canned or bottled vegetables and legumes in brine".
+- Item's OWN name or bracket says salt / salted / sugar / sugared / sweetened / candied / honey / glazed / jaggery / syrup / brine / brined: a group 1 legume with a group 2 ingredient added = Group 3 (definition); brine = the Group 3 example. Single item or in a list, the item is read as Group 3 material; it is NEVER Group 1 via the legume clause.
+- Negated forms (`no added salt`, `unsalted`, `salt free`, `without salt`): condition met, Group 1 kept.
+- canned / tinned / bottled / jarred / preserved / pickled WITHOUT salt, sugar or brine: the clause names legumes in brine only, and a plain-legume Group 1 is not supported either, so the item ABSTAINS (never an invented Group 3).
+- Items outside the vocabulary (`canned kidney beans`, `baked beans`, `kidney beans in brine`, `sweetened adzuki beans`) stay unassessed: no row reads them.
+- Roasted and boiled/cooked plain forms: UNCHANGED. FAO Group 1 definition (p.6) names roasting and boiling among the minimal processes, so the existing descriptors.csv behaviour (`roasted soybeans`, `boiled lentils` -> Group 1) has source fit for plain legumes.
+- Applies to 33 rows: the 21 new rows and 12 existing rows retyped from `whole_food` to `legume` (beans, peas, chickpea, lentil, rajma, moong, soybean, toor dal, moong dal, chana dal, masoor dal, urad dal). Only the `kind` column changed on those 12; their `source` text is unchanged (no row removed, no source changed: gate-checked).
+- Observed effect on EXISTING rows (before -> after): `salted soybeans` 1->3, `chickpeas (canned, salted)` 1->3, `moong dal (salted)` 1->3, `salted peas` 1->3 (guard), `chickpeas (pickled)`, `beans (bottled)`, `lentils (tinned)` 1->abstain.
 
-- validate_batch: schema 0 errors, provenance 0 errors (every FDC id and description repeated in the row source), clause verbatim in the FAO text: PASS.
-- class_gate, frozen 66 (before/after in separate fresh processes): changed inputs 0, unexplained 0, abstain->4 0, abstain->1 0, other group changes 0.
-- class_gate, out-of-sample 32: changed inputs 0, unexplained 0, abstain->4 0, abstain->1 0, other group changes 0. (0 changes = no corpus evidence either way for these terms; the rows are not corpus-validated.)
-- Drift: 286 existing lexicon terms and synonyms analysed alone before/after: 0 differences.
-- Negative controls (25 rejected/queued conditioned forms, label-order e.g. `canned kidney beans`, `peanut butter`, `tofu`, `hummus`, `baked beans`, `soy flour`): none is read as a staged term after the change and none changed in any field. 21 abstain (unassessed). Four give a group answer BEFORE and AFTER the change, so they are not caused by this batch and are NOT changed here: `roasted soybeans` and `salted soybeans` and `boiled lentils` Group 1 (existing descriptors.csv rows for roasted, boiled and salted are the reason), `soy protein isolate` Group 4 (existing marker). Observation for the owner: a salted or roasted legume answering Group 1 is existing descriptor behaviour, not decided by any class batch.
-- Suite and parity: see the status line at the stop.
+## 6. Gates (applied state)
+BEFORE = a worktree of main (646ba5b, no legume rows, old classifier); AFTER = the COMMITTED branch source; each analysed in a SEPARATE fresh process (`scripts/applied_gate.py`; the same result was reproduced on the clean committed tree).
+- (a) After-build proof: 21 of 21 staged terms are recognised after and were NOT recognised before; lexicon rows 160 -> 181 (+21 added, 0 removed, 0 sources changed, 12 kinds retyped); synonyms.csv and markers.csv byte-identical.
+- (b) Frozen 66: changed inputs 0, unexplained 0, abstain->4 0, abstain->1 0, other group changes 0. Out-of-sample 32: changed 0, unexplained 0, abstain->4 0, abstain->1 0, other 0. (0 changes = no corpus evidence either way: none of the 98 inputs holds a staged or retyped legume term; these rows are not corpus-validated.)
+- Drift over 286 existing lexicon terms and synonyms analysed alone: 0 differences.
+- (c) Controls (label order, as the item would appear). Negative: never Group 1 via the new rows; positive: the placement is kept.
+
+| control | group before | group after | row kind after | driver / reason |
+|---|---|---|---|---|
+| salted pinto beans | None | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| pinto beans (salted) | None | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| pinto beans (in brine) | None | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| kidney beans in brine | None | None | - | ingredients not in the local vocabulary, so pr |
+| canned kidney beans | None | None | - | ingredients not in the local vocabulary, so pr |
+| kidney beans (canned) | None | None | legume | a canned, bottled or preserved legume (kidney  |
+| baked beans | None | None | - | ingredients not in the local vocabulary, so pr |
+| refried beans | None | None | - | ingredients not in the local vocabulary, so pr |
+| sweetened adzuki beans | None | None | - | ingredients not in the local vocabulary, so pr |
+| adzuki beans (sweetened) | None | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| salted soybeans | 1 | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| chickpeas (canned, salted) | 1 | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| chickpeas (pickled) | 1 | None | legume | a canned, bottled or preserved legume (chickpe |
+| beans (bottled) | 1 | None | legume | a canned, bottled or preserved legume (beans ( |
+| lentils (tinned) | 1 | None | legume | a canned, bottled or preserved legume (lentils |
+| moong dal (salted) | 1 | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| salted peas | 1 | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| pinto beans (pinto beans, salt) | None | 3 | legume | legume with added salt, sugar or brine (FAO Gr |
+| rice, salted pinto beans | None | 3 | - | recognised whole food |
+| hummus | None | None | - | ingredients not in the local vocabulary, so pr |
+| pinto beans | None | 1 | legume | single recognised unprocessed food |
+| kidney beans | None | 1 | legume | single recognised unprocessed food |
+| chickpeas | 1 | 1 | legume | single recognised unprocessed food |
+| lentils | 1 | 1 | legume | single recognised unprocessed food |
+| unsalted pinto beans | None | 1 | legume | single recognised unprocessed food |
+| pinto beans (no added salt) | None | 1 | legume | single recognised unprocessed food |
+| pinto beans (salt free) | None | 1 | legume | single recognised unprocessed food |
+| kidney beans (cooked) | None | 1 | legume | single recognised unprocessed food |
+| roasted soybeans | 1 | 1 | legume | single recognised unprocessed food |
+| boiled lentils | 1 | 1 | legume | single recognised unprocessed food |
+| soybeans (roasted) | 1 | 1 | legume | single recognised unprocessed food |
+| rice, salt, pinto beans | None | 3 | - | recognised whole food |
+| beans, salt | 3 | 3 | - | recognised whole food |
+| moong dal | 1 | 1 | legume | single recognised unprocessed food |
+| split green peas | 1 | 1 | legume | single recognised unprocessed food |
+| mung beans | 1 | 1 | legume | single recognised unprocessed food |
+| black beans | None | 1 | legume | single recognised unprocessed food |
+| peas | 1 | 1 | legume | single recognised unprocessed food |
+
+- validate_batch (rows against the pre-batch build): schema 0 errors, provenance 0 errors, FAO clause verbatim: PASS, 21 ready rows, 5 already-covered terms dropped. Suite and parity: see the status line at the stop.
 
 ## 7. Open points for the owner
 
