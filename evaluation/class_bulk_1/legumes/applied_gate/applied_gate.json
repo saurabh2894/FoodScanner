@@ -1,0 +1,847 @@
+{
+ "rule_id": "class-legumes-1",
+ "base_src": "/tmp/main_wt/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 160,
+  "after": 181,
+  "added": [
+   "adzuki beans",
+   "black beans",
+   "broadbeans",
+   "cannellini beans",
+   "carioca beans",
+   "cowpeas",
+   "cranberry beans",
+   "flor de mayo beans",
+   "great northern beans",
+   "hyacinth beans",
+   "kidney beans",
+   "lima beans",
+   "lupins",
+   "mothbeans",
+   "navy beans",
+   "pigeon peas",
+   "pink beans",
+   "pinto beans",
+   "small white beans",
+   "winged beans",
+   "yardlong beans"
+  ],
+  "removed": [],
+  "kind_changed": {
+   "toor dal": [
+    "whole_food",
+    "legume"
+   ],
+   "moong dal": [
+    "whole_food",
+    "legume"
+   ],
+   "chana dal": [
+    "whole_food",
+    "legume"
+   ],
+   "masoor dal": [
+    "whole_food",
+    "legume"
+   ],
+   "urad dal": [
+    "whole_food",
+    "legume"
+   ],
+   "peas": [
+    "whole_food",
+    "legume"
+   ],
+   "chickpea": [
+    "whole_food",
+    "legume"
+   ],
+   "lentil": [
+    "whole_food",
+    "legume"
+   ],
+   "rajma": [
+    "whole_food",
+    "legume"
+   ],
+   "moong": [
+    "whole_food",
+    "legume"
+   ],
+   "soybean": [
+    "whole_food",
+    "legume"
+   ],
+   "beans": [
+    "whole_food",
+    "legume"
+   ]
+  },
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "adzuki beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "adzuki beans",
+    "kind": "legume"
+   }
+  },
+  "black beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "black beans",
+    "kind": "legume"
+   }
+  },
+  "broadbeans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "broadbeans",
+    "kind": "legume"
+   }
+  },
+  "cannellini beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cannellini beans",
+    "kind": "legume"
+   }
+  },
+  "carioca beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "carioca beans",
+    "kind": "legume"
+   }
+  },
+  "cowpeas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cowpeas",
+    "kind": "legume"
+   }
+  },
+  "cranberry beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cranberry beans",
+    "kind": "legume"
+   }
+  },
+  "flor de mayo beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "flor de mayo beans",
+    "kind": "legume"
+   }
+  },
+  "great northern beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "great northern beans",
+    "kind": "legume"
+   }
+  },
+  "hyacinth beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hyacinth beans",
+    "kind": "legume"
+   }
+  },
+  "kidney beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   }
+  },
+  "lima beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "lima beans",
+    "kind": "legume"
+   }
+  },
+  "lupins": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "lupins",
+    "kind": "legume"
+   }
+  },
+  "mothbeans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   }
+  },
+  "navy beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "navy beans",
+    "kind": "legume"
+   }
+  },
+  "pigeon peas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pigeon peas",
+    "kind": "legume"
+   }
+  },
+  "pink beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pink beans",
+    "kind": "legume"
+   }
+  },
+  "pinto beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   }
+  },
+  "small white beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "small white beans",
+    "kind": "legume"
+   }
+  },
+  "winged beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "winged beans",
+    "kind": "legume"
+   }
+  },
+  "yardlong beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "yardlong beans",
+    "kind": "legume"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 286,
+  "differences": {}
+ },
+ "controls": {
+  "salted pinto beans": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pinto beans (salted)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pinto beans (in brine)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kidney beans in brine": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: kidney beans in brine",
+   "unassessed_after": [
+    "kidney beans in brine"
+   ]
+  },
+  "canned kidney beans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned kidney beans",
+   "unassessed_after": [
+    "canned kidney beans"
+   ]
+  },
+  "kidney beans (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume (kidney beans (canned)): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "baked beans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: baked beans",
+   "unassessed_after": [
+    "baked beans"
+   ]
+  },
+  "refried beans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: refried beans",
+   "unassessed_after": [
+    "refried beans"
+   ]
+  },
+  "sweetened adzuki beans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sweetened adzuki beans",
+   "unassessed_after": [
+    "sweetened adzuki beans"
+   ]
+  },
+  "adzuki beans (sweetened)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "adzuki beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted soybeans": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "soybean",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chickpeas (canned, salted)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chickpea",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chickpeas (pickled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chickpea",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume (chickpeas (pickled)): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "beans (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beans",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume (beans (bottled)): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "lentils (tinned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "lentil",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume (lentils (tinned)): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "moong dal (salted)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "moong dal",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted peas": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "peas",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pinto beans (pinto beans, salt)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, salted pinto beans": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hummus": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: hummus",
+   "unassessed_after": [
+    "hummus"
+   ]
+  },
+  "tofu": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tofu",
+   "unassessed_after": [
+    "tofu"
+   ]
+  },
+  "soy milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: soy milk",
+   "unassessed_after": [
+    "soy milk"
+   ]
+  },
+  "peanut butter": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: peanut butter",
+   "unassessed_after": [
+    "peanut butter"
+   ]
+  },
+  "soy flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: soy flour",
+   "unassessed_after": [
+    "soy flour"
+   ]
+  },
+  "tempeh": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tempeh",
+   "unassessed_after": [
+    "tempeh"
+   ]
+  },
+  "miso": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: miso",
+   "unassessed_after": [
+    "miso"
+   ]
+  },
+  "falafel": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: falafel",
+   "unassessed_after": [
+    "falafel"
+   ]
+  },
+  "lupins in brine": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: lupins in brine",
+   "unassessed_after": [
+    "lupins in brine"
+   ]
+  },
+  "pigeon peas (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pigeon peas",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume (pigeon peas (preserved)): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "black beans with salt": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: black beans with salt",
+   "unassessed_after": [
+    "black beans with salt"
+   ]
+  },
+  "pinto beans": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kidney beans": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chickpeas": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chickpea",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lentils": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "lentil",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "unsalted pinto beans": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pinto beans (no added salt)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pinto beans (salt free)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kidney beans (cooked)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted soybeans": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "soybean",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled lentils": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "lentil",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "soybeans (roasted)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "soybean",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, salt, pinto beans": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beans, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "moong dal": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "moong dal",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "split green peas": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "peas",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mung beans": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "moong dal",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "black beans": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "black beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "peas": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "peas",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

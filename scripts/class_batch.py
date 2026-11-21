@@ -152,7 +152,7 @@ def source_text(rule: dict, recs: list[dict], term: str) -> str:
     prov = "; ".join(f"{r['dataset']} FDC id {r['fdc_id']} \"{r['description']}\"" for r in recs)
     cat = recs[0]["food_category"]
     return (f"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"{rule['clause']['text']}\"; {named_status(term, rule)}; plain dry/raw seed form "
-            f"(inference level: class-instance); FDC category '{cat}' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): {prov}")
+            f"(inference level: class-instance); FDC category '{cat}' (naming evidence only, CC0); {rule.get('condition_note', '')}{'; ' if rule.get('condition_note') else ''}name from USDA FoodData Central (CC0 1.0): {prov}")
 
 
 def sha(p: Path) -> str:

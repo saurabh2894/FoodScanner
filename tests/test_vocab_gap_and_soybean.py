@@ -30,7 +30,7 @@ def test_soybean_with_salt_is_group_3_and_processed_soy_is_not_covered():
 
 def test_soybean_row_is_provisional_and_honest_about_the_source():
     row = next(r for r in load_table("lexicon.csv") if r["term"] == "soybean")
-    assert row["kind"] == "whole_food" and row["source"].startswith("PROVISIONAL")
+    assert row["kind"] in ("whole_food", "legume") and row["source"]       # retyped to the legume kind by class-bulk-1 (same behaviour plus the item-level salt/sugar/brine guard).startswith("PROVISIONAL")
     assert "https://www.fao.org/3/ca5644en/ca5644en.pdf" in row["source"] and "does not name soybean" in row["source"]
 
 

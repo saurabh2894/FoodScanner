@@ -174,6 +174,11 @@ CORPUS = [
     # provenance-fixes-1 (tests/test_nut_seed_condition.py, SYNTHETIC): item-level salt/sugar condition on nuts and seeds
     "Ingredients: Almonds", "Ingredients: Salted Almonds", "Ingredients: Almonds (Almonds, Salt)", "Ingredients: Unsalted Almonds", "Ingredients: Almonds (no added salt)", "Ingredients: Rice, Salted Pumpkin Seeds.", "Ingredients: Wheat Flour, Sugar, Almonds, Butter.",
     "Ingredients: Rice, Sugar, Almonds.", "Ingredients: Sugared Almonds", "Ingredients: Flax Seeds, Honey.",
+    # class-bulk-1 legume guard (tests/test_legume_condition_1.py, SYNTHETIC): item-level salt/sugar/brine condition and canned/bottled abstention on legume rows
+    "Ingredients: Pinto Beans", "Ingredients: Salted Pinto Beans", "Ingredients: Pinto Beans (in brine)", "Ingredients: Pinto Beans (Pinto Beans, Salt)", "Ingredients: Adzuki Beans (sweetened)",
+    "Ingredients: Unsalted Pinto Beans", "Ingredients: Pinto Beans (no added salt)", "Ingredients: Kidney Beans (canned)", "Ingredients: Chickpeas (pickled)", "Ingredients: Beans (bottled)",
+    "Ingredients: Chickpeas (canned, salted)", "Ingredients: Roasted Soybeans", "Ingredients: Boiled Lentils", "Ingredients: Rice, Salt, Pinto Beans.", "Ingredients: Rice, Pinto Beans.",
+    "Ingredients: Rice, Kidney Beans (canned).", "Ingredients: Salted Peas", "Ingredients: Moong Dal (salted)", "Ingredients: Baked Beans", "Ingredients: Sweeteners (Moong Dal, Jaggery Powder).",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

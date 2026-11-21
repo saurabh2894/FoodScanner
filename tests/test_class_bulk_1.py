@@ -1,4 +1,4 @@
-"""class-bulk-1 / Batch 1 Legumes (owner-approved 2026-11-21; the 21 new rows are merged into lexicon.csv, synonyms.csv and markers.csv are untouched). SYNTHETIC unit cases for scripts/class_batch.py and checks on the committed batch outputs."""
+"""class-bulk-1 / Batch 1 Legumes (owner-approved 2026-11-21; 21 new rows of kind legume plus the item-level guard; synonyms.csv and markers.csv are untouched). SYNTHETIC unit cases for scripts/class_batch.py and checks on the committed batch outputs."""
 from __future__ import annotations
 
 import csv
@@ -51,9 +51,9 @@ def test_synthetic_other_categories_are_out_of_scope():
     assert dec("Lentils, raw", cat="Vegetables and Vegetable Products")["decision"] == "OUT_OF_SCOPE"
 
 
-def test_synthetic_the_committed_decisions_match_the_rule_and_every_row_repeats_the_verbatim_clause():
+def test_synthetic_the_committed_decisions_match_the_rule_and_every_row_repeats_the_verbatim_clause_and_the_condition():
     S = list(csv.DictReader((OUT / "staged_rows.csv").open(encoding="utf-8", newline="")))
-    assert S and all(RULE["clause"]["text"] in r["source"] and r["source"].startswith("PROVISIONAL") and r["kind"] == "whole_food" for r in S)
+    assert S and all(RULE["clause"]["text"] in r["source"] and r["source"].startswith("PROVISIONAL") and r["kind"] == "legume" and "CONDITION KEPT AT ITEM LEVEL" in r["source"] for r in S)
     D = list(csv.DictReader((OUT / "decisions.csv").open(encoding="utf-8", newline="")))
     assert len(D) == 351
     for d in D:
@@ -61,24 +61,30 @@ def test_synthetic_the_committed_decisions_match_the_rule_and_every_row_repeats_
         assert (again["decision"] == "ACCEPT") == (d["decision"] == "ACCEPT") or d["reason_code"] == "dedupe_stays_out", d["description"]
 
 
-def test_synthetic_the_gate_results_are_clean_and_exactly_the_21_rows_are_merged_without_synonym_or_marker_changes():
-    C = json.loads((OUT / "class_gate" / "class_gate.json").read_text(encoding="utf-8"))
-    assert C["verdict"] == "READY_FOR_REVIEW" and not C["blockers"] and C["drift"]["differences"] == []
+def test_synthetic_the_applied_state_gate_is_clean_and_the_21_rows_are_really_in_the_lexicon():
+    C = json.loads((OUT / "applied_gate" / "applied_gate.json").read_text(encoding="utf-8"))
+    assert C["verdict"] == "READY_FOR_REVIEW" and not C["blockers"] and C["drift"]["differences"] == {}
+    assert len(C["after_build_proof"]) == 21 and all(v["recognised_after"] and not v["recognised_before"] for v in C["after_build_proof"].values())
     for k in ("frozen_66", "out_of_sample"):
         assert C[k]["unexplained"] == [] and C[k]["abstain_to_4"] == []
-    lex = {r["term"] for r in csv.DictReader((RES / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
-    assert len(C["rows"]) == 21 and set(C["rows"]) <= lex                       # merged: every approved row is in the shipped lexicon exactly once
-    assert all(r["kind"] == "whole_food" and RULE["clause"]["text"] in r["source"] for r in csv.DictReader((RES / "lexicon.csv").open(encoding="utf-8-sig", newline="")) if r["term"] in C["rows"])
+    assert all(C["synonyms_markers_untouched"].values()) and len(C["lexicon_rows"]["kind_changed"]) == 12 and len(C["lexicon_rows"]["added"]) == 21
+    lex = {r["term"]: r for r in csv.DictReader((RES / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
+    assert set(C["after_build_proof"]) <= set(lex)
     for t in ("chickpeas", "lentils", "split green peas"):
         assert t not in lex                                                       # the 5 already-covered terms created no duplicate row
     syn = {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}
     cand = list(csv.DictReader((OUT / "synonym_candidates.csv").open(encoding="utf-8", newline="")))
-    assert cand and not ({r["from"] for r in cand} & syn)   # synonym candidates are not merged (synonyms.csv untouched)
-    assert "black turtle beans" not in syn
+    assert cand and not ({r["from"] for r in cand} & syn) and "black turtle beans" not in syn
 
 
-def test_synthetic_negative_controls_are_not_read_as_a_staged_term():
-    C = json.loads((OUT / "class_gate" / "class_gate.json").read_text(encoding="utf-8"))
-    assert len(C["negative_controls"]) >= 20
-    for n, v in C["negative_controls"].items():
-        assert not v["read_as_staged_term"] and not v["changed"], n
+def test_synthetic_controls_in_the_applied_gate_never_take_group_1_via_the_new_rows():
+    C = json.loads((OUT / "applied_gate" / "applied_gate.json").read_text(encoding="utf-8"))
+    neg = C["controls"]
+    for n in RULE["negative_controls"]:
+        v = neg[n]
+        assert not any(d == "single recognised unprocessed food" for d in v["drivers_after"]), n
+        assert v["group_after"] != 1, n
+    for n in ("salted pinto beans", "canned kidney beans", "baked beans"):
+        assert neg[n]["group_after"] != 1
+    for n in RULE["positive_controls"]:
+        assert neg[n]["row_after"] is not None or neg[n]["group_after"] is not None, n
