@@ -117,7 +117,7 @@ _NUT_ADDED = frozenset({"salt", "salted", "sugar", "sugared", "sweetened", "cand
 # Same item-level condition for LEGUME rows (kind legume, class-bulk-1): FAO Group 3 covers "canned or bottled vegetables or legumes (pulses) preserved in brine" (p. 7 prose;
 # Table 1 continuation p. 12, Group 3 "Canned or bottled vegetables and legumes in brine") and its definition is "adding salt, oil, sugar or other group 2 ingredients to group 1 foods". Salt, sugar and brine are
 # read from the item's OWN name and bracket, never from the rest of the product. Roasting and boiling are NOT part of this guard (minimal processing, separate source treatment).
-_BRINE_KINDS = ("legume", "vegetable")      # FAO Group 3: "Canned or bottled vegetables and legumes in brine" names both classes (class-bulk-2 adds kind vegetable)
+_BRINE_KINDS = ("legume", "vegetable", "fruit")      # FAO Group 3: "Canned or bottled vegetables and legumes in brine" and "whole fruit preserved in syrup" / "fruit in syrup" (class-bulk-2 adds vegetable, class-bulk-3 fruit)
 _LEGUME_ADDED = _NUT_ADDED | frozenset({"brine", "brined"})
 
 
@@ -149,7 +149,7 @@ def legume_preserved_form(ing) -> bool:
 # Every other reading abstains, alone or in a list; unrecognised co-ingredients are reported before this point and are never laundered by the abstention. A salted/brined/preserved legume or
 # vegetable keeps its guard (not routed).
 _POWDER_WORDS = frozenset({"powder", "powdered"})
-_POWDER_ROUTED = ("whole_food", "legume", "vegetable")
+_POWDER_ROUTED = ("whole_food", "legume", "vegetable", "fruit")
 
 
 def powder_composition_stated(ing) -> bool:
@@ -217,7 +217,7 @@ def sweetener_foods_only(ing: Ingredient) -> bool:
     if ing.ins or not ing.inner or ing.name not in ("sweetener", "natural sweetener"):
         return False
     parts = [p.strip() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner) if p.strip()]
-    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "legume", "vegetable", "culinary") for p in parts)
+    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "legume", "vegetable", "fruit", "culinary") for p in parts)
 
 
 def ingredient_marker_terms(ing: Ingredient) -> set[str]:
@@ -314,11 +314,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i))]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
-        return Classification(None, reason="a canned, bottled or preserved legume or vegetable (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established")
-    if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable"):
+        return Classification(None, reason="a canned, bottled or preserved legume, vegetable or fruit (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
+    if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable", "fruit"):
         if nut_salted:
             what = ("nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" if kinds[0] == "nut_seed"
-                    else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)")
+                    else ("fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" if kinds[0] == "fruit"
+                          else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"))
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
@@ -341,10 +342,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
-    has_food = any(k in ("whole_food", "nut_seed", "legume", "vegetable") for _, k in substantive)
+    has_food = any(k in ("whole_food", "nut_seed", "legume", "vegetable", "fruit") for _, k in substantive)
     has_culinary = any(k == "culinary" for _, k in substantive) or bool(nut_salted)           # salt or sugar added to the nuts themselves is a Group 2 substance on a Group 1 food: Group 3
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {'whole food' if k in ('nut_seed', 'legume', 'vegetable') else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {'whole food' if k in ('nut_seed', 'legume', 'vegetable', 'fruit') else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 

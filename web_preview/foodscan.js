@@ -496,12 +496,12 @@
     function sweetenerFoodsOnly(ing) {
       if (ing.ins.length || !ing.inner || (ing.name !== "sweetener" && ing.name !== "natural sweetener")) return false;
       const parts = ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim()).filter(Boolean);
-      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "legume" || r.kind === "vegetable" || r.kind === "culinary"); });
+      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "legume" || r.kind === "vegetable" || r.kind === "fruit" || r.kind === "culinary"); });
     }
     // item-level condition for the nut/seed rows (mirrors classify.nut_added_salt_or_sugar)
     const NUT_ADDED = new Set(["salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup"]);
     // legume rows (kind legume): the same item-level condition plus brine (mirrors classify.legume_added_salt_sugar_or_brine)
-    const BRINE_KINDS = ["legume", "vegetable"];
+    const BRINE_KINDS = ["legume", "vegetable", "fruit"];
     const LEGUME_ADDED = new Set([...NUT_ADDED, "brine", "brined"]);
     function addedIn(ing, words) {
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
@@ -517,7 +517,7 @@
     const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
     // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour
     const POWDER_WORDS = new Set(["powder", "powdered"]);
-    const POWDER_ROUTED = ["whole_food", "legume", "vegetable"];
+    const POWDER_ROUTED = ["whole_food", "legume", "vegetable", "fruit"];
     function powderCompositionStated(ing) {
       if (/(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase())) return true;
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
@@ -576,10 +576,10 @@
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
       const legumePreserved = ings.filter((i, n) => BRINE_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
-      if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume or vegetable (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established" };
+      if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume, vegetable or fruit (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established" };
       if (ings.length === 1 && (kinds[0] === "nut_seed" || BRINE_KINDS.includes(kinds[0])))
         return nutSalted.length
-          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
+          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
@@ -594,7 +594,7 @@
       const powders = ings.filter((i, n) => kinds[n] === "food_powder").map((i) => i.raw);
       if (powders.length) return { group: null, drivers: [], reason: "a powder of a food (" + powders.join("; ") + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
-      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed" || k === "legume" || k === "vegetable");
+      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed" || k === "legume" || k === "vegetable" || k === "fruit");
       const hasCulinary = substantive.some(([, k]) => k === "culinary") || nutSalted.length > 0;
       if (hasFood && hasCulinary)
         return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + (k === "nut_seed" || BRINE_KINDS.includes(k) ? "whole food" : k.replace(/_/g, " ")), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
