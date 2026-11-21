@@ -355,7 +355,9 @@
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(flatten(r.term)) + "(?![a-z])"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
-    const descriptors = new Set(T.descriptors.map((r) => r.word.toLowerCase()));
+    const descriptors = new Set(T.descriptors.filter((r) => !(r.kinds || "").trim()).map((r) => r.word.toLowerCase()));
+    const scopedDescriptors = {};          // kind-scoped descriptors ('toasted': whole_food;flour), mirrors classify._scoped_descriptors
+    for (const r of T.descriptors) if ((r.kinds || "").trim()) scopedDescriptors[r.word.toLowerCase()] = new Set(r.kinds.split(";").map((k) => k.trim()).filter(Boolean));
     const singular = (t) => {
       if (t.length > 3 && t.endsWith("ies")) return t.slice(0, -3) + "y";
       if (t.length > 4 && t.endsWith("oes")) return t.slice(0, -2);
@@ -381,6 +383,12 @@
       if (kept && kept !== name) {
         if (has(lexicon, kept)) return lexicon[kept];
         if (has(lexIndex, singularPhrase(kept))) return lexIndex[singularPhrase(kept)];
+      }
+      const stripped = name.split(" ").filter((t) => has(scopedDescriptors, t));
+      if (stripped.length && !name.split(" ").includes("salted")) {                                // mirrors classify.lookup: a kind-scoped descriptor is dropped only when the row it leaves is of an allowed kind
+        const rest = name.split(" ").filter((t) => t && !descriptors.has(t) && !has(scopedDescriptors, t)).join(" ");
+        const row = has(lexicon, rest) ? lexicon[rest] : has(lexIndex, singularPhrase(rest)) ? lexIndex[singularPhrase(rest)] : null;
+        if (row && stripped.every((t) => scopedDescriptors[t].has(row.kind))) return row;
       }
       return null;
     }
@@ -594,7 +602,7 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const bracketUnknown = ings.filter((i) => (BRINE_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
+      const bracketUnknown = ings.filter((i) => (BRINE_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };

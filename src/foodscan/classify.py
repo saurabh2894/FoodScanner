@@ -54,7 +54,13 @@ def lexicon() -> dict[str, dict[str, str]]:
 
 @cache
 def _descriptors() -> frozenset:
-    return frozenset(r["word"].lower() for r in load_table("descriptors.csv"))
+    """Global descriptors: rows with no 'kinds' value. Kind-scoped rows (e.g. 'toasted': whole_food;flour) are in _scoped_descriptors()."""
+    return frozenset(r["word"].lower() for r in load_table("descriptors.csv") if not (r.get("kinds") or "").strip())
+
+
+@cache
+def _scoped_descriptors() -> dict:
+    return {r["word"].lower(): frozenset(k.strip() for k in r["kinds"].split(";") if k.strip()) for r in load_table("descriptors.csv") if (r.get("kinds") or "").strip()}
 
 
 def _singular(tok: str) -> str:
@@ -105,6 +111,13 @@ def lookup(name: str) -> dict[str, str] | None:
             return lex[kept]
         if _singular_phrase(kept) in idx:
             return idx[_singular_phrase(kept)]
+    scoped = _scoped_descriptors()
+    stripped = {t for t in name.split() if t in scoped}
+    if stripped and "salted" not in name.split():           # kind-scoped descriptor ('toasted'): dropped only when the row it leaves is of an allowed kind; PLAIN form only: a salted toasted form is not read (per-form-1)
+        rest = " ".join(t for t in name.split() if t not in _descriptors() and t not in scoped)
+        row = lex.get(rest) or idx.get(_singular_phrase(rest))
+        if row and all(row["kind"] in scoped[t] for t in stripped):
+            return row
     return None
 
 
@@ -187,7 +200,7 @@ def powder_routed(ing, kind: str) -> bool:
 # Unknown additions on the same item are never laundered (class-bulk-3, owner requirement): the guard reads the item's own bracket for salt/sugar/brine, but a bracket on a legume, vegetable or fruit
 # item that names content the vocabulary does not recognise ("Dried Mango (XQ9)", "Dried Blueberries (Sunflower Oil)") used to be ignored and the item answered Group 1. Such an item now ABSTAINS: neither
 # Group 1 nor Group 3 is established while part of the item is unassessed. Benign bracket parts: recognised foods, descriptors, condition words handled by the guard, negation/connector words, digits/codes.
-_RESIDUAL_EXTRA_KINDS = ("flour",)       # class-bulk-4: the flour kind joins the unknown-bracket abstention (a flour row must not launder 'Oat Flour (XQ9)'); whole_food grains are an owner decision (P-D)
+_RESIDUAL_EXTRA_KINDS = ("flour", "whole_food")       # class-bulk-4 added flour (a flour row must not launder 'Oat Flour (XQ9)'); per-form-1 adds whole_food (owner ruling: 'Rice (XQ9)' Group 1 -> abstain)
 _BRACKET_BENIGN = frozenset({"with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"})
 
 

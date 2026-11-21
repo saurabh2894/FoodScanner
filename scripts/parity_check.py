@@ -211,6 +211,10 @@ CORPUS = [
     # engine-fixes-1 (tests/test_engine_fixes_1.py, SYNTHETIC): target-safe synonym rewrite; bok choy routes to bok choy cabbage, which is unchanged
     "Ingredients: Bok Choy", "Ingredients: Bok Choy Cabbage", "Ingredients: Pak Choi", "Ingredients: Bok Choy (raw)", "Ingredients: Salted Bok Choy", "Ingredients: Baby Bok Choy", "Ingredients: Bok Choy, Bok Choy Cabbage.",
     "Ingredients: Rice, Bok Choy.", "Ingredients: Chinese Cabbage", "Ingredients: Moong Dal", "Ingredients: Moong", "Ingredients: Jerusalem Artichokes",
+    # per-form-1 (tests/test_per_form_1.py, SYNTHETIC): roasted/toasted plain grains and flours; whole_food unknown-bracket abstention; parked forms
+    "Ingredients: Roasted Buckwheat", "Ingredients: Toasted Oat Flour", "Ingredients: Toasted Rice", "Ingredients: Toasted Unsalted Oat Flour", "Ingredients: Toasted Salted Oat Flour", "Ingredients: Toasted Almonds",
+    "Ingredients: Rice, Toasted Oat Flour.", "Ingredients: Toasted Oat Flour, Salt.", "Ingredients: Rice (XQ9)", "Ingredients: Milk (XQ9)", "Ingredients: Wheat (XQ9)", "Ingredients: Toasted Oat Flour (XQ9)",
+    "Ingredients: Rice (Basmati)", "Ingredients: Milk (Skimmed)", "Ingredients: Enriched Wheat Flour", "Ingredients: Fortified Wheat Flour", "Ingredients: Sprouted Ragi", "Ingredients: Pearled Barley", "Ingredients: Vitamins and Minerals",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

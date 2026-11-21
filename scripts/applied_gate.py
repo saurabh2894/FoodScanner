@@ -61,6 +61,7 @@ def main(argv=None) -> int:
     ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
     ap.add_argument("--synonym-rows", type=Path, default=None, help="synonym_rows.csv (from,to,source): the gate then expects synonyms.csv to be ADDITIONS-ONLY with exactly these rows, and checks alias == target behaviour in every form")
     ap.add_argument("--allow-source-change", nargs="*", default=[], help="existing lexicon terms whose SOURCE (provenance text) may differ (an owner-approved provenance-only change); nothing else may change")
+    ap.add_argument("--descriptor-surface", nargs="*", default=[], help="descriptor words (e.g. roasted toasted): probe '<word> <term>' for EVERY lexicon row before/after and report every change by kind")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
     ap.add_argument("--out", type=Path, required=True)
@@ -109,6 +110,17 @@ def main(argv=None) -> int:
         expected = {t: v for t, v in diff.items() if t in set(a.expected_drift)}
         diff = {t: v for t, v in diff.items() if t not in set(a.expected_drift)}
         out["drift"] = {"probed": len(base_terms), "differences": diff, "expected_owner_ruled": expected}
+        if a.descriptor_surface:
+            kinds_of = {r["term"]: r["kind"] for r in vb.read_csv(res_a / "lexicon.csv")}
+            lines = [f"{w} {t}" for w in a.descriptor_surface for t in sorted(kinds_of)]
+            db_, da_ = run_probe(a.base_src, lines, td, "db"), run_probe(a.after_src, lines, td, "da")
+            ch = {l: [db_[l]["group"], da_[l]["group"]] for l in lines if (db_[l]["group"], db_[l]["unassessed"]) != (da_[l]["group"], da_[l]["unassessed"])}
+            bykind = {}
+            for l, v in ch.items():
+                w, t = l.split(" ", 1)
+                bykind.setdefault((w, kinds_of[t]), []).append(l)
+            out["descriptor_surface"] = {"probed": len(lines), "changed": len(ch), "by_word_and_kind": {f"{w}|{k}": len(v) for (w, k), v in sorted(bykind.items())}, "changed_kinds_outside_scope": sorted({k for (w, k) in bykind if w == "toasted" and k not in ("whole_food", "flour")}),
+                                         "group_moves": {l: v for l, v in ch.items() if v != [None, 1]}}
         if a.powder_surface:
             kinds = {"whole_food", "legume", "vegetable", "food_powder"}
             names = sorted({r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in kinds})

@@ -115,7 +115,7 @@
       "dry mix",
       "cooking yield"
     ],
-    "why": "The category-wide extension of the Spices and Herbs word guard (owner rule 3). 'parboiled' is NOT guarded (the clause names parboiled rice); 'roasted' and 'toasted' are guarded (the clause does not cover them; per-form owner decision); 'unenriched' and 'unbleached' are plain-form words (not guarded)."
+    "why": "The category-wide extension of the Spices and Herbs word guard (owner rule 3). 'parboiled' is NOT guarded (the clause names parboiled rice); 'roasted' and 'toasted' are guarded AT STAGING only (the FDC grain clauses G1/G2 do not mention them). ALIGNED with runtime (per-form-1, owner ruling): the FAO p.6 methods clause names ROASTING, so plain roasted/toasted whole_food and flour items are Group 1 at runtime ('toasted' is an inference from roasting); a staging row for an FDC roasted record would be accepted by a later batch on that basis; 'unenriched' and 'unbleached' are plain-form words (not guarded)."
   },
   "product_words": {
     "words": [

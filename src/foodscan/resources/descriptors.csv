@@ -1,4 +1,4 @@
-word,source
+word,source,kinds
 whole,"research/02 group 1 definition: cleaning, drying, grinding, freezing, pasteurising leave a food in group 1; these words describe such handling"
 rolled,"research/02 group 1 definition: cleaning, drying, grinding, freezing, pasteurising leave a food in group 1; these words describe such handling"
 split,"research/02 group 1 definition: cleaning, drying, grinding, freezing, pasteurising leave a food in group 1; these words describe such handling"
@@ -51,3 +51,4 @@ parboiled,PROVISIONAL author seed: a form/purity/colour word that does not chang
 red,PROVISIONAL author seed: a form/purity/colour word that does not change what the ingredient is
 green,PROVISIONAL author seed: a form/purity/colour word that does not change what the ingredient is
 seedless,PROVISIONAL author seed: a form/purity/colour word that does not change what the ingredient is
+toasted,"PROVISIONAL, kind-scoped (whole_food and flour rows only; per-form-1): FAO 2019 (ca5644en.pdf) p.6 (printed), minimal-processing methods: ""Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging."" The exact-named method is ROASTING (descriptor 'roasted'); 'toasted' is read as the same dry-heat method: an INFERENCE (not named by the clause). Plain form only: the descriptor never overrides the salted/oiled/flavoured guards or any marker; it applies only when the resulting row is a whole_food or flour",whole_food;flour
