@@ -1,0 +1,225 @@
+[
+  {
+    "run_id": "RUN-01-LIVE-PHOTO",
+    "target": "live_site",
+    "engine": "tesseract.js-in-browser (Chrome headless)",
+    "platform": "Web UI (https://foodscan-nine.vercel.app/)",
+    "input_type": "image_upload",
+    "input_file": "inputs/original_label.jpg",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "INGREDIENTS\n\nMultigrain Flour Blend (45.7%) [Sprouted Ragi &\nJowar (23.4%), Rice & Oat (22.3%)], Whole Milk\nPowder (29.5%), Date Powder (9%), Banana\nPowder, Strawberry Powder (5%), Skimmed Milk\nPowder, Vitamins\u201d and Minerals** , Beetroot\nPowder, Antioxidant (Natural Tocopherol).\n\nTHIS PRODUCT CONTAINS 23% MILLETS\nContains Milk & Oats. Made in a facility that\nalso processes Soy, Wheat & Nuts. May contain\ntrace elements.\n",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 9,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar"
+    ],
+    "unassessed": [
+      "Vitamins\u201d and Minerals**",
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 16,
+    "screenshot": "inputs/live_site_photo_run.png"
+  },
+  {
+    "run_id": "RUN-02-LOCAL-CLI-PHOTO",
+    "target": "local_main",
+    "engine": "Python foodscan.cli (TesseractOcr)",
+    "platform": "CLI (Windows 11, commit a6cacbc)",
+    "input_type": "image_file",
+    "input_file": "inputs/original_label.jpg",
+    "status": "BLOCKED_OCR_UNAVAILABLE",
+    "error": "OcrUnavailable: Tesseract OCR is not installed or not on PATH",
+    "extracted_text": null,
+    "answered": null,
+    "group": null,
+    "headline": "error: Tesseract OCR is not installed or not on PATH",
+    "reason": "Tesseract binary not installed on host PATH",
+    "items_count": 0,
+    "unplaced": [],
+    "unassessed": [],
+    "warnings": [],
+    "completeness_status": null,
+    "completeness_words_in_list": 0,
+    "completeness_excluded": 0,
+    "screenshot": null
+  },
+  {
+    "run_id": "RUN-03-LIVE-PASTE-LITERAL",
+    "target": "live_site",
+    "engine": "Browser JS (FoodScan.createEngine)",
+    "platform": "Web UI (https://foodscan-nine.vercel.app/)",
+    "input_type": "pasted_text",
+    "input_file": "inputs/original_label.txt",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins# and Minerals##, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 9,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar"
+    ],
+    "unassessed": [
+      "Vitamins# and Minerals##",
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 0,
+    "screenshot": "inputs/live_site_pasted_literal.png"
+  },
+  {
+    "run_id": "RUN-04-LIVE-PASTE-NORMALIZED",
+    "target": "live_site",
+    "engine": "Browser JS (FoodScan.createEngine)",
+    "platform": "Web UI (https://foodscan-nine.vercel.app/)",
+    "input_type": "pasted_text",
+    "input_file": "inputs/normalized_no_hashes.txt",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 10,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar",
+      "Vitamins",
+      "Minerals"
+    ],
+    "unassessed": [
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 0,
+    "screenshot": "inputs/live_site_pasted_normalized_no_hashes.png"
+  },
+  {
+    "run_id": "RUN-05-LOCAL-MAIN-PASTE-LITERAL",
+    "target": "local_main",
+    "engine": "Python pipeline.analyse_text",
+    "platform": "Python 3.12 (commit a6cacbc)",
+    "input_type": "pasted_text",
+    "input_file": "inputs/original_label.txt",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins# and Minerals##, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 9,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar"
+    ],
+    "unassessed": [
+      "Vitamins# and Minerals##",
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 0,
+    "screenshot": null
+  },
+  {
+    "run_id": "RUN-06-LOCAL-MAIN-PASTE-NORMALIZED",
+    "target": "local_main",
+    "engine": "Python pipeline.analyse_text",
+    "platform": "Python 3.12 (commit a6cacbc)",
+    "input_type": "pasted_text",
+    "input_file": "inputs/normalized_no_hashes.txt",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 10,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar",
+      "Vitamins",
+      "Minerals"
+    ],
+    "unassessed": [
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 0,
+    "screenshot": null
+  },
+  {
+    "run_id": "RUN-07-LOCAL-MAIN-OCR-TEXT",
+    "target": "local_main",
+    "engine": "Python pipeline.analyse_text (source=ocr)",
+    "platform": "Python 3.12 (commit a6cacbc)",
+    "input_type": "ocr_text_replay",
+    "input_file": "inputs/live_site_photo_run.json",
+    "status": "COMPLETED",
+    "error": null,
+    "extracted_text": "INGREDIENTS\n\nMultigrain Flour Blend (45.7%) [Sprouted Ragi &\nJowar (23.4%), Rice & Oat (22.3%)], Whole Milk\nPowder (29.5%), Date Powder (9%), Banana\nPowder, Strawberry Powder (5%), Skimmed Milk\nPowder, Vitamins\u201d and Minerals** , Beetroot\nPowder, Antioxidant (Natural Tocopherol).\n\nTHIS PRODUCT CONTAINS 23% MILLETS\nContains Milk & Oats. Made in a facility that\nalso processes Soy, Wheat & Nuts. May contain\ntrace elements.\n",
+    "answered": false,
+    "group": null,
+    "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+    "items_count": 9,
+    "unplaced": [
+      "Sprouted Ragi",
+      "Sprouted Jowar"
+    ],
+    "unassessed": [
+      "Vitamins\u201d and Minerals**",
+      "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+    ],
+    "warnings": [
+      "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+      "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+      "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+    ],
+    "completeness_status": "complete",
+    "completeness_words_in_list": 38,
+    "completeness_excluded": 16,
+    "screenshot": null
+  }
+]

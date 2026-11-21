@@ -1,0 +1,33 @@
+{
+  "task": "TASK 15: Original multigrain label, photo-to-result diagnostics and acceptance pack",
+  "created_at": "2026-11-21T19:53:30+05:30",
+  "base_sha": "a6cacbc00fe3f8543a78f002b952a9a64375c4fd",
+  "live_site": {
+    "url": "https://foodscan-nine.vercel.app/",
+    "parity_footer_stamp": "816 of 816 matched at build time",
+    "local_parity_stamp": "859 of 859 matched"
+  },
+  "files": {
+    "original_label.jpg": {
+      "path": "inputs/original_label.jpg",
+      "source": "User upload: media_1795270130128_c7dc15e3.jpg",
+      "sha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+      "size_bytes": 57260,
+      "dimensions": [607, 494],
+      "format": "JPEG",
+      "mode": "RGB"
+    },
+    "original_label.txt": {
+      "path": "inputs/original_label.txt",
+      "description": "Visually verified literal transcription preserving footnote hashes (Vitamins# and Minerals##)",
+      "sha256": "0d14b8de863ba6a71895ff38f176375c702b19d2d994f0a6296fad026f5cfcfd",
+      "size_bytes": 281
+    },
+    "normalized_no_hashes.txt": {
+      "path": "inputs/normalized_no_hashes.txt",
+      "description": "Single-operation normalization removing only footnote hashes (# and ##) from Vitamins# and Minerals## -> Vitamins and Minerals",
+      "sha256": "b3f541b7f653e7eb8ad80b5fdd66606654ee9e0906693e39b2ea270ecd3c6317",
+      "size_bytes": 278
+    }
+  }
+}
