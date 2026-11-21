@@ -11,7 +11,7 @@ from functools import cache
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import _MILK_TERMS, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
+from .classify import _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference
@@ -193,6 +193,17 @@ def _possible_misreads(ings) -> list[str]:
     return out
 
 
+def _names_two_oils(parts: list[str]) -> bool:
+    """'Corn and Canola Oil' splits at 'and' into the food 'Corn' and the oil 'Canola Oil'. When the second part is an oil or fat row and the first part followed by 'oil' (or 'fat') is also an oil row, the phrase names TWO oils
+    (a blend), not a food plus an oil, and the positive composition is not established: it stays whole and abstains. 'Rice and Sunflower Oil' ('rice oil' is no row) is still a food plus an oil."""
+    if len(parts) != 2:
+        return False
+    first, second = (normalise_list([p])[0] for p in parts)
+    if not is_fat_row(_lookup(second.name)) or not _lookup(first.name) or _lookup(first.name)["kind"] == "culinary":
+        return False
+    return any(is_fat_row(_lookup(f"{first.name} {w}")) for w in ("oil", "fat"))
+
+
 def _split_pairs_ex(raw: str) -> tuple[list[str], int]:
     """"emulsifier [472e] and flour treatment agent [1101(ii)]" -> two items, but only when EVERY side is a recognisable
     ingredient, so "Spices and Condiments" or "Natural and Nature Identical Flavours" stay whole. One shared trailing code list
@@ -200,6 +211,8 @@ def _split_pairs_ex(raw: str) -> tuple[list[str], int]:
     accounting counts only those as removed."""
     parts, connectors = split_top_level_and_ex(raw)
     if len(parts) > 1 and not _shared_code_list(parts) and all(_recognisable(normalise_list([p])[0]) or _ends_in_code_bracket(p) for p in parts):
+        if _names_two_oils(parts):
+            return [raw], 0           # culinary-guard-1: kept whole, so it abstains as unrecognised instead of reading 'Corn and Canola Oil' as the food corn plus the oil canola
         return parts, sum(count_words(c) for c in connectors)
     return [raw], 0
 
