@@ -187,6 +187,7 @@ def powder_routed(ing, kind: str) -> bool:
 # Unknown additions on the same item are never laundered (class-bulk-3, owner requirement): the guard reads the item's own bracket for salt/sugar/brine, but a bracket on a legume, vegetable or fruit
 # item that names content the vocabulary does not recognise ("Dried Mango (XQ9)", "Dried Blueberries (Sunflower Oil)") used to be ignored and the item answered Group 1. Such an item now ABSTAINS: neither
 # Group 1 nor Group 3 is established while part of the item is unassessed. Benign bracket parts: recognised foods, descriptors, condition words handled by the guard, negation/connector words, digits/codes.
+_RESIDUAL_EXTRA_KINDS = ("flour",)       # class-bulk-4: the flour kind joins the unknown-bracket abstention (a flour row must not launder 'Oat Flour (XQ9)'); whole_food grains are an owner decision (P-D)
 _BRACKET_BENIGN = frozenset({"with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"})
 
 
@@ -342,7 +343,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _BRINE_KINDS and bracket_residual(i)]
+    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _BRINE_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -351,7 +352,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if bracket_unknown:
-        return Classification(None, reason="a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
+        return Classification(None, reason="a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
     nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i))]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]

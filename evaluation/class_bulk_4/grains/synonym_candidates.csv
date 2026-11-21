@@ -1,0 +1,7 @@
+from,to,basis,origin,fdc_id
+pastry flour,wheat flour,"grade variant of wheat flour (FDC 'Flour, pastry'); one canonical row (INFERENCE: pastry flour is a wheat flour grade)",dedupe,1104913
+semolina flour,semolina,"FDC 'Flour, semolina' and 'Semolina': one food; one canonical row",dedupe,2003588
+long grain rice,rice,grain-length variant of rice; the existing 'rice' row recognises it; one canonical row,dedupe,2512380
+barley flour or meal,barley flour,same FDC food ('Barley flour or meal'); one canonical row,dedupe,169739
+whole-groat buckwheat flour,buckwheat flour,cut/grade variant; one canonical row,dedupe,170687
+refined sorghum flour,sorghum flour,grade variant (refined vs whole-grain) of sorghum flour; the existing 'sorghum flour' row recognises it; one canonical row,dedupe,173262

@@ -1,0 +1,498 @@
+{
+  "rule_id": "class-grains-1",
+  "staged": 23,
+  "ready": [
+    "amaranth flour",
+    "barley flour",
+    "black rice",
+    "buckwheat",
+    "buckwheat flour",
+    "cornmeal",
+    "millet flour",
+    "oat flour",
+    "quinoa flour",
+    "rye flour",
+    "semolina",
+    "sorghum",
+    "spelt flour",
+    "wild rice"
+  ],
+  "duplicates": {
+    "barley": {
+      "duplicate": "exact lexicon term (kind whole_food)"
+    },
+    "barley flour": {
+      "variant_of": [
+        "barley"
+      ]
+    },
+    "black rice": {
+      "variant_of": [
+        "rice"
+      ]
+    },
+    "millet": {
+      "duplicate": "exact lexicon term (kind whole_food)",
+      "variant_of": [
+        "foxtail millet",
+        "pearl millet"
+      ]
+    },
+    "millet flour": {
+      "variant_of": [
+        "millet"
+      ]
+    },
+    "oat flour": {
+      "variant_of": [
+        "oat"
+      ]
+    },
+    "parboiled rice": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)",
+      "variant_of": [
+        "rice"
+      ]
+    },
+    "quinoa flour": {
+      "variant_of": [
+        "quinoa"
+      ]
+    },
+    "red rice": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)",
+      "variant_of": [
+        "rice"
+      ]
+    },
+    "rice": {
+      "duplicate": "exact lexicon term (kind whole_food)",
+      "variant_of": [
+        "rice bran oil",
+        "rice flour"
+      ]
+    },
+    "rice flour": {
+      "duplicate": "exact lexicon term (kind flour)",
+      "variant_of": [
+        "rice"
+      ]
+    },
+    "sorghum": {
+      "variant_of": [
+        "sorghum flour"
+      ]
+    },
+    "sorghum flour": {
+      "duplicate": "exact lexicon term (kind flour)"
+    },
+    "wheat flour": {
+      "duplicate": "exact lexicon term (kind flour)",
+      "variant_of": [
+        "refined wheat flour",
+        "wheat",
+        "whole wheat flour"
+      ]
+    },
+    "whole wheat flour": {
+      "duplicate": "exact lexicon term (kind flour)",
+      "variant_of": [
+        "wheat flour"
+      ]
+    },
+    "wild rice": {
+      "variant_of": [
+        "rice"
+      ]
+    }
+  },
+  "synonym_rows": [],
+  "separate_rows": {
+    "barley flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['barley']; kept as its own row, the existing row is left untouched and not widened",
+    "black rice": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['rice']; kept as its own row, the existing row is left untouched and not widened",
+    "millet flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['millet']; kept as its own row, the existing row is left untouched and not widened",
+    "oat flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['oat']; kept as its own row, the existing row is left untouched and not widened",
+    "quinoa flour": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['quinoa']; kept as its own row, the existing row is left untouched and not widened",
+    "sorghum": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['sorghum flour']; kept as its own row, the existing row is left untouched and not widened",
+    "wild rice": "a different grain or a different form (flour vs whole grain, rice type) than the existing row ['rice']; kept as its own row, the existing row is left untouched and not widened"
+  },
+  "policy_id": "variant-policy-class-grains-1",
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [
+    {
+      "term": "Flour, 00",
+      "source_row": "fdc_foundation:2003586",
+      "origin": "clause_tier",
+      "reason_code": "queue_00",
+      "reason": "a flour grade name; no label word established.",
+      "description": "Flour, 00"
+    },
+    {
+      "term": "Oats, whole grain, rolled, old fashioned",
+      "source_row": "fdc_foundation:2346396",
+      "origin": "clause_tier",
+      "reason_code": "queue_rolled",
+      "reason": "rolled oats are flaked (process); the clause names 'flakes' of oats: per-term decision (existing 'oat' row).",
+      "description": "Oats, whole grain, rolled, old fashioned"
+    },
+    {
+      "term": "Oats, whole grain, steel cut",
+      "source_row": "fdc_foundation:2346397",
+      "origin": "clause_tier",
+      "reason_code": "queue_steel",
+      "reason": "steel cut oats: per-term decision.",
+      "description": "Oats, whole grain, steel cut"
+    },
+    {
+      "term": "Chia seeds, dry, raw",
+      "source_row": "fdc_foundation:2710819",
+      "origin": "clause_tier",
+      "reason_code": "queue_chia",
+      "reason": "a seed (nut_seed batch).",
+      "description": "Chia seeds, dry, raw"
+    },
+    {
+      "term": "Bulgur, dry, raw",
+      "source_row": "fdc_foundation:2710820",
+      "origin": "clause_tier",
+      "reason_code": "queue_bulgur",
+      "reason": "parboiled cracked wheat: the clause names 'parboiled' rice; per-term decision.",
+      "description": "Bulgur, dry, raw"
+    },
+    {
+      "term": "Einkorn, grain, dry, raw",
+      "source_row": "fdc_foundation:2710827",
+      "origin": "clause_tier",
+      "reason_code": "queue_einkorn",
+      "reason": "rare grain; QUEUE per-term.",
+      "description": "Einkorn, grain, dry, raw"
+    },
+    {
+      "term": "Farro, pearled, dry, raw",
+      "source_row": "fdc_foundation:2710828",
+      "origin": "clause_tier",
+      "reason_code": "queue_pearled",
+      "reason": "pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.",
+      "description": "Farro, pearled, dry, raw"
+    },
+    {
+      "term": "Fonio, grain, dry, raw",
+      "source_row": "fdc_foundation:2710829",
+      "origin": "clause_tier",
+      "reason_code": "queue_fonio",
+      "reason": "rare grain; QUEUE per-term.",
+      "description": "Fonio, grain, dry, raw"
+    },
+    {
+      "term": "Khorasan, grain, dry, raw",
+      "source_row": "fdc_foundation:2710830",
+      "origin": "clause_tier",
+      "reason_code": "queue_khorasan",
+      "reason": "a trademarked wheat (Kamut); rare; QUEUE.",
+      "description": "Khorasan, grain, dry, raw"
+    },
+    {
+      "term": "Sorghum flour, white, pearled, unenriched, dry, raw",
+      "source_row": "fdc_foundation:2710840",
+      "origin": "clause_tier",
+      "reason_code": "queue_pearled",
+      "reason": "pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.",
+      "description": "Sorghum flour, white, pearled, unenriched, dry, raw"
+    },
+    {
+      "term": "Sorghum grain, white, pearled, unenriched, dry, raw",
+      "source_row": "fdc_foundation:2710841",
+      "origin": "clause_tier",
+      "reason_code": "queue_pearled",
+      "reason": "pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.",
+      "description": "Sorghum grain, white, pearled, unenriched, dry, raw"
+    },
+    {
+      "term": "Quinoa, uncooked",
+      "source_row": "fdc_sr_legacy:168874",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Quinoa, uncooked"
+    },
+    {
+      "term": "Rice, brown, parboiled, dry, UNCLE BEN'S",
+      "source_row": "fdc_sr_legacy:168876",
+      "origin": "clause_tier",
+      "reason_code": "queue_uncle",
+      "reason": "a brand-name record (Uncle Ben's), not a food term.",
+      "description": "Rice, brown, parboiled, dry, UNCLE BEN'S"
+    },
+    {
+      "term": "Rye grain",
+      "source_row": "fdc_sr_legacy:168884",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Rye grain"
+    },
+    {
+      "term": "Triticale flour, whole-grain",
+      "source_row": "fdc_sr_legacy:168888",
+      "origin": "clause_tier",
+      "reason_code": "queue_triticale",
+      "reason": "hybrid grain; rare; QUEUE per-term.",
+      "description": "Triticale flour, whole-grain"
+    },
+    {
+      "term": "Wheat, hard red spring",
+      "source_row": "fdc_sr_legacy:168889",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, hard red spring"
+    },
+    {
+      "term": "Wheat, hard red winter",
+      "source_row": "fdc_sr_legacy:168890",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, hard red winter"
+    },
+    {
+      "term": "Wheat, soft red winter",
+      "source_row": "fdc_sr_legacy:168891",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, soft red winter"
+    },
+    {
+      "term": "Corn grain, white",
+      "source_row": "fdc_sr_legacy:168920",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.",
+      "description": "Corn grain, white"
+    },
+    {
+      "term": "Corn flour, whole-grain, blue (harina de maiz morado)",
+      "source_row": "fdc_sr_legacy:168921",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.",
+      "description": "Corn flour, whole-grain, blue (harina de maiz morado)"
+    },
+    {
+      "term": "Cornstarch",
+      "source_row": "fdc_sr_legacy:169698",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Cornstarch"
+    },
+    {
+      "term": "Couscous, dry",
+      "source_row": "fdc_sr_legacy:169699",
+      "origin": "clause_tier",
+      "reason_code": "queue_couscous",
+      "reason": "couscous is named in the Group 1 DEFINITION ('pasta, couscous and polenta made with flours, flakes or grits and water'), not in the examples: per-term decision.",
+      "description": "Couscous, dry"
+    },
+    {
+      "term": "Oats (Includes foods for USDA's Food Distribution Program)",
+      "source_row": "fdc_sr_legacy:169705",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Oats (Includes foods for USDA's Food Distribution Program)"
+    },
+    {
+      "term": "Sorghum grain",
+      "source_row": "fdc_sr_legacy:169716",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Sorghum grain"
+    },
+    {
+      "term": "Triticale",
+      "source_row": "fdc_sr_legacy:169718",
+      "origin": "clause_tier",
+      "reason_code": "queue_triticale",
+      "reason": "hybrid grain; rare; QUEUE per-term.",
+      "description": "Triticale"
+    },
+    {
+      "term": "Wheat, hard white",
+      "source_row": "fdc_sr_legacy:169719",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, hard white"
+    },
+    {
+      "term": "Wheat, soft white",
+      "source_row": "fdc_sr_legacy:169720",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, soft white"
+    },
+    {
+      "term": "Wheat, durum",
+      "source_row": "fdc_sr_legacy:169721",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Wheat, durum"
+    },
+    {
+      "term": "Wheat, sprouted",
+      "source_row": "fdc_sr_legacy:169725",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "sprouted grains: process-terms review proposes per-term inference rows from the general method clause; owner decision pending (P-A).",
+      "description": "Wheat, sprouted"
+    },
+    {
+      "term": "Barley malt flour",
+      "source_row": "fdc_sr_legacy:169740",
+      "origin": "clause_tier",
+      "reason_code": "queue_malt",
+      "reason": "malted product: malt forms are parked/unplaced in this project (malt extract PARK); QUEUE.",
+      "description": "Barley malt flour"
+    },
+    {
+      "term": "Oat flour, partially debranned",
+      "source_row": "fdc_sr_legacy:169741",
+      "origin": "clause_tier",
+      "reason_code": "queue_debranned",
+      "reason": "a milling fraction (bran partly removed): not the plain whole flour.",
+      "description": "Oat flour, partially debranned"
+    },
+    {
+      "term": "Wheat, KAMUT khorasan, uncooked",
+      "source_row": "fdc_sr_legacy:169743",
+      "origin": "clause_tier",
+      "reason_code": "queue_khorasan",
+      "reason": "a trademarked wheat (Kamut); rare; QUEUE.",
+      "description": "Wheat, KAMUT khorasan, uncooked"
+    },
+    {
+      "term": "Spelt, uncooked",
+      "source_row": "fdc_sr_legacy:169745",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Spelt, uncooked"
+    },
+    {
+      "term": "Teff, uncooked",
+      "source_row": "fdc_sr_legacy:169747",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Teff, uncooked"
+    },
+    {
+      "term": "Corn flour, whole-grain, white",
+      "source_row": "fdc_sr_legacy:169748",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.",
+      "description": "Corn flour, whole-grain, white"
+    },
+    {
+      "term": "Barley, pearled, raw",
+      "source_row": "fdc_sr_legacy:170284",
+      "origin": "clause_tier",
+      "reason_code": "queue_pearled",
+      "reason": "pearled grains are polished (a milling step beyond the clause's whole grain); QUEUE per-term.",
+      "description": "Barley, pearled, raw"
+    },
+    {
+      "term": "Buckwheat",
+      "source_row": "fdc_sr_legacy:170286",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Buckwheat"
+    },
+    {
+      "term": "Corn grain, yellow",
+      "source_row": "fdc_sr_legacy:170288",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.",
+      "description": "Corn grain, yellow"
+    },
+    {
+      "term": "Corn flour, whole-grain, yellow",
+      "source_row": "fdc_sr_legacy:170290",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "corn overlaps vegetables (sweet corn, queued in Batch 2) and cereal; QUEUE for an owner decision on corn.",
+      "description": "Corn flour, whole-grain, yellow"
+    },
+    {
+      "term": "Amaranth grain, uncooked",
+      "source_row": "fdc_sr_legacy:170682",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Amaranth grain, uncooked"
+    },
+    {
+      "term": "Arrowroot flour",
+      "source_row": "fdc_sr_legacy:170684",
+      "origin": "clause_tier",
+      "reason_code": "queue_arrowroot",
+      "reason": "arrowroot flour is a starch product (FAO Group 2 starch example), not a grain flour.",
+      "description": "Arrowroot flour"
+    },
+    {
+      "term": "Bulgur, dry",
+      "source_row": "fdc_sr_legacy:170688",
+      "origin": "clause_tier",
+      "reason_code": "queue_bulgur",
+      "reason": "parboiled cracked wheat: the clause names 'parboiled' rice; per-term decision.",
+      "description": "Bulgur, dry"
+    }
+  ],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 0,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {},
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 370,
+      "lexicon_rows_after": 384,
+      "synonym_rows_added": 0,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 14
+    }
+  },
+  "clause_check": "PASS",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}
