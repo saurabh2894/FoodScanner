@@ -110,6 +110,7 @@ Nut, legume, vegetable and fruit salted controls are unchanged (the same before 
 ## 7. Search record (parked / not implemented)
 
 - Sugar and oil on grains: Q6 (cereals with sugar are processed) is a source for sugared grains; not implemented (batch scope: salt). Parked.
+- **Grain rows outside the 23-term scope still answer Group 1 when salted** (measured-unchanged): refined wheat flour, ragi, oat, wheat, maize, corn, jowar, bajra, foxtail millet, pearl millet, quinoa, besan, soya flour, potato flour. They are grains or flours but not Batch-4 terms; extending the guard to them is a scope decision for you (one set constant), not done here.
 - The 26 out-of-scope whole_food/flour rows with a salted form (`Salted Milk`, `Salted Egg`, ...): Group 1 before and after; no per-row source qualification done here. Parked.
 - Salted forms of products whose kind is not whole_food/flour (e.g. salted rice powder): the powder standard abstains first; unchanged.
 - 'Roasted' stays the pre-existing global descriptor; `toasted salted X` still abstains (the toasted path refuses salted names).
