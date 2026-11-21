@@ -597,8 +597,22 @@
     const FAT_LAST_WORDS = new Set(["oil", "fat", "butter", "ghee", "lard", "palmolein", "olein"]);
     const FAT_ROWS = new Set(["refined oil", "edible vegetable oil", "vegetable oil"]);
     const isFatRow = (row) => !!row && row.kind === "culinary" && (FAT_LAST_WORDS.has(row.term.split(" ").slice(-1)[0]) || FAT_ROWS.has(row.term));
-    const fatBracketResidual = (ing) => (isFatRow(lookup(ing.name)) ? bracketResidual(ing).filter((p) => !(["oil", "fat"].includes(p.toLowerCase().split(" ").slice(-1)[0]) || ["oil", "fat"].some((w) => isFatRow(lookup(p.toLowerCase() + " " + w))))) : []);
-    const fatPowder = (ing, kind) => kind === "culinary" && isFatRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS) && !powderCompositionStated(ing);
+    const fatBracketResidual = (ing) => {
+      if (!isFatRow(lookup(ing.name)) || !ing.inner) return [];
+      const ok = (t) => descriptors.has(t) || BRACKET_BENIGN.has(t) || LEGUME_ADDED.has(t) || LEGUME_PRESERVED.has(t);
+      const out = [];
+      for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
+        const p = part.trim(), toks = p.toLowerCase().match(/[a-z]+/g) || [];
+        if (!toks.length) continue;
+        if (["oil", "fat"].some((w) => isFatRow(lookup(p.toLowerCase() + " " + w)))) continue;
+        const row = lookup(p);
+        if (row) { if (row.kind !== "culinary") out.push(p); }
+        else if (!toks.every(ok)) out.push(p);
+      }
+      return out;
+    };
+    const fatPowderStated = (ing) => /(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase().replace(/[(\[{][^)\]}]*[)\]}]/g, ""));
+    const fatPowder = (ing, kind) => kind === "culinary" && isFatRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS) && !fatPowderStated(ing);
     const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     // salted grain guard (per-form-2a; mirrors classify.grain_added_salt): the 23 Batch-4 terms with salt added in the item's own name or bracket
     const GRAIN_SALT_WORDS = new Set(["salt", "salted"]);
@@ -667,10 +681,10 @@
       if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.some(([, , k]) => k === "culinary")
           ? (bracketUnknown.every(([, , k]) => k === "culinary") ? "a bracket on a processed culinary ingredient" : "a bracket on a food item")
           : (bracketUnknown.every(([, , k]) => k !== "nut_seed") ? "a bracket on a legume, vegetable, fruit or flour item" : (bracketUnknown.every(([, , k]) => k === "nut_seed") ? "a bracket on a nut or seed item" : "a bracket on a food item")))
-        + " names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
+        + (bracketUnknown.some(([, , k]) => k === "culinary") ? " names content that is unrecognised or is a different food, not a culinary ingredient (" : " names content the vocabulary does not recognise (") + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
         + (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed") };
       const fatPowders = ings.filter((i, n) => fatPowder(i, kinds[n])).map((i) => i.raw);
-      if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): oil powders are commonly made on a carrier such as a starch or maltodextrin, so the composition is not established and no group is asserted unless the item states 100%" };
+      if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%" };
       if (wfNested.length) return { group: null, drivers: [], reason: "a bracket names a different food inside the item (" + wfNested.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted" };
       if (wfCondition.length) return { group: null, drivers: [], reason: "an item whose own text names an added or preserving condition (" + wfCondition.map(([raw, o]) => raw + ": " + o.join(", ")).join("; ") + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted" };
       const legumePreserved = ings.filter((i, n) => GUARDED_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);

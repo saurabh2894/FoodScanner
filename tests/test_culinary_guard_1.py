@@ -1,5 +1,6 @@
-"""culinary-guard-1 (SYNTHETIC; abstention only). (1) An unrecognised bracket on an OIL or FAT row abstains, except a bracket that names an oil source ('palm, coconut') or an oil ('Gingelly Oil'); (2) the powder of an oil or fat abstains unless
-the item states 100%; (3) 'A and B oil' where 'A oil' and 'B oil' are both oil rows is kept whole (it names two oils; the composition is not established) while 'Rice and Sunflower Oil' stays food plus oil. Plain oils and lard stay Group 2,
+"""culinary-guard-1 (SYNTHETIC; abstention only). (1) Bracket content on an OIL or FAT row that does not establish a culinary-only composition abstains: an unrecognised part (a suffix 'oil' or 'fat' is not an identity: 'XQ9 Oil',
+'Mineral Oil', 'Essential Oil', 'Gingelly Oil') and a recognised distinct food ('Rice', 'Milk'); supported parts are recognised culinary rows (another oil, salt, sugar, starch) and the source word of a recognised oil ('palm, coconut');
+(2) the powder of an oil or fat abstains unless its own name (outside any bracket) states 100%, and a 100% never overrides bracket content; (3) 'A and B oil' where 'A oil' and 'B oil' are both oil rows is kept whole (it names two oils; the composition is not established) while 'Rice and Sunflower Oil' stays food plus oil. Plain oils and lard stay Group 2,
 hydrogenated and interesterified forms stay Group 4, comma lists of a food and an oil stay Group 3, other culinary rows (salt, sugar, vinegar, jaggery) are untouched."""
 from __future__ import annotations
 
@@ -14,7 +15,8 @@ import pytest
 from foodscan.pipeline import analyse_text
 
 ROOT = Path(__file__).resolve().parent.parent
-OILS = ["Olive Oil", "Sunflower Oil", "Soybean Oil", "Palm Oil", "Coconut Oil", "Mustard Oil", "Groundnut Oil", "Sesame Oil", "Edible Vegetable Oil", "Vegetable Oil", "Refined Oil", "Butter", "Ghee", "Cocoa Butter", "Palmolein", "Peanut Oil"]
+OILS = ["Olive Oil", "Sunflower Oil", "Soybean Oil", "Palm Oil", "Coconut Oil", "Mustard Oil", "Groundnut Oil", "Sesame Oil", "Edible Vegetable Oil", "Vegetable Oil", "Refined Oil", "Butter", "Ghee", "Cocoa Butter", "Palmolein", "Peanut Oil",
+        "Cottonseed Oil", "Rice Bran Oil", "Coconut Fat", "Butter Oil"]       # all 20 oil/fat rows of the lexicon on main 625f0fa (is_fat_row)
 FATS_ROWS = ["almond oil", "apricot kernel oil", "avocado oil", "babassu oil", "canola oil", "corn oil", "cupuassu oil", "flaxseed oil", "grapeseed oil", "hazelnut oil", "lard", "oat oil", "palm kernel oil", "poppyseed oil",
              "safflower oil", "sheanut oil", "teaseed oil", "tomatoseed oil", "walnut oil", "wheat germ oil"]
 
@@ -30,26 +32,39 @@ def test_synthetic_plain_oils_stay_group_2_and_hydrogenated_forms_group_4(t):
 
 
 @pytest.mark.parametrize("t", OILS)
-def test_synthetic_unknown_bracket_on_an_oil_or_fat_abstains(t):
-    group, a = g(t + " (XQ9)")
-    assert group is None and a.reason.startswith("a bracket on a processed culinary ingredient names content the vocabulary does not recognise") and "no group is asserted" in a.reason, t
-    assert g(t + " (oryzanol)")[0] is None
+def test_synthetic_unrecognised_bracket_content_on_an_oil_or_fat_abstains(t):
+    for b in ("XQ9", "oryzanol", "XQ9 Oil", "XQ9 Carrier Oil", "Mineral Oil", "Essential Oil", "XQ9 Fat", "Gingelly Oil"):
+        group, a = g(f"{t} ({b})")
+        assert group is None and a.reason.startswith("a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (") and "no group is asserted" in a.reason, (t, b)
 
 
-@pytest.mark.parametrize("t", ["Edible Vegetable Oil (palm, coconut)", "Edible Vegetable Oil (palmolein)", "Sesame Oil (Gingelly Oil)", "Sesame Oil (Til Oil)", "Refined Oil (rice bran)", "Sunflower Oil (Refined)", "Groundnut Oil (Peanut Oil)", "Ghee (Butter)"])
-def test_synthetic_oil_source_and_oil_name_brackets_stay_group_2(t):
+@pytest.mark.parametrize("t", OILS)
+def test_synthetic_a_recognised_distinct_food_in_the_bracket_abstains_and_culinary_only_content_stays_group_2(t):
+    for b in ("Rice", "Milk", "Sugar, Rice", "Palm, Rice", "Refined (XQ9), Palm"):
+        assert g(f"{t} ({b})")[0] is None, (t, b)
+    for b in ("Starch", "Palm, Salt", "Refined", "Palm, Coconut"):
+        assert g(f"{t} ({b})")[0] == 2, (t, b)
+
+
+@pytest.mark.parametrize("t", ["Edible Vegetable Oil (palm, coconut)", "Edible Vegetable Oil (palmolein)", "Refined Oil (rice bran)", "Sunflower Oil (Refined)", "Groundnut Oil (Peanut Oil)", "Ghee (Butter)", "Sunflower Oil (Palm Oil)"])
+def test_synthetic_oil_source_and_recognised_culinary_brackets_stay_group_2(t):
     assert g(t)[0] == 2, t
 
 
-def test_synthetic_a_bracket_with_an_unknown_oil_name_is_still_an_oil_but_a_mixed_bracket_abstains():
-    assert g("Sunflower Oil (XQ9 Oil)")[0] == 2 and g("Edible Vegetable Oil (palm, coconut, XQ9)")[0] is None
+def test_synthetic_no_alias_is_assumed_for_gingelly_or_til_oil():
+    assert g("Sesame Oil (Gingelly Oil)")[0] is None and g("Sesame Oil (Til Oil)")[0] is None
+
+
+def test_synthetic_hydrogenation_marker_keeps_precedence_over_the_bracket_guard():
+    assert g("Hydrogenated Sunflower Oil (XQ9)")[0] == 4 and g("Hydrogenated Sunflower Oil (Rice)")[0] == 4 and g("Sunflower Oil (hydrogenated)")[0] == 4
 
 
 @pytest.mark.parametrize("t", ["Sunflower Oil", "Olive Oil", "Ghee", "Butter", "Edible Vegetable Oil", "Groundnut Oil", "Palmolein"])
 def test_synthetic_oil_and_fat_powders_abstain_unless_100_percent_is_stated(t):
     group, a = g(t + " Powder")
-    assert group is None and a.reason.startswith("a powder of an oil or fat is named (") and "carrier" in a.reason, t
+    assert group is None and a.reason.startswith("a powder of an oil or fat is named (") and "composition is not established" in a.reason and "carrier" not in a.reason, t
     assert g("100% " + t + " Powder")[0] == 2, t
+    assert g("100% " + t + " Powder (Rice)")[0] is None and g("100% " + t + " Powder (XQ9 Oil)")[0] is None and g(t + " Powder (100% Starch)")[0] is None, t
 
 
 def test_synthetic_other_culinary_rows_are_untouched():

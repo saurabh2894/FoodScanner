@@ -206,7 +206,8 @@ def milk_powder_named(ing) -> bool:
 
 
 # culinary-guard-1 (owner proposal; abstention only): the powder of an OIL or FAT row (a recognised culinary row whose last word is oil, fat, butter, ghee, lard, palmolein or olein, or the generic oil rows) is not read as
-# the oil itself. Oil powders are commonly made on a carrier (a starch or maltodextrin), so composition is not established; no group is guessed. A stated "100%" composition keeps the item an oil (Group 2).
+# the oil itself: a powder is named, its composition is not established, no group is guessed. A "100%" in the item's own name (outside any bracket) keeps the item an oil (Group 2); bracket content that is unassessed or a distinct food
+# abstains first, so a 100% never overrides it.
 _FAT_LAST_WORDS = frozenset({"oil", "fat", "butter", "ghee", "lard", "palmolein", "olein"})
 _FAT_ROWS = frozenset({"refined oil", "edible vegetable oil", "vegetable oil"})
 
@@ -216,16 +217,37 @@ def is_fat_row(row) -> bool:
 
 
 def fat_powder(ing, kind: str) -> bool:
-    return kind == "culinary" and is_fat_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS) and not powder_composition_stated(ing)
+    return kind == "culinary" and is_fat_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS) and not fat_powder_stated(ing)
 
 
 def fat_bracket_residual(ing) -> list:
-    """Unrecognised bracket content on an OIL or FAT row (culinary-guard-1). A part that names the source of a recognised oil is supported: 'Edible vegetable oil (palm, coconut)' names palm oil and coconut oil, which are rows. A part that itself ends in 'oil' or 'fat' names an oil or fat
-    of some origin ('Sesame Oil (Gingelly Oil)'): any oil is a group 2 substance, so nothing but another oil is hidden (hydrogenation is read by the markers, not here).
-    Anything else ('Sunflower Oil (XQ9)') is unassessed content and the item abstains. Other culinary rows (salt, sugar, vinegar, ...) are outside this proposal."""
-    if not is_fat_row(lookup(ing.name)):
+    """Bracket content on an OIL or FAT row that does not establish a culinary-only composition (culinary-guard-1). Supported parts: (a) a recognised culinary row (another oil, salt, sugar, a starch: group 2 items),
+    (b) the source word of a recognised oil ('palm', 'coconut': palm oil and coconut oil are rows), (c) descriptor, condition, negation, connector and code words already benign for every kind. Everything else is residual:
+    an unrecognised part ('XQ9', 'Gingelly Oil', 'Mineral Oil', 'Essential Oil': a suffix 'oil' or 'fat' is not an identity and no alias is assumed) and a RECOGNISED part that is not a culinary row ('Rice', 'Milk': a distinct
+    food or carrier). Other culinary rows (salt, sugar, vinegar, ...) are outside this proposal."""
+    if not is_fat_row(lookup(ing.name)) or not ing.inner:
         return []
-    return [p for p in bracket_residual(ing) if not (p.lower().split()[-1:] in (["oil"], ["fat"]) or any(is_fat_row(lookup(f"{p.lower()} {w}")) for w in ("oil", "fat")))]
+    ok_tokens = _descriptors() | _BRACKET_BENIGN | _LEGUME_ADDED | _LEGUME_PRESERVED
+    out = []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
+        p = part.strip()
+        toks = re.findall(r"[a-z]+", p.lower())
+        if not toks:
+            continue
+        if any(is_fat_row(lookup(f"{p.lower()} {w}")) for w in ("oil", "fat")):
+            continue                                  # the source word of a recognised oil ('corn' when 'corn oil' is a row), even where the bare word is also a food row
+        row = lookup(p)
+        if row:
+            if row["kind"] != "culinary":
+                out.append(p)
+        elif not all(t in ok_tokens for t in toks):
+            out.append(p)
+    return out
+
+
+def fat_powder_stated(ing) -> bool:
+    """A '100%' that sits in the item's own name, outside any bracket; a '100%' inside a bracket belongs to the bracket content and does not describe the oil."""
+    return bool(re.search(r"(?<![\d.])100(?:\.0+)?\s*%", re.sub(r"[(\[{][^)\]}]*[)\]}]", "", ing.raw.lower())))
 
 
 def powder_routed(ing, kind: str) -> bool:
@@ -501,12 +523,14 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         cul_flags = [k == "culinary" for _, _, k in bracket_unknown]
         what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
         tail = "), so neither Group 1 nor Group 3 is established while part of the item is unassessed"
-        if any(cul_flags):      # culinary-guard-1: the item is a processed culinary ingredient (Group 2 at stake), so the Group 1/Group 3 wording would be wrong
+        names = " names content the vocabulary does not recognise ("
+        if any(cul_flags):      # culinary-guard-1: an oil or fat item (Group 2 at stake); its bracket part may be unrecognised OR a recognised food that is not a culinary ingredient
             what = "a bracket on a processed culinary ingredient" if all(cul_flags) else "a bracket on a food item"
+            names = " names content that is unrecognised or is a different food, not a culinary ingredient ("
             tail = "), so what the item contains is not established and no group is asserted while part of the item is unassessed"
-        return Classification(None, reason=what + " names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown) + tail)
+        return Classification(None, reason=what + names + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown) + tail)
     if fat_powders:
-        return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): oil powders are commonly made on a carrier such as a starch or maltodextrin, so the composition is not established and no group is asserted unless the item states 100%")
+        return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%")
     if wf_nested:
         return Classification(None, reason="a bracket names a different food inside the item (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in wf_nested)
                               + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted")
