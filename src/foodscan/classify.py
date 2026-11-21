@@ -178,6 +178,9 @@ def legume_preserved_form(ing) -> bool:
 # vegetable keeps its guard (not routed).
 _POWDER_WORDS = frozenset({"powder", "powdered"})
 _POWDER_ROUTED = ("whole_food", "legume", "vegetable", "fruit")
+# nut-guard-1 (owner decision): the canned/bottled/preserved, brine and unrecognised-bracket guards of the legume, vegetable and fruit kinds also apply to kind nut_seed. Measured before the change: almonds (brine), almonds (canned) and
+# almonds (XQ9) answered Group 1. Same item-level reading (the item's own name and bracket); no new source: FAO Group 3 "using preservation methods such as canning and bottling" with added salt, oil, sugar. Inference level: class-instance of that rule.
+_GUARDED_KINDS = _BRINE_KINDS + ("nut_seed",)
 
 
 def powder_composition_stated(ing) -> bool:
@@ -264,6 +267,25 @@ def grain_added_salt(ing, kind: str) -> bool:
 
 def nut_added_salt_or_sugar(ing) -> bool:
     return _added(ing, _NUT_ADDED)
+
+
+# nut-guard-1 (owner review): the Group 3 driver for a nut or seed names the OBSERVED added substance. Salt or sugar only: the example "salted or sugared nuts and seeds" fits and is quoted. Brine, honey, syrup or a recognised
+# culinary substance such as an oil in the item's own bracket: the general Group 3 definition is quoted (class-instance; no FAO example names that form).
+_NUT_OBSERVED_ORDER = ("salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup", "brine", "brined")
+
+
+def nut_added_observed(ing) -> list:
+    seen = [w for w in _NUT_OBSERVED_ORDER if _added(ing, {w})]
+    seen += [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or "") if p.strip() and is_recognised(p.strip()) and lookup(p.strip())["kind"] == "culinary"]
+    return list(dict.fromkeys(seen))
+
+
+def nut_group3_driver(ing) -> str:
+    obs = nut_added_observed(ing)
+    if not obs or set(obs) <= {"salt", "salted", "sugar", "sugared"}:
+        return "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+    return ("nut or seed with added " + ", ".join(obs) + " (FAO Table 1 Group 3 definition: 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; "
+            "class-instance of that rule, no FAO example names this form)")
 
 
 def legume_added_salt_sugar_or_brine(ing) -> bool:
@@ -401,7 +423,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _BRINE_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
+    bracket_unknown = [(i.raw, bracket_residual(i), k) for i, k in zip(ings, kinds) if k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -410,15 +432,22 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if bracket_unknown:
-        return Classification(None, reason="a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
+        # nut-guard-1: the item kind is named accurately. Only non-nut items: the original text, unchanged. Only nut/seed items: a nut-specific text. A mix: kind-neutral text.
+        nut_flags = [k == "nut_seed" for _, _, k in bracket_unknown]
+        what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
+        return Classification(None, reason=what + " names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
-    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
+    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
-        return Classification(None, reason="a canned, bottled or preserved legume, vegetable or fruit (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
+        preserved_nut = [k == "nut_seed" for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
+        if not any(preserved_nut):
+            return Classification(None, reason="a canned, bottled or preserved legume, vegetable or fruit (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
+        # nut-guard-1: no FAO example names a canned nut, so the general Group 3 definition is cited, not an example
+        return Classification(None, reason="a canned, bottled or preserved " + ("nut or seed" if all(preserved_nut) else "food") + " (" + "; ".join(legume_preserved) + "): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established")
     if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable", "fruit"):
         if nut_salted:
-            what = ("nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" if kinds[0] == "nut_seed"
+            what = (nut_group3_driver(ings[0]) if kinds[0] == "nut_seed"
                     else ("fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" if kinds[0] == "fruit"
                           else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"))
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
