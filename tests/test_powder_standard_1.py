@@ -16,7 +16,9 @@ def g(text):
     return (a.group if a.answered else None), a
 
 
-@pytest.mark.parametrize("t", ["Spinach Powder", "Carrot Powder", "Onion Powder", "Pinto Beans Powder", "Banana Powder", "Date Powder", "Milk Powder", "Whole Milk Powder", "Kale Powder (45%)", "Spinach Powdered"])
+# UPDATED (owner post-merge refinement 2026-11-21): 'Milk Powder' / 'Whole Milk Powder' left this list: FAO Group 1 names 'fresh, powdered or pasteurized milk' by name, so the enumerated fat-grade milk
+# powder forms are Group 1 again (tests/test_milk_powder_1.py). 'Milk Solids Powder' (a fraction, not the named form) and 'Egg Powder' stay here.
+@pytest.mark.parametrize("t", ["Spinach Powder", "Carrot Powder", "Onion Powder", "Pinto Beans Powder", "Banana Powder", "Date Powder", "Egg Powder", "Milk Solids Powder", "Kale Powder (45%)", "Spinach Powdered"])
 def test_synthetic_negative_a_bare_x_powder_never_takes_group_1_from_the_powder_reading(t):
     group, a = g(t)
     assert group is None and "named without its composition" in (a.reason or ""), (t, group)

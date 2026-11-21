@@ -56,6 +56,8 @@ def main(argv=None) -> int:
     ap.add_argument("--rows", type=Path, required=True, help="the batch's lexicon_candidate_rows.csv (the rows that must be present after)")
     ap.add_argument("--retyped", nargs="*", default=[], help="existing terms whose kind changed (attribution only)")
     ap.add_argument("--expected-drift", nargs="*", default=[], help="existing terms whose sole-item behaviour change is an OWNER-RULED change (reported as attributed, not a blocker)")
+    ap.add_argument("--powder-allow", nargs="*", default=[], help="exact '<term> powder' forms that an owner ruling allows to answer Group 1 without a stated composition (e.g. 'milk powder')")
+    ap.add_argument("--attribute-words", nargs="*", default=[], help="phrases that attribute a changed input to an OWNER-RULED behaviour change (e.g. 'powdered milk')")
     ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
@@ -67,7 +69,7 @@ def main(argv=None) -> int:
         return 2
     rule = json.loads(a.rule.read_text(encoding="utf-8"))
     terms = [r["term"] for r in vb.read_csv(a.rows)]
-    attributed = terms + list(a.retyped)
+    attributed = terms + list(a.retyped) + list(a.attribute_words)
     res_b, res_a = a.base_src / "foodscan" / "resources", a.after_src / "foodscan" / "resources"
     base_terms = [r["term"] for r in vb.read_csv(res_b / "lexicon.csv")] + [r["from"] for r in vb.read_csv(res_b / "synonyms.csv")]
     out = {"rule_id": rule["rule_id"], "base_src": str(a.base_src), "after_src": str(a.after_src)}
@@ -102,7 +104,8 @@ def main(argv=None) -> int:
             sb, sa = run_probe(a.base_src, lines, td, "sb"), run_probe(a.after_src, lines, td, "sa")
             ch = {l: [sb[l]["group"], sa[l]["group"]] for l in lines if (sb[l]["group"], sb[l]["unassessed"]) != (sa[l]["group"], sa[l]["unassessed"])}
             out["powder_surface"] = {"probed": len(lines), "group1_before": sum(1 for l in lines if sb[l]["group"] == 1), "group1_after": sum(1 for l in lines if sa[l]["group"] == 1),
-                                     "changed": ch, "group1_after_forms_not_stated": [l for l in lines if sa[l]["group"] == 1 and not (l.startswith("100% ") or l.startswith("whole "))],
+                                     "changed": ch, "group1_after_forms_not_stated": [l for l in lines if sa[l]["group"] == 1 and not (l.startswith("100% ") or l.startswith("whole ") or l in set(a.powder_allow))],
+                                     "owner_allowed_group1_forms": [l for l in lines if sa[l]["group"] == 1 and l in set(a.powder_allow)],
                                      "newly_group4_or_other": {l: v for l, v in ch.items() if v[1] not in (None, 1)}}
         out["controls"] = {n: {"group_before": pb[n]["group"], "group_after": pa[n]["group"], "row_after": pa[n]["row"], "drivers_after": pa[n]["drivers"], "reason_after": pa[n]["reason"], "unassessed_after": pa[n]["unassessed"]} for n in neg + pos}
     blockers = []
