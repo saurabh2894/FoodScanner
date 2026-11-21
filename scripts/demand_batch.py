@@ -72,7 +72,7 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
     rows, syns = [], []
     held = standing_exclusions()
     for d in decisions:
-        if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM") and {d["term"].lower(), d.get("row_term", "").lower()} & held:
+        if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM") and {d["term"].lower(), d.get("row_term", "").lower()} & held and not d.get("owner_override"):
             errors.append(f"{d['term']}: is a standing exclusion of the lexicon-1 senior review; it may not be staged without an owner decision")
         if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM"):
             if re.sub(r"\s+", " ", d["clause"]) not in table and re.sub(r"\s+", " ", d["clause"]) not in prose:

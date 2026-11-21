@@ -304,6 +304,13 @@
         el("ul", { "class": "plain" }, a.ignored.map(function (u) { return el("li", { "class": "mono", text: u }); }))
       ]));
     }
+    if (a.unplaced && a.unplaced.length) {
+      card.appendChild(el("div", { "class": "unplaced" }, [
+        el("h3", { text: "Recognised by name, not placed" }),
+        el("p", { "class": "hint", text: "These are in the vocabulary, but no source places them, so no processing level is assigned and the list cannot be classified. Recognition is vocabulary, not classification." }),
+        el("ul", { "class": "plain" }, a.unplaced.map(function (u) { return el("li", { "class": "mono", text: u }); }))
+      ]));
+    }
     if (a.unassessed && a.unassessed.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not assessed" }),
@@ -494,7 +501,7 @@
       var res = await worker.recognize(img);
       if (over) return;
       // Yield of a reading = ingredients found minus those outside the vocabulary (0 when no list was found).
-      function yieldOf(a) { return a.ingredients.length ? Math.max(0, a.ingredients.length - a.unassessed.length) : 0; }
+      function yieldOf(a) { return a.ingredients.length ? Math.max(0, a.ingredients.length - a.unassessed.length - (a.unplaced ? a.unplaced.length : 0)) : 0; }
       var text = res.data.text, a1 = engine.analyseText(text, { source: "ocr" }), note = "";
       var ocrNotes = [], codesOf = function (a) { return a.ins.map(function (u) { return u.code; }); };
       if (!(a1.answered && a1.completeness.status === "complete" && a1.ins.length === 0)) {

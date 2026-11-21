@@ -537,6 +537,8 @@
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
       const kinds = ings.map((i) => lookup(i.name).kind);
+      const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
+      if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
@@ -564,7 +566,7 @@
     const MIN_CHARS = 20, MIN_ALPHA_RATIO = 0.5;
 
     function abstain(reason, text, extra) {
-      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], ignored: [], declared: [], heading: { kind: "none", text: "" }, completeness: { status: "uncertain", heading: "none", reasons: ["no ingredient list was read"], list_share: 0.0, words: { region: 0, in_list: 0, declared: 0, excluded: 0, not_read: 0, unaccounted: 0 }, assessed: { items: 0, not_assessed: 0 } }, text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
+      return Object.assign({ answered: false, group: null, reason, ingredients: [], drivers: [], ins: [], warnings: [], sections: [], unassessed: [], unplaced: [], ignored: [], declared: [], heading: { kind: "none", text: "" }, completeness: { status: "uncertain", heading: "none", reasons: ["no ingredient list was read"], list_share: 0.0, words: { region: 0, in_list: 0, declared: 0, excluded: 0, not_read: 0, unaccounted: 0 }, assessed: { items: 0, not_assessed: 0 } }, text }, extra || {}, { headline: `${NOT_ENOUGH}: ${reason}` });
     }
     const recognisableIng = (ing) => isRecognised(ing.name) || ing.ins.length > 0 || hitsFor(ing).length > 0;
     // words and phrases of the vocabulary tables, for telling a cut-off fragment from an unknown whole word (mirrors pipeline._looks_cut_off)
@@ -786,6 +788,7 @@
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
+      const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw))];
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
@@ -798,7 +801,7 @@
       if (implausible) sectionWarnings.push("Few of the items were recognised, so this text may not be the ingredient list");
       sectionWarnings.push(...possibleMisreads(ings));
       if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
-      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, unplaced, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null, vocabLast = false;      // vocabLast: the last item is not in the vocabulary but does not look cut off (a vocabulary gap, not a truncation)
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1])) {
@@ -832,7 +835,7 @@
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
-        assessed: { items: ings.length, not_assessed: ings.filter((i) => !recognisableIng(i)).length } };
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || (l && l.kind === "unplaced"); }).length } };
       const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
       const blocking = truncation || unread || headingRisk || lost;
       const r = classifyIngredients(ings, parsed.declarations);

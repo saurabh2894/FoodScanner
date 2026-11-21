@@ -61,6 +61,11 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d.get("code") == "held_category_C" and rec(d["term"]):
+        # superseded by the owner-approved unplaced kind (recognition only, never placed): recognised ONLY as that kind
+        from foodscan.classify import lookup
+        assert lookup(normalise_ingredient(d["term"]).name)["kind"] == "unplaced", d["term"]
+        return
     assert not rec(d["term"]), f"{d['term']!r} ({d['disposition']}) must stay unrecognised until the owner decides"
 
 

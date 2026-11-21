@@ -1,0 +1,144 @@
+{
+ "decisions_id": "unplaced-decisions-1",
+ "n_terms": 6,
+ "by_disposition": {
+  "ACCEPT_ROW": 6
+ },
+ "paste_inputs_by_disposition": {
+  "ACCEPT_ROW": 6
+ },
+ "rows": [
+  {
+   "term": "vitamins and minerals",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid\"; exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "vitamins and minerals"
+  },
+  {
+   "term": "vitamins & minerals",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid\"; exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "vitamins & minerals"
+  },
+  {
+   "term": "vitamins",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid\"; exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "vitamins"
+  },
+  {
+   "term": "minerals",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid\"; exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "minerals"
+  },
+  {
+   "term": "sprouted ragi",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list) \"Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.\"; exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "sprouted ragi"
+  },
+  {
+   "term": "sprouted jowar",
+   "kind": "unplaced",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list) \"Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.\"; exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified; demand-driven row (unplaced-decisions-1)",
+   "demand_term": "sprouted jowar"
+  }
+ ],
+ "synonyms": [],
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 0,
+   "warnings": 0,
+   "ingredients": 2,
+   "unassessed": 5,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [],
+   "warnings": [],
+   "ingredients": [
+    "b2/M14",
+    "dev/F14"
+   ],
+   "unassessed": [
+    "b1/N16",
+    "b2/M14",
+    "b3/Q11",
+    "dev/F02",
+    "dev/F14"
+   ],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {
+   "b1/N16": {
+    "recognised_now": [
+     "Minerals"
+    ],
+    "attributed_to_rows": [
+     "minerals"
+    ],
+    "newly_unassessed": []
+   },
+   "b2/M14": {
+    "recognised_now": [
+     "vitamins & mineral"
+    ],
+    "attributed_to_rows": [
+     "vitamins & minerals"
+    ],
+    "newly_unassessed": []
+   },
+   "b3/Q11": {
+    "recognised_now": [
+     "Minerals",
+     "Vitamins"
+    ],
+    "attributed_to_rows": [
+     "minerals",
+     "vitamins"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F02": {
+    "recognised_now": [
+     "Minerals",
+     "Vitamins"
+    ],
+    "attributed_to_rows": [
+     "minerals",
+     "vitamins"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F14": {
+    "recognised_now": [
+     "VITAMINS & MINERAL"
+    ],
+    "attributed_to_rows": [
+     "vitamins & minerals"
+    ],
+    "newly_unassessed": []
+   }
+  },
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 142,
+   "lexicon_rows_after": 148,
+   "synonym_rows_added": 0,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 6
+  }
+ },
+ "errors": [],
+ "verdict": "READY_FOR_REVIEW"
+}

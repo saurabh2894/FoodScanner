@@ -50,22 +50,28 @@ def test_synthetic_a_powder_never_counts_as_a_whole_food_in_a_group_3_combinatio
     assert grp("Ingredients: Rice, salt.")[0] == 3
 
 
-@pytest.mark.parametrize("t", ["vitamins and minerals", "sprouted ragi", "sprouted ragi & jowar", "rice & oat", "fortified wheat flour"])
-def test_synthetic_negative_unplaced_forms_are_not_recognised(t):
-    assert not rec(t)
+@pytest.mark.parametrize("t", ["sprouted ragi & jowar", "rice & oat", "fortified wheat flour"])
+def test_synthetic_negative_pairs_and_fortified_forms_are_not_recognised(t):
+    assert not rec(t)                                                             # the '&' pair split and fortified products stay unresolved vocabulary
+
+
+def test_synthetic_vitamins_and_minerals_and_sprouted_forms_are_recognised_only_as_unplaced_never_classified():
+    for t in ("vitamins and minerals", "vitamins", "minerals", "sprouted ragi", "sprouted jowar"):
+        assert rec(t) and LEX[t]["kind"] == "unplaced"                           # recognised by name only (workstream: unplaced kind)
 
 
 def test_synthetic_a_list_with_vitamins_and_minerals_abstains_never_forced():
-    g, a = grp("Ingredients: Rice, banana powder, vitamins and minerals.")      # also holds a powder: abstains either way
-    assert g is None and any("vitamins and minerals" in u for u in a.unassessed)
+    g, a = grp("Ingredients: Rice, banana powder, vitamins and minerals.")
+    assert g is None and [u.lower() for u in a.unplaced] == ["vitamins", "minerals"] and not any("vitamins" in u.lower() or "minerals" in u.lower() for u in a.unassessed)         # the 'and' pair splits into two recognised items
 
 
 def test_owner_acceptance_label_newly_recognised_forms_and_an_honest_abstention():
     g, a = grp(LABEL)
     assert g is None and not a.answered                                          # (b) no group: weak marker only, unplaced items remain
     un = " | ".join(a.unassessed).lower()
-    for t in ("banana powder", "strawberry powder", "beetroot powder"):          # (a) forms now recognised
+    for t in ("banana powder", "strawberry powder", "beetroot powder", "vitamins", "minerals"):          # (a) forms now recognised by name
         assert t not in un, t
-    for t in ("sprouted ragi", "rice & oat", "vitamins and minerals"):           # still unplaced or unparsed, visibly
+    assert [u.lower() for u in a.unplaced] == ["vitamins", "minerals"]            # shown apart, as unplaced (the 'and' pair splits into two items)
+    for t in ("sprouted ragi", "rice & oat"):                                    # the '&' pair is still unsplit, so these stay visibly unassessed
         assert t in un, t
     assert "antioxidant" in a.reason.lower()

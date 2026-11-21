@@ -155,6 +155,9 @@ CORPUS = [
     "Ingredients: Rice, wheat gluten, salt.", "Ingredients: Water, fructose.", "Ingredients: Rice, hydrolysed vegetable protein, salt.", "Ingredients: Rice, Hydrolyzed Vegetable Protein.", "Ingredients: Water, lemon juice concentrate.",
     "Ingredients: Water, apple juice concentrate, salt.", "Ingredients: Oats, gluten free.", "Ingredients: Wheat flour (gluten free), salt.", "Ingredients: Rice, fructooligosaccharide.", "Ingredients: Water, orange juice concentrate.",
     "Ingredients: Rice, salt. Contains gluten.",
+    # unplaced kind (tests/test_unplaced_kind_1.py, SYNTHETIC + the owner's acceptance label text): recognised by name only, never placed, lists abstain
+    "Ingredients: Rice, vitamins and minerals.", "Ingredients: Rice, salt, vitamins & minerals.", "Ingredients: Vitamins.", "Ingredients: Minerals", "Ingredients: Sprouted ragi, rice.", "Ingredients: Water, fructose, vitamins and minerals.",
+    "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
@@ -226,7 +229,7 @@ def py_result(text, source="ocr"):
     a = analyse_text(text, source=source)
     return {
         "answered": a.answered, "group": a.group, "reason": a.reason, "headline": a.headline,
-        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "ignored": a.ignored, "declared": a.declared, "heading": a.heading, "completeness": a.completeness,
+        "ingredients": a.ingredients, "warnings": a.warnings, "unassessed": a.unassessed, "unplaced": a.unplaced, "ignored": a.ignored, "declared": a.declared, "heading": a.heading, "completeness": a.completeness,
         "sections": [[label, list(items)] for label, items in a.sections],
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
@@ -264,7 +267,7 @@ const fs = require('fs');
 const E = require(process.argv[2]).createEngine(JSON.parse(fs.readFileSync(process.argv[3], 'utf8')));
 const corpus = JSON.parse(fs.readFileSync(process.argv[4], 'utf8'));  // [text, source] pairs
 const pick = (a) => ({answered: a.answered, group: a.group, reason: a.reason, headline: a.headline,
-  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, ignored: a.ignored, declared: a.declared, heading: a.heading, completeness: a.completeness, sections: a.sections, drivers: a.drivers, ins: a.ins});
+  ingredients: a.ingredients, warnings: a.warnings, unassessed: a.unassessed, unplaced: a.unplaced, ignored: a.ignored, declared: a.declared, heading: a.heading, completeness: a.completeness, sections: a.sections, drivers: a.drivers, ins: a.ins});
 process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseText(t, { source })))));
 """
 

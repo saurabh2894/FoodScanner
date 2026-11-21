@@ -56,6 +56,9 @@ def format_analysis(a: Analysis) -> str:
     if a.ignored:
         lines.append("Not read as ingredients (text after the list):")
         lines += [f"  - {t}" for t in a.ignored]
+    if a.unplaced:
+        lines.append("Recognised by name only, NOT placed (no processing level assigned; recognition is vocabulary, not classification):")
+        lines += [f"  - {u}" for u in a.unplaced]
     if a.unassessed:
         lines.append("Not assessed (not in the vocabulary, or a group name whose contents were assessed):")
         lines += [f"  - {u}" for u in a.unassessed]
