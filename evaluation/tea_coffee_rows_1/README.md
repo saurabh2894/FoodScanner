@@ -1,6 +1,6 @@
 # tea_coffee_rows_1: two whole_food rows, tea and coffee (PROPOSAL; staging only, merge stops with the owner)
 
-Branch claude/tea-coffee-rows-1 (off main cf06f63; main 342e662, the whole-food guard included, merged in, no rebase). Input: junior branch antigravity/class-bulk-8-beverages (615b99d), senior review `evaluation/junior_reviews_5/08_beverages_review.md` (claude/junior-reviews-5, 7d7c3f8). Decision reference: owner instruction 2026-11-21 (stage exactly tea and coffee as whole_food; water unchanged).
+Branch claude/tea-coffee-rows-1 (off main cf06f63; main 0810267, with the whole-food guard and the dairy rows, merged in, no rebase). Input: junior branch antigravity/class-bulk-8-beverages (615b99d), senior review `evaluation/junior_reviews_5/08_beverages_review.md` (claude/junior-reviews-5, 7d7c3f8). Decision reference: owner instruction 2026-11-21 (stage exactly tea and coffee as whole_food; water unchanged).
 
 ## 1. Rows (text in the lexicon `source` column; `staged_rows.csv`)
 | term | clause (FAO 2019 ca5644en Table 1 Group 1 example, p.11, verified verbatim; the table cell breaks the line after "coffee,") | FDC records (names only; brewed drinks, not the label ingredient) | inference level |
@@ -9,16 +9,16 @@ Branch claude/tea-coffee-rows-1 (off main cf06f63; main 342e662, the whole-food 
 | coffee | same | sr_legacy 171881, 171890, 171891 (brewed breakfast blend, brewed with tap water, brewed espresso) | exact-named |
 Used only the verified example. Not used: the junior's spliced 'Group 1 definition', any 'pure' or purity claim, brand records. Not staged and not changed: `water` (existing `neutral` row), ready-to-drink and brand records (held), instant, decaf, extract, leaves/beans, black and oolong tea, espresso, other aliases, herbal infusions, coffee substitutes, juices, alcoholic drinks. Kind `whole_food` (existing), not `neutral`: see the review (neutral would drop tea and coffee from classification and from combinations).
 
-## 2. Gates (committed tree vs main 342e662; separate fresh processes)
+## 2. Gates (committed tree vs main 0810267; separate fresh processes)
 | check | result |
 |---|---|
-| lexicon | 406 -> 408 (+2 whole_food rows; none changed or removed); synonyms.csv, markers.csv byte-identical; no source file changed |
+| lexicon | 411 -> 413 (+2 whole_food rows; none changed or removed); synonyms.csv, markers.csv byte-identical; no source file changed |
 | frozen 66 / out-of-sample 32 | changed 0 / 0; unexplained 0; abstain->4 0 |
-| drift (556) | 0 differences |
-| salted (147) / descriptor (812) / powder (558) surfaces | 0 changed |
+| drift (561) | 0 differences |
+| salted (162) / descriptor (822) / powder (573) surfaces | 0 changed |
 | after-build proof | both rows recognised after, neither before |
-| suite | 1861 passed, 5 xfailed (main 1810 + 51 new tests) |
-| parity | 804/804 identical (main 789 + 15 added entries, 0 removed; reason and driver compared) |
+| suite | **1884 passed, 5 xfailed** (main 1833 + 51 new tests; earlier 1861 is stale) |
+| parity | **816/816** identical (main 801 + 15 added entries, 0 removed; reason and driver compared; earlier 804 is stale) |
 
 ## 3. Measured forms (tea and coffee identical; before = unrecognised; `applied_gate.json` controls; the whole-food guard is in the base)
 | form | group | form | group |
@@ -39,7 +39,7 @@ Other beverages and held aliases stay unrecognised: hibiscus tea, chamomile tea,
 ## 5. Tests
 `tests/test_tea_coffee_rows_1.py` (new): plain forms, sugar/salt/flavour lists, milk and unknown-bracket abstentions, held forms and aliases, conditioned and nested forms (through the guard), the green-descriptor observation, and row provenance (verified clause, no spliced definition, no purity claim).
 
-## 6. Exact diff vs main 342e662
+## 6. Exact diff vs main 0810267 (7 paths, from `git diff --name-only main HEAD` on the committed merge tree)
 - `data/ingest/tea_coffee_rows_1.json`
 - `evaluation/tea_coffee_rows_1/README.md`
 - `evaluation/tea_coffee_rows_1/applied_gate/applied_gate.json`
