@@ -150,7 +150,7 @@
     }
     // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
     const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
-    const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => descriptors.has(t) || FORM_WORDS_EXTRA.has(t));
+    const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => allDescriptorWords.has(t) || FORM_WORDS_EXTRA.has(t));
     // "Rice Bran Oil Seasoning : Onion" -> [prefix, label, rest]; mirrors parser._peel_label
     function peelLabel(item) {
       const colon = colonAtDepth0(item);
@@ -356,6 +356,7 @@
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
     const descriptors = new Set(T.descriptors.filter((r) => !(r.kinds || "").trim()).map((r) => r.word.toLowerCase()));
+    const allDescriptorWords = new Set(T.descriptors.map((r) => r.word.toLowerCase()));      // every descriptors.csv row, incl. kind-scoped ones: label form words and the truncation test (mirrors parser._form_words and pipeline._vocab)
     const scopedDescriptors = {};          // kind-scoped descriptors ('toasted': whole_food;flour), mirrors classify._scoped_descriptors
     for (const r of T.descriptors) if ((r.kinds || "").trim()) scopedDescriptors[r.word.toLowerCase()] = new Set(r.kinds.split(";").map((k) => k.trim()).filter(Boolean));
     const singular = (t) => {
@@ -668,7 +669,7 @@
       const last = toks[toks.length - 1];
       if (last.length >= 3 && !vocabWords.has(last) && vocabList.some((w) => w.startsWith(last))) return true;
       for (let k = 0; k < toks.length; k++)      // drop leading descriptor words one at a time: "pasteurized toned" -> "toned" is the start of "toned milk"
-        if ((k === 0 || descriptors.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
+        if ((k === 0 || allDescriptorWords.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
       return false;
     }
     // mirrors pipeline._split_amp_pair: an '&' pair inside a bracket splits only when each side is recognised WITH its shared modifier; the shared percentage is a note, not copied onto the items

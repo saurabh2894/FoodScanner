@@ -89,7 +89,8 @@ def test_synthetic_the_toasted_term_set_is_exactly_the_23_terms_batch_4_placed()
     from foodscan.classify import _SCOPED_TERMS
     staged = {r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "class_bulk_4" / "grains" / "staged_rows.csv").open(encoding="utf-8", newline=""))}
     assert _SCOPED_TERMS["toasted"] == frozenset(staged) and len(staged) == 23
-    kinds = {r["term"]: r["kind"] for r in _csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
+    from foodscan.classify import lookup as _lookup
+    kinds = {t: _lookup(t)["kind"] for t in staged}                  # 'red rice' and 'parboiled rice' resolve to the row 'rice' through the global descriptors
     assert sum(1 for t in staged if kinds[t] == "whole_food") == 9 and sum(1 for t in staged if kinds[t] == "flour") == 14
 
 
