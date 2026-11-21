@@ -77,9 +77,9 @@ def test_synthetic_negative_near_miss_aliases_do_not_match(t):
     assert not rec(t)
 
 
-@pytest.mark.xfail(strict=True, reason="KNOWN GAP, documented not fixed: a synonym matches only the singular, so these plural/part forms stay unassessed. xfail(strict) turns red the day it is fixed.")
 @pytest.mark.parametrize("t", ["cumin seeds", "caraway seeds", "fenugreek seeds", "anise seeds", "coriander leaves", "oregano leaves"])
-def test_synthetic_known_gap_plural_and_part_forms(t):
+def test_synthetic_formerly_known_gap_plural_and_part_forms_now_recognised(t):
+    """These six were strict xfails (a documented gap measured on the out-of-sample set); plural-policy-1 fixed them, so the marker was removed exactly as the xfail reason said it must be."""
     assert rec(t)
 
 

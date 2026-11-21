@@ -1,0 +1,16 @@
+# plural_synonyms_1: plural, leaf-form and plural-spelling synonyms (branch claude/plural-synonyms-1, off main d1bc5d5)
+
+Pre-registered cycle for the measured gap (11 of 26 misses on the targeted out-of-sample challenge set: synonyms matched only the singular). Rule file: data/ingest/plural_policy_1.json (policy plural-policy-1, extends variant-policy-1: same ingredient + same plant part + same form -> synonym; a different part or a processed form never maps; bare ambiguous rows `coriander`, `dill` are not widened).
+Candidates are generated from the VOCABULARY and the policy, not from the out-of-sample texts: 5 seed plurals (cumin, caraway, fenugreek, anise, ajwain seeds), `<herb> leaf/leaves` for 13 herbs whose culinary part is the leaf (an inference, stated in each row), coriander leaves, dill leaf/leaves (-> dill weed, FDC names the leaf), bay leaves, chillis, red chilis. 37 rows, PROVISIONAL, no new lexicon rows.
+Dropped by the gate: `curry leaf(s)` -> `dried curry leaves` (it rewrites the existing row's own name: drift check).
+
+## Gate (scripts/synonym_batch.py): READY_FOR_REVIEW
+Schema, duplicates, conflicts, DRIFT (the normalised name and recognition of all 300 existing lexicon terms and synonyms identical before/after, separate fresh processes), positives (37/37 map to their target, 0 recognised before), negative controls (27 identity controls: other parts and foods such as fenugreek leaves, basil seeds, chilli seeds, turmeric leaves; 4 processed forms must stay unrecognised: coriander/oregano/mint leaf extract, basil leaf oil), and the 66 frozen inputs before/after in separate fresh processes: 0 changes on every compared field.
+One gate finding changed the policy: leaf aliases rewrite the NAME of processed forms ("oregano leaf extract" -> "oregano extract"); they stay unrecognised, so the control for processed forms is "stays unrecognised" rather than "name identical" (recorded in the policy).
+
+## Out-of-sample re-run (cache texts, sha256 verified; BEFORE = main d1bc5d5, AFTER = this branch; separate fresh processes)
+Targeted challenge set for the staged terms, not a coverage estimate. Mentions of staged terms: recognised 38 -> 49, NOT recognised 26 -> 15, inside another item 2 -> 2. Group and status unchanged on all 32 labels; the abstention reason text changed on S06, S07, S27, S32 (it lists a shorter unassessed set); nothing newly unassessed.
+Every label that differs (items that left the unassessed list, as normalised term names): S05 coriander leaves, cumin seeds, mint leaves; S06 coriander leaves; S07 cumin seeds, fenugreek seeds; S13 coriander leaves; S27 coriander leaves, mint leaves, bay leaves, caraway seeds, ajwain seeds; S30 cumin seeds, fenugreek seeds; S32 bay leaves, fenugreek seeds (whole). The other 25 labels are identical in every stored field. All 15 remaining NOT-recognised mentions are the compound-item and different-part/processed cases reported in the original findings, none a plural form.
+
+## Gates
+Suite 966 passed, 4 expected failures; parity 408/408 (5 new synthetic texts); the six strict xfails in tests/test_herb_spice_bulk_1.py for exactly these forms turned red as designed and were converted to normal tests (the xfail reason said to remove the marker on the day it is fixed).

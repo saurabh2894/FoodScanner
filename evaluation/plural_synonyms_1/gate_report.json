@@ -1,0 +1,577 @@
+{
+ "policy_id": "plural-policy-1",
+ "rows": [
+  {
+   "from": "cumin seeds",
+   "to": "cumin",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised",
+   "source": "PROVISIONAL: alias of existing lexicon row \"cumin\" (same ingredient, same plant part (seed), same form; plural of a form already recognised); plural-policy-1 rule seed-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "caraway seeds",
+   "to": "caraway",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised",
+   "source": "PROVISIONAL: alias of existing lexicon row \"caraway\" (same ingredient, same plant part (seed), same form; plural of a form already recognised); plural-policy-1 rule seed-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "fenugreek seeds",
+   "to": "fenugreek",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised",
+   "source": "PROVISIONAL: alias of existing lexicon row \"fenugreek\" (same ingredient, same plant part (seed), same form; plural of a form already recognised); plural-policy-1 rule seed-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "anise seeds",
+   "to": "aniseed",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised",
+   "source": "PROVISIONAL: alias of existing lexicon row \"aniseed\" (same ingredient, same plant part (seed), same form; plural of a form already recognised); plural-policy-1 rule seed-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "ajwain seeds",
+   "to": "ajwain",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised",
+   "source": "PROVISIONAL: alias of existing lexicon row \"ajwain\" (same ingredient, same plant part (seed), same form; plural of a form already recognised); plural-policy-1 rule seed-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "basil leaves",
+   "to": "basil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"basil\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "basil leaf",
+   "to": "basil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"basil\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "oregano leaves",
+   "to": "oregano",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"oregano\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "oregano leaf",
+   "to": "oregano",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"oregano\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "parsley leaves",
+   "to": "parsley",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"parsley\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "parsley leaf",
+   "to": "parsley",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"parsley\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "mint leaves",
+   "to": "mint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"mint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "mint leaf",
+   "to": "mint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"mint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "sage leaves",
+   "to": "sage",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"sage\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "sage leaf",
+   "to": "sage",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"sage\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "thyme leaves",
+   "to": "thyme",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"thyme\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "thyme leaf",
+   "to": "thyme",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"thyme\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "rosemary leaves",
+   "to": "rosemary",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"rosemary\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "rosemary leaf",
+   "to": "rosemary",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"rosemary\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "tarragon leaves",
+   "to": "tarragon",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"tarragon\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "tarragon leaf",
+   "to": "tarragon",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"tarragon\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "marjoram leaves",
+   "to": "marjoram",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"marjoram\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "marjoram leaf",
+   "to": "marjoram",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"marjoram\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "chervil leaves",
+   "to": "chervil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"chervil\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "chervil leaf",
+   "to": "chervil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"chervil\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "savory leaves",
+   "to": "savory",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"savory\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "savory leaf",
+   "to": "savory",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"savory\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "peppermint leaves",
+   "to": "peppermint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"peppermint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "peppermint leaf",
+   "to": "peppermint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"peppermint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "spearmint leaves",
+   "to": "spearmint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"spearmint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "spearmint leaf",
+   "to": "spearmint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form",
+   "source": "PROVISIONAL: alias of existing lexicon row \"spearmint\" (same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "coriander leaves",
+   "to": "coriander leaf",
+   "rule": "leaf-plural",
+   "basis": "same ingredient, same plant part (leaf), plural of the existing row",
+   "part_named_by": "sr_legacy FDC id 170921 \"Spices, coriander leaf, dried\"",
+   "source": "PROVISIONAL: alias of existing lexicon row \"coriander leaf\" (same ingredient, same plant part (leaf), plural of the existing row); plural-policy-1 rule leaf-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance; the plant part is named by USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170921 \"Spices, coriander leaf, dried\""
+  },
+  {
+   "from": "dill leaves",
+   "to": "dill weed",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched",
+   "part_named_by": "sr_legacy FDC id 171322 \"Spices, dill weed, dried\"",
+   "source": "PROVISIONAL: alias of existing lexicon row \"dill weed\" (same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance; the plant part is named by USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171322 \"Spices, dill weed, dried\""
+  },
+  {
+   "from": "dill leaf",
+   "to": "dill weed",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched",
+   "part_named_by": "sr_legacy FDC id 171322 \"Spices, dill weed, dried\"",
+   "source": "PROVISIONAL: alias of existing lexicon row \"dill weed\" (same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched); plural-policy-1 rule leaf-form; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance; the plant part is named by USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171322 \"Spices, dill weed, dried\""
+  },
+  {
+   "from": "bay leaves",
+   "to": "bay leaf",
+   "rule": "leaf-plural",
+   "basis": "plural of the existing row",
+   "source": "PROVISIONAL: alias of existing lexicon row \"bay leaf\" (plural of the existing row); plural-policy-1 rule leaf-plural; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "chillis",
+   "to": "chilli",
+   "rule": "plural-spelling",
+   "basis": "plural of the existing row",
+   "source": "PROVISIONAL: alias of existing lexicon row \"chilli\" (plural of the existing row); plural-policy-1 rule plural-spelling; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  },
+  {
+   "from": "red chilis",
+   "to": "red chili",
+   "rule": "plural-spelling",
+   "basis": "plural of the existing row",
+   "source": "PROVISIONAL: alias of existing lexicon row \"red chili\" (plural of the existing row); plural-policy-1 rule plural-spelling; exact term not named by any source read; the row it points to carries the FAO clause and its own provenance"
+  }
+ ],
+ "dropped": [],
+ "errors": [],
+ "probe_terms": 300,
+ "negative_controls": {
+  "fenugreek leaves": {
+   "before": {
+    "name": "fenugreek leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "fenugreek leaves",
+    "recognised": false
+   }
+  },
+  "basil seeds": {
+   "before": {
+    "name": "basil seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "basil seeds",
+    "recognised": false
+   }
+  },
+  "basil seed": {
+   "before": {
+    "name": "basil seed",
+    "recognised": false
+   },
+   "after": {
+    "name": "basil seed",
+    "recognised": false
+   }
+  },
+  "chilli seeds": {
+   "before": {
+    "name": "chilli seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "chilli seeds",
+    "recognised": false
+   }
+  },
+  "turmeric leaves": {
+   "before": {
+    "name": "turmeric leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "turmeric leaves",
+    "recognised": false
+   }
+  },
+  "ginger leaves": {
+   "before": {
+    "name": "ginger leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "ginger leaves",
+    "recognised": false
+   }
+  },
+  "garlic leaves": {
+   "before": {
+    "name": "garlic leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "garlic leaves",
+    "recognised": false
+   }
+  },
+  "mustard leaves": {
+   "before": {
+    "name": "mustard leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "mustard leaves",
+    "recognised": false
+   }
+  },
+  "cardamom leaves": {
+   "before": {
+    "name": "cardamom leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "cardamom leaves",
+    "recognised": false
+   }
+  },
+  "pepper leaves": {
+   "before": {
+    "name": "pepper leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "pepper leaves",
+    "recognised": false
+   }
+  },
+  "cumin leaves": {
+   "before": {
+    "name": "cumin leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "cumin leaves",
+    "recognised": false
+   }
+  },
+  "sage seeds": {
+   "before": {
+    "name": "sage seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "sage seeds",
+    "recognised": false
+   }
+  },
+  "mint seeds": {
+   "before": {
+    "name": "mint seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "mint seeds",
+    "recognised": false
+   }
+  },
+  "oregano seeds": {
+   "before": {
+    "name": "oregano seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "oregano seeds",
+    "recognised": false
+   }
+  },
+  "peppermint seeds": {
+   "before": {
+    "name": "peppermint seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "peppermint seeds",
+    "recognised": false
+   }
+  },
+  "thyme seeds": {
+   "before": {
+    "name": "thyme seeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "thyme seeds",
+    "recognised": false
+   }
+  },
+  "paprika leaves": {
+   "before": {
+    "name": "paprika leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "paprika leaves",
+    "recognised": false
+   }
+  },
+  "saffron leaves": {
+   "before": {
+    "name": "saffron leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "saffron leaves",
+    "recognised": false
+   }
+  },
+  "clove leaves": {
+   "before": {
+    "name": "clove leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "clove leaves",
+    "recognised": false
+   }
+  },
+  "cinnamon leaves": {
+   "before": {
+    "name": "cinnamon leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "cinnamon leaves",
+    "recognised": false
+   }
+  },
+  "dill seed leaves": {
+   "before": {
+    "name": "dill seed leaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "dill seed leaves",
+    "recognised": false
+   }
+  },
+  "cuminseeds": {
+   "before": {
+    "name": "cuminseeds",
+    "recognised": false
+   },
+   "after": {
+    "name": "cuminseeds",
+    "recognised": false
+   }
+  },
+  "oreganoleaves": {
+   "before": {
+    "name": "oreganoleaves",
+    "recognised": false
+   },
+   "after": {
+    "name": "oreganoleaves",
+    "recognised": false
+   }
+  },
+  "coriander leaf extract": {
+   "before": {
+    "name": "coriander leaf extract",
+    "recognised": false
+   },
+   "after": {
+    "name": "coriander leaf extract",
+    "recognised": false
+   }
+  },
+  "oregano leaf extract": {
+   "before": {
+    "name": "oregano leaf extract",
+    "recognised": false
+   },
+   "after": {
+    "name": "oregano extract",
+    "recognised": false
+   }
+  },
+  "mint leaf extract": {
+   "before": {
+    "name": "mint leaf extract",
+    "recognised": false
+   },
+   "after": {
+    "name": "mint extract",
+    "recognised": false
+   }
+  },
+  "basil leaf oil": {
+   "before": {
+    "name": "basil leaf oil",
+    "recognised": false
+   },
+   "after": {
+    "name": "basil oil",
+    "recognised": false
+   }
+  }
+ },
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 0,
+   "warnings": 0,
+   "ingredients": 0,
+   "unassessed": 0,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [],
+   "warnings": [],
+   "ingredients": [],
+   "unassessed": [],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {},
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 135,
+   "lexicon_rows_after": 135,
+   "synonym_rows_added": 37,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 37
+  }
+ },
+ "verdict": "READY_FOR_REVIEW"
+}

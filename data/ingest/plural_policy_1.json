@@ -1,0 +1,264 @@
+{
+ "policy_id": "plural-policy-1",
+ "applies_to": "plural, leaf-form and plural-spelling synonyms of existing herb_spice rows",
+ "policy": "Same ingredient + same plant part + same form as an existing row -> synonym (variant-policy-1 extended to plural and leaf forms). A different plant part never maps (fenugreek leaves vs fenugreek seed, basil seeds vs basil, chilli seeds vs chilli). Processed forms (extract, oil) are never mapped. Bare ambiguous base rows (coriander, dill) are not widened. A leaf form is allowed only for the listed herbs, whose culinary part is the leaf; where no source names the part the row says so.",
+ "rows": [
+  {
+   "from": "cumin seeds",
+   "to": "cumin",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised"
+  },
+  {
+   "from": "caraway seeds",
+   "to": "caraway",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised"
+  },
+  {
+   "from": "fenugreek seeds",
+   "to": "fenugreek",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised"
+  },
+  {
+   "from": "anise seeds",
+   "to": "aniseed",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised"
+  },
+  {
+   "from": "ajwain seeds",
+   "to": "ajwain",
+   "rule": "seed-plural",
+   "basis": "same ingredient, same plant part (seed), same form; plural of a form already recognised"
+  },
+  {
+   "from": "basil leaves",
+   "to": "basil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "basil leaf",
+   "to": "basil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "oregano leaves",
+   "to": "oregano",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "oregano leaf",
+   "to": "oregano",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "parsley leaves",
+   "to": "parsley",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "parsley leaf",
+   "to": "parsley",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "mint leaves",
+   "to": "mint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "mint leaf",
+   "to": "mint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "sage leaves",
+   "to": "sage",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "sage leaf",
+   "to": "sage",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "thyme leaves",
+   "to": "thyme",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "thyme leaf",
+   "to": "thyme",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "rosemary leaves",
+   "to": "rosemary",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "rosemary leaf",
+   "to": "rosemary",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "tarragon leaves",
+   "to": "tarragon",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "tarragon leaf",
+   "to": "tarragon",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "marjoram leaves",
+   "to": "marjoram",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "marjoram leaf",
+   "to": "marjoram",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "chervil leaves",
+   "to": "chervil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "chervil leaf",
+   "to": "chervil",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "savory leaves",
+   "to": "savory",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "savory leaf",
+   "to": "savory",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "peppermint leaves",
+   "to": "peppermint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "peppermint leaf",
+   "to": "peppermint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "spearmint leaves",
+   "to": "spearmint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "spearmint leaf",
+   "to": "spearmint",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (the culinary herb is sold as its leaf: an inference, no source read states the plant part), same form"
+  },
+  {
+   "from": "coriander leaves",
+   "to": "coriander leaf",
+   "rule": "leaf-plural",
+   "basis": "same ingredient, same plant part (leaf), plural of the existing row",
+   "part_named_by": "sr_legacy FDC id 170921 \"Spices, coriander leaf, dried\""
+  },
+  {
+   "from": "dill leaves",
+   "to": "dill weed",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched",
+   "part_named_by": "sr_legacy FDC id 171322 \"Spices, dill weed, dried\""
+  },
+  {
+   "from": "dill leaf",
+   "to": "dill weed",
+   "rule": "leaf-form",
+   "basis": "same ingredient, same plant part (dill weed is the leaf), same form; bare 'dill' stays untouched",
+   "part_named_by": "sr_legacy FDC id 171322 \"Spices, dill weed, dried\""
+  },
+  {
+   "from": "bay leaves",
+   "to": "bay leaf",
+   "rule": "leaf-plural",
+   "basis": "plural of the existing row"
+  },
+  {
+   "from": "chillis",
+   "to": "chilli",
+   "rule": "plural-spelling",
+   "basis": "plural of the existing row"
+  },
+  {
+   "from": "red chilis",
+   "to": "red chili",
+   "rule": "plural-spelling",
+   "basis": "plural of the existing row"
+  }
+ ],
+ "must_stay_unmapped": [
+  "fenugreek leaves",
+  "basil seeds",
+  "basil seed",
+  "chilli seeds",
+  "turmeric leaves",
+  "ginger leaves",
+  "garlic leaves",
+  "mustard leaves",
+  "cardamom leaves",
+  "pepper leaves",
+  "cumin leaves",
+  "sage seeds",
+  "mint seeds",
+  "oregano seeds",
+  "peppermint seeds",
+  "thyme seeds",
+  "paprika leaves",
+  "saffron leaves",
+  "clove leaves",
+  "cinnamon leaves",
+  "dill seed leaves",
+  "cuminseeds",
+  "oreganoleaves"
+ ],
+ "must_stay_unrecognised": [
+  "coriander leaf extract",
+  "oregano leaf extract",
+  "mint leaf extract",
+  "basil leaf oil"
+ ],
+ "notes": "curry leaf/leaves rows were dropped by the gate: mapping onto the row 'dried curry leaves' rewrites that row's own name (drift check). Processed forms (extract, oil) may have their name rewritten by a leaf alias but must stay unrecognised."
+}

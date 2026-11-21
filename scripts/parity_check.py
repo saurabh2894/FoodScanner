@@ -142,6 +142,9 @@ CORPUS = [
     "Ingredients: Rice, Rice Bran Oil Seasoning Powder : Onion, salt.", "Ingredients: Rice, Rice Bran Oil Dried Flakes (5%): Onion, salt.",
     "Ingredients: Rice, Paprika Extract (5%): Roasted Sesame, salt.", "Ingredients: Rice, Thyme Mix (10%): Roasted Sesame, salt.", "Ingredients: Rice, Oregano Blend: Roasted Sesame, salt.",
     "Ingredients: Rice, Rice Bran Oil Seasoning : Onion, salt, flavour.", "Ingredients: Rice, Rice Bran Oil Seasoning (12%): Onion, salt, flavour.",
+    # plural-policy-1 synonyms (tests/test_plural_synonyms_1.py, SYNTHETIC): plural/leaf forms map, other parts and processed forms do not
+    "Ingredients: Rice, cumin seeds, caraway seeds, fenugreek seeds, anise seeds, ajwain seeds, salt.", "Ingredients: Rice, basil leaves, mint leaf, peppermint leaves, coriander leaves, dill leaves, bay leaves, salt.",
+    "Ingredients: Rice, fenugreek leaves, basil seeds, chilli seeds, turmeric leaves, salt.", "Ingredients: Rice, oregano leaf extract, mint leaf extract, basil leaf oil, salt.", "Ingredients: Rice, chillis, red chilis, salt.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
