@@ -166,7 +166,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (almonds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "almonds (bottled)": {
@@ -177,7 +177,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (almonds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "almonds (preserved)": {
@@ -188,7 +188,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (almonds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "almonds (brine)": {
@@ -225,7 +225,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (almonds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (almonds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "almonds (sunflower oil)": {
@@ -364,7 +364,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (almonds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (almonds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "almonds (peeled)": {
@@ -414,7 +414,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pumpkin seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pumpkin seeds (bottled)": {
@@ -425,7 +425,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pumpkin seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pumpkin seeds (preserved)": {
@@ -436,7 +436,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pumpkin seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pumpkin seeds (brine)": {
@@ -473,7 +473,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pumpkin seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pumpkin seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pumpkin seeds (sunflower oil)": {
@@ -612,7 +612,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pumpkin seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pumpkin seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pumpkin seeds (peeled)": {
@@ -662,7 +662,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (flax seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "flax seeds (bottled)": {
@@ -673,7 +673,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (flax seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "flax seeds (preserved)": {
@@ -684,7 +684,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (flax seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "flax seeds (brine)": {
@@ -721,7 +721,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (flax seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (flax seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "flax seeds (sunflower oil)": {
@@ -860,7 +860,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (flax seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (flax seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "flax seeds (peeled)": {
@@ -910,7 +910,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (acorns (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "acorns (bottled)": {
@@ -921,7 +921,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (acorns (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "acorns (preserved)": {
@@ -932,7 +932,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (acorns (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "acorns (brine)": {
@@ -969,7 +969,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (acorns (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (acorns (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "acorns (sunflower oil)": {
@@ -1108,7 +1108,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (acorns (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (acorns (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "acorns (peeled)": {
@@ -1158,7 +1158,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (beechnuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "beechnuts (bottled)": {
@@ -1169,7 +1169,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (beechnuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "beechnuts (preserved)": {
@@ -1180,7 +1180,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (beechnuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "beechnuts (brine)": {
@@ -1217,7 +1217,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (beechnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (beechnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "beechnuts (sunflower oil)": {
@@ -1356,7 +1356,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (beechnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (beechnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "beechnuts (peeled)": {
@@ -1406,7 +1406,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (brazil nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "brazil nuts (bottled)": {
@@ -1417,7 +1417,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (brazil nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "brazil nuts (preserved)": {
@@ -1428,7 +1428,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (brazil nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "brazil nuts (brine)": {
@@ -1465,7 +1465,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (brazil nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (brazil nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "brazil nuts (sunflower oil)": {
@@ -1604,7 +1604,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (brazil nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (brazil nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "brazil nuts (peeled)": {
@@ -1654,7 +1654,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (butternuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "butternuts (bottled)": {
@@ -1665,7 +1665,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (butternuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "butternuts (preserved)": {
@@ -1676,7 +1676,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (butternuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "butternuts (brine)": {
@@ -1713,7 +1713,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (butternuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (butternuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "butternuts (sunflower oil)": {
@@ -1852,7 +1852,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (butternuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (butternuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "butternuts (peeled)": {
@@ -1902,7 +1902,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (cashew nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "cashew nuts (bottled)": {
@@ -1913,7 +1913,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (cashew nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "cashew nuts (preserved)": {
@@ -1924,7 +1924,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (cashew nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "cashew nuts (brine)": {
@@ -1961,7 +1961,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cashew nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (cashew nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "cashew nuts (sunflower oil)": {
@@ -2100,7 +2100,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cashew nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (cashew nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "cashew nuts (peeled)": {
@@ -2150,7 +2150,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chestnuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chestnuts (bottled)": {
@@ -2161,7 +2161,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chestnuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chestnuts (preserved)": {
@@ -2172,7 +2172,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chestnuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chestnuts (brine)": {
@@ -2209,7 +2209,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chestnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (chestnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "chestnuts (sunflower oil)": {
@@ -2348,7 +2348,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chestnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (chestnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "chestnuts (peeled)": {
@@ -2398,7 +2398,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chia seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chia seeds (bottled)": {
@@ -2409,7 +2409,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chia seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chia seeds (preserved)": {
@@ -2420,7 +2420,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (chia seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "chia seeds (brine)": {
@@ -2457,7 +2457,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chia seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (chia seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "chia seeds (sunflower oil)": {
@@ -2596,7 +2596,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chia seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (chia seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "chia seeds (peeled)": {
@@ -2646,7 +2646,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (ginkgo nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "ginkgo nuts (bottled)": {
@@ -2657,7 +2657,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (ginkgo nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "ginkgo nuts (preserved)": {
@@ -2668,7 +2668,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (ginkgo nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "ginkgo nuts (brine)": {
@@ -2705,7 +2705,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (ginkgo nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (ginkgo nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "ginkgo nuts (sunflower oil)": {
@@ -2844,7 +2844,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (ginkgo nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (ginkgo nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "ginkgo nuts (peeled)": {
@@ -2894,7 +2894,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hazelnuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hazelnuts (bottled)": {
@@ -2905,7 +2905,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hazelnuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hazelnuts (preserved)": {
@@ -2916,7 +2916,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hazelnuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hazelnuts (brine)": {
@@ -2953,7 +2953,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hazelnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (hazelnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "hazelnuts (sunflower oil)": {
@@ -3092,7 +3092,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hazelnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (hazelnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "hazelnuts (peeled)": {
@@ -3142,7 +3142,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hickory nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hickory nuts (bottled)": {
@@ -3153,7 +3153,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hickory nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hickory nuts (preserved)": {
@@ -3164,7 +3164,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (hickory nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "hickory nuts (brine)": {
@@ -3201,7 +3201,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hickory nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (hickory nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "hickory nuts (sunflower oil)": {
@@ -3340,7 +3340,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hickory nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (hickory nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "hickory nuts (peeled)": {
@@ -3390,7 +3390,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (macadamia nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "macadamia nuts (bottled)": {
@@ -3401,7 +3401,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (macadamia nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "macadamia nuts (preserved)": {
@@ -3412,7 +3412,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (macadamia nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "macadamia nuts (brine)": {
@@ -3449,7 +3449,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (macadamia nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (macadamia nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "macadamia nuts (sunflower oil)": {
@@ -3588,7 +3588,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (macadamia nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (macadamia nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "macadamia nuts (peeled)": {
@@ -3638,7 +3638,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pecans (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pecans (bottled)": {
@@ -3649,7 +3649,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pecans (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pecans (preserved)": {
@@ -3660,7 +3660,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pecans (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pecans (brine)": {
@@ -3697,7 +3697,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pecans (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pecans (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pecans (sunflower oil)": {
@@ -3836,7 +3836,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pecans (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pecans (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pecans (peeled)": {
@@ -3886,7 +3886,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pili nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pili nuts (bottled)": {
@@ -3897,7 +3897,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pili nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pili nuts (preserved)": {
@@ -3908,7 +3908,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pili nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pili nuts (brine)": {
@@ -3945,7 +3945,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pili nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pili nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pili nuts (sunflower oil)": {
@@ -4084,7 +4084,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pili nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pili nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pili nuts (peeled)": {
@@ -4134,7 +4134,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pine nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pine nuts (bottled)": {
@@ -4145,7 +4145,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pine nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pine nuts (preserved)": {
@@ -4156,7 +4156,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pine nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pine nuts (brine)": {
@@ -4193,7 +4193,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pine nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pine nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pine nuts (sunflower oil)": {
@@ -4332,7 +4332,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pine nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pine nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pine nuts (peeled)": {
@@ -4382,7 +4382,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pistachio nuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pistachio nuts (bottled)": {
@@ -4393,7 +4393,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pistachio nuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pistachio nuts (preserved)": {
@@ -4404,7 +4404,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (pistachio nuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "pistachio nuts (brine)": {
@@ -4441,7 +4441,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pistachio nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pistachio nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pistachio nuts (sunflower oil)": {
@@ -4580,7 +4580,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pistachio nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (pistachio nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "pistachio nuts (peeled)": {
@@ -4630,7 +4630,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (safflower seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "safflower seeds (bottled)": {
@@ -4641,7 +4641,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (safflower seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "safflower seeds (preserved)": {
@@ -4652,7 +4652,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (safflower seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "safflower seeds (brine)": {
@@ -4689,7 +4689,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (safflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (safflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "safflower seeds (sunflower oil)": {
@@ -4828,7 +4828,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (safflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (safflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "safflower seeds (peeled)": {
@@ -4878,7 +4878,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sesame seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sesame seeds (bottled)": {
@@ -4889,7 +4889,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sesame seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sesame seeds (preserved)": {
@@ -4900,7 +4900,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sesame seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sesame seeds (brine)": {
@@ -4937,7 +4937,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sesame seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (sesame seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "sesame seeds (sunflower oil)": {
@@ -5076,7 +5076,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sesame seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (sesame seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "sesame seeds (peeled)": {
@@ -5126,7 +5126,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sunflower seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sunflower seeds (bottled)": {
@@ -5137,7 +5137,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sunflower seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sunflower seeds (preserved)": {
@@ -5148,7 +5148,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (sunflower seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "sunflower seeds (brine)": {
@@ -5185,7 +5185,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sunflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (sunflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "sunflower seeds (sunflower oil)": {
@@ -5324,7 +5324,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sunflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (sunflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "sunflower seeds (peeled)": {
@@ -5374,7 +5374,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (walnuts (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "walnuts (bottled)": {
@@ -5385,7 +5385,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (walnuts (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "walnuts (preserved)": {
@@ -5396,7 +5396,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (walnuts (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "walnuts (brine)": {
@@ -5433,7 +5433,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (walnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (walnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "walnuts (sunflower oil)": {
@@ -5572,7 +5572,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (walnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (walnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "walnuts (peeled)": {
@@ -5622,7 +5622,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (watermelon seeds (canned)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "watermelon seeds (bottled)": {
@@ -5633,7 +5633,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (watermelon seeds (bottled)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "watermelon seeds (preserved)": {
@@ -5644,7 +5644,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "reason_after": "a canned, bottled or preserved nut or seed (watermelon seeds (preserved)): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established",
    "unassessed_after": []
   },
   "watermelon seeds (brine)": {
@@ -5681,7 +5681,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (watermelon seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (watermelon seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "watermelon seeds (sunflower oil)": {
@@ -5820,7 +5820,7 @@
     "kind": "nut_seed"
    },
    "drivers_after": [],
-   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (watermelon seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "reason_after": "a bracket on a nut or seed item names content the vocabulary does not recognise (watermelon seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
    "unassessed_after": []
   },
   "watermelon seeds (peeled)": {

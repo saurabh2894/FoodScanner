@@ -42,3 +42,27 @@ def test_synthetic_plain_and_benign_forms_keep_group_1(t):
 
 def test_synthetic_other_kinds_are_unchanged():
     assert g("Kidney Beans (canned)") is None and g("Rice (XQ9)") is None and g("Mango (preserved)") is None
+
+
+def reason(text):
+    a = analyse_text(f"Ingredients: {text}.", source="text")
+    return a.reason
+
+
+def test_synthetic_nut_reasons_name_nuts_and_cite_the_general_group_3_definition_only():
+    r = reason("Almonds (canned)")
+    assert r.startswith("a canned, bottled or preserved nut or seed (") and "legume" not in r and "vegetable" not in r and "brine and fruit in syrup" not in r
+    assert "Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added" in r and "added substances are not established" in r
+    r = reason("Walnuts (XQ9)")
+    assert r.startswith("a bracket on a nut or seed item names content the vocabulary does not recognise") and "legume" not in r
+
+
+def test_synthetic_mixed_lists_use_kind_neutral_reasons():
+    assert reason("Almonds (XQ9), Rice (XQ9)").startswith("a bracket on a food item names content")
+    assert reason("Almonds (canned), Kidney Beans (canned)").startswith("a canned, bottled or preserved food (")
+
+
+def test_synthetic_existing_kind_reasons_are_unchanged_text():
+    assert reason("kidney beans (canned)") == ("a canned, bottled or preserved legume, vegetable or fruit (kidney beans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, "
+                                              "but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
+    assert reason("rice (XQ9)").startswith("a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (XQ9): xq9)")
