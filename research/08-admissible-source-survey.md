@@ -31,3 +31,9 @@ What it could unlock among parked terms, IF you accept it as a NAMING-and-placem
 1. Confirm the table row labels for footnotes 2-5 of PMC10127522 (a slow single read of the table), record the licence if visible, then decide whether it is admissible as a placement source for cocoa powder, yeast and flours (rows would still be PROVISIONAL, and the standing exclusions stay).
 2. Retry FSSAI later; if it stays down, tell me whether you can allow a mirror or want an alternative naming source.
 3. Space out further PMC reads (one every few seconds, stop at the first challenge page).
+
+# Decision record (owner, 2026-11-21) and confirmed row labels
+- PMC10127522 is ADMISSIBLE as a CORROBORATING placement source only, under these conditions: read-only, no bulk import of its tables; rows cite it by identifier with "licence unverified" and PARAPHRASE its coding (no verbatim excerpt beyond a few words); never the sole support for a placement that contradicts or extends beyond FAO 2019 / Monteiro: then park and flag; its context is dietary-recall items, so label-context conditions still apply.
+- Footnote row labels CONFIRMED from the article's table markup (not inferred): footnote 2 belongs to "Other unprocessed or minimally processed foods"; footnote 3 to "Table sugar" (under Processed culinary ingredients); footnote 4 to "Animal fats"; footnote 5 to "Other processed culinary ingredients"; footnote 6 to "Other processed foods".
+- FSSAI stays blocked (no circumvention); if it becomes reachable it is NAMING-only. No alternative Indian naming source was reachable without circumvention; none used.
+- The reachable/blocked host lists above are the merged evidence for this survey. First application: evaluation/pmc_reresearch_1/.

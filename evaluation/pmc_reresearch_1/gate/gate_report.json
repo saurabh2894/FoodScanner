@@ -1,0 +1,115 @@
+{
+ "decisions_id": "pmc-decisions-1",
+ "n_terms": 7,
+ "by_disposition": {
+  "ACCEPT_ROW": 2,
+  "PARK": 5
+ },
+ "paste_inputs_by_disposition": {
+  "ACCEPT_ROW": 2,
+  "PARK": 5
+ },
+ "rows": [
+  {
+   "term": "starch",
+   "kind": "culinary",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"starches extracted from corn and other plants\"; exact term not named verbatim (the clause names the plural 'starches'); corroborated, not solely supported, by PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241; licence unverified): its NHANES food-group coding places starches among 'Other processed culinary ingredients' (a paraphrase; dietary-recall items, not ingredient-list parsing); demand-driven row (pmc-decisions-1)",
+   "demand_term": "starch"
+  },
+  {
+   "term": "tapioca starch",
+   "kind": "culinary",
+   "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"starches extracted from corn and other plants\"; exact term not named by the clause; that tapioca starch is a starch extracted from cassava, a plant, is an inference not stated by a source read; corroborated, not solely supported, by PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241; licence unverified): its NHANES food-group coding places starches among 'Other processed culinary ingredients' (a paraphrase; dietary-recall items, not ingredient-list parsing); demand-driven row (pmc-decisions-1)",
+   "demand_term": "tapioca starch"
+  }
+ ],
+ "synonyms": [],
+ "flip": {
+  "changed_counts": {
+   "group": 0,
+   "drivers": 0,
+   "status": 0,
+   "reason": 0,
+   "warnings": 0,
+   "ingredients": 0,
+   "unassessed": 5,
+   "ins_mappings": 0
+  },
+  "changed_inputs": {
+   "group": [],
+   "drivers": [],
+   "status": [],
+   "reason": [],
+   "warnings": [],
+   "ingredients": [],
+   "unassessed": [
+    "b1/N03",
+    "b1/N05",
+    "b1/N12",
+    "b3/Q14",
+    "dev/F03"
+   ],
+   "ins_mappings": []
+  },
+  "unassessed_attribution": {
+   "b1/N03": {
+    "recognised_now": [
+     "tapioca starch"
+    ],
+    "attributed_to_rows": [
+     "tapioca starch"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N05": {
+    "recognised_now": [
+     "Tapioca Starch"
+    ],
+    "attributed_to_rows": [
+     "tapioca starch"
+    ],
+    "newly_unassessed": []
+   },
+   "b1/N12": {
+    "recognised_now": [
+     "starch"
+    ],
+    "attributed_to_rows": [
+     "starch"
+    ],
+    "newly_unassessed": []
+   },
+   "b3/Q14": {
+    "recognised_now": [
+     "Starch"
+    ],
+    "attributed_to_rows": [
+     "starch"
+    ],
+    "newly_unassessed": []
+   },
+   "dev/F03": {
+    "recognised_now": [
+     "Starch"
+    ],
+    "attributed_to_rows": [
+     "starch"
+    ],
+    "newly_unassessed": []
+   }
+  },
+  "unexplained": [],
+  "flips": [],
+  "group_flips": {},
+  "inputs": 66,
+  "harness": {
+   "lexicon_rows_before": 148,
+   "lexicon_rows_after": 150,
+   "synonym_rows_added": 0,
+   "terms_recognised_before": [],
+   "terms_recognised_after": 2
+  }
+ },
+ "errors": [],
+ "verdict": "READY_FOR_REVIEW"
+}
