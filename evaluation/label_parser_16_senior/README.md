@@ -1,6 +1,6 @@
 # label_parser_16 senior integration (PROPOSAL; merge stops with the owner)
 
-Branch claude/label-parser-16-senior off main a6cacbc00fe3f8543a78f002b952a9a64375c4fd (origin/main verified at the start of this work). Junior commit cherry-picked: 91bd74e0e8d526f8a00a0bd78fcec6790c277463 (the only commit above a6cacbc on antigravity/label-parser-16; its STATUS.md names `cccb3e98fedd89994efc444540b98dd55fd15d70`, which does not exist in the repository: the STATUS SHA is stale, the branch tip is 91bd74e). Senior commit: a4a1cc9b7f9a3649bae6ba6dc5ccb59f0e6c1a53.
+Branch claude/label-parser-16-senior off main a6cacbc00fe3f8543a78f002b952a9a64375c4fd (origin/main verified at the start of this work). Junior commit cherry-picked: 91bd74e0e8d526f8a00a0bd78fcec6790c277463 (the only commit above a6cacbc on antigravity/label-parser-16; its STATUS.md names `cccb3e98fedd89994efc444540b98dd55fd15d70`, which does not exist in the repository: the STATUS SHA is stale, the branch tip is 91bd74e). Senior commits: a4a1cc9b7f9a3649bae6ba6dc5ccb59f0e6c1a53 (code, tests, gates) and the README commit on top.
 
 ## 1. What the junior change does (kept)
 Trailing footnote marks removal in `normalise_ingredient`; `&`- or `and`-joined pairs inside a bracket split when both sides are recognised with their shared modifier (`Rice and Oat (22.3%)`); culinary-blend guard (`_names_two_oils`) and shared code-list guard kept. No lexicon, synonym, marker or policy change. One existing negative control (`Rice and Oat` whole) became `Rice or Oat` in `tests/test_ampersand_split_1.py` because 'and' pairs now split by design; that is the junior's deliberate change and is kept.
@@ -26,10 +26,11 @@ Correction (`normalise.py`, mirrored in `foodscan.js`): a mark (#, ##, ###, *, *
 ## 5. Not done here
 Priority 2 (abstention headline aggregation), Priority 3 (animal-kind and process guard), and the real-photo UI retest of the multigrain label. No Task 15 prose or claims imported.
 
-## 6. Exact diff vs main a6cacbc (11 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
+## 6. Exact diff vs main a6cacbc (12 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
 - `evaluation/label_parser_16/README.md`
 - `evaluation/label_parser_16/STATUS.md`
 - `evaluation/label_parser_16/matrix_comparison.json.txt`
+- `evaluation/label_parser_16_senior/README.md`
 - `evaluation/label_parser_16_senior/applied_gate/applied_gate.json`
 - `scripts/parity_check.py`
 - `src/foodscan/normalise.py`
