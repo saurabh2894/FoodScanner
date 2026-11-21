@@ -67,6 +67,6 @@ Notes: `Roasted Salted Buckwheat` is Group 1 and was before this branch (the exi
 ## 5. Batch-4 staging note aligned
 The staging guard for 'roasted'/'toasted' in `data/ingest/class_grains_1.json` (word_guard.why) and finding 2 of `evaluation/class_bulk_4/README.md` now state that the guard is a staging-scope note and that runtime Group 1 for plain roasted/toasted grains rests on the FAO p.6 methods clause (legume precedent). No rows, decisions or hashes of staged outputs were changed (the rule file hash differs from scope_summary.json by design; decisions are unchanged).
 
-## 6. Exact diff vs main 22966c8 (15 files incl. this README and the gate artifact)
+## 6. Exact diff vs main 22966c8 (17 files incl. this README and the gate artifact)
 `data/ingest/class_grains_1.json` (note), `data/ingest/per_form_1.json` (controls), `evaluation/class_bulk_4/README.md` (note), `evaluation/per_form_1/{README.md,fao_p6_quote.txt,applied_gate/applied_gate.json}`, `scripts/applied_gate.py` (--descriptor-surface), `scripts/class_gate.py` (reason text counts for attribution), `scripts/parity_check.py` (+4 lines, 0 removed), `src/foodscan/classify.py` (+15/-2), `src/foodscan/resources/descriptors.csv` (+1 row, header gains `kinds`), `tests/test_per_form_1.py` (new) and the four updated tests, `web_preview/foodscan.js` (+10/-2). normalise.py, lexicon.csv, synonyms.csv, markers.csv: untouched.
 
