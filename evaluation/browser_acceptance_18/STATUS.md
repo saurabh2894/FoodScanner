@@ -1,0 +1,24 @@
+# Status: Task 18 - Repeatable Real-Label Browser Acceptance Gate
+
+- **Branch**: `antigravity/browser-acceptance-18`
+- **Base Commit**: `4e626f9cc4775bed7ff4426c10eedcc6c93eb3ae`
+- **Senior Integration Merged on Base**: `3ff84b5` (509 lexicon rows, 921 parity)
+- **State**: `READY FOR SENIOR REVIEW`
+- **Test Gate Performance**:
+  - Unique real labels tested: **6** (L01–L06)
+  - Synthetic negative controls tested: **2** (NC01 empty, NC02 unknown chemical)
+  - Total executions: **13**
+  - Passed executions: **13** (100% pass)
+  - Failed executions: **0**
+  - Python test runner: `pytest tests/test_browser_acceptance_18.py` (27.08s, passed)
+  - CLI runner: `python scripts/run_browser_acceptance_18.py --smoke-live` (24.3s, passed)
+  - JS / Python parity: **921 / 921 identical** (`scripts/parity_check.py`)
+- **Stale Build Telemetry**:
+  - Local build baseline: 921 / 921 parity, 509 lexicon rows
+  - Production deployment (`https://foodscan-nine.vercel.app/`): 859 / 859 parity, 433 lexicon rows (stale build detected)
+- **Scope Compliance**:
+  - No edits to classification logic, animal guards, or headline policy.
+  - No edits to `src/foodscan/resources/` (lexicon/synonyms/markers).
+  - No duplication of Task 17 preview fixes.
+  - Zero merges from unreviewed branches (`16` or `17`).
+  - No deployment, no spending, no external API calls.

@@ -1,0 +1,363 @@
+{
+  "gateName": "repeatable_real_label_browser_acceptance_gate",
+  "runTimestamp": "2026-11-21T16:19:59.965Z",
+  "environment": {
+    "targetUrl": "http://127.0.0.1:49230/index.html",
+    "browser": "Google Chrome",
+    "cdpVersion": "1.3"
+  },
+  "clientConfusionAudit": {
+    "localBuild": {
+      "url": "http://127.0.0.1:49230/index.html",
+      "footerText": "This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; 921 of 921 matched at build time.",
+      "parityMatched": 921,
+      "parityTotal": 921,
+      "isCurrentSeniorBaseline": true
+    },
+    "liveProduction": {
+      "url": "https://foodscan-nine.vercel.app/",
+      "footerText": "This page is a browser copy of the Python foodscan classifier. A parity script runs both on the same texts and they must match; 859 of 859 matched at build time.",
+      "parityMatched": 859,
+      "parityTotal": 859,
+      "screenshot": "live_production_desktop_1280x720.png",
+      "staleBuildDetected": true,
+      "notes": "Production serves earlier build (859 parity) while local main tests 921 parity."
+    }
+  },
+  "labels": {
+    "L01": {
+      "meta": {
+        "id": "L01_multigrain",
+        "name": "Original Multigrain Flour Blend Label",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": true,
+        "imageSha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+        "provenanceLimitations": "Physical pack photo uploaded via web chat (57KB, 607x494 relay compressed, not RAW camera file).",
+        "whyUseful": "Validates bracketed blend pair splitting, footnote stripping on # and ##, and honest abstention on unplaced sprouted grains & powder uncertainty."
+      },
+      "pasteFlow": {
+        "submittedLength": 278,
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group; other open items: recognised by name only, no source read places Sprouted Ragi, Sprouted Jowar, Vitamins#, Minerals##; a powder is named and its composition is not established: Date Powder (9%), Banana Powder, Strawberry Powder (5%), Beetroot Powder",
+        "observedGroup": null,
+        "isAbstain": true,
+        "warningsCount": 6,
+        "driversFound": [
+          "Antioxidant (Natural Tocopherol): \"antioxidant\" (unlisted_additive)"
+        ],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l01_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      },
+      "editAndReanalyse": {
+        "action": "Appended \" Sugar, Maltodextrin.\"",
+        "observedHeadline": "NOVA group 4: ultra-processed foods",
+        "observedGroup": 4,
+        "drivers": [
+          "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1"
+        ],
+        "passed": true,
+        "screenshot": "l01_multigrain_edited_reanalyse_1280x720.png",
+        "provesFreshInputAssociation": true
+      },
+      "photoFlow": {
+        "imagePath": "C:\\Users\\saura\\.gemini\\antigravity\\scratch\\FoodScanner\\evaluation\\browser_acceptance_18\\inputs\\original_multigrain_label.jpg",
+        "imageSha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+        "durationMs": 4164,
+        "photoStatus": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "diffVsReference": {
+          "refLength": 278,
+          "ocrLength": 423,
+          "first50CharsOcr": "INGREDIENTS\n\nMultigrain Flour Blend (45.7%) [Sprou",
+          "exactMatch": false
+        },
+        "ocrHeadline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group; other open items: recognised by name only, no source read places Sprouted Ragi, Sprouted Jowar, Vitamins”, Minerals**; a powder is named and its composition is not established: Date Powder (9%), Banana Powder, Strawberry Powder (5%), Beetroot Powder",
+        "ocrGroup": null,
+        "ocrIsAbstain": true,
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "photo_l01_complete_1280x720.png"
+      },
+      "ocrCorrectionFlow": {
+        "action": "Corrected OCR closing quote to footnote hash (# and ##) in Paste tab and clicked Analyse",
+        "observedHeadline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group; other open items: recognised by name only, no source read places Sprouted Ragi, Sprouted Jowar, Vitamins#, Minerals##; a powder is named and its composition is not established: Date Powder (9%), Banana Powder, Strawberry Powder (5%), Beetroot Powder",
+        "observedGroup": null,
+        "isAbstain": true,
+        "passed": true,
+        "screenshot": "l01_multigrain_ocr_corrected_paste_1280x720.png"
+      }
+    },
+    "L02": {
+      "meta": {
+        "id": "L02_millet_puff",
+        "name": "Millet Puff Snack Pack Label",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": true,
+        "imageSha256": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+        "provenanceLimitations": "Real packaged food label photo in repo fixtures, cropped to ingredients section.",
+        "whyUseful": "Validates section headings with percentages (Puff 88%:, Seasoning 12%:), additive INS codes, unassessed term disclosure (Amchur), and Group 4 classification."
+      },
+      "pasteFlow": {
+        "submittedLength": 413,
+        "headline": "NOVA group 4: ultra-processed foods",
+        "observedGroup": 4,
+        "isAbstain": false,
+        "warningsCount": 8,
+        "driversFound": [
+          "Natural and Nature Identical Flavours (Seasoning 12%): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)"
+        ],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l02_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      },
+      "photoFlow": {
+        "imagePath": "C:\\Users\\saura\\.gemini\\antigravity\\scratch\\FoodScanner\\tests\\fixtures\\millet_puff_label.jpg",
+        "imageSha256": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+        "durationMs": 4094,
+        "photoStatus": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "diffVsReference": {
+          "refLength": 413,
+          "ocrLength": 421,
+          "first50CharsOcr": "| ~ INGREDIENTS:\n\nPuff 88%: Supergrain Blend (Jowa",
+          "exactMatch": false
+        },
+        "ocrHeadline": "NOVA group 4: ultra-processed foods",
+        "ocrGroup": 4,
+        "ocrIsAbstain": false,
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "photo_l02_complete_1280x720.png"
+      }
+    },
+    "L03": {
+      "meta": {
+        "id": "L03_potato_chips",
+        "name": "Potato Chips Label",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": true,
+        "imageSha256": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+        "provenanceLimitations": "Real potato chip pack photographed at small scale.",
+        "whyUseful": "Validates structural syntax warning on unclosed bracket (*Seasoning ( opened and not closed), multiple UPF markers, and Group 4 assignment."
+      },
+      "pasteFlow": {
+        "submittedLength": 379,
+        "headline": "NOVA group 4: ultra-processed foods",
+        "observedGroup": 4,
+        "isAbstain": false,
+        "warningsCount": 8,
+        "driversFound": [
+          "Maltodextrin: \"maltodextrin\" (derived_substance)research/02 marker class 1",
+          "Flavour (Natural and Nature Identical Flavouring Substances): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+          "Hydrolysed Vegetable Protein: \"hydrolysed vegetable protein\" (derived_substance)PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+          "Flavour Enhancers (627, 631): \"flavour\" (cosmetic_additive)research/02 marker class 2 (flavourings)",
+          "Flavour Enhancers (627, 631): \"enhancer\" (cosmetic_additive)research/02 marker class 2 (flavour enhancers)",
+          "Flavour Enhancers (627, 631): INS 627 (disodium guanylate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+          "Flavour Enhancers (627, 631): INS 631 (disodium inosinate)Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2"
+        ],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l03_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      },
+      "photoFlow": {
+        "imagePath": "C:\\Users\\saura\\.gemini\\antigravity\\scratch\\FoodScanner\\tests\\fixtures\\chips_label.png",
+        "imageSha256": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+        "durationMs": 3118,
+        "photoStatus": "Done. The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.",
+        "diffVsReference": {
+          "refLength": 379,
+          "ocrLength": 600,
+          "first50CharsOcr": "VP. UY VRS RAP FW EEF WYNN Tvyve Sw yYyyvw\nINGREDI",
+          "exactMatch": false
+        },
+        "ocrHeadline": "NOVA group 4: ultra-processed foods",
+        "ocrGroup": 4,
+        "ocrIsAbstain": false,
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "photo_l03_complete_1280x720.png"
+      }
+    },
+    "L04": {
+      "meta": {
+        "id": "L04_negation_r1",
+        "name": "Dlecta Cheese / Milk Product (Negation R1)",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": false,
+        "imageSha256": null,
+        "provenanceLimitations": "Open Food Facts India (barcode prefix 890), photo not retained in repository git tree.",
+        "whyUseful": "Validates negation handling (\"CONTAINS NO ADDED FLAVOUR\") without false Group 4 assignment."
+      },
+      "pasteFlow": {
+        "submittedLength": 628,
+        "headline": "Not enough information: only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group; other open items: not in the local vocabulary: MICROBIAL CULTU",
+        "observedGroup": null,
+        "isAbstain": true,
+        "warningsCount": 4,
+        "driversFound": [
+          "PAST STABILIZER (INS 509): \"stabiliser\" (unlisted_additive)",
+          "PAST STABILIZER (INS 509): INS 509 (not in local mapping)"
+        ],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l04_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      }
+    },
+    "L05": {
+      "meta": {
+        "id": "L05_negation_r2",
+        "name": "Potato Snack Negation R2",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": false,
+        "imageSha256": null,
+        "provenanceLimitations": "Open Food Facts India, photo not retained in repository git tree.",
+        "whyUseful": "Validates multi-term absence statement (\"No artificial colours, flavours or preservatives\") without false Group 4."
+      },
+      "pasteFlow": {
+        "submittedLength": 266,
+        "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Spices & Condiments",
+        "observedGroup": null,
+        "isAbstain": true,
+        "warningsCount": 2,
+        "driversFound": [],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l05_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      }
+    },
+    "L06": {
+      "meta": {
+        "id": "L06_negation_r3",
+        "name": "Flavoured Curd Mixed Positive + Negative R3",
+        "kind": "REAL_LABEL",
+        "hasPhysicalPhoto": false,
+        "imageSha256": null,
+        "provenanceLimitations": "Open Food Facts India, photo not retained in repository git tree.",
+        "whyUseful": "Validates mixed clause: positive added flavour marker triggers Group 4 while negative \"NO PRESERVATIVES\" claim does not suppress it."
+      },
+      "pasteFlow": {
+        "submittedLength": 181,
+        "headline": "NOVA group 4: ultra-processed foods",
+        "observedGroup": 4,
+        "isAbstain": false,
+        "warningsCount": 3,
+        "driversFound": [
+          "CONTAINS ADDED FLAVOUR(S) (NATURE IDENTICAL & ARTIFICIAL FLAVOURING SUBSTANCES-ROSE FLAVOUR): declared in \"Contains\" statement: \"flavour\"research/02 marker class 2 (flavourings)"
+        ],
+        "passed": true,
+        "failureReason": null,
+        "screenshot": "paste_l06_1280x720.png",
+        "layout": {
+          "hasHorizontalOverflow": false,
+          "btnAnalyseVisible": true
+        }
+      }
+    }
+  },
+  "syntheticControls": {
+    "NC01_empty": {
+      "name": "Empty Input Negative Control",
+      "kind": "SYNTHETIC_CONTROL",
+      "submittedText": "",
+      "observedHeadline": "Not enough information: No text to analyse",
+      "observedGroup": null,
+      "isAbstain": true,
+      "noStaleGroupVisible": true,
+      "passed": true,
+      "screenshot": "nc01_empty_input_1280x720.png"
+    },
+    "NC02_unknown_compound": {
+      "name": "Unknown Synthetic Chemical Negative Control",
+      "kind": "SYNTHETIC_CONTROL",
+      "submittedText": "Ingredients: SyntheticChemicalX999, FakeCompoundZ404.",
+      "observedHeadline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: SyntheticChemicalX999, FakeCompoundZ404",
+      "observedGroup": null,
+      "isAbstain": true,
+      "noStaleGroupVisible": true,
+      "passed": true,
+      "screenshot": "nc02_unknown_chemical_1280x720.png"
+    }
+  },
+  "pixelInspection": {
+    "desktop_1280x720": {
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "hasHorizontalOverflow": false,
+      "analyseButton": {
+        "top": 278.8125,
+        "left": 297.5,
+        "width": 91.53125,
+        "height": 34.59375,
+        "visible": true
+      },
+      "photoAnalyseButton": {
+        "top": 0,
+        "left": 0,
+        "width": 0,
+        "height": 0,
+        "visible": false
+      },
+      "resultCard": {
+        "top": 350.40625,
+        "left": 280.5,
+        "width": 704,
+        "height": 1254.5,
+        "visible": true
+      },
+      "screenshot": "viewport_desktop_1280x720_multigrain.png"
+    },
+    "mobile_390x844": {
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "hasHorizontalOverflow": false,
+      "analyseButton": {
+        "top": 358.3125,
+        "left": 33,
+        "width": 91.53125,
+        "height": 34.59375,
+        "visible": true
+      },
+      "photoAnalyseButton": {
+        "top": 0,
+        "left": 0,
+        "width": 0,
+        "height": 0,
+        "visible": false
+      },
+      "resultCard": {
+        "top": 429.90625,
+        "left": 16,
+        "width": 358,
+        "height": 1785.15625,
+        "visible": true
+      },
+      "screenshot": "viewport_mobile_390x844_multigrain.png",
+      "noHorizontalOverflowPass": true,
+      "buttonsFullyVisible": true
+    }
+  },
+  "summary": {
+    "totalUniqueRealLabels": 6,
+    "totalExecutions": 13,
+    "passedExecutions": 13,
+    "failedExecutions": 0
+  }
+}
