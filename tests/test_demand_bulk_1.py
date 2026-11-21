@@ -1,0 +1,69 @@
+"""demand-bulk-1 as merged (SYNTHETIC unit cases; not labels, never counted as coverage): the 7 rows and 1 synonym behave as their kinds say, existing markers keep priority,
+and every parked, label-bound or marker-proposal term stays UNRECOGNISED (a decision file entry must never leak into the vocabulary)."""
+from __future__ import annotations
+
+import csv
+import json
+from pathlib import Path
+
+import pytest
+
+from foodscan.classify import is_recognised
+from foodscan.normalise import normalise_ingredient
+from foodscan.pipeline import analyse_text
+
+ROOT = Path(__file__).resolve().parent.parent
+DEC = json.loads((ROOT / "data" / "ingest" / "demand_decisions_1.json").read_text(encoding="utf-8"))["decisions"]
+LEX = {r["term"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
+
+
+def rec(t: str) -> bool:
+    return bool(is_recognised(normalise_ingredient(t).name))
+
+
+def grp(text: str):
+    a = analyse_text(text, source="text")
+    return (a.group if a.answered else None), a
+
+
+@pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] == "ACCEPT_ROW"], ids=lambda d: d["term"])
+def test_synthetic_accepted_rows_are_merged_provisional_with_the_verbatim_clause(d):
+    t = d.get("row_term", d["term"])
+    r = LEX[t]
+    assert r["kind"] == d["kind"] and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "demand-decisions-1" in r["source"]
+    assert rec(d["term"]) and rec(t)
+
+
+def test_synthetic_kinds_drive_the_group_exactly_as_the_source_clause_says():
+    assert grp("Ingredients: Beans")[0] == 1                               # legumes such as beans
+    assert grp("Ingredients: Beans, water, salt.")[0] == 3                 # Group 2 salt added to a Group 1 food, water ignored
+    assert grp("Ingredients: Cabbage")[0] == 1
+    assert grp("Ingredients: Wheat flour.")[0] == 1                        # single flour
+    g, a = grp("Ingredients: Wheat flour, salt.")
+    assert g is None and "flour-based list" in a.reason                    # kind flour: multi-item lists abstain, never forced
+    assert grp("Ingredients: Edible peanut oil.")[0] == 2                  # the descriptor word 'edible' is ignored, oil is Group 2
+
+
+def test_synthetic_standing_exclusions_stay_out_starch_and_cranberry_and_the_modified_starch_marker_is_untouched():
+    assert not rec("starch") and not rec("tapioca starch") and not rec("cranberry")                 # lexicon-1 senior-review exclusions
+    assert "starch" not in LEX and "cranberry" not in LEX
+
+
+def test_synthetic_existing_marker_keeps_priority_over_a_starch_in_the_list():
+    g, a = grp("Ingredients: Modified starch, rice.")
+    assert g == 4 and any("modified starch" in d.detail.lower() or "modified starch" in d.ingredient.lower() for d in a.drivers)
+
+
+def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
+    assert normalise_ingredient("potable water").name == "water" and rec("potable water")
+    assert not rec("potable") and not rec("mineral water x")
+
+
+@pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
+def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    assert not rec(d["term"]), f"{d['term']!r} ({d['disposition']}) must stay unrecognised until the owner decides"
+
+
+def test_synthetic_label_bound_juices_and_proposed_markers_do_not_decide_a_group():
+    g, a = grp("Ingredients: Cocoa butter, wheat gluten, apple juice, yeast extract, glucose syrup.")
+    assert g is None                                                        # abstains: nothing here is placed by a source read

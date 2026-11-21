@@ -33,6 +33,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] Cycle 2 workstream A (branch claude/plural-synonyms-1, off main d1bc5d5): 37 plural/leaf/plural-spelling synonyms via data/ingest/plural_policy_1.json + scripts/synonym_batch.py; evaluation/plural_synonyms_1/. Awaiting owner verification; NOT merged. Next: B (demand-driven bulk batches from evaluation/demand_inventory_1), then C (held-category sources).
 
+- [x] Cycle 2 B1 (branch claude/demand-bulk-1, off main 6a6334f): 4 rows + 1 synonym from the 110 open demand terms, 5 marker proposals for owner decision, 96 parks; evaluation/demand_bulk_1/. Awaiting owner verification; NOT merged. A and the 3.12 fix are merged (6a6334f). C (held-category sources) next. Acceptance probe still needs the owner's label text.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
