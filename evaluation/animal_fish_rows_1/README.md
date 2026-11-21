@@ -24,8 +24,9 @@ Cumulative against main a6cacbc the stack is 433 -> 509 rows; the only frozen/ou
 | X, salt | 3 | hydrogenated X | 4 |
 Generic and alias labels (salmon, tuna, fish, shrimp, crab, snow crab) stay unrecognised; plant, dairy and meat controls (dried chicken 3, chicken powder abstain, dried rice 1) are unchanged. `Salmon` alone abstains: only `atlantic salmon`, `chinook`, `chum`, `coho`, `pink` and `sockeye salmon` are rows.
 
-## 4. Exact diff vs animal-guard-1 6a30fe3 (6 paths, `git diff --name-only 6a30fe3 HEAD` on the committed tree)
+## 4. Exact diff vs animal-guard-1 6a30fe3 (7 paths, `git diff --name-only 6a30fe3 HEAD` on the committed tree)
 - `data/ingest/animal_fish_rows_1.json`
+- `evaluation/animal_fish_rows_1/README.md`
 - `evaluation/animal_fish_rows_1/applied_gate/applied_gate.json`
 - `evaluation/animal_fish_rows_1/staged_rows.csv`
 - `scripts/parity_check.py`
