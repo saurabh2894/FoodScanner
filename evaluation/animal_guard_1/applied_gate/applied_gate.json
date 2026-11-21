@@ -1,0 +1,4927 @@
+{
+ "rule_id": "animal-guard-1",
+ "base_src": "/tmp/base_a/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 433,
+  "after": 441,
+  "added": [
+   "beef",
+   "chicken",
+   "duck",
+   "goose",
+   "lamb",
+   "pork",
+   "turkey",
+   "veal"
+  ],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "beef": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   }
+  },
+  "lamb": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   }
+  },
+  "pork": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   }
+  },
+  "chicken": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   }
+  },
+  "veal": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   }
+  },
+  "turkey": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   }
+  },
+  "duck": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   }
+  },
+  "goose": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S18",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Lamb (33%)"
+    ],
+    "staged_terms": [
+     "lamb"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 583,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 866,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 56,
+  "probed": 168,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 56,
+    "group1_before": 5,
+    "group1_after": 5,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 56,
+    "group1_before": 5,
+    "group1_after": 5,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 56,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 10,
+  "group1_after": 10,
+  "changes": {}
+ },
+ "powder_surface": {
+  "probed": 579,
+  "group1_before": 377,
+  "group1_after": 377,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "cow milk powder",
+   "goat milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "new_rows_surface": {
+  "rows": [
+   "beef",
+   "chicken",
+   "duck",
+   "goose",
+   "lamb",
+   "pork",
+   "turkey",
+   "veal"
+  ],
+  "kinds": {
+   "beef": "whole_food",
+   "chicken": "whole_food",
+   "duck": "whole_food",
+   "goose": "whole_food",
+   "lamb": "whole_food",
+   "pork": "whole_food",
+   "turkey": "whole_food",
+   "veal": "whole_food"
+  },
+  "forms": {
+   "beef": 1,
+   "roasted beef": 1,
+   "toasted beef": null,
+   "dry roasted beef": 1,
+   "oil roasted beef": null,
+   "honey roasted beef": null,
+   "salted beef": null,
+   "roasted salted beef": null,
+   "toasted salted beef": null,
+   "sugared beef": null,
+   "unsalted beef": 1,
+   "beef (no added salt)": 1,
+   "beef (sugar)": null,
+   "beef (canned)": null,
+   "beef (XQ9)": null,
+   "Rice, beef": null,
+   "beef, salt": 3,
+   "beef flour": null,
+   "beef butter": null,
+   "beef oil": null,
+   "beef powder": null,
+   "100% beef powder": null,
+   "whole beef powder": null,
+   "chicken": 1,
+   "roasted chicken": 1,
+   "toasted chicken": null,
+   "dry roasted chicken": 1,
+   "oil roasted chicken": null,
+   "honey roasted chicken": null,
+   "salted chicken": null,
+   "roasted salted chicken": null,
+   "toasted salted chicken": null,
+   "sugared chicken": null,
+   "unsalted chicken": 1,
+   "chicken (no added salt)": 1,
+   "chicken (sugar)": null,
+   "chicken (canned)": null,
+   "chicken (XQ9)": null,
+   "Rice, chicken": null,
+   "chicken, salt": 3,
+   "chicken flour": null,
+   "chicken butter": null,
+   "chicken oil": null,
+   "chicken powder": null,
+   "100% chicken powder": null,
+   "whole chicken powder": null,
+   "duck": 1,
+   "roasted duck": 1,
+   "toasted duck": null,
+   "dry roasted duck": 1,
+   "oil roasted duck": null,
+   "honey roasted duck": null,
+   "salted duck": null,
+   "roasted salted duck": null,
+   "toasted salted duck": null,
+   "sugared duck": null,
+   "unsalted duck": 1,
+   "duck (no added salt)": 1,
+   "duck (sugar)": null,
+   "duck (canned)": null,
+   "duck (XQ9)": null,
+   "Rice, duck": null,
+   "duck, salt": 3,
+   "duck flour": null,
+   "duck butter": null,
+   "duck oil": null,
+   "duck powder": null,
+   "100% duck powder": null,
+   "whole duck powder": null,
+   "goose": 1,
+   "roasted goose": 1,
+   "toasted goose": null,
+   "dry roasted goose": 1,
+   "oil roasted goose": null,
+   "honey roasted goose": null,
+   "salted goose": null,
+   "roasted salted goose": null,
+   "toasted salted goose": null,
+   "sugared goose": null,
+   "unsalted goose": 1,
+   "goose (no added salt)": 1,
+   "goose (sugar)": null,
+   "goose (canned)": null,
+   "goose (XQ9)": null,
+   "Rice, goose": null,
+   "goose, salt": 3,
+   "goose flour": null,
+   "goose butter": null,
+   "goose oil": null,
+   "goose powder": null,
+   "100% goose powder": null,
+   "whole goose powder": null,
+   "lamb": 1,
+   "roasted lamb": 1,
+   "toasted lamb": null,
+   "dry roasted lamb": 1,
+   "oil roasted lamb": null,
+   "honey roasted lamb": null,
+   "salted lamb": null,
+   "roasted salted lamb": null,
+   "toasted salted lamb": null,
+   "sugared lamb": null,
+   "unsalted lamb": 1,
+   "lamb (no added salt)": 1,
+   "lamb (sugar)": null,
+   "lamb (canned)": null,
+   "lamb (XQ9)": null,
+   "Rice, lamb": null,
+   "lamb, salt": 3,
+   "lamb flour": null,
+   "lamb butter": null,
+   "lamb oil": null,
+   "lamb powder": null,
+   "100% lamb powder": null,
+   "whole lamb powder": null,
+   "pork": 1,
+   "roasted pork": 1,
+   "toasted pork": null,
+   "dry roasted pork": 1,
+   "oil roasted pork": null,
+   "honey roasted pork": null,
+   "salted pork": null,
+   "roasted salted pork": null,
+   "toasted salted pork": null,
+   "sugared pork": null,
+   "unsalted pork": 1,
+   "pork (no added salt)": 1,
+   "pork (sugar)": null,
+   "pork (canned)": null,
+   "pork (XQ9)": null,
+   "Rice, pork": null,
+   "pork, salt": 3,
+   "pork flour": null,
+   "pork butter": null,
+   "pork oil": null,
+   "pork powder": null,
+   "100% pork powder": null,
+   "whole pork powder": null,
+   "turkey": 1,
+   "roasted turkey": 1,
+   "toasted turkey": null,
+   "dry roasted turkey": 1,
+   "oil roasted turkey": null,
+   "honey roasted turkey": null,
+   "salted turkey": null,
+   "roasted salted turkey": null,
+   "toasted salted turkey": null,
+   "sugared turkey": null,
+   "unsalted turkey": 1,
+   "turkey (no added salt)": 1,
+   "turkey (sugar)": null,
+   "turkey (canned)": null,
+   "turkey (XQ9)": null,
+   "Rice, turkey": null,
+   "turkey, salt": 3,
+   "turkey flour": null,
+   "turkey butter": null,
+   "turkey oil": null,
+   "turkey powder": null,
+   "100% turkey powder": null,
+   "whole turkey powder": null,
+   "veal": 1,
+   "roasted veal": 1,
+   "toasted veal": null,
+   "dry roasted veal": 1,
+   "oil roasted veal": null,
+   "honey roasted veal": null,
+   "salted veal": null,
+   "roasted salted veal": null,
+   "toasted salted veal": null,
+   "sugared veal": null,
+   "unsalted veal": 1,
+   "veal (no added salt)": 1,
+   "veal (sugar)": null,
+   "veal (canned)": null,
+   "veal (XQ9)": null,
+   "Rice, veal": null,
+   "veal, salt": 3,
+   "veal flour": null,
+   "veal butter": null,
+   "veal oil": null,
+   "veal powder": null,
+   "100% veal powder": null,
+   "whole veal powder": null
+  }
+ },
+ "controls": {
+  "mutton": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: mutton",
+   "unassessed_after": [
+    "mutton"
+   ]
+  },
+  "goat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"goat\")",
+   "unassessed_after": [
+    "goat"
+   ]
+  },
+  "fish": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fish",
+   "unassessed_after": [
+    "fish"
+   ]
+  },
+  "chicken meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chicken meat",
+   "unassessed_after": [
+    "chicken meat"
+   ]
+  },
+  "beef extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: beef extract",
+   "unassessed_after": [
+    "beef extract"
+   ]
+  },
+  "ground beef (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (ground beef (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried beef": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated beef",
+   "unassessed_after": [
+    "dehydrated beef"
+   ]
+  },
+  "beef powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (beef powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% beef powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% beef powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole beef powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole beef powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "beef (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (beef (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled beef",
+   "unassessed_after": [
+    "chilled beef"
+   ]
+  },
+  "frozen beef": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted beef: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked beef",
+   "unassessed_after": [
+    "smoked beef"
+   ]
+  },
+  "cured beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured beef",
+   "unassessed_after": [
+    "cured beef"
+   ]
+  },
+  "canned beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned beef",
+   "unassessed_after": [
+    "canned beef"
+   ]
+  },
+  "breaded beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded beef",
+   "unassessed_after": [
+    "breaded beef"
+   ]
+  },
+  "battered beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered beef",
+   "unassessed_after": [
+    "battered beef"
+   ]
+  },
+  "fried beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried beef",
+   "unassessed_after": [
+    "fried beef"
+   ]
+  },
+  "pan fried beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried beef",
+   "unassessed_after": [
+    "pan fried beef"
+   ]
+  },
+  "minced beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced beef",
+   "unassessed_after": [
+    "minced beef"
+   ]
+  },
+  "formed beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed beef",
+   "unassessed_after": [
+    "formed beef"
+   ]
+  },
+  "cooked beef": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked beef",
+   "unassessed_after": [
+    "cooked beef"
+   ]
+  },
+  "beef (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (beef (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "beef (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (beef (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (beef (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (beef (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "beef, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "beef, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (beef (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (beef (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (beef (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (beef (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "beef (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated beef": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: beef meat",
+   "unassessed_after": [
+    "beef meat"
+   ]
+  },
+  "beef (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beef (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried beef": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried beef powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried beef powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried beef (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "beef",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried beef (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried lamb": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated lamb",
+   "unassessed_after": [
+    "dehydrated lamb"
+   ]
+  },
+  "lamb powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (lamb powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% lamb powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% lamb powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole lamb powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole lamb powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "lamb (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (lamb (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled lamb",
+   "unassessed_after": [
+    "chilled lamb"
+   ]
+  },
+  "frozen lamb": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted lamb: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked lamb",
+   "unassessed_after": [
+    "smoked lamb"
+   ]
+  },
+  "cured lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured lamb",
+   "unassessed_after": [
+    "cured lamb"
+   ]
+  },
+  "canned lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned lamb",
+   "unassessed_after": [
+    "canned lamb"
+   ]
+  },
+  "breaded lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded lamb",
+   "unassessed_after": [
+    "breaded lamb"
+   ]
+  },
+  "battered lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered lamb",
+   "unassessed_after": [
+    "battered lamb"
+   ]
+  },
+  "fried lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried lamb",
+   "unassessed_after": [
+    "fried lamb"
+   ]
+  },
+  "pan fried lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried lamb",
+   "unassessed_after": [
+    "pan fried lamb"
+   ]
+  },
+  "minced lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced lamb",
+   "unassessed_after": [
+    "minced lamb"
+   ]
+  },
+  "formed lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed lamb",
+   "unassessed_after": [
+    "formed lamb"
+   ]
+  },
+  "cooked lamb": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked lamb",
+   "unassessed_after": [
+    "cooked lamb"
+   ]
+  },
+  "lamb (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (lamb (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "lamb (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (lamb (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (lamb (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (lamb (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "lamb, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "lamb, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (lamb (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (lamb (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (lamb (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (lamb (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "lamb (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated lamb": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: lamb meat",
+   "unassessed_after": [
+    "lamb meat"
+   ]
+  },
+  "lamb extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: lamb extract",
+   "unassessed_after": [
+    "lamb extract"
+   ]
+  },
+  "lamb (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lamb (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried lamb": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried lamb powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried lamb powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried lamb (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "lamb",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried lamb (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried pork": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated pork",
+   "unassessed_after": [
+    "dehydrated pork"
+   ]
+  },
+  "pork powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (pork powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% pork powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% pork powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole pork powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole pork powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "pork (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (pork (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled pork",
+   "unassessed_after": [
+    "chilled pork"
+   ]
+  },
+  "frozen pork": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted pork: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked pork",
+   "unassessed_after": [
+    "smoked pork"
+   ]
+  },
+  "cured pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured pork",
+   "unassessed_after": [
+    "cured pork"
+   ]
+  },
+  "canned pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned pork",
+   "unassessed_after": [
+    "canned pork"
+   ]
+  },
+  "breaded pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded pork",
+   "unassessed_after": [
+    "breaded pork"
+   ]
+  },
+  "battered pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered pork",
+   "unassessed_after": [
+    "battered pork"
+   ]
+  },
+  "fried pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried pork",
+   "unassessed_after": [
+    "fried pork"
+   ]
+  },
+  "pan fried pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried pork",
+   "unassessed_after": [
+    "pan fried pork"
+   ]
+  },
+  "minced pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced pork",
+   "unassessed_after": [
+    "minced pork"
+   ]
+  },
+  "formed pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed pork",
+   "unassessed_after": [
+    "formed pork"
+   ]
+  },
+  "cooked pork": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked pork",
+   "unassessed_after": [
+    "cooked pork"
+   ]
+  },
+  "pork (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pork (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pork (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (pork (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (pork (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (pork (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "pork, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "pork, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (pork (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (pork (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (pork (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (pork (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "pork (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated pork": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pork meat",
+   "unassessed_after": [
+    "pork meat"
+   ]
+  },
+  "pork extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pork extract",
+   "unassessed_after": [
+    "pork extract"
+   ]
+  },
+  "pork (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pork (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried pork": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried pork powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried pork powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried pork (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pork",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried pork (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried chicken": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated chicken",
+   "unassessed_after": [
+    "dehydrated chicken"
+   ]
+  },
+  "chicken powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (chicken powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% chicken powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% chicken powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole chicken powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole chicken powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "chicken (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (chicken (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled chicken",
+   "unassessed_after": [
+    "chilled chicken"
+   ]
+  },
+  "frozen chicken": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted chicken: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked chicken",
+   "unassessed_after": [
+    "smoked chicken"
+   ]
+  },
+  "cured chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured chicken",
+   "unassessed_after": [
+    "cured chicken"
+   ]
+  },
+  "canned chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned chicken",
+   "unassessed_after": [
+    "canned chicken"
+   ]
+  },
+  "breaded chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded chicken",
+   "unassessed_after": [
+    "breaded chicken"
+   ]
+  },
+  "battered chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered chicken",
+   "unassessed_after": [
+    "battered chicken"
+   ]
+  },
+  "fried chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried chicken",
+   "unassessed_after": [
+    "fried chicken"
+   ]
+  },
+  "pan fried chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried chicken",
+   "unassessed_after": [
+    "pan fried chicken"
+   ]
+  },
+  "minced chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced chicken",
+   "unassessed_after": [
+    "minced chicken"
+   ]
+  },
+  "formed chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed chicken",
+   "unassessed_after": [
+    "formed chicken"
+   ]
+  },
+  "cooked chicken": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked chicken",
+   "unassessed_after": [
+    "cooked chicken"
+   ]
+  },
+  "chicken (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chicken (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "chicken (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (chicken (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (chicken (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (chicken (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "chicken, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "chicken, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (chicken (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (chicken (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (chicken (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (chicken (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "chicken (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated chicken": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chicken extract",
+   "unassessed_after": [
+    "chicken extract"
+   ]
+  },
+  "chicken (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chicken (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried chicken": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried chicken powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried chicken powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried chicken (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "chicken",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried chicken (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried veal": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated veal",
+   "unassessed_after": [
+    "dehydrated veal"
+   ]
+  },
+  "veal powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (veal powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% veal powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% veal powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole veal powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole veal powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "veal (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (veal (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled veal",
+   "unassessed_after": [
+    "chilled veal"
+   ]
+  },
+  "frozen veal": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted veal: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked veal",
+   "unassessed_after": [
+    "smoked veal"
+   ]
+  },
+  "cured veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured veal",
+   "unassessed_after": [
+    "cured veal"
+   ]
+  },
+  "canned veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned veal",
+   "unassessed_after": [
+    "canned veal"
+   ]
+  },
+  "breaded veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded veal",
+   "unassessed_after": [
+    "breaded veal"
+   ]
+  },
+  "battered veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered veal",
+   "unassessed_after": [
+    "battered veal"
+   ]
+  },
+  "fried veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried veal",
+   "unassessed_after": [
+    "fried veal"
+   ]
+  },
+  "pan fried veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried veal",
+   "unassessed_after": [
+    "pan fried veal"
+   ]
+  },
+  "minced veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced veal",
+   "unassessed_after": [
+    "minced veal"
+   ]
+  },
+  "formed veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed veal",
+   "unassessed_after": [
+    "formed veal"
+   ]
+  },
+  "cooked veal": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked veal",
+   "unassessed_after": [
+    "cooked veal"
+   ]
+  },
+  "veal (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (veal (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "veal (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (veal (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (veal (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (veal (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "veal, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "veal, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (veal (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (veal (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (veal (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (veal (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "veal (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated veal": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: veal meat",
+   "unassessed_after": [
+    "veal meat"
+   ]
+  },
+  "veal extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: veal extract",
+   "unassessed_after": [
+    "veal extract"
+   ]
+  },
+  "veal (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "veal (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried veal": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried veal powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried veal powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried veal (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "veal",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried veal (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried turkey": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated turkey",
+   "unassessed_after": [
+    "dehydrated turkey"
+   ]
+  },
+  "turkey powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (turkey powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% turkey powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% turkey powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole turkey powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole turkey powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "turkey (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (turkey (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled turkey",
+   "unassessed_after": [
+    "chilled turkey"
+   ]
+  },
+  "frozen turkey": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted turkey: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked turkey",
+   "unassessed_after": [
+    "smoked turkey"
+   ]
+  },
+  "cured turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured turkey",
+   "unassessed_after": [
+    "cured turkey"
+   ]
+  },
+  "canned turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned turkey",
+   "unassessed_after": [
+    "canned turkey"
+   ]
+  },
+  "breaded turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded turkey",
+   "unassessed_after": [
+    "breaded turkey"
+   ]
+  },
+  "battered turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered turkey",
+   "unassessed_after": [
+    "battered turkey"
+   ]
+  },
+  "fried turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried turkey",
+   "unassessed_after": [
+    "fried turkey"
+   ]
+  },
+  "pan fried turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried turkey",
+   "unassessed_after": [
+    "pan fried turkey"
+   ]
+  },
+  "minced turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced turkey",
+   "unassessed_after": [
+    "minced turkey"
+   ]
+  },
+  "formed turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed turkey",
+   "unassessed_after": [
+    "formed turkey"
+   ]
+  },
+  "cooked turkey": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked turkey",
+   "unassessed_after": [
+    "cooked turkey"
+   ]
+  },
+  "turkey (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (turkey (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "turkey (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (turkey (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (turkey (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (turkey (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "turkey, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (turkey (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "turkey (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated turkey": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: turkey meat",
+   "unassessed_after": [
+    "turkey meat"
+   ]
+  },
+  "turkey extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: turkey extract",
+   "unassessed_after": [
+    "turkey extract"
+   ]
+  },
+  "turkey (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "turkey (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried turkey": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried turkey powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried turkey powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried turkey (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "turkey",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried turkey (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried duck": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated duck",
+   "unassessed_after": [
+    "dehydrated duck"
+   ]
+  },
+  "duck powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (duck powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% duck powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% duck powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole duck powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole duck powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "duck (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (duck (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled duck",
+   "unassessed_after": [
+    "chilled duck"
+   ]
+  },
+  "frozen duck": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted duck: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked duck",
+   "unassessed_after": [
+    "smoked duck"
+   ]
+  },
+  "cured duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured duck",
+   "unassessed_after": [
+    "cured duck"
+   ]
+  },
+  "canned duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned duck",
+   "unassessed_after": [
+    "canned duck"
+   ]
+  },
+  "breaded duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded duck",
+   "unassessed_after": [
+    "breaded duck"
+   ]
+  },
+  "battered duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered duck",
+   "unassessed_after": [
+    "battered duck"
+   ]
+  },
+  "fried duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried duck",
+   "unassessed_after": [
+    "fried duck"
+   ]
+  },
+  "pan fried duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried duck",
+   "unassessed_after": [
+    "pan fried duck"
+   ]
+  },
+  "minced duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced duck",
+   "unassessed_after": [
+    "minced duck"
+   ]
+  },
+  "formed duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed duck",
+   "unassessed_after": [
+    "formed duck"
+   ]
+  },
+  "cooked duck": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked duck",
+   "unassessed_after": [
+    "cooked duck"
+   ]
+  },
+  "duck (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (duck (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "duck (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (duck (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (duck (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (duck (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "duck, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (duck (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "duck (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated duck": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: duck meat",
+   "unassessed_after": [
+    "duck meat"
+   ]
+  },
+  "duck extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: duck extract",
+   "unassessed_after": [
+    "duck extract"
+   ]
+  },
+  "duck (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "duck (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried duck": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried duck powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried duck powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried duck (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "duck",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried duck (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried goose": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dehydrated goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dehydrated goose",
+   "unassessed_after": [
+    "dehydrated goose"
+   ]
+  },
+  "goose powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (goose powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "100% goose powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (100% goose powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "whole goose powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (whole goose powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "goose (powder)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (goose (powder)): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "ground goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "steamed goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chilled goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chilled goose",
+   "unassessed_after": [
+    "chilled goose"
+   ]
+  },
+  "frozen goose": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted goose: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "smoked goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: smoked goose",
+   "unassessed_after": [
+    "smoked goose"
+   ]
+  },
+  "cured goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cured goose",
+   "unassessed_after": [
+    "cured goose"
+   ]
+  },
+  "canned goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned goose",
+   "unassessed_after": [
+    "canned goose"
+   ]
+  },
+  "breaded goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breaded goose",
+   "unassessed_after": [
+    "breaded goose"
+   ]
+  },
+  "battered goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: battered goose",
+   "unassessed_after": [
+    "battered goose"
+   ]
+  },
+  "fried goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fried goose",
+   "unassessed_after": [
+    "fried goose"
+   ]
+  },
+  "pan fried goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pan fried goose",
+   "unassessed_after": [
+    "pan fried goose"
+   ]
+  },
+  "minced goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: minced goose",
+   "unassessed_after": [
+    "minced goose"
+   ]
+  },
+  "formed goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: formed goose",
+   "unassessed_after": [
+    "formed goose"
+   ]
+  },
+  "cooked goose": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cooked goose",
+   "unassessed_after": [
+    "cooked goose"
+   ]
+  },
+  "goose (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (goose (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "goose (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (goose (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (goose (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (egg)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (goose (egg): egg): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "goose, sunflower oil": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose (sunflower oil)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose (sunflower oil): sunflower oil): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (brine)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose (brine): brine): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose (canned): canned): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (goose (preserved): preserved): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "goose (hydrogenated)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hydrogenated goose": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"hydrogenated\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose, flavour": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose, maltodextrin": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose meat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: goose meat",
+   "unassessed_after": [
+    "goose meat"
+   ]
+  },
+  "goose extract": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: goose extract",
+   "unassessed_after": [
+    "goose extract"
+   ]
+  },
+  "goose (dried)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goose (dried), salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% dried goose": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried goose powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an animal food is named (dried goose powder): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states",
+   "unassessed_after": []
+  },
+  "dried goose (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "goose",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (dried goose (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "eggs": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "eggs",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (rice powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "banana powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (banana powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "sheep milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sheep milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "tea": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "tea",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower oil": {
+   "group_before": 2,
+   "group_after": 2,
+   "row_after": {
+    "term": "sunflower oil",
+    "kind": "culinary"
+   },
+   "drivers_after": [
+    "single processed culinary ingredient"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower oil powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower oil",
+    "kind": "culinary"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (sunflower oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
+   "unassessed_after": []
+  },
+  "salted milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "an item whose own text names an added or preserving condition (salted milk: salted): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "milk (rice)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (milk (rice): rice): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "rice (wheat)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (rice (wheat): wheat): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+   "unassessed_after": []
+  },
+  "walnuts (brine)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added brine (FAO Table 1 Group 3 definition: 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; class-instance of that rule, no FAO example names this form)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lard": {
+   "group_before": 2,
+   "group_after": 2,
+   "row_after": {
+    "term": "lard",
+    "kind": "culinary"
+   },
+   "drivers_after": [
+    "single processed culinary ingredient"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "corn oil": {
+   "group_before": 2,
+   "group_after": 2,
+   "row_after": {
+    "term": "corn oil",
+    "kind": "culinary"
+   },
+   "drivers_after": [
+    "single processed culinary ingredient"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried egg": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "egg powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (egg powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "100% egg powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
