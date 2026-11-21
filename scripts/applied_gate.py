@@ -112,7 +112,7 @@ def main(argv=None) -> int:
         diff = {t: v for t, v in diff.items() if t not in set(a.expected_drift)}
         out["drift"] = {"probed": len(base_terms), "differences": diff, "expected_owner_ruled": expected}
         if a.descriptor_surface:
-            kinds_of = {r["term"]: r["kind"] for r in vb.read_csv(res_a / "lexicon.csv")}
+            kinds_of = {r["term"]: r["kind"] for r in vb.read_csv(res_b / "lexicon.csv")}
             lines = [f"{w} {t}" for w in a.descriptor_surface for t in sorted(kinds_of)]
             db_, da_ = run_probe(a.base_src, lines, td, "db"), run_probe(a.after_src, lines, td, "da")
             ch = {l: [db_[l]["group"], da_[l]["group"]] for l in lines if (db_[l]["group"], db_[l]["unassessed"]) != (da_[l]["group"], da_[l]["unassessed"])}
@@ -123,7 +123,7 @@ def main(argv=None) -> int:
             out["descriptor_surface"] = {"probed": len(lines), "changed": len(ch), "by_word_and_kind": {f"{w}|{k}": len(v) for (w, k), v in sorted(bykind.items())}, "changed_kinds_outside_scope": sorted({k for (w, k) in bykind if w == "toasted" and k not in ("whole_food", "flour")}),
                                          "group_moves": {l: v for l, v in ch.items() if v != [None, 1]}}
         if a.salted_surface:
-            gr = [r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in ("whole_food", "flour")]
+            gr = [r["term"] for r in vb.read_csv(res_b / "lexicon.csv") if r["kind"] in ("whole_food", "flour")]
             forms = ["salted {x}", "roasted salted {x}", "toasted salted {x}"]
             lines = [f.format(x=t) for t in sorted(gr) for f in forms]
             sb_, sa_ = run_probe(a.base_src, lines, td, "slb"), run_probe(a.after_src, lines, td, "sla")
@@ -138,7 +138,7 @@ def main(argv=None) -> int:
                                      "group1_before": sum(1 for l in lines if sb_[l]["group"] == 1), "group1_after": sum(1 for l in lines if sa_[l]["group"] == 1), "changes": chs}
         if a.powder_surface:
             kinds = {"whole_food", "legume", "vegetable", "food_powder"}
-            names = sorted({r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in kinds})
+            names = sorted({r["term"] for r in vb.read_csv(res_b / "lexicon.csv") if r["kind"] in kinds})
             lines = [n + " powder" for n in names] + ["100% " + n + " powder" for n in names] + ["whole " + n + " powder" for n in names]
             sb, sa = run_probe(a.base_src, lines, td, "sb"), run_probe(a.after_src, lines, td, "sa")
             ch = {l: [sb[l]["group"], sa[l]["group"]] for l in lines if (sb[l]["group"], sb[l]["unassessed"]) != (sa[l]["group"], sa[l]["unassessed"])}
@@ -159,6 +159,13 @@ def main(argv=None) -> int:
                     if ka[0] != kt[0] or ka[1] != kt[1]:
                         mism.append({"form": f, "alias": r["from"], "alias_group": ka[0], "target_group": kt[0]})
             out["alias_equals_target"] = {"forms": len(forms), "pairs": len(syn_rows), "compared": len(forms) * len(syn_rows), "mismatches": mism}
+        new_terms = sorted(set(lex_a) - set(lex_b))
+        if new_terms and (a.descriptor_surface or a.salted_surface or a.powder_surface):
+            # the surfaces above probe the rows of the BASE lexicon (so their numbers stay comparable across batches); rows this batch ADDS are reported here, after-build only
+            forms = ["roasted {x}", "toasted {x}", "salted {x}", "roasted salted {x}", "toasted salted {x}", "{x} powder", "100% {x} powder", "whole {x} powder"]
+            nl = [f.format(x=t) for t in new_terms for f in forms]
+            nr = run_probe(a.after_src, nl, td, "nr")
+            out["new_rows_surface"] = {"rows": new_terms, "kinds": {t: lex_a[t]["kind"] for t in new_terms}, "forms": {l: nr[l]["group"] for l in nl}}
         out["controls"] = {n: {"group_before": pb[n]["group"], "group_after": pa[n]["group"], "row_after": pa[n]["row"], "drivers_after": pa[n]["drivers"], "reason_after": pa[n]["reason"], "unassessed_after": pa[n]["unassessed"]} for n in neg + pos}
     blockers = []
     if not all(v["recognised_after"] and not v["recognised_before"] for v in out["after_build_proof"].values()):

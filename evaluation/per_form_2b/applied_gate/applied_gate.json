@@ -1,0 +1,595 @@
+{
+ "rule_id": "per-form-2b",
+ "base_src": "/tmp/base_79e/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 384,
+  "after": 386,
+  "added": [
+   "cow milk",
+   "goat milk"
+  ],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "cow milk": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   }
+  },
+  "goat milk": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [
+   {
+    "input": "b2/M02",
+    "changed": [
+     "group",
+     "status",
+     "reason",
+     "drivers",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     1
+    ],
+    "status": [
+     "uncertain",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "PASTEURISED COW MILK"
+    ],
+    "staged_terms": [
+     "cow milk"
+    ]
+   },
+   {
+    "input": "b3/Q06",
+    "changed": [
+     "group",
+     "status",
+     "reason",
+     "drivers",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     1
+    ],
+    "status": [
+     "uncertain",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Pasteurized Cow Milk"
+    ],
+    "staged_terms": [
+     "cow milk"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [
+   "b2/M02",
+   "b3/Q06"
+  ],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 534,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 768,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 47,
+  "probed": 141,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 47,
+    "group1_before": 26,
+    "group1_after": 26,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 47,
+    "group1_before": 26,
+    "group1_after": 26,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 47,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 52,
+  "group1_after": 52,
+  "changes": {}
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 358,
+  "group1_after": 358,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "new_rows_surface": {
+  "rows": [
+   "cow milk",
+   "goat milk"
+  ],
+  "kinds": {
+   "cow milk": "whole_food",
+   "goat milk": "whole_food"
+  },
+  "forms": {
+   "roasted cow milk": 1,
+   "toasted cow milk": null,
+   "salted cow milk": 1,
+   "roasted salted cow milk": 1,
+   "toasted salted cow milk": null,
+   "cow milk powder": 1,
+   "100% cow milk powder": 1,
+   "whole cow milk powder": 1,
+   "roasted goat milk": 1,
+   "toasted goat milk": null,
+   "salted goat milk": 1,
+   "roasted salted goat milk": 1,
+   "toasted salted goat milk": null,
+   "goat milk powder": 1,
+   "100% goat milk powder": 1,
+   "whole goat milk powder": 1
+  }
+ },
+ "controls": {
+  "cow": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"cow\")",
+   "unassessed_after": [
+    "cow"
+   ]
+  },
+  "goat": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"goat\")",
+   "unassessed_after": [
+    "goat"
+   ]
+  },
+  "sheep milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sheep milk",
+   "unassessed_after": [
+    "sheep milk"
+   ]
+  },
+  "human milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: human milk",
+   "unassessed_after": [
+    "human milk"
+   ]
+  },
+  "cow cheese": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cow cheese",
+   "unassessed_after": [
+    "cow cheese"
+   ]
+  },
+  "cow milk solids": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cow milk solids",
+   "unassessed_after": [
+    "cow milk solids"
+   ]
+  },
+  "cow's milk": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cow's milk",
+   "unassessed_after": [
+    "cow's milk"
+   ]
+  },
+  "milk solids (pasteurized skimmed cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (pasteurized skimmed cow milk): pasteurized skimmed cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk solids (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk solids (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (buffalo milk)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (buffalo milk): buffalo milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "rice (goat milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (goat milk): goat milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "milk (cow)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (milk (cow): cow), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "egg (cow milk)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (egg (cow milk): cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "fortified cow milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified cow milk powder",
+   "unassessed_after": [
+    "fortified cow milk powder"
+   ]
+  },
+  "cow milk solids powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cow milk solids powder",
+   "unassessed_after": [
+    "cow milk solids powder"
+   ]
+  },
+  "salted rice": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk (pasteurized)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pasteurised cow milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned cow milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (goat milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed cow milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "goat milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "goat milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cow milk, starter culture": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": null,
+   "drivers_after": [
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+    "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted cow milk": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cow milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk (pasteurized cow milk)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
