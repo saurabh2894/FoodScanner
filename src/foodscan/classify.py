@@ -226,6 +226,11 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
+    if unplaced:
+        # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
+        # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
+        return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])

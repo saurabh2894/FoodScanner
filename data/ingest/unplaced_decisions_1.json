@@ -1,0 +1,75 @@
+{
+ "decisions_id": "unplaced-decisions-1",
+ "inventory": "evaluation/unplaced_kind_1/label_terms.csv",
+ "filter": "vitamins/minerals and sprouted-grain forms from the owner's acceptance label and the demand inventory",
+ "decisions": [
+  {
+   "term": "vitamins and minerals",
+   "rank": 1,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid",
+   "named": "exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified",
+   "fdc": [],
+   "owner_override": "owner decision at the held-sources gate (2026-11-21): recognition-only handling with the unplaced kind approved for 'vitamins and minerals'; this supersedes the lexicon-1 hold for the unplaced kind ONLY"
+  },
+  {
+   "term": "vitamins & minerals",
+   "rank": 2,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid",
+   "named": "exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified",
+   "fdc": [],
+   "owner_override": "owner decision at the held-sources gate (2026-11-21): recognition-only handling with the unplaced kind approved for 'vitamins and minerals'; this supersedes the lexicon-1 hold for the unplaced kind ONLY"
+  },
+  {
+   "term": "vitamins",
+   "rank": 3,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid",
+   "named": "exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified",
+   "fdc": []
+  },
+  {
+   "term": "minerals",
+   "rank": 4,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "foods with vitamins and minerals added generally to replace nutrients lost during processing, such as wheat or corn flour fortified with iron and folic acid",
+   "named": "exact term not named by the clause; UNPLACED (recognition only, no group effect): fortification is purpose-conditioned ('generally to replace nutrients lost during processing') and a label cannot show the purpose; Monteiro 2018 lists 'powdered or fortified meal and dish substitutes' among ultra-processed products; abstention reason: no source places this item, so any list holding it abstains and it is never counted as classified",
+   "fdc": []
+  },
+  {
+   "term": "sprouted ragi",
+   "rank": 5,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list)",
+   "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
+   "named": "exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified",
+   "fdc": []
+  },
+  {
+   "term": "sprouted jowar",
+   "rank": 6,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "unplaced",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list)",
+   "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
+   "named": "exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified",
+   "fdc": []
+  }
+ ]
+}

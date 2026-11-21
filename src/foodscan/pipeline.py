@@ -47,6 +47,9 @@ class Analysis:
     # What the classifier could not judge (not in the vocabulary, no marker, no INS code), plus compound
     # group names that were expanded. Shown so nothing is invisible once a strong marker is found.
     unassessed: list[str] = field(default_factory=list)
+    # Items recognised BY NAME ONLY (kind "unplaced"): in the vocabulary, but no source places them. They are shown apart from classified items and from "unassessed",
+    # never counted as classified coverage, and the list that holds one cannot be answered (recognition is vocabulary, not classification).
+    unplaced: list[str] = field(default_factory=list)
     ignored: list[str] = field(default_factory=list)    # text after the list that was not read as ingredients
     # additive / flavour declarations from "Contains ..." lines: [{"text", "in_list"}]. in_list False: stated there but
     # missing from the ingredient list. They count as evidence but are never added to the list; allergens are dropped.
@@ -366,6 +369,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unassessed = list(dict.fromkeys(
         [i.raw for i in ings if not _recognisable(i)]
         + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
+    unplaced = list(dict.fromkeys(i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"))
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(items)]
@@ -387,7 +391,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         # No auto-close: any close point would be a guess. The text after the stray bracket stays together, in the item that holds it.
         section_warnings += [f'A bracket near "{snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)'
                              for it in items for snip in unclosed_openers(it)]
-    common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed,
+    common = dict(ingredients=items, ins_mappings=uses, warnings=list(section_warnings), unassessed=unassessed, unplaced=unplaced,
                   ignored=list(parsed.ignored), declared=declared, heading={"kind": parsed.heading_kind, "text": parsed.heading_text},
                   sections=[(label, list(its)) for label, its in sections])
 
@@ -446,7 +450,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
-        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i))}}
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or (_lookup(i.name) or {}).get("kind") == "unplaced")}}
     common["completeness"] = completeness
     if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
         blocking = blocking or f"{unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost"
@@ -533,4 +537,4 @@ def ocr_code_disagreement(first: list[str], second: list[str]) -> str | None:
 
 def _ocr_yield(a: Analysis) -> int:
     """Ingredients found minus those outside the vocabulary; 0 when no list was found."""
-    return max(0, len(a.ingredients) - len(a.unassessed)) if a.ingredients else 0
+    return max(0, len(a.ingredients) - len(a.unassessed) - len(a.unplaced)) if a.ingredients else 0

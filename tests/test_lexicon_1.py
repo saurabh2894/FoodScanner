@@ -69,8 +69,11 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
         assert starch not in rows, f"starch {starch} should not be in lexicon.csv"
 
     # Milk and derivative terms held for decision
-    for milk in ["whey", "whey powder", "vitamins & minerals", "vitamins and minerals"]:
+    for milk in ["whey", "whey powder"]:
         assert milk not in rows, f"milk/mineral term {milk} should not be in lexicon.csv"
+    # owner decision (held-sources gate, 2026-11-21): the vitamins/minerals terms may exist ONLY as kind "unplaced" (recognised by name, never placed, any list holding one abstains)
+    for vit in ["vitamins & minerals", "vitamins and minerals"]:
+        assert vit not in rows or rows[vit]["kind"] == "unplaced", f"{vit} may only be an unplaced-kind row"
 
     # OCR / label typos
     for typo in ["tumeric", "com meal", "refined palmolien oil", "maltodectrin"]:
