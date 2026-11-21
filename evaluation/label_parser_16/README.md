@@ -37,7 +37,7 @@ Task 16 resolves two measured parser defects identified during the Task 15 multi
      - Positive contrast for `Rice and Sunflower Oil`.
      - Synthetic guards (unknown second terms, unrecognised modifiers, >2 parts, shared code lists, negations, non-percentage details).
      - Acceptance agreement across Literal, OCR, and Normalized label texts.
-6. `evaluation/label_parser_16/matrix_comparison.json`:
+6. `evaluation/label_parser_16/matrix_comparison.json.txt`:
    - Structured JSON array re-evaluating the 23 variants from Task 15.
    - Records exact intentional differences (2 variants) and unexpected differences (0 variants).
 7. `evaluation/label_parser_16/STATUS.md`:

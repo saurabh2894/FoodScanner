@@ -493,12 +493,12 @@
       const clean = (s) => stripChars(s.replace(/\s+/g, " ").trim(), " ,;.:");
       return [clean(outside), clean(inside)];
     }
-    const FOOTNOTE_RE = /(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021]|\u201D)(?=\s|[)\]},;.:]|$)/gu;
-    const FOOTNOTE_NO_QUOTE_RE = /(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021])(?=\s|[)\]},;.:]|$)/gu;
+    // footnote marks are removed only at item / sub-item / connector / percentage / bracket boundaries (mirrors normalise.strip_footnotes); a mark inside a multi-word phrase is left untouched
+    const FOOT_BOUNDARY = "(?=\\s*(?:$|[)\\]},;:.]|&|\\(|\\b(?:and|or)\\b))";
+    const FOOTNOTE_RE = new RegExp("(?<=[a-zA-Z0-9)\\]}])\\s*(?:#{1,3}|\\*{1,3}|[\\u2020\\u2021]|\\u201D)" + FOOT_BOUNDARY, "gu");
+    const FOOTNOTE_NO_QUOTE_RE = new RegExp("(?<=[a-zA-Z0-9)\\]}])\\s*(?:#{1,3}|\\*{1,3}|[\\u2020\\u2021])" + FOOT_BOUNDARY, "gu");
     function stripFootnotes(text) {
-      if (text.includes("”") && (text.includes("“") || text.includes('"'))) {
-        return text.replace(FOOTNOTE_NO_QUOTE_RE, "");
-      }
+      if (text.includes("\u201D") && (text.includes("\u201C") || text.includes('"'))) return text.replace(FOOTNOTE_NO_QUOTE_RE, "");
       return text.replace(FOOTNOTE_RE, "");
     }
     function normaliseIngredient(raw) {
