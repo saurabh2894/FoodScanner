@@ -46,7 +46,6 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] main ac6ead1: pmc-reresearch-2 merged (coconut fat). Branch claude/dehydrated-forms-1: 3 term-level synonyms (dehydrated onion, onion flakes, onions flakes -> onion); no 'dehydrated' or 'flakes' descriptor (owner); awaiting verification, NOT merged.
 
-- [x] main de86733: dehydrated-forms-1 merged. Branch claude/pmc-reresearch-3: re-read of the remaining parks; one proposal (whey powder / whey solids strong markers, NOT in markers.csv); everything else stays parked; awaiting owner decision.
 - [x] Branch claude/markers-2 (off main de86733): whey powder / whey solids strong markers (owner approved); awaiting verification, NOT merged. Also open: claude/ampersand-split-1 (merge-stop) and claude/pmc-reresearch-3 (its test must be updated when merged). Next: claude/provenance-fixes-1 (ingredient-scope reading per audit finding).
 
 - [x] main c6d8629 (markers-2 + ampersand-split-1 merged). Branch claude/provenance-fixes-1: 29 audit findings treated per class (nuts item-level condition via kind nut_seed; spice/raisin honesty notes; 5 cite pages corrected); awaiting verification, NOT merged. Follow-up: when claude/pmc-reresearch-3 merges, update (not delete) its test asserting the whey rows are NOT in markers.csv.

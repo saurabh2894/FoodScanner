@@ -1,11 +1,9 @@
-# pmc_reresearch_3 (UPDATE: the whey marker proposal was APPROVED and is merged on main via claude/markers-2; the 15 parks below are what this branch still adds): remaining parked terms re-read against the three admissible PMC copies (branch claude/pmc-reresearch-3, off main de86733)
+# pmc_reresearch_3: decision record for the remaining parked terms re-read against the three admissible PMC copies + FAO (documentation only)
 
-Sources re-read (cached, read-only, paraphrase, licence unverified): Monteiro 2018 (PMC10261019), Monteiro 2019 (PMC10260459), Martinez Steele 2022 (PMC10127522), plus FAO 2019. 17 terms decided in data/ingest/pmc_decisions_3.json. NO lexicon, synonym or marker change on this branch.
+DOCUMENTATION-ONLY branch (re-cut onto main a2935ed): no lexicon, synonym, marker or classifier change. Sources re-read (cached, read-only, paraphrase, licence unverified): Monteiro 2018 (PMC10261019), Monteiro 2019 (PMC10260459), Martinez Steele 2022 (PMC10127522), plus FAO 2019. 17 terms recorded in data/ingest/pmc_decisions_3.json.
 
-## The one stageable finding: whey (a marker PROPOSAL, classification-bearing, needs your approval)
-FAO p.9 names "whey protein" among the substances that identify ultra-processed food; Monteiro 2018 names whey ("directly extracted from foods, such as casein, lactose, whey and gluten"); PMC10127522 lists whey among non-culinary substances that make a bread ultra-processed. Three admissible sources, so `whey powder` and `whey solids` (instances of the named class; the dried form is an inference) are proposed as strong derived-substance markers. data/ingest/marker_rows_2_proposal.json + evaluation/pmc_reresearch_3/markers_proposal_gate/ (scripts/marker_batch.py): rows NOT in markers.csv.
-Flip evidence if approved (before/after in separate fresh processes): frozen 66: b1/N05, neg/R5, dev/F06 change DRIVERS only, group 4 -> 4, status unchanged, each attributed to its marker; out-of-sample 32: no change; 0 unexplained; 0 abstain -> 4 moves.
+## Whey: APPROVED and already merged
+The two whey rows (whey powder, whey solids) were proposed here, approved by the owner on 2026-11-21 and merged into markers.csv as strong derived_substance markers via claude/markers-2 (three admissible sources name whey or whey protein: FAO p.9, Monteiro 2018, PMC10127522; the dried form is an explicit inference). See evaluation/markers_2/ for the gate (frozen 66: b1/N05, dev/F06, neg/R5 only, group 4 -> 4; out-of-sample unchanged).
 
 ## Everything else stays parked (reasons in the decisions file)
 dry fruits (mixes nuts with dried fruit), roasted gram (naming), refined oil, butter oil, defatted soya, texturized soy protein, cocoa butter/solids/nibs/mass (single source or broader than FAO), carbonated water, cereal extract, malt extract, mango pieces.
-Open for you: approve (or not) the two whey marker rows.

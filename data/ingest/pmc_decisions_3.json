@@ -8,15 +8,15 @@
  "decisions": [
   {
    "term": "whey powder",
-   "disposition": "PROPOSAL (marker, classification-bearing)",
+   "disposition": "APPROVED AND MERGED (claude/markers-2)",
    "sources_say": "FAO p.9 names 'whey protein'; Monteiro 2018 names whey among Group 4 ingredient sources extracted from foods; PMC10127522 lists whey among non-culinary substances making a bread ultra-processed",
-   "result": "three admissible sources name whey or whey protein; a strong-marker row needs the owner's approval"
+   "result": "owner approved 2026-11-21 (three admissible sources name whey or whey protein; the dried form is an explicit inference); merged into markers.csv as a strong derived_substance marker via claude/markers-2"
   },
   {
    "term": "whey solids",
-   "disposition": "PROPOSAL (marker, classification-bearing)",
+   "disposition": "APPROVED AND MERGED (claude/markers-2)",
    "sources_say": "same as whey powder",
-   "result": "same: 'solids' as the dried whey fraction is an inference"
+   "result": "owner approved 2026-11-21 (three admissible sources name whey or whey protein; the dried form is an explicit inference); merged into markers.csv as a strong derived_substance marker via claude/markers-2"
   },
   {
    "term": "dry fruits",
