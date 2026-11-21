@@ -21,8 +21,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 PARKED = {"badishep": "partial evidence stays unverified", "chick peas": "partial evidence stays unverified", "tumeric": "quote unverified (host unreachable)", "chili": "quote unverified (host unreachable)",
           "cane sugar": "quote unverified (host unreachable)", "yellow cherries": "held: generic phrase", "gingelly oil": "NEEDS_EQUIVALENCE_EVIDENCE", "carom seeds": "NEEDS_EQUIVALENCE_EVIDENCE",
-          "desi ghee": "NEEDS_EQUIVALENCE_EVIDENCE", "maida": "NEEDS_EQUIVALENCE_EVIDENCE", "cassia": "NEEDS_EQUIVALENCE_EVIDENCE", "cassia whole": "NEEDS_EQUIVALENCE_EVIDENCE", "refined palmolien oil": "AMBIGUOUS",
-          "bok choy": "EXCLUDED BY THE GATE: the alias is a word-prefix of its own target ('bok choy' -> 'bok choy cabbage'); the synonym engine rewrites 'bok choy cabbage' to 'bok choy cabbage cabbage' and the canonical row stops being recognised (drift 1 -> abstain). Evidence is sound; needs a mechanism decision"}
+          "desi ghee": "NEEDS_EQUIVALENCE_EVIDENCE", "maida": "NEEDS_EQUIVALENCE_EVIDENCE", "cassia": "NEEDS_EQUIVALENCE_EVIDENCE", "cassia whole": "NEEDS_EQUIVALENCE_EVIDENCE", "refined palmolien oil": "AMBIGUOUS"}
 ZIPS = {"foundation": "FoodData_Central_foundation_food_csv_2026-10-29.zip", "sr_legacy": "FoodData_Central_sr_legacy_food_csv_2018-04.zip"}
 
 
@@ -38,13 +37,14 @@ def main(argv=None) -> int:
     ap.add_argument("--inputs", type=Path, default=ROOT / "evaluation" / "synonyms_2" / "inputs")
     ap.add_argument("--cache", type=Path, default=ROOT / "data" / "cache" / "fdc")
     ap.add_argument("--synonyms", type=Path, default=ROOT / "src" / "foodscan" / "resources" / "synonyms.csv")
+    ap.add_argument("--only", nargs="*", default=None, help="build only these aliases (e.g. a row re-added after an engine fix)")
     ap.add_argument("--apply", action="store_true")
     a = ap.parse_args(argv)
     from foodscan.classify import is_recognised, lookup
     from foodscan.normalise import normalise_ingredient
     cand = {r["alias"]: r for r in csv.DictReader((a.inputs / "alias_candidates.csv").open(encoding="utf-8", newline=""))}
     rev = {r["alias"]: r for r in csv.DictReader((a.inputs / "03_alias_review_status.csv").open(encoding="utf-8", newline=""))}
-    include = [al for al in rev if al not in PARKED]
+    include = [al for al in rev if al not in PARKED and (a.only is None or al in a.only)]
     attrs, foods = {}, {}
     for ds, zn in ZIPS.items():
         zp = a.cache / zn

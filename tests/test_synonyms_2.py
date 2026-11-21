@@ -15,7 +15,8 @@ ROOT = Path(__file__).resolve().parent.parent
 EV = ROOT / "evaluation" / "synonyms_2"
 SYN = {r["from"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}
 ROWS = list(csv.DictReader((EV / "synonym_rows.csv").open(encoding="utf-8", newline="")))
-PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline=""))]
+# UPDATED (engine-fixes-1): 'bok choy' was gate-excluded in synonyms-2 (prefix-of-target rewrite defect); the engine is now target-safe and the row is re-added, so it leaves the parked list (13 remain parked).
+PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline="")) if r["alias"] != "bok choy"]
 
 
 def g(text):
@@ -23,8 +24,8 @@ def g(text):
     return (a.group if a.answered else None), a
 
 
-def test_synthetic_exactly_23_rows_are_applied_with_pinpoint_provenance_and_14_aliases_are_parked():
-    assert len(ROWS) == 23 and len(PARKED) == 14
+def test_synthetic_exactly_23_rows_are_applied_with_pinpoint_provenance_and_13_aliases_are_parked():
+    assert len(ROWS) == 23 and len(PARKED) == 13
     for r in ROWS:
         assert SYN[r["from"]]["to"] == r["to"] and r["source"].startswith("PROVISIONAL: alias of existing lexicon row") and "recognition routing only" in r["source"]
         assert "FDC id" in r["source"] and ("food_attribute.csv row" in r["source"] or "bracketed alternate name in the FDC description" in r["source"])
@@ -54,9 +55,10 @@ def test_synthetic_conditions_of_the_canonical_row_apply_unchanged_through_the_a
     assert g("Sucrose")[0] == 2 and g("Moth Bean (salted)")[0] == 3
 
 
-def test_synthetic_the_bok_choy_alias_is_excluded_because_it_would_break_the_canonical_row():
-    assert "bok choy" not in SYN and "bok choy" in PARKED
-    assert g("Bok Choy Cabbage")[0] == 1                                       # the canonical row is still recognised
+def test_synthetic_the_bok_choy_alias_is_re_added_and_the_canonical_row_is_unchanged():
+    assert SYN["bok choy"]["to"] == "bok choy cabbage" and "FDC id 170390" in SYN["bok choy"]["source"]
+    assert normalise_ingredient("bok choy cabbage").name == "bok choy cabbage" and normalise_ingredient("bok choy").name == "bok choy cabbage"
+    assert g("Bok Choy Cabbage")[0] == 1 and g("Bok Choy")[0] == 1
 
 
 def test_synthetic_the_committed_applied_gate_is_clean():

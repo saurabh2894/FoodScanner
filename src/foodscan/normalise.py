@@ -127,6 +127,11 @@ def _synonyms() -> list[tuple[re.Pattern, str]]:
         left, right = boundary(term)
         # an alias for a "... dal" term also absorbs a following "dal" ("bengal gram dal" -> "chana dal", not "chana dal dal")
         tail = r"(?:\s+dal(?![a-z]))?" if r["to"].lower().endswith(" dal") and not term.endswith(" dal") else ""
+        # target-safe rewrite (engine-fixes-1): an alias that is a strict word-prefix of its OWN target absorbs the remaining target words when they follow, so the canonical name is never
+        # rewritten twice ("bok choy" -> "bok choy cabbage" must leave "bok choy cabbage" alone, not make "bok choy cabbage cabbage")
+        to_flat = flatten(r["to"])
+        if to_flat.startswith(term + " "):
+            tail = r"(?:\s+" + re.escape(to_flat[len(term) + 1:]).replace(r"\ ", r"\s+") + r"(?![a-z]))?"
         out.append((re.compile(f"{left}{re.escape(term)}{right}{tail}"), r["to"].lower()))
     return out
 

@@ -346,7 +346,10 @@
         const term = r.from.toLowerCase();   // a term starting or ending with a digit must not match inside a longer alphanumeric run
         const left = /^\d/.test(term) ? "(?<![a-z0-9])" : "(?<![a-z])", right = /\d$/.test(term) ? "(?![a-z0-9])" : "(?![a-z])";
         // an alias for a "... dal" term also absorbs a following "dal" (see normalise.py)
-        const tail = r.to.toLowerCase().endsWith(" dal") && !term.endsWith(" dal") ? "(?:\\s+dal(?![a-z]))?" : "";
+        let tail = r.to.toLowerCase().endsWith(" dal") && !term.endsWith(" dal") ? "(?:\\s+dal(?![a-z]))?" : "";
+        // target-safe rewrite (mirrors normalise.py): an alias that is a strict word-prefix of its own target absorbs the remaining target words when they follow
+        const toFlat = flatten(r.to);
+        if (toFlat.startsWith(term + " ")) tail = "(?:\\s+" + esc(toFlat.slice(term.length + 1)).replace(/ /g, "\\s+") + "(?![a-z]))?";
         return { re: new RegExp(left + esc(term) + right + tail, "g"), to: r.to.toLowerCase() };
       });
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(flatten(r.term)) + "(?![a-z])"), row: r }));
