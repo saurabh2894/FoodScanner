@@ -158,10 +158,25 @@ BEFORE = a worktree of main (9feadd8); AFTER = this branch's source with the row
 - Drift over 421 existing terms and synonyms: 0 differences. Powder surface (540 forms): bare X powder Group 1 after: 0; owner-allowed milk forms: 3; moves to another group: 0.
 - Controls (applied_gate.json 'controls', 30 negative, 16 positive): salted/sugared/syrup forms -> Group 3; preserved/bottled/pickled/canned brackets -> abstain; juice, concentrate, jam, sauce, chips, cocktail unassessed; 'mango powder', 'banana powder', 'apple powder' abstain; '100% mango powder' and 'whole banana powder' Group 1; plain/negated/frozen forms Group 1.
 
+## 6c. Dried forms and unknown additions (owner requirement; applied-state controls in applied_gate.json)
+V1 names 'dried' fruit, so a bare `dried X` takes Group 1 through the existing `dried` descriptor ONLY when no condition word attaches. Measured (before on main -> after on this branch):
+| form | before | after | why |
+|---|---|---|---|
+| dried pineapple / papaya / banana / blueberries / cherries / apricots, dry grapes | abstain | Group 1 | bare dried form, V1 'dried'; no condition word |
+| dried mango, dried mango (organic) | 1 | 1 | unchanged |
+| dried mango (sugar) | 1 | 3 | stated sugar: Group 3 definition |
+| dried banana (honey), dried papaya (jaggery), dried cherries (syrup) | abstain | 3 | stated honey/jaggery/syrup |
+| dried blueberries (sunflower oil) | abstain | 3 | a recognised Group 2 substance in the item's own bracket is an added group 2 ingredient (Group 3 definition) |
+| dried mango (XQ9), dried mango (sulphur dioxide), dried pineapple (sugar, XQ9) | 1 / 1 / abstain | abstain | unknown addition on the same item is NEVER laundered (the old path ignored an unrecognised bracket and answered Group 1) |
+| sweetened dried mango, candied pineapple, dried cranberries, dried cranberries (sugar), dried mango slices (glazed) | unassessed | unassessed | words outside the vocabulary; never Group 1 |
+- New mechanism (classify.bracket_residual, mirrored in foodscan.js): on legume, vegetable and fruit items a bracket naming content the vocabulary does not recognise ABSTAINS; benign parts are recognised foods, descriptors, guard condition words, negation/connector words and digits/codes. This also closes the general gap that `Rice (XQ9)` answered Group 1 for these kinds. Sulphur dioxide as a preservative now abstains (it was Group 1): conservative; NUPENS accepts preservatives in Group 1, so relax this only on your word. Pre-existing and NOT changed: `Rice (XQ9)`, `Wheat Flour (XQ9, Salt)` for other kinds still answer from the plain row.
+- Cranberry-shaped check: the corpus (frozen 66, out-of-sample 32, all evaluation inputs) holds no bare `dried X` item from the commonly-sweetened set whose label context fails to establish plain status: the only dried-fruit contexts are `sweetened dried cranberries (cranberries, sugar, sunflower oil)` (already unassessed, cranberries queued), `Dry Fruits ... (Black Raisin, Cranberry, ...)` (b1/N14, cranberry queued) and S31 `Dry Grapes` in a dry-fruits list (no sweetener named). No further term was queued on evidence.
+- Gate re-run on this branch after the change: frozen 66 changed 0, out-of-sample 32 changed 3 (S01, S24, S31; none moves a group), 0 unexplained, 0 abstain->4, drift 421 terms 0 differences, 75/75 after-build proof.
+
 ## 7. Findings and open decisions for the owner (measured)
 
 1. **Standing exclusion respected:** `cranberries` is QUEUED (lexicon-1 senior review: 'cranberry' on b1/N14 does not establish plain dried status). It would otherwise have been a row.
-2. **Existing tests that used `jackfruit` as an unknown word** (test_extraction_completeness, test_review_unassessed) were updated to `dragonfruit` with explanations: jackfruit is now a vocabulary row (an 'X and Y' phrase of two recognised items is a list). `black raisin` kind expectations in test_lexicon_1 now expect `fruit`.
+2. **Existing tests that used `jackfruit` as an unknown word** (test_extraction_completeness, test_review_unassessed) were updated to the synthetic token `XQ9` (FIXTURE INTENT: generic unknown handling, never a real food name; a named-food gap would be a separate, named test): jackfruit is now a vocabulary row (an 'X and Y' phrase of two recognised items is a list). `black raisin` kind expectations in test_lexicon_1 now expect `fruit`.
 3. **'dried' / 'dry' descriptors:** `dried apricots` (and `Dry Grapes` on out-of-sample label S31) are recognised as the fruit through the existing descriptors `dried`/`dry` and answer through the plain row (FAO V1 names dried fruit). Unchanged mechanism; the batch makes it apply to the new fruit rows. If you want dried forms per-term only for fruit, say so and the descriptor path needs a decision (not changed here).
 4. **Queued for decisions:** dried forms (6), peel/rind/stalk variants (6), tamarind, roselle, olives, pulp products, frozen forms that do not state 'unsweetened' (5: horned melon, durian, loganberries, melon balls, wild blueberries), cranberries.
 5. Condition-record upgrades from the junior audit-2 map are NOT folded in yet (audit-2 review is queued).

@@ -513,6 +513,19 @@
       }
       return false;
     }
+    // unknown additions on the same item are never laundered (mirrors classify.bracket_residual)
+    const BRACKET_BENIGN = new Set(["with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"]);
+    function bracketResidual(ing) {
+      if (!ing.inner) return [];
+      const ok = (t) => descriptors.has(t) || BRACKET_BENIGN.has(t) || LEGUME_ADDED.has(t) || LEGUME_PRESERVED.has(t);
+      const residual = [];
+      for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
+        const toks = part.match(/[a-z]+/g) || [];
+        if (!toks.length || isRecognised(part.trim()) || toks.every(ok)) continue;
+        residual.push(part.trim());
+      }
+      return residual;
+    }
     const LEGUME_PRESERVED = new Set(["canned", "tinned", "bottled", "jarred", "preserved", "pickled"]);
     const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
     // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour
@@ -534,7 +547,7 @@
     }
     const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
-    const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED);
+    const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED) || (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).some((p) => p.trim() && isRecognised(p.trim()) && lookup(p.trim()).kind === "culinary");
     function hitsFor(ing) {
       let hits = [];
       const noteOnly = colourNoteOnly(ing), sweetFoods = sweetenerFoodsOnly(ing);
@@ -578,11 +591,13 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
+      const bracketUnknown = ings.filter((i) => BRINE_KINDS.includes(lookup(i.name).kind) && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
+      if (bracketUnknown.length) return { group: null, drivers: [], reason: "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed" };
       const legumePreserved = ings.filter((i, n) => BRINE_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume, vegetable or fruit (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established" };
       if (ings.length === 1 && (kinds[0] === "nut_seed" || BRINE_KINDS.includes(kinds[0])))

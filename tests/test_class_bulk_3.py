@@ -102,3 +102,29 @@ def test_synthetic_the_powder_standard_applies_to_fruit_rows(t):
 def test_synthetic_negative_forms_outside_the_vocabulary_never_get_group_1(t):
     group, a = g(t)
     assert group is None and t.lower() in " ".join(u.lower() for u in a.unassessed), t
+
+
+# DRIED FORMS (owner requirement, class-bulk-3): V1 names 'dried' fruit, so a bare 'dried X' is Group 1 through the existing 'dried' descriptor ONLY when no condition word attaches. Condition words
+# (sugar, sweetened, syrup, honey, jaggery, candied, glazed) take the guard to Group 3; a recognised Group 2 substance in the item's own bracket (oil) is an added group 2 ingredient (Group 3 definition);
+# unknown additions on the same item are never laundered (the item abstains).
+@pytest.mark.parametrize("t", ["Dried Pineapple", "Dried Mango", "Dried Papaya", "Dried Banana", "Dried Blueberries", "Dried Cherries", "Dried Mango (Organic)", "Dried Apricots"])
+def test_synthetic_bare_dried_forms_of_the_commonly_sweetened_set_take_group_1_via_v1_dried(t):
+    assert g(t)[0] == 1, t
+
+
+@pytest.mark.parametrize("t", ["Dried Mango (Sugar)", "Dried Banana (Honey)", "Dried Papaya (Jaggery)", "Dried Cherries (Syrup)", "Dried Pineapple (Mango, Sugar)", "Dried Blueberries (Sunflower Oil)"])
+def test_synthetic_negative_dried_forms_with_a_stated_condition_never_take_group_1(t):
+    group, a = g(t)
+    assert group == 3 and not any(d.detail == "single recognised unprocessed food" for d in a.drivers), (t, group)
+
+
+@pytest.mark.parametrize("t", ["Dried Mango (XQ9)", "Dried Pineapple (Sugar, XQ9)", "Dried Mango (Sulphur Dioxide)", "Mango (XQ9)", "Rice, Dried Mango (XQ9)"])
+def test_synthetic_negative_unknown_additions_on_the_same_item_are_never_laundered(t):
+    group, a = g(t)
+    assert group is None and "names content the vocabulary does not recognise" in (a.reason or ""), (t, group)
+
+
+@pytest.mark.parametrize("t", ["Sweetened Dried Mango", "Candied Pineapple", "Dried Cranberries (Sugar)", "Dried Cranberries", "Dried Mango Slices (Glazed)"])
+def test_synthetic_negative_sweetened_candied_cranberry_and_glazed_forms_stay_unassessed(t):
+    group, a = g(t)
+    assert group is None and t.lower() in " ".join(u.lower() for u in a.unassessed), t

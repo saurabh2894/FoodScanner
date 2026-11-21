@@ -424,7 +424,20 @@
     "spinach & apple powder",
     "apple extract powder",
     "tamarind pulp",
-    "coconut"
+    "coconut",
+    "sweetened dried mango",
+    "candied pineapple",
+    "dried cranberries (sugar)",
+    "dried mango (sugar)",
+    "dried pineapple (sugar, xq9)",
+    "dried banana (honey)",
+    "dried papaya (jaggery)",
+    "dried cherries (syrup)",
+    "dried blueberries (sunflower oil)",
+    "dried mango (xq9)",
+    "dried mango (sulphur dioxide)",
+    "dried mango slices (glazed)",
+    "dried cranberries"
   ],
   "positive_controls": [
     "apples",
@@ -442,6 +455,15 @@
     "whole banana powder",
     "oranges",
     "rice, salt, apples",
-    "rice, apples"
+    "rice, apples",
+    "dried pineapple",
+    "dried mango",
+    "dried papaya",
+    "dried banana",
+    "dried blueberries",
+    "dried cherries",
+    "dried mango (organic)",
+    "dried apricots",
+    "dry grapes"
   ]
 }

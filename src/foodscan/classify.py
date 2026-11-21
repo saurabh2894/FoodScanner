@@ -184,12 +184,34 @@ def powder_routed(ing, kind: str) -> bool:
     return True
 
 
+# Unknown additions on the same item are never laundered (class-bulk-3, owner requirement): the guard reads the item's own bracket for salt/sugar/brine, but a bracket on a legume, vegetable or fruit
+# item that names content the vocabulary does not recognise ("Dried Mango (XQ9)", "Dried Blueberries (Sunflower Oil)") used to be ignored and the item answered Group 1. Such an item now ABSTAINS: neither
+# Group 1 nor Group 3 is established while part of the item is unassessed. Benign bracket parts: recognised foods, descriptors, condition words handled by the guard, negation/connector words, digits/codes.
+_BRACKET_BENIGN = frozenset({"with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"})
+
+
+def bracket_residual(ing) -> list:
+    if not ing.inner:
+        return []
+    ok_tokens = _descriptors() | _BRACKET_BENIGN | _LEGUME_ADDED | _LEGUME_PRESERVED
+    residual = []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
+        toks = re.findall(r"[a-z]+", part)
+        if not toks or is_recognised(part.strip()) or all(t in ok_tokens for t in toks):
+            continue
+        residual.append(part.strip())
+    return residual
+
+
 def nut_added_salt_or_sugar(ing) -> bool:
     return _added(ing, _NUT_ADDED)
 
 
 def legume_added_salt_sugar_or_brine(ing) -> bool:
-    return _added(ing, _LEGUME_ADDED)
+    if _added(ing, _LEGUME_ADDED):
+        return True
+    # a recognised culinary (Group 2) substance named in the item's own bracket ("Dried Blueberries (Sunflower Oil)") is an addition of a group 2 ingredient: the Group 3 definition
+    return any(is_recognised(p.strip()) and lookup(p.strip())["kind"] == "culinary" for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or "") if p.strip())
 
 
 def is_recognised(name: str) -> bool:
@@ -320,6 +342,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _BRINE_KINDS and bracket_residual(i)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -327,6 +350,9 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
+    if bracket_unknown:
+        return Classification(None, reason="a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
+                              + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
     nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i))]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:

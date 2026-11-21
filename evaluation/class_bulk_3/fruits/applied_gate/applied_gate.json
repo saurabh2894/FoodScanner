@@ -1162,6 +1162,154 @@
     "coconut"
    ]
   },
+  "sweetened dried mango": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sweetened dried mango\")",
+   "unassessed_after": [
+    "sweetened dried mango"
+   ]
+  },
+  "candied pineapple": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: candied pineapple",
+   "unassessed_after": [
+    "candied pineapple"
+   ]
+  },
+  "dried cranberries (sugar)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried cranberries (sugar)",
+   "unassessed_after": [
+    "dried cranberries (sugar)"
+   ]
+  },
+  "dried mango (sugar)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried pineapple (sugar, xq9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried pineapple (sugar, xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried banana (honey)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried papaya (jaggery)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "papayas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried cherries (syrup)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "cherries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried blueberries (sunflower oil)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "blueberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango (xq9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried mango (xq9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried mango (sulphur dioxide)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable or fruit item names content the vocabulary does not recognise (dried mango (sulphur dioxide): sulphur dioxide), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "dried mango slices (glazed)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried mango slices (glazed)",
+   "unassessed_after": [
+    "dried mango slices (glazed)"
+   ]
+  },
+  "dried cranberries": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: dried cranberries",
+   "unassessed_after": [
+    "dried cranberries"
+   ]
+  },
   "apples": {
    "group_before": null,
    "group_after": 1,
@@ -1359,6 +1507,110 @@
    "row_after": null,
    "drivers_after": [],
    "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "dried pineapple": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pineapple",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried papaya": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "papayas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried banana": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "bananas",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried blueberries": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "blueberries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried cherries": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cherries",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried mango (organic)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dry grapes": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "grapes",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
    "unassessed_after": []
   }
  },
