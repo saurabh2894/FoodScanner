@@ -1,0 +1,314 @@
+{
+  "rule_id": "class-fruits-1",
+  "staged": 76,
+  "ready": [
+    "abiyuch",
+    "acerola",
+    "apples",
+    "apricots",
+    "asian pears",
+    "avocados",
+    "bananas",
+    "black currants",
+    "blackberries",
+    "blueberries",
+    "boysenberries",
+    "breadfruit",
+    "cantaloupe melons",
+    "carambola",
+    "carissa",
+    "casaba melons",
+    "cherimoya",
+    "cherries",
+    "clementines",
+    "crabapples",
+    "custard-apple",
+    "elderberries",
+    "feijoa",
+    "figs",
+    "gooseberries",
+    "grapefruit",
+    "grapes",
+    "groundcherries",
+    "guavas",
+    "honeydew melons",
+    "jackfruit",
+    "java-plum",
+    "jujube",
+    "kiwifruit",
+    "kumquats",
+    "limes",
+    "litchis",
+    "longans",
+    "loquats",
+    "mamey sapote",
+    "mammy-apple",
+    "mandarin",
+    "mulberries",
+    "muscadine grapes",
+    "nance",
+    "nectarines",
+    "oheloberries",
+    "oranges",
+    "papayas",
+    "passion-fruit",
+    "pawpaw",
+    "pears",
+    "persimmons",
+    "pineapple",
+    "pitanga",
+    "plantains",
+    "plums",
+    "pomegranates",
+    "prickly pears",
+    "pummelo",
+    "quinces",
+    "raspberries",
+    "red currants",
+    "rhubarb",
+    "rose-apples",
+    "rowal",
+    "sapodilla",
+    "sour cherries",
+    "soursop",
+    "strawberries",
+    "strawberry guavas",
+    "sugar-apples",
+    "tangerines",
+    "watermelon",
+    "yellow peaches"
+  ],
+  "duplicates": {
+    "mangos": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "sugar-apples": {
+      "variant_of": [
+        "sugar"
+      ]
+    }
+  },
+  "synonym_rows": [],
+  "separate_rows": {
+    "sugar-apples": "a named fruit (sweetsop); the shared word 'sugar' with the existing 'sugar' row is incidental (false variant match)"
+  },
+  "policy_id": "variant-policy-class-fruits-1",
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [
+    {
+      "term": "Watermelon, seedless, rind only, raw",
+      "source_row": "fdc_foundation:2747676",
+      "origin": "clause_tier",
+      "reason_code": "queue_rind",
+      "reason": "a plant-part variant (rind) of a fruit.",
+      "description": "Watermelon, seedless, rind only, raw"
+    },
+    {
+      "term": "Rhubarb, stalk, raw",
+      "source_row": "fdc_foundation:2758975",
+      "origin": "clause_tier",
+      "reason_code": "queue_stalk",
+      "reason": "plant-part variant.",
+      "description": "Rhubarb, stalk, raw"
+    },
+    {
+      "term": "Lemons, raw, without peel",
+      "source_row": "fdc_sr_legacy:167746",
+      "origin": "clause_tier",
+      "reason_code": "queue_peel",
+      "reason": "a plant-part variant (peel, rind) of a fruit: not established as a label term.",
+      "description": "Lemons, raw, without peel"
+    },
+    {
+      "term": "Lemon peel, raw",
+      "source_row": "fdc_sr_legacy:167749",
+      "origin": "clause_tier",
+      "reason_code": "queue_peel",
+      "reason": "a plant-part variant (peel, rind) of a fruit: not established as a label term.",
+      "description": "Lemon peel, raw"
+    },
+    {
+      "term": "Tamarinds, raw",
+      "source_row": "fdc_sr_legacy:167763",
+      "origin": "clause_tier",
+      "reason_code": "queue_tamarinds",
+      "reason": "tamarind is a culinary pulp/sourcing ingredient on Indian labels (tamarind pulp, paste): the raw fruit name is queued until the pulp/paste forms are decided (owner).",
+      "description": "Tamarinds, raw"
+    },
+    {
+      "term": "Naranjilla (lulo) pulp, frozen, unsweetened",
+      "source_row": "fdc_sr_legacy:167790",
+      "origin": "clause_tier",
+      "reason_code": "queue_pulp",
+      "reason": "a fruit pulp is a processed mass (a puree-like product), not the whole or cut fruit; per-item decision.",
+      "description": "Naranjilla (lulo) pulp, frozen, unsweetened"
+    },
+    {
+      "term": "Horned melon (Kiwano)",
+      "source_row": "fdc_sr_legacy:167791",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Horned melon (Kiwano)"
+    },
+    {
+      "term": "Jujube, Chinese, fresh, dried",
+      "source_row": "fdc_sr_legacy:168152",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Jujube, Chinese, fresh, dried"
+    },
+    {
+      "term": "Roselle, raw",
+      "source_row": "fdc_sr_legacy:168170",
+      "origin": "clause_tier",
+      "reason_code": "queue_roselle",
+      "reason": "calyces used as a hibiscus herb/tea; not established as a fruit term.",
+      "description": "Roselle, raw"
+    },
+    {
+      "term": "Durian, raw or frozen",
+      "source_row": "fdc_sr_legacy:168192",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Durian, raw or frozen"
+    },
+    {
+      "term": "Litchis, dried",
+      "source_row": "fdc_sr_legacy:169087",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Litchis, dried"
+    },
+    {
+      "term": "Loganberries, frozen",
+      "source_row": "fdc_sr_legacy:169088",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Loganberries, frozen"
+    },
+    {
+      "term": "Orange peel, raw",
+      "source_row": "fdc_sr_legacy:169103",
+      "origin": "clause_tier",
+      "reason_code": "queue_peel",
+      "reason": "a plant-part variant (peel, rind) of a fruit: not established as a label term.",
+      "description": "Orange peel, raw"
+    },
+    {
+      "term": "Longans, dried",
+      "source_row": "fdc_sr_legacy:169907",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Longans, dried"
+    },
+    {
+      "term": "Melon balls, frozen",
+      "source_row": "fdc_sr_legacy:169912",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Melon balls, frozen"
+    },
+    {
+      "term": "Oranges, raw, with peel",
+      "source_row": "fdc_sr_legacy:169919",
+      "origin": "clause_tier",
+      "reason_code": "queue_peel",
+      "reason": "a plant-part variant (peel, rind) of a fruit: not established as a label term.",
+      "description": "Oranges, raw, with peel"
+    },
+    {
+      "term": "Persimmons, japanese, dried",
+      "source_row": "fdc_sr_legacy:169942",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Persimmons, japanese, dried"
+    },
+    {
+      "term": "cranberries",
+      "source_row": "fdc_sr_legacy:171722",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "STANDING EXCLUSION (lexicon-1 senior review, tests/test_lexicon_1.py): 'cranberry' on b1/N14 does not establish plain dried status (cranberries are typically sweetened when dried), so the term must stay out; the raw FDC record is queued, not staged.",
+      "description": "Cranberries, raw"
+    },
+    {
+      "term": "Currants, zante, dried",
+      "source_row": "fdc_sr_legacy:171724",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Currants, zante, dried"
+    },
+    {
+      "term": "Goji berries, dried",
+      "source_row": "fdc_sr_legacy:173032",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only.",
+      "description": "Goji berries, dried"
+    },
+    {
+      "term": "Blueberries, wild, frozen (Includes foods for USDA's Food Distribution Program)",
+      "source_row": "fdc_sr_legacy:173949",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Blueberries, wild, frozen (Includes foods for USDA's Food Distribution Program)"
+    },
+    {
+      "term": "american type grapes",
+      "source_row": "fdc_sr_legacy:174682",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "a grape type descriptor (slip skin) that is not a label term; stays out rather than inflating the lexicon",
+      "description": "Grapes, american type (slip skin), raw"
+    }
+  ],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 0,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {},
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 295,
+      "lexicon_rows_after": 370,
+      "synonym_rows_added": 0,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 75
+    }
+  },
+  "clause_check": "PASS",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}

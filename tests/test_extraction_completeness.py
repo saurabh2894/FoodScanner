@@ -38,7 +38,7 @@ def test_pairs_of_ingredients_are_split(pair, expected):
 
 @pytest.mark.parametrize("not_a_pair", [
     "Spices and Condiments", "Natural and Nature Identical Flavours", "Vegetables and Spices (Onion, Garlic)", "milk and cream",
-    "Spices & Condiments", "mono and diglycerides of fatty acids", "salt and jackfruit",
+    "Spices & Condiments", "mono and diglycerides of fatty acids", "salt and dragonfruit",   # was "salt and jackfruit": jackfruit is a vocabulary row since class-bulk-3, and a phrase of two recognised items is a list; the test needs a word that is still unknown
 ])
 def test_phrases_that_are_not_two_ingredients_are_kept_whole(not_a_pair):
     assert not_a_pair in items(f"Ingredients: rice, {not_a_pair}, water.")

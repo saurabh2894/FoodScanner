@@ -1,0 +1,10 @@
+{
+ "policy_id": "variant-policy-class-fruits-1",
+ "applies_to": "class-fruits-1 staged batches",
+ "policy": "Cultivar, colour-shade, ripeness and size variants are collapsed by the rule's canonical table and listed as synonym CANDIDATES (synonyms.csv untouched). Named fruits are separate canonical rows.",
+ "synonyms": {},
+ "separate_rows": {
+  "sugar-apples": "a named fruit (sweetsop); the shared word 'sugar' with the existing 'sugar' row is incidental (false variant match)"
+ },
+ "parked": {}
+}

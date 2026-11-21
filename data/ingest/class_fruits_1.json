@@ -62,6 +62,7 @@
       "glazed",
       "grilled",
       "halves",
+      "heated",
       "heavy",
       "home-prepared",
       "infusion",
@@ -172,7 +173,8 @@
     "carob": "not a fruit example of the clause; no source read places it.",
     "roselle": "calyces used as a hibiscus herb/tea; not established as a fruit term.",
     "tamarinds": "tamarind is a culinary pulp/sourcing ingredient on Indian labels (tamarind pulp, paste): the raw fruit name is queued until the pulp/paste forms are decided (owner).",
-    "coconut": "coconut is a nut/seed in this project's vocabulary (Nut and Seed batch)."
+    "coconut": "coconut is a nut/seed in this project's vocabulary (Nut and Seed batch).",
+    "pulp": "a fruit pulp is a processed mass (a puree-like product), not the whole or cut fruit; per-item decision."
   },
   "plain_tokens": [
     "raw"
@@ -229,5 +231,217 @@
     "why": ""
   },
   "alt_name_ignore": {},
-  "canonical": {}
+  "canonical": {
+    "fuji apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "gala apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "golden delicious apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "granny smith apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "honeycrisp apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red delicious apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "unheated apples": {
+      "to": "apples",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "bartlett pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "bosc pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red anjou pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "green anjou pears": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "green anjou pear": {
+      "to": "pears",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "green grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "red or green grapes": {
+      "to": "grapes",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "american type grapes": {
+      "to": null,
+      "basis": "a grape type descriptor (slip skin) that is not a label term; stays out rather than inflating the lexicon"
+    },
+    "sweet cherries": {
+      "to": "cherries",
+      "basis": "FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "dark red sweet cherries": {
+      "to": "cherries",
+      "basis": "FDC 'Cherries, sweet': the sweet cherry is the common cherry; one canonical row (INFERENCE: owner to confirm)"
+    },
+    "red sour cherries": {
+      "to": "sour cherries",
+      "basis": "colour-shade variant of sour cherries; one canonical row"
+    },
+    "ataulfo mango": {
+      "to": "mangos",
+      "basis": "cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural)"
+    },
+    "tommy atkins mango": {
+      "to": "mangos",
+      "basis": "cultivar variant of one fruit; one canonical row (existing 'mango' row recognises the plural)"
+    },
+    "hass avocado": {
+      "to": "avocados",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "ripe and slightly ripe bananas": {
+      "to": "bananas",
+      "basis": "ripeness grade of one fruit; one canonical row"
+    },
+    "green plantains": {
+      "to": "plantains",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "yellow plantains": {
+      "to": "plantains",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "green kiwifruit": {
+      "to": "kiwifruit",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "zespri sungold kiwifruit": {
+      "to": "kiwifruit",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "white grapefruit": {
+      "to": "grapefruit",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "apricot": {
+      "to": "apricots",
+      "basis": "same fruit, singular/plural FDC entries; one canonical row"
+    },
+    "black plum": {
+      "to": "plums",
+      "basis": "cultivar variant of one fruit; one canonical row"
+    },
+    "red raspberries": {
+      "to": "raspberries",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "european black currants": {
+      "to": "black currants",
+      "basis": "FDC 'Currants, european black'; label term 'black currants'"
+    },
+    "red and white currants": {
+      "to": "red currants",
+      "basis": "FDC 'Currants, red and white' (one record for both colours); INFERENCE: owner to confirm"
+    },
+    "japanese persimmons": {
+      "to": "persimmons",
+      "basis": "species variants of persimmon; one canonical row (label term 'persimmon')"
+    },
+    "native persimmons": {
+      "to": "persimmons",
+      "basis": "species variants of persimmon; one canonical row (label term 'persimmon')"
+    },
+    "purple passion-fruit": {
+      "to": "passion-fruit",
+      "basis": "colour-shade variant of one fruit; one canonical row"
+    },
+    "cranberries": {
+      "to": null,
+      "basis": "STANDING EXCLUSION (lexicon-1 senior review, tests/test_lexicon_1.py): 'cranberry' on b1/N14 does not establish plain dried status (cranberries are typically sweetened when dried), so the term must stay out; the raw FDC record is queued, not staged."
+    }
+  },
+  "portion_guard": [
+    "cooked",
+    "canned",
+    "boiled",
+    "drained",
+    "syrup",
+    "sweetened",
+    "stewed",
+    "baked",
+    "fried",
+    "roasted"
+  ],
+  "portion_guard_why": "Portion descriptors of RAW fruit legitimately say slices, sections, pieces, halves, cubes, pureed or juice (measuring units); only descriptors naming a preparation or packing medium contradict the plain form.",
+  "negative_controls": [
+    "salted plums",
+    "plums (in syrup)",
+    "mango (sweetened)",
+    "mango (preserved)",
+    "apples (bottled)",
+    "lemon (pickled)",
+    "pineapple (canned)",
+    "canned peaches",
+    "peaches in syrup",
+    "apple juice",
+    "orange juice concentrate",
+    "applesauce",
+    "fruit cocktail",
+    "dried apricots",
+    "strawberry jam",
+    "banana chips",
+    "strawberries (sweetened)",
+    "strawberries (with sugar)",
+    "raisins in syrup",
+    "mango powder",
+    "banana powder",
+    "strawberry powder",
+    "apple powder",
+    "pineapple powder",
+    "lemon peel",
+    "orange peel",
+    "spinach & apple powder",
+    "apple extract powder",
+    "tamarind pulp",
+    "coconut"
+  ],
+  "positive_controls": [
+    "apples",
+    "bananas",
+    "strawberries",
+    "strawberries (frozen)",
+    "unsweetened strawberries",
+    "strawberries (no added sugar)",
+    "strawberries (sugar free)",
+    "dates",
+    "black raisin",
+    "mango",
+    "lemon",
+    "100% mango powder",
+    "whole banana powder",
+    "oranges",
+    "rice, salt, apples",
+    "rice, apples"
+  ]
 }

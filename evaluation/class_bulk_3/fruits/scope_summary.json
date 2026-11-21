@@ -1,0 +1,28 @@
+{
+ "rule_id": "class-fruits-1",
+ "rule_sha256": "87ca1d246e5c1674d09f704c96acacdeaef8078d8489627256a1d86598516c64",
+ "candidates_sha256": "6c55551720017e1f487d8c8cd1127591e02c069e454cc97264f176a805041cfb",
+ "category": "Fruits and Fruit Juices",
+ "candidates_in_category": 430,
+ "decisions": {
+  "REJECT": 252,
+  "ACCEPT": 156,
+  "QUEUE": 22
+ },
+ "reason_codes": {
+  "processed_word": 243,
+  "plain_seed": 156,
+  "queue_rind": 1,
+  "queue_stalk": 1,
+  "product_word": 9,
+  "queue_peel": 4,
+  "queue_tamarinds": 1,
+  "queue_pulp": 1,
+  "plain_form_not_stated": 5,
+  "queue_dried": 6,
+  "queue_roselle": 1,
+  "dedupe_stays_out": 2
+ },
+ "staged_rows": 76,
+ "synonym_candidates": 57
+}

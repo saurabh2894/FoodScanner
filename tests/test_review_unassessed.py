@@ -46,8 +46,9 @@ def test_fully_recognised_list_has_nothing_unassessed():
 
 
 def test_duplicates_are_listed_once():
-    a = analyse_text("Ingredients: Rice, jackfruit, jackfruit, flavour.")
-    assert a.unassessed == ["jackfruit"]
+    # jackfruit became a vocabulary row in class-bulk-3, so this duplicate test uses a word that is still not in the vocabulary (dragonfruit); the test's subject (a repeated unassessed item is listed once) is unchanged
+    a = analyse_text("Ingredients: Rice, dragonfruit, dragonfruit, flavour.")
+    assert a.unassessed == ["dragonfruit"]
 
 
 def test_additives_and_markers_count_as_assessed():

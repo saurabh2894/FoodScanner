@@ -193,6 +193,10 @@ CORPUS = [
     "Ingredients: Milk Powder (45%)", "Ingredients: Fortified Milk Powder", "Ingredients: Instant Milk Powder", "Ingredients: Milk Powder Blend", "Ingredients: Milk Powder (Vitamins Added)",
     "Ingredients: Skimmed Milk Powder (Soy Lecithin)", "Ingredients: Milk Solids Powder", "Ingredients: Rice, Milk Solids Powder.", "Ingredients: Rice, Salt, Milk Powder.", "Ingredients: Rice, Milk Powder.",
     "Ingredients: Blend (Milk Solids Powder, Salt).", "Ingredients: Milk Solids",
+    # class-bulk-3 fruit kind (tests/test_class_bulk_3.py, SYNTHETIC): same item-level guard (sugar/syrup/salt -> Group 3; canned/bottled/preserved abstain) and the powder standard
+    "Ingredients: Salted Plums", "Ingredients: Plums (in syrup)", "Ingredients: Mango (sweetened)", "Ingredients: Strawberries (with sugar)", "Ingredients: Mango (preserved)", "Ingredients: Apples (bottled)",
+    "Ingredients: Strawberries (no added sugar)", "Ingredients: Strawberries (frozen)", "Ingredients: Rice, Apples (canned).", "Ingredients: Rice, Salt, Apples.", "Ingredients: Mango Powder", "Ingredients: 100% Mango Powder",
+    "Ingredients: Whole Banana Powder", "Ingredients: Spinach & Apple Powder", "Ingredients: Canned Peaches", "Ingredients: Dried Apricots", "Ingredients: Sweeteners (Dates, Jaggery Powder).",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

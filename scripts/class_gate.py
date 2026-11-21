@@ -53,14 +53,22 @@ def probe(src: Path, lines: list[str], out: Path, work: Path) -> dict:
 def compare_sets(B: dict, A: dict, terms: list[str]) -> dict:
     fields = ("group", "status", "reason", "drivers", "warnings", "ingredients", "unassessed", "ins_mappings")
     listed, unexplained, kinds = [], [], {"abstain_to_4": [], "abstain_to_1": [], "abstain_to_2_3": [], "other_group_change": []}
-    low = [t.lower() for t in terms]
+    def variants(t):
+        t = t.lower()
+        v = {t, t.rstrip("s")}
+        if t.endswith("ies"):
+            v.add(t[:-3] + "y")                       # cranberries -> cranberry
+        if t.endswith("oes") or t.endswith("ches") or t.endswith("shes") or t.endswith("sses"):
+            v.add(t[:-2])
+        return v
+    low = sorted({x for t in terms for x in variants(t)})
     for k in B:
         ch = [f for f in fields if B[k].get(f) != A[k].get(f)]
         if not ch:
             continue
         txt = json.dumps([B[k].get(f) for f in ("unassessed", "ingredients", "drivers", "reason")] + [A[k].get(f) for f in ("unassessed", "ingredients", "drivers", "reason")]).lower()
         diff_unassessed = [u for u in B[k]["unassessed"] if u not in A[k]["unassessed"]] + [u for u in A[k]["unassessed"] if u not in B[k]["unassessed"]]
-        hit = sorted({t for t in low for u in diff_unassessed + [d for d in A[k]["drivers"] if d not in B[k]["drivers"]] if t in u.lower() or t.rstrip("s") in u.lower()})
+        hit = sorted({t for t in low for u in diff_unassessed + [d for d in A[k]["drivers"] if d not in B[k]["drivers"]] if t in u.lower()})
         e = {"input": k, "changed": ch, "group": [B[k]["group"], A[k]["group"]], "status": [B[k]["status"], A[k]["status"]], "unassessed_diff": diff_unassessed, "staged_terms": hit}
         listed.append(e)
         if not hit:
