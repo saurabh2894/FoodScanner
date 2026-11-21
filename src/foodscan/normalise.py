@@ -191,12 +191,29 @@ def extract_ins(text: str) -> tuple[str, list[InsUse]]:
     return stripped, uses
 
 
+_FOOTNOTE_RE = re.compile(
+    r"(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021]|\u201D)(?=\s|[)\]},;.:]|$)", re.UNICODE)
+_FOOTNOTE_NO_QUOTE_RE = re.compile(
+    r"(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021])(?=\s|[)\]},;.:]|$)", re.UNICODE)
+
+
+def strip_footnotes(text: str) -> str:
+    """Narrow, item-aware removal of trailing footnote marks (#, ##, *, **, dagger, double dagger, and
+    observed OCR closing quote U+201D). Does not treat quoted phrases as footnotes."""
+    if "”" in text and ("“" in text or '"' in text):
+        return _FOOTNOTE_NO_QUOTE_RE.sub("", text)
+    return _FOOTNOTE_RE.sub("", text)
+
+
 def normalise_ingredient(raw: str) -> Ingredient:
     text, uses = extract_ins(raw)
     text = re.sub(r"\d+(?:\.\d+)?\s*%", " ", text)
+    text = strip_footnotes(text)
     text = _apply_synonyms(text)
     text = flatten(text)
     name, inner = _split_brackets(text)
+    name = strip_footnotes(name)
+    inner = strip_footnotes(inner)
     roles = _declared_roles(name)
     phrase = label_phrase(raw) if roles else None
     return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw, declared=phrase, declared_roles=roles) for u in uses])

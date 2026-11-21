@@ -22,7 +22,7 @@ def test_synthetic_the_shared_percentage_is_a_note_not_copied_onto_each_item():
     assert any("22.3%" in n and "applies to the pair, not to each item separately" in n for n in notes)
 
 
-@pytest.mark.parametrize("raw", ["Sprouted Ragi & Oat", "Fermented Ragi & Oat", "Spices & Condiments", "Palm & Palmolein", "Rice & Oat (Organic)", "Rice & Oat & Wheat", "Rice and Oat", "Salted Almonds & Cashews"])
+@pytest.mark.parametrize("raw", ["Sprouted Ragi & Oat", "Fermented Ragi & Oat", "Spices & Condiments", "Palm & Palmolein", "Rice & Oat (Organic)", "Rice & Oat & Wheat", "Rice or Oat", "Salted Almonds & Cashews"])
 def test_synthetic_negative_controls_stay_whole(raw):
     assert _split_amp_pair(raw) == ([raw], [])
 
