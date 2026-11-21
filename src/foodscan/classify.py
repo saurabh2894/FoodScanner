@@ -250,6 +250,31 @@ def bracket_residual(ing) -> list:
     return residual
 
 
+# whole-food-guard-1 (owner proposal; abstention only, no new group): a recognised whole_food item is no longer answered Group 1 when (a) its OWN name or bracket carries added salt, sugar, brine, a recognised culinary substance
+# (an oil) or a canned/bottled/preserved form, except where the 23-term salted-grain guard (per-form-2a) already answers Group 3, or (b) its own bracket names a distinct food of another class (animal dairy, egg, or plant: "Rice (Egg)",
+# "Milk (Rice)"; same-class parts such as "Milk (Buffalo Milk)", "Eggs (Duck Eggs)" or "Dehydrated Vegetable (Onion)" are not distinct). No source read places these forms, so the honest answer is "not established"; in particular no
+# Group 3 answer is asserted for salted or sugared milk or eggs (an open owner decision).
+def _food_class(term: str) -> str:
+    words = term.split()
+    return "dairy" if ("milk" in words or term == "dahi") else ("egg" if words and words[-1] in ("egg", "eggs") else "plant")
+
+
+def whole_food_condition(ing, kind: str) -> bool:
+    return kind == "whole_food" and not grain_added_salt(ing, kind) and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing))
+
+
+def whole_food_nested(ing, kind: str) -> list:
+    head = lookup(ing.name)
+    if kind != "whole_food" or not head or not ing.inner:
+        return []
+    cls, out = _food_class(head["term"]), []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
+        row = lookup(part.strip()) if part.strip() else None
+        if row and row["kind"] not in ("neutral", "culture", "culinary") and _food_class(row["term"]) != cls:
+            out.append(part.strip())
+    return out
+
+
 # Salted grain guard (per-form-2a): the 23 Batch-4 grain/flour terms (the _SCOPED_TERMS set) with salt added in the item's OWN name or bracket take Group 3, never Group 1 through the global 'salted' descriptor.
 # Source (FAO 2019 ca5644en, quoted in evaluation/per_form_2a/README.md): "They are made by adding salt, oil, sugar or other substances from group 2 to group 1 foods." (p.7 prose); "Some of what are now
 # ultra-processed foods were originally manufactured only with group 1 foods and salt or sugar or other substances from group 2, and thus would be classed in NOVA group 3 as processed foods." (p.9). INFERENCE
@@ -424,6 +449,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
 
     kinds = [lookup(i.name)["kind"] for i in ings]
     bracket_unknown = [(i.raw, bracket_residual(i), k) for i, k in zip(ings, kinds) if k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
+    wf_condition = [i.raw for i, k in zip(ings, kinds) if whole_food_condition(i, k)]
+    wf_nested = [(i.raw, whole_food_nested(i, k)) for i, k in zip(ings, kinds) if whole_food_nested(i, k)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -437,6 +464,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
         return Classification(None, reason=what + " names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
+    if wf_nested:
+        return Classification(None, reason="a bracket names a different kind of food inside the item (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in wf_nested)
+                              + "): what the item is made of is not established, so neither Group 1 nor Group 3 is established")
+    if wf_condition:
+        return Classification(None, reason="an item whose own text carries added salt, sugar, brine, oil or a canned, bottled or preserved form (" + "; ".join(wf_condition)
+                              + "): the food is recognised, but no source read states whether that addition moves this food out of Group 1, so neither Group 1 nor Group 3 is established")
     nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
