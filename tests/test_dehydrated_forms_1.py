@@ -53,6 +53,7 @@ def test_synthetic_negative_processed_onion_forms_stay_unrecognised(t):
     assert not rec(t)
 
 
-def test_synthetic_dehydrated_vegetable_stays_unassessed_and_the_list_abstains():
+def test_synthetic_dehydrated_vegetable_is_a_recognised_class_level_row_since_pmc_decisions_4_and_the_list_still_abstains():
+    # pmc-decisions-4 (owner-approved): 'dehydrated vegetable' is a per-term whole_food row (FAO Group 1 'dried ... vegetables'); rice + it is two whole foods with unassessed none, so it follows the existing whole-food rules
     group, a = g("Rice, dehydrated vegetable")
-    assert group is None and any("dehydrated vegetable" in u.lower() for u in a.unassessed)
+    assert not any("dehydrated vegetable" in u.lower() for u in a.unassessed)

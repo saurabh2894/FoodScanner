@@ -10,6 +10,7 @@ from foodscan.normalise import normalise_ingredient
 
 ROOT = Path(__file__).resolve().parent.parent
 DEC = json.loads((ROOT / "data" / "ingest" / "pmc_decisions_1.json").read_text(encoding="utf-8"))
+APPROVED_4 = {d["term"] for d in json.loads((ROOT / "data" / "ingest" / "pmc_decisions_4.json").read_text(encoding="utf-8"))["decisions"] if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM")}  # approved later (pmc-decisions-4)
 LEX = {r["term"] for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
 ROWS = {"Other unprocessed or minimally processed foods", "Other processed culinary ingredients"}
 
@@ -24,7 +25,7 @@ def test_synthetic_only_the_owner_lifted_plain_starch_rows_entered_the_vocabular
     for d in DEC["decisions"]:
         if d["disposition"] == "ACCEPT_ROW":
             assert d["term"] in LEX and "LIFTED for plain/unmodified starch" in d["owner_override"]
-        else:
+        elif d["term"] not in APPROVED_4:
             assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
             assert d["standing_reason"] == "single admissible source or broader than FAO"
 

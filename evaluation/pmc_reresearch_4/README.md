@@ -1,6 +1,6 @@
-# pmc-reresearch-4 (PROPOSAL ONLY, merge-stop)
+# pmc-reresearch-4 (OWNER-APPROVED PART MERGED)
 
-Nothing here is in lexicon.csv / markers.csv / synonyms.csv. Rule update applied: any authoritative NOVA source may place a term on its own; naming-only sources (FDC, WHO JECFA) never place; conflicts are flagged, not parked; park only when no authoritative source covers the term.
+**Merged (owner decision 2026-11-21): 9 rows + 3 synonyms. NOT merged: the 3 marker proposals (amended to HELD: glucose syrup / liquid glucose 'no ingredient-level naming in an admissible source; product-level coding alone insufficient'; texturized soy protein 'class membership not established for the texturized form'), cocoa powder and dry fruits (PARK until an item-level condition mechanism exists), defatted soya (CONFLICT stands). markers.csv unchanged.** The marker_gate_a/b directories and data/ingest/marker_proposals_4a/4b.json are kept only as the record of the withdrawn proposals. Rule update applied: any authoritative NOVA source may place a term on its own; naming-only sources (FDC, WHO JECFA) never place; conflicts are flagged, not parked; park only when no authoritative source covers the term.
 
 Sources used (details in `data/ingest/pmc_decisions_4.json` -> `sources_used`): FAO 2019 ca5644en; PMC10127522 (cached); NUPENS Nova page (fetched, 200); USP-hosted Lancet 2025 PDF (fetched, 200, pdftotext); FDC naming only; WHO JECFA home reachable but no per-term monograph. Each row quotes one clause, verified verbatim by the gate (`--extra-text`).
 
@@ -32,3 +32,7 @@ Sources used (details in `data/ingest/pmc_decisions_4.json` -> `sources_used`): 
 1. Owner decision on each marker proposal (classification-bearing).
 2. Cocoa powder needs an item-level "unsweetened" mechanism (or park until built).
 3. Owner decision on dry fruits kind, and on the defatted soya CONFLICT.
+
+## Final staged gate (after the owner's decisions)
+- Rows + synonyms (`gate/`, run on the pre-staging tables): group 0, drivers 0, status 0, reason 2, unassessed 13 (frozen 66), every change attributed to a staged row, 0 unexplained.
+- Post-staging repo vs the pre-merge build in separate fresh processes: frozen 66 and out-of-sample 32 show group/status/drivers unchanged; the only changes are unassessed/reason (frozen 13; OOS S11, S15, S22, attributed to yeast and dehydrated vegetable). 0 abstain->4.

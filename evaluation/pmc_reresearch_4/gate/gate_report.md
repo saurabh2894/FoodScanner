@@ -7,12 +7,12 @@ Nothing was merged.
 | Check | Result |
 |---|---|
 | open demand terms decided | 24 |
-| by disposition | {'ACCEPT_ROW': 11, 'ACCEPT_SYNONYM': 3, 'MARKER_PROPOSAL': 3, 'CONFLICT': 1, 'PARK': 6} |
-| paste-input mentions by disposition (a term can occur in several inputs) | {'ACCEPT_ROW': 11, 'ACCEPT_SYNONYM': 3, 'MARKER_PROPOSAL': 3, 'CONFLICT': 1, 'PARK': 6} |
-| candidate lexicon rows | 11 |
+| by disposition | {'ACCEPT_ROW': 9, 'PARK': 8, 'ACCEPT_SYNONYM': 3, 'HELD': 3, 'CONFLICT': 1} |
+| paste-input mentions by disposition (a term can occur in several inputs) | {'ACCEPT_ROW': 9, 'PARK': 8, 'ACCEPT_SYNONYM': 3, 'HELD': 3, 'CONFLICT': 1} |
+| candidate lexicon rows | 9 |
 | candidate synonyms | 3 |
-| flip check (66 frozen inputs, separate fresh processes) | group 0, drivers 0, status 0, reason 2, warnings 0, ingredients 0, unassessed 15, ins_mappings 0 |
-| harness proof | lexicon rows 151 -> 162; synonym rows 3; all 14 terms recognised after |
+| flip check (66 frozen inputs, separate fresh processes) | group 0, drivers 0, status 0, reason 2, warnings 0, ingredients 0, unassessed 13, ins_mappings 0 |
+| harness proof | lexicon rows 151 -> 160; synonym rows 3; all 12 terms recognised after |
 
 ## Candidate rows
 
@@ -20,9 +20,7 @@ Nothing was merged.
 - `sorghum flour` (flour) for demand term `sorghum flour`
 - `soya flour` (flour) for demand term `soya flour`
 - `split pulse urad flour` (flour) for demand term `split pulse urad flour`
-- `cocoa powder` (culinary) for demand term `cocoa powder`
 - `cocoa butter` (culinary) for demand term `cocoa butter`
-- `dry fruits` (nut_seed) for demand term `dry fruits`
 - `roasted gram` (whole_food) for demand term `roasted gram`
 - `refined oil` (culinary) for demand term `refined oil`
 - `butter oil` (culinary) for demand term `butter oil`
@@ -33,19 +31,24 @@ Nothing was merged.
 
 ## Marker proposals (classification-bearing: owner decision, not staged)
 
-- #15 `liquid glucose` (1 inputs): classification_bearing: FAO 2019 (ca5644en.pdf) p.9 names 'varieties of sugars' (class) among ultra-processed ingredients and PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (table footnote 12, 'Other ultraprocessed foods') codes 'all syrups (excluding 100% maple syrup)' as ultra-processed: class-instance (glucose syrup in liquid form); FAO Group 2 names only maple syrup among syrups, so no conflict. STRONG marker proposal for the owner.
-- #16 `glucose syrup` (1 inputs): classification_bearing: FAO 2019 (ca5644en.pdf) p.9 names 'varieties of sugars' (class) among ultra-processed ingredients and PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (table footnote 12, 'Other ultraprocessed foods') codes 'all syrups (excluding 100% maple syrup)' as ultra-processed: class-instance (a syrup); FAO Group 2 names only maple syrup among syrups, so no conflict. STRONG marker proposal for the owner.
-- #17 `texturized soy protein` (1 inputs): classification_bearing: NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/) (group 4) lists 'protein isolates or concentrates' among the substances of ultra-processed formulations and Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) names 'plant protein isolates'; FAO p.9 names 'soya protein isolate' (existing marker 'protein isolate'). Texturized soy protein as an instance of that class is an INFERENCE (extruded product of soy protein concentrate or flour). STRONG marker proposal for the owner.
 
 ## CONFLICT between authoritative sources (flagged, not parked, not staged)
 
 - #18 `defatted soya` (1 inputs): authoritative_sources_conflict: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (footnote 2) places generic 'flours' with the unprocessed or minimally processed foods, while Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) describes ultra-processed foods as made from soy and other crops fractioned into starches, fibre, sugars, oils and fats, and proteins, and NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/) lists protein isolates or concentrates among group 4 substances: a defatted soy fraction is placed differently depending on which statement applies. FLAGGED, not parked and not staged.
+
+## HELD by the owner (not parked, not staged; exact gap stated)
+
+- #15 `liquid glucose` (1 inputs): owner_held_gap: OWNER AMENDMENT (2026-11-21): HELD (not parked, not staged). Gap: no ingredient-level naming in an admissible source; product-level coding alone insufficient. FAO p.9 names specific sugar varieties (fructose, HFCS, 'fruit juice concentrates', invert sugar, maltodextrin, dextrose, lactose), a named list, not 'all sugars'; Monteiro 2019 (PMC10260459) repeats it; PMC10127522 fn12 'all syrups (excluding 100% maple syrup)' is product-level NHANES coding, corroboration only when a source applies it to ingredients. Bring back only as a fresh proposal if an admissible primary clause names the ingredient form itself.
+- #16 `glucose syrup` (1 inputs): owner_held_gap: OWNER AMENDMENT (2026-11-21): HELD (not parked, not staged). Gap: no ingredient-level naming in an admissible source; product-level coding alone insufficient. FAO p.9 names specific sugar varieties (fructose, HFCS, 'fruit juice concentrates', invert sugar, maltodextrin, dextrose, lactose), a named list, not 'all sugars'; Monteiro 2019 (PMC10260459) repeats it; PMC10127522 fn12 'all syrups (excluding 100% maple syrup)' is product-level NHANES coding, corroboration only when a source applies it to ingredients. Bring back only as a fresh proposal if an admissible primary clause names the ingredient form itself.
+- #17 `texturized soy protein` (1 inputs): owner_held_gap: OWNER AMENDMENT (2026-11-21): HELD (not parked, not staged). Gap: class membership not established for the texturized form. NUPENS and Lancet 2025 name 'protein isolates or concentrates', but texturizing does not establish an isolate or concentrate (common TVP is texturized soy flour, ~50% protein); no reachable admissible source names texturized/textured protein. Bring back only as a fresh proposal if an admissible primary clause names the ingredient form itself.
 
 ## Label-bound (conditioned clause, never staged)
 
 
 ## Parked
 
+- #5 `cocoa powder` (1 inputs): owner_park_pending_mechanism: OWNER DECISION (2026-11-21): PARK until an item-level 'unsweetened' condition mechanism exists for this kind (like nut_seed). PMC10127522 fn5 places 'unsweetened baking chocolate, cocoa powder and gelatin powder' (exact-named, condition 'unsweetened'). Do not stage the row without the mechanism.
+- #7 `dry fruits` (1 inputs): owner_park_pending_mechanism: OWNER DECISION (2026-11-21): PARK. The clause covers 'dried fruits (without added sugars)', a dried-FRUIT class with a sugar condition; kind nut_seed is a stretch and there is no dried-fruit condition mechanism. Revisit together with the cocoa powder mechanism.
 - #19 `cocoa solids` (1 inputs): no_authoritative_source_covers_it: none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa solids; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)
 - #20 `cocoa nibs` (1 inputs): no_authoritative_source_covers_it: none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa nibs; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)
 - #21 `cocoa mass` (1 inputs): no_authoritative_source_covers_it: none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa mass; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)

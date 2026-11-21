@@ -2,18 +2,18 @@
  "decisions_id": "pmc-decisions-4",
  "n_terms": 24,
  "by_disposition": {
-  "ACCEPT_ROW": 11,
+  "ACCEPT_ROW": 9,
+  "PARK": 8,
   "ACCEPT_SYNONYM": 3,
-  "MARKER_PROPOSAL": 3,
-  "CONFLICT": 1,
-  "PARK": 6
+  "HELD": 3,
+  "CONFLICT": 1
  },
  "paste_inputs_by_disposition": {
-  "ACCEPT_ROW": 11,
+  "ACCEPT_ROW": 9,
+  "PARK": 8,
   "ACCEPT_SYNONYM": 3,
-  "MARKER_PROPOSAL": 3,
-  "CONFLICT": 1,
-  "PARK": 6
+  "HELD": 3,
+  "CONFLICT": 1
  },
  "rows": [
   {
@@ -41,22 +41,10 @@
    "demand_term": "split pulse urad flour"
   },
   {
-   "term": "cocoa powder",
-   "kind": "culinary",
-   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 5 (row 'Other processed culinary ingredients') \"unsweetened baking chocolate, cocoa powder and gelatin powder\"; exact term IS named, WITH the condition 'unsweetened' (sweetened cocoa mixes are not covered); demand-driven row (pmc-decisions-4)",
-   "demand_term": "cocoa powder"
-  },
-  {
    "term": "cocoa butter",
    "kind": "culinary",
    "source": "PROVISIONAL: NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/), group 2 \"Processed culinary ingredients are substances extracted from foods of the first group by physical procedures such as pressing, centrifugation, and concentration\"; exact term not named (class-instance inference: cocoa butter is a fat pressed from cocoa beans); FDC names 'Oil, cocoa butter' (sr_legacy 171421; naming only); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171421 \"Oil, cocoa butter\"; demand-driven row (pmc-decisions-4)",
    "demand_term": "cocoa butter"
-  },
-  {
-   "term": "dry fruits",
-   "kind": "nut_seed",
-   "source": "PROVISIONAL: PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods') \"dried fruits (without added sugars) and vegetables\"; exact term not named (a class phrase covering dried fruit and, in Indian use, nuts); kind nut_seed so the item-level salt/sugar condition applies (the clause is conditioned 'without added sugars'; the nut clause is 'no added salt or sugar'); demand-driven row (pmc-decisions-4)",
-   "demand_term": "dry fruits"
   },
   {
    "term": "roasted gram",
@@ -108,7 +96,7 @@
    "reason": 2,
    "warnings": 0,
    "ingredients": 0,
-   "unassessed": 15,
+   "unassessed": 13,
    "ins_mappings": 0
   },
   "changed_inputs": {
@@ -129,10 +117,8 @@
     "b1/N07",
     "b1/N10",
     "b1/N13",
-    "b1/N14",
     "b2/M11",
     "b2/M15",
-    "b3/Q12",
     "neg/R5",
     "dev/F02",
     "dev/F07",
@@ -208,15 +194,6 @@
     ],
     "newly_unassessed": []
    },
-   "b1/N14": {
-    "recognised_now": [
-     "Cocoa Powder (7%)"
-    ],
-    "attributed_to_rows": [
-     "cocoa powder"
-    ],
-    "newly_unassessed": []
-   },
    "b2/M11": {
     "recognised_now": [
      "DEHYDRATED VEGETABLE POWDER (group name; its contents were assessed separately)"
@@ -232,15 +209,6 @@
     ],
     "attributed_to_rows": [
      "caster sugar"
-    ],
-    "newly_unassessed": []
-   },
-   "b3/Q12": {
-    "recognised_now": [
-     "Cocoa Powder (1.5%)"
-    ],
-    "attributed_to_rows": [
-     "cocoa powder"
     ],
     "newly_unassessed": []
    },
@@ -289,10 +257,10 @@
   "inputs": 66,
   "harness": {
    "lexicon_rows_before": 151,
-   "lexicon_rows_after": 162,
+   "lexicon_rows_after": 160,
    "synonym_rows_added": 3,
    "terms_recognised_before": [],
-   "terms_recognised_after": 14
+   "terms_recognised_after": 12
   }
  },
  "errors": [],

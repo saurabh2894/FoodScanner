@@ -103,7 +103,7 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
             if vb.flat(d["term"]) in lex or vb.flat(d["term"]) in syn:
                 errors.append(f"{d['term']}: already a lexicon term or synonym")
             syns.append({"from": d["term"], "to": d["to"], "source": source_row(d, cands, dec['decisions_id'])})
-        elif d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL", "CONFLICT"):
+        elif d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL", "CONFLICT", "HELD"):
             if not (d.get("reason") or "").strip():
                 errors.append(f"{d['term']}: no one-line reason")
         else:
@@ -141,7 +141,7 @@ def write(g: dict, out: Path, force: bool) -> None:
     w("lexicon_candidate_rows.csv", ["term", "kind", "source"], [[r["term"], r["kind"], r["source"]] for r in g["rows"]])
     w("synonyms_candidate_rows.csv", ["from", "to", "source"], [[s["from"], s["to"], s["source"]] for s in g["synonyms"]])
     w("marker_proposals.csv", ["rank", "term", "paste_inputs", "fao_term_named", "why"], [[d["rank"], d["term"], d["paste_inputs"], d["clause"], d["reason"]] for d in D if d["disposition"] == "MARKER_PROPOSAL"])
-    w("ambiguity_queue.csv", ["rank", "term", "paste_inputs", "disposition", "code", "reason"], [[d["rank"], d["term"], d["paste_inputs"], d["disposition"], d["code"], d["reason"]] for d in D if d["disposition"] in ("PARK", "LABEL_BOUND", "CONFLICT")])
+    w("ambiguity_queue.csv", ["rank", "term", "paste_inputs", "disposition", "code", "reason"], [[d["rank"], d["term"], d["paste_inputs"], d["disposition"], d["code"], d["reason"]] for d in D if d["disposition"] in ("PARK", "LABEL_BOUND", "CONFLICT", "HELD")])
     (out / "gate_report.json").write_text(json.dumps({k: v for k, v in g.items() if k not in ("decisions",)}, indent=1, ensure_ascii=False, default=str) + "\n", encoding="utf-8")
     f = g["flip"]
     L = [f"# Gate report: {g['decisions_id']}", "", f"**Verdict: {g['verdict']}**" + (": " + "; ".join(g["errors"]) if g["errors"] else ""), "", "Nothing was merged.", "",
@@ -151,7 +151,7 @@ def write(g: dict, out: Path, force: bool) -> None:
         L += [f"| flip check ({f['inputs']} frozen inputs, separate fresh processes) | " + ", ".join(f"{k} {v}" for k, v in f["changed_counts"].items()) + " |",
               f"| harness proof | lexicon rows {f['harness'].get('lexicon_rows_before')} -> {f['harness'].get('lexicon_rows_after')}; synonym rows {f['harness'].get('synonym_rows_added')}; all {f['harness'].get('terms_recognised_after')} terms recognised after |"]
     L += ["", "## Candidate rows", ""] + [f"- `{r['term']}` ({r['kind']}) for demand term `{r['demand_term']}`" for r in g["rows"]] + [f"- synonym `{s['from']}` -> `{s['to']}`" for s in g["synonyms"]]
-    for disp, title in (("MARKER_PROPOSAL", "Marker proposals (classification-bearing: owner decision, not staged)"), ("CONFLICT", "CONFLICT between authoritative sources (flagged, not parked, not staged)"), ("LABEL_BOUND", "Label-bound (conditioned clause, never staged)"), ("PARK", "Parked")):
+    for disp, title in (("MARKER_PROPOSAL", "Marker proposals (classification-bearing: owner decision, not staged)"), ("CONFLICT", "CONFLICT between authoritative sources (flagged, not parked, not staged)"), ("HELD", "HELD by the owner (not parked, not staged; exact gap stated)"), ("LABEL_BOUND", "Label-bound (conditioned clause, never staged)"), ("PARK", "Parked")):
         L += ["", f"## {title}", ""] + [f"- #{d['rank']} `{d['term']}` ({d['paste_inputs']} inputs): {d.get('code', '')}: {d['reason']}" for d in D if d["disposition"] == disp]
     (out / "gate_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 

@@ -11,6 +11,7 @@ from foodscan.pipeline import analyse_text
 
 ROOT = Path(__file__).resolve().parent.parent
 DEC = json.loads((ROOT / "data" / "ingest" / "pmc_decisions_2.json").read_text(encoding="utf-8"))["decisions"]
+APPROVED_4 = {d["term"] for d in json.loads((ROOT / "data" / "ingest" / "pmc_decisions_4.json").read_text(encoding="utf-8"))["decisions"] if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM")}  # approved later (pmc-decisions-4)
 LEX = {r["term"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
 
 
@@ -35,9 +36,11 @@ def test_synthetic_every_other_re_researched_term_stays_out_with_a_recorded_reas
     for d in DEC:
         if d["disposition"] == "ACCEPT_ROW":
             assert d["term"] in LEX
+        elif d["term"] in APPROVED_4:
+            assert d["term"] in LEX or normalise_ingredient(d["term"]).name != d["term"] or is_recognised(normalise_ingredient(d["term"]).name)
         elif d["term"] in ("dehydrated onion", "onions flakes"):
             assert normalise_ingredient(d["term"]).name == "onion"                      # dehydrated-policy-1: term-level synonym, owner-approved; no descriptor
         else:
             assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
             assert d["code"] in ("single_source_flag", "owner_decision_descriptor", "no_source_for_qualifier", "no_source_for_form") and d["reason"]
-    assert g("Rice, glucose syrup")[0] is None                                               # glucose syrup is NOT classified: PMC alone, flagged
+    assert g("Rice, glucose syrup")[0] is None                                               # glucose syrup stays unclassified: HELD by the owner in pmc-decisions-4 (no ingredient-level naming in an admissible source)

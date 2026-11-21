@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DEC = json.loads((ROOT / "data" / "ingest" / "demand_decisions_1.json").read_text(encoding="utf-8"))["decisions"]
 LEX = {r["term"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
 
+# pmc-decisions-4 (owner-approved 2026-11-21, merged): these terms were PARK / single-source / proposed in earlier records and are now placed by the updated rule.
+APPROVED_4 = {d["term"] for d in json.loads((ROOT / "data" / "ingest" / "pmc_decisions_4.json").read_text(encoding="utf-8"))["decisions"] if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM")}
+
 
 def rec(t: str) -> bool:
     return bool(is_recognised(normalise_ingredient(t).name))
@@ -61,6 +64,8 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] in APPROVED_4:
+        return                                                              # approved and merged later (pmc-decisions-4); asserted in tests/test_pmc_reresearch_4.py
     if d["term"] in ("dehydrated onion", "onions flakes") and rec(d["term"]):
         assert normalise_ingredient(d["term"]).name == "onion", d["term"]         # dehydrated-policy-1: term-level mapping to the source-supported dried onion, one per term
         return

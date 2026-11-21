@@ -10,6 +10,7 @@ from foodscan.pipeline import analyse_text
 ROOT = Path(__file__).resolve().parent.parent
 DEC = json.loads((ROOT / "data" / "ingest" / "pmc_decisions_3.json").read_text(encoding="utf-8"))["decisions"]
 MARKERS = {r["term"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "markers.csv").open(encoding="utf-8-sig", newline=""))}
+APPROVED_4 = {d["term"] for d in json.loads((ROOT / "data" / "ingest" / "pmc_decisions_4.json").read_text(encoding="utf-8"))["decisions"] if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM")}
 LEX = {r["term"] for r in csv.DictReader((ROOT / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
 
 
@@ -26,4 +27,6 @@ def test_synthetic_the_decision_record_marks_whey_as_approved_and_merged_and_eve
         if d["term"] in ("whey powder", "whey solids"):
             assert d["disposition"].startswith("APPROVED AND MERGED")
         else:
-            assert d["disposition"] == "PARK" and d["term"] not in LEX and d["term"] not in MARKERS
+            assert d["disposition"] == "PARK" and d["term"] not in MARKERS
+            if d["term"] not in APPROVED_4:                         # yeast, butter oil etc. were approved later (pmc-decisions-4)
+                assert d["term"] not in LEX
