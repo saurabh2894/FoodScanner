@@ -17,7 +17,7 @@ beef (395 verified records, first FDC 168607), lamb (118, 172479), pork (70, 167
 | frozen 66 | changed 0; unexplained 0; abstain->4 0 |
 | out-of-sample 32 | changed 1: S18 (`Lamb (33%)`) lamb moves from unassessed to recognised, group 4 unchanged; attributed to the row `lamb` |
 | drift (583) / descriptor (866) / salted (168) / powder (579) | 0 differences / 0 / 0 / 0 changed |
-| suite | **SUITE_TBD** (main 2046 + new tests; one dairy test list edited with an explanation: 'Duck' is now a row) |
+| suite | **2082 passed, 5 xfailed** (main 2046 + new tests; one dairy test list edited with an explanation: 'Duck' is now a row) |
 | parity | **875/875** identical (main 859 + 16 added entries, 0 removed; reason and driver compared) |
 
 ## 4. Measured forms of the 8 rows (before = unrecognised; identical for all 8)
