@@ -506,6 +506,11 @@
         if (sweetFoods && row.term === "sweetener") continue;      // the bracket names foods, so the class word is not counted      // the name has no marker and the bracket is only a function note: its words decide nothing
         if (re.test(ing.text)) hits.push({ strength: row.strength, marker_class: row.marker_class, detail: `"${row.term}" (${row.marker_class})`, source: row.source });
       }
+      if ((ing.name === "starch" || ing.name === "tapioca starch") && ing.inner && /modif|pregelatini[sz]ed|acid[- ]?treated|oxidi[sz]ed|cross[- ]?linked|bleached|hydroxypropyl|acetylated|phosphated|thermally|enzymatically/.test(ing.inner.toLowerCase())
+          && !hits.some((h) => h.detail === '"modified starch" (derived_substance)')) {
+        const mrow = T.markers.find((r) => r.term === "modified starch");
+        if (mrow) hits.push({ strength: mrow.strength, marker_class: mrow.marker_class, detail: `"modified starch" (${mrow.marker_class})`, source: mrow.source });
+      }
       for (const use of ing.ins) {
         const row = insTable[use.code];
         if (!row) hits.push({ strength: "unlisted", marker_class: "unlisted_additive", detail: `INS ${use.code} (not in local mapping)`, source: "no source: code absent from ins_map.csv" });

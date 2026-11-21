@@ -20,14 +20,18 @@ def test_synthetic_every_decision_cites_a_confirmed_row_label_and_the_conditions
         assert d["pmc_row"] in ROWS
 
 
-def test_synthetic_nothing_from_the_pmc_re_research_is_in_the_vocabulary_until_the_owner_decides():
+def test_synthetic_only_the_owner_lifted_plain_starch_rows_entered_the_vocabulary_and_the_flagged_terms_stay_out():
     for d in DEC["decisions"]:
-        assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
+        if d["disposition"] == "ACCEPT_ROW":
+            assert d["term"] in LEX and "LIFTED for plain/unmodified starch" in d["owner_override"]
+        else:
+            assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
+            assert d["standing_reason"] == "single admissible source or broader than FAO"
 
 
-def test_synthetic_single_source_terms_are_parked_and_the_starch_proposals_carry_the_proposed_only_override():
+def test_synthetic_parked_terms_keep_the_standing_reason_and_the_starch_rows_cite_pmc_as_licence_unverified_corroboration():
     for d in DEC["decisions"]:
         if d["disposition"] == "PARK":
-            assert d["code"] == "single_source_flag" and "ALONE" in d["reason"] or "extends beyond" in d["reason"]
+            assert d["code"] == "single_source_flag" and "STAYS PARKED" in d["reason"]
         else:
-            assert "PROPOSED ONLY, NOT MERGEABLE" in d["owner_override"] and "corroborated, not solely supported" in d["corroboration"] and "licence unverified" in d["corroboration"]
+            assert "corroborated, not solely supported" in d["corroboration"] and "licence unverified" in d["corroboration"]

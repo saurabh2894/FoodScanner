@@ -165,6 +165,12 @@ def marker_terms(text: str) -> set[str]:
     return {row["term"] for pat, row in _markers() if pat.search(text)}
 
 
+# The plain starch rows (starch, tapioca starch) cover ONLY plain/unmodified starch (owner decision 2026-11-21). An entry whose bracket says the starch is modified
+# ("Starch (Modified)", "Starch (Acid Treated)") is the FAO marker 'modified starches', not plain starch: it is read as the strong 'modified starch' marker so the plain row can never capture it.
+_PLAIN_STARCH_ROWS = frozenset({"starch", "tapioca starch"})
+_STARCH_MODIFIED = re.compile(r"modif|pregelatini[sz]ed|acid[- ]?treated|oxidi[sz]ed|cross[- ]?linked|bleached|hydroxypropyl|acetylated|phosphated|thermally|enzymatically")
+
+
 def _hits_for(ing: Ingredient) -> list[_Hit]:
     hits: list[_Hit] = []
     note_only = colour_note_only(ing)
@@ -176,6 +182,10 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
             continue       # "Sweeteners (Jaggery Powder, Dates Powder)": the bracket names foods, so the class word is not counted
         if pat.search(ing.text):
             hits.append(_Hit(row["strength"], row["marker_class"], f'"{row["term"]}" ({row["marker_class"]})', row["source"]))
+    if ing.name in _PLAIN_STARCH_ROWS and ing.inner and _STARCH_MODIFIED.search(ing.inner.lower()) and not any(h.detail == '"modified starch" (derived_substance)' for h in hits):
+        mrow = next((row for _, row in _markers() if row["term"] == "modified starch"), None)
+        if mrow is not None:
+            hits.append(_Hit(mrow["strength"], mrow["marker_class"], f'"modified starch" ({mrow["marker_class"]})', mrow["source"]))
     ins_table = {r["ins"].lower(): r for r in load_table("ins_map.csv")}
     for use in ing.ins:
         row = ins_table.get(use.code)

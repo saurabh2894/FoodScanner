@@ -44,9 +44,9 @@ def test_synthetic_kinds_drive_the_group_exactly_as_the_source_clause_says():
     assert grp("Ingredients: Edible peanut oil.")[0] == 2                  # the descriptor word 'edible' is ignored, oil is Group 2
 
 
-def test_synthetic_standing_exclusions_stay_out_starch_and_cranberry_and_the_modified_starch_marker_is_untouched():
-    assert not rec("starch") and not rec("tapioca starch") and not rec("cranberry")                 # lexicon-1 senior-review exclusions
-    assert "starch" not in LEX and "cranberry" not in LEX
+def test_synthetic_standing_exclusions_stay_out_cranberry_and_the_modified_starch_marker_is_untouched():
+    assert not rec("cranberry") and "cranberry" not in LEX                                          # lexicon-1 senior-review exclusion that still stands
+    assert "starch" in LEX and LEX["starch"]["kind"] == "culinary"                                   # hold lifted for plain starch only (owner, 2026-11-21)
 
 
 def test_synthetic_existing_marker_keeps_priority_over_a_starch_in_the_list():
@@ -61,6 +61,11 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] in ("starch", "tapioca starch") and rec(d["term"]):
+        # owner lift 2026-11-21 (pmc-decisions-1): recognised ONLY as the plain culinary row
+        from foodscan.classify import lookup
+        assert lookup(normalise_ingredient(d["term"]).name)["kind"] == "culinary", d["term"]
+        return
     if d.get("code") == "held_category_C" and rec(d["term"]):
         # superseded by the owner-approved unplaced kind (recognition only, never placed): recognised ONLY as that kind
         from foodscan.classify import lookup

@@ -65,8 +65,11 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
         assert conc not in rows, f"concentrate {conc} should not be in lexicon.csv"
 
     # Starches
-    for starch in ["tapioca starch", "starch", "corn starch", "potato starch"]:
+    # owner decision (2026-11-21, pmc-decisions-1): the hold is LIFTED for plain starch and tapioca starch ONLY (kind culinary, FAO Group 2 clause + PMC10127522 corroboration); the rest stay out
+    for starch in ["corn starch", "potato starch", "modified starch", "maize starch"]:
         assert starch not in rows, f"starch {starch} should not be in lexicon.csv"
+    for starch in ["tapioca starch", "starch"]:
+        assert starch not in rows or (rows[starch]["kind"] == "culinary" and "PMC10127522" in rows[starch]["source"]), f"{starch} may only be the owner-lifted culinary row"
 
     # Milk and derivative terms held for decision
     for milk in ["whey", "whey powder"]:
