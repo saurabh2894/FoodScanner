@@ -60,6 +60,7 @@ def main(argv=None) -> int:
     ap.add_argument("--attribute-words", nargs="*", default=[], help="phrases that attribute a changed input to an OWNER-RULED behaviour change (e.g. 'powdered milk')")
     ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
     ap.add_argument("--synonym-rows", type=Path, default=None, help="synonym_rows.csv (from,to,source): the gate then expects synonyms.csv to be ADDITIONS-ONLY with exactly these rows, and checks alias == target behaviour in every form")
+    ap.add_argument("--allow-source-change", nargs="*", default=[], help="existing lexicon terms whose SOURCE (provenance text) may differ (an owner-approved provenance-only change); nothing else may change")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
     ap.add_argument("--out", type=Path, required=True)
@@ -87,7 +88,9 @@ def main(argv=None) -> int:
         out["synonyms_additions"] = {"before_lines": len(sb), "after_lines": len(sa), "base_lines_all_kept_in_order": sa[:len(sb)] == sb, "added_rows": len(added), "expected_rows": len(syn_rows),
                                      "added_froms_match": sorted(ln.split(",")[0].strip('"') for ln in added) == sorted(r["from"] for r in syn_rows)}
         out["synonyms_markers_untouched"]["synonyms.csv"] = True            # replaced by the additions-only check above
-        out["lexicon_unchanged"] = (res_b / "lexicon.csv").read_bytes() == (res_a / "lexicon.csv").read_bytes()
+        lr_ = out["lexicon_rows"]
+        out["lexicon_unchanged"] = not lr_["added"] and not lr_["removed"] and not lr_["kind_changed"] and set(lr_["source_changed"]) == set(a.allow_source_change)
+        out["lexicon_source_changed_allowed"] = sorted(a.allow_source_change)
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         neg, pos = rule.get("negative_controls", []), rule.get("positive_controls", [])
@@ -151,7 +154,7 @@ def main(argv=None) -> int:
             blockers.append(f"alias behaves differently from its target in {len(out['alias_equals_target']['mismatches'])} form(s)")
     if not all(out["synonyms_markers_untouched"].values()):
         blockers.append("synonyms.csv or markers.csv changed")
-    if out["lexicon_rows"]["removed"] or out["lexicon_rows"]["source_changed"]:
+    if out["lexicon_rows"]["removed"] or set(out["lexicon_rows"]["source_changed"]) - set(a.allow_source_change):
         blockers.append("a lexicon row was removed or its source changed")
     out["blockers"], out["verdict"] = blockers, "BLOCKED" if blockers else "READY_FOR_REVIEW"
     a.out.mkdir(parents=True, exist_ok=True)
