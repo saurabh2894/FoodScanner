@@ -41,7 +41,7 @@ Every flip is Group 2 (or Group 3 for blends) -> abstain, none to a new group: u
 ## 5. Tests
 `tests/test_culinary_guard_1.py` (82 cases): all 20 existing oil/fat rows plain and hydrogenated; unrecognised and `oil`/`fat`-suffix brackets abstain; recognised distinct foods abstain and culinary-only content stays 2; no alias for gingelly or til oil; marker precedence; powders with 100% inside and outside brackets; other culinary rows untouched; two-oil phrases; food plus oil lists; and a subprocess overlay of the 20 staged fats rows on a copy of the lexicon. `tests/test_validate_batch.py::test_flip_harness_detects_and_blocks_a_group_flip` is updated with an explanation: the frozen b1/N10 list holds `Sesame Oil (Gingelly Oil)`, which now needs 'gingelly oil' staged as well as 'synthetic vinegar' to flip None -> 3 (the harness purpose is unchanged).
 
-## 6. Exact diff vs main 625f0fa (9 paths, `git diff --name-only main HEAD` on the committed merge tree)
+## 6. Exact diff vs main 625f0fa (10 paths, `git diff --name-only main HEAD` on the committed tree)
 - `data/ingest/culinary_guard_1.json`
 - `evaluation/culinary_guard_1/README.md`
 - `evaluation/culinary_guard_1/applied_gate/applied_gate.json`
@@ -50,4 +50,5 @@ Every flip is Group 2 (or Group 3 for blends) -> abstain, none to a new group: u
 - `src/foodscan/classify.py`
 - `src/foodscan/pipeline.py`
 - `tests/test_culinary_guard_1.py`
+- `tests/test_validate_batch.py`
 - `web_preview/foodscan.js`
