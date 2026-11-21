@@ -20,9 +20,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import validate_batch as vb  # noqa: E402
 
 
-def source_for(r: dict) -> str:
+def source_for(r: dict, policy_id: str = "plural-policy-1") -> str:
     named = f"; the plant part is named by USDA FoodData Central (CC0 1.0): {r['part_named_by']}" if r.get("part_named_by") else ""
-    return (f"PROVISIONAL: alias of existing lexicon row \"{r['to']}\" ({r['basis']}); plural-policy-1 rule {r['rule']}; exact term not named by any source read; "
+    named_term = r.get("exact_named_by") or "exact term not named by any source read"
+    return (f"PROVISIONAL: alias of existing lexicon row \"{r['to']}\" ({r['basis']}); {policy_id} rule {r['rule']}; {named_term}; "
             f"the row it points to carries the FAO clause and its own provenance{named}")
 
 
@@ -40,7 +41,7 @@ def run_gate(policy: dict, repo_src: Path, evaluation: Path, work: Path) -> dict
     res = repo_src / "foodscan" / "resources"
     lex = {vb.flat(r["term"]): r for r in vb.read_csv(res / "lexicon.csv")}
     syn = {vb.flat(r["from"]): r for r in vb.read_csv(res / "synonyms.csv")}
-    rows = [{**r, "source": source_for(r)} for r in policy["rows"]]
+    rows = [{**r, "source": source_for(r, policy["policy_id"])} for r in policy["rows"]]
     errors, dropped = [], []
     froms = [r["from"] for r in rows]
     for r in rows:

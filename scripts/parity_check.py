@@ -163,6 +163,8 @@ CORPUS = [
     "Ingredients: Rice, modified corn starch.", "Ingredients: Rice, corn starch, salt.", "Ingredients: Rice, tapioca starch, salt.",
     # pmc-decisions-2 (tests/test_pmc_reresearch_2.py, SYNTHETIC)
     "Ingredients: Coconut fat", "Ingredients: Rice, coconut fat.", "Ingredients: Rice, hydrogenated coconut fat.", "Ingredients: Rice, glucose syrup.", "Ingredients: Rice, dehydrated onion, caster sugar, natural vinegar.",
+    # dehydrated-policy-1 (tests/test_dehydrated_forms_1.py, SYNTHETIC)
+    "Ingredients: Dehydrated onion", "Ingredients: Rice, onion flakes, salt.", "Ingredients: Rice, onions flakes.", "Ingredients: Dehydrated vegetable, rice.", "Ingredients: Dehydrated potato flakes, rice.", "Ingredients: Rice, fried onion flakes.", "Ingredients: Rice, corn flakes, chilli flakes.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

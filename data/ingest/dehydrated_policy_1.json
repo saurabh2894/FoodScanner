@@ -1,0 +1,44 @@
+{
+ "policy_id": "dehydrated-policy-1",
+ "applies_to": "term-level 'dehydrated X' and 'X flakes' mappings to a source-supported dried form",
+ "policy": "Owner decision 2026-11-21: NO free-floating 'dehydrated' descriptor and NO generic 'flakes' descriptor. A specific 'dehydrated X' or 'X flakes' maps to its dried form ONLY where the dried form is itself source-supported, one mapping per term with provenance; otherwise the term stays unassessed.",
+ "rows": [
+  {
+   "from": "dehydrated onion",
+   "to": "onion",
+   "rule": "dehydrated-term",
+   "basis": "same ingredient, same part, dried form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); that 'dehydrated' means dried is a definitional step stated here, not by a source read",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names the food 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim"
+  },
+  {
+   "from": "onions flakes",
+   "to": "onion",
+   "rule": "flakes-term",
+   "basis": "same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim"
+  },
+  {
+   "from": "onion flakes",
+   "to": "onion",
+   "rule": "flakes-term",
+   "basis": "same ingredient, same part, dried flaked form; the dried form is source-supported (FAO 2019 Table 1 Group 1 p.11 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables' and PMC10127522 (licence unverified; paraphrase: dried vegetables without added sugars coded unprocessed or minimally processed)); no generic 'flakes' descriptor exists: this single term is decided on its own",
+   "exact_named_by": "USDA FoodData Central (CC0 1.0) names 'Onions, dehydrated flakes' (sr_legacy FDC id 170002); the exact label term is not named verbatim"
+  }
+ ],
+ "must_stay_unmapped": [
+  "dehydrated vegetable",
+  "dehydrated vegetables",
+  "dehydrated potato flakes",
+  "dehydrated garlic",
+  "dehydrated milk",
+  "dehydrated mango",
+  "corn flakes",
+  "rice flakes",
+  "chilli flakes"
+ ],
+ "must_stay_unrecognised": [
+  "fried onion flakes",
+  "fried dehydrated onion"
+ ],
+ "notes": "dehydrated vegetable (no single dried-form row; a class with unstated contents) stays unassessed. dehydrated carrot is a further candidate (FDC 'Carrot, dehydrated', sr_legacy 170500) but is not a demand term, so it is not added here."
+}
