@@ -1,6 +1,6 @@
 [p.7 (printed) prose] They are made by adding salt, oil, sugar or other substances from group 2 to group 1 foods.
 [p.9 (printed) prose] Some of what are now ultra-processed foods were originally manufactured only with group 1 foods and salt or sugar or other substances from group 2, and thus would be classed in NOVA group 3 as processed foods.
-[Table 1 Group 3 definition, p.12 (printed)] Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods, using preservation methods such as canning and bottling, and, in the case of breads and cheeses, using non- alcoholic fermentation.
+[Table 1 Group 3 definition, p.12 (printed); line-break hyphenation normalised: the cell breaks 'non-' / 'alcoholic'] Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods, using preservation methods such as canning and bottling, and, in the case of breads and cheeses, using non-alcoholic fermentation.
 [p.10 (printed) prose, bread] Industrial breads made only from wheat flour, water, salt and yeast are processed foods, while those whose lists of ingredients also include emulsifiers or colours are ultra-processed.
 [p.10 (printed) prose, plain cereals] Plain steel-cut oats, plain corn flakes and shredded wheat are minimally processed foods, while the same foods are processed when they also contain sugar, and ultra-processed if they also contain flavours or colours.
 [Table 1 Group 3 examples, p.12 (printed)] Canned or bottled vegetables and legumes in brine; salted or sugared nuts and seeds

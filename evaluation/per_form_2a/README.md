@@ -8,14 +8,14 @@ Branch claude/per-form-2a off main 0ceb941. Scope: the 23 Batch-4 grain/flour te
 |---|---|---|
 | Q1 | p.7 (printed) prose | "They are made by adding salt, oil, sugar or other substances from group 2 to group 1 foods." |
 | Q2 | p.9 (printed) prose | "Some of what are now ultra-processed foods were originally manufactured only with group 1 foods and salt or sugar or other substances from group 2, and thus would be classed in NOVA group 3 as processed foods." |
-| Q3 | Table 1 Group 3 definition, p.12 (printed) | "Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods, using preservation methods such as canning and bottling, and, in the case of breads and cheeses, using non- alcoholic fermentation." |
+| Q3 | Table 1 Group 3 definition, p.12 (printed); line-break hyphenation normalised: the cell breaks 'non-' / 'alcoholic' | "Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods, using preservation methods such as canning and bottling, and, in the case of breads and cheeses, using non-alcoholic fermentation." |
 | Q4 | p.10 (printed) prose, bread | "Industrial breads made only from wheat flour, water, salt and yeast are processed foods, while those whose lists of ingredients also include emulsifiers or colours are ultra-processed." |
 | Q5 | p.10 (printed) prose, plain cereals | "Plain steel-cut oats, plain corn flakes and shredded wheat are minimally processed foods, while the same foods are processed when they also contain sugar, and ultra-processed if they also contain flavours or colours." |
 | Q6 | Table 1 Group 3 examples, p.12 (printed) | "Canned or bottled vegetables and legumes in brine; salted or sugared nuts and seeds" |
 
-**What the clauses cover.** Q1, Q2 and Q3 state the rule in general terms: a Group 1 food with salt (a Group 2 substance) added is a Group 3 processed food. Q2 is the most direct: Group 1 foods plus salt are classed in NOVA group 3. Q6 shows the same logic on a cereal example (plain cereals minimally processed, the same foods processed with sugar added). Q5 shows wheat flour plus water, salt and yeast as a processed food. Flour is a Group 1 food named in the examples ("grits, flakes or flour made from corn, wheat, oats, or cassava"), so the rule applies to flours as written.
+**What the clauses cover.** Q1, Q2 and Q3 state the rule in general terms: a Group 1 food with salt (a Group 2 substance) added is a Group 3 processed food. Q2 is the most direct: Group 1 foods plus salt are classed in NOVA group 3. Q5 shows the same logic on a cereal example with SUGAR (plain cereals minimally processed, the same foods processed with sugar added); it supports the principle, not salt specifically, and is not cited per row. Q4 shows wheat flour plus water, salt and yeast as a processed food (the salted-wheat-flour analogue). Q6 (table examples) names salted nuts and seeds, a dry-salted plant-seed analogue without canning. Flour is a Group 1 food named in the examples ("grits, flakes or flour made from corn, wheat, oats, or cassava"), so the rule applies to flours as written.
 
-**What they do not cover (explicit).** No clause names a salted grain or a salted flour; the named salted analogues are nuts and seeds (Q4 examples), meats and fish, and bread (a baked product, not a salted flour). Q3 ties the definition to 'preservation methods such as canning and bottling' ('such as' is illustrative, and the same cell lists dry-salted nuts without canning). The clauses do not quantify salt, do not say whether the salt must be a preservation salt, and do not address a salt that is merely part of a seasoning. Hence the inference level below is 'class-instance of the stated rule', not 'named'. Q6 supports sugared cereals but sugar and oil on grains are NOT implemented here (batch scope: salt).
+**What they do not cover (explicit).** No clause names a salted grain or a salted flour; the named salted analogues are nuts and seeds (Q6), meats and fish, and bread (Q4) (a baked product, not a salted flour). Q3 ties the definition to 'preservation methods such as canning and bottling' ('such as' is illustrative, and the same cell lists dry-salted nuts without canning). The clauses do not quantify salt, do not say whether the salt must be a preservation salt, and do not address a salt that is merely part of a seasoning. Hence the inference level below is 'class-instance of the stated rule', not 'named'. Q6 supports sugared cereals but sugar and oil on grains are NOT implemented here (batch scope: salt).
 
 ## 2. What was implemented
 
@@ -28,16 +28,16 @@ Branch claude/per-form-2a off main 0ceb941. Scope: the 23 Batch-4 grain/flour te
 | amaranth flour | amaranth flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
 | barley | barley | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | barley flour | barley flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
-| black rice | black rice | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
+| black rice | black rice | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | buckwheat | buckwheat | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
-| buckwheat flour | buckwheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q5 | class-instance of the stated rule; not named |
+| buckwheat flour | buckwheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
 | cornmeal | cornmeal | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
 | millet | millet | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | millet flour | millet flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
-| oat flour | oat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
-| parboiled rice | rice (via global descriptor) | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
+| oat flour | oat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
+| parboiled rice | rice (via global descriptor) | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | quinoa flour | quinoa flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
-| red rice | rice (via global descriptor) | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
+| red rice | rice (via global descriptor) | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | rice | rice | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | rice flour | rice flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
 | rye flour | rye flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
@@ -45,9 +45,9 @@ Branch claude/per-form-2a off main 0ceb941. Scope: the 23 Batch-4 grain/flour te
 | sorghum | sorghum | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 | sorghum flour | sorghum flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
 | spelt flour | spelt flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
-| wheat flour | wheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q5 | class-instance of the stated rule; not named |
-| whole wheat flour | whole wheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q5 | class-instance of the stated rule; not named |
-| wild rice | wild rice | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3 | class-instance of the stated rule; not named |
+| wheat flour | wheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q4 | class-instance of the stated rule; not named |
+| whole wheat flour | whole wheat flour | flour | Group 1 -> Group 3 | Q1, Q2, Q3, Q4 | class-instance of the stated rule; not named |
+| wild rice | wild rice | whole_food | Group 1 -> Group 3 | Q1, Q2, Q3, Q6 | class-instance of the stated rule; not named |
 
 ## 4. Salted surface (re-measured; BEFORE = worktree of main 0ceb941, AFTER = this branch; separate fresh processes)
 
@@ -109,7 +109,7 @@ Nut, legume, vegetable and fruit salted controls are unchanged (the same before 
 
 ## 7. Search record (parked / not implemented)
 
-- Sugar and oil on grains: Q6 (cereals with sugar are processed) is a source for sugared grains; not implemented (batch scope: salt). Parked.
+- Sugar and oil on grains: Q5 (cereals with sugar are processed) is a source for sugared grains; not implemented (batch scope: salt). Parked.
 - **Grain rows outside the 23-term scope still answer Group 1 when salted** (measured-unchanged): refined wheat flour, ragi, oat, wheat, maize, corn, jowar, bajra, foxtail millet, pearl millet, quinoa, besan, soya flour, potato flour. They are grains or flours but not Batch-4 terms; extending the guard to them is a scope decision for you (one set constant), not done here.
 - The 26 out-of-scope whole_food/flour rows with a salted form (`Salted Milk`, `Salted Egg`, ...): Group 1 before and after; no per-row source qualification done here. Parked.
 - Salted forms of products whose kind is not whole_food/flour (e.g. salted rice powder): the powder standard abstains first; unchanged.
