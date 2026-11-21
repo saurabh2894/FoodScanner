@@ -40,6 +40,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] main d7e225d: markers-1, photo-preview-1 and corrected held-sources-1 merged. Branch claude/unplaced-kind-1 (off d7e225d): the 'unplaced' recognition-only kind (code change), rows for vitamins/minerals and sprouted ragi/jowar; awaiting owner verification, NOT merged. Pending: senior review of antigravity/audit-1 when it lands (triage WRONG / INFERRED / UNVERIFIABLE-in-scope; no row changes before the owner reviews the evidence; proposed fixes held at merge-stop); the '&' split measurement is owned by the junior (antigravity/audit-1, evaluation/ampersand_split_sim_1/). Demand inventory fully decided: next growth = re-research of parked terms against NEW admissible sources.
 
+- [x] main 95546b9: unplaced-kind merged. Branch claude/source-survey-1: research/08 admissible-source survey (report only; PMC throttles bulk reads; new candidate PMC10127522 partly read; FSSAI 502). Standing protocol: EVERY stop ends with a pushed status line.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).
