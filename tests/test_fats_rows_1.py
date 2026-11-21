@@ -51,7 +51,9 @@ def test_synthetic_food_plus_oil_lists_and_nut_oil_brackets_follow_the_existing_
 def test_synthetic_existing_culinary_rows_are_unchanged():
     for t in ("Olive Oil", "Sunflower Oil", "Palm Oil", "Ghee", "Butter", "Cocoa Butter", "Edible Vegetable Oil"):
         assert g(t)[0] == 2, t
-    assert g("Hydrogenated Vegetable Oil")[0] == 4 and g("Sunflower Oil (XQ9)")[0] == 2   # the unknown-bracket hole of the culinary kind predates this batch (reported in the README)
+    assert g("Hydrogenated Vegetable Oil")[0] == 4
+    # UPDATED (culinary-guard-1, merged): an unrecognised bracket on an oil or fat row now abstains (it answered Group 2 when this batch was first staged), for the 14 existing and the 20 new rows alike
+    assert g("Sunflower Oil (XQ9)")[0] is None and g("Corn Oil (XQ9)")[0] is None and g("Corn Oil Powder")[0] is None
 
 
 def test_synthetic_row_provenance_has_clause_inference_and_no_purity_claim():

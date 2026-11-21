@@ -3,8 +3,8 @@
  "base_src": "/tmp/base_f/src",
  "after_src": "/home/user/FoodScanner/src",
  "lexicon_rows": {
-  "before": 411,
-  "after": 431,
+  "before": 413,
+  "after": 433,
   "added": [
    "almond oil",
    "apricot kernel oil",
@@ -237,39 +237,39 @@
   "other_group_change": []
  },
  "drift": {
-  "probed": 561,
+  "probed": 563,
   "differences": {},
   "expected_owner_ruled": {}
  },
  "descriptor_surface": {
-  "probed": 822,
+  "probed": 826,
   "changed": 0,
   "by_word_and_kind": {},
   "changed_kinds_outside_scope": [],
   "group_moves": {}
  },
  "salted_surface": {
-  "rows_probed": 54,
-  "probed": 162,
+  "rows_probed": 56,
+  "probed": 168,
   "changed": 0,
   "newly_group1": [],
   "by_form": {
    "salted {x}": {
-    "probed": 54,
+    "probed": 56,
     "group1_before": 5,
     "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "roasted salted {x}": {
-    "probed": 54,
+    "probed": 56,
     "group1_before": 5,
     "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "toasted salted {x}": {
-    "probed": 54,
+    "probed": 56,
     "group1_before": 0,
     "group1_after": 0,
     "changed": 0,
@@ -281,9 +281,9 @@
   "changes": {}
  },
  "powder_surface": {
-  "probed": 573,
-  "group1_before": 373,
-  "group1_after": 373,
+  "probed": 579,
+  "group1_before": 377,
+  "group1_after": 377,
   "changed": {},
   "group1_after_forms_not_stated": [],
   "owner_allowed_group1_forms": [
@@ -355,15 +355,15 @@
    "almond oil (no added salt)": 2,
    "almond oil (sugar)": 2,
    "almond oil (canned)": 2,
-   "almond oil (XQ9)": 2,
+   "almond oil (XQ9)": null,
    "Rice, almond oil": 3,
    "almond oil, salt": null,
    "almond oil flour": null,
    "almond oil butter": null,
    "almond oil oil": null,
-   "almond oil powder": 2,
+   "almond oil powder": null,
    "100% almond oil powder": 2,
-   "whole almond oil powder": 2,
+   "whole almond oil powder": null,
    "apricot kernel oil": 2,
    "roasted apricot kernel oil": 2,
    "toasted apricot kernel oil": null,
@@ -378,15 +378,15 @@
    "apricot kernel oil (no added salt)": 2,
    "apricot kernel oil (sugar)": 2,
    "apricot kernel oil (canned)": 2,
-   "apricot kernel oil (XQ9)": 2,
+   "apricot kernel oil (XQ9)": null,
    "Rice, apricot kernel oil": 3,
    "apricot kernel oil, salt": null,
    "apricot kernel oil flour": null,
    "apricot kernel oil butter": null,
    "apricot kernel oil oil": null,
-   "apricot kernel oil powder": 2,
+   "apricot kernel oil powder": null,
    "100% apricot kernel oil powder": 2,
-   "whole apricot kernel oil powder": 2,
+   "whole apricot kernel oil powder": null,
    "avocado oil": 2,
    "roasted avocado oil": 2,
    "toasted avocado oil": null,
@@ -401,15 +401,15 @@
    "avocado oil (no added salt)": 2,
    "avocado oil (sugar)": 2,
    "avocado oil (canned)": 2,
-   "avocado oil (XQ9)": 2,
+   "avocado oil (XQ9)": null,
    "Rice, avocado oil": 3,
    "avocado oil, salt": null,
    "avocado oil flour": null,
    "avocado oil butter": null,
    "avocado oil oil": null,
-   "avocado oil powder": 2,
+   "avocado oil powder": null,
    "100% avocado oil powder": 2,
-   "whole avocado oil powder": 2,
+   "whole avocado oil powder": null,
    "babassu oil": 2,
    "roasted babassu oil": 2,
    "toasted babassu oil": null,
@@ -424,15 +424,15 @@
    "babassu oil (no added salt)": 2,
    "babassu oil (sugar)": 2,
    "babassu oil (canned)": 2,
-   "babassu oil (XQ9)": 2,
+   "babassu oil (XQ9)": null,
    "Rice, babassu oil": 3,
    "babassu oil, salt": null,
    "babassu oil flour": null,
    "babassu oil butter": null,
    "babassu oil oil": null,
-   "babassu oil powder": 2,
+   "babassu oil powder": null,
    "100% babassu oil powder": 2,
-   "whole babassu oil powder": 2,
+   "whole babassu oil powder": null,
    "canola oil": 2,
    "roasted canola oil": 2,
    "toasted canola oil": null,
@@ -447,15 +447,15 @@
    "canola oil (no added salt)": 2,
    "canola oil (sugar)": 2,
    "canola oil (canned)": 2,
-   "canola oil (XQ9)": 2,
+   "canola oil (XQ9)": null,
    "Rice, canola oil": 3,
    "canola oil, salt": null,
    "canola oil flour": null,
    "canola oil butter": null,
    "canola oil oil": null,
-   "canola oil powder": 2,
+   "canola oil powder": null,
    "100% canola oil powder": 2,
-   "whole canola oil powder": 2,
+   "whole canola oil powder": null,
    "corn oil": 2,
    "roasted corn oil": 2,
    "toasted corn oil": null,
@@ -470,15 +470,15 @@
    "corn oil (no added salt)": 2,
    "corn oil (sugar)": 2,
    "corn oil (canned)": 2,
-   "corn oil (XQ9)": 2,
+   "corn oil (XQ9)": null,
    "Rice, corn oil": 3,
    "corn oil, salt": null,
    "corn oil flour": null,
    "corn oil butter": null,
    "corn oil oil": null,
-   "corn oil powder": 2,
+   "corn oil powder": null,
    "100% corn oil powder": 2,
-   "whole corn oil powder": 2,
+   "whole corn oil powder": null,
    "cupuassu oil": 2,
    "roasted cupuassu oil": 2,
    "toasted cupuassu oil": null,
@@ -493,15 +493,15 @@
    "cupuassu oil (no added salt)": 2,
    "cupuassu oil (sugar)": 2,
    "cupuassu oil (canned)": 2,
-   "cupuassu oil (XQ9)": 2,
+   "cupuassu oil (XQ9)": null,
    "Rice, cupuassu oil": 3,
    "cupuassu oil, salt": null,
    "cupuassu oil flour": null,
    "cupuassu oil butter": null,
    "cupuassu oil oil": null,
-   "cupuassu oil powder": 2,
+   "cupuassu oil powder": null,
    "100% cupuassu oil powder": 2,
-   "whole cupuassu oil powder": 2,
+   "whole cupuassu oil powder": null,
    "flaxseed oil": 2,
    "roasted flaxseed oil": 2,
    "toasted flaxseed oil": null,
@@ -516,15 +516,15 @@
    "flaxseed oil (no added salt)": 2,
    "flaxseed oil (sugar)": 2,
    "flaxseed oil (canned)": 2,
-   "flaxseed oil (XQ9)": 2,
+   "flaxseed oil (XQ9)": null,
    "Rice, flaxseed oil": 3,
    "flaxseed oil, salt": null,
    "flaxseed oil flour": null,
    "flaxseed oil butter": null,
    "flaxseed oil oil": null,
-   "flaxseed oil powder": 2,
+   "flaxseed oil powder": null,
    "100% flaxseed oil powder": 2,
-   "whole flaxseed oil powder": 2,
+   "whole flaxseed oil powder": null,
    "grapeseed oil": 2,
    "roasted grapeseed oil": 2,
    "toasted grapeseed oil": null,
@@ -539,15 +539,15 @@
    "grapeseed oil (no added salt)": 2,
    "grapeseed oil (sugar)": 2,
    "grapeseed oil (canned)": 2,
-   "grapeseed oil (XQ9)": 2,
+   "grapeseed oil (XQ9)": null,
    "Rice, grapeseed oil": 3,
    "grapeseed oil, salt": null,
    "grapeseed oil flour": null,
    "grapeseed oil butter": null,
    "grapeseed oil oil": null,
-   "grapeseed oil powder": 2,
+   "grapeseed oil powder": null,
    "100% grapeseed oil powder": 2,
-   "whole grapeseed oil powder": 2,
+   "whole grapeseed oil powder": null,
    "hazelnut oil": 2,
    "roasted hazelnut oil": 2,
    "toasted hazelnut oil": null,
@@ -562,15 +562,15 @@
    "hazelnut oil (no added salt)": 2,
    "hazelnut oil (sugar)": 2,
    "hazelnut oil (canned)": 2,
-   "hazelnut oil (XQ9)": 2,
+   "hazelnut oil (XQ9)": null,
    "Rice, hazelnut oil": 3,
    "hazelnut oil, salt": null,
    "hazelnut oil flour": null,
    "hazelnut oil butter": null,
    "hazelnut oil oil": null,
-   "hazelnut oil powder": 2,
+   "hazelnut oil powder": null,
    "100% hazelnut oil powder": 2,
-   "whole hazelnut oil powder": 2,
+   "whole hazelnut oil powder": null,
    "lard": 2,
    "roasted lard": 2,
    "toasted lard": null,
@@ -585,15 +585,15 @@
    "lard (no added salt)": 2,
    "lard (sugar)": 2,
    "lard (canned)": 2,
-   "lard (XQ9)": 2,
+   "lard (XQ9)": null,
    "Rice, lard": 3,
    "lard, salt": null,
    "lard flour": null,
    "lard butter": null,
    "lard oil": null,
-   "lard powder": 2,
+   "lard powder": null,
    "100% lard powder": 2,
-   "whole lard powder": 2,
+   "whole lard powder": null,
    "oat oil": 2,
    "roasted oat oil": 2,
    "toasted oat oil": null,
@@ -608,15 +608,15 @@
    "oat oil (no added salt)": 2,
    "oat oil (sugar)": 2,
    "oat oil (canned)": 2,
-   "oat oil (XQ9)": 2,
+   "oat oil (XQ9)": null,
    "Rice, oat oil": 3,
    "oat oil, salt": null,
    "oat oil flour": null,
    "oat oil butter": null,
    "oat oil oil": null,
-   "oat oil powder": 2,
+   "oat oil powder": null,
    "100% oat oil powder": 2,
-   "whole oat oil powder": 2,
+   "whole oat oil powder": null,
    "palm kernel oil": 2,
    "roasted palm kernel oil": 2,
    "toasted palm kernel oil": null,
@@ -631,15 +631,15 @@
    "palm kernel oil (no added salt)": 2,
    "palm kernel oil (sugar)": 2,
    "palm kernel oil (canned)": 2,
-   "palm kernel oil (XQ9)": 2,
+   "palm kernel oil (XQ9)": null,
    "Rice, palm kernel oil": 3,
    "palm kernel oil, salt": null,
    "palm kernel oil flour": null,
    "palm kernel oil butter": null,
    "palm kernel oil oil": null,
-   "palm kernel oil powder": 2,
+   "palm kernel oil powder": null,
    "100% palm kernel oil powder": 2,
-   "whole palm kernel oil powder": 2,
+   "whole palm kernel oil powder": null,
    "poppyseed oil": 2,
    "roasted poppyseed oil": 2,
    "toasted poppyseed oil": null,
@@ -654,15 +654,15 @@
    "poppyseed oil (no added salt)": 2,
    "poppyseed oil (sugar)": 2,
    "poppyseed oil (canned)": 2,
-   "poppyseed oil (XQ9)": 2,
+   "poppyseed oil (XQ9)": null,
    "Rice, poppyseed oil": 3,
    "poppyseed oil, salt": null,
    "poppyseed oil flour": null,
    "poppyseed oil butter": null,
    "poppyseed oil oil": null,
-   "poppyseed oil powder": 2,
+   "poppyseed oil powder": null,
    "100% poppyseed oil powder": 2,
-   "whole poppyseed oil powder": 2,
+   "whole poppyseed oil powder": null,
    "safflower oil": 2,
    "roasted safflower oil": 2,
    "toasted safflower oil": null,
@@ -677,15 +677,15 @@
    "safflower oil (no added salt)": 2,
    "safflower oil (sugar)": 2,
    "safflower oil (canned)": 2,
-   "safflower oil (XQ9)": 2,
+   "safflower oil (XQ9)": null,
    "Rice, safflower oil": 3,
    "safflower oil, salt": null,
    "safflower oil flour": null,
    "safflower oil butter": null,
    "safflower oil oil": null,
-   "safflower oil powder": 2,
+   "safflower oil powder": null,
    "100% safflower oil powder": 2,
-   "whole safflower oil powder": 2,
+   "whole safflower oil powder": null,
    "sheanut oil": 2,
    "roasted sheanut oil": 2,
    "toasted sheanut oil": null,
@@ -700,15 +700,15 @@
    "sheanut oil (no added salt)": 2,
    "sheanut oil (sugar)": 2,
    "sheanut oil (canned)": 2,
-   "sheanut oil (XQ9)": 2,
+   "sheanut oil (XQ9)": null,
    "Rice, sheanut oil": 3,
    "sheanut oil, salt": null,
    "sheanut oil flour": null,
    "sheanut oil butter": null,
    "sheanut oil oil": null,
-   "sheanut oil powder": 2,
+   "sheanut oil powder": null,
    "100% sheanut oil powder": 2,
-   "whole sheanut oil powder": 2,
+   "whole sheanut oil powder": null,
    "teaseed oil": 2,
    "roasted teaseed oil": 2,
    "toasted teaseed oil": null,
@@ -723,15 +723,15 @@
    "teaseed oil (no added salt)": 2,
    "teaseed oil (sugar)": 2,
    "teaseed oil (canned)": 2,
-   "teaseed oil (XQ9)": 2,
+   "teaseed oil (XQ9)": null,
    "Rice, teaseed oil": 3,
    "teaseed oil, salt": null,
    "teaseed oil flour": null,
    "teaseed oil butter": null,
    "teaseed oil oil": null,
-   "teaseed oil powder": 2,
+   "teaseed oil powder": null,
    "100% teaseed oil powder": 2,
-   "whole teaseed oil powder": 2,
+   "whole teaseed oil powder": null,
    "tomatoseed oil": 2,
    "roasted tomatoseed oil": 2,
    "toasted tomatoseed oil": null,
@@ -746,15 +746,15 @@
    "tomatoseed oil (no added salt)": 2,
    "tomatoseed oil (sugar)": 2,
    "tomatoseed oil (canned)": 2,
-   "tomatoseed oil (XQ9)": 2,
+   "tomatoseed oil (XQ9)": null,
    "Rice, tomatoseed oil": 3,
    "tomatoseed oil, salt": null,
    "tomatoseed oil flour": null,
    "tomatoseed oil butter": null,
    "tomatoseed oil oil": null,
-   "tomatoseed oil powder": 2,
+   "tomatoseed oil powder": null,
    "100% tomatoseed oil powder": 2,
-   "whole tomatoseed oil powder": 2,
+   "whole tomatoseed oil powder": null,
    "walnut oil": 2,
    "roasted walnut oil": 2,
    "toasted walnut oil": null,
@@ -769,15 +769,15 @@
    "walnut oil (no added salt)": 2,
    "walnut oil (sugar)": 2,
    "walnut oil (canned)": 2,
-   "walnut oil (XQ9)": 2,
+   "walnut oil (XQ9)": null,
    "Rice, walnut oil": 3,
    "walnut oil, salt": null,
    "walnut oil flour": null,
    "walnut oil butter": null,
    "walnut oil oil": null,
-   "walnut oil powder": 2,
+   "walnut oil powder": null,
    "100% walnut oil powder": 2,
-   "whole walnut oil powder": 2,
+   "whole walnut oil powder": null,
    "wheat germ oil": 2,
    "roasted wheat germ oil": 2,
    "toasted wheat germ oil": null,
@@ -792,15 +792,15 @@
    "wheat germ oil (no added salt)": 2,
    "wheat germ oil (sugar)": 2,
    "wheat germ oil (canned)": 2,
-   "wheat germ oil (XQ9)": 2,
+   "wheat germ oil (XQ9)": null,
    "Rice, wheat germ oil": 3,
    "wheat germ oil, salt": null,
    "wheat germ oil flour": null,
    "wheat germ oil butter": null,
    "wheat germ oil oil": null,
-   "wheat germ oil powder": 2,
+   "wheat germ oil powder": null,
    "100% wheat germ oil powder": 2,
-   "whole wheat germ oil powder": 2
+   "whole wheat germ oil powder": null
   }
  },
  "controls": {
@@ -1032,15 +1032,13 @@
   },
   "almond oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "almond oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (almond oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "almond oil (antioxidant)": {
@@ -1071,15 +1069,13 @@
   },
   "almond oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "almond oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (almond oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% almond oil powder": {
@@ -1320,15 +1316,13 @@
   },
   "apricot kernel oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "apricot kernel oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (apricot kernel oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "apricot kernel oil (antioxidant)": {
@@ -1359,15 +1353,13 @@
   },
   "apricot kernel oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "apricot kernel oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (apricot kernel oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% apricot kernel oil powder": {
@@ -1608,15 +1600,13 @@
   },
   "avocado oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "avocado oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (avocado oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "avocado oil (antioxidant)": {
@@ -1647,15 +1637,13 @@
   },
   "avocado oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "avocado oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (avocado oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% avocado oil powder": {
@@ -1896,15 +1884,13 @@
   },
   "babassu oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "babassu oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (babassu oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "babassu oil (antioxidant)": {
@@ -1935,15 +1921,13 @@
   },
   "babassu oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "babassu oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (babassu oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% babassu oil powder": {
@@ -2184,15 +2168,13 @@
   },
   "canola oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "canola oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (canola oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "canola oil (antioxidant)": {
@@ -2223,15 +2205,13 @@
   },
   "canola oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "canola oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (canola oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% canola oil powder": {
@@ -2472,15 +2452,13 @@
   },
   "corn oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "corn oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (corn oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "corn oil (antioxidant)": {
@@ -2511,15 +2489,13 @@
   },
   "corn oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "corn oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (corn oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% corn oil powder": {
@@ -2760,15 +2736,13 @@
   },
   "cupuassu oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "cupuassu oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (cupuassu oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "cupuassu oil (antioxidant)": {
@@ -2799,15 +2773,13 @@
   },
   "cupuassu oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "cupuassu oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (cupuassu oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% cupuassu oil powder": {
@@ -3048,15 +3020,13 @@
   },
   "flaxseed oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "flaxseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (flaxseed oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "flaxseed oil (antioxidant)": {
@@ -3087,15 +3057,13 @@
   },
   "flaxseed oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "flaxseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (flaxseed oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% flaxseed oil powder": {
@@ -3336,15 +3304,13 @@
   },
   "grapeseed oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "grapeseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (grapeseed oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "grapeseed oil (antioxidant)": {
@@ -3375,15 +3341,13 @@
   },
   "grapeseed oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "grapeseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (grapeseed oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% grapeseed oil powder": {
@@ -3624,15 +3588,13 @@
   },
   "hazelnut oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "hazelnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (hazelnut oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "hazelnut oil (antioxidant)": {
@@ -3663,15 +3625,13 @@
   },
   "hazelnut oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "hazelnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (hazelnut oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% hazelnut oil powder": {
@@ -3912,15 +3872,13 @@
   },
   "lard (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "lard",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (lard (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "lard (antioxidant)": {
@@ -3951,15 +3909,13 @@
   },
   "lard powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "lard",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (lard powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% lard powder": {
@@ -4200,15 +4156,13 @@
   },
   "oat oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "oat oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (oat oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "oat oil (antioxidant)": {
@@ -4239,15 +4193,13 @@
   },
   "oat oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "oat oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (oat oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% oat oil powder": {
@@ -4488,15 +4440,13 @@
   },
   "palm kernel oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "palm kernel oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (palm kernel oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "palm kernel oil (antioxidant)": {
@@ -4527,15 +4477,13 @@
   },
   "palm kernel oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "palm kernel oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (palm kernel oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% palm kernel oil powder": {
@@ -4776,15 +4724,13 @@
   },
   "poppyseed oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "poppyseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (poppyseed oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "poppyseed oil (antioxidant)": {
@@ -4815,15 +4761,13 @@
   },
   "poppyseed oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "poppyseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (poppyseed oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% poppyseed oil powder": {
@@ -5064,15 +5008,13 @@
   },
   "safflower oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "safflower oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (safflower oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "safflower oil (antioxidant)": {
@@ -5103,15 +5045,13 @@
   },
   "safflower oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "safflower oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (safflower oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% safflower oil powder": {
@@ -5352,15 +5292,13 @@
   },
   "sheanut oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "sheanut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (sheanut oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "sheanut oil (antioxidant)": {
@@ -5391,15 +5329,13 @@
   },
   "sheanut oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "sheanut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (sheanut oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% sheanut oil powder": {
@@ -5640,15 +5576,13 @@
   },
   "teaseed oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "teaseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (teaseed oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "teaseed oil (antioxidant)": {
@@ -5679,15 +5613,13 @@
   },
   "teaseed oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "teaseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (teaseed oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% teaseed oil powder": {
@@ -5928,15 +5860,13 @@
   },
   "tomatoseed oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "tomatoseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (tomatoseed oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "tomatoseed oil (antioxidant)": {
@@ -5967,15 +5897,13 @@
   },
   "tomatoseed oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "tomatoseed oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (tomatoseed oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% tomatoseed oil powder": {
@@ -6216,15 +6144,13 @@
   },
   "walnut oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "walnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (walnut oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "walnut oil (antioxidant)": {
@@ -6255,15 +6181,13 @@
   },
   "walnut oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "walnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (walnut oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% walnut oil powder": {
@@ -6504,15 +6428,13 @@
   },
   "wheat germ oil (XQ9)": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "wheat germ oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (wheat germ oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "wheat germ oil (antioxidant)": {
@@ -6543,15 +6465,13 @@
   },
   "wheat germ oil powder": {
    "group_before": null,
-   "group_after": 2,
+   "group_after": null,
    "row_after": {
     "term": "wheat germ oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (wheat germ oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% wheat germ oil powder": {
@@ -6791,16 +6711,14 @@
    ]
   },
   "olive oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "olive oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (olive oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "olive oil (antioxidant)": {
@@ -6830,16 +6748,14 @@
    "unassessed_after": []
   },
   "olive oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "olive oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (olive oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% olive oil powder": {
@@ -7079,16 +6995,14 @@
    ]
   },
   "sunflower oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "sunflower oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (sunflower oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "sunflower oil (antioxidant)": {
@@ -7118,16 +7032,14 @@
    "unassessed_after": []
   },
   "sunflower oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "sunflower oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (sunflower oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% sunflower oil powder": {
@@ -7367,16 +7279,14 @@
    ]
   },
   "soybean oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "soybean oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (soybean oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "soybean oil (antioxidant)": {
@@ -7406,16 +7316,14 @@
    "unassessed_after": []
   },
   "soybean oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "soybean oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (soybean oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% soybean oil powder": {
@@ -7655,16 +7563,14 @@
    ]
   },
   "palm oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "palm oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (palm oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "palm oil (antioxidant)": {
@@ -7694,16 +7600,14 @@
    "unassessed_after": []
   },
   "palm oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "palm oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (palm oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% palm oil powder": {
@@ -7943,16 +7847,14 @@
    ]
   },
   "coconut oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "coconut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (coconut oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "coconut oil (antioxidant)": {
@@ -7982,16 +7884,14 @@
    "unassessed_after": []
   },
   "coconut oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "coconut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (coconut oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% coconut oil powder": {
@@ -8231,16 +8131,14 @@
    ]
   },
   "mustard oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "mustard oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (mustard oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "mustard oil (antioxidant)": {
@@ -8270,16 +8168,14 @@
    "unassessed_after": []
   },
   "mustard oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "mustard oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (mustard oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% mustard oil powder": {
@@ -8519,16 +8415,14 @@
    ]
   },
   "groundnut oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "groundnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (groundnut oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "groundnut oil (antioxidant)": {
@@ -8558,16 +8452,14 @@
    "unassessed_after": []
   },
   "groundnut oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "groundnut oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (groundnut oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% groundnut oil powder": {
@@ -8807,16 +8699,14 @@
    ]
   },
   "sesame oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "sesame oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (sesame oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "sesame oil (antioxidant)": {
@@ -8846,16 +8736,14 @@
    "unassessed_after": []
   },
   "sesame oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "sesame oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (sesame oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% sesame oil powder": {
@@ -9095,16 +8983,14 @@
    ]
   },
   "edible vegetable oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "edible vegetable oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (edible vegetable oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "edible vegetable oil (antioxidant)": {
@@ -9134,16 +9020,14 @@
    "unassessed_after": []
   },
   "edible vegetable oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "vegetable oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (edible vegetable oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% edible vegetable oil powder": {
@@ -9383,16 +9267,14 @@
    ]
   },
   "vegetable oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "vegetable oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (vegetable oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "vegetable oil (antioxidant)": {
@@ -9422,16 +9304,14 @@
    "unassessed_after": []
   },
   "vegetable oil powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "vegetable oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (vegetable oil powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% vegetable oil powder": {
@@ -9671,16 +9551,14 @@
    ]
   },
   "refined oil (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "refined oil",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (refined oil (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "refined oil (antioxidant)": {
@@ -9953,16 +9831,14 @@
    ]
   },
   "butter (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "butter",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (butter (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "butter (antioxidant)": {
@@ -9992,16 +9868,14 @@
    "unassessed_after": []
   },
   "butter powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "butter",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (butter powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% butter powder": {
@@ -10241,16 +10115,14 @@
    ]
   },
   "ghee (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "ghee",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (ghee (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "ghee (antioxidant)": {
@@ -10280,16 +10152,14 @@
    "unassessed_after": []
   },
   "ghee powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "ghee",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (ghee powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% ghee powder": {
@@ -10529,16 +10399,14 @@
    ]
   },
   "cocoa butter (XQ9)": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cocoa butter",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (cocoa butter (XQ9): xq9), so what the item contains is not established and no group is asserted while part of the item is unassessed",
    "unassessed_after": []
   },
   "cocoa butter (antioxidant)": {
@@ -10568,16 +10436,14 @@
    "unassessed_after": []
   },
   "cocoa butter powder": {
-   "group_before": 2,
-   "group_after": 2,
+   "group_before": null,
+   "group_after": null,
    "row_after": {
     "term": "cocoa butter",
     "kind": "culinary"
    },
-   "drivers_after": [
-    "single processed culinary ingredient"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of an oil or fat is named (cocoa butter powder): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%",
    "unassessed_after": []
   },
   "100% cocoa butter powder": {
@@ -10893,14 +10759,13 @@
   },
   "corn and canola oil": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": null,
-   "drivers_after": [
-    "recognised whole food",
-    "recognised culinary"
-   ],
-   "reason_after": null,
-   "unassessed_after": []
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: corn and canola oil",
+   "unassessed_after": [
+    "corn and canola oil"
+   ]
   }
  },
  "blockers": [],
