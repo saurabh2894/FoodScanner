@@ -44,23 +44,25 @@ All classification grounding is established strictly from the primary report in 
 | **Steaks, fillets and cuts** | Table 1 Group 1 p. 11: *"steaks, fillets and other cuts"* | **Exact-named** | Physical cutting/butchering is an explicit verbatim Group 1 cut form |
 | **Offal** | Table 1 Group 1 p. 11: *"muscle, offal, eggs, milk"* | **Exact-named** | Offal (liver, heart, kidney, tongue, etc.) named verbatim in definition |
 | **Pork** | Table 1 Group 2 p. 11: *"obtained from milk and pork"* | **Exact-named** | Pork named directly as an animal source food |
-| **Beef** | Table 1 Group 1 p. 11: *"meat"* | **Class-instance** | Specific mammalian livestock species (cattle / Bos taurus) is an instance of `meat` |
-| **Lamb** | Table 1 Group 1 p. 11: *"meat"* | **Class-instance** | Specific mammalian livestock species (sheep / Ovis aries) is an instance of `meat` |
+| **Beef** | Table 1 Group 1 p. 11: *"meat"* | **Class-instance** | Specific mammalian livestock species (cattle / *Bos taurus*) is an instance of `meat` |
+| **Lamb** | Table 1 Group 1 p. 11: *"meat"* | **Class-instance** | Specific mammalian livestock species (sheep / *Ovis aries*) is an instance of `meat` |
 | **Veal** | Table 1 Group 1 p. 11: *"meat"* | **Class-instance** | Young cattle meat is an instance of `meat` |
-| **Chicken** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (Gallus gallus) is an instance of `poultry` |
-| **Turkey** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (Meleagris gallopavo) is an instance of `poultry` |
-| **Duck** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (Anas platyrhynchos) is an instance of `poultry` |
-| **Goose** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (Anser anser) is an instance of `poultry` |
+| **Chicken** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (*Gallus gallus*) is an instance of `poultry` |
+| **Turkey** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (*Meleagris gallopavo*) is an instance of `poultry` |
+| **Duck** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (*Anas platyrhynchos*) is an instance of `poultry` |
+| **Goose** | Table 1 Group 1 p. 11: *"poultry"* | **Class-instance** | Specific avian livestock species (*Anser anser*) is an instance of `poultry` |
 | **Smoked / Cured / Bacon / Ham** | Table 1 Group 3 p. 12: *"cured, or smoked meats"* | **Exact-named** | Processed meats; rejected |
 | **Nuggets / Sausages / Reconstituted** | Table 1 Group 4 p. 12: *"poultry... 'nuggets'... sausages... reconstituted"* | **Exact-named** | Ultra-processed formulations; rejected |
 
 ---
 
-## 3. Silence on Specific Terms (`SOURCE-SILENT`)
+## 3. Silence on Specific Terms (`SOURCE-SILENT`) & Guard Policy
 
 Where the FAO 2019 report text does not name or define a term or category, it is recorded strictly as **SOURCE-SILENT**:
-- **Goat / Mutton**: **SOURCE-SILENT** in the FAO 2019 text (Capra hircus is unmentioned by name in the FAO text; queued under `queue_game_rare_species`).
-- **Game meats** (venison/deer, elk, bison, buffalo, wild boar, rabbit, squirrel, etc.): **SOURCE-SILENT** in Group 1 examples (queued under `queue_game_rare_species`).
-- **Ground / minced meat forms**: **SOURCE-SILENT** in Group 1 examples (mincing alters structural integrity; unstated if binders/solutions added; queued under `ground_form_unstated`).
-- **Animal fats** (lard, tallow, suet, poultry fat, separable fat): named in Table 1 Group 2 as culinary ingredients; queued under `queue_animal_fat` (defer to fats reading).
+- **Goat / Mutton**: **SOURCE-SILENT** in the FAO 2019 text (*Capra hircus* is unmentioned by name in the FAO text; queued under `queue_game_rare_species`).
+- **Game meats** (venison/deer, elk, bison, buffalo, wild boar, rabbit, squirrel, pheasant, quail, wild duck, grouse, Canada goose): **SOURCE-SILENT** in Group 1 domestic examples (queued under `queue_game_rare_species`).
+- **Ground / minced meat forms without composition details**: **SOURCE-SILENT** in Group 1 examples (mincing alters structural integrity; unstated if binders/solutions added; queued under `ground_form_unstated`).
+- **Animal backfat and separable fat** (pure backfat, seam fat, external fat, subcutaneous fat, intermuscular fat, suet, leaf fat, skin-only): named in Table 1 Group 2 as culinary ingredients; queued under `queue_animal_fat` (deferred to fats and oils review).
+- **Fried / Pan-fried cooking methods**: Frying or pan-frying cannot establish plain status without added cooking oil/fat from source name alone; queued under `queue_cooking_added_fat`.
 - **Mechanically separated / deboned meat**: **SOURCE-SILENT** in Group 1; industrial reconstituted processing (rejected under `mechanically_separated`).
+- **Skipped Category**: `Sausages and Luncheon Meats` (Category ID 7, 185 records: 167 SR Legacy + 18 Foundation) is skipped from baseline staging due to ubiquitous curing salts, nitrites, and industrial formulations.

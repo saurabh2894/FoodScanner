@@ -1,105 +1,82 @@
 # Batch 9 Candidate Staging: Plain Meat & Poultry (`class_bulk_9_meat_poultry_1`)
 
 ## 1. Summary & Staging Scope
-- **Task**: Candidate staging for Batch 9 (plain meat and poultry) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions.
+- **Task**: Candidate staging for Batch 9 (plain meat and poultry) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, repaired under Task 13.
 - **Role**: Generator/Researcher staging evidence and candidates for senior review (Claude). Zero changes to application source code, parser, classifier, or runtime resources (`lexicon.csv`, `synonyms.csv`, `markers.csv` untouched).
 - **Branch**: `antigravity/class-bulk-9-meat-poultry`
-- **Base Commit**: `c0ece2b55f3b968598c889edc6b7d07e1dfd2b58` (main HEAD)
+- **Original Base Commit**: `c0ece2b55f3b968598c889edc6b7d07e1dfd2b58` (main HEAD)
+- **Primary Handoff Unit**: `canonical_candidates.csv` (8 candidate rows, exactly 1 row per distinct domestic meat food).
+- **Complete Provenance Map**: `record_dispositions.csv` (2,179 rows, exactly 1 row per cached in-scope FDC record).
 - **Status**: COMPLETE; artifacts staged additions-only under `evaluation/class_bulk_9_meat_poultry_1/`.
 
+---
+
 ## 2. Derivation & Tie-Out
-All counts are strictly derived from the underlying CSV artifacts (`accept_records.csv`, `queue.csv`, `reject.csv`):
+All counts are strictly derived from the underlying CSV artifacts (`record_dispositions.csv`, `canonical_candidates.csv`, `accept_records.csv`, `queue.csv`, `reject.csv`):
 
 | Measure | Count | Notes |
 |---|---|---|
-| **Total FDC candidates in scope** | **2179** | 4 commodity categories (2137 SR Legacy + 42 Foundation) |
-| **ACCEPT (candidate records)** | **1691** | Plain whole muscle, cuts, and offal of domestic livestock & poultry (A1–A6) |
-| **QUEUE (pending owner decision)** | **186** | Game & rare species, ground/minced forms unstated, separable animal fats |
-| **REJECT (conditioned / out of scope)** | **302** | Cured/smoked meats, bacon, ham, breaded/battered, injected with solution, patties |
-| **Total Artifact Sum (Tie-Out)** | **2179** | **EXACT TIE**: `candidates = accept (1691) + queue (186) + reject (302)` |
+| **Total FDC records in scope** | **2,179** | 4 commodity categories (2,137 SR Legacy + 42 Foundation) |
+| **ACCEPT (candidate records)** | **1,650** | Plain whole muscle cuts and natural offal of domestic livestock & poultry |
+| **QUEUE (pending owner decision)** | **241** | Game/rare species (115), fried/pan-fried methods (60), separable fat/skin-only (50), unstated ground meat (16) |
+| **REJECT (conditioned / out of scope)** | **288** | Cured/smoked meats (122), seasoned/formulated (71), injected/enhanced/basted (65), breaded/battered (19), mechanically deboned (7), added broth/gravy (4) |
+| **Total Artifact Sum (Tie-Out)** | **2,179** | **EXACT TIE**: `candidates = accept (1650) + queue (241) + reject (288)` |
 
 ### In-Scope Category Breakdown
 - `Beef Products`: 975 records (954 SR Legacy + 21 Foundation)
 - `Lamb, Veal, and Game Products`: 466 records (464 SR Legacy + 2 Foundation)
 - `Poultry Products`: 395 records (383 SR Legacy + 12 Foundation)
 - `Pork Products`: 343 records (336 SR Legacy + 7 Foundation)
-- **Total in-scope**: 2179 records (2137 SR Legacy + 42 Foundation)
+- **Total in-scope**: 2,179 records (2,137 SR Legacy + 42 Foundation)
 
 ### Skipped Category Recorded
 - `Sausages and Luncheon Meats`: **185 records** skipped entirely (167 SR Legacy + 18 Foundation). All items are cured, formulated, or ultra-processed sausages/luncheon meats.
 
-### Acceptance Breakdown
-- **Candidate records accepted**: 1691
-- **Distinct canonical foods**: 8 (`beef`, `chicken`, `duck`, `goose`, `lamb`, `pork`, `turkey`, `veal`)
-- **Already covered in lexicon.csv**: 0 (zero meat/poultry terms currently exist in lexicon.csv)
-- **NEW canonical food proposals for senior review**: 8
+---
 
-### Queue Breakdown (186 rows)
-- `ground_form_unstated`: 71
-- `queue_animal_fat`: 21
-- `queue_game_rare_species`: 94
+## 3. Task 13 Staging Repairs & Guard Enforcements
 
-### Reject Breakdown (302 rows)
-- `breaded_battered`: 31
-- `canned_meat`: 3
-- `conditioned_with`: 67
-- `cured_pork_products`: 130
-- `formulated_restructured`: 40
-- `mechanically_separated`: 7
-- `seasoned_marinated`: 19
-- `smoked_meat`: 5
+1. **Primary Review Handoff**: `canonical_candidates.csv` is now the concise primary review artifact (8 candidate rows). `accept_records.csv` (1,650 rows) is retained for full transparency as a record-level mapping, and `record_dispositions.csv` (2,179 rows) provides a single deterministic map of every in-scope category record.
+2. **Separable Animal Fats Isolated**: 50 records representing pure animal backfat (`Pork, fresh, backfat, raw`), seam fat, external fat, subcutaneous fat, intermuscular fat, suet, leaf fat, or skin-only (`Chicken, skin only`, `Turkey, skin`) were isolated to QUEUE under `queue_animal_fat` and deferred to the fats review.
+3. **Cooking Methods with Added Fat**: 60 records where the cooking method states `pan-fried`, `fried`, or `deep-fried` were isolated to QUEUE under `queue_cooking_added_fat`. Because the source name states frying without establishing whether added cooking oil/fat was used, plain status cannot be established from the name alone.
+4. **Enhanced / Injected / Seasoned Formulations**: 65 injected/enhanced records (e.g. `Pork, fresh, enhanced`, `Turkey breast, pre-basted`, `Hormel Always Tender`) and 71 seasoned/formulated records (e.g. `rotisserie, original seasoning`) were moved to REJECT.
+5. **Mechanically Deboned Meat**: 7 records of mechanically separated/deboned poultry and beef were moved to REJECT.
 
-## 3. Dispositions & Overlaps
-- **Separable Animal Fats**: 21 animal fat records (suet, fatback, separable fat, poultry skin) are placed in QUEUE under `queue_animal_fat` with disposition **'defer to fats reading (Task 7 review outcome)'**.
-- **Ground / Minced Forms**: 71 ground/minced records are placed in QUEUE under `ground_form_unstated` pending policy resolution on single-ingredient verification for comminuted meats.
-- **Game & Rare Species**: 94 records representing wild game (venison, elk, bison, rabbit, wild boar) and rare species (goat, pheasant, quail, squab, ostrich, emu) are placed in QUEUE under `queue_game_rare_species` as SOURCE-SILENT in FAO 2019 Table 1 Group 1.
+---
 
-## 4. Proposed New Canonical Foods (8 items)
-The following 8 canonical domestic livestock and poultry foods are plain, unconditioned commodities supported by real FDC commodity records:
+## 4. Proposed Canonical Candidates (`canonical_candidates.csv`: 8 rows)
 
-| Canonical Term | Category Sub-class | FDC Record Count | Example FDC ID & Description |
-|---|---|---|---|
-| `beef` | Mammalian Meat | 912 | FDC 168607 ("Beef, brisket, whole, separable lean only, all grades, raw") |
-| `chicken` | Poultry | 142 | FDC 171047 ("Chicken, broilers or fryers, meat and skin and giblets and neck, raw") |
-| `duck` | Poultry | 9 | FDC 171112 ("Duck, young duckling, domesticated, White Pekin, leg, meat and skin, bone in, cooked, roasted") |
-| `goose` | Poultry | 6 | FDC 172412 ("Goose, domesticated, meat and skin, cooked, roasted") |
-| `lamb` | Mammalian Meat | 279 | FDC 172479 ("Lamb, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/4" fat, choice, raw") |
-| `pork` | Mammalian Meat | 184 | FDC 167811 ("Pork, fresh, backfat, raw") |
-| `turkey` | Poultry | 62 | FDC 171081 ("Turkey, whole, meat and skin, raw") |
-| `veal` | Mammalian Meat | 97 | FDC 172478 ("Veal, Australian, rib, rib roast, separable lean only, raw") |
+The 1,650 accepted plain meat records collapse into exactly 8 distinct domestic food candidates:
 
-## 5. Canonical Deduplication Decisions (A6)
-Butchering cuts (steaks, roasts, chops, cutlets, breasts, drumsticks, wings), fat trim levels (separable lean only, separable lean and fat, 1/8" trim, 0" trim), USDA commercial grades (Choice, Select, Prime), plain offal (liver, heart, kidney, tongue, tripe, gizzard), and plain cooking methods (raw, roasted, broiled, braised, pan-broiled, simmered, stewed) collapse into single canonical foods:
+| Canonical Label | Suggested Kind | Supporting FDC Count | Existing Lexicon Match | Example Supporting FDC IDs | Variant / Synonym Candidates |
+|---|---|---|---|---|---|
+| `beef` | `whole_food` | 911 | NONE | 170809, 168607, 174013 | `ground beef; beef steak; beef roast; beef brisket; beef chuck; beef ribeye; beef sirloin; beef tenderloin; beef shank; beef round; beef liver; beef heart; beef tongue; beef kidney; beef tripe` |
+| `lamb` | `whole_food` | 264 | NONE | 172479, 172573, 172605 | `ground lamb; lamb chop; lamb leg; lamb shoulder; lamb loin; lamb rib; lamb shank; lamb liver; lamb heart; lamb tongue; lamb kidney` |
+| `pork` | `whole_food` | 190 | NONE | 167818, 168249, 168376 | `ground pork; pork chop; pork loin; pork tenderloin; pork shoulder; pork spareribs; pork ribs; pork liver; pork heart; pork tongue; pork kidney` |
+| `chicken` | `whole_food` | 113 | NONE | 171047, 171051, 171062 | `chicken cut; chicken breast; chicken thigh; chicken drumstick; chicken wing; chicken leg; chicken meat; chicken giblets; chicken liver; chicken heart; chicken gizzard; ground chicken` |
+| `veal` | `whole_food` | 91 | NONE | 172478, 172640, 172644 | `ground veal; veal cutlet; veal chop; veal loin; veal rib; veal shank; veal breast; veal liver; veal heart; veal tongue; veal kidney; sweetbread` |
+| `turkey` | `whole_food` | 67 | NONE | 171081, 171480, 171485 | `turkey cut; turkey breast; turkey thigh; turkey drumstick; turkey wing; turkey meat; turkey giblets; turkey liver; turkey heart; ground turkey` |
+| `duck` | `whole_food` | 9 | NONE | 171112, 171113, 172408 | `duck cut; duck breast; duck leg; duck meat; duck liver` |
+| `goose` | `whole_food` | 5 | NONE | 172412, 172413, 172414 | `goose cut; goose meat; goose breast; goose liver` |
 
-| Candidate Variety / Variant | Collapses To Canonical | Decision Basis |
-|---|---|---|
-| Ribeye, tenderloin, sirloin, chuck, brisket, round steaks/roasts, liver, heart | `beef` | Cuts and offal of cattle (Bos taurus); same commodity food |
-| Chops, loin, tenderloin, spareribs, shoulder butt, belly, liver, kidney | `pork` | Cuts and offal of domestic swine (Sus domesticus) |
-| Loin chops, leg of lamb, shoulder roasts, shank, lamb liver, heart | `lamb` | Cuts and offal of domestic sheep (Ovis aries) |
-| Veal cutlet, chops, breast, rib, shoulder, veal liver, sweetbreads | `veal` | Cuts and offal of young cattle |
-| Chicken breast, thigh, drumstick, wing, back, chicken liver, heart, gizzard | `chicken` | Parts, cuts, and giblets of Gallus gallus domesticus |
-| Turkey breast, drumstick, wing, thigh, turkey liver, heart, gizzard | `turkey` | Parts, cuts, and giblets of Meleagris gallopavo |
-| Duck breast, meat only, meat and skin, duck liver | `duck` | Parts and offal of domestic duck (Anas platyrhynchos) |
-| Goose meat only, meat and skin, goose liver | `goose` | Parts and offal of domestic goose (Anser anser) |
+- **Already covered in lexicon.csv**: 0 (zero meat/poultry terms exist in `lexicon.csv`)
+- **Genuinely new canonical food proposals**: 8
+- **Variant/synonym candidates**: Surfaced purely as candidate aliases in `canonical_candidates.csv`; `synonyms.csv` is not modified.
 
-## 6. Synonym Candidates for Review
-The following synonym candidates are surfaced from FDC descriptions and commercial cut trade names (not added to synonyms.csv):
-- `beef steak` -> `beef`
-- `beef roast` -> `beef`
-- `beef brisket` -> `beef`
-- `beef liver` -> `beef`
-- `pork chop` -> `pork`
-- `pork loin` -> `pork`
-- `pork tenderloin` -> `pork`
-- `pork liver` -> `pork`
-- `lamb chop` -> `lamb`
-- `leg of lamb` -> `lamb`
-- `chicken breast` -> `chicken`
-- `chicken thigh` -> `chicken`
-- `chicken drumstick` -> `chicken`
-- `chicken wings` -> `chicken`
-- `chicken liver` -> `chicken`
-- `turkey breast` -> `turkey`
-- `turkey drumstick` -> `turkey`
-- `duck meat` -> `duck`
-- `goose meat` -> `goose`
+---
+
+## 5. Queue Breakdown (241 rows)
+- `queue_game_rare_species`: **115 rows** (bison, venison/deer, elk, moose, antelope, bear, beaver, horse, rabbit, hare, muskrat, opossum, squirrel, raccoon, goat, pheasant, quail, squab, wild duck, wild turkey, ostrich, emu, rhea, grouse, Canada goose).
+- `queue_cooking_added_fat`: **60 rows** (pan-fried, fried, deep-fried cuts where added cooking fat cannot be ruled out from source description alone).
+- `queue_animal_fat`: **50 rows** (pure animal backfat, seam fat, external fat, subcutaneous fat, intermuscular fat, suet, leaf fat, skin-only; deferred to fats and oils review).
+- `ground_form_unstated`: **16 rows** (ground meat where lean/fat ratio and processing details are unstated).
+
+---
+
+## 6. Reject Breakdown (288 rows)
+- `cured_smoked_processed`: **122 rows** (bacon, Canadian bacon, breakfast strips, salt pork, cured ham, pastrami, corned beef, dried beef, smoked meats).
+- `seasoned_formulated`: **71 rows** (rotisserie seasoned chicken, frankfurters, bologna, salami, sausages, patties, nuggets, loaves, barbecue).
+- `injected_enhanced_solution`: **65 rows** (enhanced pork, pre-basted turkey, injected water/phosphate solutions, Hormel Always Tender).
+- `breaded_battered`: **19 rows** (breaded, battered, or floured meat/poultry cuts).
+- `mechanically_separated`: **7 rows** (mechanically separated or mechanically deboned poultry/meat).
+- `added_broth_gravy`: **4 rows** (cuts packed with added broth or gravy).

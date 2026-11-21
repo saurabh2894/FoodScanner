@@ -1,187 +1,242 @@
-dataset,fdc_id,record_name,reason_code,reason
-sr_legacy,167813,"Pork, fresh, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,167902,"Pork, fresh, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,167903,"Pork, fresh, ground, cooked",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168221,"Pork, fresh, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,168372,"Pork, ground, 84% lean / 16% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168373,"Pork, ground, 72% lean / 28% fat, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168374,"Pork, ground, 84% lean / 16% fat, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168375,"Pork, ground, 96% lean / 4% fat, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168605,"Beef, retail cuts, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,168606,"Beef, retail cuts, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,168608,"Beef, grass-fed, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,168652,"Beef, ground, 70% lean meat / 30% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169190,"Pork, ground, 96% lean / 4% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169191,"Pork, ground, 72% lean / 28% fat, cooked, crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169192,"Pork, ground, 84% lean / 16% fat, cooked, crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169193,"Pork, ground, 96% lean / 4% fat, cooked, crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169447,"Beef, ground, patties, frozen, cooked, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169473,"Beef, ground, 70% lean meat / 30% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,169902,"Quail, cooked, total edible",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,169903,"Pheasant, cooked, total edible",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,169905,"Dove, cooked (includes squab)",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,170193,"Beef, variety meats and by-products, suet, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171055,"Chicken, broilers or fryers, skin only, cooked, roasted",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171056,"Chicken, broilers or fryers, skin only, cooked, stewed",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171079,"Squab, (pigeon), meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,171116,"Chicken, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171117,"Chicken, ground, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171452,"Chicken, broilers or fryers, skin only, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171468,"Chicken, broilers or fryers, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171499,"Turkey, young hen, skin only, cooked, roasted",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171505,"Turkey, Ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171506,"Turkey, Ground, cooked",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171520,"Chicken, broilers or fryers, rotisserie, original seasoning, skin only, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,171790,"Beef, ground, 95% lean meat / 5% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171794,"Beef, ground, 90% lean meat / 10% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171796,"Beef, ground, 85% lean meat / 15% fat, raw (Includes foods for USDA's Food Distribution Program)",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,171799,"Beef, ground, 80% lean meat / 20% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172161,"Beef, ground, unspecified fat content, cooked",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172416,"Guinea hen, meat and skin, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172417,"Pheasant, leg, meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172418,"Quail, meat and skin, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172419,"Quail, meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172511,"Lamb, New Zealand, imported, frozen, composite of trimmed retail cuts, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,172512,"Lamb, New Zealand, imported, frozen, composite of trimmed retail cuts, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,172518,"Game meat, muskrat, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172519,"Game meat, muskrat, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172520,"Game meat, opossum, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172521,"Game meat, rabbit, domesticated, composite of cuts, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172522,"Game meat, rabbit, domesticated, composite of cuts, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172523,"Game meat, squirrel, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172524,"Game meat, squirrel, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172544,"Lamb, ground, cooked, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172564,"Game meat, bison, top sirloin, separable lean only, trimmed to 0"" fat, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172565,"Game meat, bison, ribeye, separable lean only, trimmed to 0"" fat, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172566,"Game meat, bison, shoulder clod, separable lean only, trimmed to 0"" fat, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172567,"Veal, breast, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,172572,"Lamb, Australian, imported, fresh, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,172573,"Lamb, Australian, imported, fresh, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,172598,"Game meat, bison, chuck, shoulder clod, separable lean only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172599,"Game meat, bison, ribeye, separable lean only, 1"" steak, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172600,"Game meat, bison, top round, separable lean only, 1"" steak, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172601,"Game meat, bison, top round, separable lean only, 1"" steak, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172602,"Game meat, deer, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172603,"Game meat, deer, ground, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172604,"Game meat, deer, loin, separable lean only, 1"" steak, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172605,"Game meat, deer, shoulder clod, separable lean only, cooked, braised",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172608,"Lamb, Australian, ground,  85% lean / 15% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172616,"Lamb, New Zealand, imported, ground lamb, cooked, braised",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172617,"Lamb, New Zealand, imported, ground lamb, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172829,"Quail, breast, meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172831,"Ruffed Grouse, breast meat, skinless, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172832,"Emu, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172833,"Emu, ground, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172834,"Emu, full rump, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172835,"Emu, inside drum, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172836,"Emu, inside drums, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172837,"Emu, outside drum, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172838,"Emu, oyster, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172839,"Ostrich, inside leg, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172840,"Ostrich, inside leg, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172841,"Ostrich, inside strip, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172842,"Ostrich, inside strip, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172843,"Ostrich, oyster, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172844,"Ostrich, round, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172845,"Ostrich, tenderloin, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172846,"Ostrich, tip trimmed, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,172847,"Turkey, ground, fat free, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172848,"Turkey, ground, fat free, pan-broiled crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172849,"Turkey, ground, fat free, patties, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172850,"Turkey, ground, 93% lean, 7% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,172851,"Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,173068,"Beef, Australian, imported, grass-fed, ground, 85% lean / 15% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,173110,"Beef, ground, 93% lean meat / 7% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,173111,"Beef, ground, 97% lean meat / 3% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,173844,"Game meat, antelope, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173845,"Game meat, bear, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173846,"Game meat, bear, cooked, simmered",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173847,"Bison, ground, grass-fed, cooked",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,173848,"Game meat, beefalo, composite of cuts, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173849,"Veal, Australian, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,173851,"Game meat, bison, separable lean only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173852,"Game meat, bison, separable lean only, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173853,"Game meat, caribou, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173854,"Game meat, caribou, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,173855,"Game meat, deer, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174028,"Beef, ground, 95% lean meat / 5% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174030,"Beef, ground, 90% lean meat / 10% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174034,"Beef, ground, 85% lean meat / 15% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174036,"Beef, ground, 80% lean meat / 20% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174037,"Beef, ground, 75% lean meat / 25% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174040,"Beef, ground, 75% lean meat / 25% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174309,"Lamb, composite of trimmed retail cuts, separable fat, trimmed to 1/4"" fat, choice, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,174310,"Lamb, composite of trimmed retail cuts, separable fat, trimmed to 1/4"" fat, choice, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,174344,"Game meat, moose, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174345,"Game meat, moose, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174346,"Game meat, rabbit, domesticated, composite of cuts, cooked, stewed",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174347,"Game meat, rabbit, wild, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174348,"Game meat, rabbit, wild, cooked, stewed",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174349,"Game meat, raccoon, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174370,"Lamb, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174421,"Game meat , bison, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174422,"Game meat, bison, ground, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174423,"Game meat , bison, top sirloin, separable lean only, 1"" steak, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174424,"Game meat, bison, chuck, shoulder clod, separable lean only, cooked, braised",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174425,"Game meat, elk, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174426,"Game meat, elk, ground, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174427,"Game meat, elk, loin, separable lean only, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174428,"Game meat, elk, round, separable lean only, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174429,"Game meat, elk, tenderloin, separable lean only, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174430,"Game meat, deer, tenderloin, separable lean only, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174431,"Game meat, deer, top round, separable lean only, 1"" steak, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174471,"Guinea hen, meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174472,"Pheasant, raw, meat and skin",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174473,"Pheasant, raw, meat only",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174474,"Pheasant, breast, meat only, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174475,"Squab, (pigeon), meat and skin, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174476,"Emu, fan fillet, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174477,"Emu, fan fillet, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174478,"Emu, flat fillet, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174479,"Emu, full rump, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174480,"Emu, top loin, cooked, broiled",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174481,"Ostrich, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174482,"Ostrich, ground, cooked, pan-broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174483,"Ostrich, fan, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174484,"Ostrich, outside leg, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174485,"Ostrich, outside strip, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174486,"Ostrich, outside strip, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174487,"Ostrich, oyster, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174488,"Ostrich, tip trimmed, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174489,"Ostrich, top loin, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174490,"Ostrich, top loin, cooked",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,174492,"Turkey, ground, 93% lean, 7% fat, patties, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174493,"Turkey, ground, 85% lean, 15% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174494,"Turkey, ground, 85% lean, 15% fat, pan-broiled crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174495,"Turkey, ground, 85% lean, 15% fat, patties, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174755,"Beef, ground, 93% lean meat / 7% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174756,"Beef, ground, 97% lean meat / 3% fat, crumbles, cooked, pan-browned",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,174879,"Veal, ground, cooked, pan-fried",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,175085,"Game meat, deer, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175086,"Game meat, horse, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175087,"Game meat, horse, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175266,"Veal, composite of trimmed retail cuts, separable fat, raw",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,175267,"Veal, composite of trimmed retail cuts, separable fat, cooked",queue_animal_fat,Animal fat record (separable fat / suet / fatback / skin); defer to fats reading (Task 7 review outcome)
-sr_legacy,175290,"Veal, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,175291,"Veal, ground, cooked, broiled",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,175292,"Game meat, antelope, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175293,"Bison, ground, grass-fed, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-sr_legacy,175294,"Game meat, beaver, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175295,"Game meat, beaver, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175296,"Game meat, beefalo, composite of cuts, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175297,"Game meat, boar, wild, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175298,"Game meat, boar, wild, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175299,"Game meat, buffalo, water, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175300,"Game meat, buffalo, water, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175301,"Game meat, elk, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175302,"Game meat, elk, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175303,"Game meat, goat, raw",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-sr_legacy,175304,"Game meat, goat, cooked, roasted",queue_game_rare_species,Game or rare animal species with no clause-named class fit; SOURCE-SILENT in FAO 2019 Table 1 Group 1
-foundation,330869,"Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,746785,"Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2514743,"Beef, ground, 90% lean meat / 10% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2514744,"Beef, ground, 80% lean meat / 20% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2514745,"Pork, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2514747,"Turkey, ground, 93% lean/ 7% fat, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2727570,"Lamb, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
-foundation,2727571,"Bison, ground, raw",ground_form_unstated,Ground/minced meat form; single-ingredient status unstated by attributes
+dataset,fdc_id,record_name,category_name,reason_code,reason
+sr_legacy,167811,"Pork, fresh, backfat, raw",Pork Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,167813,"Pork, fresh, separable fat, raw",Pork Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,167861,"Pork, fresh, variety meats and by-products, leaf fat, raw",Pork Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,167868,"Pork, fresh, loin, blade (chops), bone-in, separable lean only, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167882,"Pork, fresh, loin, center loin (chops), bone-in, separable lean only, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167883,"Pork, fresh, loin, center rib (chops), bone-in, separable lean only, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167884,"Pork, fresh, loin, blade (chops), bone-in, separable lean and fat, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167887,"Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167892,"Pork, fresh, loin, center rib (chops), boneless, separable lean and fat, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167893,"Pork, fresh, loin, center rib (chops), boneless, separable lean only, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,167902,"Pork, fresh, ground, raw",Pork Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,167903,"Pork, fresh, ground, cooked",Pork Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,168221,"Pork, fresh, separable fat, cooked",Pork Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,168292,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168293,"Pork, fresh, loin, center rib (chops), bone-in, separable lean and fat, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168294,"Pork, fresh, loin, top loin (chops), boneless, separable lean only, cooked, pan-fried",Pork Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168605,"Beef, retail cuts, separable fat, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,168606,"Beef, retail cuts, separable fat, cooked",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,168608,"Beef, grass-fed, ground, raw",Beef Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,168623,"Beef, variety meats and by-products, brain, cooked, pan-fried",Beef Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168627,"Beef, variety meats and by-products, liver, cooked, pan-fried",Beef Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168708,"Beef, round, top round, separable lean only, trimmed to 1/8"" fat, choice, cooked, pan-fried",Beef Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,168711,"Beef, round, top round, separable lean and fat, trimmed to 1/8"" fat, choice, cooked, pan-fried",Beef Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,169550,"Beef, top sirloin, steak, separable lean and fat, trimmed to 1/8"" fat, choice, cooked, pan-fried",Beef Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,169902,"Quail, cooked, total edible",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (quail); deferred from domestic meat baseline
+sr_legacy,169903,"Pheasant, cooked, total edible",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (pheasant); deferred from domestic meat baseline
+sr_legacy,169905,"Dove, cooked (includes squab)",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (squab); deferred from domestic meat baseline
+sr_legacy,170193,"Beef, variety meats and by-products, suet, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171049,"Chicken, broilers or fryers, meat and skin and giblets and neck, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171053,"Chicken, broilers or fryers, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171055,"Chicken, broilers or fryers, skin only, cooked, roasted",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171056,"Chicken, broilers or fryers, skin only, cooked, stewed",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171058,"Chicken, broilers or fryers, giblets, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171064,"Chicken, broilers or fryers, dark meat, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171068,"Chicken, broilers or fryers, dark meat, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171074,"Chicken, broilers or fryers, back, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171078,"Chicken, broilers or fryers, breast, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171079,"Squab, (pigeon), meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (squab); deferred from domestic meat baseline
+sr_legacy,171080,"Squab, (pigeon), light meat without skin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (squab); deferred from domestic meat baseline
+sr_legacy,171082,"Turkey, whole, skin (light and dark), roasted",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171107,"Chicken, cornish game hens, meat and skin, cooked, roasted",Poultry Products,queue_game_rare_species,Wild game bird/animal (chicken); deferred from domestic baseline
+sr_legacy,171108,"Chicken, cornish game hens, meat only, raw",Poultry Products,queue_game_rare_species,Wild game bird/animal (chicken); deferred from domestic baseline
+sr_legacy,171109,"Chicken, cornish game hens, meat only, cooked, roasted",Poultry Products,queue_game_rare_species,Wild game bird/animal (chicken); deferred from domestic baseline
+sr_legacy,171116,"Chicken, ground, raw",Poultry Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,171117,"Chicken, ground, crumbles, cooked, pan-browned",Poultry Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,171449,"Chicken, broilers or fryers, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171452,"Chicken, broilers or fryers, skin only, raw",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171454,"Chicken, broilers or fryers, skin only, cooked, fried, flour",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171460,"Chicken, broilers or fryers, light meat, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171465,"Chicken, broilers or fryers, light meat, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171468,"Chicken, broilers or fryers, separable fat, raw",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171471,"Chicken, broilers or fryers, back, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171476,"Chicken, broilers or fryers, breast, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,171482,"Turkey, whole, skin (light and dark), raw",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171499,"Turkey, young hen, skin only, cooked, roasted",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171505,"Turkey, Ground, raw",Poultry Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,171506,"Turkey, Ground, cooked",Poultry Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,171507,"Chicken, cornish game hens, meat and skin, raw",Poultry Products,queue_game_rare_species,Wild game bird/animal (chicken); deferred from domestic baseline
+sr_legacy,171728,"Beef, Australian, imported, grass-fed,  external fat, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171729,"Beef, Australian, imported, grass-fed, seam fat, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171730,"Beef, Australian, imported, Wagyu, external fat, Aust. marble score 4/5, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,171731,"Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 4/5, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172375,"Chicken, broilers or fryers, drumstick, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172379,"Chicken, broilers or fryers, leg, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172383,"Chicken, broilers or fryers, neck, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172387,"Chicken, broilers or fryers, thigh, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172391,"Chicken, broilers or fryers, wing, meat only, cooked, fried",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172416,"Guinea hen, meat and skin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (guinea); deferred from domestic meat baseline
+sr_legacy,172417,"Pheasant, leg, meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (pheasant); deferred from domestic meat baseline
+sr_legacy,172418,"Quail, meat and skin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (quail); deferred from domestic meat baseline
+sr_legacy,172419,"Quail, meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (quail); deferred from domestic meat baseline
+sr_legacy,172511,"Lamb, New Zealand, imported, frozen, composite of trimmed retail cuts, separable fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172512,"Lamb, New Zealand, imported, frozen, composite of trimmed retail cuts, separable fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172518,"Game meat, muskrat, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (muskrat); deferred from domestic meat baseline
+sr_legacy,172519,"Game meat, muskrat, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (muskrat); deferred from domestic meat baseline
+sr_legacy,172520,"Game meat, opossum, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (opossum); deferred from domestic meat baseline
+sr_legacy,172521,"Game meat, rabbit, domesticated, composite of cuts, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (rabbit); deferred from domestic meat baseline
+sr_legacy,172522,"Game meat, rabbit, domesticated, composite of cuts, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (rabbit); deferred from domestic meat baseline
+sr_legacy,172523,"Game meat, squirrel, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (squirrel); deferred from domestic meat baseline
+sr_legacy,172524,"Game meat, squirrel, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (squirrel); deferred from domestic meat baseline
+sr_legacy,172533,"Lamb, variety meats and by-products, liver, cooked, pan-fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172544,"Lamb, ground, cooked, broiled","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,172564,"Game meat, bison, top sirloin, separable lean only, trimmed to 0"" fat, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172565,"Game meat, bison, ribeye, separable lean only, trimmed to 0"" fat, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172566,"Game meat, bison, shoulder clod, separable lean only, trimmed to 0"" fat, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172567,"Veal, breast, separable fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172572,"Lamb, Australian, imported, fresh, separable fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172573,"Lamb, Australian, imported, fresh, separable fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172598,"Game meat, bison, chuck, shoulder clod, separable lean only, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172599,"Game meat, bison, ribeye, separable lean only, 1"" steak, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172600,"Game meat, bison, top round, separable lean only, 1"" steak, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172601,"Game meat, bison, top round, separable lean only, 1"" steak, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,172602,"Game meat, deer, ground, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,172603,"Game meat, deer, ground, cooked, pan-broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,172604,"Game meat, deer, loin, separable lean only, 1"" steak, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,172605,"Game meat, deer, shoulder clod, separable lean only, cooked, braised","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,172609,"Lamb, New Zealand, imported, Intermuscular fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172613,"Lamb, New Zealand, imported, subcutaneous fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172614,"Lamb, New Zealand, imported, liver, cooked, soaked and fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172616,"Lamb, New Zealand, imported, ground lamb, cooked, braised","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,172617,"Lamb, New Zealand, imported, ground lamb, raw","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,172618,"Lamb, New Zealand, imported, testes, cooked, soaked and fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172622,"Lamb, New Zealand, imported, tenderloin, separable lean only, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172639,"Lamb, New Zealand, imported, tenderloin, separable lean and fat, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,172647,"Veal, seam fat only, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172656,"Lamb, Australian, imported, fresh, seam fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172657,"Lamb, Australian, imported, fresh, seam fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172829,"Quail, breast, meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (quail); deferred from domestic meat baseline
+sr_legacy,172831,"Ruffed Grouse, breast meat, skinless, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (grouse); deferred from domestic meat baseline
+sr_legacy,172832,"Emu, ground, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172833,"Emu, ground, cooked, pan-broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172834,"Emu, full rump, cooked, broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172835,"Emu, inside drum, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172836,"Emu, inside drums, cooked, broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172837,"Emu, outside drum, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172838,"Emu, oyster, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,172839,"Ostrich, inside leg, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172840,"Ostrich, inside leg, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172841,"Ostrich, inside strip, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172842,"Ostrich, inside strip, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172843,"Ostrich, oyster, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172844,"Ostrich, round, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172845,"Ostrich, tenderloin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172846,"Ostrich, tip trimmed, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,172854,"Chicken, skin (drumsticks and thighs), cooked, braised",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,172855,"Chicken, skin (drumsticks and thighs), raw",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173082,"Beef, New Zealand, imported, intermuscular fat, cooked",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173083,"Beef, New Zealand, imported, intermuscular fat, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173085,"Beef, New Zealand, imported, knuckle, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173090,"Beef, New Zealand, imported, subcutaneous fat, cooked",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173091,"Beef, New Zealand, imported, subcutaneous fat, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173094,"Beef, New Zealand, imported, tenderloin, separable lean only, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173108,"Beef, New Zealand, imported, tenderloin, separable lean and fat, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173611,"Chicken, broilers or fryers, drumstick, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173616,"Chicken, broilers or fryers, leg, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173621,"Chicken, broilers or fryers, neck, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173624,"Chicken, broilers or fryers, thigh, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173629,"Chicken, broilers or fryers, wing, meat and skin, cooked, fried, flour",Poultry Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,173634,"Canada Goose, breast meat only, skinless, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (canada goose); deferred from domestic meat baseline
+sr_legacy,173844,"Game meat, antelope, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (antelope); deferred from domestic meat baseline
+sr_legacy,173845,"Game meat, bear, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bear); deferred from domestic meat baseline
+sr_legacy,173846,"Game meat, bear, cooked, simmered","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bear); deferred from domestic meat baseline
+sr_legacy,173847,"Bison, ground, grass-fed, cooked","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,173848,"Game meat, beefalo, composite of cuts, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,173849,"Veal, Australian, separable fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173851,"Game meat, bison, separable lean only, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,173852,"Game meat, bison, separable lean only, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,173853,"Game meat, caribou, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,173854,"Game meat, caribou, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,173855,"Game meat, deer, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,173967,"Beef, Australian, imported, Wagyu, external fat, Aust. marble score 9, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,173968,"Beef, Australian, imported, Wagyu, seam fat, Aust. marble score 9, raw",Beef Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174309,"Lamb, composite of trimmed retail cuts, separable fat, trimmed to 1/4"" fat, choice, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174310,"Lamb, composite of trimmed retail cuts, separable fat, trimmed to 1/4"" fat, choice, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174344,"Game meat, moose, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (moose); deferred from domestic meat baseline
+sr_legacy,174345,"Game meat, moose, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (moose); deferred from domestic meat baseline
+sr_legacy,174346,"Game meat, rabbit, domesticated, composite of cuts, cooked, stewed","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (rabbit); deferred from domestic meat baseline
+sr_legacy,174347,"Game meat, rabbit, wild, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (rabbit); deferred from domestic meat baseline
+sr_legacy,174348,"Game meat, rabbit, wild, cooked, stewed","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (rabbit); deferred from domestic meat baseline
+sr_legacy,174349,"Game meat, raccoon, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (raccoon); deferred from domestic meat baseline
+sr_legacy,174350,"Lamb, variety meats and by-products, brain, cooked, pan-fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174353,"Veal, variety meats and by-products, brain, cooked, pan-fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174358,"Veal, variety meats and by-products, liver, cooked, pan-fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174370,"Lamb, ground, raw","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,174421,"Game meat , bison, ground, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,174422,"Game meat, bison, ground, cooked, pan-broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,174423,"Game meat , bison, top sirloin, separable lean only, 1"" steak, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,174424,"Game meat, bison, chuck, shoulder clod, separable lean only, cooked, braised","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,174425,"Game meat, elk, ground, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,174426,"Game meat, elk, ground, cooked, pan-broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,174427,"Game meat, elk, loin, separable lean only, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,174428,"Game meat, elk, round, separable lean only, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,174429,"Game meat, elk, tenderloin, separable lean only, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,174430,"Game meat, deer, tenderloin, separable lean only, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,174431,"Game meat, deer, top round, separable lean only, 1"" steak, cooked, broiled","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,174434,"Lamb, New Zealand, imported, Intermuscular fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174435,"Lamb, New Zealand, imported, subcutaneous fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174436,"Lamb, New Zealand, imported, brains, cooked, soaked and fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174439,"Lamb, New Zealand, imported, kidney, cooked, soaked and fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174457,"Lamb, New Zealand, imported, loin chop, separable lean only, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174459,"Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean only, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174460,"Lamb, New Zealand, imported, leg chop/steak, bone-in, separable lean and fat, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174461,"Lamb, New Zealand, imported, loin chop, separable lean and fat, cooked, fast fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174468,"Duck, wild, meat and skin, raw",Poultry Products,queue_game_rare_species,Wild game bird/animal (duck); deferred from domestic baseline
+sr_legacy,174469,"Duck, wild, breast, meat only, raw",Poultry Products,queue_game_rare_species,Wild game bird/animal (duck); deferred from domestic baseline
+sr_legacy,174471,"Guinea hen, meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (guinea); deferred from domestic meat baseline
+sr_legacy,174472,"Pheasant, raw, meat and skin",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (pheasant); deferred from domestic meat baseline
+sr_legacy,174473,"Pheasant, raw, meat only",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (pheasant); deferred from domestic meat baseline
+sr_legacy,174474,"Pheasant, breast, meat only, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (pheasant); deferred from domestic meat baseline
+sr_legacy,174475,"Squab, (pigeon), meat and skin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (squab); deferred from domestic meat baseline
+sr_legacy,174476,"Emu, fan fillet, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,174477,"Emu, fan fillet, cooked, broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,174478,"Emu, flat fillet, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,174479,"Emu, full rump, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,174480,"Emu, top loin, cooked, broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (emu); deferred from domestic meat baseline
+sr_legacy,174481,"Ostrich, ground, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174482,"Ostrich, ground, cooked, pan-broiled",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174483,"Ostrich, fan, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174484,"Ostrich, outside leg, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174485,"Ostrich, outside strip, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174486,"Ostrich, outside strip, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174487,"Ostrich, oyster, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174488,"Ostrich, tip trimmed, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174489,"Ostrich, top loin, raw",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174490,"Ostrich, top loin, cooked",Poultry Products,queue_game_rare_species,Game or rare animal/bird species (ostrich); deferred from domestic meat baseline
+sr_legacy,174491,"Chicken, liver, all classes, cooked, pan-fried",Poultry Products,queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174496,"Chicken, skin (drumsticks and thighs), cooked, roasted",Poultry Products,queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174732,"Beef, New Zealand, imported, rump centre, separable lean only, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174733,"Beef, New Zealand, imported, striploin, separable lean only, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174748,"Beef, New Zealand, imported, rump centre, separable lean and fat, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174751,"Beef, New Zealand, imported, striploin, separable lean and fat, cooked, fast fried",Beef Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174879,"Veal, ground, cooked, pan-fried","Lamb, Veal, and Game Products",queue_cooking_added_fat,Cooking method states pan-fried; cannot establish plain status without added cooking oil/fat from source name alone
+sr_legacy,174882,"Veal, external fat only, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174883,"Veal, external fat only, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174884,"Veal, seam fat only, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174891,"Lamb, Australian, imported, fresh, external fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,174892,"Lamb, Australian, imported, fresh, external fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,175085,"Game meat, deer, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (deer); deferred from domestic meat baseline
+sr_legacy,175086,"Game meat, horse, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (horse); deferred from domestic meat baseline
+sr_legacy,175087,"Game meat, horse, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (horse); deferred from domestic meat baseline
+sr_legacy,175266,"Veal, composite of trimmed retail cuts, separable fat, raw","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,175267,"Veal, composite of trimmed retail cuts, separable fat, cooked","Lamb, Veal, and Game Products",queue_animal_fat,"Animal backfat, seam/external/subcutaneous fat, suet, or skin-only; deferred to fats and oils review"
+sr_legacy,175290,"Veal, ground, raw","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,175291,"Veal, ground, cooked, broiled","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+sr_legacy,175292,"Game meat, antelope, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (antelope); deferred from domestic meat baseline
+sr_legacy,175293,"Bison, ground, grass-fed, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
+sr_legacy,175294,"Game meat, beaver, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (beaver); deferred from domestic meat baseline
+sr_legacy,175295,"Game meat, beaver, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (beaver); deferred from domestic meat baseline
+sr_legacy,175296,"Game meat, beefalo, composite of cuts, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,175297,"Game meat, boar, wild, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,175298,"Game meat, boar, wild, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Wild game bird/animal (game meat); deferred from domestic baseline
+sr_legacy,175299,"Game meat, buffalo, water, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (buffalo); deferred from domestic meat baseline
+sr_legacy,175300,"Game meat, buffalo, water, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (buffalo); deferred from domestic meat baseline
+sr_legacy,175301,"Game meat, elk, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,175302,"Game meat, elk, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (elk); deferred from domestic meat baseline
+sr_legacy,175303,"Game meat, goat, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (goat); deferred from domestic meat baseline
+sr_legacy,175304,"Game meat, goat, cooked, roasted","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (goat); deferred from domestic meat baseline
+foundation,2514745,"Pork, ground, raw",Pork Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+foundation,2514746,"Chicken, ground, with additives, raw",Poultry Products,ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+foundation,2727570,"Lamb, ground, raw","Lamb, Veal, and Game Products",ground_form_unstated,Ground meat without stated lean/fat percentage or processing details
+foundation,2727571,"Bison, ground, raw","Lamb, Veal, and Game Products",queue_game_rare_species,Game or rare animal/bird species (bison); deferred from domestic meat baseline
