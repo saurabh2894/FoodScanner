@@ -408,12 +408,40 @@
   function assetUrl(p) { return new URL(p, document.baseURI).href; }
   var STALL_MS = 45000;   // no progress message for this long: stop and say so
 
+  // The preview is a small, self-contained thumbnail (a data: URL drawn once at selection time). It does not hold a blob URL to the live file and does not keep a full-resolution
+  // decode alive for the life of the page, so a camera/cloud file that changes or goes away later, or memory pressure during the long reading, cannot turn it into a broken image.
+  // If the thumbnail cannot be made, or the image fails to display, the preview is hidden and the status line says so: the photo itself is still read from the file.
+  var THUMB_MAX = 640;
+  function makeThumb(file) {
+    return new Promise(function (resolve) {
+      var url = URL.createObjectURL(file), img = new Image(), done = false;
+      function finish(v) { if (!done) { done = true; URL.revokeObjectURL(url); resolve(v); } }
+      setTimeout(function () { finish(null); }, 10000);
+      img.onload = function () {
+        try {
+          var k = Math.min(1, THUMB_MAX / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
+          c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+          finish(c.toDataURL("image/jpeg", 0.8));
+        } catch (e) { finish(null); }
+      };
+      img.onerror = function () { finish(null); };
+      img.src = url;
+    });
+  }
+  var previewToken = 0;
   $("photo").addEventListener("change", function (ev) {
     photoFile = ev.target.files && ev.target.files[0] || null;
     $("photo-analyse").disabled = !photoFile;
-    var pv = $("photo-preview");
-    if (photoFile) { pv.src = URL.createObjectURL(photoFile); pv.hidden = false; $("photo-status").textContent = "Photo ready. Press Read photo and analyse."; }
-    else { pv.hidden = true; }
+    var pv = $("photo-preview"), token = ++previewToken;
+    pv.onerror = function () { pv.hidden = true; pv.removeAttribute("src"); if (photoFile) $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; };
+    if (!photoFile) { pv.hidden = true; pv.removeAttribute("src"); return; }
+    $("photo-status").textContent = "Photo ready. Press Read photo and analyse.";
+    makeThumb(photoFile).then(function (dataUrl) {
+      if (token !== previewToken) return;                       // a newer selection replaced this one
+      if (dataUrl) { pv.src = dataUrl; pv.hidden = false; }
+      else { pv.hidden = true; pv.removeAttribute("src"); $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; }
+    });
   });
 
   $("photo-analyse").addEventListener("click", async function () {

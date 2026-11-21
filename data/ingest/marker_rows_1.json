@@ -1,0 +1,21 @@
+{
+  "batch_id": "marker-rows-1",
+  "note": "Strong derived-substance markers approved by the owner after reading FAO 2019 (ca5644en) section 3. CLASSIFICATION-BEARING: a list holding one of these terms is Group 4 (the report: 'The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed').",
+  "marker_class": "derived_substance",
+  "strength": "strong",
+  "clause": {
+    "where": "FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods)",
+    "text": "include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)"
+  },
+  "basis": {
+    "where": "FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods)",
+    "text": "The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed."
+  },
+  "rows": [
+    {"term": "fructose", "coverage": "exact term IS named by the clause"},
+    {"term": "wheat gluten", "coverage": "instance of the named term 'gluten' (class-level coverage); exact term not named by the clause; the mapping gluten -> wheat gluten is stated by the owner's reading, not by the clause"},
+    {"term": "hydrolysed vegetable protein", "coverage": "instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause"},
+    {"term": "lemon juice concentrate", "coverage": "instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause"},
+    {"term": "apple juice concentrate", "coverage": "instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause"}
+  ]
+}

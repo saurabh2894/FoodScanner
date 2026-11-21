@@ -96,10 +96,14 @@ def test_condition_handling_processed_forms_stay_unassessed():
         "pineapple juice concentrate",
     ]
     rows = {r["term"]: r for r in load_table("lexicon.csv")}
+    approved_markers = {"apple juice concentrate"}      # marker-rows-1 (owner-approved, FAO section 3 'fruit juice concentrates', class-level): still NO lexicon row, but no longer unassessed
     for item in processed_forms:
         assert item not in rows, f"{item} should not have a lexicon row"
         r = analyse_text(f"Ingredients: {item}.", source="text")
-        assert item in r.unassessed, f"{item} should stay unassessed"
+        if item in approved_markers:
+            assert r.answered and r.group == 4 and item not in r.unassessed, f"{item} is an approved strong marker"
+        else:
+            assert item in r.unassessed, f"{item} should stay unassessed"
 
 
 def test_normalise_ingredient_maps_new_terms_to_kind():
