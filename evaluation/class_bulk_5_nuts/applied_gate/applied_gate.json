@@ -1,0 +1,1554 @@
+{
+ "rule_id": "class-bulk-5-nuts",
+ "base_src": "/tmp/base_c0e/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 386,
+  "after": 406,
+  "added": [
+   "acorns",
+   "beechnuts",
+   "brazil nuts",
+   "butternuts",
+   "cashew nuts",
+   "chestnuts",
+   "chia seeds",
+   "ginkgo nuts",
+   "hazelnuts",
+   "hickory nuts",
+   "macadamia nuts",
+   "pecans",
+   "pili nuts",
+   "pine nuts",
+   "pistachio nuts",
+   "safflower seeds",
+   "sesame seeds",
+   "sunflower seeds",
+   "walnuts",
+   "watermelon seeds"
+  ],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "acorns": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   }
+  },
+  "beechnuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   }
+  },
+  "brazil nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "butternuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   }
+  },
+  "cashew nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "chestnuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   }
+  },
+  "chia seeds": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   }
+  },
+  "ginkgo nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "hazelnuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   }
+  },
+  "hickory nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "macadamia nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "pecans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   }
+  },
+  "pili nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "pine nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "pistachio nuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   }
+  },
+  "safflower seeds": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   }
+  },
+  "sesame seeds": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   }
+  },
+  "sunflower seeds": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   }
+  },
+  "walnuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   }
+  },
+  "watermelon seeds": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S06",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Sesame Seeds"
+    ],
+    "staged_terms": [
+     "sesame seed",
+     "sesame seeds"
+    ]
+   },
+   {
+    "input": "S08",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Sesame Seeds"
+    ],
+    "staged_terms": [
+     "sesame seed",
+     "sesame seeds"
+    ]
+   },
+   {
+    "input": "S27",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "uncertain",
+     "uncertain"
+    ],
+    "unassessed_diff": [
+     "Sesame Seeds"
+    ],
+    "staged_terms": [
+     "sesame seed",
+     "sesame seeds"
+    ]
+   },
+   {
+    "input": "S30",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Cashew Nuts"
+    ],
+    "staged_terms": [
+     "cashew nut",
+     "cashew nuts"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 536,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 772,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 49,
+  "probed": 147,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 49,
+    "group1_before": 28,
+    "group1_after": 28,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 49,
+    "group1_before": 28,
+    "group1_after": 28,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 49,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 56,
+  "group1_after": 56,
+  "changes": {}
+ },
+ "powder_surface": {
+  "probed": 558,
+  "group1_before": 364,
+  "group1_after": 364,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "cow milk powder",
+   "goat milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "new_rows_surface": {
+  "rows": [
+   "acorns",
+   "beechnuts",
+   "brazil nuts",
+   "butternuts",
+   "cashew nuts",
+   "chestnuts",
+   "chia seeds",
+   "ginkgo nuts",
+   "hazelnuts",
+   "hickory nuts",
+   "macadamia nuts",
+   "pecans",
+   "pili nuts",
+   "pine nuts",
+   "pistachio nuts",
+   "safflower seeds",
+   "sesame seeds",
+   "sunflower seeds",
+   "walnuts",
+   "watermelon seeds"
+  ],
+  "kinds": {
+   "acorns": "nut_seed",
+   "beechnuts": "nut_seed",
+   "brazil nuts": "nut_seed",
+   "butternuts": "nut_seed",
+   "cashew nuts": "nut_seed",
+   "chestnuts": "nut_seed",
+   "chia seeds": "nut_seed",
+   "ginkgo nuts": "nut_seed",
+   "hazelnuts": "nut_seed",
+   "hickory nuts": "nut_seed",
+   "macadamia nuts": "nut_seed",
+   "pecans": "nut_seed",
+   "pili nuts": "nut_seed",
+   "pine nuts": "nut_seed",
+   "pistachio nuts": "nut_seed",
+   "safflower seeds": "nut_seed",
+   "sesame seeds": "nut_seed",
+   "sunflower seeds": "nut_seed",
+   "walnuts": "nut_seed",
+   "watermelon seeds": "nut_seed"
+  },
+  "forms": {
+   "acorns": 1,
+   "roasted acorns": 1,
+   "toasted acorns": null,
+   "dry roasted acorns": 1,
+   "oil roasted acorns": null,
+   "honey roasted acorns": null,
+   "salted acorns": 3,
+   "roasted salted acorns": 3,
+   "toasted salted acorns": null,
+   "sugared acorns": null,
+   "unsalted acorns": 1,
+   "acorns (no added salt)": 1,
+   "acorns (sugar)": 3,
+   "acorns (canned)": 1,
+   "acorns (XQ9)": 1,
+   "Rice, acorns": null,
+   "acorns, salt": 3,
+   "acorns flour": null,
+   "acorns butter": null,
+   "acorns oil": null,
+   "acorns powder": 1,
+   "100% acorns powder": 1,
+   "whole acorns powder": 1,
+   "beechnuts": 1,
+   "roasted beechnuts": 1,
+   "toasted beechnuts": null,
+   "dry roasted beechnuts": 1,
+   "oil roasted beechnuts": null,
+   "honey roasted beechnuts": null,
+   "salted beechnuts": 3,
+   "roasted salted beechnuts": 3,
+   "toasted salted beechnuts": null,
+   "sugared beechnuts": null,
+   "unsalted beechnuts": 1,
+   "beechnuts (no added salt)": 1,
+   "beechnuts (sugar)": 3,
+   "beechnuts (canned)": 1,
+   "beechnuts (XQ9)": 1,
+   "Rice, beechnuts": null,
+   "beechnuts, salt": 3,
+   "beechnuts flour": null,
+   "beechnuts butter": null,
+   "beechnuts oil": null,
+   "beechnuts powder": 1,
+   "100% beechnuts powder": 1,
+   "whole beechnuts powder": 1,
+   "brazil nuts": 1,
+   "roasted brazil nuts": 1,
+   "toasted brazil nuts": null,
+   "dry roasted brazil nuts": 1,
+   "oil roasted brazil nuts": null,
+   "honey roasted brazil nuts": null,
+   "salted brazil nuts": 3,
+   "roasted salted brazil nuts": 3,
+   "toasted salted brazil nuts": null,
+   "sugared brazil nuts": null,
+   "unsalted brazil nuts": 1,
+   "brazil nuts (no added salt)": 1,
+   "brazil nuts (sugar)": 3,
+   "brazil nuts (canned)": 1,
+   "brazil nuts (XQ9)": 1,
+   "Rice, brazil nuts": null,
+   "brazil nuts, salt": 3,
+   "brazil nuts flour": null,
+   "brazil nuts butter": null,
+   "brazil nuts oil": null,
+   "brazil nuts powder": 1,
+   "100% brazil nuts powder": 1,
+   "whole brazil nuts powder": 1,
+   "butternuts": 1,
+   "roasted butternuts": 1,
+   "toasted butternuts": null,
+   "dry roasted butternuts": 1,
+   "oil roasted butternuts": null,
+   "honey roasted butternuts": null,
+   "salted butternuts": 3,
+   "roasted salted butternuts": 3,
+   "toasted salted butternuts": null,
+   "sugared butternuts": null,
+   "unsalted butternuts": 1,
+   "butternuts (no added salt)": 1,
+   "butternuts (sugar)": 3,
+   "butternuts (canned)": 1,
+   "butternuts (XQ9)": 1,
+   "Rice, butternuts": null,
+   "butternuts, salt": 3,
+   "butternuts flour": null,
+   "butternuts butter": null,
+   "butternuts oil": null,
+   "butternuts powder": 1,
+   "100% butternuts powder": 1,
+   "whole butternuts powder": 1,
+   "cashew nuts": 1,
+   "roasted cashew nuts": 1,
+   "toasted cashew nuts": null,
+   "dry roasted cashew nuts": 1,
+   "oil roasted cashew nuts": null,
+   "honey roasted cashew nuts": null,
+   "salted cashew nuts": 3,
+   "roasted salted cashew nuts": 3,
+   "toasted salted cashew nuts": null,
+   "sugared cashew nuts": null,
+   "unsalted cashew nuts": 1,
+   "cashew nuts (no added salt)": 1,
+   "cashew nuts (sugar)": 3,
+   "cashew nuts (canned)": 1,
+   "cashew nuts (XQ9)": 1,
+   "Rice, cashew nuts": null,
+   "cashew nuts, salt": 3,
+   "cashew nuts flour": null,
+   "cashew nuts butter": null,
+   "cashew nuts oil": null,
+   "cashew nuts powder": 1,
+   "100% cashew nuts powder": 1,
+   "whole cashew nuts powder": 1,
+   "chestnuts": 1,
+   "roasted chestnuts": 1,
+   "toasted chestnuts": null,
+   "dry roasted chestnuts": 1,
+   "oil roasted chestnuts": null,
+   "honey roasted chestnuts": null,
+   "salted chestnuts": 3,
+   "roasted salted chestnuts": 3,
+   "toasted salted chestnuts": null,
+   "sugared chestnuts": null,
+   "unsalted chestnuts": 1,
+   "chestnuts (no added salt)": 1,
+   "chestnuts (sugar)": 3,
+   "chestnuts (canned)": 1,
+   "chestnuts (XQ9)": 1,
+   "Rice, chestnuts": null,
+   "chestnuts, salt": 3,
+   "chestnuts flour": null,
+   "chestnuts butter": null,
+   "chestnuts oil": null,
+   "chestnuts powder": 1,
+   "100% chestnuts powder": 1,
+   "whole chestnuts powder": 1,
+   "chia seeds": 1,
+   "roasted chia seeds": 1,
+   "toasted chia seeds": null,
+   "dry roasted chia seeds": 1,
+   "oil roasted chia seeds": null,
+   "honey roasted chia seeds": null,
+   "salted chia seeds": 3,
+   "roasted salted chia seeds": 3,
+   "toasted salted chia seeds": null,
+   "sugared chia seeds": null,
+   "unsalted chia seeds": 1,
+   "chia seeds (no added salt)": 1,
+   "chia seeds (sugar)": 3,
+   "chia seeds (canned)": 1,
+   "chia seeds (XQ9)": 1,
+   "Rice, chia seeds": null,
+   "chia seeds, salt": 3,
+   "chia seeds flour": null,
+   "chia seeds butter": null,
+   "chia seeds oil": null,
+   "chia seeds powder": 1,
+   "100% chia seeds powder": 1,
+   "whole chia seeds powder": 1,
+   "ginkgo nuts": 1,
+   "roasted ginkgo nuts": 1,
+   "toasted ginkgo nuts": null,
+   "dry roasted ginkgo nuts": 1,
+   "oil roasted ginkgo nuts": null,
+   "honey roasted ginkgo nuts": null,
+   "salted ginkgo nuts": 3,
+   "roasted salted ginkgo nuts": 3,
+   "toasted salted ginkgo nuts": null,
+   "sugared ginkgo nuts": null,
+   "unsalted ginkgo nuts": 1,
+   "ginkgo nuts (no added salt)": 1,
+   "ginkgo nuts (sugar)": 3,
+   "ginkgo nuts (canned)": 1,
+   "ginkgo nuts (XQ9)": 1,
+   "Rice, ginkgo nuts": null,
+   "ginkgo nuts, salt": 3,
+   "ginkgo nuts flour": null,
+   "ginkgo nuts butter": null,
+   "ginkgo nuts oil": null,
+   "ginkgo nuts powder": 1,
+   "100% ginkgo nuts powder": 1,
+   "whole ginkgo nuts powder": 1,
+   "hazelnuts": 1,
+   "roasted hazelnuts": 1,
+   "toasted hazelnuts": null,
+   "dry roasted hazelnuts": 1,
+   "oil roasted hazelnuts": null,
+   "honey roasted hazelnuts": null,
+   "salted hazelnuts": 3,
+   "roasted salted hazelnuts": 3,
+   "toasted salted hazelnuts": null,
+   "sugared hazelnuts": null,
+   "unsalted hazelnuts": 1,
+   "hazelnuts (no added salt)": 1,
+   "hazelnuts (sugar)": 3,
+   "hazelnuts (canned)": 1,
+   "hazelnuts (XQ9)": 1,
+   "Rice, hazelnuts": null,
+   "hazelnuts, salt": 3,
+   "hazelnuts flour": null,
+   "hazelnuts butter": null,
+   "hazelnuts oil": null,
+   "hazelnuts powder": 1,
+   "100% hazelnuts powder": 1,
+   "whole hazelnuts powder": 1,
+   "hickory nuts": 1,
+   "roasted hickory nuts": 1,
+   "toasted hickory nuts": null,
+   "dry roasted hickory nuts": 1,
+   "oil roasted hickory nuts": null,
+   "honey roasted hickory nuts": null,
+   "salted hickory nuts": 3,
+   "roasted salted hickory nuts": 3,
+   "toasted salted hickory nuts": null,
+   "sugared hickory nuts": null,
+   "unsalted hickory nuts": 1,
+   "hickory nuts (no added salt)": 1,
+   "hickory nuts (sugar)": 3,
+   "hickory nuts (canned)": 1,
+   "hickory nuts (XQ9)": 1,
+   "Rice, hickory nuts": null,
+   "hickory nuts, salt": 3,
+   "hickory nuts flour": null,
+   "hickory nuts butter": null,
+   "hickory nuts oil": null,
+   "hickory nuts powder": 1,
+   "100% hickory nuts powder": 1,
+   "whole hickory nuts powder": 1,
+   "macadamia nuts": 1,
+   "roasted macadamia nuts": 1,
+   "toasted macadamia nuts": null,
+   "dry roasted macadamia nuts": 1,
+   "oil roasted macadamia nuts": null,
+   "honey roasted macadamia nuts": null,
+   "salted macadamia nuts": 3,
+   "roasted salted macadamia nuts": 3,
+   "toasted salted macadamia nuts": null,
+   "sugared macadamia nuts": null,
+   "unsalted macadamia nuts": 1,
+   "macadamia nuts (no added salt)": 1,
+   "macadamia nuts (sugar)": 3,
+   "macadamia nuts (canned)": 1,
+   "macadamia nuts (XQ9)": 1,
+   "Rice, macadamia nuts": null,
+   "macadamia nuts, salt": 3,
+   "macadamia nuts flour": null,
+   "macadamia nuts butter": null,
+   "macadamia nuts oil": null,
+   "macadamia nuts powder": 1,
+   "100% macadamia nuts powder": 1,
+   "whole macadamia nuts powder": 1,
+   "pecans": 1,
+   "roasted pecans": 1,
+   "toasted pecans": null,
+   "dry roasted pecans": 1,
+   "oil roasted pecans": null,
+   "honey roasted pecans": null,
+   "salted pecans": 3,
+   "roasted salted pecans": 3,
+   "toasted salted pecans": null,
+   "sugared pecans": null,
+   "unsalted pecans": 1,
+   "pecans (no added salt)": 1,
+   "pecans (sugar)": 3,
+   "pecans (canned)": 1,
+   "pecans (XQ9)": 1,
+   "Rice, pecans": null,
+   "pecans, salt": 3,
+   "pecans flour": null,
+   "pecans butter": null,
+   "pecans oil": null,
+   "pecans powder": 1,
+   "100% pecans powder": 1,
+   "whole pecans powder": 1,
+   "pili nuts": 1,
+   "roasted pili nuts": 1,
+   "toasted pili nuts": null,
+   "dry roasted pili nuts": 1,
+   "oil roasted pili nuts": null,
+   "honey roasted pili nuts": null,
+   "salted pili nuts": 3,
+   "roasted salted pili nuts": 3,
+   "toasted salted pili nuts": null,
+   "sugared pili nuts": null,
+   "unsalted pili nuts": 1,
+   "pili nuts (no added salt)": 1,
+   "pili nuts (sugar)": 3,
+   "pili nuts (canned)": 1,
+   "pili nuts (XQ9)": 1,
+   "Rice, pili nuts": null,
+   "pili nuts, salt": 3,
+   "pili nuts flour": null,
+   "pili nuts butter": null,
+   "pili nuts oil": null,
+   "pili nuts powder": 1,
+   "100% pili nuts powder": 1,
+   "whole pili nuts powder": 1,
+   "pine nuts": 1,
+   "roasted pine nuts": 1,
+   "toasted pine nuts": null,
+   "dry roasted pine nuts": 1,
+   "oil roasted pine nuts": null,
+   "honey roasted pine nuts": null,
+   "salted pine nuts": 3,
+   "roasted salted pine nuts": 3,
+   "toasted salted pine nuts": null,
+   "sugared pine nuts": null,
+   "unsalted pine nuts": 1,
+   "pine nuts (no added salt)": 1,
+   "pine nuts (sugar)": 3,
+   "pine nuts (canned)": 1,
+   "pine nuts (XQ9)": 1,
+   "Rice, pine nuts": null,
+   "pine nuts, salt": 3,
+   "pine nuts flour": null,
+   "pine nuts butter": null,
+   "pine nuts oil": null,
+   "pine nuts powder": 1,
+   "100% pine nuts powder": 1,
+   "whole pine nuts powder": 1,
+   "pistachio nuts": 1,
+   "roasted pistachio nuts": 1,
+   "toasted pistachio nuts": null,
+   "dry roasted pistachio nuts": 1,
+   "oil roasted pistachio nuts": null,
+   "honey roasted pistachio nuts": null,
+   "salted pistachio nuts": 3,
+   "roasted salted pistachio nuts": 3,
+   "toasted salted pistachio nuts": null,
+   "sugared pistachio nuts": null,
+   "unsalted pistachio nuts": 1,
+   "pistachio nuts (no added salt)": 1,
+   "pistachio nuts (sugar)": 3,
+   "pistachio nuts (canned)": 1,
+   "pistachio nuts (XQ9)": 1,
+   "Rice, pistachio nuts": null,
+   "pistachio nuts, salt": 3,
+   "pistachio nuts flour": null,
+   "pistachio nuts butter": null,
+   "pistachio nuts oil": null,
+   "pistachio nuts powder": 1,
+   "100% pistachio nuts powder": 1,
+   "whole pistachio nuts powder": 1,
+   "safflower seeds": 1,
+   "roasted safflower seeds": 1,
+   "toasted safflower seeds": null,
+   "dry roasted safflower seeds": 1,
+   "oil roasted safflower seeds": null,
+   "honey roasted safflower seeds": null,
+   "salted safflower seeds": 3,
+   "roasted salted safflower seeds": 3,
+   "toasted salted safflower seeds": null,
+   "sugared safflower seeds": null,
+   "unsalted safflower seeds": 1,
+   "safflower seeds (no added salt)": 1,
+   "safflower seeds (sugar)": 3,
+   "safflower seeds (canned)": 1,
+   "safflower seeds (XQ9)": 1,
+   "Rice, safflower seeds": null,
+   "safflower seeds, salt": 3,
+   "safflower seeds flour": null,
+   "safflower seeds butter": null,
+   "safflower seeds oil": null,
+   "safflower seeds powder": 1,
+   "100% safflower seeds powder": 1,
+   "whole safflower seeds powder": 1,
+   "sesame seeds": 1,
+   "roasted sesame seeds": 1,
+   "toasted sesame seeds": null,
+   "dry roasted sesame seeds": 1,
+   "oil roasted sesame seeds": null,
+   "honey roasted sesame seeds": null,
+   "salted sesame seeds": 3,
+   "roasted salted sesame seeds": 3,
+   "toasted salted sesame seeds": null,
+   "sugared sesame seeds": null,
+   "unsalted sesame seeds": 1,
+   "sesame seeds (no added salt)": 1,
+   "sesame seeds (sugar)": 3,
+   "sesame seeds (canned)": 1,
+   "sesame seeds (XQ9)": 1,
+   "Rice, sesame seeds": null,
+   "sesame seeds, salt": 3,
+   "sesame seeds flour": null,
+   "sesame seeds butter": null,
+   "sesame seeds oil": null,
+   "sesame seeds powder": 1,
+   "100% sesame seeds powder": 1,
+   "whole sesame seeds powder": 1,
+   "sunflower seeds": 1,
+   "roasted sunflower seeds": 1,
+   "toasted sunflower seeds": null,
+   "dry roasted sunflower seeds": 1,
+   "oil roasted sunflower seeds": null,
+   "honey roasted sunflower seeds": null,
+   "salted sunflower seeds": 3,
+   "roasted salted sunflower seeds": 3,
+   "toasted salted sunflower seeds": null,
+   "sugared sunflower seeds": null,
+   "unsalted sunflower seeds": 1,
+   "sunflower seeds (no added salt)": 1,
+   "sunflower seeds (sugar)": 3,
+   "sunflower seeds (canned)": 1,
+   "sunflower seeds (XQ9)": 1,
+   "Rice, sunflower seeds": null,
+   "sunflower seeds, salt": 3,
+   "sunflower seeds flour": null,
+   "sunflower seeds butter": null,
+   "sunflower seeds oil": null,
+   "sunflower seeds powder": 1,
+   "100% sunflower seeds powder": 1,
+   "whole sunflower seeds powder": 1,
+   "walnuts": 1,
+   "roasted walnuts": 1,
+   "toasted walnuts": null,
+   "dry roasted walnuts": 1,
+   "oil roasted walnuts": null,
+   "honey roasted walnuts": null,
+   "salted walnuts": 3,
+   "roasted salted walnuts": 3,
+   "toasted salted walnuts": null,
+   "sugared walnuts": null,
+   "unsalted walnuts": 1,
+   "walnuts (no added salt)": 1,
+   "walnuts (sugar)": 3,
+   "walnuts (canned)": 1,
+   "walnuts (XQ9)": 1,
+   "Rice, walnuts": null,
+   "walnuts, salt": 3,
+   "walnuts flour": null,
+   "walnuts butter": null,
+   "walnuts oil": null,
+   "walnuts powder": 1,
+   "100% walnuts powder": 1,
+   "whole walnuts powder": 1,
+   "watermelon seeds": 1,
+   "roasted watermelon seeds": 1,
+   "toasted watermelon seeds": null,
+   "dry roasted watermelon seeds": 1,
+   "oil roasted watermelon seeds": null,
+   "honey roasted watermelon seeds": null,
+   "salted watermelon seeds": 3,
+   "roasted salted watermelon seeds": 3,
+   "toasted salted watermelon seeds": null,
+   "sugared watermelon seeds": null,
+   "unsalted watermelon seeds": 1,
+   "watermelon seeds (no added salt)": 1,
+   "watermelon seeds (sugar)": 3,
+   "watermelon seeds (canned)": 1,
+   "watermelon seeds (XQ9)": 1,
+   "Rice, watermelon seeds": null,
+   "watermelon seeds, salt": 3,
+   "watermelon seeds flour": null,
+   "watermelon seeds butter": null,
+   "watermelon seeds oil": null,
+   "watermelon seeds powder": 1,
+   "100% watermelon seeds powder": 1,
+   "whole watermelon seeds powder": 1
+  }
+ },
+ "controls": {
+  "cashew": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"cashew\")",
+   "unassessed_after": [
+    "cashew"
+   ]
+  },
+  "cashews": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cashews",
+   "unassessed_after": [
+    "cashews"
+   ]
+  },
+  "hazelnut": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnut": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachios": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pistachios",
+   "unassessed_after": [
+    "pistachios"
+   ]
+  },
+  "sesame": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"sesame\")",
+   "unassessed_after": [
+    "sesame"
+   ]
+  },
+  "pecan": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lotus seeds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: lotus seeds",
+   "unassessed_after": [
+    "lotus seeds"
+   ]
+  },
+  "breadfruit seeds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breadfruit seeds",
+   "unassessed_after": [
+    "breadfruit seeds"
+   ]
+  },
+  "breadnut seeds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: breadnut seeds",
+   "unassessed_after": [
+    "breadnut seeds"
+   ]
+  },
+  "sisymbrium seeds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sisymbrium seeds",
+   "unassessed_after": [
+    "sisymbrium seeds"
+   ]
+  },
+  "peanuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: peanuts",
+   "unassessed_after": [
+    "peanuts"
+   ]
+  },
+  "coconut": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"coconut\")",
+   "unassessed_after": [
+    "coconut"
+   ]
+  },
+  "chestnut flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chestnut flour",
+   "unassessed_after": [
+    "chestnut flour"
+   ]
+  },
+  "almond butter": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: almond butter",
+   "unassessed_after": [
+    "almond butter"
+   ]
+  },
+  "tahini": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tahini",
+   "unassessed_after": [
+    "tahini"
+   ]
+  },
+  "sesame flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sesame flour",
+   "unassessed_after": [
+    "sesame flour"
+   ]
+  },
+  "cashew nut butter": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cashew nut butter",
+   "unassessed_after": [
+    "cashew nut butter"
+   ]
+  },
+  "chestnuts (boiled)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mixed nuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: mixed nuts",
+   "unassessed_after": [
+    "mixed nuts"
+   ]
+  },
+  "pine nuts oil roasted": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pine nuts oil roasted",
+   "unassessed_after": [
+    "pine nuts oil roasted"
+   ]
+  },
+  "acorns": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted cashew nuts": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted walnuts": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted sesame seeds": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted chia seeds": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (salted)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts, sugar": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sugared hazelnuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sugared hazelnuts",
+   "unassessed_after": [
+    "sugared hazelnuts"
+   ]
+  },
+  "honey roasted pecans": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: honey roasted pecans",
+   "unassessed_after": [
+    "honey roasted pecans"
+   ]
+  },
+  "roasted cashew nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dry roasted pistachio nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "oil roasted cashew nuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: oil roasted cashew nuts",
+   "unassessed_after": [
+    "oil roasted cashew nuts"
+   ]
+  },
+  "unsalted cashew nuts": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds, cashew nuts, walnuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "sesame seeds, salt": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: walnuts flour",
+   "unassessed_after": [
+    "walnuts flour"
+   ]
+  },
+  "cashew nuts butter": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cashew nuts butter",
+   "unassessed_after": [
+    "cashew nuts butter"
+   ]
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

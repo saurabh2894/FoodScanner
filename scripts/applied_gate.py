@@ -162,7 +162,7 @@ def main(argv=None) -> int:
         new_terms = sorted(set(lex_a) - set(lex_b))
         if new_terms and (a.descriptor_surface or a.salted_surface or a.powder_surface):
             # the surfaces above probe the rows of the BASE lexicon (so their numbers stay comparable across batches); rows this batch ADDS are reported here, after-build only
-            forms = ["roasted {x}", "toasted {x}", "salted {x}", "roasted salted {x}", "toasted salted {x}", "{x} powder", "100% {x} powder", "whole {x} powder"]
+            forms = ["{x}", "roasted {x}", "toasted {x}", "dry roasted {x}", "oil roasted {x}", "honey roasted {x}", "salted {x}", "roasted salted {x}", "toasted salted {x}", "sugared {x}", "unsalted {x}", "{x} (no added salt)", "{x} (sugar)", "{x} (canned)", "{x} (XQ9)", "Rice, {x}", "{x}, salt", "{x} flour", "{x} butter", "{x} oil", "{x} powder", "100% {x} powder", "whole {x} powder"]
             nl = [f.format(x=t) for t in new_terms for f in forms]
             nr = run_probe(a.after_src, nl, td, "nr")
             out["new_rows_surface"] = {"rows": new_terms, "kinds": {t: lex_a[t]["kind"] for t in new_terms}, "forms": {l: nr[l]["group"] for l in nl}}
