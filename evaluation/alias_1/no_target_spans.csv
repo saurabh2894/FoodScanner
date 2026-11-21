@@ -1,0 +1,240 @@
+span,label_file_line,description
+&quot,data/cache/oos_herb_spice_1/inputs/S23.txt:1,OCR / paste text artifact or stray additive fragment
+'Ginger root powder (Zingiber officinale) 0.27 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient (''Ginger root powder (Zingiber officinale) 0.27 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+631),evaluation/dev_regression_15/inputs/F03.txt:1,OCR / paste text artifact or stray additive fragment
+Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus),evaluation/fresh_batch_1/inputs/N08.txt:1,Microbiological culture or enzyme ('Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)'); no matching canonical row on main
+Ajwain seed powder (Trachyspermum ammi) 0.36 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Ajwain seed powder (Trachyspermum ammi) 0.36 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Anlioxidant (320),evaluation/dev_regression_15/inputs/F03.txt:1,OCR / paste text artifact or stray additive fragment
+apple cider vinegar,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Culinary liquid / oil / vinegar ingredient ('apple cider vinegar'); no canonical row on main
+APPLE JUICE,evaluation/dev_regression_15/inputs/F14.txt:1,Fruit/vegetable juice form ('APPLE JUICE'); beverage fraction distinct from whole fruit
+apple juice,evaluation/fresh_batch_2/inputs/M14.txt:1,Fruit/vegetable juice form ('apple juice'); beverage fraction distinct from whole fruit
+Bacillus coagulans 0.036 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Microbiological culture or enzyme ('Bacillus coagulans 0.036 g'); no matching canonical row on main
+BANANA PULP,evaluation/dev_regression_15/inputs/F14.txt:1,Processed pulp/puree/paste form ('BANANA PULP'); qualifier mismatch with whole commodity
+banana pulp,evaluation/fresh_batch_2/inputs/M14.txt:1,Processed pulp/puree/paste form ('banana pulp'); qualifier mismatch with whole commodity
+Barley Flour,data/cache/oos_herb_spice_1/inputs/S30.txt:1,Milled/flaked cereal or starch fraction ('Barley Flour'); distinct processed form
+barley malt*,data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('barley malt*'); raw label artifact
+Barnyard,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Minor millet grain ('Barnyard'); no canonical row on main
+Basil. Parsley,data/cache/oos_herb_spice_1/inputs/S11.txt:1,Unrecognised ingredient string ('Basil. Parsley'); no canonical row in lexicon on main
+Beet Red Powder,data/cache/oos_herb_spice_1/inputs/S30.txt:3,Held/parked term 'beet'; excluded from alias candidate routing pending classification decisions
+Black Cardamom,data/cache/oos_herb_spice_1/inputs/S27.txt:1,Unrecognised ingredient string ('Black Cardamom'); no canonical row in lexicon on main
+Black Cardamom (0.04%),data/cache/oos_herb_spice_1/inputs/S13.txt:1,Unrecognised ingredient string ('Black Cardamom (0.04%)'); no canonical row in lexicon on main
+Black eyed peas,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Black eyed peas'); no canonical row in lexicon on main
+Black pepper fruit powder (Piper nigrum) 0.144 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Black pepper fruit powder (Piper nigrum) 0.144 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+black pepper*,data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('black pepper*'); raw label artifact
+brinjal,data/cache/oos_herb_spice_1/inputs/S07.txt:1,Unrecognised ingredient string ('brinjal'); no canonical row in lexicon on main
+Brown Rice Flakes,evaluation/fresh_batch_1/inputs/N14.txt:1,Milled/flaked cereal or starch fraction ('Brown Rice Flakes'); distinct processed form
+Browntop,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Minor millet grain ('Browntop'); no canonical row on main
+Buffalo,data/cache/oos_herb_spice_1/inputs/S12.txt:1,Dairy or animal meat ingredient ('Buffalo'); no canonical row or composite form
+Caffeine,evaluation/fresh_batch_3/inputs/Q13.txt:1,Beverage base / stimulant compound ('Caffeine'); no canonical row on main
+caffeine (13mg/100g),evaluation/fresh_batch_2/inputs/M13.txt:1,Beverage base / stimulant compound ('caffeine (13mg/100g)'); no canonical row on main
+calcium ascorbate,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('calcium ascorbate'); no canonical row on main
+canola oil,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Culinary liquid / oil / vinegar ingredient ('canola oil'); no canonical row on main
+Carbonated water,evaluation/fresh_batch_2/inputs/M13.txt:1,Beverage base / stimulant compound ('Carbonated water'); no canonical row on main
+Carbonated Water,evaluation/fresh_batch_3/inputs/Q13.txt:1,Beverage base / stimulant compound ('Carbonated Water'); no canonical row on main
+CARBONATED WATER,evaluation/negation_addendum/inputs/R6.txt:1,Beverage base / stimulant compound ('CARBONATED WATER'); no canonical row on main
+Cardamom* (17%),data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('Cardamom* (17%)'); raw label artifact
+Cashew,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Nut or seed ingredient ('Cashew'); no canonical row on main
+Cashew Nuts,data/cache/oos_herb_spice_1/inputs/S30.txt:3,Nut or seed ingredient ('Cashew Nuts'); no canonical row on main
+Cayenne Pepper,data/cache/oos_herb_spice_1/inputs/S10.txt:1,Unrecognised ingredient string ('Cayenne Pepper'); no canonical row in lexicon on main
+celery,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Held/parked term 'celery'; excluded from alias candidate routing pending classification decisions
+Celery,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Held/parked term 'celery'; excluded from alias candidate routing pending classification decisions
+Celery Powder,data/cache/oos_herb_spice_1/inputs/S12.txt:1,Held/parked term 'celery'; excluded from alias candidate routing pending classification decisions
+Cereal Extract,evaluation/dev_regression_15/inputs/F02.txt:1,Extract / oleoresin fraction ('Cereal Extract'); qualifier mismatch with whole commodity
+Cereal product (3%),evaluation/fresh_batch_3/inputs/Q11.txt:1,Unrecognised ingredient string ('Cereal product (3%)'); no canonical row in lexicon on main
+Chakki Fresh Atta (Whole Wheat Flour),data/cache/oos_herb_spice_1/inputs/S22.txt:1,Milled/flaked cereal or starch fraction ('Chakki Fresh Atta (Whole Wheat Flour)'); distinct processed form
+Cheese 6%,data/cache/oos_herb_spice_1/inputs/S26.txt:1,Dairy or animal meat ingredient ('Cheese 6%'); no canonical row or composite form
+cheese culture,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Microbiological culture or enzyme ('cheese culture'); no matching canonical row on main
+CHILLI EXTRACT,data/cache/oos_herb_spice_1/inputs/S19.txt:1,Extract / oleoresin fraction ('CHILLI EXTRACT'); qualifier mismatch with whole commodity
+CHILLI PEPPER POWDER,data/cache/oos_herb_spice_1/inputs/S19.txt:1,Powdered form ingredient ('CHILLI PEPPER POWDER'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Chillies and Capsicum Whole,data/cache/oos_herb_spice_1/inputs/S32.txt:1,Unrecognised ingredient string ('Chillies and Capsicum Whole'); no canonical row in lexicon on main
+Cinnamon Stick,data/cache/oos_herb_spice_1/inputs/S30.txt:3,Unrecognised ingredient string ('Cinnamon Stick'); no canonical row in lexicon on main
+Cinnamon Sticks,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Unrecognised ingredient string ('Cinnamon Sticks'); no canonical row in lexicon on main
+cinnamon*,data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('cinnamon*'); raw label artifact
+citric acid,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Chemical / additive / texturizer ingredient ('citric acid'); no canonical row on main
+Citric Acid,data/cache/oos_herb_spice_1/inputs/S28.txt:1,Chemical / additive / texturizer ingredient ('Citric Acid'); no canonical row on main
+Citric Acid (INS No. 330),data/cache/oos_herb_spice_1/inputs/S32.txt:1,Chemical / additive / texturizer ingredient ('Citric Acid (INS No. 330)'); no canonical row on main
+cloves*,data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('cloves*'); raw label artifact
+cocoa butter ¹,evaluation/negation_addendum/inputs/R5.txt:1,Unrecognised ingredient string ('cocoa butter ¹'); no canonical row in lexicon on main
+cocoa mass ¹,evaluation/negation_addendum/inputs/R5.txt:1,Unrecognised ingredient string ('cocoa mass ¹'); no canonical row in lexicon on main
+cocoa nibs (45%),evaluation/fresh_batch_1/inputs/N07.txt:1,Unrecognised ingredient string ('cocoa nibs (45%)'); no canonical row in lexicon on main
+Cocoa Powder (1.5%),evaluation/fresh_batch_3/inputs/Q12.txt:1,Held/parked term 'cocoa powder'; excluded from alias candidate routing pending classification decisions
+Cocoa Powder (7%),evaluation/fresh_batch_1/inputs/N14.txt:1,Held/parked term 'cocoa powder'; excluded from alias candidate routing pending classification decisions
+cocoa solids,evaluation/dev_regression_15/inputs/F04.txt:1,Unrecognised ingredient string ('cocoa solids'); no canonical row in lexicon on main
+COCOA SOLIDS,evaluation/fresh_batch_1/inputs/N06.txt:1,Unrecognised ingredient string ('COCOA SOLIDS'); no canonical row in lexicon on main
+COCOA SOLIDS (1%),evaluation/dev_regression_15/inputs/F06.txt:1,Unrecognised ingredient string ('COCOA SOLIDS (1%)'); no canonical row in lexicon on main
+Cocoa solids (3.8%),evaluation/fresh_batch_1/inputs/N01.txt:1,Unrecognised ingredient string ('Cocoa solids (3.8%)'); no canonical row in lexicon on main
+Cocoa Solids (5.3%),evaluation/dev_regression_15/inputs/F02.txt:1,Unrecognised ingredient string ('Cocoa Solids (5.3%)'); no canonical row in lexicon on main
+coconut (5%),data/cache/oos_herb_spice_1/inputs/S07.txt:1,Unrecognised ingredient string ('coconut (5%)'); no canonical row in lexicon on main
+Com Meal (23%),evaluation/fresh_batch_1/inputs/N04.txt:1,Milled/flaked cereal or starch fraction ('Com Meal (23%)'); distinct processed form
+Compounded Asafoetida,data/cache/oos_herb_spice_1/inputs/S29.txt:1,Unrecognised ingredient string ('Compounded Asafoetida'); no canonical row in lexicon on main
+compounded Asafoetida,evaluation/dev_regression_15/inputs/F11.txt:1,Unrecognised ingredient string ('compounded Asafoetida'); no canonical row in lexicon on main
+Coriander Leaf Extract,data/cache/oos_herb_spice_1/inputs/S06.txt:1,Extract / oleoresin fraction ('Coriander Leaf Extract'); qualifier mismatch with whole commodity
+coriander*,data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('coriander*'); raw label artifact
+CORIANDER. CINNAMON,evaluation/fresh_batch_2/inputs/M11.txt:1,Unrecognised ingredient string ('CORIANDER. CINNAMON'); no canonical row in lexicon on main
+Corn Flakes (6%),evaluation/dev_regression_15/inputs/F10.txt:1,Milled/flaked cereal or starch fraction ('Corn Flakes (6%)'); distinct processed form
+Corn Flour,data/cache/oos_herb_spice_1/inputs/S15.txt:1,Milled/flaked cereal or starch fraction ('Corn Flour'); distinct processed form
+Corn Flour Starch,data/cache/oos_herb_spice_1/inputs/S04.txt:1,Milled/flaked cereal or starch fraction ('Corn Flour Starch'); distinct processed form
+Corn Starch,data/cache/oos_herb_spice_1/inputs/S03.txt:1,Milled/flaked cereal or starch fraction ('Corn Starch'); distinct processed form
+Cornflour,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Milled/flaked cereal or starch fraction ('Cornflour'); distinct processed form
+Cracked Black Pepper,data/cache/oos_herb_spice_1/inputs/S12.txt:1,Unrecognised ingredient string ('Cracked Black Pepper'); no canonical row in lexicon on main
+cranberries,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Held/parked term 'cranberries'; excluded from alias candidate routing pending classification decisions
+Cranberry,evaluation/fresh_batch_1/inputs/N14.txt:1,Held/parked term 'cranberry'; excluded from alias candidate routing pending classification decisions
+Cucumber Seeds,data/cache/oos_herb_spice_1/inputs/S20.txt:1,Nut or seed ingredient ('Cucumber Seeds'); no canonical row on main
+Cucumis,data/cache/oos_herb_spice_1/inputs/S32.txt:1,Unrecognised ingredient string ('Cucumis'); no canonical row in lexicon on main
+Cultured Wheat Flour,data/cache/oos_herb_spice_1/inputs/S11.txt:7,Milled/flaked cereal or starch fraction ('Cultured Wheat Flour'); distinct processed form
+Cumin seed powder (Cuminum cyminum) 0.144 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Cumin seed powder (Cuminum cyminum) 0.144 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+curry leaves,data/cache/oos_herb_spice_1/inputs/S07.txt:1,Unrecognised ingredient string ('curry leaves'); no canonical row in lexicon on main
+Curry Leaves,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Unrecognised ingredient string ('Curry Leaves'); no canonical row in lexicon on main
+Curryleaves,data/cache/oos_herb_spice_1/inputs/S29.txt:1,Unrecognised ingredient string ('Curryleaves'); no canonical row in lexicon on main
+defatted soya,evaluation/dev_regression_15/inputs/F07.txt:1,Unrecognised ingredient string ('defatted soya'); no canonical row in lexicon on main
+Degi Mirch,data/cache/oos_herb_spice_1/inputs/S05.txt:1,Indian vernacular / regional ingredient ('Degi Mirch'); lacks canonical row on main or has qualifier mismatch
+Dehydrated Garlic Bits (11%),data/cache/oos_herb_spice_1/inputs/S15.txt:1,Unrecognised ingredient string ('Dehydrated Garlic Bits (11%)'); no canonical row in lexicon on main
+desi khand,evaluation/fresh_batch_1/inputs/N03.txt:1,Indian vernacular / regional ingredient ('desi khand'); lacks canonical row on main or has qualifier mismatch
+Dhana Dal (Roasted Split Coriander),data/cache/oos_herb_spice_1/inputs/S09.txt:1,Processed/prepared food form ('Dhana Dal (Roasted Split Coriander)'); condition/process qualifier mismatch
+Disodium 5'-Guanylate,data/cache/oos_herb_spice_1/inputs/S15.txt:1,Chemical / additive / texturizer ingredient ('Disodium 5'-Guanylate'); no canonical row on main
+distilled vinegar,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Unrecognised ingredient string ('distilled vinegar'); no canonical row in lexicon on main
+dough conditioner (223),evaluation/fresh_batch_1/inputs/N02.txt:1,Chemical / additive / texturizer ingredient ('dough conditioner (223)'); no canonical row on main
+Dried Mango Black Salt,evaluation/dev_regression_15/inputs/F10.txt:1,Unrecognised ingredient string ('Dried Mango Black Salt'); no canonical row in lexicon on main
+Dry Coconut,data/cache/oos_herb_spice_1/inputs/S29.txt:1,Unrecognised ingredient string ('Dry Coconut'); no canonical row in lexicon on main
+durum wheat semolina,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Unrecognised ingredient string ('durum wheat semolina'); no canonical row in lexicon on main
+exhausted vanilla bean pieces,evaluation/negation_addendum/inputs/R5.txt:1,Unrecognised ingredient string ('exhausted vanilla bean pieces'); no canonical row in lexicon on main
+Fennel seed powder (Foeniculum vulgare) 0.144 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Fennel seed powder (Foeniculum vulgare) 0.144 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+fennel* (17%),data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('fennel* (17%)'); raw label artifact
+Fenugreek Leaves,data/cache/oos_herb_spice_1/inputs/S32.txt:1,Unrecognised ingredient string ('Fenugreek Leaves'); no canonical row in lexicon on main
+ferrous sulfate,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('ferrous sulfate'); no canonical row on main
+Flax,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Flax'); no canonical row in lexicon on main
+folic acid,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('folic acid'); no canonical row on main
+Foxtail,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Minor millet grain ('Foxtail'); no canonical row on main
+Fractionated vegetable fats,evaluation/fresh_batch_1/inputs/N01.txt:1,Unrecognised ingredient string ('Fractionated vegetable fats'); no canonical row in lexicon on main
+Fried Onions,data/cache/oos_herb_spice_1/inputs/S05.txt:1,Processed/prepared food form ('Fried Onions'); condition/process qualifier mismatch
+Ginger Puree,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Processed pulp/puree/paste form ('Ginger Puree'); qualifier mismatch with whole commodity
+ginger* (6%),data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('ginger* (6%)'); raw label artifact
+Glucose,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Unrecognised ingredient string ('Glucose'); no canonical row in lexicon on main
+Glucose Powder,evaluation/fresh_batch_1/inputs/N05.txt:1,Powdered form ingredient ('Glucose Powder'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+glucose syrup,evaluation/negation_addendum/inputs/R5.txt:1,Held/parked term 'glucose syrup'; excluded from alias candidate routing pending classification decisions
+Gram Meal (0.5%),evaluation/fresh_batch_1/inputs/N04.txt:1,Milled/flaked cereal or starch fraction ('Gram Meal (0.5%)'); distinct processed form
+GRAPE JUICE,evaluation/dev_regression_15/inputs/F14.txt:1,Fruit/vegetable juice form ('GRAPE JUICE'); beverage fraction distinct from whole fruit
+grape juice,evaluation/fresh_batch_2/inputs/M14.txt:1,Fruit/vegetable juice form ('grape juice'); beverage fraction distinct from whole fruit
+grape must,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Unrecognised ingredient string ('grape must'); no canonical row in lexicon on main
+Grated Desiccated Coconut,data/cache/oos_herb_spice_1/inputs/S06.txt:1,Unrecognised ingredient string ('Grated Desiccated Coconut'); no canonical row in lexicon on main
+Ground nut,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Ground nut'); no canonical row in lexicon on main
+Groundnut,data/cache/oos_herb_spice_1/inputs/S29.txt:1,Unrecognised ingredient string ('Groundnut'); no canonical row in lexicon on main
+guar gum,evaluation/fresh_batch_1/inputs/N03.txt:1,Unrecognised ingredient string ('guar gum'); no canonical row in lexicon on main
+GUM BASE,data/cache/oos_herb_spice_1/inputs/S17.txt:1,Chemical / additive / texturizer ingredient ('GUM BASE'); no canonical row on main
+Gunj Pala (Abrus Leaf),data/cache/oos_herb_spice_1/inputs/S09.txt:1,Indian vernacular / regional ingredient ('Gunj Pala (Abrus Leaf)'); lacks canonical row on main or has qualifier mismatch
+Himalayan Pink Salt,evaluation/fresh_batch_1/inputs/N14.txt:1,Unrecognised ingredient string ('Himalayan Pink Salt'); no canonical row in lexicon on main
+Horse gram,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Horse gram'); no canonical row in lexicon on main
+Jeshthamadh (Licorice),data/cache/oos_herb_spice_1/inputs/S09.txt:1,Indian vernacular / regional ingredient ('Jeshthamadh (Licorice)'); lacks canonical row on main or has qualifier mismatch
+Jowar Flakes,evaluation/fresh_batch_1/inputs/N14.txt:1,Milled/flaked cereal or starch fraction ('Jowar Flakes'); distinct processed form
+Kewra Water,data/cache/oos_herb_spice_1/inputs/S13.txt:1,Unrecognised ingredient string ('Kewra Water'); no canonical row in lexicon on main
+Kodo,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Minor millet grain ('Kodo'); no canonical row on main
+LACTOBACILLUS FERMENTED POWDER,data/cache/oos_herb_spice_1/inputs/S19.txt:1,Powdered form ingredient ('LACTOBACILLUS FERMENTED POWDER'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Lamb (33%),data/cache/oos_herb_spice_1/inputs/S18.txt:1,Dairy or animal meat ingredient ('Lamb (33%)'); no canonical row or composite form
+Laurel,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Unrecognised ingredient string ('Laurel'); no canonical row in lexicon on main
+Lemongrass leaf powder (Cymbopogon citratus) 0.144 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Lemongrass leaf powder (Cymbopogon citratus) 0.144 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+LIQUID GLUCOSE,data/cache/oos_herb_spice_1/inputs/S17.txt:1,Held/parked term 'liquid glucose'; excluded from alias candidate routing pending classification decisions
+Liquid Glucose,data/cache/oos_herb_spice_1/inputs/S20.txt:1,Held/parked term 'liquid glucose'; excluded from alias candidate routing pending classification decisions
+liquid glucose,evaluation/fresh_batch_1/inputs/N02.txt:1,Held/parked term 'liquid glucose'; excluded from alias candidate routing pending classification decisions
+liquorice* (13%),data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('liquorice* (13%)'); raw label artifact
+Little,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Minor millet grain ('Little'); no canonical row on main
+lodised salt brine,evaluation/fresh_batch_1/inputs/N11.txt:1,Processed/prepared food form ('lodised salt brine'); condition/process qualifier mismatch
+MALT EXTRACT,evaluation/dev_regression_15/inputs/F06.txt:1,Extract / oleoresin fraction ('MALT EXTRACT'); qualifier mismatch with whole commodity
+Malted Barley (Extracted solids) (21%),evaluation/fresh_batch_1/inputs/N16.txt:1,Extract / oleoresin fraction ('Malted Barley (Extracted solids) (21%)'); qualifier mismatch with whole commodity
+Maltodectrin,evaluation/dev_regression_15/inputs/F03.txt:1,Unrecognised ingredient string ('Maltodectrin'); no canonical row in lexicon on main
+MANGO PULP,evaluation/dev_regression_15/inputs/F14.txt:1,Processed pulp/puree/paste form ('MANGO PULP'); qualifier mismatch with whole commodity
+mango pulp,evaluation/fresh_batch_2/inputs/M14.txt:1,Processed pulp/puree/paste form ('mango pulp'); qualifier mismatch with whole commodity
+Meat,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Dairy or animal meat ingredient ('Meat'); no canonical row or composite form
+Melon Seeds,data/cache/oos_herb_spice_1/inputs/S20.txt:1,Nut or seed ingredient ('Melon Seeds'); no canonical row on main
+MENTHOL,data/cache/oos_herb_spice_1/inputs/S17.txt:1,Chemical / additive / texturizer ingredient ('MENTHOL'); no canonical row on main
+MICROBIAL CULTU,evaluation/negation_addendum/inputs/R1.txt:1,Microbiological culture or enzyme ('MICROBIAL CULTU'); no matching canonical row on main
+Microbial Cultures and Microbial Rennet,evaluation/fresh_batch_2/inputs/M07.txt:1,Microbiological culture or enzyme ('Microbial Cultures and Microbial Rennet'); no matching canonical row on main
+microbial enzyme,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Microbiological culture or enzyme ('microbial enzyme'); no matching canonical row on main
+Milk & Milk Solids Milk,evaluation/fresh_batch_3/inputs/Q07.txt:1,Dairy or animal meat ingredient ('Milk & Milk Solids Milk'); no canonical row or composite form
+Mixed spices powder,evaluation/fresh_batch_1/inputs/N11.txt:1,Powdered form ingredient ('Mixed spices powder'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+niacin,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('niacin'); no canonical row on main
+Nutmeg and Black Pepper,data/cache/oos_herb_spice_1/inputs/S13.txt:1,Unrecognised ingredient string ('Nutmeg and Black Pepper'); no canonical row in lexicon on main
+Oleoresin,data/cache/oos_herb_spice_1/inputs/S27.txt:1,Extract / oleoresin fraction ('Oleoresin'); qualifier mismatch with whole commodity
+ORANGE JUICE,evaluation/dev_regression_15/inputs/F14.txt:1,Fruit/vegetable juice form ('ORANGE JUICE'); beverage fraction distinct from whole fruit
+orange juice,evaluation/fresh_batch_2/inputs/M14.txt:1,Fruit/vegetable juice form ('orange juice'); beverage fraction distinct from whole fruit
+PAPAYA PULP,evaluation/dev_regression_15/inputs/F14.txt:1,Processed pulp/puree/paste form ('PAPAYA PULP'); qualifier mismatch with whole commodity
+papaya pulp,evaluation/fresh_batch_2/inputs/M14.txt:1,Processed pulp/puree/paste form ('papaya pulp'); qualifier mismatch with whole commodity
+Paprika Oleoresin,data/cache/oos_herb_spice_1/inputs/S03.txt:1,Extract / oleoresin fraction ('Paprika Oleoresin'); qualifier mismatch with whole commodity
+PAPRIKA POWDER FLAKE(0.6%): ROASTED SESAME,data/cache/oos_herb_spice_1/inputs/S19.txt:1,Powdered form ingredient ('PAPRIKA POWDER FLAKE(0.6%): ROASTED SESAME'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Pasta,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Unrecognised ingredient string ('Pasta'); no canonical row in lexicon on main
+Paste - Onions,data/cache/oos_herb_spice_1/inputs/S05.txt:1,Processed pulp/puree/paste form ('Paste - Onions'); qualifier mismatch with whole commodity
+PASTEURISED COW MILK,evaluation/fresh_batch_2/inputs/M02.txt:1,Processed pulp/puree/paste form ('PASTEURISED COW MILK'); qualifier mismatch with whole commodity
+Pasteurized Buffalo Milk Fat 6.00% Min,evaluation/fresh_batch_1/inputs/N09.txt:1,Processed pulp/puree/paste form ('Pasteurized Buffalo Milk Fat 6.00% Min'); qualifier mismatch with whole commodity
+Pasteurized Cow Milk,evaluation/fresh_batch_3/inputs/Q06.txt:1,Processed pulp/puree/paste form ('Pasteurized Cow Milk'); qualifier mismatch with whole commodity
+PEAR PULP,evaluation/dev_regression_15/inputs/F14.txt:1,Processed pulp/puree/paste form ('PEAR PULP'); qualifier mismatch with whole commodity
+pear pulp,evaluation/fresh_batch_2/inputs/M14.txt:1,Processed pulp/puree/paste form ('pear pulp'); qualifier mismatch with whole commodity
+Pepper Black Whole,data/cache/oos_herb_spice_1/inputs/S32.txt:1,Unrecognised ingredient string ('Pepper Black Whole'); no canonical row in lexicon on main
+peppermint* (9%),data/cache/oos_herb_spice_1/inputs/S16.txt:1,Ingredient with footnote/asterisk marker ('peppermint* (9%)'); raw label artifact
+PINEAPPLE JUICE,evaluation/dev_regression_15/inputs/F14.txt:1,Fruit/vegetable juice form ('PINEAPPLE JUICE'); beverage fraction distinct from whole fruit
+pineapple juice,evaluation/fresh_batch_2/inputs/M14.txt:1,Fruit/vegetable juice form ('pineapple juice'); beverage fraction distinct from whole fruit
+Pipal,evaluation/fresh_batch_1/inputs/N05.txt:1,Spice or botanical ingredient ('Pipal'); no canonical row on main
+Pista,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Nut or seed ingredient ('Pista'); no canonical row on main
+poppy seeds,data/cache/oos_herb_spice_1/inputs/S07.txt:1,Spice or botanical ingredient ('poppy seeds'); no canonical row on main
+Poppy Seeds,data/cache/oos_herb_spice_1/inputs/S20.txt:1,Spice or botanical ingredient ('Poppy Seeds'); no canonical row on main
+potato starch,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Milled/flaked cereal or starch fraction ('potato starch'); distinct processed form
+Potato Starch,data/cache/oos_herb_spice_1/inputs/S30.txt:1,Milled/flaked cereal or starch fraction ('Potato Starch'); distinct processed form
+Quinoa Flakes,evaluation/fresh_batch_1/inputs/N14.txt:1,Milled/flaked cereal or starch fraction ('Quinoa Flakes'); distinct processed form
+Ragi Flakes,evaluation/fresh_batch_1/inputs/N14.txt:1,Milled/flaked cereal or starch fraction ('Ragi Flakes'); distinct processed form
+Rapeseed Oil,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Culinary liquid / oil / vinegar ingredient ('Rapeseed Oil'); no canonical row on main
+Raw Basil Seeds,data/cache/oos_herb_spice_1/inputs/S02.txt:1,Nut or seed ingredient ('Raw Basil Seeds'); no canonical row on main
+raw mango pulp (5%),evaluation/fresh_batch_2/inputs/M15.txt:1,Processed pulp/puree/paste form ('raw mango pulp (5%)'); qualifier mismatch with whole commodity
+Reconstituted skimmed MILK,evaluation/negation_addendum/inputs/R5.txt:1,Dairy or animal meat ingredient ('Reconstituted skimmed MILK'); no canonical row or composite form
+riboflavin,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('riboflavin'); no canonical row on main
+RICE - Basmati Rice BIRYANI PASTE - Water,data/cache/oos_herb_spice_1/inputs/S13.txt:1,Processed pulp/puree/paste form ('RICE - Basmati Rice BIRYANI PASTE - Water'); qualifier mismatch with whole commodity
+Rice Flakes,data/cache/oos_herb_spice_1/inputs/S29.txt:1,Milled/flaked cereal or starch fraction ('Rice Flakes'); distinct processed form
+Rice Flakes (37%),evaluation/dev_regression_15/inputs/F10.txt:1,Milled/flaked cereal or starch fraction ('Rice Flakes (37%)'); distinct processed form
+Rice Meal (43%),evaluation/fresh_batch_1/inputs/N04.txt:1,Milled/flaked cereal or starch fraction ('Rice Meal (43%)'); distinct processed form
+Roasted Peanuts (91%) Sugar,evaluation/fresh_batch_1/inputs/N15.txt:1,Processed/prepared food form ('Roasted Peanuts (91%) Sugar'); condition/process qualifier mismatch
+ROASTED SEAWEED,data/cache/oos_herb_spice_1/inputs/S19.txt:1,Processed/prepared food form ('ROASTED SEAWEED'); condition/process qualifier mismatch
+Rose Water,data/cache/oos_herb_spice_1/inputs/S13.txt:1,Unrecognised ingredient string ('Rose Water'); no canonical row in lexicon on main
+Rose Water (2%),data/cache/oos_herb_spice_1/inputs/S20.txt:1,Unrecognised ingredient string ('Rose Water (2%)'); no canonical row in lexicon on main
+Sabudana,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Indian vernacular / regional ingredient ('Sabudana'); lacks canonical row on main or has qualifier mismatch
+Sago Flour,data/cache/oos_herb_spice_1/inputs/S30.txt:1,Milled/flaked cereal or starch fraction ('Sago Flour'); distinct processed form
+Sesame Seeds,data/cache/oos_herb_spice_1/inputs/S06.txt:1,Nut or seed ingredient ('Sesame Seeds'); no canonical row on main
+Shepa (Dill Seeds),data/cache/oos_herb_spice_1/inputs/S09.txt:1,Indian vernacular / regional ingredient ('Shepa (Dill Seeds)'); lacks canonical row on main or has qualifier mismatch
+Sichuan Pepper Powder,data/cache/oos_herb_spice_1/inputs/S03.txt:1,Powdered form ingredient ('Sichuan Pepper Powder'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+skimmed MILK powder or concentrate,evaluation/negation_addendum/inputs/R5.txt:1,Powdered form ingredient ('skimmed MILK powder or concentrate'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Soy Flour,data/cache/oos_herb_spice_1/inputs/S30.txt:1,Milled/flaked cereal or starch fraction ('Soy Flour'); distinct processed form
+Soy Sauce,data/cache/oos_herb_spice_1/inputs/S12.txt:1,Unrecognised ingredient string ('Soy Sauce'); no canonical row in lexicon on main
+Soya Sauce Powder,data/cache/oos_herb_spice_1/inputs/S28.txt:1,Powdered form ingredient ('Soya Sauce Powder'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Spearmint leaf powder (Mentha spicata) 0.18 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Spearmint leaf powder (Mentha spicata) 0.18 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Spice Extract (Paprika),data/cache/oos_herb_spice_1/inputs/S13.txt:1,Extract / oleoresin fraction ('Spice Extract (Paprika)'); qualifier mismatch with whole commodity
+spices,data/cache/oos_herb_spice_1/inputs/S01.txt:1,General collective spice / seasoning phrase ('spices'); non-specific composite
+Spices & Condiments,evaluation/fresh_batch_1/inputs/N04.txt:1,General collective spice / seasoning phrase ('Spices & Condiments'); non-specific composite
+spices & condiments,evaluation/fresh_batch_1/inputs/N12.txt:1,General collective spice / seasoning phrase ('spices & condiments'); non-specific composite
+Spices (White Pepper (0.1%) & Celery Seed Powder),data/cache/oos_herb_spice_1/inputs/S03.txt:1,Held/parked term 'celery'; excluded from alias candidate routing pending classification decisions
+Star anise,data/cache/oos_herb_spice_1/inputs/S27.txt:1,Spice or botanical ingredient ('Star anise'); no canonical row on main
+Star Anise,data/cache/oos_herb_spice_1/inputs/S30.txt:3,Spice or botanical ingredient ('Star Anise'); no canonical row on main
+Stone Flower,data/cache/oos_herb_spice_1/inputs/S27.txt:1,Spice or botanical ingredient ('Stone Flower'); no canonical row on main
+Sunflower,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Sunflower'); no canonical row in lexicon on main
+Sunflower Gluten,data/cache/oos_herb_spice_1/inputs/S11.txt:1,Unrecognised ingredient string ('Sunflower Gluten'); no canonical row in lexicon on main
+Synthetic Vinegar,evaluation/fresh_batch_1/inputs/N10.txt:1,Culinary liquid / oil / vinegar ingredient ('Synthetic Vinegar'); no canonical row on main
+Tamarind,data/cache/oos_herb_spice_1/inputs/S08.txt:1,Spice or botanical ingredient ('Tamarind'); no canonical row on main
+Tamarind Concentrate,data/cache/oos_herb_spice_1/inputs/S06.txt:1,Spice or botanical ingredient ('Tamarind Concentrate'); no canonical row on main
+tartaric acid,evaluation/dev_regression_15/inputs/F12.txt:1,Chemical / additive / texturizer ingredient ('tartaric acid'); no canonical row on main
+Teel (Sesame Seeds),data/cache/oos_herb_spice_1/inputs/S09.txt:1,Nut or seed ingredient ('Teel (Sesame Seeds)'); no canonical row on main
+Texturized Soy Protein,evaluation/fresh_batch_1/inputs/N14.txt:1,Held/parked term 'texturized soy protein'; excluded from alias candidate routing pending classification decisions
+thiamine mononitrate,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Fortification micronutrient or vitamin compound ('thiamine mononitrate'); no canonical row on main
+Tomato Paste,data/cache/oos_herb_spice_1/inputs/S03.txt:1,Processed pulp/puree/paste form ('Tomato Paste'); qualifier mismatch with whole commodity
+TOMATO PASTE (28°B) 24.7%,evaluation/fresh_batch_2/inputs/M12.txt:1,Processed pulp/puree/paste form ('TOMATO PASTE (28°B) 24.7%'); qualifier mismatch with whole commodity
+Tomato Puree,data/cache/oos_herb_spice_1/inputs/S18.txt:1,Processed pulp/puree/paste form ('Tomato Puree'); qualifier mismatch with whole commodity
+Tomato puree (67%),evaluation/fresh_batch_1/inputs/N12.txt:1,Processed pulp/puree/paste form ('Tomato puree (67%)'); qualifier mismatch with whole commodity
+Tomato Puree (67%),evaluation/fresh_batch_3/inputs/Q14.txt:1,Processed pulp/puree/paste form ('Tomato Puree (67%)'); qualifier mismatch with whole commodity
+Toor seeds,data/cache/oos_herb_spice_1/inputs/S31.txt:1,Unrecognised ingredient string ('Toor seeds'); no canonical row in lexicon on main
+Vana Tulsi leaf powder (Ocimum gratissimum) 0.342 g,data/cache/oos_herb_spice_1/inputs/S23.txt:1,Powdered form ingredient ('Vana Tulsi leaf powder (Ocimum gratissimum) 0.342 g'); qualifier mismatch (form fidelity prevents aliasing powder to plain commodity)
+Vegetable Ghee,data/cache/oos_herb_spice_1/inputs/S09.txt:1,Unrecognised ingredient string ('Vegetable Ghee'); no canonical row in lexicon on main
+Vegetable Protein (Pea),data/cache/oos_herb_spice_1/inputs/S30.txt:1,Unrecognised ingredient string ('Vegetable Protein (Pea)'); no canonical row in lexicon on main
+Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol),evaluation/fresh_batch_3/inputs/Q08.txt:1,Fortification micronutrient or vitamin compound ('Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)'); no canonical row on main
+Vitamin A Palmitate & Vitamin D (Ergocalciferol),evaluation/fresh_batch_3/inputs/Q05.txt:1,Fortification micronutrient or vitamin compound ('Vitamin A Palmitate & Vitamin D (Ergocalciferol)'); no canonical row on main
+Vitamin C,data/cache/oos_herb_spice_1/inputs/S11.txt:8,Fortification micronutrient or vitamin compound ('Vitamin C'); no canonical row on main
+WHEAT BRAN (4.7%),evaluation/fresh_batch_2/inputs/M09.txt:1,Milled/flaked cereal or starch fraction ('WHEAT BRAN (4.7%)'); distinct processed form
+Wheat Flour (Atta) (6.5%) Milk Solids (6%),evaluation/fresh_batch_1/inputs/N16.txt:1,Milled/flaked cereal or starch fraction ('Wheat Flour (Atta) (6.5%) Milk Solids (6%)'); distinct processed form
+white wine,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Culinary liquid / oil / vinegar ingredient ('white wine'); no canonical row on main
+wine vinegar,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Culinary liquid / oil / vinegar ingredient ('wine vinegar'); no canonical row on main
+xanthan gum,data/cache/oos_herb_spice_1/inputs/S01.txt:1,Chemical / additive / texturizer ingredient ('xanthan gum'); no canonical row on main
+Yeast Extract,data/cache/oos_herb_spice_1/inputs/S03.txt:1,Extract / oleoresin fraction ('Yeast Extract'); qualifier mismatch with whole commodity
+yeast extract,evaluation/dev_regression_15/inputs/F07.txt:1,Extract / oleoresin fraction ('yeast extract'); qualifier mismatch with whole commodity
