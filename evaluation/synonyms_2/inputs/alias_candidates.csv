@@ -1,0 +1,38 @@
+alias,proposed_target,demand_evidence,equivalence_evidence,status
+tumeric,turmeric,evaluation/dev_regression_15/inputs/F03.txt:1,"https://www.merriam-webster.com/dictionary/tumeric ""less common spelling of TURMERIC""",PROPOSED
+sucrose,sugar,data/cache/oos_herb_spice_1/inputs/S24.txt:1,"FDC ID 334247 (foundation: ""Sugars, granulated""; Common Name: ""sucrose"")",PROPOSED
+cane sugar,sugar,data/cache/oos_herb_spice_1/inputs/S11.txt:7,"https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-184/subpart-B/section-184.1854 21 CFR §184.1854 ""Sucrose is the chemical name of the substance known to the consumer as cane sugar, beet sugar, or white sugar.""",PROPOSED
+chili,chilli,data/cache/oos_herb_spice_1/inputs/S24.txt:1,"https://www.merriam-webster.com/dictionary/chili ""variants or less commonly chile or chiefly British chilli""",PROPOSED
+gingelly oil,sesame oil,data/cache/oos_herb_spice_1/inputs/S07.txt:1,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+carom seeds,ajwain,data/cache/oos_herb_spice_1/inputs/S30.txt:3,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+badishep,fennel seeds,data/cache/oos_herb_spice_1/inputs/S09.txt:1,"https://dsal.uchicago.edu/dictionaries/molesworth/ Molesworth Marathi-English Dictionary ""बडीशेप badīśēpa f Fennel-seed, Foeniculum vulgare""",PROPOSED
+desi ghee,ghee,data/cache/oos_herb_spice_1/inputs/S05.txt:1,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+maida,refined wheat flour,evaluation/dev_regression_15/inputs/F07.txt:1,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+chick peas,chickpea,data/cache/oos_herb_spice_1/inputs/S31.txt:1,"https://www.merriam-webster.com/dictionary/chickpea ""chickpea: also chick-pea, chick pea""",PROPOSED
+mandarin oranges,mandarin,data/cache/oos_herb_spice_1/inputs/S01.txt:1,"FDC ID 169106 (sr_legacy: ""Tangerines, (mandarin oranges), raw""; Common Name: ""mandarin orange"")",PROPOSED
+refined palmolien oil,palmolein / palm oil,evaluation/negation_addendum/inputs/R2.txt:1,NONE,AMBIGUOUS
+cassia,cinnamon,data/cache/oos_herb_spice_1/inputs/S18.txt:1,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+cassia whole,cinnamon,data/cache/oos_herb_spice_1/inputs/S32.txt:1,NONE,NEEDS_EQUIVALENCE_EVIDENCE
+chinese gooseberry,kiwifruit,none - FDC-sourced,"FDC ID 327046 (foundation: ""Kiwifruit, green, raw""; Common Name: ""Chinese gooseberry"")",PROPOSED
+broccoli rabe,broccoli raab,none - FDC-sourced,"FDC ID 170381 (sr_legacy: ""Broccoli raab, raw""; Common Name: ""Broccoli rabe"")",PROPOSED
+rapini,broccoli raab,none - FDC-sourced,"FDC ID 170381 (sr_legacy: ""Broccoli raab, raw""; Common Name: ""Rapini"")",PROPOSED
+sunchokes,jerusalem-artichokes,none - FDC-sourced,"FDC ID 169236 (sr_legacy: ""Jerusalem-artichokes, raw""; Common Name: ""Sunchokes"")",PROPOSED
+water spinach,water convolvulus,none - FDC-sourced,"FDC ID 169301 (sr_legacy: ""Water convolvulus,raw""; Common Name: ""water spinach"")",PROPOSED
+kangkong,water convolvulus,none - FDC-sourced,"FDC ID 169301 (sr_legacy: ""Water convolvulus,raw""; Common Name: ""kangkong"")",PROPOSED
+christophine,chayote,none - FDC-sourced,"FDC ID 170402 (sr_legacy: ""Chayote, fruit, raw""; Common Name: ""christophine"")",PROPOSED
+moth bean,mothbeans,none - FDC-sourced,"FDC ID 172425 (sr_legacy: ""Mothbeans, mature seeds, raw""; Common Name: ""moth bean"")",PROPOSED
+mat bean,mothbeans,none - FDC-sourced,"FDC ID 172425 (sr_legacy: ""Mothbeans, mature seeds, raw""; Common Name: ""mat bean"")",PROPOSED
+lychee,litchis,none - FDC-sourced,"FDC ID 169086 (sr_legacy: ""Litchis, raw""; Common Name: ""lychee"")",PROPOSED
+horseradish tree pods,drumstick pods,none - FDC-sourced,"FDC ID 170483 (sr_legacy: ""Drumstick pods, raw""; Common Name: ""Horseradish tree pods"")",PROPOSED
+sweetpotato leaves,sweet potato leaves,none - FDC-sourced,"FDC ID 169303 (sr_legacy: ""Sweet potato leaves, raw""; Common Name: ""Sweetpotato leaves"")",PROPOSED
+portobello,portabella mushrooms,none - FDC-sourced,"FDC ID 169243 (sr_legacy: ""Mushrooms, portabella, grilled""; Common Name: ""Portobello"")",PROPOSED
+portabello,portabella mushrooms,none - FDC-sourced,"FDC ID 169255 (sr_legacy: ""Mushrooms, portabella, raw""; Common Name: ""Portabello"")",PROPOSED
+portobella,portabella mushrooms,none - FDC-sourced,"FDC ID 169377 (sr_legacy: ""Mushrooms, portabella, exposed to ultraviolet light, grilled""; Common Name: ""portobella"")",PROPOSED
+gai-lan,chinese broccoli,none - FDC-sourced,"FDC ID 169404 (sr_legacy: ""Broccoli, chinese, raw""; Common Name: ""gai-lan"")",PROPOSED
+kai-lan,chinese broccoli,none - FDC-sourced,"FDC ID 169404 (sr_legacy: ""Broccoli, chinese, raw""; Common Name: ""kai-lan"")",PROPOSED
+mamey colorado,mamey sapote,none - FDC-sourced,"FDC ID 167760 (sr_legacy: ""Sapote, mamey, raw""; Common Name: ""mamey colorado"")",PROPOSED
+marmalade plum,mamey sapote,none - FDC-sourced,"FDC ID 167760 (sr_legacy: ""Sapote, mamey, raw""; Common Name: ""marmalade plum"")",PROPOSED
+garlic pear,abiyuch,none - FDC-sourced,"FDC ID 167782 (sr_legacy: ""Abiyuch, raw""; Common Name: ""garlic pear"")",PROPOSED
+yellow cherries,nance,none - FDC-sourced,"FDC ID 167789 (sr_legacy: ""Nance, frozen, unsweetened""; Common Name: ""yellow cherries"")",PROPOSED
+bok choy,bok choy cabbage,none - FDC-sourced,"FDC ID 170390 (sr_legacy: ""Cabbage, chinese (pak-choi), raw""; Common Name: ""bok choy"")",PROPOSED
+pak choi,bok choy cabbage / chinese cabbage,none - FDC-sourced,"FDC ID 170390 (sr_legacy: ""Cabbage, chinese (pak-choi), raw""; Common Name: ""pak choi"")",AMBIGUOUS

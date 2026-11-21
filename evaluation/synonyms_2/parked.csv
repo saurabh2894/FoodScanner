@@ -1,0 +1,15 @@
+alias,reason_parked,no_synonyms_entry
+badishep,partial evidence stays unverified,yes
+chick peas,partial evidence stays unverified,yes
+tumeric,quote unverified (host unreachable),yes
+chili,quote unverified (host unreachable),yes
+cane sugar,quote unverified (host unreachable),yes
+yellow cherries,held: generic phrase,yes
+gingelly oil,NEEDS_EQUIVALENCE_EVIDENCE,yes
+carom seeds,NEEDS_EQUIVALENCE_EVIDENCE,yes
+desi ghee,NEEDS_EQUIVALENCE_EVIDENCE,yes
+maida,NEEDS_EQUIVALENCE_EVIDENCE,yes
+cassia,NEEDS_EQUIVALENCE_EVIDENCE,yes
+cassia whole,NEEDS_EQUIVALENCE_EVIDENCE,yes
+refined palmolien oil,AMBIGUOUS,yes
+bok choy,EXCLUDED BY THE GATE: the alias is a word-prefix of its own target ('bok choy' -> 'bok choy cabbage'); the synonym engine rewrites 'bok choy cabbage' to 'bok choy cabbage cabbage' and the canonical row stops being recognised (drift 1 -> abstain). Evidence is sound; needs a mechanism decision,yes

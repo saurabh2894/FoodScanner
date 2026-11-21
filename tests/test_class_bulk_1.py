@@ -74,7 +74,8 @@ def test_synthetic_the_applied_state_gate_is_clean_and_the_21_rows_are_really_in
         assert t not in lex                                                       # the 5 already-covered terms created no duplicate row
     syn = {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}
     cand = list(csv.DictReader((OUT / "synonym_candidates.csv").open(encoding="utf-8", newline="")))
-    assert cand and not ({r["from"] for r in cand} & syn) and "black turtle beans" not in syn
+    later = {r["from"] for r in csv.DictReader((ROOT / "evaluation" / "synonyms_2" / "synonym_rows.csv").open(encoding="utf-8", newline=""))}      # UPDATED: 'moth bean' and 'mat bean' were applied later by the separately gated synonyms-2 batch (FDC Common Name evidence); Batch 1 itself did not touch synonyms.csv
+    assert cand and not (({r["from"] for r in cand} & syn) - later) and "black turtle beans" not in syn
 
 
 def test_synthetic_controls_in_the_applied_gate_never_take_group_1_via_the_new_rows():

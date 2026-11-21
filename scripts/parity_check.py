@@ -204,6 +204,10 @@ CORPUS = [
     # class-bulk-4 flour kind joins the unknown-bracket abstention (tests/test_class_bulk_4.py, SYNTHETIC)
     "Ingredients: Oat Flour (XQ9)", "Ingredients: Rye Flour (XQ9)", "Ingredients: Wheat Flour (XQ9)", "Ingredients: Whole Wheat Flour (Atta)", "Ingredients: Wheat Flour (Organic)", "Ingredients: Oat Flour",
     "Ingredients: Rye Flour", "Ingredients: Wild Rice", "Ingredients: Buckwheat", "Ingredients: Rice, Oat Flour.", "Ingredients: Oat Flour, XQ9.", "Ingredients: Enriched Wheat Flour",
+    # synonyms-2 (tests/test_synonyms_2.py, SYNTHETIC): every applied alias alone, conditioned forms of one alias, and parked aliases that must stay unassessed
+    "Ingredients: Sucrose", "Ingredients: Mandarin Oranges", "Ingredients: Chinese Gooseberry", "Ingredients: Broccoli Rabe", "Ingredients: Rapini", "Ingredients: Sunchokes", "Ingredients: Water Spinach", "Ingredients: Kangkong", "Ingredients: Christophine", "Ingredients: Moth Bean", "Ingredients: Mat Bean", "Ingredients: Lychee", "Ingredients: Horseradish Tree Pods", "Ingredients: Sweetpotato Leaves", "Ingredients: Portobello", "Ingredients: Portabello", "Ingredients: Portobella", "Ingredients: Gai-Lan", "Ingredients: Kai-Lan", "Ingredients: Mamey Colorado", "Ingredients: Marmalade Plum", "Ingredients: Garlic Pear", "Ingredients: Pak Choi",
+    "Ingredients: Salted Lychee", "Ingredients: Lychee (pickled)", "Ingredients: Lychee Powder", "Ingredients: 100% Lychee Powder", "Ingredients: Rice, Lychee.", "Ingredients: Moth Bean (salted)", "Ingredients: Sucrose, Salt.",
+    "Ingredients: Bok Choy", "Ingredients: Tumeric", "Ingredients: Chili", "Ingredients: Cane Sugar", "Ingredients: Maida", "Ingredients: Yellow Cherries", "Ingredients: Chick Peas", "Ingredients: Badishep",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

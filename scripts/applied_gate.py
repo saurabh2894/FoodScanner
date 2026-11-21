@@ -59,6 +59,7 @@ def main(argv=None) -> int:
     ap.add_argument("--powder-allow", nargs="*", default=[], help="exact '<term> powder' forms that an owner ruling allows to answer Group 1 without a stated composition (e.g. 'milk powder')")
     ap.add_argument("--attribute-words", nargs="*", default=[], help="phrases that attribute a changed input to an OWNER-RULED behaviour change (e.g. 'powdered milk')")
     ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
+    ap.add_argument("--synonym-rows", type=Path, default=None, help="synonym_rows.csv (from,to,source): the gate then expects synonyms.csv to be ADDITIONS-ONLY with exactly these rows, and checks alias == target behaviour in every form")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
     ap.add_argument("--out", type=Path, required=True)
@@ -79,6 +80,14 @@ def main(argv=None) -> int:
                            "kind_changed": {t: [lex_b[t]["kind"], lex_a[t]["kind"]] for t in lex_b if t in lex_a and lex_b[t]["kind"] != lex_a[t]["kind"]},
                            "source_changed": [t for t in lex_b if t in lex_a and lex_b[t]["source"] != lex_a[t]["source"]]}
     out["synonyms_markers_untouched"] = {f: (res_b / f).read_bytes() == (res_a / f).read_bytes() for f in ("synonyms.csv", "markers.csv")}
+    syn_rows = vb.read_csv(a.synonym_rows) if a.synonym_rows else []
+    if a.synonym_rows:
+        sb, sa = (res_b / "synonyms.csv").read_text(encoding="utf-8").splitlines(), (res_a / "synonyms.csv").read_text(encoding="utf-8").splitlines()
+        added = [ln for ln in sa if ln not in set(sb)]
+        out["synonyms_additions"] = {"before_lines": len(sb), "after_lines": len(sa), "base_lines_all_kept_in_order": sa[:len(sb)] == sb, "added_rows": len(added), "expected_rows": len(syn_rows),
+                                     "added_froms_match": sorted(ln.split(",")[0].strip('"') for ln in added) == sorted(r["from"] for r in syn_rows)}
+        out["synonyms_markers_untouched"]["synonyms.csv"] = True            # replaced by the additions-only check above
+        out["lexicon_unchanged"] = (res_b / "lexicon.csv").read_bytes() == (res_a / "lexicon.csv").read_bytes()
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         neg, pos = rule.get("negative_controls", []), rule.get("positive_controls", [])
@@ -107,6 +116,19 @@ def main(argv=None) -> int:
                                      "changed": ch, "group1_after_forms_not_stated": [l for l in lines if sa[l]["group"] == 1 and not (l.startswith("100% ") or l.startswith("whole ") or l in set(a.powder_allow))],
                                      "owner_allowed_group1_forms": [l for l in lines if sa[l]["group"] == 1 and l in set(a.powder_allow)],
                                      "newly_group4_or_other": {l: v for l, v in ch.items() if v[1] not in (None, 1)}}
+        if syn_rows:
+            forms = ["{x}", "salted {x}", "{x} (sugar)", "{x} (pickled)", "{x} (canned)", "{x} (XQ9)", "{x} powder", "100% {x} powder", "Rice, {x}", "{x}, salt", "unsalted {x}", "{x} (no added salt)"]
+            lines = [f.format(x=x) for r in syn_rows for x in (r["from"], r["to"]) for f in forms]
+            ea = run_probe(a.after_src, lines, td, "ea")
+            mism = []
+            for r in syn_rows:
+                for f in forms:
+                    la, lt = f.format(x=r["from"]), f.format(x=r["to"])
+                    ka = (ea[la]["group"], bool(ea[la]["unassessed"]), (ea[la]["reason"] or "")[:40].replace(r["from"], "X"))
+                    kt = (ea[lt]["group"], bool(ea[lt]["unassessed"]), (ea[lt]["reason"] or "")[:40].replace(r["to"], "X"))
+                    if ka[0] != kt[0] or ka[1] != kt[1]:
+                        mism.append({"form": f, "alias": r["from"], "alias_group": ka[0], "target_group": kt[0]})
+            out["alias_equals_target"] = {"forms": len(forms), "pairs": len(syn_rows), "compared": len(forms) * len(syn_rows), "mismatches": mism}
         out["controls"] = {n: {"group_before": pb[n]["group"], "group_after": pa[n]["group"], "row_after": pa[n]["row"], "drivers_after": pa[n]["drivers"], "reason_after": pa[n]["reason"], "unassessed_after": pa[n]["unassessed"]} for n in neg + pos}
     blockers = []
     if not all(v["recognised_after"] and not v["recognised_before"] for v in out["after_build_proof"].values()):
@@ -121,6 +143,12 @@ def main(argv=None) -> int:
     ps = out.get("powder_surface")
     if ps and (ps["group1_after_forms_not_stated"] or ps["newly_group4_or_other"]):
         blockers.append("powder surface: a bare 'X powder' still answers Group 1, or a powder form moved to another group")
+    if syn_rows:
+        sx = out["synonyms_additions"]
+        if not (sx["base_lines_all_kept_in_order"] and sx["added_rows"] == sx["expected_rows"] and sx["added_froms_match"]) or not out["lexicon_unchanged"]:
+            blockers.append("synonyms.csv is not additions-only with exactly the expected rows, or lexicon.csv changed")
+        if out["alias_equals_target"]["mismatches"]:
+            blockers.append(f"alias behaves differently from its target in {len(out['alias_equals_target']['mismatches'])} form(s)")
     if not all(out["synonyms_markers_untouched"].values()):
         blockers.append("synonyms.csv or markers.csv changed")
     if out["lexicon_rows"]["removed"] or out["lexicon_rows"]["source_changed"]:
