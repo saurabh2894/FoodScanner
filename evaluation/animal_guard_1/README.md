@@ -32,8 +32,9 @@ Aliases and held labels stay unrecognised: mutton, goat, fish, chicken meat, bee
 ## 5. Open
 Egg powder keeps its existing rule (`100% Egg Powder` Group 1, bare abstain): not an animal row, out of scope. `Dried Egg` Group 1 is the existing egg row behaviour (the FAO dried-meats example names meats and fish, not eggs).
 
-## 6. Exact diff vs main a6cacbc (9 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
+## 6. Exact diff vs main a6cacbc (10 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
 - `data/ingest/animal_guard_1.json`
+- `evaluation/animal_guard_1/README.md`
 - `evaluation/animal_guard_1/applied_gate/applied_gate.json`
 - `evaluation/animal_guard_1/staged_rows.csv`
 - `scripts/parity_check.py`
