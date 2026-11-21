@@ -19,7 +19,8 @@ Example (pasted text, a6cacbc plus this change): `Multigrain Blend (Sprouted Rag
 ## 3. Tests
 `tests/test_headline_aggregation_1.py` (new): the multigrain headline names the unplaced items beside the weak marker; nothing appended when no other blocker; powders and vocabulary gaps named; the weak-marker item is not repeated as unrecognised; strong marker (Group 4) and plain abstentions keep their reasons. No existing assertion was changed.
 
-## 4. Exact diff vs main a6cacbc (5 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
+## 4. Exact diff vs main a6cacbc (6 paths, `git diff --name-only a6cacbc HEAD` on the committed tree)
+- `evaluation/headline_aggregation_1/README.md`
 - `evaluation/headline_aggregation_1/applied_gate/applied_gate.json`
 - `scripts/parity_check.py`
 - `src/foodscan/classify.py`
