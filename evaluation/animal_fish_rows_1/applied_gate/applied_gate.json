@@ -2529,15 +2529,13 @@
   },
   "dried alaska king crab": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "alaska king crab",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried alaska king crab): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "alaska king crab powder": {
@@ -5774,15 +5772,13 @@
   },
   "dried blue crab": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "blue crab",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried blue crab): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "blue crab powder": {
@@ -6069,15 +6065,13 @@
   },
   "dried blue mussel": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "blue mussel",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried blue mussel): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "blue mussel powder": {
@@ -6364,15 +6358,13 @@
   },
   "dried blue swimming crab": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "blue swimming crab",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried blue swimming crab): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "blue swimming crab powder": {
@@ -9904,15 +9896,13 @@
   },
   "dried common octopus": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "common octopus",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried common octopus): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "common octopus powder": {
@@ -10492,15 +10482,13 @@
   },
   "dried dungeness crab": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "dungeness crab",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried dungeness crab): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "dungeness crab powder": {
@@ -10787,15 +10775,13 @@
   },
   "dried eastern oyster": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "eastern oyster",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried eastern oyster): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "eastern oyster powder": {
@@ -14622,15 +14608,13 @@
   },
   "dried northern lobster": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "northern lobster",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried northern lobster): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "northern lobster powder": {
@@ -16392,15 +16376,13 @@
   },
   "dried pacific oyster": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "pacific oyster",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried pacific oyster): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "pacific oyster powder": {
@@ -16687,15 +16669,13 @@
   },
   "dried patagonian bay scallop": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "patagonian bay scallop",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried patagonian bay scallop): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "patagonian bay scallop powder": {
@@ -18752,15 +18732,13 @@
   },
   "dried sea scallop": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "sea scallop",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried sea scallop): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "sea scallop powder": {
@@ -19637,15 +19615,13 @@
   },
   "dried queen crab": {
    "group_before": null,
-   "group_after": 3,
+   "group_after": null,
    "row_after": {
     "term": "queen crab",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a dried form of an animal food is named (dried queen crab): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1",
    "unassessed_after": []
   },
   "queen crab powder": {
