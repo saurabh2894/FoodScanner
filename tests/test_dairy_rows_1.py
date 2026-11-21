@@ -23,7 +23,8 @@ def test_synthetic_new_rows_are_group_1_with_the_single_food_driver(t):
     assert group == 1 and a.drivers[0].detail == "single recognised unprocessed food", t
 
 
-@pytest.mark.parametrize("t", ["Human Milk", "Instant Skimmed Milk Powder", "Sheep", "Duck", "Egg Powder", "Sheep Milk Powder", "Sheep Milk Solids", "Duck Egg Yolk", "Sheep Cheese", "Rice, Duck Eggs", "Duck Eggs (Cow Milk)", "Sheep Milk (XQ9)"])
+@pytest.mark.parametrize("t", ["Human Milk", "Instant Skimmed Milk Powder", "Sheep", "Egg Powder", "Sheep Milk Powder", "Sheep Milk Solids", "Duck Egg Yolk", "Sheep Cheese", "Rice, Duck Eggs", "Duck Eggs (Cow Milk)", "Sheep Milk (XQ9)"])
+# UPDATED (animal-guard-1): "Duck" left this list because `duck` is now a lexicon row (a meat/poultry label); the egg and milk forms below are unchanged.
 def test_synthetic_held_and_unrecognised_forms_abstain(t):
     assert g(t)[0] is None, t
 
