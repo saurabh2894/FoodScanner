@@ -8,15 +8,15 @@ Branch claude/per-form-2b off main 79e3f19. Scope: `cow milk` and `goat milk` as
 |---|---|---|
 | S1 | FAO 2019 (ca5644en), Table 1 Group 1 definition | "Edible parts of plants (fruit, seeds, leaves, stems, roots, tubers) or of or from animals (muscle, fat, offal, eggs, milk), and also fungi, algae, all after separation from nature." |
 | S2 | FAO 2019, Table 1 Group 1 examples | "fresh, powdered or pasteurized milk" |
-| S3 | Monteiro et al., Lancet 2025, p.4 (USP-hosted PDF) | "Possible exceptions—such as ultraprocessed infant formulas compared with minimally processed cow’s milk (although not human milk), or ultraprocessed plant-based burgers compared with processed meat burgers (though not processed tofu or tempeh)—" |
+| S3 | Monteiro et al., Lancet 2025 | not accessible for verbatim verification; NOT relied on (correction per-form-2c) |
 
-What they cover: S1/S2 place milk as an animal food with no species restriction. S3 names minimally processed cow's milk and separates human milk. What they do not cover: goat milk is not named by any NOVA source read; standardised/recombined, flavoured or sweetened milk, milk solids (a fraction), human milk.
+What they cover: S1/S2 place milk as an animal food with no species restriction. S3 is not relied on. What they do not cover: no species is named by any verified NOVA source; standardised/recombined, flavoured or sweetened milk, milk solids (a fraction), human milk.
 
 ## 2. Per-row provenance
 
 | term | kind | clauses | inference level |
 |---|---|---|---|
-| cow milk | whole_food | S1, S2, S3 | NAMED (as cow's milk); placed as the milk row |
+| cow milk | whole_food | S1, S2 | class-instance of the animal milk named by FAO; species not named by any verified NOVA source (corrected in per-form-2c; was recorded as NAMED) |
 | goat milk | whole_food | S1, S2 | class-instance of the animal milk named by FAO; species not named by any NOVA source read |
 
 Both rows are PROVISIONAL (source text in lexicon.csv).

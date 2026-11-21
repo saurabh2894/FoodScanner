@@ -22,5 +22,5 @@ def test_single_milk_solids_and_culture_rule_unchanged():
 
 def test_species_qualified_milk_is_group_1_since_per_form_2b():
     # UPDATED (per-form-2b, owner decision 2026-11-21: species-head milk recognition): 'Pasteurized Cow Milk' left the abstention list. FAO Group 1 places animal milk without a species restriction and the
-    # Lancet 2025 text names minimally processed cow's milk; 'cow milk' and 'goat milk' are recognised milk rows. The other abstentions above (milk solids and vitamin additions) are unchanged.
+    # the FAO Group 1 definition places milk without species restriction; 'cow milk' and 'goat milk' are recognised milk rows. The other abstentions above (milk solids and vitamin additions) are unchanged.
     assert analyse_text("Ingredients: Pasteurized Cow Milk", source="text").group == 1

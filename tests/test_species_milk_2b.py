@@ -1,5 +1,5 @@
-"""per-form-2b (SYNTHETIC): species-head milk recognition. 'cow milk' and 'goat milk' are lexicon rows (kind whole_food, provenance in the row source: FAO Group 1 milk without species restriction; Lancet 2025 names
-minimally processed cow's milk); 'buffalo milk' was already a row. The species words alone stay unrecognised; the species-bracket rule stays scoped to plain milk heads; milk solids stay excluded."""
+"""per-form-2b (SYNTHETIC): species-head milk recognition. 'cow milk' and 'goat milk' are lexicon rows (kind whole_food, provenance in the row source: FAO Group 1 milk without species restriction; inference level class-instance for both,
+species not named by a verified NOVA source); 'buffalo milk' was already a row. The species words alone stay unrecognised; the species-bracket rule stays scoped to plain milk heads; milk solids stay excluded."""
 from __future__ import annotations
 
 import pytest
@@ -30,7 +30,8 @@ def test_synthetic_the_row_provenance_quotes_the_sources_and_states_the_inferenc
     rows = {r["term"]: r["source"] for r in csv.DictReader((Path(__file__).resolve().parent.parent / "src" / "foodscan" / "resources" / "lexicon.csv").open(encoding="utf-8-sig", newline=""))}
     for t in ("cow milk", "goat milk"):
         assert rows[t].startswith("PROVISIONAL") and "or of or from animals (muscle, fat, offal, eggs, milk)" in rows[t] and "fresh, powdered or pasteurized milk" in rows[t] and "Inference level" in rows[t]
-    assert "minimally processed cow" in rows["cow milk"] and "class-instance" in rows["goat milk"]
+    # per-form-2c: both rows carry the SAME inference level (class-instance of the FAO animal milk); the Lancet 2025 sentence was not verifiable and is not relied on
+    assert "class-instance" in rows["cow milk"] and "class-instance" in rows["goat milk"] and "NAMED" not in rows["cow milk"] and "minimally processed cow" not in rows["cow milk"]
 
 
 @pytest.mark.parametrize("t", ["Cow Milk Powder", "Skimmed Cow Milk Powder", "Goat Milk Powder", "Whole Cow Milk Powder"])
