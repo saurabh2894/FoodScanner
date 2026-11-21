@@ -1,0 +1,180 @@
+file,term,verdict,finding
+src/foodscan/resources/lexicon.csv,whole wheat flour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,refined wheat flour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,cucumber,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,rice,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,milk,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,egg,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,eggs,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,toor dal,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,moong dal,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,chana dal,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,masoor dal,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,urad dal,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,tomato,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,potato,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,onion,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,carrot,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,peas,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,mango,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,lemon,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,salt,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,iodised salt,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,sugar,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,vinegar,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,edible vegetable oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,ghee,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,mustard oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,sunflower oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,groundnut oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,coconut oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,dill,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,turmeric,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,cumin,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,coriander,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,black pepper,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,chilli,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,garlic,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,water,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,ragi,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,rice flour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,potato flour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,rice bran oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,jaggery,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,oat,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,wheat,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,maize,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,corn,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,barley,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,jowar,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,bajra,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,millet,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,foxtail millet,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,pearl millet,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,quinoa,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,chickpea,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,lentil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,rajma,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,moong,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,black salt,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,rock salt,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,sea salt,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,butter,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,palm oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,palmolein,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,soybean oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,sesame oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,olive oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,cottonseed oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,vegetable oil,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,honey,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,ginger,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,cardamom,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,cinnamon,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,clove,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,asafoetida,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,mustard seed,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,besan,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,toned milk,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,dahi,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,active lactic culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,lactic culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,live culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,active culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,yoghurt culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,double toned milk,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,buffalo milk,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,milk solids,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,starter culture,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/lexicon.csv,dates,verified,verified
+src/foodscan/resources/lexicon.csv,soybean,verified,verified
+src/foodscan/resources/lexicon.csv,almonds,mismatch,condition dropped: clause conditioned on '(with no added salt or sugar)' but row classifies unconditionally as whole_food; also silently maps class 'tree and ground nuts' to instance
+src/foodscan/resources/lexicon.csv,pumpkin seeds,mismatch,condition dropped: clause conditioned on '(with no added salt or sugar)' but row classifies unconditionally as whole_food; also silently maps class 'tree and ground nuts' to instance
+src/foodscan/resources/lexicon.csv,flax seeds,mismatch,condition dropped: clause conditioned on '(with no added salt or sugar)' but row classifies unconditionally as whole_food; also silently maps class 'tree and ground nuts' to instance
+src/foodscan/resources/lexicon.csv,ajwain,mismatch,"class/form honesty: term 'ajwain' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,bishop's seed,mismatch,"class/form honesty: term 'bishop's seed' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,aniseed,mismatch,"class/form honesty: term 'aniseed' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,caraway,mismatch,"class/form honesty: term 'caraway' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,bay leaf,mismatch,"class/form honesty: term 'bay leaf' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,capsicum powder,mismatch,"class/form honesty: term 'capsicum powder' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,fennel,mismatch,"class/form honesty: term 'fennel' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,fennel seeds,mismatch,"class/form honesty: term 'fennel seeds' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,fenugreek,mismatch,"class/form honesty: term 'fenugreek' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,nutmeg,mismatch,"class/form honesty: term 'nutmeg' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,mace,mismatch,"class/form honesty: term 'mace' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,mint,verified,verified
+src/foodscan/resources/lexicon.csv,mustard,mismatch,"class/form honesty: term 'mustard' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,pepper,verified,verified
+src/foodscan/resources/lexicon.csv,long pepper,mismatch,"class/form honesty: term 'long pepper' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,white pepper,mismatch,"class/form honesty: term 'white pepper' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,black pepper bits,mismatch,"class/form honesty: term 'black pepper bits' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,red chili,mismatch,"class/form honesty: term 'red chili' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,chillies,mismatch,"class/form honesty: term 'chillies' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,chilli flakes,mismatch,"class/form honesty: term 'chilli flakes' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,schezwan pepper,mismatch,"class/form honesty: term 'schezwan pepper' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,dried curry leaves,mismatch,"class/form honesty: term 'dried curry leaves' not named by clause ('herbs and spices...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,black raisin,mismatch,"class/form honesty: term 'black raisin' not named by clause ('Fresh, squeezed, chilled, frozen, or dried fruit...'), but row does not explicitly state term is unmentioned instance"
+src/foodscan/resources/lexicon.csv,allspice,verified,verified
+src/foodscan/resources/lexicon.csv,basil,verified,verified
+src/foodscan/resources/lexicon.csv,celery seed,verified,verified
+src/foodscan/resources/lexicon.csv,chervil,verified,verified
+src/foodscan/resources/lexicon.csv,coriander leaf,verified,verified
+src/foodscan/resources/lexicon.csv,coriander seed,verified,verified
+src/foodscan/resources/lexicon.csv,dill seed,verified,verified
+src/foodscan/resources/lexicon.csv,dill weed,verified,verified
+src/foodscan/resources/lexicon.csv,marjoram,verified,verified
+src/foodscan/resources/lexicon.csv,oregano,verified,verified
+src/foodscan/resources/lexicon.csv,paprika,verified,verified
+src/foodscan/resources/lexicon.csv,parsley,verified,verified
+src/foodscan/resources/lexicon.csv,peppermint,verified,verified
+src/foodscan/resources/lexicon.csv,rosemary,verified,verified
+src/foodscan/resources/lexicon.csv,saffron,verified,verified
+src/foodscan/resources/lexicon.csv,sage,verified,verified
+src/foodscan/resources/lexicon.csv,savory,verified,verified
+src/foodscan/resources/lexicon.csv,spearmint,verified,verified
+src/foodscan/resources/lexicon.csv,tarragon,verified,verified
+src/foodscan/resources/lexicon.csv,thyme,verified,verified
+src/foodscan/resources/lexicon.csv,wheat flour,verified,verified
+src/foodscan/resources/lexicon.csv,beans,verified,verified
+src/foodscan/resources/lexicon.csv,cabbage,verified,verified
+src/foodscan/resources/lexicon.csv,peanut oil,verified,verified
+src/foodscan/resources/lexicon.csv,banana powder,mismatch,"cite mismatch: quoted text is on p.6 (Section 2, Group 1, PDF p.8), cited p.10 (Section 3)"
+src/foodscan/resources/lexicon.csv,strawberry powder,mismatch,"cite mismatch: quoted text is on p.6 (Section 2, Group 1, PDF p.8), cited p.10 (Section 3)"
+src/foodscan/resources/lexicon.csv,beetroot powder,mismatch,"cite mismatch: quoted text is on p.6 (Section 2, Group 1, PDF p.8), cited p.10 (Section 3)"
+src/foodscan/resources/markers.csv,hydrogenated,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,interesterified,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,glucose-fructose syrup,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,invert sugar,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,maltodextrin,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,dextrose,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,modified starch,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,protein isolate,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,colour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,flavour,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,enhancer,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,sweetener,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,emulsifier,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,emulsifying salt,mismatch,"cite mismatch: cites Table 1 (p. 11), but Table 1 on p. 11 has Groups 1 & 2; 'emulsifying salts' only appears in prose on p. 9 and is omitted from Table 1 on p. 12"
+src/foodscan/resources/markers.csv,anti-foaming,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,antifoaming,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,bulking,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,carbonating,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,foaming,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,gelling,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,glazing,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,firming,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,humectant,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,pectin,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,raising agent,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,preservative,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,antioxidant,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,acidity regulator,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,stabiliser,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,thickener,mismatch,"cite mismatch: cites Table 1 (p. 11), but Table 1 on p. 11 has Groups 1 & 2; Group 4 of Table 1 is on p. 12"
+src/foodscan/resources/markers.csv,anticaking agent,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,flour treatment agent,internal-source,internal-source: not auditable against ca5644en
+src/foodscan/resources/markers.csv,fructose,verified,verified
+src/foodscan/resources/markers.csv,wheat gluten,verified,verified
+src/foodscan/resources/markers.csv,hydrolysed vegetable protein,verified,verified
+src/foodscan/resources/markers.csv,lemon juice concentrate,verified,verified
+src/foodscan/resources/markers.csv,apple juice concentrate,verified,verified
