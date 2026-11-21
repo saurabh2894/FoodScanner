@@ -1,0 +1,3 @@
+term,kind,source
+beans,whole_food,"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 ""legumes such as beans, lentils, and chickpeas""; exact term IS named by the clause; name from USDA FoodData Central (CC0 1.0): foundation FDC id 2644281 ""Beans, cannellini, dry""; sr_legacy FDC id 169961 ""Beans, snap, green, raw"""
+cabbage,whole_food,"PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 ""Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables""; exact term not named by the clause (covered as a leafy vegetable); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169975 ""Cabbage, raw""; foundation FDC id 2346407 ""Cabbage, green, raw"""

@@ -1,0 +1,67 @@
+{
+  "rule_id": "tier1-demand-bulk-1",
+  "staged": 2,
+  "ready": [
+    "beans",
+    "cabbage"
+  ],
+  "duplicates": {},
+  "synonym_rows": [],
+  "separate_rows": {},
+  "policy_id": null,
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 1,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [
+        "dev/F07"
+      ],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {
+      "dev/F07": {
+        "recognised_now": [
+          "beans (9.5%)",
+          "cabbage (3.8%)"
+        ],
+        "attributed_to_rows": [
+          "beans",
+          "cabbage"
+        ],
+        "newly_unassessed": []
+      }
+    },
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 135,
+      "lexicon_rows_after": 137,
+      "synonym_rows_added": 0,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 2
+    }
+  },
+  "clause_check": "NOT CHECKED (no --fao-text)",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}

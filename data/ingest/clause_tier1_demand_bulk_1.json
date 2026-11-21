@@ -1,0 +1,31 @@
+{
+  "rule_id": "tier1-demand-bulk-1",
+  "status": "DRAFT for senior review. Maps demand-mined unassessed terms to candidate lexicon rows of kind whole_food for unconditioned Tier 1 clauses of FAO 2019 Table 1 Group 1 (legumes and leafy vegetables). Commodity datasets supply names only; never decides a NOVA group.",
+  "kind": "whole_food",
+  "clause": {
+    "text": "Table 1 Group 1 p.11",
+    "where": "FAO 2019 (Monteiro et al., Ultra-processed foods, diet quality, and health using the NOVA classification system), Table 1, Group 1 examples, p. 11",
+    "url": "https://www.fao.org/3/ca5644en/ca5644en.pdf",
+    "pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+    "unconditioned": "FAO Table 1 Group 1 unconditioned examples: 'legumes such as beans, lentils, and chickpeas' and 'Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables'."
+  },
+  "category_gate": {
+    "food_category": "Legumes and Legume Products / Vegetables and Vegetable Products",
+    "note": "Only plain, raw/dry single commodities in Legumes and Legume Products or Vegetables and Vegetable Products categories are mapped."
+  },
+  "named_terms": {
+    "terms": ["beans"],
+    "why": "The clause explicitly names 'beans' ('legumes such as beans, lentils, and chickpeas')."
+  },
+  "covered_forms": {
+    "cabbage": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables (cabbage is a leafy vegetable)."
+  },
+  "label_bound_clauses": {
+    "note": "Conditioned clauses stay label-bound: no commodity name passes automatically. Conditioned categories are never ACCEPTed by any rule in this file.",
+    "clauses": {
+      "Nut and Seed Products": "tree and ground nuts and other oily seeds (with no added salt or sugar)",
+      "Fruits and Fruit Juices": "fresh or pasteurized fruit or vegetable juices (with no added sugar, sweeteners or flavours)",
+      "Cereal Grains and Pasta": "grits, flakes or flour made from corn, wheat, oats, or cassava"
+    }
+  }
+}

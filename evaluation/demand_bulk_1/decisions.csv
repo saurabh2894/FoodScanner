@@ -1,0 +1,5 @@
+candidate_id,dataset,fdc_id,description,food_category,decision,reason_code,reason,term
+fdc_foundation:2644281,foundation,2644281,"Beans, cannellini, dry",Legumes and Legume Products,ACCEPT,clause_named_term,"named in FAO 2019 Table 1 Group 1 p.11 ('legumes such as beans, lentils, and chickpeas')",beans
+fdc_sr_legacy:169961,sr_legacy,169961,"Beans, snap, green, raw",Vegetables and Vegetable Products,ACCEPT,clause_named_term,"named in FAO 2019 Table 1 Group 1 p.11 ('legumes such as beans, lentils, and chickpeas')",beans
+fdc_sr_legacy:169975,sr_legacy,169975,"Cabbage, raw",Vegetables and Vegetable Products,ACCEPT,clause_covered_form,"leafy vegetable covered by FAO 2019 Table 1 Group 1 p.11 ('Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables')",cabbage
+fdc_foundation:2346407,foundation,2346407,"Cabbage, green, raw",Vegetables and Vegetable Products,ACCEPT,clause_covered_form,"leafy vegetable covered by FAO 2019 Table 1 Group 1 p.11 ('Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables')",cabbage
