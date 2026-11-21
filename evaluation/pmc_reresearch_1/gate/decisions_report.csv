@@ -1,0 +1,8 @@
+rank,term,paste_inputs,disposition,code_or_kind,reason_or_clause
+2,starch,1,ACCEPT_ROW,culinary,starches extracted from corn and other plants
+3,tapioca starch,1,ACCEPT_ROW,culinary,starches extracted from corn and other plants
+1,cocoa powder,1,PARK,single_source_flag,"PMC10127522 stands ALONE and its coding is about UNSWEETENED cocoa powder as a dietary-recall item; placing it would extend beyond FAO/Monteiro, so parked and flagged for the owner"
+4,yeast,1,PARK,single_source_flag,PMC10127522 stands ALONE and would extend beyond FAO/Monteiro; also distinct from yeast extract (standing non-marker decision); parked and flagged
+5,sorghum flour,1,PARK,single_source_flag,the generic 'flours' of PMC10127522 extends beyond the FAO clause for sorghum flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row)
+6,soya flour,1,PARK,single_source_flag,the generic 'flours' of PMC10127522 extends beyond the FAO clause for soya flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row)
+7,split pulse urad flour,1,PARK,single_source_flag,the generic 'flours' of PMC10127522 extends beyond the FAO clause for split pulse urad flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row)

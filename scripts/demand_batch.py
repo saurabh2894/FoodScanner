@@ -47,7 +47,7 @@ def standing_exclusions() -> set[str]:
 
 def source_row(d: dict, candidates: dict, batch_id: str = "demand-decisions-1") -> str:
     fdc = "; ".join(f"{candidates[i]['dataset']} FDC id {candidates[i]['fdc_id']} \"{candidates[i]['description']}\"" for i in d["fdc"])
-    return (f"PROVISIONAL: {d['group_label']} \"{d['clause']}\"; {d['named']}" + (f"; name from USDA FoodData Central (CC0 1.0): {fdc}" if fdc else "")
+    return (f"PROVISIONAL: {d['group_label']} \"{d['clause']}\"; {d['named']}" + (f"; {d['corroboration']}" if d.get("corroboration") else "") + (f"; name from USDA FoodData Central (CC0 1.0): {fdc}" if fdc else "")
             + f"; demand-driven row ({batch_id})")
 
 

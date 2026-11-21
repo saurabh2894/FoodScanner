@@ -158,6 +158,9 @@ CORPUS = [
     # unplaced kind (tests/test_unplaced_kind_1.py, SYNTHETIC + the owner's acceptance label text): recognised by name only, never placed, lists abstain
     "Ingredients: Rice, vitamins and minerals.", "Ingredients: Rice, salt, vitamins & minerals.", "Ingredients: Vitamins.", "Ingredients: Minerals", "Ingredients: Sprouted ragi, rice.", "Ingredients: Water, fructose, vitamins and minerals.",
     "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder.",
+    # plain starch rows (tests/test_starch_rows.py, SYNTHETIC): plain starch is Group 2; every modified form stays the strong marker
+    "Ingredients: Starch", "Ingredients: Rice, starch.", "Ingredients: Rice, Starch (Modified).", "Ingredients: Rice, starch (acid treated).", "Ingredients: Rice, Tapioca Starch (Oxidised).", "Ingredients: Rice, starch (modified) (INS 1422).",
+    "Ingredients: Rice, modified corn starch.", "Ingredients: Rice, corn starch, salt.", "Ingredients: Rice, tapioca starch, salt.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

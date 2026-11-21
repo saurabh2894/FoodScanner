@@ -1,0 +1,101 @@
+{
+ "decisions_id": "pmc-decisions-1",
+ "inventory": "evaluation/pmc_reresearch_1/terms.csv",
+ "filter": "the strongest parked demand terms re-researched against PMC10127522 (row labels confirmed from the table: footnote 2 = Other unprocessed or minimally processed foods, footnote 5 = Other processed culinary ingredients)",
+ "conditions": [
+  "read-only use, no bulk import of its tables",
+  "paraphrase only, identifier cited with 'licence unverified'",
+  "never the sole support for a placement that contradicts or extends beyond FAO 2019 / Monteiro sources: then park and flag",
+  "dietary-recall evidence about the food; label-context conditions still apply"
+ ],
+ "decisions": [
+  {
+   "term": "starch",
+   "rank": 2,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "starches extracted from corn and other plants",
+   "named": "exact term not named verbatim (the clause names the plural 'starches')",
+   "corroboration": "corroborated, not solely supported, by PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241; licence unverified): its NHANES food-group coding places starches among 'Other processed culinary ingredients' (a paraphrase; dietary-recall items, not ingredient-list parsing)",
+   "fdc": [],
+   "owner_override": "owner decision (2026-11-21): the lexicon-1 hold is LIFTED for plain/unmodified starch and tapioca starch ONLY; 'modified starch' stays a separate strong Group 4 marker and these rows must never cover modified forms",
+   "pmc_row": "Other processed culinary ingredients"
+  },
+  {
+   "term": "tapioca starch",
+   "rank": 3,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "starches extracted from corn and other plants",
+   "named": "exact term not named by the clause; that tapioca starch is a starch extracted from cassava, a plant, is an inference not stated by a source read",
+   "corroboration": "corroborated, not solely supported, by PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241; licence unverified): its NHANES food-group coding places starches among 'Other processed culinary ingredients' (a paraphrase; dietary-recall items, not ingredient-list parsing)",
+   "fdc": [],
+   "owner_override": "owner decision (2026-11-21): the lexicon-1 hold is LIFTED for plain/unmodified starch and tapioca starch ONLY; 'modified starch' stays a separate strong Group 4 marker and these rows must never cover modified forms",
+   "pmc_row": "Other processed culinary ingredients"
+  },
+  {
+   "term": "cocoa powder",
+   "rank": 1,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other processed culinary ingredients",
+   "pmc_says": "unsweetened baking chocolate and cocoa powder are coded with the processed culinary ingredients",
+   "fao_status": "FAO 2019 and Monteiro 2018/2019 read: silent (cocoa appears only in products: chocolate, 'cocoa drinks')",
+   "reason": "PMC10127522 stands ALONE and its coding is about UNSWEETENED cocoa powder as a dietary-recall item; placing it would extend beyond FAO/Monteiro, so parked and flagged for the owner; STAYS PARKED (owner, 2026-11-21): standing reason 'single admissible source or broader than FAO', no further action until a second admissible source lands",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "yeast",
+   "rank": 4,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "yeast is coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 and Monteiro read: silent on yeast (FAO names fresh or dried mushrooms as fungi)",
+   "reason": "PMC10127522 stands ALONE and would extend beyond FAO/Monteiro; also distinct from yeast extract (standing non-marker decision); parked and flagged; STAYS PARKED (owner, 2026-11-21): standing reason 'single admissible source or broader than FAO', no further action until a second admissible source lands",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "sorghum flour",
+   "rank": 5,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "'flours' in general are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1 names flour made from corn, wheat, oats or cassava only (narrower than the generic 'flours')",
+   "reason": "the generic 'flours' of PMC10127522 extends beyond the FAO clause for sorghum flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row); STAYS PARKED (owner, 2026-11-21): standing reason 'single admissible source or broader than FAO', no further action until a second admissible source lands",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "soya flour",
+   "rank": 6,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "'flours' in general are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1 names flour made from corn, wheat, oats or cassava only (narrower than the generic 'flours')",
+   "reason": "the generic 'flours' of PMC10127522 extends beyond the FAO clause for soya flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row); STAYS PARKED (owner, 2026-11-21): standing reason 'single admissible source or broader than FAO', no further action until a second admissible source lands",
+   "standing_reason": "single admissible source or broader than FAO"
+  },
+  {
+   "term": "split pulse urad flour",
+   "rank": 7,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "single_source_flag",
+   "pmc_row": "Other unprocessed or minimally processed foods",
+   "pmc_says": "'flours' in general are coded with the unprocessed or minimally processed foods",
+   "fao_status": "FAO 2019 Table 1 names flour made from corn, wheat, oats or cassava only (narrower than the generic 'flours')",
+   "reason": "the generic 'flours' of PMC10127522 extends beyond the FAO clause for split pulse urad flour; no source read names it; parked and flagged (wheat flour is already a kind-flour row); STAYS PARKED (owner, 2026-11-21): standing reason 'single admissible source or broader than FAO', no further action until a second admissible source lands",
+   "standing_reason": "single admissible source or broader than FAO"
+  }
+ ]
+}
