@@ -35,8 +35,8 @@ Branch claude/whole-food-guard-1 off main cf06f63. Decision reference: owner rev
 | X (XQ9); sugared X | abstain -> abstain |
 | X (wheat) / X (walnuts) | 1 -> abstain for 29 and 30 (`wheat (wheat)` stays: identical row) |
 | X (milk solids) | 1 -> abstain for 29 (`milk solids (milk solids)` stays) |
-| X (toned milk) | 1 -> abstain for 28; `toned milk (toned milk)` (identical row) and `milk solids (toned milk)` (source milk) stay |
-| X (milk) | 7 stay 1 (milk family and milk solids), 23 go 1 -> abstain |
+| X (toned milk) | 1 -> abstain for 29; only `toned milk (toned milk)` (identical row) stays |
+| X (milk) | 6 stay 1 (milk, toned milk, double toned milk, buffalo milk, cow milk, goat milk), 24 go 1 -> abstain (including milk solids) |
 | X (egg) | 28 go 1 -> abstain; egg and eggs stay |
 | X (rice) | 29 go 1 -> abstain; `rice (rice)` stays |
 | X (cow milk) / X (buffalo milk) | unchanged: Group 1 for the six plain-milk heads, abstain elsewhere |
@@ -53,5 +53,18 @@ Salted surface: the 42 base-row changes are the former `Salted Milk`/`Salted Egg
 - Not changed: flour, legume, vegetable, fruit and nut kinds; powder routing; synonyms; the parked `Salted Milk`/`Salted Egg` Group 3 decision; the grain guard's scope (non-scoped grain rows now abstain when salted).
 - Equivalence exceptions to decide later: `Milk (Toned Milk)`, `Milk Solids (Milk)` and other cross-brackets abstain here (no source read equates them); `Dehydrated Vegetable` covers vegetable-kind parts only (peas, a legume row, abstain).
 
-## 6. Exact diff vs main cf06f63
-`data/ingest/whole_food_guard_1.json`, `evaluation/whole_food_guard_1/{README.md,applied_gate/applied_gate.json,overlay_dairy_gate/applied_gate.json}`, `scripts/parity_check.py` (+29 entries), `src/foodscan/classify.py`, `tests/test_salted_grain_guard.py` (two expectations), `tests/test_whole_food_guard_1.py` (new), `web_preview/foodscan.js`.
+## 6. Exact diff vs main cf06f63 (14 paths, from `git diff --name-only`)
+- `data/ingest/whole_food_guard_1.json`
+- `evaluation/whole_food_guard_1/README.md`
+- `evaluation/whole_food_guard_1/applied_gate/applied_gate.json`
+- `evaluation/whole_food_guard_1/overlay_dairy_gate/applied_gate.json`
+- `evaluation/whole_food_guard_1/overlay_five_rows_forms.json`
+- `scripts/parity_check.py`
+- `src/foodscan/classify.py`
+- `tests/test_dairy_abstentions.py`
+- `tests/test_salted_grain_guard.py`
+- `tests/test_sweetener_foods_note.py`
+- `tests/test_thickener_emulsifying_salt_markers.py`
+- `tests/test_vocab_gap_and_soybean.py`
+- `tests/test_whole_food_guard_1.py`
+- `web_preview/foodscan.js`
