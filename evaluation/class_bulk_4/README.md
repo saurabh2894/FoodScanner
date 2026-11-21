@@ -1,6 +1,6 @@
 # class_bulk_4 / Batch 4: FDC 'Cereal Grains and Pasta' (PROPOSAL; staging only, merge stops with the owner)
 
-Status: STAGED on branch claude/class-bulk-4 (off main 827cdcb... plus the milk-powder/fruit merges: base = main at staging). Rows are applied on the branch so the applied-state gate is real; main is NOT changed. validate_batch **READY_FOR_REVIEW**, applied_gate **READY_FOR_REVIEW**. Rule `data/ingest/class_grains_1.json`. Scope per the owner: PLAIN GRAINS (kind whole_food) and PLAIN FLOURS (kind flour); pasta, noodles, cereals, enriched/fortified/bleached forms, starches and fractions are NOT this batch.
+Status: STAGED on branch claude/class-bulk-4 (off main 827cdcb, which already holds Batches 1-3, the powder standard and the milk powder exception). Rows are applied on the branch so the applied-state gate is real; main is NOT changed. validate_batch **READY_FOR_REVIEW**, applied_gate **READY_FOR_REVIEW**. Rule `data/ingest/class_grains_1.json`. Scope per the owner: PLAIN GRAINS (kind whole_food) and PLAIN FLOURS (kind flour); pasta, noodles, cereals, enriched/fortified/bleached forms, starches and fractions are NOT this batch.
 
 ## 1. Category source rules (written BEFORE any acceptance)
 
