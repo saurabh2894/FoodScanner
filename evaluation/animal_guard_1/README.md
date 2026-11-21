@@ -24,7 +24,7 @@ beef (395 verified records, first FDC 168607), lamb (118, 172479), pork (70, 167
 | form | result | form | result |
 |---|---|---|---|
 | X; ground X; roasted X; boiled X; steamed X | 1 | dried X | 3 |
-| X powder; 100% X powder; whole X powder; dried X powder | abstain | chilled X; frozen-style and generic cooked X | abstain |
+| X powder; 100% X powder; whole X powder; dried X powder | abstain | chilled X; generic cooked X | abstain |
 | salted, smoked, cured, canned, breaded, battered, fried, pan fried, minced, formed X | abstain | X (XQ9); X (rice); X (milk); X (egg); X, water; X, rice | abstain |
 | X, salt; X, sugar; X, sunflower oil | 3 | hydrogenated X; X, flavour; X, maltodextrin | 4 |
 Aliases and held labels stay unrecognised: mutton, goat, fish, chicken meat, beef extract, pork fat. Plant, dairy, egg, fat and tea controls (dried rice, dried mango, rice powder, banana powder, milk, sheep milk, eggs, dried egg, 100% egg powder, egg powder, skimmed milk powder, salted milk, milk (rice), rice (wheat), sunflower oil, lard, walnuts (brine)) are unchanged.
