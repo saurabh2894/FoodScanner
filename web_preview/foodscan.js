@@ -368,6 +368,18 @@
     const lexIndex = {};
     for (const term of Object.keys(lexicon)) { const k = singularPhrase(term); if (!(k in lexIndex)) lexIndex[k] = lexicon[term]; }
     const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+    // 'toasted' (per-form-1, owner amendment 2): dropped only when the remaining name is one of the 23 terms Batch 4 placed and carries no other qualifier (mirrors classify._scoped_lookup)
+    const SCOPED_TERMS = { toasted: new Set(["barley", "black rice", "buckwheat", "millet", "parboiled rice", "red rice", "rice", "sorghum", "wild rice", "amaranth flour", "barley flour", "buckwheat flour", "cornmeal", "millet flour", "oat flour", "quinoa flour", "rice flour", "rye flour", "semolina", "sorghum flour", "spelt flour", "wheat flour", "whole wheat flour"]) };
+    const SCOPED_BENIGN = new Set(["unsalted", "organic", "whole", "plain", "pure", "white", "brown", "red", "common", "edible"]);
+    function scopedLookup(name) {
+      const words = name.split(" ").filter((t) => has(scopedDescriptors, t));
+      const others = name.split(" ").filter((t) => t && !has(scopedDescriptors, t));
+      for (const cand of [others.join(" "), others.filter((t) => !SCOPED_BENIGN.has(t)).join(" ")]) {
+        const row = has(lexicon, cand) ? lexicon[cand] : has(lexIndex, singularPhrase(cand)) ? lexIndex[singularPhrase(cand)] : null;
+        if (row && words.every((w) => scopedDescriptors[w].has(row.kind) && SCOPED_TERMS[w] && SCOPED_TERMS[w].has(row.term))) return row;
+      }
+      return null;
+    }
     // mirrors classify.lookup: exact, singular, then both again without descriptor words
     function lookup(name) {
       if (has(lexicon, name)) return lexicon[name];
@@ -384,12 +396,7 @@
         if (has(lexicon, kept)) return lexicon[kept];
         if (has(lexIndex, singularPhrase(kept))) return lexIndex[singularPhrase(kept)];
       }
-      const stripped = name.split(" ").filter((t) => has(scopedDescriptors, t));
-      if (stripped.length && !name.split(" ").includes("salted")) {                                // mirrors classify.lookup: a kind-scoped descriptor is dropped only when the row it leaves is of an allowed kind
-        const rest = name.split(" ").filter((t) => t && !descriptors.has(t) && !has(scopedDescriptors, t)).join(" ");
-        const row = has(lexicon, rest) ? lexicon[rest] : has(lexIndex, singularPhrase(rest)) ? lexIndex[singularPhrase(rest)] : null;
-        if (row && stripped.every((t) => scopedDescriptors[t].has(row.kind))) return row;
-      }
+      if (name.split(" ").some((t) => has(scopedDescriptors, t))) return scopedLookup(name);   // kind- and TERM-scoped descriptor ('toasted'); mirrors classify._scoped_lookup
       return null;
     }
     const isRecognised = (name) => lookup(name) !== null;
@@ -526,13 +533,19 @@
     }
     // unknown additions on the same item are never laundered (mirrors classify.bracket_residual)
     const BRACKET_BENIGN = new Set(["with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"]);
+    // species-of-origin provenance (mirrors classify.bracket_residual): cow/buffalo/goat is benign only in a bracket that holds 'milk' and only on a milk head item
+    const SPECIES_WORDS = new Set(["cow", "buffalo", "goat"]);
+    const MILK_PROVENANCE_WORDS = new Set(["milk", "toned", "double", "solids"]);
     function bracketResidual(ing) {
       if (!ing.inner) return [];
       const ok = (t) => descriptors.has(t) || BRACKET_BENIGN.has(t) || LEGUME_ADDED.has(t) || LEGUME_PRESERVED.has(t);
+      const head = lookup(ing.name);
+      const headIsMilk = !!head && head.kind === "whole_food" && MILK_TERMS.includes(head.term) && head.term !== "milk solids";
       const residual = [];
       for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
         const toks = part.match(/[a-z]+/g) || [];
         if (!toks.length || isRecognised(part.trim()) || toks.every(ok)) continue;
+        if (headIsMilk && toks.includes("milk") && toks.some((t) => SPECIES_WORDS.has(t)) && toks.every((t) => ok(t) || SPECIES_WORDS.has(t) || MILK_PROVENANCE_WORDS.has(t))) continue;
         residual.push(part.trim());
       }
       return residual;

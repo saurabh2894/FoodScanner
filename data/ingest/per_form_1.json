@@ -29,7 +29,24 @@
   "banana powder",
   "rice, toasted oat flour",
   "toasted oat flour, salt",
-  "toasted oat flour, sugar"
+  "toasted oat flour, sugar",
+  "milk (cow)",
+  "rice (cow milk)",
+  "rice (cow)",
+  "egg (cow milk)",
+  "goat milk (pasteurized)",
+  "cow milk",
+  "milk (cow milk, xq9)",
+  "milk solids (pasteurized skimmed cow milk)",
+  "milk solids (cow milk)",
+  "toasted milk",
+  "toasted egg",
+  "toasted sweetened oat flour",
+  "toasted honey oat flour",
+  "toasted flavoured oat flour",
+  "toasted spiced oat flour",
+  "toasted oats",
+  "toasted wheat"
  ],
  "positive_controls": [
   "roasted buckwheat",
@@ -48,6 +65,13 @@
   "whole banana powder",
   "milk powder",
   "roasted soybeans",
-  "roasted almonds"
+  "roasted almonds",
+  "milk (pasteurized cow milk)",
+  "milk (buffalo milk)",
+  "milk (goat milk)",
+  "toned milk (cow milk)",
+  "toasted brown rice",
+  "toasted whole wheat flour",
+  "roasted milk"
  ]
 }
