@@ -67,6 +67,9 @@ def test_synthetic_the_applied_state_gate_is_clean_and_every_row_is_in_the_lexic
     assert len(C["after_build_proof"]) == 114 and all(v["recognised_after"] and not v["recognised_before"] for v in C["after_build_proof"].values())
     for k in ("frozen_66", "out_of_sample"):
         assert C[k]["unexplained"] == [] and C[k]["abstain_to_4"] == []
+    ps = C["powder_surface"]
+    assert ps["group1_after_forms_not_stated"] == [] and ps["newly_group4_or_other"] == {}
+    assert C["drift"]["expected_owner_ruled"] == {"banana powder": [1, None], "strawberry powder": [1, None], "beetroot powder": [1, None]}
     assert all(C["synonyms_markers_untouched"].values()) and set(C["lexicon_rows"]["kind_changed"]) == {"cucumber", "tomato", "potato", "onion", "carrot", "cabbage"}
     assert {t for t, r in LEX.items() if r["kind"] == "vegetable"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"])
 
