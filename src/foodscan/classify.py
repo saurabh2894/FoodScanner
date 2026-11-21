@@ -471,6 +471,28 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
     return hits
 
 
+def other_open_items(ings, skip=()) -> str:
+    """Headline aggregation (owner Priority 2): when an abstention is headed by weak or unlisted markers, a colour note or a sweetener-foods entry, the other ACTIVE blockers are named as well, so the headline does not look like the
+    only open point: items not in the vocabulary, recognised-by-name-only items that no source places, and the powder of a food or of an oil or fat whose composition is not stated. Group names set aside as metadata are not
+    ingredients here. Returns '' when there is nothing else; it never changes a group and is only appended to an abstention that already exists."""
+    parts = []
+    ings0 = ings
+    ings = [i for i in ings if i.raw not in skip]                 # an item already named by the headline (the weak marker, the colour note, the sweetener entry) is not repeated
+    unrec = [i.raw for i in ings if not is_recognised(i.name)]
+    if unrec:
+        parts.append("not in the local vocabulary: " + ", ".join(unrec))
+    rec = [(i, lookup(i.name)["kind"]) for i in ings if is_recognised(i.name)]
+    unpl = [i.raw for i, k in rec if k == "unplaced"]
+    if unpl:
+        parts.append("recognised by name only, no source read places " + ", ".join(unpl))
+    # the powder condition is the classifier's own: an item whose FINAL kind is food_powder (routed by the word 'powder' or an explicit food_powder row such as banana, strawberry or beetroot powder) is uncertain unless it is the
+    # sole item and states its composition; the powder of an oil or fat is uncertain unless its own name states 100%. A 100% inside a multi-item list does not resolve it.
+    pw = [i.raw for i, k in rec if fat_powder(i, k) or ((k == "food_powder" or powder_routed(i, k)) and not (len(ings0) == 1 and powder_composition_stated(i)))]
+    if pw:
+        parts.append("a powder is named and its composition is not established: " + ", ".join(pw))
+    return ("; other open items: " + "; ".join(parts)) if parts else ""
+
+
 def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None = None) -> Classification:
     strong: list[Driver] = []
     weak: list[Driver] = []
@@ -491,19 +513,19 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     # marker (checked above) the result stays uncertain; it is never read as a confident group from the foods alone.
     notes = [i.raw for i in ings if colour_note_only(i)]
     if notes:
-        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group" + other_open_items(ings, set(notes) | {d.ingredient for d in weak}))
 
     sweet = [i.raw for i in ings if sweetener_foods_only(i)]
     if sweet:
-        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group" + other_open_items(ings, set(sweet) | {d.ingredient for d in weak}))
 
     if weak:
         names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in weak}))
-        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group")
+        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group" + other_open_items(ings, {d.ingredient for d in weak}))
 
     unrecognised = [i.raw for i in ings if not is_recognised(i.name)]
     if unrecognised:
-        return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
+        return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
     bracket_unknown = [(i.raw, fat_bracket_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and fat_bracket_residual(i))]
@@ -515,7 +537,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if unplaced:
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
-        return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
+        return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" + other_open_items(ings, set(unplaced)))
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if bracket_unknown:
         # nut-guard-1: the item kind is named accurately. Only non-nut items: the original text, unchanged. Only nut/seed items: a nut-specific text. A mix: kind-neutral text.
@@ -572,7 +594,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
                                                  "artificial sweeteners; fermentation of milk to make yoghurt)", "NUPENS-USP classification page (research/04)", i.section) for i in ings])
     powders = [i.raw for i, k in zip(ings, kinds) if k == "food_powder"]
     if powders:
-        return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
+        return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" + other_open_items(ings, set(powders)))
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k in ("whole_food", "nut_seed", "legume", "vegetable", "fruit") for _, k in substantive)
