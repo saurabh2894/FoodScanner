@@ -1,0 +1,418 @@
+{
+ "rule_id": "class-legumes-1",
+ "rows": [
+  "adzuki beans",
+  "black beans",
+  "broadbeans",
+  "cannellini beans",
+  "carioca beans",
+  "cowpeas",
+  "cranberry beans",
+  "flor de mayo beans",
+  "great northern beans",
+  "hyacinth beans",
+  "kidney beans",
+  "lima beans",
+  "lupins",
+  "mothbeans",
+  "navy beans",
+  "pigeon peas",
+  "pink beans",
+  "pinto beans",
+  "small white beans",
+  "winged beans",
+  "yardlong beans"
+ ],
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 286,
+  "differences": []
+ },
+ "negative_controls": {
+  "canned kidney beans": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "canned kidney beans"
+   ],
+   "ingredients_after": [
+    "canned kidney beans"
+   ],
+   "ingredients_before": [
+    "canned kidney beans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "cooked pinto beans": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "cooked pinto beans"
+   ],
+   "ingredients_after": [
+    "cooked pinto beans"
+   ],
+   "ingredients_before": [
+    "cooked pinto beans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "kidney beans in brine": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "kidney beans in brine"
+   ],
+   "ingredients_after": [
+    "kidney beans in brine"
+   ],
+   "ingredients_before": [
+    "kidney beans in brine"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "roasted soybeans": {
+   "group_before": 1,
+   "group_after": 1,
+   "unassessed_after": [],
+   "ingredients_after": [
+    "roasted soybeans"
+   ],
+   "ingredients_before": [
+    "roasted soybeans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "salted soybeans": {
+   "group_before": 1,
+   "group_after": 1,
+   "unassessed_after": [],
+   "ingredients_after": [
+    "salted soybeans"
+   ],
+   "ingredients_before": [
+    "salted soybeans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "peanut butter": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "peanut butter"
+   ],
+   "ingredients_after": [
+    "peanut butter"
+   ],
+   "ingredients_before": [
+    "peanut butter"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "soy milk": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "soy milk"
+   ],
+   "ingredients_after": [
+    "soy milk"
+   ],
+   "ingredients_before": [
+    "soy milk"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "soymilk": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "soymilk"
+   ],
+   "ingredients_after": [
+    "soymilk"
+   ],
+   "ingredients_before": [
+    "soymilk"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "tofu": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "tofu"
+   ],
+   "ingredients_after": [
+    "tofu"
+   ],
+   "ingredients_before": [
+    "tofu"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "tempeh": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "tempeh"
+   ],
+   "ingredients_after": [
+    "tempeh"
+   ],
+   "ingredients_before": [
+    "tempeh"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "hummus": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "hummus"
+   ],
+   "ingredients_after": [
+    "hummus"
+   ],
+   "ingredients_before": [
+    "hummus"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "baked beans": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "baked beans"
+   ],
+   "ingredients_after": [
+    "baked beans"
+   ],
+   "ingredients_before": [
+    "baked beans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "refried beans": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "refried beans"
+   ],
+   "ingredients_after": [
+    "refried beans"
+   ],
+   "ingredients_before": [
+    "refried beans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "sweetened adzuki beans": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "sweetened adzuki beans"
+   ],
+   "ingredients_after": [
+    "sweetened adzuki beans"
+   ],
+   "ingredients_before": [
+    "sweetened adzuki beans"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "soy protein isolate": {
+   "group_before": 4,
+   "group_after": 4,
+   "unassessed_after": [],
+   "ingredients_after": [
+    "soy protein isolate"
+   ],
+   "ingredients_before": [
+    "soy protein isolate"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "miso": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "miso"
+   ],
+   "ingredients_after": [
+    "miso"
+   ],
+   "ingredients_before": [
+    "miso"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "natto": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "natto"
+   ],
+   "ingredients_after": [
+    "natto"
+   ],
+   "ingredients_before": [
+    "natto"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "falafel": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "falafel"
+   ],
+   "ingredients_after": [
+    "falafel"
+   ],
+   "ingredients_before": [
+    "falafel"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "boiled lentils": {
+   "group_before": 1,
+   "group_after": 1,
+   "unassessed_after": [],
+   "ingredients_after": [
+    "boiled lentils"
+   ],
+   "ingredients_before": [
+    "boiled lentils"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "fried tofu": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "fried tofu"
+   ],
+   "ingredients_after": [
+    "fried tofu"
+   ],
+   "ingredients_before": [
+    "fried tofu"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "black beans with salt": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "black beans with salt"
+   ],
+   "ingredients_after": [
+    "black beans with salt"
+   ],
+   "ingredients_before": [
+    "black beans with salt"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "pinto beans in tomato sauce": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "pinto beans in tomato sauce"
+   ],
+   "ingredients_after": [
+    "pinto beans in tomato sauce"
+   ],
+   "ingredients_before": [
+    "pinto beans in tomato sauce"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "soy flour": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "soy flour"
+   ],
+   "ingredients_after": [
+    "soy flour"
+   ],
+   "ingredients_before": [
+    "soy flour"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "defatted soybean meal": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "defatted soybean meal"
+   ],
+   "ingredients_after": [
+    "defatted soybean meal"
+   ],
+   "ingredients_before": [
+    "defatted soybean meal"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  },
+  "lupins in brine": {
+   "group_before": null,
+   "group_after": null,
+   "unassessed_after": [
+    "lupins in brine"
+   ],
+   "ingredients_after": [
+    "lupins in brine"
+   ],
+   "ingredients_before": [
+    "lupins in brine"
+   ],
+   "read_as_staged_term": [],
+   "changed": false
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

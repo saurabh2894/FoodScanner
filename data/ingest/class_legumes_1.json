@@ -1,0 +1,279 @@
+{
+  "rule_id": "class-legumes-1",
+  "status": "DRAFT for review. Maps USDA FoodData Central NAMES (plus record attributes) of the category 'Legumes and Legume Products' to candidate lexicon rows of kind whole_food. It never decides a NOVA group: FDC supplies naming evidence only; placement comes from the FAO clause.",
+  "kind": "whole_food",
+  "clause": {
+    "text": "legumes such as beans, lentils, and chickpeas",
+    "where": "FAO 2019 (Monteiro et al., Ultra-processed foods, diet quality, and health using the NOVA classification system), Table 1, Group 1 examples, p. 11",
+    "url": "https://www.fao.org/3/ca5644en/ca5644en.pdf",
+    "pdf_sha256": "c8024c194a8294a0355759877712ea7f61d4da62efc4dec46f3889821b19ceff",
+    "named_terms": [
+      "beans",
+      "lentils",
+      "chickpeas"
+    ],
+    "scope": "The clause is unconditioned and names a CLASS (legumes) with three examples. It places legumes as foods of the first group: the Group 1 definition (FAO p.6) covers dried, ground, cracked, roasted, boiled and similar minimal processing, but adds no salt, sugar, oil, fat or other substance. A plain dry or raw legume is an instance of the class. Anything that is a product made from a legume (tofu, tempeh, miso, milk, butter, sauce, flour, protein fraction, canned in brine, cooked with sauce) is not an instance of this clause."
+  },
+  "category_gate": "Legumes and Legume Products",
+  "acceptance": [
+    "A1. The FDC food category is exactly 'Legumes and Legume Products'.",
+    "A2. The name states a PLAIN seed form: a form part 'raw', 'dry' or 'mature seeds, raw' (SR Legacy), or the Foundation pattern 'Beans, Dry, <variety> (0% moisture)'.",
+    "A3. The name holds no word from the word guard (below), no product word and no queue word.",
+    "A4. The record attributes do not contradict the plain form: no portion description/modifier of the record holds a guard word (a record named 'raw' whose portions say 'cooked' goes to QUEUE).",
+    "A5. The derived label term is a distinct food name (not a bare colour or a pod-vs-seed ambiguity): else QUEUE.",
+    "A6. Canonical deduplication: preparation, cut, grade and cultivar-shade variants of one food collapse into ONE row (table 'canonical' below); the others are reported as synonym CANDIDATES (synonyms.csv is not touched in this workstream)."
+  ],
+  "word_guard": {
+    "words": [
+      "canned",
+      "pickled",
+      "salted",
+      "salt",
+      "sweetened",
+      "sugar",
+      "cooked",
+      "boiled",
+      "fried",
+      "roasted",
+      "dry-roasted",
+      "oil-roasted",
+      "dried-frozen",
+      "flavored",
+      "flavoured",
+      "fortified",
+      "enhanced",
+      "seasoned",
+      "marinated",
+      "smoked",
+      "cured",
+      "concentrate",
+      "concentrated",
+      "juice",
+      "sauce",
+      "soup",
+      "mix",
+      "blend",
+      "prepared",
+      "supplement",
+      "sodium",
+      "vitamin",
+      "vitamins",
+      "drained",
+      "rinsed",
+      "liquid",
+      "solids",
+      "frozen",
+      "stewed",
+      "baked",
+      "refried",
+      "home-prepared",
+      "commercial",
+      "fermented",
+      "unfortified",
+      "pork",
+      "beef",
+      "franks",
+      "tomato",
+      "sweet",
+      "chili",
+      "barbecue",
+      "vegetarian",
+      "meatless",
+      "unprepared",
+      "low",
+      "reduced",
+      "lite",
+      "nigari",
+      "calcium",
+      "sulfate",
+      "extra",
+      "silken",
+      "firm",
+      "soft",
+      "creamy",
+      "chunky",
+      "smooth",
+      "chunk",
+      "vanilla",
+      "chocolate",
+      "plain",
+      "original",
+      "organic",
+      "sprouted"
+    ],
+    "why": "The category-wide extension of the Spices and Herbs word guard (owner rule 3 for class batches): any treatment, addition, canning/cooking liquid, brand-style or product descriptor puts the name outside a plain dry/raw seed. A guard word anywhere in the name = REJECT (processed). 'plain' and 'original' are guarded because they only occur in product names (soy milk, tofu, yogurt) in this category.",
+    "phrases": [
+      "baby food",
+      "food distribution"
+    ],
+    "note_light": "'light' is NOT guarded: in this category it is a colour shade of a bean ('Light Red Kidney', 'Light Tan'); the reduced-fat sense is caught by 'lite', 'low' and 'reduced'."
+  },
+  "product_words": {
+    "words": [
+      "tofu",
+      "tempeh",
+      "miso",
+      "natto",
+      "soymilk",
+      "okara",
+      "hummus",
+      "falafel",
+      "butter",
+      "spread",
+      "papad",
+      "noodles",
+      "vermicelli",
+      "yokan",
+      "yogurt",
+      "creamer",
+      "luncheon",
+      "bacon",
+      "sausage",
+      "frankfurter",
+      "meatballs",
+      "fillets",
+      "chicken",
+      "extender",
+      "burger",
+      "burgers",
+      "soyburgers",
+      "patties",
+      "meatloaf",
+      "sandwich",
+      "isolate",
+      "protein",
+      "soy sauce",
+      "shoyu",
+      "tamari",
+      "silk",
+      "mori-nu",
+      "vitasoy",
+      "nasoya",
+      "azumaya",
+      "house",
+      "fuyu",
+      "koyadofu",
+      "curd",
+      "cheese",
+      "milk"
+    ],
+    "why": "A product made from a legume (or a brand/series name) is not the legume: REJECT (product). It is neither an instance of the FAO legumes clause nor a plain single ingredient."
+  },
+  "queue_words": {
+    "peanut": "overlaps the CONDITIONED FAO nuts/seeds clause ('tree and ground nuts and other oily seeds (with no added salt or sugar)'); FDC files peanuts under Legumes. Boundary and kind (nut_seed) belong to the Nut and Seed batch.",
+    "peanuts": "same as peanut",
+    "flour": "a flour is placed by the 'flours' class (PMC10127522 fn2, NUPENS), not by the legumes clause; kind flour belongs to the flour batch (Cereal Grains and Pasta: plain flours).",
+    "meal": "defatted/ground fraction: not established as a plain flour or a whole legume.",
+    "defatted": "a fractionated (defatted) form: composition changed by an industrial step; not an instance of the plain legume clause.",
+    "carob": "carob is not a Group 1 legume example of the clause (a pod used as a cocoa substitute); no source read places it.",
+    "soy": "'soy' forms other than the plain raw seed are products; see the product words."
+  },
+  "form_tokens": [
+    "raw",
+    "dry",
+    "mature seeds",
+    "mature seed",
+    "(0% moisture)",
+    "all types"
+  ],
+  "generic_queue": {
+    "terms": [
+      "brown beans",
+      "tan beans",
+      "light tan beans",
+      "red beans",
+      "small red beans",
+      "medium red beans",
+      "yellow beans",
+      "white beans",
+      "french beans"
+    ],
+    "why": "A bare colour or pod-versus-seed name does not establish a distinct food: 'brown/tan/light tan/red/small red/medium red beans' are Foundation market-class colour labels of Phaseolus vulgaris; 'french beans' and 'yellow beans' on an Indian label usually denote the fresh pod (a vegetable); 'white beans' is a generic of cannellini/navy/great northern. QUEUE (conditional on a label that names the food)."
+  },
+  "canonical": {
+    "dark red kidney beans": {
+      "to": "kidney beans",
+      "basis": "cultivar-shade variant of the FDC umbrella record 'Beans, kidney, all types'; one canonical row"
+    },
+    "red kidney beans": {
+      "to": "kidney beans",
+      "basis": "cultivar-shade variant of 'Beans, kidney, all types'; one canonical row"
+    },
+    "california red kidney beans": {
+      "to": "kidney beans",
+      "basis": "cultivar variant of 'Beans, kidney, all types'; one canonical row"
+    },
+    "royal red kidney beans": {
+      "to": "kidney beans",
+      "basis": "cultivar variant of 'Beans, kidney, all types'; one canonical row"
+    },
+    "black turtle beans": {
+      "to": "black beans",
+      "basis": "INFERENCE (owner to confirm): black turtle is a black-bean cultivar group; FDC files both as plain dry black beans; one canonical row"
+    },
+    "large lima beans": {
+      "to": "lima beans",
+      "basis": "size-grade variant of lima beans (FDC 'large' vs 'thin seeded (baby)'); one canonical row"
+    },
+    "thin seeded lima beans": {
+      "to": "lima beans",
+      "basis": "size-grade variant of lima beans; one canonical row"
+    },
+    "common cowpeas": {
+      "to": "cowpeas",
+      "basis": "FDC record 'Cowpeas, common (blackeyes, crowder, southern)': 'common' is the species group qualifier; one canonical row"
+    },
+    "blackeye pea": {
+      "to": "cowpeas",
+      "basis": "FDC lists 'blackeyes' as an alternate name of 'Cowpeas, common' (record attribute); same food, one canonical row"
+    },
+    "catjang cowpeas": {
+      "to": null,
+      "basis": "subspecies distinction (catjang) is not established as a label term; stays out rather than inflating the lexicon"
+    },
+    "mungo beans": {
+      "to": null,
+      "basis": "'mungo' vs 'mung' beans: the FDC record does not establish which pulse a label word means (black gram vs green gram); stays out"
+    },
+    "pink or red lentils": {
+      "to": "lentils",
+      "basis": "market-grade variant of lentils (existing term); duplicate semantics"
+    },
+    "light red kidney beans": {
+      "to": "kidney beans",
+      "basis": "cultivar-shade variant of 'Beans, kidney, all types'; one canonical row"
+    }
+  },
+  "alt_name_ignore": {
+    "baby": "size qualifier of thin-seeded lima beans",
+    "roman": "qualifier of cranberry beans ('cranberry (roman)')",
+    "southern": "regional qualifier in the cowpeas bracket"
+  },
+  "negative_controls": [
+    "canned kidney beans",
+    "cooked pinto beans",
+    "kidney beans in brine",
+    "roasted soybeans",
+    "salted soybeans",
+    "peanut butter",
+    "soy milk",
+    "soymilk",
+    "tofu",
+    "tempeh",
+    "hummus",
+    "baked beans",
+    "refried beans",
+    "sweetened adzuki beans",
+    "soy protein isolate",
+    "miso",
+    "natto",
+    "falafel",
+    "boiled lentils",
+    "fried tofu",
+    "black beans with salt",
+    "pinto beans in tomato sauce",
+    "soy flour",
+    "defatted soybean meal",
+    "lupins in brine"
+  ]
+}
