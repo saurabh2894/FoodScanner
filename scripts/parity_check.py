@@ -171,6 +171,9 @@ CORPUS = [
     "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
     "Ingredients: Blend [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)].", "Ingredients: Blend [Sprouted Ragi & Oat, Rice].", "Ingredients: Blend [Roasted Rice & Oat, Salt].", "Ingredients: Blend [Fermented Ragi & Oat, Salt].",
     "Ingredients: Blend [Spices & Condiments, Salt].", "Ingredients: Blend [Rice & Oat (Organic), Salt].", "Ingredients: Blend [Rice & Oat & Wheat, Salt].", "Ingredients: Blend [Salted Almonds & Pumpkin Seeds, Rice].",
+    # provenance-fixes-1 (tests/test_nut_seed_condition.py, SYNTHETIC): item-level salt/sugar condition on nuts and seeds
+    "Ingredients: Almonds", "Ingredients: Salted Almonds", "Ingredients: Almonds (Almonds, Salt)", "Ingredients: Unsalted Almonds", "Ingredients: Almonds (no added salt)", "Ingredients: Rice, Salted Pumpkin Seeds.", "Ingredients: Wheat Flour, Sugar, Almonds, Butter.",
+    "Ingredients: Rice, Sugar, Almonds.", "Ingredients: Sugared Almonds", "Ingredients: Flax Seeds, Honey.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
