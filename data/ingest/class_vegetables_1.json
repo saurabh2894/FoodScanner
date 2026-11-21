@@ -607,7 +607,21 @@
     "salted kale",
     "cabbage (preserved)",
     "corn on the cob",
-    "tomato ketchup"
+    "tomato ketchup",
+    "spinach powder",
+    "rice, spinach powder",
+    "spinach extract powder",
+    "beet red powder",
+    "celery powder",
+    "arrowroot powder",
+    "spinach powder (maltodextrin)",
+    "spinach & kale powder",
+    "seasoning blend (spinach powder, salt)",
+    "rice, spinach powder, xq9",
+    "rice, spinach powder, flavouring xq9",
+    "carrot powder",
+    "onion powder",
+    "salted potatoes powder"
   ],
   "positive_controls": [
     "spinach",
@@ -631,6 +645,10 @@
     "rice, salt, carrots",
     "rice, carrots",
     "okra",
-    "green onions"
+    "green onions",
+    "100% spinach powder",
+    "spinach powder (100%)",
+    "whole spinach powder",
+    "dried spinach"
   ]
 }

@@ -140,6 +140,34 @@ def legume_preserved_form(ing) -> bool:
     return _added(ing, _LEGUME_PRESERVED)
 
 
+# Descriptor "powder" routing (class-bulk-2; owner rulings, the second one supersedes the first): descriptors.csv drops "powder"/"powdered", so "spinach powder" resolves to the plain row. A
+# whole_food, legume or vegetable item carrying the word is treated as a food_powder: an "X powder" label does NOT by itself establish whole-food composition (it may be an extract, a starch,
+# a colour or a carrier-containing powder), and FAO's named drying/crushing/grinding (Group 1 definition, p.6; V1 "dried" vegetables) cannot be generalised into proof that every powder is a
+# whole food. So the item NEVER takes Group 1 from the powder reading alone; it takes Group 1 (sole item only) when its OWN text states whole-food composition, in exactly these two forms:
+#   (1) "100%" in the item ("100% spinach powder", "spinach powder (100%)"): the label itself says nothing but the food is in it;
+#   (2) "whole" ("whole spinach powder"): the whole food, not a fraction; NOT read for milk ("whole milk powder": 'whole' is the fat grade, not a composition statement).
+# Every other reading abstains, alone or in a list; unrecognised co-ingredients are reported before this point and are never laundered by the abstention. A salted/brined/preserved legume or
+# vegetable keeps its guard (not routed).
+_POWDER_WORDS = frozenset({"powder", "powdered"})
+_POWDER_ROUTED = ("whole_food", "legume", "vegetable")
+
+
+def powder_composition_stated(ing) -> bool:
+    if re.search(r"(?<![\d.])100(?:\.0+)?\s*%", ing.raw.lower()):
+        return True
+    toks = re.findall(r"[a-z]+", ing.text.lower())
+    row = lookup(ing.name)
+    return "whole" in toks and "milk" not in toks and not (row and row["term"] in _MILK_TERMS)
+
+
+def powder_routed(ing, kind: str) -> bool:
+    if kind not in _POWDER_ROUTED or not _added(ing, _POWDER_WORDS):
+        return False
+    if kind in _BRINE_KINDS and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing)):
+        return False
+    return True
+
+
 def nut_added_salt_or_sugar(ing) -> bool:
     return _added(ing, _NUT_ADDED)
 
@@ -276,6 +304,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
@@ -294,10 +323,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
-    if len(ings) == 1 and kinds[0] == "food_powder":
-        # A powder of one food is Group 1 only as the SOLE item of the list: the term alone does not establish that it is free of carriers or anti-caking agents,
-        # so the answer rests on the list naming nothing else (held-sources-1; FAO p.6 Group 1 definition names 'powdering' of natural foods).
-        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", lookup(ings[0].name)["source"], ings[0].section)])
+    if len(ings) == 1 and kinds[0] == "food_powder" and powder_composition_stated(ings[0]):
+        # owner ruling (class-bulk-2): a powder of one food is Group 1 ONLY when the item's own text states whole-food composition ("100%", "whole"); the bare term "X powder" abstains
+        # below (held-sources-1 had answered Group 1 for any sole powder item; superseded).
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
         return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
     rows = [lookup(i.name) for i in ings]

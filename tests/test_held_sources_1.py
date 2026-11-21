@@ -34,9 +34,13 @@ def test_synthetic_powder_rows_are_conditioned_food_powder_provisional_with_the_
     assert r["kind"] == "food_powder" and "CONDITIONED" in r["source"] and "carriers or anti-caking agents" in r["source"] and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "held-decisions-1" in r["source"] and rec(d["term"])
 
 
-def test_synthetic_a_powder_is_group_1_only_as_the_sole_item_and_otherwise_abstains_naming_the_composition_uncertainty():
+def test_synthetic_a_powder_is_group_1_only_when_its_own_text_states_whole_food_composition_and_otherwise_abstains_naming_the_composition_uncertainty():
+    # UPDATED (class-bulk-2, owner ruling 2026-11-21, supersedes held-sources-1): the bare sole item 'Banana powder' no longer answers Group 1; only an item that states composition itself
+    # ('100%', 'whole') does. Everything else abstains with the unchanged reason. See tests/test_powder_standard_1.py.
     g, a = grp("Ingredients: Banana powder")
-    assert g == 1 and "nothing else listed" in a.drivers[0].detail
+    assert g is None and "named without its composition" in a.reason
+    g, a = grp("Ingredients: 100% Banana powder")
+    assert g == 1 and "states whole-food composition" in a.drivers[0].detail
     for text in ("Ingredients: Rice, banana powder, salt.", "Ingredients: Banana powder, strawberry powder.", "Ingredients: Milk, banana powder."):
         g, a = grp(text)
         assert g is None and "named without its composition" in a.reason and "carriers or anti-caking agents" in a.reason, text      # never answered from the term alone

@@ -515,6 +515,16 @@
     }
     const LEGUME_PRESERVED = new Set(["canned", "tinned", "bottled", "jarred", "preserved", "pickled"]);
     const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
+    // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour
+    const POWDER_WORDS = new Set(["powder", "powdered"]);
+    const POWDER_ROUTED = ["whole_food", "legume", "vegetable"];
+    function powderCompositionStated(ing) {
+      if (/(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase())) return true;
+      const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
+      const row = lookup(ing.name);
+      return toks.includes("whole") && !toks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
+    }
+    const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED);
     function hitsFor(ing) {
@@ -560,7 +570,7 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const kinds = ings.map((i) => lookup(i.name).kind);
+      const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
@@ -573,8 +583,8 @@
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
-      if (ings.length === 1 && kinds[0] === "food_powder")
-        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+      if (ings.length === 1 && kinds[0] === "food_powder" && powderCompositionStated(ings[0]))
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
         return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       const rows = ings.map((i) => lookup(i.name));
