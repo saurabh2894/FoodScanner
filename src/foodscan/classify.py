@@ -117,6 +117,7 @@ _NUT_ADDED = frozenset({"salt", "salted", "sugar", "sugared", "sweetened", "cand
 # Same item-level condition for LEGUME rows (kind legume, class-bulk-1): FAO Group 3 covers "canned or bottled vegetables or legumes (pulses) preserved in brine" (p. 7 prose;
 # Table 1 continuation p. 12, Group 3 "Canned or bottled vegetables and legumes in brine") and its definition is "adding salt, oil, sugar or other group 2 ingredients to group 1 foods". Salt, sugar and brine are
 # read from the item's OWN name and bracket, never from the rest of the product. Roasting and boiling are NOT part of this guard (minimal processing, separate source treatment).
+_BRINE_KINDS = ("legume", "vegetable")      # FAO Group 3: "Canned or bottled vegetables and legumes in brine" names both classes (class-bulk-2 adds kind vegetable)
 _LEGUME_ADDED = _NUT_ADDED | frozenset({"brine", "brined"})
 
 
@@ -137,6 +138,34 @@ _LEGUME_PRESERVED = frozenset({"canned", "tinned", "bottled", "jarred", "preserv
 
 def legume_preserved_form(ing) -> bool:
     return _added(ing, _LEGUME_PRESERVED)
+
+
+# Descriptor "powder" routing (class-bulk-2; owner rulings, the second one supersedes the first): descriptors.csv drops "powder"/"powdered", so "spinach powder" resolves to the plain row. A
+# whole_food, legume or vegetable item carrying the word is treated as a food_powder: an "X powder" label does NOT by itself establish whole-food composition (it may be an extract, a starch,
+# a colour or a carrier-containing powder), and FAO's named drying/crushing/grinding (Group 1 definition, p.6; V1 "dried" vegetables) cannot be generalised into proof that every powder is a
+# whole food. So the item NEVER takes Group 1 from the powder reading alone; it takes Group 1 (sole item only) when its OWN text states whole-food composition, in exactly these two forms:
+#   (1) "100%" in the item ("100% spinach powder", "spinach powder (100%)"): the label itself says nothing but the food is in it;
+#   (2) "whole" ("whole spinach powder"): the whole food, not a fraction; NOT read for milk ("whole milk powder": 'whole' is the fat grade, not a composition statement).
+# Every other reading abstains, alone or in a list; unrecognised co-ingredients are reported before this point and are never laundered by the abstention. A salted/brined/preserved legume or
+# vegetable keeps its guard (not routed).
+_POWDER_WORDS = frozenset({"powder", "powdered"})
+_POWDER_ROUTED = ("whole_food", "legume", "vegetable")
+
+
+def powder_composition_stated(ing) -> bool:
+    if re.search(r"(?<![\d.])100(?:\.0+)?\s*%", ing.raw.lower()):
+        return True
+    toks = re.findall(r"[a-z]+", ing.text.lower())
+    row = lookup(ing.name)
+    return "whole" in toks and "milk" not in toks and not (row and row["term"] in _MILK_TERMS)
+
+
+def powder_routed(ing, kind: str) -> bool:
+    if kind not in _POWDER_ROUTED or not _added(ing, _POWDER_WORDS):
+        return False
+    if kind in _BRINE_KINDS and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing)):
+        return False
+    return True
 
 
 def nut_added_salt_or_sugar(ing) -> bool:
@@ -188,7 +217,7 @@ def sweetener_foods_only(ing: Ingredient) -> bool:
     if ing.ins or not ing.inner or ing.name not in ("sweetener", "natural sweetener"):
         return False
     parts = [p.strip() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner) if p.strip()]
-    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "legume", "culinary") for p in parts)
+    return bool(parts) and all(is_recognised(p) and lookup(p)["kind"] in ("whole_food", "legume", "vegetable", "culinary") for p in parts)
 
 
 def ingredient_marker_terms(ing: Ingredient) -> set[str]:
@@ -275,28 +304,29 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k == "legume" and legume_added_salt_sugar_or_brine(i))]
-    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k == "legume" and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i))]
+    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
-        return Classification(None, reason="a canned, bottled or preserved legume (" + "; ".join(legume_preserved) + "): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established")
-    if len(ings) == 1 and kinds[0] in ("nut_seed", "legume"):
+        return Classification(None, reason="a canned, bottled or preserved legume or vegetable (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established")
+    if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable"):
         if nut_salted:
             what = ("nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" if kinds[0] == "nut_seed"
-                    else "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)")
+                    else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)")
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
-    if len(ings) == 1 and kinds[0] == "food_powder":
-        # A powder of one food is Group 1 only as the SOLE item of the list: the term alone does not establish that it is free of carriers or anti-caking agents,
-        # so the answer rests on the list naming nothing else (held-sources-1; FAO p.6 Group 1 definition names 'powdering' of natural foods).
-        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", lookup(ings[0].name)["source"], ings[0].section)])
+    if len(ings) == 1 and kinds[0] == "food_powder" and powder_composition_stated(ings[0]):
+        # owner ruling (class-bulk-2): a powder of one food is Group 1 ONLY when the item's own text states whole-food composition ("100%", "whole"); the bare term "X powder" abstains
+        # below (held-sources-1 had answered Group 1 for any sole powder item; superseded).
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
         return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
     rows = [lookup(i.name) for i in ings]
@@ -311,10 +341,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
-    has_food = any(k in ("whole_food", "nut_seed", "legume") for _, k in substantive)
+    has_food = any(k in ("whole_food", "nut_seed", "legume", "vegetable") for _, k in substantive)
     has_culinary = any(k == "culinary" for _, k in substantive) or bool(nut_salted)           # salt or sugar added to the nuts themselves is a Group 2 substance on a Group 1 food: Group 3
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {'whole food' if k in ('nut_seed', 'legume') else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {'whole food' if k in ('nut_seed', 'legume', 'vegetable') else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 

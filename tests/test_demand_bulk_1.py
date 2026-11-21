@@ -33,8 +33,8 @@ def grp(text: str):
 def test_synthetic_accepted_rows_are_merged_provisional_with_the_verbatim_clause(d):
     t = d.get("row_term", d["term"])
     r = LEX[t]
-    # class-bulk-1 retyped the legume row 'beans' from whole_food to the legume kind (same whole-food behaviour plus the item-level salt/sugar/brine guard); the record keeps the original kind
-    assert (r["kind"] == d["kind"] or (t == "beans" and d["kind"] == "whole_food" and r["kind"] == "legume")) and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "demand-decisions-1" in r["source"]
+    # class-bulk-1 retyped 'beans' to the legume kind and class-bulk-2 retyped 'cabbage' to the vegetable kind (both from whole_food) (same whole-food behaviour plus the item-level salt/sugar/brine guard); the record keeps the original kind
+    assert (r["kind"] == d["kind"] or (t == "beans" and d["kind"] == "whole_food" and r["kind"] == "legume") or (t == "cabbage" and d["kind"] == "whole_food" and r["kind"] == "vegetable")) and r["source"].startswith("PROVISIONAL: FAO 2019") and d["clause"] in r["source"] and "demand-decisions-1" in r["source"]
     assert rec(d["term"]) and rec(t)
 
 

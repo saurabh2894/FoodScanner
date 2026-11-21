@@ -1,0 +1,3573 @@
+{
+ "rule_id": "class-vegetables-1",
+ "base_src": "/tmp/main_wt2/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 181,
+  "after": 295,
+  "added": [
+   "acorn squash",
+   "amaranth leaves",
+   "arrowhead",
+   "artichokes",
+   "arugula",
+   "asparagus",
+   "balsam-pear",
+   "bamboo shoots",
+   "banana peppers",
+   "beet greens",
+   "bell peppers",
+   "bok choy cabbage",
+   "borage",
+   "broccoli",
+   "broccoli raab",
+   "brussels sprouts",
+   "burdock root",
+   "butterbur",
+   "butterhead lettuce",
+   "butternut squash",
+   "cardoon",
+   "cassava",
+   "cauliflower",
+   "celeriac",
+   "celtuce",
+   "chanterelle mushrooms",
+   "chayote",
+   "chicory greens",
+   "chicory roots",
+   "chinese broccoli",
+   "chinese cabbage",
+   "chinese waterchestnuts",
+   "chrysanthemum leaves",
+   "collards",
+   "cornsalad",
+   "crimini mushrooms",
+   "dandelion greens",
+   "dishcloth gourd",
+   "dock",
+   "drumstick leaves",
+   "drumstick pods",
+   "eggplant",
+   "endive",
+   "enoki mushrooms",
+   "eppaw",
+   "garden cress",
+   "garland chrysanthemum",
+   "grape leaves",
+   "hawaii mountain yam",
+   "hot chili peppers",
+   "hubbard squash",
+   "iceberg lettuce",
+   "jalapeno peppers",
+   "jerusalem-artichokes",
+   "jew's ear",
+   "jute",
+   "kale",
+   "kohlrabi",
+   "lambsquarters",
+   "leaf lettuce",
+   "leeks",
+   "lotus root",
+   "maitake mushrooms",
+   "morel mushrooms",
+   "mustard greens",
+   "mustard spinach",
+   "napa cabbage",
+   "new zealand spinach",
+   "nopales",
+   "okra",
+   "oriental radishes",
+   "oyster mushrooms",
+   "parsnips",
+   "poblano peppers",
+   "pokeberry shoots",
+   "portabella mushrooms",
+   "pumpkin",
+   "pumpkin leaves",
+   "purslane",
+   "radicchio",
+   "radishes",
+   "romaine lettuce",
+   "rutabagas",
+   "salsify",
+   "savoy cabbage",
+   "serrano peppers",
+   "shallots",
+   "shiitake mushrooms",
+   "snap beans",
+   "spaghetti squash",
+   "spinach",
+   "summer squash",
+   "sweet peppers",
+   "sweet potato leaves",
+   "sweet potatoes",
+   "swiss chard",
+   "taro",
+   "taro leaves",
+   "taro shoots",
+   "tomatillos",
+   "turnip greens",
+   "turnips",
+   "vinespinach",
+   "water convolvulus",
+   "watercress",
+   "waxgourd",
+   "white mushrooms",
+   "white-flowered gourd",
+   "winter squash",
+   "witloof chicory",
+   "yam",
+   "yambean",
+   "yautia",
+   "zucchini"
+  ],
+  "removed": [],
+  "kind_changed": {
+   "cucumber": [
+    "whole_food",
+    "vegetable"
+   ],
+   "tomato": [
+    "whole_food",
+    "vegetable"
+   ],
+   "potato": [
+    "whole_food",
+    "vegetable"
+   ],
+   "onion": [
+    "whole_food",
+    "vegetable"
+   ],
+   "carrot": [
+    "whole_food",
+    "vegetable"
+   ],
+   "cabbage": [
+    "whole_food",
+    "vegetable"
+   ]
+  },
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {
+  "acorn squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "acorn squash",
+    "kind": "vegetable"
+   }
+  },
+  "amaranth leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "amaranth leaves",
+    "kind": "vegetable"
+   }
+  },
+  "arrowhead": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "arrowhead",
+    "kind": "vegetable"
+   }
+  },
+  "artichokes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "artichokes",
+    "kind": "vegetable"
+   }
+  },
+  "arugula": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "arugula",
+    "kind": "vegetable"
+   }
+  },
+  "asparagus": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "asparagus",
+    "kind": "vegetable"
+   }
+  },
+  "balsam-pear": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "balsam-pear",
+    "kind": "vegetable"
+   }
+  },
+  "bamboo shoots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "bamboo shoots",
+    "kind": "vegetable"
+   }
+  },
+  "banana peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "banana peppers",
+    "kind": "vegetable"
+   }
+  },
+  "beet greens": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "beet greens",
+    "kind": "vegetable"
+   }
+  },
+  "bell peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "bell peppers",
+    "kind": "vegetable"
+   }
+  },
+  "bok choy cabbage": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "bok choy cabbage",
+    "kind": "vegetable"
+   }
+  },
+  "borage": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "borage",
+    "kind": "vegetable"
+   }
+  },
+  "broccoli": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "broccoli",
+    "kind": "vegetable"
+   }
+  },
+  "broccoli raab": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "broccoli raab",
+    "kind": "vegetable"
+   }
+  },
+  "brussels sprouts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "brussels sprouts",
+    "kind": "vegetable"
+   }
+  },
+  "burdock root": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "burdock root",
+    "kind": "vegetable"
+   }
+  },
+  "butterbur": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "butterbur",
+    "kind": "vegetable"
+   }
+  },
+  "butterhead lettuce": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "butterhead lettuce",
+    "kind": "vegetable"
+   }
+  },
+  "butternut squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "butternut squash",
+    "kind": "vegetable"
+   }
+  },
+  "cardoon": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cardoon",
+    "kind": "vegetable"
+   }
+  },
+  "cassava": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cassava",
+    "kind": "vegetable"
+   }
+  },
+  "cauliflower": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cauliflower",
+    "kind": "vegetable"
+   }
+  },
+  "celeriac": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "celeriac",
+    "kind": "vegetable"
+   }
+  },
+  "celtuce": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "celtuce",
+    "kind": "vegetable"
+   }
+  },
+  "chanterelle mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chanterelle mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "chayote": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chayote",
+    "kind": "vegetable"
+   }
+  },
+  "chicory greens": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chicory greens",
+    "kind": "vegetable"
+   }
+  },
+  "chicory roots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chicory roots",
+    "kind": "vegetable"
+   }
+  },
+  "chinese broccoli": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chinese broccoli",
+    "kind": "vegetable"
+   }
+  },
+  "chinese cabbage": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chinese cabbage",
+    "kind": "vegetable"
+   }
+  },
+  "chinese waterchestnuts": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chinese waterchestnuts",
+    "kind": "vegetable"
+   }
+  },
+  "chrysanthemum leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chrysanthemum leaves",
+    "kind": "vegetable"
+   }
+  },
+  "collards": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "collards",
+    "kind": "vegetable"
+   }
+  },
+  "cornsalad": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "cornsalad",
+    "kind": "vegetable"
+   }
+  },
+  "crimini mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "crimini mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "dandelion greens": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "dandelion greens",
+    "kind": "vegetable"
+   }
+  },
+  "dishcloth gourd": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "dishcloth gourd",
+    "kind": "vegetable"
+   }
+  },
+  "dock": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "dock",
+    "kind": "vegetable"
+   }
+  },
+  "drumstick leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "drumstick leaves",
+    "kind": "vegetable"
+   }
+  },
+  "drumstick pods": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "drumstick pods",
+    "kind": "vegetable"
+   }
+  },
+  "eggplant": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "eggplant",
+    "kind": "vegetable"
+   }
+  },
+  "endive": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "endive",
+    "kind": "vegetable"
+   }
+  },
+  "enoki mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "enoki mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "eppaw": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "eppaw",
+    "kind": "vegetable"
+   }
+  },
+  "garden cress": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "garden cress",
+    "kind": "vegetable"
+   }
+  },
+  "garland chrysanthemum": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "garland chrysanthemum",
+    "kind": "vegetable"
+   }
+  },
+  "grape leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "grape leaves",
+    "kind": "vegetable"
+   }
+  },
+  "hawaii mountain yam": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hawaii mountain yam",
+    "kind": "vegetable"
+   }
+  },
+  "hot chili peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hot chili peppers",
+    "kind": "vegetable"
+   }
+  },
+  "hubbard squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "hubbard squash",
+    "kind": "vegetable"
+   }
+  },
+  "iceberg lettuce": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "iceberg lettuce",
+    "kind": "vegetable"
+   }
+  },
+  "jalapeno peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jalapeno peppers",
+    "kind": "vegetable"
+   }
+  },
+  "jerusalem-artichokes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jerusalem-artichokes",
+    "kind": "vegetable"
+   }
+  },
+  "jew's ear": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jew's ear",
+    "kind": "vegetable"
+   }
+  },
+  "jute": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jute",
+    "kind": "vegetable"
+   }
+  },
+  "kale": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kale",
+    "kind": "vegetable"
+   }
+  },
+  "kohlrabi": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kohlrabi",
+    "kind": "vegetable"
+   }
+  },
+  "lambsquarters": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "lambsquarters",
+    "kind": "vegetable"
+   }
+  },
+  "leaf lettuce": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "leaf lettuce",
+    "kind": "vegetable"
+   }
+  },
+  "leeks": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "leeks",
+    "kind": "vegetable"
+   }
+  },
+  "lotus root": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "lotus root",
+    "kind": "vegetable"
+   }
+  },
+  "maitake mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "maitake mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "morel mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "morel mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "mustard greens": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mustard greens",
+    "kind": "vegetable"
+   }
+  },
+  "mustard spinach": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mustard spinach",
+    "kind": "vegetable"
+   }
+  },
+  "napa cabbage": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "napa cabbage",
+    "kind": "vegetable"
+   }
+  },
+  "new zealand spinach": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "new zealand spinach",
+    "kind": "vegetable"
+   }
+  },
+  "nopales": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "nopales",
+    "kind": "vegetable"
+   }
+  },
+  "okra": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "okra",
+    "kind": "vegetable"
+   }
+  },
+  "oriental radishes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "oriental radishes",
+    "kind": "vegetable"
+   }
+  },
+  "oyster mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "oyster mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "parsnips": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "parsnips",
+    "kind": "vegetable"
+   }
+  },
+  "poblano peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "poblano peppers",
+    "kind": "vegetable"
+   }
+  },
+  "pokeberry shoots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pokeberry shoots",
+    "kind": "vegetable"
+   }
+  },
+  "portabella mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "pumpkin": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pumpkin",
+    "kind": "vegetable"
+   }
+  },
+  "pumpkin leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "pumpkin leaves",
+    "kind": "vegetable"
+   }
+  },
+  "purslane": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "purslane",
+    "kind": "vegetable"
+   }
+  },
+  "radicchio": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "radicchio",
+    "kind": "vegetable"
+   }
+  },
+  "radishes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "radishes",
+    "kind": "vegetable"
+   }
+  },
+  "romaine lettuce": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "romaine lettuce",
+    "kind": "vegetable"
+   }
+  },
+  "rutabagas": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "rutabagas",
+    "kind": "vegetable"
+   }
+  },
+  "salsify": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "salsify",
+    "kind": "vegetable"
+   }
+  },
+  "savoy cabbage": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "savoy cabbage",
+    "kind": "vegetable"
+   }
+  },
+  "serrano peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "serrano peppers",
+    "kind": "vegetable"
+   }
+  },
+  "shallots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "shallots",
+    "kind": "vegetable"
+   }
+  },
+  "shiitake mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "shiitake mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "snap beans": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "snap beans",
+    "kind": "vegetable"
+   }
+  },
+  "spaghetti squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "spaghetti squash",
+    "kind": "vegetable"
+   }
+  },
+  "spinach": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   }
+  },
+  "summer squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "summer squash",
+    "kind": "vegetable"
+   }
+  },
+  "sweet peppers": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sweet peppers",
+    "kind": "vegetable"
+   }
+  },
+  "sweet potato leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sweet potato leaves",
+    "kind": "vegetable"
+   }
+  },
+  "sweet potatoes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sweet potatoes",
+    "kind": "vegetable"
+   }
+  },
+  "swiss chard": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "swiss chard",
+    "kind": "vegetable"
+   }
+  },
+  "taro": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "taro",
+    "kind": "vegetable"
+   }
+  },
+  "taro leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "taro leaves",
+    "kind": "vegetable"
+   }
+  },
+  "taro shoots": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "taro shoots",
+    "kind": "vegetable"
+   }
+  },
+  "tomatillos": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "tomatillos",
+    "kind": "vegetable"
+   }
+  },
+  "turnip greens": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "turnip greens",
+    "kind": "vegetable"
+   }
+  },
+  "turnips": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "turnips",
+    "kind": "vegetable"
+   }
+  },
+  "vinespinach": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "vinespinach",
+    "kind": "vegetable"
+   }
+  },
+  "water convolvulus": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   }
+  },
+  "watercress": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "watercress",
+    "kind": "vegetable"
+   }
+  },
+  "waxgourd": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "waxgourd",
+    "kind": "vegetable"
+   }
+  },
+  "white mushrooms": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "white mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "white-flowered gourd": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "white-flowered gourd",
+    "kind": "vegetable"
+   }
+  },
+  "winter squash": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "winter squash",
+    "kind": "vegetable"
+   }
+  },
+  "witloof chicory": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "witloof chicory",
+    "kind": "vegetable"
+   }
+  },
+  "yam": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "yam",
+    "kind": "vegetable"
+   }
+  },
+  "yambean": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "yambean",
+    "kind": "vegetable"
+   }
+  },
+  "yautia": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "yautia",
+    "kind": "vegetable"
+   }
+  },
+  "zucchini": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "zucchini",
+    "kind": "vegetable"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S01",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "arugula",
+     "shallots"
+    ],
+    "staged_terms": [
+     "arugula",
+     "shallots"
+    ]
+   },
+   {
+    "input": "S18",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Leek"
+    ],
+    "staged_terms": [
+     "leeks"
+    ]
+   },
+   {
+    "input": "S31",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Pumpkin"
+    ],
+    "staged_terms": [
+     "pumpkin"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 307,
+  "differences": {},
+  "expected_owner_ruled": {
+   "banana powder": [
+    1,
+    null
+   ],
+   "strawberry powder": [
+    1,
+    null
+   ],
+   "beetroot powder": [
+    1,
+    null
+   ]
+  }
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 192,
+  "group1_after": 348,
+  "changed": {
+   "acorn squash powder": [
+    null,
+    null
+   ],
+   "adzuki beans powder": [
+    1,
+    null
+   ],
+   "amaranth leaves powder": [
+    null,
+    null
+   ],
+   "arrowhead powder": [
+    null,
+    null
+   ],
+   "artichokes powder": [
+    null,
+    null
+   ],
+   "arugula powder": [
+    null,
+    null
+   ],
+   "asparagus powder": [
+    null,
+    null
+   ],
+   "bajra powder": [
+    1,
+    null
+   ],
+   "balsam-pear powder": [
+    null,
+    null
+   ],
+   "bamboo shoots powder": [
+    null,
+    null
+   ],
+   "banana peppers powder": [
+    null,
+    null
+   ],
+   "barley powder": [
+    1,
+    null
+   ],
+   "beans powder": [
+    1,
+    null
+   ],
+   "beet greens powder": [
+    null,
+    null
+   ],
+   "bell peppers powder": [
+    null,
+    null
+   ],
+   "black beans powder": [
+    1,
+    null
+   ],
+   "black raisin powder": [
+    1,
+    null
+   ],
+   "bok choy cabbage powder": [
+    null,
+    null
+   ],
+   "borage powder": [
+    null,
+    null
+   ],
+   "broadbeans powder": [
+    1,
+    null
+   ],
+   "broccoli powder": [
+    null,
+    null
+   ],
+   "broccoli raab powder": [
+    null,
+    null
+   ],
+   "brussels sprouts powder": [
+    null,
+    null
+   ],
+   "buffalo milk powder": [
+    1,
+    null
+   ],
+   "burdock root powder": [
+    null,
+    null
+   ],
+   "butterbur powder": [
+    null,
+    null
+   ],
+   "butterhead lettuce powder": [
+    null,
+    null
+   ],
+   "butternut squash powder": [
+    null,
+    null
+   ],
+   "cabbage powder": [
+    1,
+    null
+   ],
+   "cannellini beans powder": [
+    1,
+    null
+   ],
+   "cardoon powder": [
+    null,
+    null
+   ],
+   "carioca beans powder": [
+    1,
+    null
+   ],
+   "carrot powder": [
+    1,
+    null
+   ],
+   "cassava powder": [
+    null,
+    null
+   ],
+   "cauliflower powder": [
+    null,
+    null
+   ],
+   "celeriac powder": [
+    null,
+    null
+   ],
+   "celtuce powder": [
+    null,
+    null
+   ],
+   "chana dal powder": [
+    1,
+    null
+   ],
+   "chanterelle mushrooms powder": [
+    null,
+    null
+   ],
+   "chayote powder": [
+    null,
+    null
+   ],
+   "chickpea powder": [
+    1,
+    null
+   ],
+   "chicory greens powder": [
+    null,
+    null
+   ],
+   "chicory roots powder": [
+    null,
+    null
+   ],
+   "chinese broccoli powder": [
+    null,
+    null
+   ],
+   "chinese cabbage powder": [
+    null,
+    null
+   ],
+   "chinese waterchestnuts powder": [
+    null,
+    null
+   ],
+   "chrysanthemum leaves powder": [
+    null,
+    null
+   ],
+   "collards powder": [
+    null,
+    null
+   ],
+   "corn powder": [
+    1,
+    null
+   ],
+   "cornsalad powder": [
+    null,
+    null
+   ],
+   "cowpeas powder": [
+    1,
+    null
+   ],
+   "cranberry beans powder": [
+    1,
+    null
+   ],
+   "crimini mushrooms powder": [
+    null,
+    null
+   ],
+   "cucumber powder": [
+    1,
+    null
+   ],
+   "dahi powder": [
+    1,
+    null
+   ],
+   "dandelion greens powder": [
+    null,
+    null
+   ],
+   "dates powder": [
+    1,
+    null
+   ],
+   "dehydrated vegetable powder": [
+    1,
+    null
+   ],
+   "dishcloth gourd powder": [
+    null,
+    null
+   ],
+   "dock powder": [
+    null,
+    null
+   ],
+   "drumstick leaves powder": [
+    null,
+    null
+   ],
+   "drumstick pods powder": [
+    null,
+    null
+   ],
+   "egg powder": [
+    1,
+    null
+   ],
+   "eggplant powder": [
+    null,
+    null
+   ],
+   "eggs powder": [
+    1,
+    null
+   ],
+   "endive powder": [
+    null,
+    null
+   ],
+   "enoki mushrooms powder": [
+    null,
+    null
+   ],
+   "eppaw powder": [
+    null,
+    null
+   ],
+   "flor de mayo beans powder": [
+    1,
+    null
+   ],
+   "foxtail millet powder": [
+    1,
+    null
+   ],
+   "garden cress powder": [
+    null,
+    null
+   ],
+   "garland chrysanthemum powder": [
+    null,
+    null
+   ],
+   "grape leaves powder": [
+    null,
+    null
+   ],
+   "great northern beans powder": [
+    1,
+    null
+   ],
+   "hawaii mountain yam powder": [
+    null,
+    null
+   ],
+   "hot chili peppers powder": [
+    null,
+    null
+   ],
+   "hubbard squash powder": [
+    null,
+    null
+   ],
+   "hyacinth beans powder": [
+    1,
+    null
+   ],
+   "iceberg lettuce powder": [
+    null,
+    null
+   ],
+   "jalapeno peppers powder": [
+    null,
+    null
+   ],
+   "jerusalem-artichokes powder": [
+    null,
+    null
+   ],
+   "jew's ear powder": [
+    null,
+    null
+   ],
+   "jowar powder": [
+    1,
+    null
+   ],
+   "jute powder": [
+    null,
+    null
+   ],
+   "kale powder": [
+    null,
+    null
+   ],
+   "kidney beans powder": [
+    1,
+    null
+   ],
+   "kohlrabi powder": [
+    null,
+    null
+   ],
+   "lambsquarters powder": [
+    null,
+    null
+   ],
+   "leaf lettuce powder": [
+    null,
+    null
+   ],
+   "leeks powder": [
+    null,
+    null
+   ],
+   "lemon powder": [
+    1,
+    null
+   ],
+   "lentil powder": [
+    1,
+    null
+   ],
+   "lima beans powder": [
+    1,
+    null
+   ],
+   "lotus root powder": [
+    null,
+    null
+   ],
+   "lupins powder": [
+    1,
+    null
+   ],
+   "maitake mushrooms powder": [
+    null,
+    null
+   ],
+   "maize powder": [
+    1,
+    null
+   ],
+   "mango powder": [
+    1,
+    null
+   ],
+   "masoor dal powder": [
+    1,
+    null
+   ],
+   "milk powder": [
+    1,
+    null
+   ],
+   "milk solids powder": [
+    1,
+    null
+   ],
+   "millet powder": [
+    1,
+    null
+   ],
+   "moong powder": [
+    1,
+    null
+   ],
+   "moong dal powder": [
+    1,
+    null
+   ],
+   "morel mushrooms powder": [
+    null,
+    null
+   ],
+   "mothbeans powder": [
+    1,
+    null
+   ],
+   "mustard greens powder": [
+    null,
+    null
+   ],
+   "mustard spinach powder": [
+    null,
+    null
+   ],
+   "napa cabbage powder": [
+    null,
+    null
+   ],
+   "navy beans powder": [
+    1,
+    null
+   ],
+   "new zealand spinach powder": [
+    null,
+    null
+   ],
+   "nopales powder": [
+    null,
+    null
+   ],
+   "oat powder": [
+    1,
+    null
+   ],
+   "okra powder": [
+    null,
+    null
+   ],
+   "onion powder": [
+    1,
+    null
+   ],
+   "oriental radishes powder": [
+    null,
+    null
+   ],
+   "oyster mushrooms powder": [
+    null,
+    null
+   ],
+   "parsnips powder": [
+    null,
+    null
+   ],
+   "pearl millet powder": [
+    1,
+    null
+   ],
+   "peas powder": [
+    1,
+    null
+   ],
+   "pigeon peas powder": [
+    1,
+    null
+   ],
+   "pink beans powder": [
+    1,
+    null
+   ],
+   "pinto beans powder": [
+    1,
+    null
+   ],
+   "poblano peppers powder": [
+    null,
+    null
+   ],
+   "pokeberry shoots powder": [
+    null,
+    null
+   ],
+   "portabella mushrooms powder": [
+    null,
+    null
+   ],
+   "potato powder": [
+    1,
+    null
+   ],
+   "pumpkin powder": [
+    null,
+    null
+   ],
+   "pumpkin leaves powder": [
+    null,
+    null
+   ],
+   "purslane powder": [
+    null,
+    null
+   ],
+   "quinoa powder": [
+    1,
+    null
+   ],
+   "radicchio powder": [
+    null,
+    null
+   ],
+   "radishes powder": [
+    null,
+    null
+   ],
+   "ragi powder": [
+    1,
+    null
+   ],
+   "rajma powder": [
+    1,
+    null
+   ],
+   "rice powder": [
+    1,
+    null
+   ],
+   "romaine lettuce powder": [
+    null,
+    null
+   ],
+   "rutabagas powder": [
+    null,
+    null
+   ],
+   "salsify powder": [
+    null,
+    null
+   ],
+   "savoy cabbage powder": [
+    null,
+    null
+   ],
+   "serrano peppers powder": [
+    null,
+    null
+   ],
+   "shallots powder": [
+    null,
+    null
+   ],
+   "shiitake mushrooms powder": [
+    null,
+    null
+   ],
+   "snap beans powder": [
+    null,
+    null
+   ],
+   "soybean powder": [
+    1,
+    null
+   ],
+   "spaghetti squash powder": [
+    null,
+    null
+   ],
+   "spinach powder": [
+    null,
+    null
+   ],
+   "summer squash powder": [
+    null,
+    null
+   ],
+   "sweet peppers powder": [
+    null,
+    null
+   ],
+   "sweet potato leaves powder": [
+    null,
+    null
+   ],
+   "sweet potatoes powder": [
+    null,
+    null
+   ],
+   "swiss chard powder": [
+    null,
+    null
+   ],
+   "taro powder": [
+    null,
+    null
+   ],
+   "taro leaves powder": [
+    null,
+    null
+   ],
+   "taro shoots powder": [
+    null,
+    null
+   ],
+   "tomatillos powder": [
+    null,
+    null
+   ],
+   "tomato powder": [
+    1,
+    null
+   ],
+   "toned milk powder": [
+    1,
+    null
+   ],
+   "toor dal powder": [
+    1,
+    null
+   ],
+   "turnip greens powder": [
+    null,
+    null
+   ],
+   "turnips powder": [
+    null,
+    null
+   ],
+   "urad dal powder": [
+    1,
+    null
+   ],
+   "vinespinach powder": [
+    null,
+    null
+   ],
+   "water convolvulus powder": [
+    null,
+    null
+   ],
+   "watercress powder": [
+    null,
+    null
+   ],
+   "waxgourd powder": [
+    null,
+    null
+   ],
+   "wheat powder": [
+    1,
+    null
+   ],
+   "winged beans powder": [
+    1,
+    null
+   ],
+   "winter squash powder": [
+    null,
+    null
+   ],
+   "witloof chicory powder": [
+    null,
+    null
+   ],
+   "yam powder": [
+    null,
+    null
+   ],
+   "yambean powder": [
+    null,
+    null
+   ],
+   "yardlong beans powder": [
+    1,
+    null
+   ],
+   "yautia powder": [
+    null,
+    null
+   ],
+   "yeast powder": [
+    1,
+    null
+   ],
+   "zucchini powder": [
+    null,
+    null
+   ],
+   "100% acorn squash powder": [
+    null,
+    1
+   ],
+   "100% amaranth leaves powder": [
+    null,
+    1
+   ],
+   "100% arrowhead powder": [
+    null,
+    1
+   ],
+   "100% artichokes powder": [
+    null,
+    1
+   ],
+   "100% arugula powder": [
+    null,
+    1
+   ],
+   "100% asparagus powder": [
+    null,
+    1
+   ],
+   "100% balsam-pear powder": [
+    null,
+    1
+   ],
+   "100% bamboo shoots powder": [
+    null,
+    1
+   ],
+   "100% banana peppers powder": [
+    null,
+    1
+   ],
+   "100% beet greens powder": [
+    null,
+    1
+   ],
+   "100% bell peppers powder": [
+    null,
+    1
+   ],
+   "100% bok choy cabbage powder": [
+    null,
+    1
+   ],
+   "100% borage powder": [
+    null,
+    1
+   ],
+   "100% broccoli powder": [
+    null,
+    1
+   ],
+   "100% broccoli raab powder": [
+    null,
+    1
+   ],
+   "100% brussels sprouts powder": [
+    null,
+    1
+   ],
+   "100% burdock root powder": [
+    null,
+    1
+   ],
+   "100% butterbur powder": [
+    null,
+    1
+   ],
+   "100% butterhead lettuce powder": [
+    null,
+    1
+   ],
+   "100% butternut squash powder": [
+    null,
+    1
+   ],
+   "100% cardoon powder": [
+    null,
+    1
+   ],
+   "100% cassava powder": [
+    null,
+    1
+   ],
+   "100% cauliflower powder": [
+    null,
+    1
+   ],
+   "100% celeriac powder": [
+    null,
+    1
+   ],
+   "100% celtuce powder": [
+    null,
+    1
+   ],
+   "100% chanterelle mushrooms powder": [
+    null,
+    1
+   ],
+   "100% chayote powder": [
+    null,
+    1
+   ],
+   "100% chicory greens powder": [
+    null,
+    1
+   ],
+   "100% chicory roots powder": [
+    null,
+    1
+   ],
+   "100% chinese broccoli powder": [
+    null,
+    1
+   ],
+   "100% chinese cabbage powder": [
+    null,
+    1
+   ],
+   "100% chinese waterchestnuts powder": [
+    null,
+    1
+   ],
+   "100% chrysanthemum leaves powder": [
+    null,
+    1
+   ],
+   "100% collards powder": [
+    null,
+    1
+   ],
+   "100% cornsalad powder": [
+    null,
+    1
+   ],
+   "100% crimini mushrooms powder": [
+    null,
+    1
+   ],
+   "100% dandelion greens powder": [
+    null,
+    1
+   ],
+   "100% dishcloth gourd powder": [
+    null,
+    1
+   ],
+   "100% dock powder": [
+    null,
+    1
+   ],
+   "100% drumstick leaves powder": [
+    null,
+    1
+   ],
+   "100% drumstick pods powder": [
+    null,
+    1
+   ],
+   "100% eggplant powder": [
+    null,
+    1
+   ],
+   "100% endive powder": [
+    null,
+    1
+   ],
+   "100% enoki mushrooms powder": [
+    null,
+    1
+   ],
+   "100% eppaw powder": [
+    null,
+    1
+   ],
+   "100% garden cress powder": [
+    null,
+    1
+   ],
+   "100% garland chrysanthemum powder": [
+    null,
+    1
+   ],
+   "100% grape leaves powder": [
+    null,
+    1
+   ],
+   "100% hawaii mountain yam powder": [
+    null,
+    1
+   ],
+   "100% hot chili peppers powder": [
+    null,
+    1
+   ],
+   "100% hubbard squash powder": [
+    null,
+    1
+   ],
+   "100% iceberg lettuce powder": [
+    null,
+    1
+   ],
+   "100% jalapeno peppers powder": [
+    null,
+    1
+   ],
+   "100% jerusalem-artichokes powder": [
+    null,
+    1
+   ],
+   "100% jew's ear powder": [
+    null,
+    1
+   ],
+   "100% jute powder": [
+    null,
+    1
+   ],
+   "100% kale powder": [
+    null,
+    1
+   ],
+   "100% kohlrabi powder": [
+    null,
+    1
+   ],
+   "100% lambsquarters powder": [
+    null,
+    1
+   ],
+   "100% leaf lettuce powder": [
+    null,
+    1
+   ],
+   "100% leeks powder": [
+    null,
+    1
+   ],
+   "100% lotus root powder": [
+    null,
+    1
+   ],
+   "100% maitake mushrooms powder": [
+    null,
+    1
+   ],
+   "100% morel mushrooms powder": [
+    null,
+    1
+   ],
+   "100% mustard greens powder": [
+    null,
+    1
+   ],
+   "100% mustard spinach powder": [
+    null,
+    1
+   ],
+   "100% napa cabbage powder": [
+    null,
+    1
+   ],
+   "100% new zealand spinach powder": [
+    null,
+    1
+   ],
+   "100% nopales powder": [
+    null,
+    1
+   ],
+   "100% okra powder": [
+    null,
+    1
+   ],
+   "100% oriental radishes powder": [
+    null,
+    1
+   ],
+   "100% oyster mushrooms powder": [
+    null,
+    1
+   ],
+   "100% parsnips powder": [
+    null,
+    1
+   ],
+   "100% poblano peppers powder": [
+    null,
+    1
+   ],
+   "100% pokeberry shoots powder": [
+    null,
+    1
+   ],
+   "100% portabella mushrooms powder": [
+    null,
+    1
+   ],
+   "100% pumpkin powder": [
+    null,
+    1
+   ],
+   "100% pumpkin leaves powder": [
+    null,
+    1
+   ],
+   "100% purslane powder": [
+    null,
+    1
+   ],
+   "100% radicchio powder": [
+    null,
+    1
+   ],
+   "100% radishes powder": [
+    null,
+    1
+   ],
+   "100% romaine lettuce powder": [
+    null,
+    1
+   ],
+   "100% rutabagas powder": [
+    null,
+    1
+   ],
+   "100% salsify powder": [
+    null,
+    1
+   ],
+   "100% savoy cabbage powder": [
+    null,
+    1
+   ],
+   "100% serrano peppers powder": [
+    null,
+    1
+   ],
+   "100% shallots powder": [
+    null,
+    1
+   ],
+   "100% shiitake mushrooms powder": [
+    null,
+    1
+   ],
+   "100% snap beans powder": [
+    null,
+    1
+   ],
+   "100% spaghetti squash powder": [
+    null,
+    1
+   ],
+   "100% spinach powder": [
+    null,
+    1
+   ],
+   "100% summer squash powder": [
+    null,
+    1
+   ],
+   "100% sweet peppers powder": [
+    null,
+    1
+   ],
+   "100% sweet potato leaves powder": [
+    null,
+    1
+   ],
+   "100% sweet potatoes powder": [
+    null,
+    1
+   ],
+   "100% swiss chard powder": [
+    null,
+    1
+   ],
+   "100% taro powder": [
+    null,
+    1
+   ],
+   "100% taro leaves powder": [
+    null,
+    1
+   ],
+   "100% taro shoots powder": [
+    null,
+    1
+   ],
+   "100% tomatillos powder": [
+    null,
+    1
+   ],
+   "100% turnip greens powder": [
+    null,
+    1
+   ],
+   "100% turnips powder": [
+    null,
+    1
+   ],
+   "100% vinespinach powder": [
+    null,
+    1
+   ],
+   "100% water convolvulus powder": [
+    null,
+    1
+   ],
+   "100% watercress powder": [
+    null,
+    1
+   ],
+   "100% waxgourd powder": [
+    null,
+    1
+   ],
+   "100% winter squash powder": [
+    null,
+    1
+   ],
+   "100% witloof chicory powder": [
+    null,
+    1
+   ],
+   "100% yam powder": [
+    null,
+    1
+   ],
+   "100% yambean powder": [
+    null,
+    1
+   ],
+   "100% yautia powder": [
+    null,
+    1
+   ],
+   "100% zucchini powder": [
+    null,
+    1
+   ],
+   "whole acorn squash powder": [
+    null,
+    1
+   ],
+   "whole amaranth leaves powder": [
+    null,
+    1
+   ],
+   "whole arrowhead powder": [
+    null,
+    1
+   ],
+   "whole artichokes powder": [
+    null,
+    1
+   ],
+   "whole arugula powder": [
+    null,
+    1
+   ],
+   "whole asparagus powder": [
+    null,
+    1
+   ],
+   "whole balsam-pear powder": [
+    null,
+    1
+   ],
+   "whole bamboo shoots powder": [
+    null,
+    1
+   ],
+   "whole banana peppers powder": [
+    null,
+    1
+   ],
+   "whole beet greens powder": [
+    null,
+    1
+   ],
+   "whole bell peppers powder": [
+    null,
+    1
+   ],
+   "whole bok choy cabbage powder": [
+    null,
+    1
+   ],
+   "whole borage powder": [
+    null,
+    1
+   ],
+   "whole broccoli powder": [
+    null,
+    1
+   ],
+   "whole broccoli raab powder": [
+    null,
+    1
+   ],
+   "whole brussels sprouts powder": [
+    null,
+    1
+   ],
+   "whole buffalo milk powder": [
+    1,
+    null
+   ],
+   "whole burdock root powder": [
+    null,
+    1
+   ],
+   "whole butterbur powder": [
+    null,
+    1
+   ],
+   "whole butterhead lettuce powder": [
+    null,
+    1
+   ],
+   "whole butternut squash powder": [
+    null,
+    1
+   ],
+   "whole cardoon powder": [
+    null,
+    1
+   ],
+   "whole cassava powder": [
+    null,
+    1
+   ],
+   "whole cauliflower powder": [
+    null,
+    1
+   ],
+   "whole celeriac powder": [
+    null,
+    1
+   ],
+   "whole celtuce powder": [
+    null,
+    1
+   ],
+   "whole chanterelle mushrooms powder": [
+    null,
+    1
+   ],
+   "whole chayote powder": [
+    null,
+    1
+   ],
+   "whole chicory greens powder": [
+    null,
+    1
+   ],
+   "whole chicory roots powder": [
+    null,
+    1
+   ],
+   "whole chinese broccoli powder": [
+    null,
+    1
+   ],
+   "whole chinese cabbage powder": [
+    null,
+    1
+   ],
+   "whole chinese waterchestnuts powder": [
+    null,
+    1
+   ],
+   "whole chrysanthemum leaves powder": [
+    null,
+    1
+   ],
+   "whole collards powder": [
+    null,
+    1
+   ],
+   "whole cornsalad powder": [
+    null,
+    1
+   ],
+   "whole crimini mushrooms powder": [
+    null,
+    1
+   ],
+   "whole dandelion greens powder": [
+    null,
+    1
+   ],
+   "whole dishcloth gourd powder": [
+    null,
+    1
+   ],
+   "whole dock powder": [
+    null,
+    1
+   ],
+   "whole drumstick leaves powder": [
+    null,
+    1
+   ],
+   "whole drumstick pods powder": [
+    null,
+    1
+   ],
+   "whole eggplant powder": [
+    null,
+    1
+   ],
+   "whole endive powder": [
+    null,
+    1
+   ],
+   "whole enoki mushrooms powder": [
+    null,
+    1
+   ],
+   "whole eppaw powder": [
+    null,
+    1
+   ],
+   "whole garden cress powder": [
+    null,
+    1
+   ],
+   "whole garland chrysanthemum powder": [
+    null,
+    1
+   ],
+   "whole grape leaves powder": [
+    null,
+    1
+   ],
+   "whole hawaii mountain yam powder": [
+    null,
+    1
+   ],
+   "whole hot chili peppers powder": [
+    null,
+    1
+   ],
+   "whole hubbard squash powder": [
+    null,
+    1
+   ],
+   "whole iceberg lettuce powder": [
+    null,
+    1
+   ],
+   "whole jalapeno peppers powder": [
+    null,
+    1
+   ],
+   "whole jerusalem-artichokes powder": [
+    null,
+    1
+   ],
+   "whole jew's ear powder": [
+    null,
+    1
+   ],
+   "whole jute powder": [
+    null,
+    1
+   ],
+   "whole kale powder": [
+    null,
+    1
+   ],
+   "whole kohlrabi powder": [
+    null,
+    1
+   ],
+   "whole lambsquarters powder": [
+    null,
+    1
+   ],
+   "whole leaf lettuce powder": [
+    null,
+    1
+   ],
+   "whole leeks powder": [
+    null,
+    1
+   ],
+   "whole lotus root powder": [
+    null,
+    1
+   ],
+   "whole maitake mushrooms powder": [
+    null,
+    1
+   ],
+   "whole milk powder": [
+    1,
+    null
+   ],
+   "whole milk solids powder": [
+    1,
+    null
+   ],
+   "whole morel mushrooms powder": [
+    null,
+    1
+   ],
+   "whole mustard greens powder": [
+    null,
+    1
+   ],
+   "whole mustard spinach powder": [
+    null,
+    1
+   ],
+   "whole napa cabbage powder": [
+    null,
+    1
+   ],
+   "whole new zealand spinach powder": [
+    null,
+    1
+   ],
+   "whole nopales powder": [
+    null,
+    1
+   ],
+   "whole okra powder": [
+    null,
+    1
+   ],
+   "whole oriental radishes powder": [
+    null,
+    1
+   ],
+   "whole oyster mushrooms powder": [
+    null,
+    1
+   ],
+   "whole parsnips powder": [
+    null,
+    1
+   ],
+   "whole poblano peppers powder": [
+    null,
+    1
+   ],
+   "whole pokeberry shoots powder": [
+    null,
+    1
+   ],
+   "whole portabella mushrooms powder": [
+    null,
+    1
+   ],
+   "whole pumpkin powder": [
+    null,
+    1
+   ],
+   "whole pumpkin leaves powder": [
+    null,
+    1
+   ],
+   "whole purslane powder": [
+    null,
+    1
+   ],
+   "whole radicchio powder": [
+    null,
+    1
+   ],
+   "whole radishes powder": [
+    null,
+    1
+   ],
+   "whole romaine lettuce powder": [
+    null,
+    1
+   ],
+   "whole rutabagas powder": [
+    null,
+    1
+   ],
+   "whole salsify powder": [
+    null,
+    1
+   ],
+   "whole savoy cabbage powder": [
+    null,
+    1
+   ],
+   "whole serrano peppers powder": [
+    null,
+    1
+   ],
+   "whole shallots powder": [
+    null,
+    1
+   ],
+   "whole shiitake mushrooms powder": [
+    null,
+    1
+   ],
+   "whole snap beans powder": [
+    null,
+    1
+   ],
+   "whole spaghetti squash powder": [
+    null,
+    1
+   ],
+   "whole spinach powder": [
+    null,
+    1
+   ],
+   "whole summer squash powder": [
+    null,
+    1
+   ],
+   "whole sweet peppers powder": [
+    null,
+    1
+   ],
+   "whole sweet potato leaves powder": [
+    null,
+    1
+   ],
+   "whole sweet potatoes powder": [
+    null,
+    1
+   ],
+   "whole swiss chard powder": [
+    null,
+    1
+   ],
+   "whole taro powder": [
+    null,
+    1
+   ],
+   "whole taro leaves powder": [
+    null,
+    1
+   ],
+   "whole taro shoots powder": [
+    null,
+    1
+   ],
+   "whole tomatillos powder": [
+    null,
+    1
+   ],
+   "whole toned milk powder": [
+    1,
+    null
+   ],
+   "whole turnip greens powder": [
+    null,
+    1
+   ],
+   "whole turnips powder": [
+    null,
+    1
+   ],
+   "whole vinespinach powder": [
+    null,
+    1
+   ],
+   "whole water convolvulus powder": [
+    null,
+    1
+   ],
+   "whole watercress powder": [
+    null,
+    1
+   ],
+   "whole waxgourd powder": [
+    null,
+    1
+   ],
+   "whole winter squash powder": [
+    null,
+    1
+   ],
+   "whole witloof chicory powder": [
+    null,
+    1
+   ],
+   "whole yam powder": [
+    null,
+    1
+   ],
+   "whole yambean powder": [
+    null,
+    1
+   ],
+   "whole yautia powder": [
+    null,
+    1
+   ],
+   "whole zucchini powder": [
+    null,
+    1
+   ]
+  },
+  "group1_after_forms_not_stated": [],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "salted potatoes": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "potatoes (salted)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "potatoes (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pickled cucumber": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: pickled cucumber",
+   "unassessed_after": [
+    "pickled cucumber"
+   ]
+  },
+  "cucumber (pickled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cucumber",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume or vegetable (cucumber (pickled)): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "onions (pickled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "onion",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume or vegetable (onions (pickled)): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "tomatoes (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "tomato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume or vegetable (tomatoes (canned)): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "canned tomatoes": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: canned tomatoes",
+   "unassessed_after": [
+    "canned tomatoes"
+   ]
+  },
+  "tomato puree": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tomato puree",
+   "unassessed_after": [
+    "tomato puree"
+   ]
+  },
+  "tomato sauce": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tomato sauce",
+   "unassessed_after": [
+    "tomato sauce"
+   ]
+  },
+  "mushrooms in brine": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: mushrooms in brine",
+   "unassessed_after": [
+    "mushrooms in brine"
+   ]
+  },
+  "carrots (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sweetened carrots": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sweetened carrots",
+   "unassessed_after": [
+    "sweetened carrots"
+   ]
+  },
+  "carrots (sweetened)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "potato chips": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: potato chips",
+   "unassessed_after": [
+    "potato chips"
+   ]
+  },
+  "french fries": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: french fries",
+   "unassessed_after": [
+    "french fries"
+   ]
+  },
+  "mashed potatoes": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: mashed potatoes",
+   "unassessed_after": [
+    "mashed potatoes"
+   ]
+  },
+  "potato flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "potato flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "vegetable juice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: vegetable juice",
+   "unassessed_after": [
+    "vegetable juice"
+   ]
+  },
+  "sauerkraut": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: sauerkraut",
+   "unassessed_after": [
+    "sauerkraut"
+   ]
+  },
+  "kimchi": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: kimchi",
+   "unassessed_after": [
+    "kimchi"
+   ]
+  },
+  "spinach (tinned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume or vegetable (spinach (tinned)): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "beets (bottled)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: beets (bottled)",
+   "unassessed_after": [
+    "beets (bottled)"
+   ]
+  },
+  "salted kale": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "kale",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cabbage (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cabbage",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume or vegetable (cabbage (preserved)): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "corn on the cob": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: corn on the cob",
+   "unassessed_after": [
+    "corn on the cob"
+   ]
+  },
+  "tomato ketchup": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tomato ketchup",
+   "unassessed_after": [
+    "tomato ketchup"
+   ]
+  },
+  "spinach powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (spinach powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "rice, spinach powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (spinach powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "spinach extract powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: spinach extract powder",
+   "unassessed_after": [
+    "spinach extract powder"
+   ]
+  },
+  "beet red powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: beet red powder",
+   "unassessed_after": [
+    "beet red powder"
+   ]
+  },
+  "celery powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: celery powder",
+   "unassessed_after": [
+    "celery powder"
+   ]
+  },
+  "arrowroot powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: arrowroot powder",
+   "unassessed_after": [
+    "arrowroot powder"
+   ]
+  },
+  "spinach powder (maltodextrin)": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "\"maltodextrin\" (derived_substance)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "spinach & kale powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (kale powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "seasoning blend (spinach powder, salt)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (spinach powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": [
+    "seasoning blend (group name; its contents were assessed separately)"
+   ]
+  },
+  "rice, spinach powder, xq9": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: xq9",
+   "unassessed_after": [
+    "xq9"
+   ]
+  },
+  "rice, spinach powder, flavouring xq9": {
+   "group_before": 4,
+   "group_after": 4,
+   "row_after": null,
+   "drivers_after": [
+    "\"flavour\" (cosmetic_additive)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "carrot powder": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (carrot powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "onion powder": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "onion",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (onion powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "salted potatoes powder": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "spinach": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kale": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "kale",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "tomatoes": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "tomato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "tomato": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "tomato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "potato": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "onion": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "onion",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "carrot": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cucumber": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cucumber",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cabbage": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cabbage",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "shiitake mushrooms": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "shiitake mushrooms",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sweet potatoes": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sweet potatoes",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "bell peppers": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "bell peppers",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "unsalted carrots": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "carrots (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "carrots (salt free)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "boiled potatoes": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "carrots (frozen)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "carrot",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "spinach (cooked)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, salt, carrots": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, carrots": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  },
+  "okra": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "okra",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "green onions": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "onion",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% spinach powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "spinach powder (100%)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole spinach powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "dried spinach": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

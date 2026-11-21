@@ -496,11 +496,12 @@
     function sweetenerFoodsOnly(ing) {
       if (ing.ins.length || !ing.inner || (ing.name !== "sweetener" && ing.name !== "natural sweetener")) return false;
       const parts = ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim()).filter(Boolean);
-      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "legume" || r.kind === "culinary"); });
+      return parts.length > 0 && parts.every((p) => { const r = lookup(p); return r !== null && (r.kind === "whole_food" || r.kind === "legume" || r.kind === "vegetable" || r.kind === "culinary"); });
     }
     // item-level condition for the nut/seed rows (mirrors classify.nut_added_salt_or_sugar)
     const NUT_ADDED = new Set(["salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup"]);
     // legume rows (kind legume): the same item-level condition plus brine (mirrors classify.legume_added_salt_sugar_or_brine)
+    const BRINE_KINDS = ["legume", "vegetable"];
     const LEGUME_ADDED = new Set([...NUT_ADDED, "brine", "brined"]);
     function addedIn(ing, words) {
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
@@ -514,6 +515,16 @@
     }
     const LEGUME_PRESERVED = new Set(["canned", "tinned", "bottled", "jarred", "preserved", "pickled"]);
     const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
+    // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour
+    const POWDER_WORDS = new Set(["powder", "powdered"]);
+    const POWDER_ROUTED = ["whole_food", "legume", "vegetable"];
+    function powderCompositionStated(ing) {
+      if (/(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase())) return true;
+      const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
+      const row = lookup(ing.name);
+      return toks.includes("whole") && !toks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
+    }
+    const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED);
     function hitsFor(ing) {
@@ -559,21 +570,21 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const kinds = ings.map((i) => lookup(i.name).kind);
+      const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
-      const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (kinds[n] === "legume" && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
-      const legumePreserved = ings.filter((i, n) => kinds[n] === "legume" && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
-      if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume (" + legumePreserved.join("; ") + "): FAO Group 3 names legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established" };
-      if (ings.length === 1 && (kinds[0] === "nut_seed" || kinds[0] === "legume"))
+      const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (BRINE_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i))).map((i) => i.raw);
+      const legumePreserved = ings.filter((i, n) => BRINE_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
+      if (legumePreserved.length) return { group: null, drivers: [], reason: "a canned, bottled or preserved legume or vegetable (" + legumePreserved.join("; ") + "): FAO Group 3 names vegetables and legumes preserved in brine, but the item does not say that salt, sugar or brine is added, so neither Group 1 nor Group 3 is established" };
+      if (ings.length === 1 && (kinds[0] === "nut_seed" || BRINE_KINDS.includes(kinds[0])))
         return nutSalted.length
-          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
+          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
-      if (ings.length === 1 && kinds[0] === "food_powder")
-        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+      if (ings.length === 1 && kinds[0] === "food_powder" && powderCompositionStated(ings[0]))
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")
         return { group: 2, drivers: [{ ingredient: ings[0].raw, detail: "single processed culinary ingredient", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       const rows = ings.map((i) => lookup(i.name));
@@ -583,10 +594,10 @@
       const powders = ings.filter((i, n) => kinds[n] === "food_powder").map((i) => i.raw);
       if (powders.length) return { group: null, drivers: [], reason: "a powder of a food (" + powders.join("; ") + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" };
       if (kinds.includes("flour")) return { group: null, drivers: [], reason: "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list" };
-      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed" || k === "legume");
+      const hasFood = substantive.some(([, k]) => k === "whole_food" || k === "nut_seed" || k === "legume" || k === "vegetable");
       const hasCulinary = substantive.some(([, k]) => k === "culinary") || nutSalted.length > 0;
       if (hasFood && hasCulinary)
-        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + (k === "nut_seed" || k === "legume" ? "whole food" : k.replace(/_/g, " ")), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
+        return { group: 3, drivers: substantive.map(([i, k]) => ({ ingredient: i.raw, detail: "recognised " + (k === "nut_seed" || BRINE_KINDS.includes(k) ? "whole food" : k.replace(/_/g, " ")), source: lookup(i.name).source, section: i.section ?? null })), reason: null };
       return { group: null, drivers: [], reason: "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern" };
     }
 

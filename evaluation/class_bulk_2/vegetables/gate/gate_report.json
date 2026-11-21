@@ -1,0 +1,1161 @@
+{
+  "rule_id": "class-vegetables-1",
+  "staged": 122,
+  "ready": [
+    "acorn squash",
+    "amaranth leaves",
+    "arrowhead",
+    "artichokes",
+    "arugula",
+    "asparagus",
+    "balsam-pear",
+    "bamboo shoots",
+    "banana peppers",
+    "beet greens",
+    "bell peppers",
+    "bok choy cabbage",
+    "borage",
+    "broccoli",
+    "broccoli raab",
+    "brussels sprouts",
+    "burdock root",
+    "butterbur",
+    "butterhead lettuce",
+    "butternut squash",
+    "cardoon",
+    "cassava",
+    "cauliflower",
+    "celeriac",
+    "celtuce",
+    "chanterelle mushrooms",
+    "chayote",
+    "chicory greens",
+    "chicory roots",
+    "chinese broccoli",
+    "chinese cabbage",
+    "chinese waterchestnuts",
+    "chrysanthemum leaves",
+    "collards",
+    "cornsalad",
+    "crimini mushrooms",
+    "dandelion greens",
+    "dishcloth gourd",
+    "dock",
+    "drumstick leaves",
+    "drumstick pods",
+    "eggplant",
+    "endive",
+    "enoki mushrooms",
+    "eppaw",
+    "garden cress",
+    "garland chrysanthemum",
+    "grape leaves",
+    "hawaii mountain yam",
+    "hot chili peppers",
+    "hubbard squash",
+    "iceberg lettuce",
+    "jalapeno peppers",
+    "jerusalem-artichokes",
+    "jew's ear",
+    "jute",
+    "kale",
+    "kohlrabi",
+    "lambsquarters",
+    "leaf lettuce",
+    "leeks",
+    "lotus root",
+    "maitake mushrooms",
+    "morel mushrooms",
+    "mustard greens",
+    "mustard spinach",
+    "napa cabbage",
+    "new zealand spinach",
+    "nopales",
+    "okra",
+    "oriental radishes",
+    "oyster mushrooms",
+    "parsnips",
+    "poblano peppers",
+    "pokeberry shoots",
+    "portabella mushrooms",
+    "pumpkin",
+    "pumpkin leaves",
+    "purslane",
+    "radicchio",
+    "radishes",
+    "romaine lettuce",
+    "rutabagas",
+    "salsify",
+    "savoy cabbage",
+    "serrano peppers",
+    "shallots",
+    "shiitake mushrooms",
+    "snap beans",
+    "spaghetti squash",
+    "spinach",
+    "summer squash",
+    "sweet peppers",
+    "sweet potato leaves",
+    "sweet potatoes",
+    "swiss chard",
+    "taro",
+    "taro leaves",
+    "taro shoots",
+    "tomatillos",
+    "turnip greens",
+    "turnips",
+    "vinespinach",
+    "water convolvulus",
+    "watercress",
+    "waxgourd",
+    "white mushrooms",
+    "white-flowered gourd",
+    "winter squash",
+    "witloof chicory",
+    "yam",
+    "yambean",
+    "yautia",
+    "zucchini"
+  ],
+  "duplicates": {
+    "bok choy cabbage": {
+      "variant_of": [
+        "cabbage"
+      ]
+    },
+    "cabbage": {
+      "duplicate": "exact lexicon term (kind whole_food)"
+    },
+    "carrots": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "chinese cabbage": {
+      "variant_of": [
+        "cabbage"
+      ]
+    },
+    "cucumber": {
+      "duplicate": "exact lexicon term (kind whole_food)"
+    },
+    "fennel": {
+      "duplicate": "exact lexicon term (kind herb_spice)",
+      "variant_of": [
+        "fennel seeds"
+      ]
+    },
+    "green onions": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "mustard greens": {
+      "variant_of": [
+        "mustard"
+      ]
+    },
+    "mustard spinach": {
+      "variant_of": [
+        "mustard"
+      ]
+    },
+    "napa cabbage": {
+      "variant_of": [
+        "cabbage"
+      ]
+    },
+    "onions": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "potatoes": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "pumpkin": {
+      "variant_of": [
+        "pumpkin seeds"
+      ]
+    },
+    "savoy cabbage": {
+      "variant_of": [
+        "cabbage"
+      ]
+    },
+    "snap beans": {
+      "variant_of": [
+        "beans"
+      ]
+    },
+    "tomatoes": {
+      "duplicate": "already recognised by this build (descriptors, plurals or synonyms)"
+    },
+    "water convolvulus": {
+      "variant_of": [
+        "water"
+      ]
+    }
+  },
+  "synonym_rows": [],
+  "separate_rows": {
+    "bok choy cabbage": "a named cabbage type kept as its own food name next to the untouched generic 'cabbage' row",
+    "chinese cabbage": "a named cabbage type (pe-tsai) next to the generic 'cabbage' row",
+    "napa cabbage": "a named cabbage type next to the generic 'cabbage' row (whether napa and chinese cabbage are one food is not stated by FDC; both kept)",
+    "savoy cabbage": "a named cabbage type next to the generic 'cabbage' row",
+    "snap beans": "a named bean pod vegetable next to the untouched generic 'beans' legume row",
+    "mustard greens": "the leaf vegetable; 'mustard' is the seed spice, a different plant part, left untouched",
+    "mustard spinach": "a leaf vegetable (tendergreen); 'mustard' is the seed spice, left untouched",
+    "pumpkin": "the fruit-vegetable; 'pumpkin seeds' is a different plant part (nut_seed row), left untouched",
+    "water convolvulus": "a leaf vegetable; the shared word 'water' with the existing 'water' row is incidental (false variant match)"
+  },
+  "policy_id": "variant-policy-class-vegetables-1",
+  "policy_errors": [],
+  "schema_errors": {},
+  "provenance_errors": {},
+  "ambiguity_queue": [
+    {
+      "term": "Garlic, raw",
+      "source_row": "fdc_foundation:1104647",
+      "origin": "clause_tier",
+      "reason_code": "queue_garlic",
+      "reason": "an herb or spice per FDC in other records; kept out of this batch until the owner decides garlic's class (existing label vocabulary).",
+      "description": "Garlic, raw"
+    },
+    {
+      "term": "Mushroom, lion's mane",
+      "source_row": "fdc_foundation:1750344",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, lion's mane"
+    },
+    {
+      "term": "Mushroom, oyster",
+      "source_row": "fdc_foundation:1750345",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, oyster"
+    },
+    {
+      "term": "Mushrooms, shiitake",
+      "source_row": "fdc_foundation:1750346",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushrooms, shiitake"
+    },
+    {
+      "term": "Mushrooms, white button",
+      "source_row": "fdc_foundation:1750347",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushrooms, white button"
+    },
+    {
+      "term": "Spinach, baby",
+      "source_row": "fdc_foundation:1750352",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Spinach, baby"
+    },
+    {
+      "term": "Spinach, mature",
+      "source_row": "fdc_foundation:1750353",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Spinach, mature"
+    },
+    {
+      "term": "Tomato, roma",
+      "source_row": "fdc_foundation:1750354",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Tomato, roma"
+    },
+    {
+      "term": "Mushroom, lion's mane",
+      "source_row": "fdc_foundation:1999626",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, lion's mane"
+    },
+    {
+      "term": "Mushrooms, shiitake",
+      "source_row": "fdc_foundation:1999628",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushrooms, shiitake"
+    },
+    {
+      "term": "Mushrooms, white button",
+      "source_row": "fdc_foundation:1999629",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushrooms, white button"
+    },
+    {
+      "term": "Spinach, baby",
+      "source_row": "fdc_foundation:1999632",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Spinach, baby"
+    },
+    {
+      "term": "Mushroom, portabella",
+      "source_row": "fdc_foundation:2003598",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, portabella"
+    },
+    {
+      "term": "Mushroom, king oyster",
+      "source_row": "fdc_foundation:2003599",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, king oyster"
+    },
+    {
+      "term": "Mushroom, enoki",
+      "source_row": "fdc_foundation:2003600",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, enoki"
+    },
+    {
+      "term": "Mushroom, crimini",
+      "source_row": "fdc_foundation:2003601",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, crimini"
+    },
+    {
+      "term": "Mushroom, maitake",
+      "source_row": "fdc_foundation:2003602",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, maitake"
+    },
+    {
+      "term": "Mushroom, beech",
+      "source_row": "fdc_foundation:2003603",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, beech"
+    },
+    {
+      "term": "Mushroom, pioppini",
+      "source_row": "fdc_foundation:2003604",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Mushroom, pioppini"
+    },
+    {
+      "term": "celery",
+      "source_row": "fdc_foundation:2346405",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "NAME COLLISION (observed in out-of-sample label S12 'Celery Powder'): 'powder' is a descriptor, so a celery powder (used as a curing/nitrite source) would be read as the plain vegetable celery and leave the unassessed list; QUEUED for an owner decision on the powder descriptor.",
+      "description": "Celery, raw"
+    },
+    {
+      "term": "beets",
+      "source_row": "fdc_foundation:2685576",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "NAME COLLISION (observed in out-of-sample label S30 'Beet Red Powder'): 'red' and 'powder' are descriptors, so 'beet red powder' (the beetroot red colour, E162) would be read as the vegetable beets and leave the unassessed list; QUEUED for an owner decision on descriptor handling. 'beet greens' is unaffected.",
+      "description": "Beets, raw"
+    },
+    {
+      "term": "Corn, sweet, yellow and white kernels,  fresh, raw",
+      "source_row": "fdc_foundation:2710826",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, yellow and white kernels,  fresh, raw"
+    },
+    {
+      "term": "Seaweed, Canadian Cultivated EMI-TSUNOMATA, dry",
+      "source_row": "fdc_sr_legacy:167602",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, Canadian Cultivated EMI-TSUNOMATA, dry"
+    },
+    {
+      "term": "Seaweed, Canadian Cultivated EMI-TSUNOMATA, rehydrated",
+      "source_row": "fdc_sr_legacy:167603",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, Canadian Cultivated EMI-TSUNOMATA, rehydrated"
+    },
+    {
+      "term": "Hearts of palm, raw",
+      "source_row": "fdc_sr_legacy:167714",
+      "origin": "clause_tier",
+      "reason_code": "queue_hearts_of_palm",
+      "reason": "stem of a palm: the plant-part basis is not named by the clause; QUEUE.",
+      "description": "Hearts of palm, raw"
+    },
+    {
+      "term": "Yeast extract spread",
+      "source_row": "fdc_sr_legacy:167717",
+      "origin": "clause_tier",
+      "reason_code": "queue_yeast",
+      "reason": "not a vegetable.",
+      "description": "Yeast extract spread"
+    },
+    {
+      "term": "Alfalfa seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:168384",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Alfalfa seeds, sprouted, raw"
+    },
+    {
+      "term": "leafy tips balsam-pear",
+      "source_row": "fdc_sr_legacy:168391",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon",
+      "description": "Balsam-pear (bitter gourd), leafy tips, raw"
+    },
+    {
+      "term": "Lima beans, immature seeds, raw",
+      "source_row": "fdc_sr_legacy:168396",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Lima beans, immature seeds, raw"
+    },
+    {
+      "term": "Corn, sweet, yellow, frozen, kernels cut off cob, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "source_row": "fdc_sr_legacy:168398",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, yellow, frozen, kernels cut off cob, unprepared (Includes foods for USDA's Food Distribution Program)"
+    },
+    {
+      "term": "Corn, sweet, yellow, frozen, kernels on cob, unprepared",
+      "source_row": "fdc_sr_legacy:168400",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, yellow, frozen, kernels on cob, unprepared"
+    },
+    {
+      "term": "Cowpeas (blackeyes), immature seeds, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:168403",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Cowpeas (blackeyes), immature seeds, frozen, unprepared"
+    },
+    {
+      "term": "Cowpeas, young pods with seeds, raw",
+      "source_row": "fdc_sr_legacy:168405",
+      "origin": "clause_tier",
+      "reason_code": "queue_cowpeas",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Cowpeas, young pods with seeds, raw"
+    },
+    {
+      "term": "Edamame, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:168410",
+      "origin": "clause_tier",
+      "reason_code": "queue_edamame",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Edamame, frozen, unprepared"
+    },
+    {
+      "term": "Pepeao, dried",
+      "source_row": "fdc_sr_legacy:168418",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Pepeao, dried"
+    },
+    {
+      "term": "Lentils, sprouted, raw",
+      "source_row": "fdc_sr_legacy:168427",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Lentils, sprouted, raw"
+    },
+    {
+      "term": "Mushrooms, shiitake, dried",
+      "source_row": "fdc_sr_legacy:168436",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Mushrooms, shiitake, dried"
+    },
+    {
+      "term": "Radishes, oriental, dried",
+      "source_row": "fdc_sr_legacy:168453",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Radishes, oriental, dried"
+    },
+    {
+      "term": "Seaweed, irishmoss, raw",
+      "source_row": "fdc_sr_legacy:168456",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, irishmoss, raw"
+    },
+    {
+      "term": "Seaweed, kelp, raw",
+      "source_row": "fdc_sr_legacy:168457",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, kelp, raw"
+    },
+    {
+      "term": "Seaweed, laver, raw",
+      "source_row": "fdc_sr_legacy:168458",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, laver, raw"
+    },
+    {
+      "term": "Sesbania flower, raw",
+      "source_row": "fdc_sr_legacy:168459",
+      "origin": "clause_tier",
+      "reason_code": "queue_flower",
+      "reason": "an edible flower is not established as a vegetable by the clause; QUEUE.",
+      "description": "Sesbania flower, raw"
+    },
+    {
+      "term": "arrowroot",
+      "source_row": "fdc_sr_legacy:168490",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "NAME COLLISION (measured): 'powder' is a descriptor, so 'arrowroot powder' (a starch extracted from the root, a FAO Group 2 'starch' example) would be read as the plain root and answer Group 1; QUEUED for an owner decision on descriptor handling.",
+      "description": "Arrowroot, raw"
+    },
+    {
+      "term": "Corn, sweet, white, raw",
+      "source_row": "fdc_sr_legacy:168538",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, white, raw"
+    },
+    {
+      "term": "Corn, sweet, white, frozen, kernels cut off cob, unprepared",
+      "source_row": "fdc_sr_legacy:168544",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, white, frozen, kernels cut off cob, unprepared"
+    },
+    {
+      "term": "Tomatoes, sun-dried",
+      "source_row": "fdc_sr_legacy:168567",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Tomatoes, sun-dried"
+    },
+    {
+      "term": "Peppers, hot chile, sun-dried",
+      "source_row": "fdc_sr_legacy:168570",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Peppers, hot chile, sun-dried"
+    },
+    {
+      "term": "Lemon grass (citronella), raw",
+      "source_row": "fdc_sr_legacy:168573",
+      "origin": "clause_tier",
+      "reason_code": "queue_lemon_grass",
+      "reason": "an herb or spice (Spices and Herbs clause), not a vegetable; routed to that category's rule.",
+      "description": "Lemon grass (citronella), raw"
+    },
+    {
+      "term": "Beans, fava, in pod, raw",
+      "source_row": "fdc_sr_legacy:168574",
+      "origin": "clause_tier",
+      "reason_code": "queue_fava",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Beans, fava, in pod, raw"
+    },
+    {
+      "term": "Peppers, pasilla, dried",
+      "source_row": "fdc_sr_legacy:168579",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Peppers, pasilla, dried"
+    },
+    {
+      "term": "Fungi, Cloud ears, dried",
+      "source_row": "fdc_sr_legacy:168581",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Fungi, Cloud ears, dried"
+    },
+    {
+      "term": "Wasabi, root, raw",
+      "source_row": "fdc_sr_legacy:168583",
+      "origin": "clause_tier",
+      "reason_code": "queue_wasabi",
+      "reason": "a condiment root (Spices and Herbs clause).",
+      "description": "Wasabi, root, raw"
+    },
+    {
+      "term": "Fiddlehead ferns, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:168584",
+      "origin": "clause_tier",
+      "reason_code": "queue_fiddlehead",
+      "reason": "fern shoots: not named by the clause; QUEUE.",
+      "description": "Fiddlehead ferns, frozen, unprepared"
+    },
+    {
+      "term": "Beans, navy, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:169139",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Beans, navy, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "beets",
+      "source_row": "fdc_sr_legacy:169145",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "NAME COLLISION (observed in out-of-sample label S30 'Beet Red Powder'): 'red' and 'powder' are descriptors, so 'beet red powder' (the beetroot red colour, E162) would be read as the vegetable beets and leave the unassessed list; QUEUED for an owner decision on descriptor handling. 'beet greens' is unaffected.",
+      "description": "Beets, raw"
+    },
+    {
+      "term": "Beans, kidney, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:169213",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Beans, kidney, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "Cowpeas (blackeyes), immature seeds, raw",
+      "source_row": "fdc_sr_legacy:169220",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Cowpeas (blackeyes), immature seeds, raw"
+    },
+    {
+      "term": "Yardlong bean, raw",
+      "source_row": "fdc_sr_legacy:169222",
+      "origin": "clause_tier",
+      "reason_code": "queue_yardlong",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Yardlong bean, raw"
+    },
+    {
+      "term": "Cowpeas, leafy tips, raw",
+      "source_row": "fdc_sr_legacy:169224",
+      "origin": "clause_tier",
+      "reason_code": "queue_cowpeas",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Cowpeas, leafy tips, raw"
+    },
+    {
+      "term": "Garlic, raw",
+      "source_row": "fdc_sr_legacy:169230",
+      "origin": "clause_tier",
+      "reason_code": "queue_garlic",
+      "reason": "an herb or spice per FDC in other records; kept out of this batch until the owner decides garlic's class (existing label vocabulary).",
+      "description": "Garlic, raw"
+    },
+    {
+      "term": "Ginger root, raw",
+      "source_row": "fdc_sr_legacy:169231",
+      "origin": "clause_tier",
+      "reason_code": "queue_ginger",
+      "reason": "an herb or spice (Spices and Herbs clause), not a vegetable.",
+      "description": "Ginger root, raw"
+    },
+    {
+      "term": "Hyacinth-beans, immature seeds, raw",
+      "source_row": "fdc_sr_legacy:169234",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Hyacinth-beans, immature seeds, raw"
+    },
+    {
+      "term": "Kanpyo, (dried gourd strips)",
+      "source_row": "fdc_sr_legacy:169241",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Kanpyo, (dried gourd strips)"
+    },
+    {
+      "term": "Pumpkin flowers, raw",
+      "source_row": "fdc_sr_legacy:169270",
+      "origin": "clause_tier",
+      "reason_code": "queue_flowers",
+      "reason": "an edible flower is not established as a vegetable by the clause; QUEUE.",
+      "description": "Pumpkin flowers, raw"
+    },
+    {
+      "term": "Seaweed, agar, raw",
+      "source_row": "fdc_sr_legacy:169280",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, agar, raw"
+    },
+    {
+      "term": "Soybeans, green, raw",
+      "source_row": "fdc_sr_legacy:169282",
+      "origin": "clause_tier",
+      "reason_code": "queue_soybeans",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Soybeans, green, raw"
+    },
+    {
+      "term": "Soybeans, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:169284",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Soybeans, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "leaves broccoli",
+      "source_row": "fdc_sr_legacy:169329",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon",
+      "description": "Broccoli, leaves, raw"
+    },
+    {
+      "term": "Broccoli, flower clusters, raw",
+      "source_row": "fdc_sr_legacy:169330",
+      "origin": "clause_tier",
+      "reason_code": "queue_flower",
+      "reason": "an edible flower is not established as a vegetable by the clause; QUEUE.",
+      "description": "Broccoli, flower clusters, raw"
+    },
+    {
+      "term": "stalks broccoli",
+      "source_row": "fdc_sr_legacy:169331",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon",
+      "description": "Broccoli, stalks, raw"
+    },
+    {
+      "term": "Corn, sweet, white, frozen, kernels on cob, unprepared",
+      "source_row": "fdc_sr_legacy:169365",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, white, frozen, kernels on cob, unprepared"
+    },
+    {
+      "term": "Peppers, sweet, red, freeze-dried",
+      "source_row": "fdc_sr_legacy:169373",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Peppers, sweet, red, freeze-dried"
+    },
+    {
+      "term": "Peppers, ancho, dried",
+      "source_row": "fdc_sr_legacy:169396",
+      "origin": "clause_tier",
+      "reason_code": "queue_dried",
+      "reason": "dried forms: the clause names 'dried' but earlier owner policy (dehydrated-policy-1) keeps dried/dehydrated forms per-term only; QUEUE for per-term decisions.",
+      "description": "Peppers, ancho, dried"
+    },
+    {
+      "term": "Epazote, raw",
+      "source_row": "fdc_sr_legacy:169398",
+      "origin": "clause_tier",
+      "reason_code": "queue_epazote",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Epazote, raw"
+    },
+    {
+      "term": "leaves fireweed",
+      "source_row": "fdc_sr_legacy:169399",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "plant-part variant of a food (leaves, stalks, tips): not established as a label term; stays out rather than inflating the lexicon",
+      "description": "Fireweed, leaves, raw"
+    },
+    {
+      "term": "Fiddlehead ferns, raw",
+      "source_row": "fdc_sr_legacy:169405",
+      "origin": "clause_tier",
+      "reason_code": "queue_fiddlehead",
+      "reason": "fern shoots: not named by the clause; QUEUE.",
+      "description": "Fiddlehead ferns, raw"
+    },
+    {
+      "term": "Lima beans, immature seeds, frozen, fordhook, unprepared",
+      "source_row": "fdc_sr_legacy:169953",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Lima beans, immature seeds, frozen, fordhook, unprepared"
+    },
+    {
+      "term": "Lima beans, immature seeds, frozen, baby, unprepared",
+      "source_row": "fdc_sr_legacy:169955",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Lima beans, immature seeds, frozen, baby, unprepared"
+    },
+    {
+      "term": "Mung beans, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:169957",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Mung beans, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "Beans, pinto, immature seeds, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:169958",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Beans, pinto, immature seeds, frozen, unprepared"
+    },
+    {
+      "term": "celery",
+      "source_row": "fdc_sr_legacy:169988",
+      "origin": "clause_tier",
+      "reason_code": "dedupe_stays_out",
+      "reason": "NAME COLLISION (observed in out-of-sample label S12 'Celery Powder'): 'powder' is a descriptor, so a celery powder (used as a curing/nitrite source) would be read as the plain vegetable celery and leave the unassessed list; QUEUED for an owner decision on the powder descriptor.",
+      "description": "Celery, raw"
+    },
+    {
+      "term": "Chives, raw",
+      "source_row": "fdc_sr_legacy:169994",
+      "origin": "clause_tier",
+      "reason_code": "queue_chives",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Chives, raw"
+    },
+    {
+      "term": "Coriander (cilantro) leaves, raw",
+      "source_row": "fdc_sr_legacy:169997",
+      "origin": "clause_tier",
+      "reason_code": "queue_coriander",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Coriander (cilantro) leaves, raw"
+    },
+    {
+      "term": "Corn, sweet, yellow, raw",
+      "source_row": "fdc_sr_legacy:169998",
+      "origin": "clause_tier",
+      "reason_code": "queue_corn",
+      "reason": "sweet corn overlaps the cereal-grain clause ('corn cob or kernel'): the Cereal batch owns it.",
+      "description": "Corn, sweet, yellow, raw"
+    },
+    {
+      "term": "Onions, young green, tops only",
+      "source_row": "fdc_sr_legacy:170006",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Onions, young green, tops only"
+    },
+    {
+      "term": "Peas, edible-podded, raw",
+      "source_row": "fdc_sr_legacy:170010",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas, edible-podded, raw"
+    },
+    {
+      "term": "Peas, edible-podded, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:170012",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas, edible-podded, frozen, unprepared"
+    },
+    {
+      "term": "Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "source_row": "fdc_sr_legacy:170016",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)"
+    },
+    {
+      "term": "Peas and onions, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:170020",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas and onions, frozen, unprepared"
+    },
+    {
+      "term": "Pigeonpeas, immature seeds, raw",
+      "source_row": "fdc_sr_legacy:170025",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Pigeonpeas, immature seeds, raw"
+    },
+    {
+      "term": "Turnips, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:170059",
+      "origin": "clause_tier",
+      "reason_code": "attribute_contradicts_plain",
+      "reason": "FDC portion attribute(s) mention ['mashed']: the record may describe a prepared form",
+      "description": "Turnips, frozen, unprepared"
+    },
+    {
+      "term": "Winged bean tuber, raw",
+      "source_row": "fdc_sr_legacy:170070",
+      "origin": "clause_tier",
+      "reason_code": "queue_winged",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Winged bean tuber, raw"
+    },
+    {
+      "term": "Chives, freeze-dried",
+      "source_row": "fdc_sr_legacy:170075",
+      "origin": "clause_tier",
+      "reason_code": "queue_chives",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Chives, freeze-dried"
+    },
+    {
+      "term": "Shallots, freeze-dried",
+      "source_row": "fdc_sr_legacy:170082",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Shallots, freeze-dried"
+    },
+    {
+      "term": "Beans, pinto, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:170086",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Beans, pinto, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "Seaweed, agar, dried",
+      "source_row": "fdc_sr_legacy:170090",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, agar, dried"
+    },
+    {
+      "term": "Seaweed, spirulina, raw",
+      "source_row": "fdc_sr_legacy:170091",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, spirulina, raw"
+    },
+    {
+      "term": "Radish seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:170095",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Radish seeds, sprouted, raw"
+    },
+    {
+      "term": "Broadbeans, immature seeds, raw",
+      "source_row": "fdc_sr_legacy:170377",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Broadbeans, immature seeds, raw"
+    },
+    {
+      "term": "Parsley, fresh",
+      "source_row": "fdc_sr_legacy:170416",
+      "origin": "clause_tier",
+      "reason_code": "queue_parsley",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Parsley, fresh"
+    },
+    {
+      "term": "Peas, green, raw",
+      "source_row": "fdc_sr_legacy:170419",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas, green, raw"
+    },
+    {
+      "term": "Peas, mature seeds, sprouted, raw",
+      "source_row": "fdc_sr_legacy:170422",
+      "origin": "clause_tier",
+      "reason_code": "queue_sprouted",
+      "reason": "germinated seeds (sprouts) are not named by the clause; the plant-part basis is not established.",
+      "description": "Peas, mature seeds, sprouted, raw"
+    },
+    {
+      "term": "Peas and carrots, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:170425",
+      "origin": "clause_tier",
+      "reason_code": "queue_peas",
+      "reason": "peas and pea pods overlap the legume rows (Batch 1); the existing 'peas' row is already a legume.",
+      "description": "Peas and carrots, frozen, unprepared"
+    },
+    {
+      "term": "Turnip greens and turnips, frozen, unprepared",
+      "source_row": "fdc_sr_legacy:170470",
+      "origin": "clause_tier",
+      "reason_code": "queue_turnip_greens_and_turnips",
+      "reason": "a mixture of two foods in one record (a head naming two foods with 'and'): not a single ingredient.",
+      "description": "Turnip greens and turnips, frozen, unprepared"
+    },
+    {
+      "term": "Winged beans, immature seeds, raw",
+      "source_row": "fdc_sr_legacy:170476",
+      "origin": "clause_tier",
+      "reason_code": "queue_immature",
+      "reason": "immature legume seeds overlap the legume rows (Batch 1).",
+      "description": "Winged beans, immature seeds, raw"
+    },
+    {
+      "term": "Winged bean leaves, raw",
+      "source_row": "fdc_sr_legacy:170478",
+      "origin": "clause_tier",
+      "reason_code": "queue_winged",
+      "reason": "legume overlap (Batch 1).",
+      "description": "Winged bean leaves, raw"
+    },
+    {
+      "term": "Leeks, (bulb and lower-leaf portion), freeze-dried",
+      "source_row": "fdc_sr_legacy:170485",
+      "origin": "clause_tier",
+      "reason_code": "plain_form_not_stated",
+      "reason": "the name does not state a raw or dry seed form; the plain form is not established by the name or by the attributes",
+      "description": "Leeks, (bulb and lower-leaf portion), freeze-dried"
+    },
+    {
+      "term": "Parsley, freeze-dried",
+      "source_row": "fdc_sr_legacy:170486",
+      "origin": "clause_tier",
+      "reason_code": "queue_parsley",
+      "reason": "an herb (Spices and Herbs clause).",
+      "description": "Parsley, freeze-dried"
+    },
+    {
+      "term": "Seaweed, spirulina, dried",
+      "source_row": "fdc_sr_legacy:170495",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, spirulina, dried"
+    },
+    {
+      "term": "Seaweed, wakame, raw",
+      "source_row": "fdc_sr_legacy:170496",
+      "origin": "clause_tier",
+      "reason_code": "queue_seaweed",
+      "reason": "algae are named only in the Group 1 DEFINITION ('fungi, algae'), not in an example; kind and placement need an owner decision.",
+      "description": "Seaweed, wakame, raw"
+    },
+    {
+      "term": "Carrot, dehydrated",
+      "source_row": "fdc_sr_legacy:170500",
+      "origin": "clause_tier",
+      "reason_code": "queue_dehydrated",
+      "reason": "dehydrated forms: per-term only (dehydrated-policy-1).",
+      "description": "Carrot, dehydrated"
+    },
+    {
+      "term": "cabbage",
+      "source_row": "fdc_foundation:2346407;fdc_foundation:2346408;fdc_sr_legacy:169335;fdc_sr_legacy:169336;fdc_sr_legacy:169975;fdc_sr_legacy:169977",
+      "origin": "gate",
+      "reason_code": "kind_conflict",
+      "reason": "existing lexicon row has kind whole_food, staged row says vegetable",
+      "description": ""
+    },
+    {
+      "term": "cucumber",
+      "source_row": "fdc_foundation:2346406;fdc_sr_legacy:168409;fdc_sr_legacy:169225",
+      "origin": "gate",
+      "reason_code": "kind_conflict",
+      "reason": "existing lexicon row has kind whole_food, staged row says vegetable",
+      "description": ""
+    },
+    {
+      "term": "fennel",
+      "source_row": "fdc_foundation:2747655;fdc_sr_legacy:169385",
+      "origin": "gate",
+      "reason_code": "kind_conflict",
+      "reason": "existing lexicon row has kind herb_spice, staged row says vegetable",
+      "description": ""
+    }
+  ],
+  "flip": {
+    "changed_counts": {
+      "group": 0,
+      "drivers": 0,
+      "status": 0,
+      "reason": 0,
+      "warnings": 0,
+      "ingredients": 0,
+      "unassessed": 0,
+      "ins_mappings": 0
+    },
+    "changed_inputs": {
+      "group": [],
+      "drivers": [],
+      "status": [],
+      "reason": [],
+      "warnings": [],
+      "ingredients": [],
+      "unassessed": [],
+      "ins_mappings": []
+    },
+    "unassessed_attribution": {},
+    "unexplained": [],
+    "flips": [],
+    "group_flips": {},
+    "inputs": 66,
+    "harness": {
+      "lexicon_rows_before": 181,
+      "lexicon_rows_after": 295,
+      "synonym_rows_added": 0,
+      "terms_recognised_before": [],
+      "terms_recognised_after": 114
+    }
+  },
+  "clause_check": "PASS",
+  "blockers": [],
+  "verdict": "READY_FOR_REVIEW"
+}

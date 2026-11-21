@@ -55,6 +55,8 @@ def main(argv=None) -> int:
     ap.add_argument("--rule", type=Path, required=True)
     ap.add_argument("--rows", type=Path, required=True, help="the batch's lexicon_candidate_rows.csv (the rows that must be present after)")
     ap.add_argument("--retyped", nargs="*", default=[], help="existing terms whose kind changed (attribution only)")
+    ap.add_argument("--expected-drift", nargs="*", default=[], help="existing terms whose sole-item behaviour change is an OWNER-RULED change (reported as attributed, not a blocker)")
+    ap.add_argument("--powder-surface", action="store_true", help="also probe '<term> powder' / '100% <term> powder' for every whole_food/legume/vegetable/food_powder row of the base and after builds and report every change")
     ap.add_argument("--oos-cache", type=Path, default=ROOT / "data" / "cache" / "oos_herb_spice_1")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
     ap.add_argument("--out", type=Path, required=True)
@@ -90,7 +92,18 @@ def main(argv=None) -> int:
         B, A = json.loads((td / "ob.json").read_text()), json.loads((td / "oa.json").read_text())
         out["out_of_sample"] = {"inputs": len(B), **cg.compare_sets(B, A, attributed)}
         diff = {t: [pb[t]["group"], pa[t]["group"]] for t in base_terms if (pb[t]["group"], pb[t]["ingredients"], pb[t]["unassessed"], pb[t]["drivers"]) != (pa[t]["group"], pa[t]["ingredients"], pa[t]["unassessed"], pa[t]["drivers"])}
-        out["drift"] = {"probed": len(base_terms), "differences": diff}
+        expected = {t: v for t, v in diff.items() if t in set(a.expected_drift)}
+        diff = {t: v for t, v in diff.items() if t not in set(a.expected_drift)}
+        out["drift"] = {"probed": len(base_terms), "differences": diff, "expected_owner_ruled": expected}
+        if a.powder_surface:
+            kinds = {"whole_food", "legume", "vegetable", "food_powder"}
+            names = sorted({r["term"] for r in vb.read_csv(res_a / "lexicon.csv") if r["kind"] in kinds})
+            lines = [n + " powder" for n in names] + ["100% " + n + " powder" for n in names] + ["whole " + n + " powder" for n in names]
+            sb, sa = run_probe(a.base_src, lines, td, "sb"), run_probe(a.after_src, lines, td, "sa")
+            ch = {l: [sb[l]["group"], sa[l]["group"]] for l in lines if (sb[l]["group"], sb[l]["unassessed"]) != (sa[l]["group"], sa[l]["unassessed"])}
+            out["powder_surface"] = {"probed": len(lines), "group1_before": sum(1 for l in lines if sb[l]["group"] == 1), "group1_after": sum(1 for l in lines if sa[l]["group"] == 1),
+                                     "changed": ch, "group1_after_forms_not_stated": [l for l in lines if sa[l]["group"] == 1 and not (l.startswith("100% ") or l.startswith("whole "))],
+                                     "newly_group4_or_other": {l: v for l, v in ch.items() if v[1] not in (None, 1)}}
         out["controls"] = {n: {"group_before": pb[n]["group"], "group_after": pa[n]["group"], "row_after": pa[n]["row"], "drivers_after": pa[n]["drivers"], "reason_after": pa[n]["reason"], "unassessed_after": pa[n]["unassessed"]} for n in neg + pos}
     blockers = []
     if not all(v["recognised_after"] and not v["recognised_before"] for v in out["after_build_proof"].values()):
@@ -102,6 +115,9 @@ def main(argv=None) -> int:
             blockers.append(f"{k}: abstain->4")
     if out["drift"]["differences"]:
         blockers.append(f"drift: {out['drift']['differences']}")
+    ps = out.get("powder_surface")
+    if ps and (ps["group1_after_forms_not_stated"] or ps["newly_group4_or_other"]):
+        blockers.append("powder surface: a bare 'X powder' still answers Group 1, or a powder form moved to another group")
     if not all(out["synonyms_markers_untouched"].values()):
         blockers.append("synonyms.csv or markers.csv changed")
     if out["lexicon_rows"]["removed"] or out["lexicon_rows"]["source_changed"]:
