@@ -191,12 +191,32 @@ def extract_ins(text: str) -> tuple[str, list[InsUse]]:
     return stripped, uses
 
 
+# A footnote mark is removed only where it sits at a well-defined boundary of an item or sub-item: the end of the text, before a closing bracket, a comma, semicolon, colon or full stop, before an opening
+# bracket (a percentage or sub-list follows), before '&' or the connector words 'and' / 'or'. A mark inside a multi-word phrase ("Rice# Flour", "Sunflower<closing quote> Oil", "Skimmed<closing quote> Milk Powder")
+# is NOT a footnote: removing it would join separate words into a phrase that was never written, so the text is left untouched and abstains as before. The raw input is never changed.
+_FOOT_MARKS = r"(?:#{1,3}|\*{1,3}|[\u2020\u2021]|\u201D)"
+_FOOT_BOUNDARY = r"(?=\s*(?:$|[)\]},;:.]|&|\(|\b(?:and|or)\b))"
+_FOOTNOTE_RE = re.compile(r"(?<=[a-zA-Z0-9)\]}])\s*" + _FOOT_MARKS + _FOOT_BOUNDARY, re.UNICODE)
+_FOOTNOTE_NO_QUOTE_RE = re.compile(r"(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021])" + _FOOT_BOUNDARY, re.UNICODE)
+
+
+def strip_footnotes(text: str) -> str:
+    """Narrow removal of footnote marks (#, ##, *, **, dagger, double dagger and the observed OCR closing quote U+201D) at item, sub-item, connector, percentage and bracket boundaries only (see above).
+    A text that holds a quoted phrase (an opening and a closing quote) keeps its closing quote."""
+    if "\u201D" in text and ("\u201C" in text or '"' in text):
+        return _FOOTNOTE_NO_QUOTE_RE.sub("", text)
+    return _FOOTNOTE_RE.sub("", text)
+
+
 def normalise_ingredient(raw: str) -> Ingredient:
     text, uses = extract_ins(raw)
     text = re.sub(r"\d+(?:\.\d+)?\s*%", " ", text)
+    text = strip_footnotes(text)
     text = _apply_synonyms(text)
     text = flatten(text)
     name, inner = _split_brackets(text)
+    name = strip_footnotes(name)
+    inner = strip_footnotes(inner)
     roles = _declared_roles(name)
     phrase = label_phrase(raw) if roles else None
     return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw, declared=phrase, declared_roles=roles) for u in uses])

@@ -220,6 +220,39 @@ def fat_powder(ing, kind: str) -> bool:
     return kind == "culinary" and is_fat_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS) and not fat_powder_stated(ing)
 
 
+# animal-guard-1 (owner Priority 3): rows of ANIMAL foods (a whole_food row whose source records the class-instance placement under the FAO Group 1 example below) get bounded rules. (1) DRIED, scoped: 'dried' or 'dehydrated' is
+# Group 3 ONLY for a row whose source records 'DRIED-G3-SCOPE: meat' or 'DRIED-G3-SCOPE: finfish', because the FAO Group 3 example names "salted, dried, cured, or smoked meats and fish" (meats and fish, not seafood). A dried form of
+# any other animal row (scope none: crab, lobster, mussel, oyster, octopus, scallop) ABSTAINS and never falls back to Group 1; see animal_dried / animal_dried_unscoped below. (2) The powder of an animal food abstains whatever else the
+# item states (a 100% in the text cannot establish form or composition: powdered meat or fish is named by no source read). Every other form is untouched: ground, roasted, boiled and steamed X stay under the existing whole-food rules
+# (grinding, steaming, boiling and roasting are named minimal processes WITH their no-added-substance condition, which the observed-condition guard keeps); salted, smoked, cured, canned, breaded, fried and generic cooked forms
+# abstain as before; plant, dairy and fat rows are not animal rows.
+_ANIMAL_MARK = "meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"
+_ANIMAL_DRIED = frozenset({"dried", "dehydrated"})
+
+
+def is_animal_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _ANIMAL_MARK in row["source"]
+
+
+# The FAO Group 3 example names "meats and fish". The row records its scope: 'DRIED-G3-SCOPE: meat' (meat and poultry rows) or 'DRIED-G3-SCOPE: finfish' (a fish label); every other animal row (crab, lobster, mussel, oyster,
+# octopus, scallop) carries 'DRIED-G3-SCOPE: none': the Group 1 example groups seafood with fish, but the dried example does not, so a dried form of such a row neither takes Group 3 nor falls back to Group 1: it abstains.
+_DRIED_SCOPES = ("DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish")
+
+
+def animal_dried(ing, kind: str) -> bool:
+    row = lookup(ing.name)
+    return kind == "whole_food" and is_animal_row(row) and any(m in row["source"] for m in _DRIED_SCOPES) and _added(ing, _ANIMAL_DRIED)
+
+
+def animal_dried_unscoped(ing, kind: str) -> bool:
+    row = lookup(ing.name)
+    return kind == "whole_food" and is_animal_row(row) and not any(m in row["source"] for m in _DRIED_SCOPES) and _added(ing, _ANIMAL_DRIED)
+
+
+def animal_powder(ing, kind: str) -> bool:
+    return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS)
+
+
 def fat_bracket_residual(ing) -> list:
     """Bracket content on an OIL or FAT row that does not establish a culinary-only composition (culinary-guard-1). Supported parts: (a) a recognised culinary row (another oil, salt, sugar, a starch: group 2 items),
     (b) the source word of a recognised oil ('palm', 'coconut': palm oil and coconut oil are rows), (c) descriptor, condition, negation, connector and code words already benign for every kind. Everything else is residual:
@@ -471,6 +504,28 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
     return hits
 
 
+def other_open_items(ings, skip=()) -> str:
+    """Headline aggregation (owner Priority 2): when an abstention is headed by weak or unlisted markers, a colour note or a sweetener-foods entry, the other ACTIVE blockers are named as well, so the headline does not look like the
+    only open point: items not in the vocabulary, recognised-by-name-only items that no source places, and the powder of a food or of an oil or fat whose composition is not stated. Group names set aside as metadata are not
+    ingredients here. Returns '' when there is nothing else; it never changes a group and is only appended to an abstention that already exists."""
+    parts = []
+    ings0 = ings
+    ings = [i for i in ings if i.raw not in skip]                 # an item already named by the headline (the weak marker, the colour note, the sweetener entry) is not repeated
+    unrec = [i.raw for i in ings if not is_recognised(i.name)]
+    if unrec:
+        parts.append("not in the local vocabulary: " + ", ".join(unrec))
+    rec = [(i, lookup(i.name)["kind"]) for i in ings if is_recognised(i.name)]
+    unpl = [i.raw for i, k in rec if k == "unplaced"]
+    if unpl:
+        parts.append("recognised by name only, no source read places " + ", ".join(unpl))
+    # the powder condition is the classifier's own: an item whose FINAL kind is food_powder (routed by the word 'powder' or an explicit food_powder row such as banana, strawberry or beetroot powder) is uncertain unless it is the
+    # sole item and states its composition; the powder of an oil or fat is uncertain unless its own name states 100%. A 100% inside a multi-item list does not resolve it.
+    pw = [i.raw for i, k in rec if fat_powder(i, k) or ((k == "food_powder" or powder_routed(i, k)) and not (len(ings0) == 1 and powder_composition_stated(i)))]
+    if pw:
+        parts.append("a powder is named and its composition is not established: " + ", ".join(pw))
+    return ("; other open items: " + "; ".join(parts)) if parts else ""
+
+
 def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None = None) -> Classification:
     strong: list[Driver] = []
     weak: list[Driver] = []
@@ -491,23 +546,26 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     # marker (checked above) the result stays uncertain; it is never read as a confident group from the foods alone.
     notes = [i.raw for i in ings if colour_note_only(i)]
     if notes:
-        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group" + other_open_items(ings, set(notes) | {d.ingredient for d in weak}))
 
     sweet = [i.raw for i in ings if sweetener_foods_only(i)]
     if sweet:
-        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group" + other_open_items(ings, set(sweet) | {d.ingredient for d in weak}))
 
     if weak:
         names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in weak}))
-        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group")
+        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group" + other_open_items(ings, {d.ingredient for d in weak}))
 
     unrecognised = [i.raw for i in ings if not is_recognised(i.name)]
     if unrecognised:
-        return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
+        return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
     bracket_unknown = [(i.raw, fat_bracket_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and fat_bracket_residual(i))]
     fat_powders = [i.raw for i, k in zip(ings, kinds) if fat_powder(i, k)]
+    animal_powders = [i.raw for i, k in zip(ings, kinds) if animal_powder(i, k)]
+    animal_dry = [i.raw for i, k in zip(ings, kinds) if animal_dried(i, k)]
+    animal_dry_unscoped = [i.raw for i, k in zip(ings, kinds) if animal_dried_unscoped(i, k)]
     wf_condition = [(i.raw, whole_food_observed(i, k)) for i, k in zip(ings, kinds) if whole_food_observed(i, k)]
     wf_nested = [(i.raw, whole_food_nested(i, k)) for i, k in zip(ings, kinds) if whole_food_nested(i, k)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
@@ -515,7 +573,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if unplaced:
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
-        return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
+        return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" + other_open_items(ings, set(unplaced)))
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if bracket_unknown:
         # nut-guard-1: the item kind is named accurately. Only non-nut items: the original text, unchanged. Only nut/seed items: a nut-specific text. A mix: kind-neutral text.
@@ -529,6 +587,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
             names = " names content that is unrecognised or is a different food, not a culinary ingredient ("
             tail = "), so what the item contains is not established and no group is asserted while part of the item is unassessed"
         return Classification(None, reason=what + names + "; ".join(f"{raw}: {', '.join(r)}" for raw, r, _ in bracket_unknown) + tail)
+    if animal_powders:
+        return Classification(None, reason="a powder of an animal food is named (" + "; ".join(animal_powders) + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states")
+    if animal_dry_unscoped:
+        return Classification(None, reason="a dried form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1")
     if fat_powders:
         return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%")
     if wf_nested:
@@ -537,7 +599,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if wf_condition:
         return Classification(None, reason="an item whose own text names an added or preserving condition (" + "; ".join(f"{raw}: {', '.join(o)}" for raw, o in wf_condition)
                               + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted")
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
+    nut_salted = animal_dry + [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
         preserved_nut = [k == "nut_seed" for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
@@ -552,6 +614,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
                           else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"))
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
+    if len(ings) == 1 and animal_dry:
+        return Classification(3, drivers=[Driver(ings[0].raw, "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour") and nut_salted:            # only the salted-grain guard can fill nut_salted for these kinds
         return Classification(3, drivers=[Driver(ings[0].raw, "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
@@ -572,7 +636,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
                                                  "artificial sweeteners; fermentation of milk to make yoghurt)", "NUPENS-USP classification page (research/04)", i.section) for i in ings])
     powders = [i.raw for i, k in zip(ings, kinds) if k == "food_powder"]
     if powders:
-        return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
+        return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged" + other_open_items(ings, set(powders)))
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k in ("whole_food", "nut_seed", "legume", "vegetable", "fruit") for _, k in substantive)
