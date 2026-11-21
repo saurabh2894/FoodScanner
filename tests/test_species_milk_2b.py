@@ -45,7 +45,8 @@ def test_synthetic_negative_modified_species_milk_powders_still_abstain(t):
     assert g(t)[0] is None, t
 
 
-@pytest.mark.parametrize("t", ["Cow", "Goat", "Sheep Milk", "Human Milk", "Cow Cheese", "Cow Milk Solids", "Cow's Milk"])
+@pytest.mark.parametrize("t", ["Cow", "Goat", "Human Milk", "Cow Cheese", "Cow Milk Solids", "Cow's Milk"])
+# dairy-rows-1: "Sheep Milk" is now a lexicon row (class-instance of the FAO animal milk, same level as goat milk), so it leaves this list; it is asserted Group 1 below.
 def test_synthetic_negative_the_species_words_alone_and_other_forms_stay_unrecognised(t):
     group, a = g(t)
     assert group is None and t.lower() in " ".join(u.lower() for u in a.unassessed), t
@@ -60,3 +61,7 @@ def test_synthetic_negative_milk_solids_exclusion_and_the_head_scoped_species_br
 def test_synthetic_cow_milk_with_a_culture_follows_the_milk_plus_culture_rule_and_salted_is_the_milk_behaviour():
     assert g("Cow Milk, Starter Culture")[0] == 1
     assert g("Salted Cow Milk")[0] == g("Salted Milk")[0]                                  # outside the 23-term salted-grain scope: identical to 'Salted Milk' (measured, parked)
+
+
+def test_synthetic_dairy_rows_1_sheep_milk_is_group_1_like_goat_milk():
+    assert g("Sheep Milk")[0] == 1 and g("Goat Milk")[0] == 1
