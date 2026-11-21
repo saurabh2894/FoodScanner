@@ -1,7 +1,7 @@
 # Batch 9 Candidate Staging: Plain Meat & Poultry (`class_bulk_9_meat_poultry_1`)
 
 ## 1. Summary & Staging Scope
-- **Task**: Candidate staging for Batch 9 (plain meat and poultry) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, repaired under Task 13.
+- **Task**: Candidate staging for Batch 9 (plain meat and poultry) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, cleaned and finalized under Task 14.
 - **Role**: Generator/Researcher staging evidence and candidates for senior review (Claude). Zero changes to application source code, parser, classifier, or runtime resources (`lexicon.csv`, `synonyms.csv`, `markers.csv` untouched).
 - **Branch**: `antigravity/class-bulk-9-meat-poultry`
 - **Original Base Commit**: `c0ece2b55f3b968598c889edc6b7d07e1dfd2b58` (main HEAD)
@@ -17,10 +17,10 @@ All counts are strictly derived from the underlying CSV artifacts (`record_dispo
 | Measure | Count | Notes |
 |---|---|---|
 | **Total FDC records in scope** | **2,179** | 4 commodity categories (2,137 SR Legacy + 42 Foundation) |
-| **ACCEPT (candidate records)** | **1,650** | Plain whole muscle cuts and natural offal of domestic livestock & poultry |
-| **QUEUE (pending owner decision)** | **241** | Game/rare species (115), fried/pan-fried methods (60), separable fat/skin-only (50), unstated ground meat (16) |
+| **ACCEPT (candidate records)** | **1,649** | Plain whole muscle cuts and natural offal of domestic livestock & poultry |
+| **QUEUE (pending owner decision)** | **242** | Game/rare species (115), fried/pan-fried methods (60), separable fat/skin-only (50), unstated ground meat (17) |
 | **REJECT (conditioned / out of scope)** | **288** | Cured/smoked meats (122), seasoned/formulated (71), injected/enhanced/basted (65), breaded/battered (19), mechanically deboned (7), added broth/gravy (4) |
-| **Total Artifact Sum (Tie-Out)** | **2,179** | **EXACT TIE**: `candidates = accept (1650) + queue (241) + reject (288)` |
+| **Total Artifact Sum (Tie-Out)** | **2,179** | **EXACT TIE**: `candidates = accept (1649) + queue (242) + reject (288)` |
 
 ### In-Scope Category Breakdown
 - `Beef Products`: 975 records (954 SR Legacy + 21 Foundation)
@@ -34,23 +34,26 @@ All counts are strictly derived from the underlying CSV artifacts (`record_dispo
 
 ---
 
-## 3. Task 13 Staging Repairs & Guard Enforcements
+## 3. Evidence Corrections (Task 14)
 
-1. **Primary Review Handoff**: `canonical_candidates.csv` is now the concise primary review artifact (8 candidate rows). `accept_records.csv` (1,650 rows) is retained for full transparency as a record-level mapping, and `record_dispositions.csv` (2,179 rows) provides a single deterministic map of every in-scope category record.
-2. **Separable Animal Fats Isolated**: 50 records representing pure animal backfat (`Pork, fresh, backfat, raw`), seam fat, external fat, subcutaneous fat, intermuscular fat, suet, leaf fat, or skin-only (`Chicken, skin only`, `Turkey, skin`) were isolated to QUEUE under `queue_animal_fat` and deferred to the fats review.
-3. **Cooking Methods with Added Fat**: 60 records where the cooking method states `pan-fried`, `fried`, or `deep-fried` were isolated to QUEUE under `queue_cooking_added_fat`. Because the source name states frying without establishing whether added cooking oil/fat was used, plain status cannot be established from the name alone.
-4. **Enhanced / Injected / Seasoned Formulations**: 65 injected/enhanced records (e.g. `Pork, fresh, enhanced`, `Turkey breast, pre-basted`, `Hormel Always Tender`) and 71 seasoned/formulated records (e.g. `rotisserie, original seasoning`) were moved to REJECT.
-5. **Mechanically Deboned Meat**: 7 records of mechanically separated/deboned poultry and beef were moved to REJECT.
+1. **Exact Verbatim FAO Quotations**:
+   - The continuous examples clause in Table 1 Group 1 p. 11 is quoted verbatim without splicing: `"meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"`.
+   - The animal-food definition clause on p. 11 is quoted separately: `"edible parts ... from animals (such as muscle, offal, eggs, milk)"`.
+   - Offal grounding is explicitly attributed to the definition clause; muscle cut grounding is explicitly attributed to the continuous examples clause.
+2. **Observed Descriptors vs Absence of Ingredients**:
+   - Blanket claims of "no added salt/oil/additives" have been replaced with precise descriptions of observed descriptor attributes (anatomical cut, tissue trim, preparation state) and explicit acknowledgment that SR Legacy records are commodity descriptors rather than formal ingredient declarations. Absence of declared additive terms is not an ingredient-list guarantee.
+3. **Unstated Ground Meat Isolation**:
+   - FDC ID 172161 (`Beef, ground, unspecified fat content, cooked`) was identified and moved to QUEUE under `ground_form_unstated`, bringing the unstated ground meat count to 17.
 
 ---
 
 ## 4. Proposed Canonical Candidates (`canonical_candidates.csv`: 8 rows)
 
-The 1,650 accepted plain meat records collapse into exactly 8 distinct domestic food candidates:
+The 1,649 accepted plain meat records collapse into exactly 8 distinct domestic food candidates:
 
 | Canonical Label | Suggested Kind | Supporting FDC Count | Existing Lexicon Match | Example Supporting FDC IDs | Variant / Synonym Candidates |
 |---|---|---|---|---|---|
-| `beef` | `whole_food` | 911 | NONE | 170809, 168607, 174013 | `ground beef; beef steak; beef roast; beef brisket; beef chuck; beef ribeye; beef sirloin; beef tenderloin; beef shank; beef round; beef liver; beef heart; beef tongue; beef kidney; beef tripe` |
+| `beef` | `whole_food` | 910 | NONE | 170809, 168607, 174013 | `ground beef; beef steak; beef roast; beef brisket; beef chuck; beef ribeye; beef sirloin; beef tenderloin; beef shank; beef round; beef liver; beef heart; beef tongue; beef kidney; beef tripe` |
 | `lamb` | `whole_food` | 264 | NONE | 172479, 172573, 172605 | `ground lamb; lamb chop; lamb leg; lamb shoulder; lamb loin; lamb rib; lamb shank; lamb liver; lamb heart; lamb tongue; lamb kidney` |
 | `pork` | `whole_food` | 190 | NONE | 167818, 168249, 168376 | `ground pork; pork chop; pork loin; pork tenderloin; pork shoulder; pork spareribs; pork ribs; pork liver; pork heart; pork tongue; pork kidney` |
 | `chicken` | `whole_food` | 113 | NONE | 171047, 171051, 171062 | `chicken cut; chicken breast; chicken thigh; chicken drumstick; chicken wing; chicken leg; chicken meat; chicken giblets; chicken liver; chicken heart; chicken gizzard; ground chicken` |
@@ -65,11 +68,11 @@ The 1,650 accepted plain meat records collapse into exactly 8 distinct domestic 
 
 ---
 
-## 5. Queue Breakdown (241 rows)
+## 5. Queue Breakdown (242 rows)
 - `queue_game_rare_species`: **115 rows** (bison, venison/deer, elk, moose, antelope, bear, beaver, horse, rabbit, hare, muskrat, opossum, squirrel, raccoon, goat, pheasant, quail, squab, wild duck, wild turkey, ostrich, emu, rhea, grouse, Canada goose).
 - `queue_cooking_added_fat`: **60 rows** (pan-fried, fried, deep-fried cuts where added cooking fat cannot be ruled out from source description alone).
 - `queue_animal_fat`: **50 rows** (pure animal backfat, seam fat, external fat, subcutaneous fat, intermuscular fat, suet, leaf fat, skin-only; deferred to fats and oils review).
-- `ground_form_unstated`: **16 rows** (ground meat where lean/fat ratio and processing details are unstated).
+- `ground_form_unstated`: **17 rows** (ground meat where lean/fat ratio and processing details are unstated).
 
 ---
 
