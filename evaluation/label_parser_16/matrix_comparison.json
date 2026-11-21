@@ -1,0 +1,2958 @@
+{
+  "total_variants": 23,
+  "parity_pass_count": 23,
+  "parity_failures": [],
+  "intentional_differences": [
+    {
+      "variant_id": "VAR-01-BASELINE-LITERAL",
+      "reason": "Footnote hash normalization (# and ##) resolves Vitamins and Minerals to unplaced instead of unassessed",
+      "changes": [
+        "unplaced changed from ['Sprouted Ragi', 'Sprouted Jowar'] to ['Sprouted Ragi', 'Sprouted Jowar', 'Vitamins#', 'Minerals##']",
+        "unassessed changed from ['Vitamins# and Minerals##', 'Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)'] to ['Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)']"
+      ],
+      "baseline": {
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar"
+        ],
+        "unassessed": [
+          "Vitamins# and Minerals##",
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ]
+      },
+      "current": {
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins#",
+          "Minerals##"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ]
+      }
+    },
+    {
+      "variant_id": "VAR-03-AMPERSAND-TO-AND",
+      "reason": "Bracketed pair connector 'and' now splits into recognized items instead of failing to split and dumping to unassessed",
+      "changes": [
+        "unplaced changed from ['Vitamins', 'Minerals'] to ['Sprouted Ragi', 'Sprouted Jowar', 'Vitamins', 'Minerals']",
+        "unassessed changed from ['Sprouted Ragi and Jowar (23.4%)', 'Rice and Oat (22.3%)', 'Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)'] to ['Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)']",
+        "warnings changed from [] to ['\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi and Jowar\"', 'The 23.4% after \"Sprouted Ragi and Jowar\" applies to the pair, not to each item separately', 'The 22.3% after \"Rice and Oat\" applies to the pair, not to each item separately']"
+      ],
+      "baseline": {
+        "unplaced": [
+          "Vitamins",
+          "Minerals"
+        ],
+        "unassessed": [
+          "Sprouted Ragi and Jowar (23.4%)",
+          "Rice and Oat (22.3%)",
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "warnings": []
+      },
+      "current": {
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi and Jowar\"",
+          "The 23.4% after \"Sprouted Ragi and Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice and Oat\" applies to the pair, not to each item separately"
+        ]
+      }
+    }
+  ],
+  "unexpected_differences": [],
+  "variants": [
+    {
+      "variant_id": "VAR-01-BASELINE-LITERAL",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins# and Minerals##, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins#",
+          "Minerals##",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins#",
+          "Minerals##"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins#",
+              "Minerals##",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins#",
+          "Minerals##",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins#",
+          "Minerals##"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins#",
+              "Minerals##",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": [
+        "unplaced changed from ['Sprouted Ragi', 'Sprouted Jowar'] to ['Sprouted Ragi', 'Sprouted Jowar', 'Vitamins#', 'Minerals##']",
+        "unassessed changed from ['Vitamins# and Minerals##', 'Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)'] to ['Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)']"
+      ]
+    },
+    {
+      "variant_id": "VAR-02-NO-FOOTNOTE-HASHES",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-03-AMPERSAND-TO-AND",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi and Jowar (23.4%), Rice and Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi and Jowar (23.4%), Rice and Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi and Jowar\"",
+          "The 23.4% after \"Sprouted Ragi and Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice and Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 40,
+            "in_list": 40,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi and Jowar (23.4%), Rice and Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi and Jowar (23.4%), Rice and Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi and Jowar\"",
+          "The 23.4% after \"Sprouted Ragi and Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice and Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 40,
+            "in_list": 40,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi and Jowar (23.4%), Rice and Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": [
+        "unplaced changed from ['Vitamins', 'Minerals'] to ['Sprouted Ragi', 'Sprouted Jowar', 'Vitamins', 'Minerals']",
+        "unassessed changed from ['Sprouted Ragi and Jowar (23.4%)', 'Rice and Oat (22.3%)', 'Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)'] to ['Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)']",
+        "warnings changed from [] to ['\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi and Jowar\"', 'The 23.4% after \"Sprouted Ragi and Jowar\" applies to the pair, not to each item separately', 'The 22.3% after \"Rice and Oat\" applies to the pair, not to each item separately']"
+      ]
+    },
+    {
+      "variant_id": "VAR-04-FLATTENED-BLEND",
+      "input_text": "Ingredients: Sprouted Ragi (23.4%), Sprouted Jowar (23.4%), Rice (22.3%), Oat (22.3%), Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Sprouted Ragi (23.4%)",
+          "Sprouted Jowar (23.4%)",
+          "Rice (22.3%)",
+          "Oat (22.3%)",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Ragi (23.4%)",
+          "Sprouted Jowar (23.4%)",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Ragi (23.4%)",
+              "Sprouted Jowar (23.4%)",
+              "Rice (22.3%)",
+              "Oat (22.3%)",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Sprouted Ragi (23.4%)",
+          "Sprouted Jowar (23.4%)",
+          "Rice (22.3%)",
+          "Oat (22.3%)",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Ragi (23.4%)",
+          "Sprouted Jowar (23.4%)",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 38,
+            "in_list": 38,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Ragi (23.4%)",
+              "Sprouted Jowar (23.4%)",
+              "Rice (22.3%)",
+              "Oat (22.3%)",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-05-NO-SPROUTED-QUALIFIER",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "The 23.4% after \"Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 37,
+            "in_list": 37,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "The 23.4% after \"Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 37,
+            "in_list": 37,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 13,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-06-NO-VITAMINS-MINERALS",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 35,
+            "in_list": 35,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 11,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder",
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 35,
+            "in_list": 35,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 11,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder",
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-07-NO-ANTIOXIDANT",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar; Vitamins; Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar; Vitamins; Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 35,
+            "in_list": 35,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 12,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar; Vitamins; Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar; Vitamins; Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Vitamins",
+          "Minerals",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar",
+          "Vitamins",
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 35,
+            "in_list": 35,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 12,
+            "not_assessed": 4
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Vitamins",
+              "Minerals",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-08-NO-ANTIOX-NO-VITMIN",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Beetroot Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 32,
+            "in_list": 32,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 10,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+          "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [
+          "Sprouted Ragi",
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 32,
+            "in_list": 32,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 10,
+            "not_assessed": 2
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-09-NO-ANTIOX-NO-VITMIN-NO-SPROUT",
+      "input_text": "Ingredients: Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Beetroot Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Date Powder (9%); Banana Powder; Strawberry Powder (5%); Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Date Powder (9%); Banana Powder; Strawberry Powder (5%); Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "The 23.4% after \"Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 31,
+            "in_list": 31,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 10,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Date Powder (9%); Banana Powder; Strawberry Powder (5%); Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Date Powder (9%); Banana Powder; Strawberry Powder (5%); Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+          "Whole Milk Powder (29.5%)",
+          "Date Powder (9%)",
+          "Banana Powder",
+          "Strawberry Powder (5%)",
+          "Skimmed Milk Powder",
+          "Beetroot Powder"
+        ],
+        "warnings": [
+          "The 23.4% after \"Ragi & Jowar\" applies to the pair, not to each item separately",
+          "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+        ],
+        "unassessed": [
+          "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+        ],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 31,
+            "in_list": 31,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 10,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Multigrain Flour Blend (45.7%) [Ragi & Jowar (23.4%), Rice & Oat (22.3%)]",
+              "Whole Milk Powder (29.5%)",
+              "Date Powder (9%)",
+              "Banana Powder",
+              "Strawberry Powder (5%)",
+              "Skimmed Milk Powder",
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-10-STANDALONE-SPROUTED-RAGI",
+      "input_text": "Ingredients: Sprouted Ragi.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Sprouted Ragi"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Ragi"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Ragi"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Ragi, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Sprouted Ragi"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Ragi"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Ragi"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-11-STANDALONE-SPROUTED-JOWAR",
+      "input_text": "Ingredients: Sprouted Jowar.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Sprouted Jowar"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Jowar"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Sprouted Jowar, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Sprouted Jowar"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Sprouted Jowar"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Sprouted Jowar"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-12-STANDALONE-RAGI",
+      "input_text": "Ingredients: Ragi.",
+      "py_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Ragi"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Ragi"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Ragi",
+            "detail": "single recognised unprocessed food",
+            "source": "PROVISIONAL author seed (finger millet grain; plain cereal)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Ragi"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Ragi"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Ragi",
+            "detail": "single recognised unprocessed food",
+            "source": "PROVISIONAL author seed (finger millet grain; plain cereal)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-13-STANDALONE-JOWAR",
+      "input_text": "Ingredients: Jowar.",
+      "py_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Jowar"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Jowar"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Jowar",
+            "detail": "single recognised unprocessed food",
+            "source": "PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Jowar"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Jowar"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Jowar",
+            "detail": "single recognised unprocessed food",
+            "source": "PROVISIONAL: NOVA group 1 example (cereal grain / pulse); research/02 lists atta, rice and plain dals as group 1",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-14-STANDALONE-VITAMINS",
+      "input_text": "Ingredients: Vitamins.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Vitamins, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Vitamins, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Vitamins"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Vitamins"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Vitamins"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Vitamins, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Vitamins, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Vitamins"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Vitamins"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Vitamins"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-15-STANDALONE-MINERALS",
+      "input_text": "Ingredients: Minerals.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Minerals"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Minerals"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "recognised by name only, and no source read places Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "headline": "Not enough information: recognised by name only, and no source read places Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)",
+        "ingredients": [
+          "Minerals"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [
+          "Minerals"
+        ],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 1,
+            "in_list": 1,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Minerals"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-16-STANDALONE-NATURAL-TOCOPHEROL",
+      "input_text": "Ingredients: Natural Tocopherol.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Natural Tocopherol",
+        "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: Natural Tocopherol",
+        "ingredients": [
+          "Natural Tocopherol"
+        ],
+        "warnings": [],
+        "unassessed": [
+          "Natural Tocopherol"
+        ],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Natural Tocopherol"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Natural Tocopherol",
+        "headline": "Not enough information: ingredients not in the local vocabulary, so processing level cannot be judged: Natural Tocopherol",
+        "ingredients": [
+          "Natural Tocopherol"
+        ],
+        "warnings": [],
+        "unassessed": [
+          "Natural Tocopherol"
+        ],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 1
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Natural Tocopherol"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-17-STANDALONE-ANTIOXIDANT-NATURAL-TOCOPHEROL",
+      "input_text": "Ingredients: Antioxidant (Natural Tocopherol).",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "headline": "Not enough information: only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group",
+        "ingredients": [
+          "Antioxidant (Natural Tocopherol)"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Antioxidant (Natural Tocopherol)"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Antioxidant (Natural Tocopherol)",
+            "detail": "\"antioxidant\" (unlisted_additive)",
+            "source": "NOT in research/02: treated as uncertain pending review",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-18-STANDALONE-WHOLE-MILK-POWDER",
+      "input_text": "Ingredients: Whole Milk Powder.",
+      "py_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Whole Milk Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Whole Milk Powder"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Whole Milk Powder",
+            "detail": "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')",
+            "source": "research/02 group 1 examples (milk)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Whole Milk Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Whole Milk Powder"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Whole Milk Powder",
+            "detail": "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')",
+            "source": "research/02 group 1 examples (milk)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-19-STANDALONE-SKIMMED-MILK-POWDER",
+      "input_text": "Ingredients: Skimmed Milk Powder.",
+      "py_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Skimmed Milk Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Skimmed Milk Powder"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Skimmed Milk Powder",
+            "detail": "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')",
+            "source": "research/02 group 1 examples (milk)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "js_result": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "headline": "NOVA group 1: unprocessed or minimally processed foods",
+        "ingredients": [
+          "Skimmed Milk Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 3,
+            "in_list": 3,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Skimmed Milk Powder"
+            ]
+          ]
+        ],
+        "drivers": [
+          {
+            "ingredient": "Skimmed Milk Powder",
+            "detail": "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')",
+            "source": "research/02 group 1 examples (milk)",
+            "section": null
+          }
+        ],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-20-STANDALONE-DATE-POWDER",
+      "input_text": "Ingredients: Date Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Date Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Date Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Date Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Date Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Date Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Date Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Date Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Date Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-21-STANDALONE-BANANA-POWDER",
+      "input_text": "Ingredients: Banana Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Banana Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Banana Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Banana Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Banana Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Banana Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Banana Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Banana Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Banana Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-22-STANDALONE-STRAWBERRY-POWDER",
+      "input_text": "Ingredients: Strawberry Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Strawberry Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Strawberry Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Strawberry Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Strawberry Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Strawberry Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Strawberry Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Strawberry Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Strawberry Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    },
+    {
+      "variant_id": "VAR-23-STANDALONE-BEETROOT-POWDER",
+      "input_text": "Ingredients: Beetroot Powder.",
+      "py_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Beetroot Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1.0,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "js_result": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "headline": "Not enough information: a powder of a food (Beetroot Powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "Beetroot Powder"
+        ],
+        "warnings": [],
+        "unassessed": [],
+        "unplaced": [],
+        "ignored": [],
+        "declared": [],
+        "heading": {
+          "kind": "exact",
+          "text": "Ingredients"
+        },
+        "completeness": {
+          "status": "complete",
+          "heading": "exact",
+          "reasons": [],
+          "list_share": 1,
+          "words": {
+            "region": 2,
+            "in_list": 2,
+            "declared": 0,
+            "excluded": 0,
+            "not_read": 0,
+            "unaccounted": 0
+          },
+          "assessed": {
+            "items": 1,
+            "not_assessed": 0
+          }
+        },
+        "sections": [
+          [
+            null,
+            [
+              "Beetroot Powder"
+            ]
+          ]
+        ],
+        "drivers": [],
+        "ins": []
+      },
+      "baseline_diff": null
+    }
+  ]
+}

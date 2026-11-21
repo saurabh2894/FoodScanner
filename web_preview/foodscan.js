@@ -493,12 +493,23 @@
       const clean = (s) => stripChars(s.replace(/\s+/g, " ").trim(), " ,;.:");
       return [clean(outside), clean(inside)];
     }
+    const FOOTNOTE_RE = /(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021]|\u201D)(?=\s|[)\]},;.:]|$)/gu;
+    const FOOTNOTE_NO_QUOTE_RE = /(?<=[a-zA-Z0-9)\]}])\s*(?:#{1,3}|\*{1,3}|[\u2020\u2021])(?=\s|[)\]},;.:]|$)/gu;
+    function stripFootnotes(text) {
+      if (text.includes("”") && (text.includes("“") || text.includes('"'))) {
+        return text.replace(FOOTNOTE_NO_QUOTE_RE, "");
+      }
+      return text.replace(FOOTNOTE_RE, "");
+    }
     function normaliseIngredient(raw) {
       let { stripped: text, uses } = extractIns(raw);
       text = text.replace(/\d+(?:\.\d+)?\s*%/g, " ");
+      text = stripFootnotes(text);
       for (const s of synonyms) text = text.replace(s.re, s.to);
       text = flatten(text);
-      const [name, inner] = splitBrackets(text);
+      let [name, inner] = splitBrackets(text);
+      name = stripFootnotes(name);
+      inner = stripFootnotes(inner);
       const roles = declaredRoles(name), phrase = roles.length ? labelPhrase(raw) : null, notes = declaredRoleNotes(roles, phrase || "");
       uses.forEach((u) => { u.ingredient = raw; u.declared = phrase; u.declared_roles = roles; u.role_notes = notes; });
       return { raw, name, inner, ins: uses, text: (name + " " + inner).trim() };
@@ -742,10 +753,14 @@
         if ((k === 0 || allDescriptorWords.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
       return false;
     }
-    // mirrors pipeline._split_amp_pair: an '&' pair inside a bracket splits only when each side is recognised WITH its shared modifier; the shared percentage is a note, not copied onto the items
+    // mirrors pipeline._split_amp_pair: an '&'- or 'and'-joined pair inside a bracket splits only when each side is recognised WITH its shared modifier; the shared percentage is a note, not copied onto the items
     function splitAmpPair(raw) {
       const [parts, connectors] = splitTopLevelAndEx(raw);
-      if (parts.length !== 2 || connectors.some((c) => c !== "&")) return [[raw], []];
+      if (parts.length !== 2 || connectors.length !== 1) return [[raw], []];
+      const conn = connectors[0];
+      const connLower = conn.toLowerCase();
+      if (connLower !== "&" && connLower !== "and") return [[raw], []];
+      if (sharedCodeList(parts)) return [[raw], []];
       const left = parts[0]; let right = parts[1], pct = null;
       const m = /^(.*?)\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)$/s.exec(right);
       if (m) { right = m[1].trim(); pct = m[2].replace(/\s+/g, ""); }
@@ -757,9 +772,10 @@
       }
       const rightFull = mod && !right.toLowerCase().startsWith(mod.toLowerCase() + " ") ? `${mod} ${right}` : right;
       if (!(recognisableIng(normaliseIngredient(left)) && recognisableIng(normaliseIngredient(rightFull)))) return [[raw], []];
+      if (namesTwoOils([left, rightFull])) return [[raw], []];
       const notes = [];
-      if (mod) notes.push(`"${mod}" was read as shared by both sides of "${left} & ${right}"`);
-      if (pct) notes.push(`The ${pct} after "${left} & ${right}" applies to the pair, not to each item separately`);
+      if (mod) notes.push(`"${mod}" was read as shared by both sides of "${left} ${conn} ${right}"`);
+      if (pct) notes.push(`The ${pct} after "${left} ${conn} ${right}" applies to the pair, not to each item separately`);
       return [[left, rightFull], notes];
     }
     function expand(items, depth, heads, notes) {   // items: [raw, section label] pairs
