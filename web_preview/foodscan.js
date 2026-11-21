@@ -601,7 +601,9 @@
     const ANIMAL_MARK = "meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts";
     const ANIMAL_DRIED = new Set(["dried", "dehydrated"]);
     const isAnimalRow = (row) => !!row && row.kind === "whole_food" && row.source.includes(ANIMAL_MARK);
-    const animalDried = (ing, kind) => kind === "whole_food" && isAnimalRow(lookup(ing.name)) && addedIn(ing, ANIMAL_DRIED);
+    const DRIED_SCOPES = ["DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish"];
+    const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
+    const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalPowder = (ing, kind) => kind === "whole_food" && isAnimalRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS);
     const fatBracketResidual = (ing) => {
       if (!isFatRow(lookup(ing.name)) || !ing.inner) return [];
@@ -686,6 +688,7 @@
       const kinds0 = ings.map((i) => lookup(i.name).kind);
       const animalPowders = ings.filter((i, n) => animalPowder(i, kinds0[n])).map((i) => i.raw);
       const animalDry = ings.filter((i, n) => animalDried(i, kinds0[n])).map((i) => i.raw);
+      const animalDryUnscoped = ings.filter((i, n) => animalDriedUnscoped(i, kinds0[n])).map((i) => i.raw);
       const nutSalted = animalDry.concat(ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (GUARDED_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i)) || grainAddedSalt(i, kinds[n])).map((i) => i.raw));
       if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.some(([, , k]) => k === "culinary")
           ? (bracketUnknown.every(([, , k]) => k === "culinary") ? "a bracket on a processed culinary ingredient" : "a bracket on a food item")
@@ -693,6 +696,7 @@
         + (bracketUnknown.some(([, , k]) => k === "culinary") ? " names content that is unrecognised or is a different food, not a culinary ingredient (" : " names content the vocabulary does not recognise (") + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
         + (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed") };
       if (animalPowders.length) return { group: null, drivers: [], reason: "a powder of an animal food is named (" + animalPowders.join("; ") + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states" };
+      if (animalDryUnscoped.length) return { group: null, drivers: [], reason: "a dried form of an animal food is named (" + animalDryUnscoped.join("; ") + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1" };
       const fatPowders = ings.filter((i, n) => fatPowder(i, kinds[n])).map((i) => i.raw);
       if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%" };
       if (wfNested.length) return { group: null, drivers: [], reason: "a bracket names a different food inside the item (" + wfNested.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted" };
