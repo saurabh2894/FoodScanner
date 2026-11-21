@@ -297,7 +297,39 @@ def _looks_like_more_ingredients(seg: str) -> bool:
     return len(parts) >= 2 or any(_recognisable(normalise_list([part])[0]) for part in parts)
 
 
-def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str] | None = None) -> list[Ingredient]:
+def _split_amp_pair(raw: str) -> tuple[list[str], list[str]]:
+    """An '&'-joined pair INSIDE a bracket ("Sprouted Ragi & Jowar (23.4%)") becomes two items ONLY when each side is independently recognised WITH its shared modifier attached
+    (a leading modifier of the left side applies to both: 'sprouted ragi' AND 'sprouted jowar', never bare 'jowar'). Anything else stays whole: an unrecognised side or modified form, a bracket
+    other than a shared trailing percentage, more than two parts, or a connector other than '&'. The shared percentage is NOT copied onto the items: it is returned as a note (the pair's
+    context, not a measurement of each item). A split of recognised-but-unplaced sides is recognition only: classification stays unresolved because those items still abstain."""
+    parts, connectors = split_top_level_and_ex(raw)
+    if len(parts) != 2 or any(c != "&" for c in connectors):
+        return [raw], []
+    left, right = parts
+    pct = None
+    m = re.fullmatch(r"(.*?)\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)", right)
+    if m:
+        right, pct = m.group(1).strip(), re.sub(r"\s+", "", m.group(2))
+    if not left or not right or re.search(r"[(\[{)\]}]", left + right):
+        return [raw], []
+    toks = left.split()
+    mod = ""
+    for k in range(1, len(toks)):                                  # smallest leading modifier whose removal leaves a recognised term
+        if _recognisable(normalise_list([" ".join(toks[k:])])[0]):
+            mod = " ".join(toks[:k])
+            break
+    right_full = f"{mod} {right}" if mod and not right.lower().startswith(mod.lower() + " ") else right
+    if not (_recognisable(normalise_list([left])[0]) and _recognisable(normalise_list([right_full])[0])):
+        return [raw], []
+    notes = []
+    if mod:
+        notes.append(f'"{mod}" was read as shared by both sides of "{left} & {right}"')
+    if pct:
+        notes.append(f'The {pct} after "{left} & {right}" applies to the pair, not to each item separately')
+    return [left, right_full], notes
+
+
+def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str] | None = None, notes: list[str] | None = None) -> list[Ingredient]:
     """Normalise (item, section label) pairs, expanding unknown compound ingredients into their sub-items.
 
     "Seasoning (Sugar, Maltodextrin, ...)" is judged by its contents, so drivers
@@ -317,7 +349,13 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
         if split and not _recognisable(normalise_list([split[0]])[0]):
             if heads is not None:
                 heads.append(split[0])          # the group name itself is not classified: keep it visible
-            out.extend(_expand([(sub, section) for sub in split[1]], depth + 1, heads))
+            subs: list[str] = []
+            for sub in split[1]:
+                pieces, pair_notes = _split_amp_pair(sub)
+                subs.extend(pieces)
+                if notes is not None:
+                    notes.extend(n for n in pair_notes if n not in notes)
+            out.extend(_expand([(sub, section) for sub in subs], depth + 1, heads, notes))
         else:
             out.append(ing)
     return out
@@ -364,7 +402,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     items = [raw for _, its in sections for raw in its]
     joiners = sum(j for grp in split for _raw, _parts, j in grp)       # only the joiner words; any other word a split dropped stays "unaccounted"
     heads: list[str] = []
-    ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads)
+    amp_notes: list[str] = []
+    ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads, notes=amp_notes)
     declared = _declared_additives(parsed.declarations, ings)
     unassessed = list(dict.fromkeys(
         [i.raw for i in ings if not _recognisable(i)]
@@ -372,7 +411,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unplaced = list(dict.fromkeys(i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"))
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
-                        for it in suspect_section_items(items)]
+                        for it in suspect_section_items(items)] + amp_notes
     unread_like = [seg for seg in parsed.ignored if _looks_like_more_ingredients(seg)]
     unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
                        for seg in unread_like]

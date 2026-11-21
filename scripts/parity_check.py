@@ -167,6 +167,10 @@ CORPUS = [
     "Ingredients: Dehydrated onion", "Ingredients: Rice, onion flakes, salt.", "Ingredients: Rice, onions flakes.", "Ingredients: Dehydrated vegetable, rice.", "Ingredients: Dehydrated potato flakes, rice.", "Ingredients: Rice, fried onion flakes.", "Ingredients: Rice, corn flakes, chilli flakes.",
     # marker-rows-2 (tests/test_marker_rows_2.py, SYNTHETIC): whey powder / whey solids are strong markers; whey protein bars and look-alikes are not read as them
     "Ingredients: Rice, whey powder, salt.", "Ingredients: Rice, whey solids.", "Ingredients: Milk, whey.", "Ingredients: Rice, Whey Powder (from milk).", "Ingredients: Rice, whey protein.",
+    # ampersand split (tests/test_ampersand_split_1.py, SYNTHETIC + the owner's acceptance label): shared modifier, shared percentage, negative controls
+    "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
+    "Ingredients: Blend [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)].", "Ingredients: Blend [Sprouted Ragi & Oat, Rice].", "Ingredients: Blend [Roasted Rice & Oat, Salt].", "Ingredients: Blend [Fermented Ragi & Oat, Salt].",
+    "Ingredients: Blend [Spices & Condiments, Salt].", "Ingredients: Blend [Rice & Oat (Organic), Salt].", "Ingredients: Blend [Rice & Oat & Wheat, Salt].", "Ingredients: Blend [Salted Almonds & Pumpkin Seeds, Rice].",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

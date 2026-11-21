@@ -69,9 +69,8 @@ def test_owner_acceptance_label_newly_recognised_forms_and_an_honest_abstention(
     g, a = grp(LABEL)
     assert g is None and not a.answered                                          # (b) no group: weak marker only, unplaced items remain
     un = " | ".join(a.unassessed).lower()
-    for t in ("banana powder", "strawberry powder", "beetroot powder", "vitamins", "minerals"):          # (a) forms now recognised by name
+    for t in ("banana powder", "strawberry powder", "beetroot powder", "vitamins", "minerals", "sprouted ragi", "rice & oat"):    # (a) recognised now (the '&' pairs split)
         assert t not in un, t
-    assert [u.lower() for u in a.unplaced] == ["vitamins", "minerals"]            # shown apart, as unplaced (the 'and' pair splits into two items)
-    for t in ("sprouted ragi", "rice & oat"):                                    # the '&' pair is still unsplit, so these stay visibly unassessed
-        assert t in un, t
+    assert [u.lower() for u in a.unplaced] == ["sprouted ragi", "sprouted jowar", "vitamins", "minerals"]        # shown apart, as unplaced
+    assert a.unassessed == ["Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"]  # only the blend's group name is left
     assert "antioxidant" in a.reason.lower()
