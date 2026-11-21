@@ -24,7 +24,7 @@
    - **Demand Evidence**: Verified file and line reference in repository label texts (or `'none - FDC-sourced'` for supply-side FDC candidates).
    - **Equivalence Evidence**: Independent admissible naming evidence linking alias to canonical target:
      - FDC foundation or SR Legacy food attribute record ID citing Common Name (type 1000) or Additional Description (type 1001).
-     - Authoritative lexical, statutory, or standards citations (e.g., FSSAI Food Safety Standards Regulations, Merriam-Webster, Oxford English Dictionary, Spices Board India, Molesworth Marathi Dictionary) with exact quoted text.
+     - Authoritative lexical, statutory, or standards citations (e.g., FDA 21 CFR §184.1854, Merriam-Webster, Molesworth Marathi Dictionary) with exact quoted text.
      - Label-only occurrences without independent equivalence evidence are marked `NEEDS_EQUIVALENCE_EVIDENCE` with `equivalence_evidence = 'NONE'`.
      - Ambiguous terms are marked `AMBIGUOUS` with candidate targets listed.
 
@@ -37,9 +37,9 @@
 ## Counts
 - **Total Unique Unrecognised Spans Found**: 254
 - **Alias Candidate Table Rows (`alias_candidates.csv`)**: 37
-  - **PROPOSED**: 33 (10 label-demand, 23 FDC-sourced)
+  - **PROPOSED**: 29 (6 label-demand, 23 FDC-sourced)
   - **AMBIGUOUS**: 2 (1 label-demand: `refined palmolien oil` -> `palmolein / palm oil`; 1 FDC-sourced: `pak choi` -> `bok choy cabbage / chinese cabbage`)
-  - **NEEDS_EQUIVALENCE_EVIDENCE**: 2 (2 label-demand: `cassia`, `cassia whole` -> `cinnamon`, equivalence: `NONE`)
+  - **NEEDS_EQUIVALENCE_EVIDENCE**: 6 (label-demand: `cassia`, `cassia whole`, `gingelly oil`, `carom seeds`, `desi ghee`, `maida`, equivalence: `NONE`)
 - **No-Target Spans (`no_target_spans.csv`)**: 239 (100% of remaining unrecognised spans accounted for with literal guess-free descriptions)
 
 ## Form Fidelity
