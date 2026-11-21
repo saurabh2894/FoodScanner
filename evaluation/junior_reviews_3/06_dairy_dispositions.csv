@@ -1,0 +1,342 @@
+dataset,fdc_id,record_name,junior,senior,canonical_or_reason,note
+sr_legacy,170877,"Milk, dry, nonfat, regular, without added vitamin A and vitamin D",accept,accept (existing behaviour; no row),milk powder,covered by classify.milk_powder_named; row evidence only
+sr_legacy,170882,"Milk, sheep, fluid",accept,accept (stage candidate),sheep milk,"class-instance of the FAO animal milk, same level as goat milk; plain form named 'fluid'"
+sr_legacy,171266,"Milk, producer, fluid, 3.7% milkfat",accept,accept (existing row; no change),milk,existing lexicon row milk
+sr_legacy,171279,"Milk, human, mature, fluid",accept,queue (hold),human milk,human milk is outside the milk rows (owner exclusion kept since per-form-2b); no species-specific source read
+sr_legacy,171280,"Milk, indian buffalo, fluid",accept,accept (existing row; no change),buffalo milk,existing lexicon row buffalo milk
+sr_legacy,171287,"Egg, whole, raw, fresh",accept,accept (existing row; no change),eggs,existing lexicon row eggs
+sr_legacy,172189,"Egg, duck, whole, fresh, raw",accept,accept (stage candidate),duck eggs,"class-instance of FAO eggs; name states whole, fresh, raw"
+sr_legacy,172190,"Egg, goose, whole, fresh, raw",accept,accept (stage candidate),goose eggs,"class-instance of FAO eggs; name states whole, fresh, raw"
+sr_legacy,172191,"Egg, quail, whole, fresh, raw",accept,accept (stage candidate),quail eggs,"class-instance of FAO eggs; name states whole, fresh, raw"
+sr_legacy,172192,"Egg, turkey, whole, fresh, raw",accept,accept (stage candidate),turkey eggs,"class-instance of FAO eggs; name states whole, fresh, raw"
+sr_legacy,172196,"Milk, dry, nonfat, instant, without added vitamin A and vitamin D",accept,queue (hold),milk powder,instant nonfat dry milk: the standing milk-powder exception abstains on instant forms
+sr_legacy,172202,"Egg, whole, raw, frozen, pasteurized (Includes foods for USDA's Food Distribution Program)",accept,accept (existing row; no change),eggs,existing lexicon row eggs
+sr_legacy,172205,"Milk, reduced fat, fluid, 2% milkfat, without added vitamin A and vitamin D",accept,accept (existing row; no change),milk,existing lexicon row milk
+sr_legacy,172217,"Milk, whole, 3.25% milkfat, without added vitamin A and vitamin D",accept,accept (existing row; no change),milk,existing lexicon row milk
+sr_legacy,173432,"Milk, nonfat, fluid, without added vitamin A and vitamin D (fat free or skim)",accept,accept (existing row; no change),milk,existing lexicon row milk
+sr_legacy,173441,"Milk, fluid, 1% fat, without added vitamin A and vitamin D",accept,accept (existing row; no change),milk,existing lexicon row milk
+sr_legacy,173454,"Milk, dry, whole, without added vitamin D",accept,accept (existing behaviour; no row),milk powder,covered by classify.milk_powder_named; row evidence only
+foundation,323604,"Egg, whole, raw, frozen, pasteurized",accept,accept (existing row; no change),eggs,existing lexicon row eggs
+foundation,748967,"Eggs, Grade A, Large, egg whole",accept,accept (existing row; no change),eggs,existing lexicon row eggs
+sr_legacy,167697,"Milk, buttermilk, fluid, cultured, reduced fat",queue,queue,queue_buttermilk,unchanged
+sr_legacy,167703,"Cheese, cottage, lowfat, 1% milkfat, lactose reduced",queue,queue,queue_cheese,unchanged
+sr_legacy,167705,"Cheese, parmesan, low sodium",queue,queue,queue_cheese,unchanged
+sr_legacy,167716,"Cheese, cottage, lowfat, 1% milkfat, with vegetables",queue,queue,queue_cheese,unchanged
+sr_legacy,167735,"Cheese, mozzarella, low sodium",queue,queue,queue_cheese,unchanged
+sr_legacy,168098,"Cheese, monterey, low fat",queue,queue,queue_cheese,unchanged
+sr_legacy,168114,"Cheese, cottage, lowfat, 1% milkfat, no sodium added",queue,queue,queue_cheese,unchanged
+sr_legacy,168121,"Cheese, pasteurized process, cheddar or American, low sodium",queue,queue,queue_cheese,unchanged
+sr_legacy,168124,"Cheese, swiss, low sodium",queue,queue,queue_cheese,unchanged
+sr_legacy,168141,"Cheese, swiss, low fat",queue,queue,queue_cheese,unchanged
+sr_legacy,169050,"Cheese, muenster, low fat",queue,queue,queue_cheese,unchanged
+sr_legacy,169051,"Cheese, mozzarella, nonfat",queue,queue,queue_cheese,unchanged
+sr_legacy,169078,"Cheese, cottage, with vegetables",queue,queue,queue_cheese,unchanged
+sr_legacy,169079,"Cheese, cream, low fat",queue,queue,queue_cheese,unchanged
+sr_legacy,169080,"Cheese, pasteurized process, American, low fat",queue,queue,queue_cheese,unchanged
+sr_legacy,169868,"Milk, fluid, nonfat, calcium fortified (fat free or skim)",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,169898,"Yogurt, fruit variety, nonfat",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170843,"Cheese, fontina",queue,queue,queue_cheese,unchanged
+sr_legacy,170844,"Cheese, monterey",queue,queue,queue_cheese,unchanged
+sr_legacy,170845,"Cheese, mozzarella, whole milk",queue,queue,queue_cheese,unchanged
+sr_legacy,170846,"Cheese, mozzarella, whole milk, low moisture",queue,queue,queue_cheese,unchanged
+sr_legacy,170847,"Cheese, mozzarella, part skim milk",queue,queue,queue_cheese,unchanged
+sr_legacy,170848,"Cheese, parmesan, hard",queue,queue,queue_cheese,unchanged
+sr_legacy,170849,"Cheese, port de salut",queue,queue,queue_cheese,unchanged
+sr_legacy,170850,"Cheese, provolone",queue,queue,queue_cheese,unchanged
+sr_legacy,170851,"Cheese, ricotta, whole milk",queue,queue,queue_cheese,unchanged
+sr_legacy,170852,"Cheese, tilsit",queue,queue,queue_cheese,unchanged
+sr_legacy,170853,"Cheese, pasteurized process, American, fortified with vitamin D",queue,queue,queue_cheese,unchanged
+sr_legacy,170854,"Cheese, pasteurized process, pimento",queue,queue,queue_cheese,unchanged
+sr_legacy,170855,"Cheese, pasteurized process, swiss",queue,queue,queue_cheese,unchanged
+sr_legacy,170856,"Cheese food, cold pack, American",queue,queue,queue_cheese,unchanged
+sr_legacy,170857,"Cream, fluid, light (coffee cream or table cream)",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,170858,"Cream, fluid, light whipping",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,170859,"Cream, fluid, heavy whipping",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,170863,"Cheese, American, nonfat or fat free",queue,queue,queue_cheese,unchanged
+sr_legacy,170864,"Yogurt, Greek, 2% fat, apricot, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170870,"Milk, reduced fat, fluid, 2% milkfat, with added nonfat milk solids and vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170871,"Milk, reduced fat, fluid, 2% milkfat, protein fortified, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170872,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170873,"Milk, lowfat, fluid, 1% milkfat, with added nonfat milk solids, vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170874,"Milk, buttermilk, fluid, cultured, lowfat",queue,queue,queue_buttermilk,unchanged
+sr_legacy,170875,"Milk, low sodium, fluid",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170876,"Milk, dry, whole, with added vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,170878,"Milk, canned, evaporated, nonfat, with added vitamin A and vitamin D",queue,queue,queue_condensed_evaporated,unchanged
+sr_legacy,170885,"Whey, acid, fluid",queue,queue,queue_whey_casein,unchanged
+sr_legacy,170886,"Yogurt, plain, low fat",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,170887,"Yogurt, plain, skim milk",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,170889,"Yogurt, fruit, low fat,9 g protein/8 oz",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170891,"Yogurt, Greek, 2% fat,mixed berry blend, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170894,"Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,170895,"Egg, white, dried, stabilized, glucose reduced",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,170897,"Cheese, Swiss, nonfat or fat free",queue,queue,queue_cheese,unchanged
+sr_legacy,170898,"Cheese, mexican, queso cotija",queue,queue,queue_cheese,unchanged
+sr_legacy,170899,"Cheese, cheddar, sharp, sliced",queue,queue,queue_cheese,unchanged
+sr_legacy,170900,"Cheese, mozzarella, low moisture, part-skim, shredded",queue,queue,queue_cheese,unchanged
+sr_legacy,170903,"Yogurt, Greek, plain, lowfat",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,170904,"Kefir, lowfat, plain, LIFEWAY",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,170905,"Yogurt, Greek, fruit, whole milk",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170909,"Yogurt, Greek, 2% fat, pineapple, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170913,"Yogurt, Greek, nonfat, Fruit on Bottom, Pomegranate, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170914,"Yogurt, Greek, Blueberry, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,170916,"Yogurt, Greek, nonfat, Fruit on Bottom, Blackberry, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171240,"Cheese, gjetost",queue,queue,queue_cheese,unchanged
+sr_legacy,171241,"Cheese, gouda",queue,queue,queue_cheese,unchanged
+sr_legacy,171242,"Cheese, gruyere",queue,queue,queue_cheese,unchanged
+sr_legacy,171243,"Cheese, limburger",queue,queue,queue_cheese,unchanged
+sr_legacy,171244,"Cheese, mozzarella, low moisture, part-skim",queue,queue,queue_cheese,unchanged
+sr_legacy,171245,"Cheese, muenster",queue,queue,queue_cheese,unchanged
+sr_legacy,171246,"Cheese, neufchatel",queue,queue,queue_cheese,unchanged
+sr_legacy,171247,"Cheese, parmesan, grated",queue,queue,queue_cheese,unchanged
+sr_legacy,171248,"Cheese, ricotta, part skim milk",queue,queue,queue_cheese,unchanged
+sr_legacy,171249,"Cheese, romano",queue,queue,queue_cheese,unchanged
+sr_legacy,171250,"Cheese, roquefort",queue,queue,queue_cheese,unchanged
+sr_legacy,171251,"Cheese, swiss",queue,queue,queue_cheese,unchanged
+sr_legacy,171252,"Cheese food, pasteurized process, American, vitamin D fortified",queue,queue,queue_cheese,unchanged
+sr_legacy,171253,"Cheese food, pasteurized process, swiss",queue,queue,queue_cheese,unchanged
+sr_legacy,171255,"Cream, fluid, half and half",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,171256,"Cream, sour, reduced fat, cultured",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,171257,"Cream, sour, cultured",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,171260,"Yogurt, Greek, 2%fat, coconut blend, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171265,"Milk, whole, 3.25% milkfat, with added vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171267,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171268,"Milk, lowfat, fluid, 1% milkfat, protein fortified, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171269,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171270,"Milk, nonfat, fluid, with added nonfat milk solids, vitamin A and vitamin D (fat free or skim)",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171271,"Milk, nonfat, fluid, protein fortified, with added vitamin A and vitamin D (fat free and skim)",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171272,"Milk, dry, nonfat, instant, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171273,"Milk, dry, nonfat, calcium reduced",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171274,"Milk, buttermilk, dried",queue,queue,queue_buttermilk,unchanged
+sr_legacy,171276,"Milk, canned, evaporated, with added vitamin D and without added vitamin A",queue,queue,queue_condensed_evaporated,unchanged
+sr_legacy,171278,"Milk, goat, fluid, with added vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,171281,"Whey, acid, dried",queue,queue,queue_whey_casein,unchanged
+sr_legacy,171282,"Whey, sweet, fluid",queue,queue,queue_whey_casein,unchanged
+sr_legacy,171283,"Whey, sweet, dried",queue,queue,queue_whey_casein,unchanged
+sr_legacy,171284,"Yogurt, plain, whole milk",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,171285,"Yogurt, fruit, low fat, 10 grams protein per 8 ounce",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171286,"Yogurt, fruit, low fat, 11g protein/8 oz",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171288,"Cheese, Mexican blend",queue,queue,queue_cheese,unchanged
+sr_legacy,171289,"Cheese product, pasteurized process, American, vitamin D fortified",queue,queue,queue_cheese,unchanged
+sr_legacy,171290,"Cheese, pasteurized process, American, without added vitamin D",queue,queue,queue_cheese,unchanged
+sr_legacy,171291,"Cheese food, pasteurized process, American, without added vitamin D",queue,queue,queue_cheese,unchanged
+sr_legacy,171292,"Cheese, cheddar, reduced fat (Includes foods for USDA's Food Distribution Program)",queue,queue,queue_cheese,unchanged
+sr_legacy,171295,"Cheese, cheddar, nonfat or fat free",queue,queue,queue_cheese,unchanged
+sr_legacy,171302,"Milk, evaporated, 2% fat, with added vitamin A and vitamin D",queue,queue,queue_condensed_evaporated,unchanged
+sr_legacy,171304,"Yogurt, Greek, plain, whole milk",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,171308,"Cream, half and half, lowfat",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,171309,"Yogurt, Greek, whole, plain, CHOBANI",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,171310,"Yogurt, Greek, nonfat, lemon blend, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171311,"Yogurt, Greek, nonfat, peach, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171312,"Yogurt, Greek, nonfat, plain, CHOBANI",queue,queue,queue_fermented_dairy,unchanged
+sr_legacy,171313,"Yogurt, Greek, nonfat, raspberry, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,171314,"Butter, Clarified butter (ghee)",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,172175,"Cheese, blue",queue,queue,queue_cheese,unchanged
+sr_legacy,172176,"Cheese, brick",queue,queue,queue_cheese,unchanged
+sr_legacy,172177,"Cheese, brie",queue,queue,queue_cheese,unchanged
+sr_legacy,172178,"Cheese, camembert",queue,queue,queue_cheese,unchanged
+sr_legacy,172179,"Cheese, cottage, creamed, large or small curd",queue,queue,queue_cheese,unchanged
+sr_legacy,172180,"Cheese, cottage, creamed, with fruit",queue,queue,queue_cheese,unchanged
+sr_legacy,172181,"Cheese, cottage, nonfat, uncreamed, dry, large or small curd",queue,queue,queue_cheese,unchanged
+sr_legacy,172182,"Cheese, cottage, lowfat, 2% milkfat",queue,queue,queue_cheese,unchanged
+sr_legacy,172183,"Egg, white, raw, fresh",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,172184,"Egg, yolk, raw, fresh",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,172188,"Egg, whole, dried",queue,queue,queue_powdered_eggs,unchanged
+sr_legacy,172193,"Milk, reduced fat, fluid, 2% milkfat, with added nonfat milk solids, without added vitamin A",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,172194,"Milk, canned, evaporated, with added vitamin A",queue,queue,queue_condensed_evaporated,unchanged
+sr_legacy,172195,"Milk, dry, nonfat, regular, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+sr_legacy,172197,"Cheese, goat, hard type",queue,queue,queue_cheese,unchanged
+sr_legacy,172199,"Yogurt, Greek, 2% fat, mango, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,172201,"Cheese, mexican, queso anejo",queue,queue,queue_cheese,unchanged
+sr_legacy,172203,"Egg, white, raw, frozen, pasteurized",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,172204,"Egg, white, dried",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,172207,"Cheese, cream, fat free",queue,queue,queue_cheese,unchanged
+sr_legacy,172210,KRAFT BREAKSTONE'S Reduced Fat Sour Cream,queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,172211,KRAFT BREAKSTONE'S FREE Fat Free Sour Cream,queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,172212,"Cream, half and half, fat free",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,172215,"Cheese, provolone, reduced fat",queue,queue,queue_cheese,unchanged
+sr_legacy,172216,"Cheese, Mexican, blend, reduced fat",queue,queue,queue_cheese,unchanged
+sr_legacy,172218,"Yogurt, fruit, lowfat, with low calorie sweetener, fortified with vitamin D",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,172222,"Cheese, dry white, queso seco",queue,queue,queue_cheese,unchanged
+sr_legacy,172223,"Cheese, fresh, queso fresco",queue,queue,queue_cheese,unchanged
+sr_legacy,172224,"Cheese, white, queso blanco",queue,queue,queue_cheese,unchanged
+sr_legacy,172225,"Milk, buttermilk, fluid, whole",queue,queue,queue_buttermilk,unchanged
+sr_legacy,173412,"Butter oil, anhydrous",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,173413,"Cheese, caraway",queue,queue,queue_cheese,unchanged
+sr_legacy,173414,"Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",queue,queue,queue_cheese,unchanged
+sr_legacy,173415,"Cheese, cheshire",queue,queue,queue_cheese,unchanged
+sr_legacy,173416,"Cheese, colby",queue,queue,queue_cheese,unchanged
+sr_legacy,173417,"Cheese, cottage, lowfat, 1% milkfat",queue,queue,queue_cheese,unchanged
+sr_legacy,173418,"Cheese, cream",queue,queue,queue_cheese,unchanged
+sr_legacy,173419,"Cheese, edam",queue,queue,queue_cheese,unchanged
+sr_legacy,173420,"Cheese, feta",queue,queue,queue_cheese,unchanged
+sr_legacy,173421,"Egg, yolk, raw, frozen, pasteurized",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,173422,"Egg, yolk, raw, frozen, sugared, pasteurized",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,173425,"Egg, whole, dried, stabilized, glucose reduced",queue,queue,queue_powdered_eggs,unchanged
+sr_legacy,173426,"Egg, white, dried, flakes, stabilized, glucose reduced",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,173427,"Egg, white, dried, powder, stabilized, glucose reduced",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,173428,"Egg, yolk, dried",queue,queue,queue_egg_fraction,unchanged
+sr_legacy,173430,"Butter, without salt",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,173431,"Cheese, parmesan, shredded",queue,queue,queue_cheese,unchanged
+sr_legacy,173433,"Cheese, goat, semisoft type",queue,queue,queue_cheese,unchanged
+sr_legacy,173434,"Yogurt, Greek, 2% fat, key lime blend, CHOBANI",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,173435,"Cheese, goat, soft type",queue,queue,queue_cheese,unchanged
+sr_legacy,173437,"Cheese, mexican, queso asadero",queue,queue,queue_cheese,unchanged
+sr_legacy,173438,"Cheese, mexican, queso chihuahua",queue,queue,queue_cheese,unchanged
+sr_legacy,173439,"Cheese, low fat, cheddar or colby",queue,queue,queue_cheese,unchanged
+sr_legacy,173440,"Cheese, low-sodium, cheddar or colby",queue,queue,queue_cheese,unchanged
+sr_legacy,173442,"Sour cream, reduced fat",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,173443,"Sour cream, light",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,173444,"Sour cream, fat free",queue,queue,queue_butter_ghee_cream,unchanged
+sr_legacy,173446,KRAFT CHEEZ WHIZ LIGHT Pasteurized Process Cheese Product,queue,queue,queue_cheese,unchanged
+sr_legacy,173447,KRAFT FREE Singles American Nonfat Pasteurized Process Cheese Product,queue,queue,queue_cheese,unchanged
+sr_legacy,173449,KRAFT VELVEETA LIGHT Reduced Fat Pasteurized Process Cheese Product,queue,queue,queue_cheese,unchanged
+sr_legacy,173451,"Yogurt, fruit, lowfat, with low calorie sweetener",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,173452,"Cheese, parmesan, dry grated, reduced fat",queue,queue,queue_cheese,unchanged
+sr_legacy,173455,"Cheese product, pasteurized process, American, reduced fat, fortified with vitamin D",queue,queue,queue_cheese,unchanged
+sr_legacy,173456,"Yogurt, fruit, low fat, 9 grams protein per 8 ounce, fortified with vitamin D",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,173457,"Yogurt, fruit, low fat, 10 grams protein per 8 ounce, fortified with vitamin D",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+sr_legacy,173458,"Yogurt, fruit variety, nonfat, fortified with vitamin D",queue,reject,flavored_dairy,fruit/flavoured yoghurt: same disposition as the 22 flavoured yoghurts the junior rejected (FAO lists fruit yoghurt among ultra-processed examples)
+foundation,321359,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,322228,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,322559,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",queue,queue,queue_fortified_milk,unchanged
+foundation,322892,"Milk, whole, 3.25% milkfat, with added vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,323444,"Cheese, ricotta, whole milk",queue,queue,queue_cheese,unchanged
+foundation,323697,"Egg, white, raw, frozen, pasteurized",queue,queue,queue_egg_fraction,unchanged
+foundation,323793,"Egg, white, dried",queue,queue,queue_egg_fraction,unchanged
+foundation,325036,"Cheese, parmesan, grated",queue,queue,queue_cheese,unchanged
+foundation,325198,"Cheese, pasteurized process, American, vitamin D fortified",queue,queue,queue_cheese,unchanged
+foundation,326135,"Cheese, swiss",queue,queue,queue_cheese,unchanged
+foundation,328637,"Cheese, cheddar",queue,queue,queue_cheese,unchanged
+foundation,328841,"Cheese, cottage, lowfat, 2% milkfat",queue,queue,queue_cheese,unchanged
+foundation,329370,"Cheese, mozzarella, low moisture, part-skim",queue,queue,queue_cheese,unchanged
+foundation,329490,"Egg, whole, dried",queue,queue,queue_powdered_eggs,unchanged
+foundation,329596,"Egg, yolk, raw, frozen, pasteurized",queue,queue,queue_egg_fraction,unchanged
+foundation,329716,"Egg, yolk, dried",queue,queue,queue_egg_fraction,unchanged
+foundation,329830,"Cheese, dry white, queso seco",queue,queue,queue_cheese,unchanged
+foundation,330137,"Yogurt, Greek, plain, nonfat",queue,queue,queue_fermented_dairy,unchanged
+foundation,746765,"Cheese, dry white, queso seco",queue,queue,queue_cheese,unchanged
+foundation,746766,"Cheese, ricotta, whole milk",queue,queue,queue_cheese,unchanged
+foundation,746767,"Cheese, swiss",queue,queue,queue_cheese,unchanged
+foundation,746772,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,746776,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",queue,queue,queue_fortified_milk,unchanged
+foundation,746778,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,746782,"Milk, whole, 3.25% milkfat, with added vitamin D",queue,queue,queue_fortified_milk,unchanged
+foundation,747429,"Cheese, American, restaurant",queue,queue,queue_cheese,unchanged
+foundation,747997,"Eggs, Grade A, Large, egg white",queue,queue,queue_egg_fraction,unchanged
+foundation,748236,"Eggs, Grade A, Large, egg yolk",queue,queue,queue_egg_fraction,unchanged
+foundation,789828,"Butter, stick, unsalted",queue,queue,queue_butter_ghee_cream,unchanged
+foundation,2259792,"Buttermilk, low fat",queue,queue,queue_buttermilk,unchanged
+foundation,2259793,"Yogurt, plain, whole milk",queue,queue,queue_fermented_dairy,unchanged
+foundation,2259794,"Yogurt, Greek, plain, whole milk",queue,queue,queue_fermented_dairy,unchanged
+foundation,2259795,"Cheese, parmesan, grated, refrigerated",queue,queue,queue_cheese,unchanged
+foundation,2259796,"Cheese, feta, whole milk, crumbled",queue,queue,queue_cheese,unchanged
+foundation,2346384,"Cottage cheese, full fat, large or small curd",queue,queue,queue_cheese,unchanged
+foundation,2346385,"Cream cheese, full fat, block",queue,queue,queue_cheese,unchanged
+foundation,2346386,"Cream, heavy",queue,queue,queue_butter_ghee_cream,unchanged
+foundation,2346387,"Cream, sour, full fat",queue,queue,queue_butter_ghee_cream,unchanged
+foundation,2647437,"Yogurt, plain, nonfat",queue,queue,queue_fermented_dairy,unchanged
+foundation,2647438,"Cheese, monterey jack, solid",queue,queue,queue_cheese,unchanged
+foundation,2647439,"Cheese, pasteurized process cheese food or product, American, singles",queue,queue,queue_cheese,unchanged
+foundation,2647440,"Cheese, provolone, sliced",queue,queue,queue_cheese,unchanged
+foundation,2647441,"Cheese, oaxaca, solid",queue,queue,queue_cheese,unchanged
+foundation,2647442,"Cheese, queso fresco, solid",queue,queue,queue_cheese,unchanged
+foundation,2647443,"Cheese, cotija, solid",queue,queue,queue_cheese,unchanged
+sr_legacy,167687,"Whipped topping, frozen, low fat",reject,reject,whipped_spray_topping,unchanged
+sr_legacy,167688,"Cream substitute, powdered, light",reject,reject,imitation_substitute,unchanged
+sr_legacy,167730,"Milk, imitation, non-soy",reject,reject,imitation_substitute,unchanged
+sr_legacy,168089,"Imitation cheese, american or cheddar, low cholesterol",reject,reject,imitation_substitute,unchanged
+sr_legacy,168097,"Cream substitute, liquid, light",reject,reject,imitation_substitute,unchanged
+sr_legacy,169073,"Beverage, instant breakfast powder, chocolate, not reconstituted",reject,reject,flavored_dairy,unchanged
+sr_legacy,169081,"Cheese spread, cream cheese base",reject,reject,spread_dip_sauce,unchanged
+sr_legacy,169897,"Beverage, instant breakfast powder, chocolate, sugar-free, not reconstituted",reject,reject,flavored_dairy,unchanged
+sr_legacy,169899,"Whipped cream substitute, dietetic, made from powdered mix",reject,reject,whipped_spray_topping,unchanged
+sr_legacy,169901,"Cheese, american cheddar, imitation",reject,reject,imitation_substitute,unchanged
+sr_legacy,169904,"Eggs, scrambled, frozen mixture",reject,reject,cooked_egg,unchanged
+sr_legacy,170860,"Cream, whipped, cream topping, pressurized",reject,reject,whipped_spray_topping,unchanged
+sr_legacy,170861,"Milk, filled, fluid, with blend of hydrogenated vegetable oils",reject,reject,imitation_substitute,unchanged
+sr_legacy,170862,"Milk, filled, fluid, with lauric acid oil",reject,reject,imitation_substitute,unchanged
+sr_legacy,170865,"Dessert topping, powdered",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170866,"Dessert topping, powdered, 1.5 ounce prepared with 1/2 cup milk",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170867,"Dessert topping, pressurized",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170868,"Dessert topping, semi solid, frozen",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170869,"Sour cream, imitation, cultured",reject,reject,imitation_substitute,unchanged
+sr_legacy,170879,"Milk, chocolate, fluid, commercial, whole, with added vitamin A and vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,170880,"Milk, chocolate, fluid, commercial, reduced fat, with added vitamin A and vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,170881,"Milk, chocolate, lowfat, with added vitamin A and vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,170883,"Milk shakes, thick chocolate",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170884,"Milk shakes, thick vanilla",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170888,"Yogurt, vanilla, low fat.",reject,reject,flavored_dairy,unchanged
+sr_legacy,170890,"Milk dessert bar, frozen, made from lowfat milk",reject,reject,dessert_pudding_shake,unchanged
+sr_legacy,170892,"Nutritional supplement for people with diabetes, liquid",reject,reject,supplement_protein_isolate,unchanged
+sr_legacy,170893,"Egg, whole, raw, frozen, salted, pasteurized",reject,reject,salted,unchanged
+sr_legacy,170896,"Cheese spread, American or Cheddar cheese base, reduced fat",reject,reject,spread_dip_sauce,unchanged
+sr_legacy,170901,"Yogurt, Greek, strawberry, nonfat",reject,reject,flavored_dairy,unchanged
+sr_legacy,170902,"Yogurt, Greek, vanilla, nonfat",reject,reject,flavored_dairy,unchanged
+sr_legacy,170906,"Yogurt, vanilla, non-fat",reject,reject,flavored_dairy,unchanged
+sr_legacy,170907,"Yogurt, Greek, vanilla, lowfat",reject,reject,flavored_dairy,unchanged
+sr_legacy,170908,"Yogurt, frozen, flavors other than chocolate, lowfat",reject,reject,flavored_dairy,unchanged
+sr_legacy,170910,"Milk, chocolate, lowfat, reduced sugar",reject,reject,flavored_dairy,unchanged
+sr_legacy,170911,"Ice cream, lowfat, no sugar added, cone, added peanuts and chocolate sauce",reject,reject,ice_cream,unchanged
+sr_legacy,170912,"Yogurt, Greek, 2% fat, strawberry banana, CHOBANI",reject,reject,flavored_dairy,unchanged
+sr_legacy,170915,"Yogurt, Greek, nonfat, Fruit on Bottom, Strawberry, CHOBANI",reject,reject,flavored_dairy,unchanged
+sr_legacy,171254,"Cheese spread, pasteurized process, American",reject,reject,spread_dip_sauce,unchanged
+sr_legacy,171258,Eggnog,reject,reject,flavored_dairy,unchanged
+sr_legacy,171259,"Sour dressing, non-butterfat, cultured, filled cream-type",reject,reject,spread_dip_sauce,unchanged
+sr_legacy,171261,"Cream substitute, liquid, with hydrogenated vegetable oil and soy protein",reject,reject,imitation_substitute,unchanged
+sr_legacy,171262,"Cream substitute, liquid, with lauric acid oil and sodium caseinate",reject,reject,imitation_substitute,unchanged
+sr_legacy,171263,"Cream substitute, powdered",reject,reject,imitation_substitute,unchanged
+sr_legacy,171264,"Milk substitutes, fluid, with lauric acid oil",reject,reject,imitation_substitute,unchanged
+sr_legacy,171275,"Milk, canned, condensed, sweetened",reject,reject,sweetened_condensed,unchanged
+sr_legacy,171277,"Milk, chocolate beverage, hot cocoa, homemade",reject,reject,flavored_dairy,unchanged
+sr_legacy,171293,"Ice cream, light, soft serve, chocolate",reject,reject,ice_cream,unchanged
+sr_legacy,171294,"Ice cream bar, stick or nugget, with crunch coating",reject,reject,ice_cream,unchanged
+sr_legacy,171296,"Yogurt, Greek, nonfat, vanilla, CHOBANI",reject,reject,flavored_dairy,unchanged
+sr_legacy,171297,"Yogurt, Greek, strawberry, DANNON OIKOS",reject,reject,flavored_dairy,unchanged
+sr_legacy,171298,"Yogurt, Greek, nonfat, vanilla, DANNON OIKOS",reject,reject,flavored_dairy,unchanged
+sr_legacy,171299,"Yogurt, Greek, nonfat, strawberry, DANNON OIKOS",reject,reject,flavored_dairy,unchanged
+sr_legacy,171300,"Yogurt, Greek, strawberry, lowfat",reject,reject,flavored_dairy,unchanged
+sr_legacy,171301,"Kefir, lowfat, strawberry, LIFEWAY",reject,reject,flavored_dairy,unchanged
+sr_legacy,171303,"Milk, chocolate, fat free, with added vitamin A and vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,171305,"Ice cream bar, covered with chocolate and nuts",reject,reject,ice_cream,unchanged
+sr_legacy,171306,Ice cream sundae cone,reject,reject,ice_cream,unchanged
+sr_legacy,171307,"Light ice cream, Creamsicle",reject,reject,ice_cream,unchanged
+sr_legacy,172185,"Egg, whole, cooked, omelet",reject,reject,cooked_egg,unchanged
+sr_legacy,172186,"Egg, whole, cooked, poached",reject,queue,queue_boiled_poached_egg,poaching and boiling are FAO-listed minimal processes; nothing added stated
+sr_legacy,172187,"Egg, whole, cooked, scrambled",reject,reject,cooked_egg,unchanged
+sr_legacy,172198,"Cheese substitute, mozzarella",reject,reject,imitation_substitute,unchanged
+sr_legacy,172200,"Cheese sauce, prepared from recipe",reject,reject,spread_dip_sauce,unchanged
+sr_legacy,172206,"Parmesan cheese topping, fat free",reject,reject,whipped_spray_topping,unchanged
+sr_legacy,172208,"Yogurt, chocolate, nonfat milk",reject,reject,flavored_dairy,unchanged
+sr_legacy,172209,KRAFT CHEEZ WHIZ Pasteurized Process Cheese Sauce,reject,reject,spread_dip_sauce,unchanged
+sr_legacy,172213,Reddi Wip Fat Free Whipped Topping,reject,reject,whipped_spray_topping,unchanged
+sr_legacy,172214,"Cream substitute, flavored, powdered",reject,reject,imitation_substitute,unchanged
+sr_legacy,172219,"Yogurt, vanilla, low fat, fortified with vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,172220,"Yogurt, vanilla or lemon flavor, nonfat milk, sweetened with low-calorie sweetener, fortified with vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,172221,"Yogurt, chocolate, nonfat milk, fortified with vitamin D",reject,reject,flavored_dairy,unchanged
+sr_legacy,172226,Ice cream sandwich,reject,reject,ice_cream,unchanged
+sr_legacy,172227,Ice cream cookie sandwich,reject,reject,ice_cream,unchanged
+sr_legacy,172228,"Ice cream cone, chocolate covered, with nuts, flavors other than chocolate",reject,reject,ice_cream,unchanged
+sr_legacy,172229,"Ice cream sandwich, made with light ice cream, vanilla",reject,reject,ice_cream,unchanged
+sr_legacy,172230,"Ice cream sandwich, vanilla, light, no sugar added",reject,reject,ice_cream,unchanged
+sr_legacy,173410,"Butter, salted",reject,reject,salted,unchanged
+sr_legacy,173411,"Butter, whipped, with salt",reject,reject,whipped_spray_topping,unchanged
+sr_legacy,173423,"Egg, whole, cooked, fried",reject,reject,cooked_egg,unchanged
+sr_legacy,173424,"Egg, whole, cooked, hard-boiled",reject,queue,queue_boiled_poached_egg,poaching and boiling are FAO-listed minimal processes; nothing added stated
+sr_legacy,173429,"Egg substitute, powder",reject,reject,imitation_substitute,unchanged
+sr_legacy,173436,"Egg, yolk, raw, frozen, salted, pasteurized",reject,reject,salted,unchanged
+sr_legacy,173445,"Yogurt, vanilla or lemon flavor, nonfat milk, sweetened with low-calorie sweetener",reject,reject,flavored_dairy,unchanged
+sr_legacy,173448,KRAFT VELVEETA Pasteurized Process Cheese Spread,reject,reject,spread_dip_sauce,unchanged
+sr_legacy,173450,"Milk, chocolate, fluid, commercial, reduced fat, with added calcium",reject,reject,flavored_dairy,unchanged
+sr_legacy,173453,"Cream substitute, flavored, liquid",reject,reject,imitation_substitute,unchanged
+sr_legacy,173459,"Protein supplement, milk based, Muscle Milk, powder",reject,reject,supplement_protein_isolate,unchanged
+sr_legacy,173460,"Protein supplement, milk based, Muscle Milk Light, powder",reject,reject,supplement_protein_isolate,unchanged
+sr_legacy,173461,Dulce de Leche,reject,reject,sweetened_condensed,unchanged
+sr_legacy,173462,"Egg substitute, liquid or frozen, fat free",reject,reject,imitation_substitute,unchanged
+sr_legacy,173463,"Yogurt, vanilla flavor, lowfat milk, sweetened with low calorie sweetener",reject,reject,flavored_dairy,unchanged
+sr_legacy,173464,"Yogurt, frozen, flavors not chocolate, nonfat milk, with low-calorie sweetener",reject,reject,flavored_dairy,unchanged
+sr_legacy,173465,"Ice cream, soft serve, chocolate",reject,reject,ice_cream,unchanged
+sr_legacy,173466,"Ice cream, bar or stick, chocolate covered",reject,reject,ice_cream,unchanged
+sr_legacy,173467,"Fat free ice cream, no sugar added, flavors other than chocolate",reject,reject,ice_cream,unchanged
+foundation,330415,"Yogurt, Greek, strawberry, nonfat",reject,reject,flavored_dairy,unchanged
+foundation,790508,"Butter, stick, salted",reject,reject,salted,unchanged
+foundation,2758990,Sweetened condensed milk,reject,reject,sweetened_condensed,unchanged
