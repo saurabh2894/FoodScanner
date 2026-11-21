@@ -588,7 +588,27 @@
         if ((k === 0 || descriptors.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
       return false;
     }
-    function expand(items, depth, heads) {   // items: [raw, section label] pairs
+    // mirrors pipeline._split_amp_pair: an '&' pair inside a bracket splits only when each side is recognised WITH its shared modifier; the shared percentage is a note, not copied onto the items
+    function splitAmpPair(raw) {
+      const [parts, connectors] = splitTopLevelAndEx(raw);
+      if (parts.length !== 2 || connectors.some((c) => c !== "&")) return [[raw], []];
+      const left = parts[0]; let right = parts[1], pct = null;
+      const m = /^(.*?)\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)$/s.exec(right);
+      if (m) { right = m[1].trim(); pct = m[2].replace(/\s+/g, ""); }
+      if (!left || !right || /[(\[{)\]}]/.test(left + right)) return [[raw], []];
+      const toks = left.split(/\s+/).filter(Boolean);
+      let mod = "";
+      for (let k = 1; k < toks.length; k++) {
+        if (recognisableIng(normaliseIngredient(toks.slice(k).join(" ")))) { mod = toks.slice(0, k).join(" "); break; }
+      }
+      const rightFull = mod && !right.toLowerCase().startsWith(mod.toLowerCase() + " ") ? `${mod} ${right}` : right;
+      if (!(recognisableIng(normaliseIngredient(left)) && recognisableIng(normaliseIngredient(rightFull)))) return [[raw], []];
+      const notes = [];
+      if (mod) notes.push(`"${mod}" was read as shared by both sides of "${left} & ${right}"`);
+      if (pct) notes.push(`The ${pct} after "${left} & ${right}" applies to the pair, not to each item separately`);
+      return [[left, rightFull], notes];
+    }
+    function expand(items, depth, heads, notes) {   // items: [raw, section label] pairs
       const out = [];
       for (const [raw, section] of items) {
         const ing = normaliseIngredient(raw);
@@ -598,7 +618,9 @@
         if (split && split[1].length === 1 && isColourNote(normaliseIngredient(split[1][0]).text)) split = null;   // "Annatto (colour)": a function note on a named food
         if (split && !recognisableIng(normaliseIngredient(split[0]))) {
           if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible
-          out.push(...expand(split[1].map((sub) => [sub, section]), depth + 1, heads));
+          const subs = [];
+          for (const sub of split[1]) { const [pieces, pairNotes] = splitAmpPair(sub); subs.push(...pieces); if (notes) for (const n of pairNotes) if (!notes.includes(n)) notes.push(n); }
+          out.push(...expand(subs.map((sub) => [sub, section]), depth + 1, heads, notes));
         }
         else out.push(ing);
       }
@@ -788,13 +810,14 @@
       }) }));
       const items = sections.flatMap((sec) => sec.items);
       const heads = [];
-      const ings = expand(sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads);
+      const ampNotes = [];
+      const ings = expand(sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads, ampNotes);
       const declared = declaredAdditives(parsed.declarations, ings);
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw))];
-      const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`);
+      const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));

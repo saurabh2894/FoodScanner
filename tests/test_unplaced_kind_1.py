@@ -53,7 +53,8 @@ def test_synthetic_a_strong_marker_still_decides_group_4_and_the_unplaced_item_s
     assert not any("vitamin" in d.ingredient.lower() for d in a.drivers)
 
 
-def test_synthetic_the_two_grain_pair_stays_unsplit_vocabulary_so_the_label_item_is_still_unassessed():
+def test_synthetic_the_two_grain_pair_now_splits_into_two_unplaced_items_and_the_list_still_abstains():
     a = an("Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Vitamins and Minerals.")
-    assert "Sprouted Ragi & Jowar (23.4%)" in a.unassessed and "Rice & Oat (22.3%)" in a.unassessed
-    assert not a.answered
+    assert [u.lower() for u in a.unplaced] == ["sprouted ragi", "sprouted jowar", "vitamins", "minerals"]
+    assert a.unassessed == ["Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"]
+    assert not a.answered and "recognised by name only" in a.reason                       # recognition is not classification: the split resolves nothing

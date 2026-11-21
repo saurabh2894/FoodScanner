@@ -1,0 +1,295 @@
+{
+ "before": {
+  "owner_label": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [
+    "Vitamins",
+    "Minerals"
+   ],
+   "unassessed": [
+    "Sprouted Ragi & Jowar (23.4%)",
+    "Rice & Oat (22.3%)",
+    "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group"
+  },
+  "owner_label_no_antioxidant": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [
+    "Vitamins",
+    "Minerals"
+   ],
+   "unassessed": [
+    "Sprouted Ragi & Jowar (23.4%)",
+    "Rice & Oat (22.3%)",
+    "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)"
+  },
+  "c_sprouted_ragi_oat": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Sprouted Ragi & Oat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Sprouted Ragi & Oat"
+  },
+  "c_fermented_ragi_oat": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Fermented Ragi & Oat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Fermented Ragi & Oat"
+  },
+  "c_roasted_rice_oat": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Roasted Rice & Oat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Roasted Rice & Oat"
+  },
+  "c_spices_condiments": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Spices & Condiments",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Spices & Condiments"
+  },
+  "c_bracket_organic": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Rice & Oat (Organic)",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Rice & Oat (Organic)"
+  },
+  "c_three": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Rice & Oat & Wheat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Rice & Oat & Wheat"
+  },
+  "c_salted_almonds_pumpkin": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Salted Almonds & Pumpkin Seeds",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Salted Almonds & Pumpkin Seeds"
+  },
+  "c_palm_palmolein": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Palm & Palmolein",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Palm & Palmolein"
+  },
+  "c_rice_oat_salt": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Rice & Oat (22.3%)",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Rice & Oat (22.3%)"
+  },
+  "c_ins": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "only weak or unlisted markers present (INS 330 & INS 260 -> INS 260 (not in local mapping); INS 330 & INS 260 -> INS 330 (not in local mapping)); not enough to call a group"
+  }
+ },
+ "after": {
+  "owner_label": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [
+    "Sprouted Ragi",
+    "Sprouted Jowar",
+    "Vitamins",
+    "Minerals"
+   ],
+   "unassessed": [
+    "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+   ],
+   "warnings": [
+    "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+    "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+    "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+   ],
+   "reason": "only weak or unlisted markers present (Antioxidant (Natural Tocopherol) -> \"antioxidant\" (unlisted_additive)); not enough to call a group"
+  },
+  "owner_label_no_antioxidant": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [
+    "Sprouted Ragi",
+    "Sprouted Jowar",
+    "Vitamins",
+    "Minerals"
+   ],
+   "unassessed": [
+    "Multigrain Flour Blend (45.7%) (group name; its contents were assessed separately)"
+   ],
+   "warnings": [
+    "\"Sprouted\" was read as shared by both sides of \"Sprouted Ragi & Jowar\"",
+    "The 23.4% after \"Sprouted Ragi & Jowar\" applies to the pair, not to each item separately",
+    "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+   ],
+   "reason": "recognised by name only, and no source read places Sprouted Ragi; Sprouted Jowar; Vitamins; Minerals, so the processing level cannot be judged (recognition is vocabulary, not classification)"
+  },
+  "c_sprouted_ragi_oat": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Sprouted Ragi & Oat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Sprouted Ragi & Oat"
+  },
+  "c_fermented_ragi_oat": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Fermented Ragi & Oat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Fermented Ragi & Oat"
+  },
+  "c_roasted_rice_oat": {
+   "group": 3,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [
+    "\"Roasted\" was read as shared by both sides of \"Roasted Rice & Oat\""
+   ],
+   "reason": null
+  },
+  "c_spices_condiments": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Spices & Condiments",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Spices & Condiments"
+  },
+  "c_bracket_organic": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Rice & Oat (Organic)",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Rice & Oat (Organic)"
+  },
+  "c_three": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Rice & Oat & Wheat",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Rice & Oat & Wheat"
+  },
+  "c_salted_almonds_pumpkin": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [
+    "\"Salted\" was read as shared by both sides of \"Salted Almonds & Pumpkin Seeds\""
+   ],
+   "reason": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern"
+  },
+  "c_palm_palmolein": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Palm & Palmolein",
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Palm & Palmolein"
+  },
+  "c_rice_oat_salt": {
+   "group": 3,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [
+    "The 22.3% after \"Rice & Oat\" applies to the pair, not to each item separately"
+   ],
+   "reason": null
+  },
+  "c_ins": {
+   "group": null,
+   "status": "complete",
+   "unplaced": [],
+   "unassessed": [
+    "Blend (group name; its contents were assessed separately)"
+   ],
+   "warnings": [],
+   "reason": "only weak or unlisted markers present (INS 260 -> INS 260 (not in local mapping); INS 330 -> INS 330 (not in local mapping)); not enough to call a group"
+  }
+ }
+}
