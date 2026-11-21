@@ -1,0 +1,319 @@
+{
+ "batch_id": "marker-rows-1",
+ "rows": [
+  {
+   "term": "fructose",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "exact term IS named by the clause",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; exact term IS named by the clause"
+  },
+  {
+   "term": "wheat gluten",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "instance of the named term 'gluten' (class-level coverage); exact term not named by the clause; the mapping gluten -> wheat gluten is stated by the owner's reading, not by the clause",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named term 'gluten' (class-level coverage); exact term not named by the clause; the mapping gluten -> wheat gluten is stated by the owner's reading, not by the clause"
+  },
+  {
+   "term": "hydrolysed vegetable protein",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class 'hydrolysed proteins' (class-level coverage); exact term not named by the clause"
+  },
+  {
+   "term": "lemon juice concentrate",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause"
+  },
+  {
+   "term": "apple juice concentrate",
+   "marker_class": "derived_substance",
+   "strength": "strong",
+   "coverage": "instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause",
+   "source": "PROVISIONAL: FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods) \"include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)\"; classification basis FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods) \"The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed.\"; instance of the named class '‘fruit juice concentrates’' (class-level coverage); exact term not named by the clause"
+  }
+ ],
+ "errors": [],
+ "results": {
+  "frozen_66": {
+   "changed": [
+    {
+     "input": "b1/N13",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"lemon juice concentrate\" (derived_substance)"
+     ],
+     "markers": [
+      "lemon juice concentrate"
+     ]
+    },
+    {
+     "input": "b1/N16",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "b2/M10",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "neg/R4",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"apple juice concentrate\" (derived_substance)"
+     ],
+     "markers": [
+      "apple juice concentrate"
+     ]
+    },
+    {
+     "input": "neg/R5",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"fructose\" (derived_substance)"
+     ],
+     "markers": [
+      "fructose"
+     ]
+    },
+    {
+     "input": "dev/F03",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"hydrolysed vegetable protein\" (derived_substance)"
+     ],
+     "markers": [
+      "hydrolysed vegetable protein"
+     ]
+    },
+    {
+     "input": "dev/F07",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "dev/F08",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    }
+   ],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  },
+  "out_of_sample_32": {
+   "changed": [
+    {
+     "input": "S04",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"hydrolysed vegetable protein\" (derived_substance)"
+     ],
+     "markers": [
+      "hydrolysed vegetable protein"
+     ]
+    },
+    {
+     "input": "S15",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "S19",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "uncertain",
+      "uncertain"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "S22",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)"
+     ],
+     "markers": [
+      "wheat gluten"
+     ]
+    },
+    {
+     "input": "S30",
+     "changed": [
+      "drivers"
+     ],
+     "group": [
+      4,
+      4
+     ],
+     "status": [
+      "complete",
+      "complete"
+     ],
+     "new_drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "\"hydrolysed vegetable protein\" (derived_substance)"
+     ],
+     "markers": [
+      "hydrolysed vegetable protein",
+      "wheat gluten"
+     ]
+    }
+   ],
+   "unexplained": [],
+   "group_changes_not_from_abstain": []
+  }
+ },
+ "verdict": "READY_FOR_REVIEW"
+}

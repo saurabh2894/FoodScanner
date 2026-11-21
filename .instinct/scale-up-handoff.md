@@ -35,6 +35,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] Cycle 2 B1 (branch claude/demand-bulk-1, off main 6a6334f): 4 rows + 1 synonym from the 110 open demand terms, 5 marker proposals for owner decision, 96 parks; evaluation/demand_bulk_1/. Awaiting owner verification; NOT merged. A and the 3.12 fix are merged (6a6334f). C (held-category sources) next. Acceptance probe still needs the owner's label text.
 
+- [x] Cycle 2: demand-bulk-1 merged (1eb06e0). Acceptance probe run on the merged build: no change vs d1bc5d5, group honestly abstains. Branch claude/markers-1 (off main 1eb06e0): 5 owner-approved strong markers, evaluation/markers_1/. Awaiting owner verification; NOT merged. Next: B2 (cocoa/glucose source read + admissible-source survey, report before using), then typo policy, then C.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).

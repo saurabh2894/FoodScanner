@@ -64,6 +64,8 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
     assert not rec(d["term"]), f"{d['term']!r} ({d['disposition']}) must stay unrecognised until the owner decides"
 
 
-def test_synthetic_label_bound_juices_and_proposed_markers_do_not_decide_a_group():
+def test_synthetic_parked_and_label_bound_terms_decide_nothing_but_an_approved_marker_still_does():
+    g, a = grp("Ingredients: Cocoa butter, apple juice, yeast extract, glucose syrup.")
+    assert g is None                                                        # nothing here is placed by a source read
     g, a = grp("Ingredients: Cocoa butter, wheat gluten, apple juice, yeast extract, glucose syrup.")
-    assert g is None                                                        # abstains: nothing here is placed by a source read
+    assert g == 4 and any("wheat gluten" in d.detail for d in a.drivers)    # wheat gluten became an owner-approved strong marker (marker-rows-1); the rest stays unplaced

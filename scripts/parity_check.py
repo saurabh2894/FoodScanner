@@ -148,6 +148,10 @@ CORPUS = [
     # demand-bulk-1 rows (tests/test_demand_bulk_1.py, SYNTHETIC)
     "Ingredients: Starch", "Ingredients: Rice, tapioca starch, salt.", "Ingredients: Modified starch, rice.", "Ingredients: Beans, water, salt.", "Ingredients: Wheat flour.", "Ingredients: Wheat flour, salt.",
     "Ingredients: Cabbage, cranberry, sugar.", "Ingredients: Edible peanut oil.", "Ingredients: Water, potable water, sugar.", "Ingredients: Cocoa butter, wheat gluten, apple juice, yeast extract, glucose syrup.",
+    # marker-rows-1 (tests/test_marker_rows_1.py, SYNTHETIC): approved FAO section 3 substances are strong markers; claims and look-alikes are not
+    "Ingredients: Rice, wheat gluten, salt.", "Ingredients: Water, fructose.", "Ingredients: Rice, hydrolysed vegetable protein, salt.", "Ingredients: Rice, Hydrolyzed Vegetable Protein.", "Ingredients: Water, lemon juice concentrate.",
+    "Ingredients: Water, apple juice concentrate, salt.", "Ingredients: Oats, gluten free.", "Ingredients: Wheat flour (gluten free), salt.", "Ingredients: Rice, fructooligosaccharide.", "Ingredients: Water, orange juice concentrate.",
+    "Ingredients: Rice, salt. Contains gluten.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
