@@ -1,0 +1,872 @@
+{
+ "rule_id": "synonyms-2",
+ "base_src": "/tmp/base_d27/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 384,
+  "after": 384,
+  "added": [],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "synonyms_additions": {
+  "before_lines": 127,
+  "after_lines": 150,
+  "base_lines_all_kept_in_order": true,
+  "added_rows": 23,
+  "expected_rows": 23,
+  "added_froms_match": true
+ },
+ "lexicon_unchanged": true,
+ "after_build_proof": {
+  "sucrose": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sugar",
+    "kind": "culinary"
+   }
+  },
+  "mandarin oranges": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "tangerines",
+    "kind": "fruit"
+   }
+  },
+  "chinese gooseberry": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "kiwifruit",
+    "kind": "fruit"
+   }
+  },
+  "broccoli rabe": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "broccoli raab",
+    "kind": "vegetable"
+   }
+  },
+  "rapini": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "broccoli raab",
+    "kind": "vegetable"
+   }
+  },
+  "sunchokes": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "jerusalem-artichokes",
+    "kind": "vegetable"
+   }
+  },
+  "water spinach": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   }
+  },
+  "kangkong": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   }
+  },
+  "christophine": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chayote",
+    "kind": "vegetable"
+   }
+  },
+  "moth bean": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   }
+  },
+  "mat bean": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   }
+  },
+  "lychee": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   }
+  },
+  "horseradish tree pods": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "drumstick pods",
+    "kind": "vegetable"
+   }
+  },
+  "sweetpotato leaves": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "sweet potato leaves",
+    "kind": "vegetable"
+   }
+  },
+  "portobello": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "portabello": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "portobella": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   }
+  },
+  "gai-lan": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chinese broccoli",
+    "kind": "vegetable"
+   }
+  },
+  "kai-lan": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "chinese broccoli",
+    "kind": "vegetable"
+   }
+  },
+  "mamey colorado": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mamey sapote",
+    "kind": "fruit"
+   }
+  },
+  "marmalade plum": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "mamey sapote",
+    "kind": "fruit"
+   }
+  },
+  "garlic pear": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "abiyuch",
+    "kind": "fruit"
+   }
+  },
+  "pak choi": {
+   "recognised_before": false,
+   "recognised_after": true,
+   "row_after": {
+    "term": "bok choy cabbage",
+    "kind": "vegetable"
+   }
+  }
+ },
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [
+   {
+    "input": "S01",
+    "changed": [
+     "reason",
+     "unassessed"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "mandarin oranges"
+    ],
+    "staged_terms": [
+     "mandarin orange",
+     "mandarin oranges"
+    ]
+   },
+   {
+    "input": "S24",
+    "changed": [
+     "unassessed"
+    ],
+    "group": [
+     4,
+     4
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [
+     "Sucrose"
+    ],
+    "staged_terms": [
+     "sucrose"
+    ]
+   }
+  ],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 510,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 358,
+  "group1_after": 358,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "alias_equals_target": {
+  "forms": 12,
+  "pairs": 23,
+  "compared": 276,
+  "mismatches": []
+ },
+ "controls": {
+  "badishep": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: badishep",
+   "unassessed_after": [
+    "badishep"
+   ]
+  },
+  "chick peas": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chick peas",
+   "unassessed_after": [
+    "chick peas"
+   ]
+  },
+  "tumeric": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: tumeric",
+   "unassessed_after": [
+    "tumeric"
+   ]
+  },
+  "chili": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: chili",
+   "unassessed_after": [
+    "chili"
+   ]
+  },
+  "cane sugar": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cane sugar",
+   "unassessed_after": [
+    "cane sugar"
+   ]
+  },
+  "yellow cherries": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: yellow cherries",
+   "unassessed_after": [
+    "yellow cherries"
+   ]
+  },
+  "gingelly oil": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: gingelly oil",
+   "unassessed_after": [
+    "gingelly oil"
+   ]
+  },
+  "carom seeds": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: carom seeds",
+   "unassessed_after": [
+    "carom seeds"
+   ]
+  },
+  "desi ghee": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: desi ghee",
+   "unassessed_after": [
+    "desi ghee"
+   ]
+  },
+  "maida": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: maida",
+   "unassessed_after": [
+    "maida"
+   ]
+  },
+  "cassia": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cassia",
+   "unassessed_after": [
+    "cassia"
+   ]
+  },
+  "cassia whole": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: cassia whole",
+   "unassessed_after": [
+    "cassia whole"
+   ]
+  },
+  "refined palmolien oil": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: refined palmolien oil",
+   "unassessed_after": [
+    "refined palmolien oil"
+   ]
+  },
+  "bok choy": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"bok choy\")",
+   "unassessed_after": [
+    "bok choy"
+   ]
+  },
+  "salted lychee": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lychee (sugar)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lychee (pickled)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (lychee (pickled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "lychee powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (lychee powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "kangkong (pickled)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (kangkong (pickled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "moth bean (salted)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mandarin oranges (sugar)": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": {
+    "term": "tangerines",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "portobello (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (portobello (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sucrose, rice": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised culinary",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "bok choy cabbage": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "bok choy cabbage",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sucrose": {
+   "group_before": null,
+   "group_after": 2,
+   "row_after": {
+    "term": "sugar",
+    "kind": "culinary"
+   },
+   "drivers_after": [
+    "single processed culinary ingredient"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mandarin oranges": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "tangerines",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chinese gooseberry": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "kiwifruit",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "broccoli rabe": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "broccoli raab",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rapini": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "broccoli raab",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunchokes": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "jerusalem-artichokes",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "water spinach": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kangkong": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "water convolvulus",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "christophine": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chayote",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "moth bean": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mat bean": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "mothbeans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "lychee": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "horseradish tree pods": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "drumstick pods",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sweetpotato leaves": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "sweet potato leaves",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "portobello": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "portabello": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "portobella": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "portabella mushrooms",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "gai-lan": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chinese broccoli",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "kai-lan": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "chinese broccoli",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mamey colorado": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "mamey sapote",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "marmalade plum": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "mamey sapote",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "garlic pear": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "abiyuch",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pak choi": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "bok choy cabbage",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% lychee powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
