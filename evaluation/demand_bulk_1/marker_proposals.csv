@@ -1,0 +1,6 @@
+rank,term,paste_inputs,fao_term_named,why
+4,wheat gluten,4,gluten,FAO names 'gluten' among ingredients of ultra-processed foods (strong marker candidate)
+52,hydrolysed vegetable protein,1,hydrolysed proteins,FAO names 'hydrolysed proteins'; 'hydrolysed vegetable protein' is a hydrolysed protein by name (strong marker candidate)
+54,lemon juice concentrate,1,fruit juice concentrate,"FAO section 3 lists 'fruit juice concentrate' among ingredients of ultra-processed foods; lemon juice concentrate is covered by class only, the exact term is not named; the juice clause is conditioned and a concentrate is not 'fresh or pasteurized'"
+85,apple juice concentrate,1,fruit juice concentrate,"FAO section 3 lists 'fruit juice concentrate' among ingredients of ultra-processed foods; apple juice concentrate is covered by class only, the exact term is not named; the juice clause is conditioned and a concentrate is not 'fresh or pasteurized'"
+96,fructose,1,fructose,FAO names 'fructose' among ingredients of ultra-processed foods (strong marker candidate)

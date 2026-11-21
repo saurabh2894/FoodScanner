@@ -145,6 +145,9 @@ CORPUS = [
     # plural-policy-1 synonyms (tests/test_plural_synonyms_1.py, SYNTHETIC): plural/leaf forms map, other parts and processed forms do not
     "Ingredients: Rice, cumin seeds, caraway seeds, fenugreek seeds, anise seeds, ajwain seeds, salt.", "Ingredients: Rice, basil leaves, mint leaf, peppermint leaves, coriander leaves, dill leaves, bay leaves, salt.",
     "Ingredients: Rice, fenugreek leaves, basil seeds, chilli seeds, turmeric leaves, salt.", "Ingredients: Rice, oregano leaf extract, mint leaf extract, basil leaf oil, salt.", "Ingredients: Rice, chillis, red chilis, salt.",
+    # demand-bulk-1 rows (tests/test_demand_bulk_1.py, SYNTHETIC)
+    "Ingredients: Starch", "Ingredients: Rice, tapioca starch, salt.", "Ingredients: Modified starch, rice.", "Ingredients: Beans, water, salt.", "Ingredients: Wheat flour.", "Ingredients: Wheat flour, salt.",
+    "Ingredients: Cabbage, cranberry, sugar.", "Ingredients: Edible peanut oil.", "Ingredients: Water, potable water, sugar.", "Ingredients: Cocoa butter, wheat gluten, apple juice, yeast extract, glucose syrup.",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
