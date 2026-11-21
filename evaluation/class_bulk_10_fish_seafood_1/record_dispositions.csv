@@ -1,0 +1,289 @@
+fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonical_candidate
+167742,"Mollusks, scallop, (bay and sea), cooked, steamed",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+167744,"Mollusks, snail, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk",NONE
+167745,"Turtle, green, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk",NONE
+168129,"Jellyfish, dried, salted",sr_legacy,Finfish and Shellfish Products,REJECT,salted_pickled,Salted or pickled fish product,NONE
+168148,"Frog legs, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk",NONE
+168149,"Fish, mackerel, salted",sr_legacy,Finfish and Shellfish Products,REJECT,salted_pickled,Salted or pickled fish product,NONE
+171948,"Fish, bass, striped, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (striped bass),striped bass
+171949,"Fish, bluefish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefish),bluefish
+171950,"Fish, burbot, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (burbot),burbot
+171951,"Fish, butterfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (butterfish),butterfish
+171952,"Fish, carp, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common carp),common carp
+171953,"Fish, cisco, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (cisco),cisco
+171954,"Fish, cisco, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+171955,"Fish, cod, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic cod),atlantic cod
+171956,"Fish, cod, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic cod),atlantic cod
+171957,"Fish, croaker, Atlantic, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+171958,"Fish, cusk, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (cusk),cusk
+171959,"Fish, mahimahi, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (mahimahi),mahimahi
+171960,"Fish, drum, freshwater, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (freshwater drum),freshwater drum
+171961,"Fish, gefiltefish, commercial, sweet recipe",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
+171962,"Fish, grouper, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171963,"Fish, grouper, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171964,"Fish, haddock, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (haddock),haddock
+171965,"Fish, halibut, Greenland, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (greenland halibut),greenland halibut
+171966,"Crustaceans, crab, blue, canned",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171967,"Crustaceans, crab, blue, crab cakes, home recipe",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
+171968,"Crustaceans, crab, dungeness, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (dungeness crab),dungeness crab
+171969,"Crustaceans, crab, queen, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (queen crab),queen crab
+171970,"Crustaceans, shrimp, mixed species, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+171971,"Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
+171972,"Crustaceans, shrimp, mixed species, canned",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171973,"Crustaceans, shrimp, mixed species, imitation, made from surimi",sr_legacy,Finfish and Shellfish Products,REJECT,surimi_imitation,Surimi-based imitation seafood formulation,NONE
+171974,"Mollusks, clam, mixed species, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+171975,"Mollusks, clam, mixed species, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171976,"Mollusks, clam, mixed species, canned, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171977,"Mollusks, clam, mixed species, canned, liquid",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171978,"Mollusks, oyster, eastern, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
+171979,"Mollusks, oyster, eastern, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+171980,"Mollusks, oyster, eastern, wild, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
+171981,"Mollusks, oyster, eastern, canned",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171982,"Mollusks, squid, mixed species, cooked, fried",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat,NONE
+171983,"Mollusks, whelk, unspecified, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171984,"Mollusks, whelk, unspecified, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171985,"Fish, salmon, chinook, smoked, (lox), regular",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+171986,"Fish, tuna, light, canned in water, without salt, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171987,"Fish, tuna, white, canned in oil, without salt, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171988,"Fish, tuna, white, canned in water, without salt, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+171989,"Fish, bass, freshwater, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171990,"Fish, cod, Pacific, cooked, dry heat (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
+171991,"Fish, cusk, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (cusk),cusk
+171992,"Fish, mahimahi, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (mahimahi),mahimahi
+171993,"Fish, drum, freshwater, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (freshwater drum),freshwater drum
+171994,"Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+171995,"Fish, milkfish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (milkfish),milkfish
+171996,"Fish, monkfish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (monkfish),monkfish
+171997,"Fish, pike, walleye, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (walleye pike),walleye pike
+171998,"Fish, salmon, Atlantic, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
+171999,"Fish, salmon, chinook, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chinook salmon),chinook salmon
+172000,"Fish, salmon, chum, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chum salmon),chum salmon
+172001,"Fish, salmon, pink, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pink salmon),pink salmon
+172002,"Fish, sucker, white, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (white sucker),white sucker
+172003,"Fish, sunfish, pumpkin seed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pumpkinseed sunfish),pumpkinseed sunfish
+172004,"Fish, trout, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+172005,"Fish, tuna, skipjack, fresh, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (skipjack tuna),skipjack tuna
+172006,"Fish, tuna, yellowfin, fresh, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (yellowfin tuna),yellowfin tuna
+172007,"Crustaceans, crab, dungeness, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (dungeness crab),dungeness crab
+172008,"Crustaceans, crab, queen, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (queen crab),queen crab
+172009,"Crustaceans, spiny lobster, mixed species, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+172010,"Mollusks, cuttlefish, mixed species, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173668,"Fish, herring, Atlantic, kippered",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Kippered fish (salted and smoked herring),NONE
+173669,"Fish, herring, Pacific, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific herring),pacific herring
+173670,"Fish, ling, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (ling),ling
+173671,"Fish, lingcod, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (lingcod),lingcod
+173672,"Fish, mackerel, Pacific and jack, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173673,"Fish, mackerel, spanish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (spanish mackerel),spanish mackerel
+173674,"Fish, mackerel, spanish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (spanish mackerel),spanish mackerel
+173675,"Fish, milkfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (milkfish),milkfish
+173676,"Fish, monkfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (monkfish),monkfish
+173677,"Fish, pout, ocean, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (ocean pout),ocean pout
+173678,"Fish, perch, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173679,"Fish, perch, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173680,"Fish, pike, northern, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (northern pike),northern pike
+173681,"Fish, pollock, Alaska, cooked, dry heat (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
+173682,"Fish, pompano, florida, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (florida pompano),florida pompano
+173683,"Fish, pompano, florida, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (florida pompano),florida pompano
+173684,"Fish, rockfish, Pacific, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173685,"Fish, sablefish, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+173686,"Fish, salmon, Atlantic, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
+173687,"Fish, salmon, chinook, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+173688,"Fish, salmon, chinook, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chinook salmon),chinook salmon
+173689,"Fish, salmon, chum, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chum salmon),chum salmon
+173690,"Fish, salmon, pink, canned, total can contents",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173691,"Fish, salmon, sockeye, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sockeye salmon),sockeye salmon
+173692,"Fish, salmon, sockeye, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sockeye salmon),sockeye salmon
+173693,"Fish, salmon, sockeye, canned, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173694,"Fish, sea bass, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173695,"Fish, seatrout, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173696,"Fish, shad, american, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (american shad),american shad
+173697,"Fish, shark, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173698,"Fish, snapper, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173699,"Fish, snapper, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173700,"Fish, spot, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (spot croaker),spot croaker
+173701,"Fish, sturgeon, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173702,"Fish, surimi",sr_legacy,Finfish and Shellfish Products,REJECT,surimi_imitation,Surimi-based imitation seafood formulation,NONE
+173703,"Fish, swordfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
+173704,"Fish, swordfish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
+173705,"Fish, tilefish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilefish),tilefish
+173706,"Fish, tuna, fresh, bluefin, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefin tuna),bluefin tuna
+173707,"Fish, tuna, fresh, bluefin, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefin tuna),bluefin tuna
+173708,"Fish, tuna, light, canned in oil, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173709,"Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173710,"Fish, turbot, european, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (european turbot),european turbot
+173711,"Fish, whitefish, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173712,"Fish, whitefish, mixed species, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+173713,"Fish, whiting, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+173714,"Fish, catfish, channel, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (channel catfish),channel catfish
+173715,"Fish, salmon, coho, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
+173716,"Fish, salmon, coho, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
+173717,"Fish, trout, rainbow, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
+173718,"Fish, trout, rainbow, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
+173719,"Fish, salmon, coho, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
+173720,"Mollusks, conch, baked or broiled",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (conch),conch
+173721,"Salmon nuggets, breaded, frozen, heated",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+173722,"Salmon nuggets, cooked as purchased, unheated",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
+173723,"Salmon, sockeye, canned, drained solids, without skin and bones",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173724,"Fish, Salmon, pink, canned, drained solids, without skin and bones",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+173725,"Fish, pollock, Alaska, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska pollock),alaska pollock
+173726,"Fish, pollock, Alaska, cooked",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska pollock),alaska pollock
+174182,"Fish, anchovy, european, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (european anchovy),european anchovy
+174183,"Fish, anchovy, european, canned in oil, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174184,"Fish, bass, fresh water, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174185,"Fish, carp, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common carp),common carp
+174186,"Fish, catfish, channel, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (channel catfish),channel catfish
+174187,"Fish, catfish, channel, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+174188,"Fish, caviar, black and red, granular",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy),NONE
+174189,"Fish, cod, Atlantic, canned, solids and liquid",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174190,"Fish, cod, Atlantic, dried and salted",sr_legacy,Finfish and Shellfish Products,REJECT,salted_pickled,Salted or pickled fish product,NONE
+174191,"Fish, cod, Pacific, raw (may have been previously frozen)",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific cod),pacific cod
+174192,"Fish, croaker, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic croaker),atlantic croaker
+174193,"Fish, eel, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174194,"Fish, eel, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174195,"Fish, fish sticks, frozen, prepared",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+174196,"Fish, flatfish (flounder and sole species), raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174197,"Fish, flatfish (flounder and sole species), cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174198,"Fish, haddock, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (haddock),haddock
+174199,"Fish, haddock, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+174200,"Fish, halibut, Atlantic and Pacific, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174201,"Fish, halibut, Atlantic and Pacific, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174202,"Crustaceans, crab, alaska king, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska king crab),alaska king crab
+174203,"Crustaceans, crab, alaska king, imitation, made from surimi",sr_legacy,Finfish and Shellfish Products,REJECT,surimi_imitation,Surimi-based imitation seafood formulation,NONE
+174204,"Crustaceans, crab, blue, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue crab),blue crab
+174205,"Crustaceans, crab, blue, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue crab),blue crab
+174206,"Crustaceans, crayfish, mixed species, wild, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174207,"Crustaceans, crayfish, mixed species, wild, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174208,"Crustaceans, lobster, northern, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (northern lobster),northern lobster
+174209,"Crustaceans, lobster, northern, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (northern lobster),northern lobster
+174210,"Crustaceans, shrimp, mixed species, raw (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
+174211,"Crustaceans, spiny lobster, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174212,"Mollusks, abalone, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174213,"Mollusks, abalone, mixed species, cooked, fried",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat,NONE
+174214,"Mollusks, clam, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174215,"Mollusks, cuttlefish, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174216,"Mollusks, mussel, blue, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue mussel),blue mussel
+174217,"Mollusks, mussel, blue, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue mussel),blue mussel
+174218,"Mollusks, octopus, common, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common octopus),common octopus
+174219,"Mollusks, oyster, Pacific, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific oyster),pacific oyster
+174220,"Mollusks, scallop, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174221,"Mollusks, scallop, mixed species, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+174222,"Mollusks, scallop, mixed species, imitation, made from surimi",sr_legacy,Finfish and Shellfish Products,REJECT,surimi_imitation,Surimi-based imitation seafood formulation,NONE
+174223,"Mollusks, squid, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174224,"Fish, salmon, chum, canned, without salt, drained solids with bone",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174225,"Fish, salmon, pink, canned, without salt, solids with bone and liquid",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174226,"Fish, salmon, sockeye, canned, without salt, drained solids with bone",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174227,"Fish, tuna, light, canned in oil, without salt, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+174228,"Fish, bass, striped, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (striped bass),striped bass
+174229,"Fish, bluefish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefish),bluefish
+174230,"Fish, burbot, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (burbot),burbot
+174231,"Fish, butterfish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (butterfish),butterfish
+174232,"Fish, halibut, greenland, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (greenland halibut),greenland halibut
+174233,"Fish, herring, Pacific, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific herring),pacific herring
+174234,"Fish, ling, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (ling),ling
+174235,"Fish, lingcod, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (lingcod),lingcod
+174236,"Fish, mackerel, king, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (king mackerel),king mackerel
+174237,"Fish, pollock, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic pollock),atlantic pollock
+174238,"Fish, pout, ocean, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (ocean pout),ocean pout
+174239,"Fish, roe, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy),NONE
+174240,"Fish, sablefish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sablefish),sablefish
+174241,"Fish, scup, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (scup),scup
+174242,"Fish, seatrout, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174243,"Fish, shad, american, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (american shad),american shad
+174244,"Fish, spot, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (spot croaker),spot croaker
+174245,"Fish, turbot, european, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (european turbot),european turbot
+174246,"Fish, whitefish, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174247,"Fish, wolffish, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic wolffish),atlantic wolffish
+174248,"Fish, yellowtail, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+174249,"Mollusks, octopus, common, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common octopus),common octopus
+174250,"Mollusks, oyster, Pacific, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific oyster),pacific oyster
+174251,"Fish, roughy, orange, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (orange roughy),orange roughy
+175116,"Fish, herring, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic herring),atlantic herring
+175117,"Fish, herring, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic herring),atlantic herring
+175118,"Fish, herring, Atlantic, pickled",sr_legacy,Finfish and Shellfish Products,REJECT,salted_pickled,Salted or pickled fish product,NONE
+175119,"Fish, mackerel, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic mackerel),atlantic mackerel
+175120,"Fish, mackerel, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic mackerel),atlantic mackerel
+175121,"Fish, mackerel, jack, canned, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175122,"Fish, mackerel, king, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (king mackerel),king mackerel
+175123,"Fish, mullet, striped, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (striped mullet),striped mullet
+175124,"Fish, mullet, striped, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (striped mullet),striped mullet
+175125,"Fish, ocean perch, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic ocean perch),atlantic ocean perch
+175126,"Fish, ocean perch, Atlantic, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic ocean perch),atlantic ocean perch
+175127,"Fish, pike, northern, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (northern pike),northern pike
+175128,"Fish, pike, walleye, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (walleye pike),walleye pike
+175129,"Fish, pollock, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic pollock),atlantic pollock
+175130,"Fish, pollock, Alaska, raw (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
+175131,"Fish, rockfish, Pacific, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175132,"Fish, roe, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy),NONE
+175133,"Fish, roughy, orange, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (orange roughy),orange roughy
+175134,"Fish, sablefish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sablefish),sablefish
+175135,"Fish, salmon, chum, canned, drained solids with bone",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175136,"Fish, salmon, coho, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
+175137,"Fish, salmon, coho, wild, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
+175138,"Fish, salmon, pink, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pink salmon),pink salmon
+175139,"Fish, sardine, Atlantic, canned in oil, drained solids with bone",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175140,"Fish, sardine, Pacific, canned in tomato sauce, drained solids with bone",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175141,"Fish, scup, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (scup),scup
+175142,"Fish, sea bass, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175143,"Fish, shark, mixed species, cooked, batter-dipped and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
+175144,"Fish, sheepshead, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sheepshead),sheepshead
+175145,"Fish, sheepshead, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sheepshead),sheepshead
+175146,"Fish, smelt, rainbow, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow smelt),rainbow smelt
+175147,"Fish, smelt, rainbow, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow smelt),rainbow smelt
+175148,"Fish, sturgeon, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175149,"Fish, sturgeon, mixed species, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
+175150,"Fish, sucker, white, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (white sucker),white sucker
+175151,"Fish, sunfish, pumpkin seed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pumpkinseed sunfish),pumpkinseed sunfish
+175152,"Fish, tilefish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilefish),tilefish
+175153,"Fish, trout, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175154,"Fish, trout, rainbow, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
+175155,"Fish, trout, rainbow, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
+175156,"Fish, tuna, fresh, skipjack, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (skipjack tuna),skipjack tuna
+175157,"Fish, tuna, white, canned in oil, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175158,"Fish, tuna, white, canned in water, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175159,"Fish, tuna, fresh, yellowfin, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (yellowfin tuna),yellowfin tuna
+175160,"Fish, tuna salad",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
+175161,"Fish, whiting, mixed species, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175162,"Fish, wolffish, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic wolffish),atlantic wolffish
+175163,"Fish, yellowtail, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175164,"Crustaceans, crab, alaska king, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska king crab),alaska king crab
+175165,"Fish, catfish, channel, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (channel catfish),channel catfish
+175166,"Fish, catfish, channel, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (channel catfish),channel catfish
+175167,"Fish, salmon, Atlantic, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
+175168,"Fish, salmon, Atlantic, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
+175169,"Crustaceans, crayfish, mixed species, farmed, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175170,"Crustaceans, crayfish, mixed species, farmed, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
+175171,"Mollusks, oyster, eastern, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
+175172,"Mollusks, oyster, eastern, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
+175173,"Mollusks, oyster, eastern, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
+175174,"Salmon, sockeye, canned, total can contents",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175175,"Fish, salmon, pink, canned, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+175176,"Fish, tilapia, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
+175177,"Fish, tilapia, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
+175178,"Fish, cod, Pacific, cooked",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific cod),pacific cod
+175179,"Crustaceans, shrimp, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
+175180,"Crustaceans, shrimp, cooked",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
+175181,"Fish, trout, brook, raw, New York State",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (brook trout),brook trout
+333374,"Fish, haddock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (haddock),haddock
+333476,"Fish, pollock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pollock),pollock
+334194,"Fish, tuna, light, canned in water, drained solids",foundation,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+2684440,"Fish, salmon, sockeye, wild caught, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sockeye salmon),sockeye salmon
+2684441,"Fish, salmon, Atlantic, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
+2684442,"Fish, tilapia, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
+2684443,"Crustaceans, shrimp, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
+2684444,"Fish, cod, Atlantic, wild caught, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic cod),atlantic cod
+2684445,"Fish, catfish, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (catfish),catfish
+2684446,"Crustaceans, crab, blue swimming, lump, pasteurized, refrigerated",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue swimming crab),blue swimming crab
+2747652,"Anchovies, canned in olive oil, with salt, drained",foundation,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
+2747654,"Cod, Pacific or Alaskan, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific cod),pacific cod
+2747656,"Halibut, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (halibut),halibut
+2747657,"Lobster, tail only, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (lobster),lobster
+2747658,"Mahi mahi, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (mahimahi),mahimahi
+2747666,"Scallops, bay, Patagonian, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (patagonian bay scallop),patagonian bay scallop
+2747667,"Scallops, sea, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sea scallop),sea scallop
+2747668,"Sea bass, Chilean, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chilean sea bass),chilean sea bass
+2747669,"Snapper, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snapper),snapper
+2747670,"Snow crab, legs only, frozen  ",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snow crab),snow crab
+2747671,"Squid (calamari), frozen, tubes only",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (squid),squid
+2747672,"Swordfish, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
+2747673,"Tuna, ahi or yellowfin, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (yellowfin tuna),yellowfin tuna
+2768188,"Alaska Pollock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska pollock),alaska pollock

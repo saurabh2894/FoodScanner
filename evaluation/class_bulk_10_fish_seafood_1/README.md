@@ -1,149 +1,76 @@
 # Batch 10 Candidate Staging: Plain Fish & Seafood (`class_bulk_10_fish_seafood_1`)
 
 ## 1. Summary & Staging Scope
-- **Task**: Candidate staging for Batch 10 (plain fish and seafood) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions.
+- **Task**: Candidate staging for Batch 10 (plain fish and seafood) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, repaired under Task 13.
 - **Role**: Generator/Researcher staging evidence and candidates for senior review (Claude). Zero changes to application source code, parser, classifier, or runtime resources (`lexicon.csv`, `synonyms.csv`, `markers.csv` untouched).
 - **Branch**: `antigravity/class-bulk-10-fish-seafood`
-- **Base Commit**: `46ad81c94757f92daaee0bf24c29d02f49965c07` (main HEAD)
+- **Original Base Commit**: `46ad81c94757f92daaee0bf24c29d02f49965c07` (main HEAD)
+- **Primary Handoff Unit**: `canonical_candidates.csv` (80 candidate rows, exactly 1 row per source-stated species identity).
+- **Complete Provenance Map**: `record_dispositions.csv` (288 rows, exactly 1 row per cached in-scope FDC record).
 - **Status**: COMPLETE; artifacts staged additions-only under `evaluation/class_bulk_10_fish_seafood_1/`.
 
+---
+
 ## 2. Derivation & Tie-Out
-All counts are strictly derived from the underlying CSV artifacts (`accept_records.csv`, `queue.csv`, `reject.csv`):
+All counts are strictly derived from the underlying CSV artifacts (`record_dispositions.csv`, `canonical_candidates.csv`, `accept_records.csv`, `queue.csv`, `reject.csv`):
 
 | Measure | Count | Notes |
 |---|---|---|
-| **Total FDC candidates in scope** | **288** | Category exactly 'Finfish and Shellfish Products' (264 SR Legacy + 24 Foundation) |
-| **ACCEPT (candidate records)** | **218** | Plain whole fish, fillets, steaks, crustaceans, and mollusks (A1–A6) |
-| **QUEUE (pending owner decision)** | **12** | Fish oils (defer to fats), roe/caviar, moisture-additive warnings, rare species |
-| **REJECT (conditioned / out of scope)** | **58** | Canned fish, smoked fish, breaded/battered, surimi, salted fish, fish sticks, cakes |
-| **Total Artifact Sum (Tie-Out)** | **288** | **EXACT TIE**: `candidates = accept (218) + queue (12) + reject (58)` |
+| **Total FDC records in scope** | **288** | Category exactly 'Finfish and Shellfish Products' (264 SR Legacy + 24 Foundation) |
+| **ACCEPT (candidate records)** | **167** | Plain whole fish, fillets, steaks, crustaceans, and mollusks of specific source-stated species |
+| **QUEUE (pending owner decision)** | **62** | Mixed/unspecified species (49), moisture additive warnings (5), rare species (3), roe/caviar (3), fried methods (2) |
+| **REJECT (conditioned / out of scope)** | **59** | Canned fish (30), breaded/battered/sticks (9), smoked/kippered (8), salted/pickled (4), surimi (4), formulated dishes (4) |
+| **Total Artifact Sum (Tie-Out)** | **288** | **EXACT TIE**: `candidates = accept (167) + queue (62) + reject (59)` |
 
 ### In-Scope Category Breakdown
 - `Finfish and Shellfish Products`: 288 records (264 SR Legacy + 24 Foundation)
 
-### Acceptance Breakdown
-- **Candidate records accepted**: 218
-- **Distinct canonical foods**: 67
-- **Already covered in lexicon.csv**: 0 (zero fish/seafood terms currently exist in lexicon.csv)
-- **NEW canonical food proposals for senior review**: 67
+---
 
-### Queue Breakdown (12 rows)
-- `plain_form_not_stated`: 5
-- `queue_fish_oil`: 1
-- `queue_rare_species`: 3
-- `queue_roe_special`: 3
+## 3. Task 13 Staging Repairs & Guard Enforcements
 
-### Reject Breakdown (58 rows)
-- `breaded_battered`: 10
-- `canned_preserved`: 30
-- `formulated_product`: 3
-- `salted_pickled`: 4
-- `smoked_fish`: 7
-- `surimi_imitation`: 4
+1. **Primary Review Handoff**: `canonical_candidates.csv` is now the concise primary review artifact (80 candidate rows). `accept_records.csv` (167 rows) is retained for full transparency as a record-level mapping, and `record_dispositions.csv` (288 rows) provides a single deterministic map of every in-scope category record.
+2. **Species Identity as Candidate Unit**: Biologically distinct fish are no longer collapsed under broad culinary buckets. For instance, Pacific and Atlantic species (Atlantic salmon, Chinook salmon, Coho salmon, Sockeye salmon, Pink salmon, Chum salmon) are staged as distinct species candidates rather than merged into a single generic "salmon" label.
+3. **Explicit Mixed Species Preserved in Queue**: 49 records where the FDC description explicitly states `mixed species` or multiple species (e.g. `Fish, grouper, mixed species`, `Mollusks, clam, mixed species`, `Fish, flatfish (flounder and sole species)`) are preserved explicitly and placed in QUEUE under `queue_mixed_species`. No species identity is invented or collapsed from generic group names.
+4. **Smoked & Kippered Isolation**: `Fish, herring, Atlantic, kippered` (FDC 173668) and 7 smoked fish records are rejected under `smoked_cured`.
+5. **Cooking Methods with Added Fat**: `Mollusks, squid, mixed species, cooked, fried` (FDC 171982) and `Mollusks, abalone, mixed species, cooked, fried` (FDC 174213) are isolated to QUEUE under `queue_cooking_added_fat`.
+6. **Preformed / Breaded Products**: Preformed frozen fish sticks (FDC 174195) and breaded/batter-dipped cuts are rejected under `breaded_battered_fried`.
 
-## 3. Dispositions & Overlaps
-- **Fish / Cod-Liver Oils**: 1 record is placed in QUEUE under `queue_fish_oil` with disposition **'defer to fats reading (Task 7 review outcome)'**.
-- **Moisture Additive Warnings**: 5 records explicitly stating `(may contain additives to retain moisture)` (shrimp, cod, pollock) are placed in QUEUE under `plain_form_not_stated` because their single-ingredient status is unverified.
-- **Fish Roe / Caviar**: 3 records (sturgeon caviar, mixed fish roe) are placed in QUEUE under `queue_roe_special`.
-- **Rare / Non-Core Species**: 3 records (turtle, frog legs, terrestrial snail) are placed in QUEUE under `queue_rare_species`.
+---
 
-## 4. Proposed New Canonical Foods (67 items)
-The following 67 canonical aquatic foods are plain, unconditioned commodities supported by real FDC commodity records:
+## 4. Proposed Canonical Species Candidates (`canonical_candidates.csv`: 80 rows)
 
-| Canonical Term | Category Sub-class | FDC Record Count | Example FDC ID & Description |
-|---|---|---|---|
-| `abalone` | Mollusk | 2 | FDC 174212 ("Mollusks, abalone, mixed species, raw") |
-| `anchovy` | Finfish | 1 | FDC 174182 ("Fish, anchovy, european, raw") |
-| `bass` | Finfish | 4 | FDC 171948 ("Fish, bass, striped, raw") |
-| `bluefish` | Finfish | 2 | FDC 171949 ("Fish, bluefish, raw") |
-| `burbot` | Finfish | 2 | FDC 171950 ("Fish, burbot, raw") |
-| `butterfish` | Finfish | 2 | FDC 171951 ("Fish, butterfish, raw") |
-| `carp` | Finfish | 2 | FDC 171952 ("Fish, carp, raw") |
-| `catfish` | Finfish | 5 | FDC 173714 ("Fish, catfish, channel, wild, cooked, dry heat") |
-| `cisco` | Finfish | 1 | FDC 171953 ("Fish, cisco, raw") |
-| `clam` | Mollusk | 2 | FDC 171975 ("Mollusks, clam, mixed species, cooked, moist heat") |
-| `cod` | Finfish | 8 | FDC 171955 ("Fish, cod, Atlantic, raw") |
-| `crab` | Crustacean | 10 | FDC 171968 ("Crustaceans, crab, dungeness, raw") |
-| `crayfish` | Crustacean | 4 | FDC 174206 ("Crustaceans, crayfish, mixed species, wild, raw") |
-| `croaker` | Finfish | 1 | FDC 174192 ("Fish, croaker, Atlantic, raw") |
-| `cusk` | Finfish | 2 | FDC 171958 ("Fish, cusk, raw") |
-| `cuttlefish` | Mollusk | 2 | FDC 172010 ("Mollusks, cuttlefish, mixed species, cooked, moist heat") |
-| `drum` | Finfish | 2 | FDC 171960 ("Fish, drum, freshwater, raw") |
-| `eel` | Finfish | 2 | FDC 174193 ("Fish, eel, mixed species, raw") |
-| `flounder` | Finfish | 2 | FDC 174196 ("Fish, flatfish (flounder and sole species), raw") |
-| `grouper` | Finfish | 2 | FDC 171962 ("Fish, grouper, mixed species, raw") |
-| `haddock` | Finfish | 3 | FDC 171964 ("Fish, haddock, raw") |
-| `halibut` | Finfish | 5 | FDC 171965 ("Fish, halibut, Greenland, raw") |
-| `herring` | Finfish | 5 | FDC 173668 ("Fish, herring, Atlantic, kippered") |
-| `ling` | Finfish | 2 | FDC 173670 ("Fish, ling, raw") |
-| `lobster` | Crustacean | 5 | FDC 172009 ("Crustaceans, spiny lobster, mixed species, cooked, moist heat") |
-| `mackerel` | Finfish | 8 | FDC 171994 ("Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat") |
-| `mahimahi` | Finfish | 3 | FDC 171959 ("Fish, mahimahi, raw") |
-| `milkfish` | Finfish | 2 | FDC 171995 ("Fish, milkfish, cooked, dry heat") |
-| `monkfish` | Finfish | 2 | FDC 171996 ("Fish, monkfish, cooked, dry heat") |
-| `mullet` | Finfish | 2 | FDC 175123 ("Fish, mullet, striped, raw") |
-| `mussel` | Mollusk | 2 | FDC 174216 ("Mollusks, mussel, blue, raw") |
-| `octopus` | Mollusk | 2 | FDC 174218 ("Mollusks, octopus, common, raw") |
-| `oyster` | Mollusk | 7 | FDC 171978 ("Mollusks, oyster, eastern, wild, raw") |
-| `perch` | Finfish | 4 | FDC 173678 ("Fish, perch, mixed species, raw") |
-| `pike` | Finfish | 4 | FDC 171997 ("Fish, pike, walleye, cooked, dry heat") |
-| `pollock` | Finfish | 6 | FDC 173725 ("Fish, pollock, Alaska, raw") |
-| `pompano` | Finfish | 2 | FDC 173682 ("Fish, pompano, florida, raw") |
-| `pout` | Finfish | 2 | FDC 173677 ("Fish, pout, ocean, raw") |
-| `rockfish` | Finfish | 2 | FDC 173684 ("Fish, rockfish, Pacific, mixed species, raw") |
-| `roughy` | Finfish | 2 | FDC 174251 ("Fish, roughy, orange, cooked, dry heat") |
-| `sablefish` | Finfish | 2 | FDC 174240 ("Fish, sablefish, cooked, dry heat") |
-| `salmon` | Finfish | 19 | FDC 171998 ("Fish, salmon, Atlantic, wild, cooked, dry heat") |
-| `scallop` | Mollusk | 4 | FDC 167742 ("Mollusks, scallop, (bay and sea), cooked, steamed") |
-| `scup` | Finfish | 2 | FDC 174241 ("Fish, scup, cooked, dry heat") |
-| `sea bass` | Finfish | 3 | FDC 173694 ("Fish, sea bass, mixed species, cooked, dry heat") |
-| `shad` | Finfish | 2 | FDC 173696 ("Fish, shad, american, raw") |
-| `shark` | Finfish | 1 | FDC 173697 ("Fish, shark, mixed species, raw") |
-| `sheepshead` | Finfish | 2 | FDC 175144 ("Fish, sheepshead, raw") |
-| `shrimp` | Crustacean | 3 | FDC 175179 ("Crustaceans, shrimp, raw") |
-| `smelt` | Finfish | 2 | FDC 175146 ("Fish, smelt, rainbow, raw") |
-| `snapper` | Finfish | 3 | FDC 173698 ("Fish, snapper, mixed species, raw") |
-| `spot` | Finfish | 2 | FDC 173700 ("Fish, spot, raw") |
-| `squid` | Mollusk | 3 | FDC 171982 ("Mollusks, squid, mixed species, cooked, fried") |
-| `sturgeon` | Finfish | 2 | FDC 173701 ("Fish, sturgeon, mixed species, raw") |
-| `sucker` | Finfish | 2 | FDC 172002 ("Fish, sucker, white, cooked, dry heat") |
-| `sunfish` | Finfish | 2 | FDC 172003 ("Fish, sunfish, pumpkin seed, cooked, dry heat") |
-| `swordfish` | Finfish | 3 | FDC 173703 ("Fish, swordfish, raw") |
-| `tilapia` | Finfish | 3 | FDC 175176 ("Fish, tilapia, raw") |
-| `tilefish` | Finfish | 2 | FDC 173705 ("Fish, tilefish, raw") |
-| `trout` | Finfish | 9 | FDC 172004 ("Fish, trout, mixed species, cooked, dry heat") |
-| `tuna` | Finfish | 7 | FDC 172005 ("Fish, tuna, skipjack, fresh, cooked, dry heat") |
-| `turbot` | Finfish | 2 | FDC 173710 ("Fish, turbot, european, raw") |
-| `whelk` | Mollusk | 2 | FDC 171983 ("Mollusks, whelk, unspecified, raw") |
-| `whitefish` | Finfish | 2 | FDC 173711 ("Fish, whitefish, mixed species, raw") |
-| `whiting` | Finfish | 2 | FDC 173713 ("Fish, whiting, mixed species, raw") |
-| `wolffish` | Finfish | 2 | FDC 174247 ("Fish, wolffish, Atlantic, cooked, dry heat") |
-| `yellowtail` | Finfish | 2 | FDC 174248 ("Fish, yellowtail, mixed species, cooked, dry heat") |
+The 167 accepted plain records collapse into exactly 80 distinct biological species candidates:
 
-## 5. Canonical Deduplication Decisions (A6)
-Butchering cuts (fillets, steaks, loins, whole dressed fish, shrimp tails, squid tubes), species varieties (Atlantic vs Pacific cod, chinook vs coho vs sockeye salmon), and plain cooking methods (raw, dry heat, moist heat, steamed, baked) collapse into single canonical foods:
-
-| Candidate Variety / Variant | Collapses To Canonical | Decision Basis |
+| Category Sub-class | Count | Example Species Candidates |
 |---|---|---|
-| Atlantic cod, Pacific cod | `cod` | Regional species varieties of Gadus; same culinary fish |
-| Chinook, coho, sockeye, pink, chum salmon | `salmon` | Species varieties of Oncorhynchus / Salmo; same culinary fish |
-| Blue, dungeness, queen, snow crab, king crab | `crab` | Regional crustacean species; same culinary shellfish |
-| Northern lobster, spiny lobster | `lobster` | Homarus vs Panulirus crustacean species; same culinary shellfish |
-| Eastern oyster, Pacific oyster | `oyster` | Crassostrea species; same culinary bivalve |
-| Bay scallop, sea scallop | `scallop` | Pectinidae species; same culinary bivalve |
-| Yellowfin, skipjack, albacore, bluefin tuna | `tuna` | Thunnus species; same culinary fish |
-| Rainbow trout, lake trout | `trout` | Oncorhynchus mykiss / Salvelinus namaycush; same culinary fish |
+| **Salmonids** | 8 | `atlantic salmon`, `chinook salmon`, `coho salmon`, `sockeye salmon`, `pink salmon`, `chum salmon`, `rainbow trout`, `brook trout` |
+| **Gadoids (Cods & Pollocks)** | 5 | `atlantic cod`, `pacific cod`, `atlantic pollock`, `alaska pollock`, `pollock` |
+| **Scombroids (Tunas & Mackerels)** | 6 | `bluefin tuna`, `yellowfin tuna`, `skipjack tuna`, `atlantic mackerel`, `spanish mackerel`, `king mackerel` |
+| **Clupeoids (Herrings & Anchovies)** | 4 | `atlantic herring`, `pacific herring`, `european anchovy`, `american shad` |
+| **Crustaceans (Crabs, Lobsters, Shrimps)** | 9 | `blue crab`, `dungeness crab`, `alaska king crab`, `queen crab`, `snow crab`, `blue swimming crab`, `northern lobster`, `lobster`, `shrimp` |
+| **Mollusks (Oysters, Mussels, Octopuses, Scallops)** | 9 | `eastern oyster`, `pacific oyster`, `blue mussel`, `common octopus`, `sea scallop`, `patagonian bay scallop`, `conch`, `squid` |
+| **Other Freshwater & Marine Finfish** | 39 | `striped bass`, `chilean sea bass`, `bluefish`, `burbot`, `butterfish`, `common carp`, `cisco`, `cusk`, `freshwater drum`, `haddock`, `greenland halibut`, `halibut`, `ling`, `lingcod`, `mahimahi`, `milkfish`, `monkfish`, `striped mullet`, `atlantic ocean perch`, `northern pike`, `walleye pike`, `florida pompano`, `ocean pout`, `orange roughy`, `sablefish`, `scup`, `sheepshead`, `rainbow smelt`, `spot croaker`, `atlantic croaker`, `white sucker`, `pumpkinseed sunfish`, `swordfish`, `tilapia`, `tilefish`, `european turbot`, `atlantic wolffish`, `snapper`, `catfish`, `channel catfish` |
 
-## 6. Synonym Candidates for Review
-The following synonym candidates are surfaced from FDC descriptions and commercial cut trade names (not added to synonyms.csv):
-- `salmon fillet` -> `salmon`
-- `cod fillet` -> `cod`
-- `tuna steak` -> `tuna`
-- `halibut steak` -> `halibut`
-- `calamari` -> `squid`
-- `prawns` -> `shrimp`
-- `dungeness crab` -> `crab`
-- `snow crab` -> `crab`
-- `blue crab` -> `crab`
-- `sea scallops` -> `scallop`
-- `bay scallops` -> `scallop`
+- **Already covered in lexicon.csv**: 0 (zero fish/seafood terms exist in `lexicon.csv`)
+- **Genuinely new species proposals**: 80
+- **Variant/synonym candidates**: Surfaced purely as candidate aliases in `canonical_candidates.csv`; `synonyms.csv` is not modified.
+
+---
+
+## 5. Queue Breakdown (62 rows)
+- `queue_mixed_species`: **49 rows** (records explicitly stating mixed species, multiple species, or unstated biological identity; e.g. clam mixed species, grouper mixed species, flatfish flounder and sole, crayfish mixed species, snapper mixed species, trout mixed species).
+- `plain_form_not_stated`: **5 rows** (explicit warning: `may contain additives to retain moisture`).
+- `queue_rare_species`: **3 rows** (green turtle, frog legs, terrestrial snail).
+- `queue_roe_special`: **3 rows** (sturgeon caviar, mixed fish roe).
+- `queue_cooking_added_fat`: **2 rows** (fried squid, fried abalone).
+
+---
+
+## 6. Reject Breakdown (59 rows)
+- `canned_fish`: **30 rows** (tuna canned in water/oil, canned salmon, sardines in oil/tomato sauce, canned shrimp/clams/crab).
+- `breaded_battered_fried`: **9 rows** (breaded fish cuts, croaker, fish sticks, portions).
+- `smoked_cured`: **8 rows** (kippered herring, smoked salmon lox, smoked cisco, smoked whitefish, smoked haddock, smoked sturgeon).
+- `salted_pickled`: **4 rows** (salted jellyfish, salted mackerel, pickled herring, cod in brine).
+- `surimi_imitation`: **4 rows** (imitation shrimp, imitation king crab, imitation blue crab, surimi block).
+- `formulated_prepared`: **4 rows** (gefilte fish sweet recipe, crab cakes, tuna salad, salmon nuggets).

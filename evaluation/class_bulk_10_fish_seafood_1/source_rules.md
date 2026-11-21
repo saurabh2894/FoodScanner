@@ -40,17 +40,18 @@ All classification grounding is established strictly from the primary report in 
 | **Crustaceans** (shrimp, crab, lobster, crayfish) | Table 1 Group 1 p. 11: *"seafood"* | **Class-instance** | Crustacean species are class-instances of `seafood` |
 | **Mollusks** (clam, oyster, mussel, scallop, squid, octopus) | Table 1 Group 1 p. 11: *"seafood"* | **Class-instance** | Mollusk species are class-instances of `seafood` |
 | **Canned / Tinned fish** | Table 1 Group 3 p. 12: *"canned fish"*; p. 9: *"tinned fish preserved in oil"* | **Exact-named** | Processed foods; rejected |
-| **Smoked / Salted fish** | Table 1 Group 3 p. 12: *"salted... or smoked... fish"* | **Exact-named** | Processed foods; rejected |
+| **Smoked / Kippered / Salted fish** | Table 1 Group 3 p. 12: *"salted... or smoked... fish"* | **Exact-named** | Processed foods; rejected |
 | **Fish sticks / nuggets / surimi** | Table 1 Group 4 p. 12: *"fish 'nuggets' and 'sticks'"* | **Exact-named** | Ultra-processed formulations; rejected |
 
 ---
 
-## 3. Silence on Specific Terms (`SOURCE-SILENT`)
+## 3. Silence on Specific Terms (`SOURCE-SILENT`) & Species Identity Policy
 
 Where the FAO 2019 report text does not name or define a term or category, it is recorded strictly as **SOURCE-SILENT**:
-- **Specific fish species**: **SOURCE-SILENT** in the FAO text (no species like salmon, tilapia, tuna, cod, shrimp, or crab is named individually; all are class-instances).
+- **Specific biological species**: **SOURCE-SILENT** in the FAO text (no species like *Salmo salar*, *Thunnus albacares*, or *Callinectes sapidus* is named individually; all are biological class-instances).
+- **Unit of Candidate Generation**: The required unit is **source-stated species identity**. Biologically distinct species are never silently merged under broad culinary categories (e.g. Atlantic salmon, Chinook salmon, Coho salmon, and Sockeye salmon are staged as separate species candidates).
+- **Mixed or Unspecified Species**: Where an FDC record states `mixed species` or multiple species (e.g. `Mollusks, clam, mixed species`, `Fish, flatfish (flounder and sole species)`), species identity cannot be established; these are preserved explicitly and queued under `queue_mixed_species`.
 - **Fish roe / Caviar**: **SOURCE-SILENT** in Group 1 examples (queued under `queue_roe_special`).
-- **Plain dried fish**: **SOURCE-SILENT** in Group 1 examples (cured/salted dried fish is Group 3; plain unsalted dried fish is queued under `dried_form_unstated`).
+- **Fried cooking methods**: Cooking methods stating `fried` or `pan-fried` without establishing lack of added cooking oil/fat are queued under `queue_cooking_added_fat`.
 - **Surimi / fish paste**: **SOURCE-SILENT** in Group 1; industrial reconstituted seafood formulation (rejected under `surimi_imitation`).
-- **Seaweed as food**: **SOURCE-SILENT** in Group 1 examples (algae named in definition, but commercial dried/processed seaweed as food unstated).
-- **Fish oils / cod-liver oils**: **SOURCE-SILENT** in Group 2 culinary ingredients; queued under `queue_fish_oil` (defer to fats reading).
+- **Fish oils / cod-liver oils**: **SOURCE-SILENT** in Group 2 culinary ingredients; queued under `queue_fish_oil` (deferred to fats review).

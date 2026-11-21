@@ -1,13 +1,63 @@
-dataset,fdc_id,record_name,reason_code,reason
-sr_legacy,167744,"Mollusks, snail, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
-sr_legacy,167745,"Turtle, green, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
-sr_legacy,168148,"Frog legs, raw",queue_rare_species,"Reptile, amphibian, or terrestrial mollusk classified under fish category; outside core finfish/shellfish"
-sr_legacy,171971,"Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
-sr_legacy,171990,"Fish, cod, Pacific, cooked, dry heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
-sr_legacy,173681,"Fish, pollock, Alaska, cooked, dry heat (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
-sr_legacy,173720,"Mollusks, conch, baked or broiled",queue_fish_oil,Fish/marine oil record; defer to fats reading (Task 7 review outcome)
-sr_legacy,174188,"Fish, caviar, black and red, granular",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
-sr_legacy,174210,"Crustaceans, shrimp, mixed species, raw (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
-sr_legacy,174239,"Fish, roe, mixed species, cooked, dry heat",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
-sr_legacy,175130,"Fish, pollock, Alaska, raw (may contain additives to retain moisture)",plain_form_not_stated,Record explicitly states 'may contain additives to retain moisture'; plain single-ingredient status unstated
-sr_legacy,175132,"Fish, roe, mixed species, raw",queue_roe_special,Fish roe / caviar / reproductive organ product; plain status unstated
+dataset,fdc_id,record_name,category_name,reason_code,reason
+sr_legacy,167742,"Mollusks, scallop, (bay and sea), cooked, steamed",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,167744,"Mollusks, snail, raw",Finfish and Shellfish Products,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk"
+sr_legacy,167745,"Turtle, green, raw",Finfish and Shellfish Products,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk"
+sr_legacy,168148,"Frog legs, raw",Finfish and Shellfish Products,queue_rare_species,"Non-finfish/shellfish reptile, amphibian, or terrestrial mollusk"
+sr_legacy,171962,"Fish, grouper, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171963,"Fish, grouper, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171971,"Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",Finfish and Shellfish Products,plain_form_not_stated,Source indicates product may contain additives to retain moisture
+sr_legacy,171975,"Mollusks, clam, mixed species, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171982,"Mollusks, squid, mixed species, cooked, fried",Finfish and Shellfish Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat
+sr_legacy,171983,"Mollusks, whelk, unspecified, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171984,"Mollusks, whelk, unspecified, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171989,"Fish, bass, freshwater, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,171990,"Fish, cod, Pacific, cooked, dry heat (may contain additives to retain moisture)",Finfish and Shellfish Products,plain_form_not_stated,Source indicates product may contain additives to retain moisture
+sr_legacy,171994,"Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,172004,"Fish, trout, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,172009,"Crustaceans, spiny lobster, mixed species, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,172010,"Mollusks, cuttlefish, mixed species, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173672,"Fish, mackerel, Pacific and jack, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173678,"Fish, perch, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173679,"Fish, perch, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173681,"Fish, pollock, Alaska, cooked, dry heat (may contain additives to retain moisture)",Finfish and Shellfish Products,plain_form_not_stated,Source indicates product may contain additives to retain moisture
+sr_legacy,173684,"Fish, rockfish, Pacific, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173694,"Fish, sea bass, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173695,"Fish, seatrout, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173697,"Fish, shark, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173698,"Fish, snapper, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173699,"Fish, snapper, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173701,"Fish, sturgeon, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173711,"Fish, whitefish, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,173713,"Fish, whiting, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174184,"Fish, bass, fresh water, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174188,"Fish, caviar, black and red, granular",Finfish and Shellfish Products,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy)
+sr_legacy,174193,"Fish, eel, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174194,"Fish, eel, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174196,"Fish, flatfish (flounder and sole species), raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174197,"Fish, flatfish (flounder and sole species), cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174200,"Fish, halibut, Atlantic and Pacific, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174201,"Fish, halibut, Atlantic and Pacific, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174206,"Crustaceans, crayfish, mixed species, wild, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174207,"Crustaceans, crayfish, mixed species, wild, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174210,"Crustaceans, shrimp, mixed species, raw (may contain additives to retain moisture)",Finfish and Shellfish Products,plain_form_not_stated,Source indicates product may contain additives to retain moisture
+sr_legacy,174211,"Crustaceans, spiny lobster, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174212,"Mollusks, abalone, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174213,"Mollusks, abalone, mixed species, cooked, fried",Finfish and Shellfish Products,queue_cooking_added_fat,Cooking method states fried; cannot establish plain status without added cooking oil/fat
+sr_legacy,174214,"Mollusks, clam, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174215,"Mollusks, cuttlefish, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174220,"Mollusks, scallop, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174223,"Mollusks, squid, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174239,"Fish, roe, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy)
+sr_legacy,174242,"Fish, seatrout, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174246,"Fish, whitefish, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,174248,"Fish, yellowtail, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175130,"Fish, pollock, Alaska, raw (may contain additives to retain moisture)",Finfish and Shellfish Products,plain_form_not_stated,Source indicates product may contain additives to retain moisture
+sr_legacy,175131,"Fish, rockfish, Pacific, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175132,"Fish, roe, mixed species, raw",Finfish and Shellfish Products,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy)
+sr_legacy,175142,"Fish, sea bass, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175148,"Fish, sturgeon, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175153,"Fish, trout, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175161,"Fish, whiting, mixed species, cooked, dry heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175163,"Fish, yellowtail, mixed species, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175169,"Crustaceans, crayfish, mixed species, farmed, raw",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
+sr_legacy,175170,"Crustaceans, crayfish, mixed species, farmed, cooked, moist heat",Finfish and Shellfish Products,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity
