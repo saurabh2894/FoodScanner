@@ -1,0 +1,40 @@
+{
+ "rule_id": "milk-powder-1",
+ "status": "Controls for the milk powder exception to the powder standard (owner post-merge refinement 2026-11-21).",
+ "clause": {
+  "text": "frozen eggs; fresh, powdered or pasteurized milk",
+  "where": "FAO 2019, Table 1, Group 1 examples, p. 11"
+ },
+ "negative_controls": [
+  "fortified milk powder",
+  "instant milk powder",
+  "milk powder blend",
+  "milk powder (vitamins added)",
+  "skimmed milk powder (soy lecithin)",
+  "milk solids powder",
+  "whole milk solids powder",
+  "rice, milk solids powder",
+  "milk solids powder, rice",
+  "blend (milk solids powder, salt)",
+  "spinach powder",
+  "banana powder",
+  "egg powder",
+  "rice powder",
+  "whole milk powder (fortified)"
+ ],
+ "positive_controls": [
+  "milk powder",
+  "whole milk powder",
+  "skimmed milk powder",
+  "toned milk powder",
+  "buffalo milk powder",
+  "whole buffalo milk powder",
+  "milk powder (45%)",
+  "100% spinach powder",
+  "whole spinach powder",
+  "milk solids",
+  "milk",
+  "rice, salt, milk powder",
+  "rice, milk powder"
+ ]
+}

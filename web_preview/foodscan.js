@@ -524,7 +524,15 @@
       const row = lookup(ing.name);
       return toks.includes("whole") && !toks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
     }
-    const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
+    // powdered milk is placed by name (FAO Table 1 Group 1 'fresh, powdered or pasteurized milk'): mirrors classify.milk_powder_named
+    const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk"];
+    const MILK_POWDER_WORDS = new Set(["milk", "toned", "double", "buffalo", "whole", "skimmed", "skim", "powder", "powdered"]);
+    function milkPowderNamed(ing) {
+      const row = lookup(ing.name);
+      const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
+      return !!row && MILK_POWDER_ROWS.includes(row.term) && (toks.includes("powder") || toks.includes("powdered")) && toks.every((t) => MILK_POWDER_WORDS.has(t));
+    }
+    const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED);
     function hitsFor(ing) {
@@ -582,7 +590,7 @@
           ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
-        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: milkPowderNamed(ings[0]) ? "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')" : "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "food_powder" && powderCompositionStated(ings[0]))
         return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && kinds[0] === "culinary")

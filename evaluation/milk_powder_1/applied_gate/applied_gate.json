@@ -1,0 +1,400 @@
+{
+ "rule_id": "milk-powder-1",
+ "base_src": "/tmp/main_base/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 295,
+  "after": 295,
+  "added": [],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {},
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 421,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 348,
+  "group1_after": 354,
+  "changed": {
+   "buffalo milk powder": [
+    null,
+    1
+   ],
+   "milk powder": [
+    null,
+    1
+   ],
+   "toned milk powder": [
+    null,
+    1
+   ],
+   "whole buffalo milk powder": [
+    null,
+    1
+   ],
+   "whole milk powder": [
+    null,
+    1
+   ],
+   "whole toned milk powder": [
+    null,
+    1
+   ]
+  },
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "fortified milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: fortified milk powder",
+   "unassessed_after": [
+    "fortified milk powder"
+   ]
+  },
+  "instant milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: instant milk powder",
+   "unassessed_after": [
+    "instant milk powder"
+   ]
+  },
+  "milk powder blend": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: milk powder blend",
+   "unassessed_after": [
+    "milk powder blend"
+   ]
+  },
+  "milk powder (vitamins added)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk powder (vitamins added)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "skimmed milk powder (soy lecithin)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (skimmed milk powder (soy lecithin)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "milk solids powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "whole milk solids powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (whole milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "rice, milk solids powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "milk solids powder, rice": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "blend (milk solids powder, salt)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "a powder of a food (milk solids powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": [
+    "blend (group name; its contents were assessed separately)"
+   ]
+  },
+  "spinach powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (spinach powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "banana powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "banana powder",
+    "kind": "food_powder"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (banana powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "egg powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (egg powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "rice powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (rice powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "whole milk powder (fortified)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (whole milk powder (fortified)) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "skimmed milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toned milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buffalo milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole buffalo milk powder": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "buffalo milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk powder (45%)": {
+   "group_before": null,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "100% spinach powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "whole spinach powder": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "spinach",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "single recognised powder of one food whose own text states whole-food composition ('100%' or 'whole'); nothing else listed"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk solids": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk solids",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, salt, milk powder": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice, milk powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}

@@ -1,0 +1,13 @@
+# milk_powder_1: milk powder exception to the powder standard (owner post-merge refinement, 2026-11-21)
+
+**Source (exact-named):** FAO 2019 (ca5644en.pdf) Table 1, Group 1 examples, p.11, verbatim: "frozen eggs; fresh, powdered or pasteurized milk" (verified verbatim in the report text). Unlike vegetable powders (the clause names only 'dried' vegetables), the source places POWDERED MILK by name, so its composition is source-established and the abstain rationale of the powder standard does not apply.
+
+**Rule (classify.milk_powder_named, mirrored in foodscan.js):** an item whose whole text is `<optional fat-grade word> milk powder` on the rows milk, toned milk, double toned milk or buffalo milk (grade words: whole, skimmed, skim; these are fat grades, not composition statements) keeps its plain Group 1 placement; the single-item driver cites the clause ('powdered milk (FAO Table 1 Group 1: fresh, powdered or pasteurized milk)').
+
+**Stays under the powder standard (abstains):** every non-milk powder; `milk solids powder` and `whole milk solids powder` in every position (a solids fraction is not the named 'powdered milk' form); any milk powder with extra words: `fortified`, `instant`, `blend`, `(vitamins added)`, `(soy lecithin)`, `(fortified)` (the first three are not in the vocabulary; the bracketed ones fall outside the enumerated forms). `double toned milk powder` is not recognised by the build (the descriptor `toned` is stripped before lookup: pre-existing, unchanged).
+
+**Gate (scripts/applied_gate.py, BEFORE = main a8e64c1 in a separate fresh process, AFTER = the committed tree):**
+- Powder surface, 552 probed forms: exactly 6 changed, all abstain -> Group 1: milk powder, toned milk powder, buffalo milk powder, whole milk powder, whole toned milk powder, whole buffalo milk powder. No other move; no bare non-milk powder answers Group 1; no powder form moved to another group.
+- Frozen 66: 0 changes. Out-of-sample 32: 0 changes. 0 unexplained, 0 abstain->4. Drift over 421 existing terms and synonyms: 0 differences.
+- Controls (applied_gate.json 'controls', 28): fortified/instant/blend/vitamins-added/soy-lecithin milk powder, milk solids powder (alone, in lists, in a nested blend), spinach, banana, egg and rice powder all abstain; the enumerated forms answer Group 1 with the exact-named driver; 100%/whole spinach powder, milk solids and milk unchanged; 'rice, salt, milk powder' Group 3 and 'rice, milk powder' abstain (the plain-row behaviour restored).
+- Tests: tests/test_milk_powder_1.py (23 cases); tests/test_powder_standard_1.py updated (the two milk forms left its bare-abstain list, with an explanation).

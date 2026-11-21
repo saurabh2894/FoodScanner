@@ -188,6 +188,11 @@ CORPUS = [
     "Ingredients: Rice, Spinach Powder.", "Ingredients: Rice, Spinach Powder, XQ9.", "Ingredients: Rice, Spinach Powder, Flavouring XQ9.", "Ingredients: Seasoning Blend (Spinach Powder, Salt).",
     "Ingredients: Spinach Extract Powder", "Ingredients: Beet Red Powder", "Ingredients: Spinach Powder (Maltodextrin)", "Ingredients: Spinach & Kale Powder", "Ingredients: Banana Powder", "Ingredients: 100% Date Powder",
     "Ingredients: Salted Pinto Beans Powder", "Ingredients: Rice, 100% Spinach Powder.", "Ingredients: Spinach Powder (45%)",
+    # milk powder exception (tests/test_milk_powder_1.py, SYNTHETIC): FAO Group 1 names 'fresh, powdered or pasteurized milk'; only the enumerated fat-grade forms take it
+    "Ingredients: Milk Powder", "Ingredients: Whole Milk Powder", "Ingredients: Skimmed Milk Powder", "Ingredients: Toned Milk Powder", "Ingredients: Buffalo Milk Powder", "Ingredients: Whole Buffalo Milk Powder",
+    "Ingredients: Milk Powder (45%)", "Ingredients: Fortified Milk Powder", "Ingredients: Instant Milk Powder", "Ingredients: Milk Powder Blend", "Ingredients: Milk Powder (Vitamins Added)",
+    "Ingredients: Skimmed Milk Powder (Soy Lecithin)", "Ingredients: Milk Solids Powder", "Ingredients: Rice, Milk Solids Powder.", "Ingredients: Rice, Salt, Milk Powder.", "Ingredients: Rice, Milk Powder.",
+    "Ingredients: Blend (Milk Solids Powder, Salt).", "Ingredients: Milk Solids",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

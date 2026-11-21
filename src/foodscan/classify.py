@@ -160,8 +160,24 @@ def powder_composition_stated(ing) -> bool:
     return "whole" in toks and "milk" not in toks and not (row and row["term"] in _MILK_TERMS)
 
 
+# Powdered MILK is placed by the source BY NAME (owner post-merge refinement): FAO Table 1 Group 1 lists "frozen eggs; fresh, powdered or pasteurized milk" (p. 11), so unlike vegetable powders
+# (clause names only 'dried') the composition of a milk powder IS source-established. An item whose whole text is "<optional fat-grade word> milk powder" (milk, toned milk, double toned milk,
+# buffalo milk; grade words whole/skimmed/skim are fat grades, not composition statements) keeps its plain Group 1 placement. 'milk solids powder' / 'milk solids' (a solids fraction is not the
+# named powdered-milk form) and any item with extra words (a bracket naming an additive, a blend) stay under the powder standard.
+_MILK_POWDER_ROWS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk"})
+_MILK_POWDER_WORDS = frozenset({"milk", "toned", "double", "buffalo", "whole", "skimmed", "skim", "powder", "powdered"})
+
+
+def milk_powder_named(ing) -> bool:
+    row = lookup(ing.name)
+    toks = re.findall(r"[a-z]+", ing.text.lower())
+    return bool(row) and row["term"] in _MILK_POWDER_ROWS and "powder" in toks + (["powder"] if "powdered" in toks else []) and set(toks) <= _MILK_POWDER_WORDS
+
+
 def powder_routed(ing, kind: str) -> bool:
     if kind not in _POWDER_ROUTED or not _added(ing, _POWDER_WORDS):
+        return False
+    if kind == "whole_food" and milk_powder_named(ing):
         return False
     if kind in _BRINE_KINDS and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing)):
         return False
@@ -323,7 +339,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
-        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
+        what = "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')" if milk_powder_named(ings[0]) else "single recognised unprocessed food"
+        return Classification(1, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "food_powder" and powder_composition_stated(ings[0]):
         # owner ruling (class-bulk-2): a powder of one food is Group 1 ONLY when the item's own text states whole-food composition ("100%", "whole"); the bare term "X powder" abstains
         # below (held-sources-1 had answered Group 1 for any sole powder item; superseded).
