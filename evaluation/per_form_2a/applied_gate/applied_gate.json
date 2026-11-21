@@ -1,0 +1,639 @@
+{
+ "rule_id": "per-form-2a",
+ "base_src": "/tmp/base_main0ceb/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 384,
+  "after": 384,
+  "added": [],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {},
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 534,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 768,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 47,
+  "probed": 141,
+  "changed": 42,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 47,
+    "group1_before": 47,
+    "group1_after": 26,
+    "changed": 21,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 47,
+    "group1_before": 47,
+    "group1_after": 26,
+    "changed": 21,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 47,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 94,
+  "group1_after": 52,
+  "changes": {
+   "salted amaranth flour": [
+    1,
+    3
+   ],
+   "roasted salted amaranth flour": [
+    1,
+    3
+   ],
+   "salted barley": [
+    1,
+    3
+   ],
+   "roasted salted barley": [
+    1,
+    3
+   ],
+   "salted barley flour": [
+    1,
+    3
+   ],
+   "roasted salted barley flour": [
+    1,
+    3
+   ],
+   "salted black rice": [
+    1,
+    3
+   ],
+   "roasted salted black rice": [
+    1,
+    3
+   ],
+   "salted buckwheat": [
+    1,
+    3
+   ],
+   "roasted salted buckwheat": [
+    1,
+    3
+   ],
+   "salted buckwheat flour": [
+    1,
+    3
+   ],
+   "roasted salted buckwheat flour": [
+    1,
+    3
+   ],
+   "salted cornmeal": [
+    1,
+    3
+   ],
+   "roasted salted cornmeal": [
+    1,
+    3
+   ],
+   "salted millet": [
+    1,
+    3
+   ],
+   "roasted salted millet": [
+    1,
+    3
+   ],
+   "salted millet flour": [
+    1,
+    3
+   ],
+   "roasted salted millet flour": [
+    1,
+    3
+   ],
+   "salted oat flour": [
+    1,
+    3
+   ],
+   "roasted salted oat flour": [
+    1,
+    3
+   ],
+   "salted quinoa flour": [
+    1,
+    3
+   ],
+   "roasted salted quinoa flour": [
+    1,
+    3
+   ],
+   "salted rice": [
+    1,
+    3
+   ],
+   "roasted salted rice": [
+    1,
+    3
+   ],
+   "salted rice flour": [
+    1,
+    3
+   ],
+   "roasted salted rice flour": [
+    1,
+    3
+   ],
+   "salted rye flour": [
+    1,
+    3
+   ],
+   "roasted salted rye flour": [
+    1,
+    3
+   ],
+   "salted semolina": [
+    1,
+    3
+   ],
+   "roasted salted semolina": [
+    1,
+    3
+   ],
+   "salted sorghum": [
+    1,
+    3
+   ],
+   "roasted salted sorghum": [
+    1,
+    3
+   ],
+   "salted sorghum flour": [
+    1,
+    3
+   ],
+   "roasted salted sorghum flour": [
+    1,
+    3
+   ],
+   "salted spelt flour": [
+    1,
+    3
+   ],
+   "roasted salted spelt flour": [
+    1,
+    3
+   ],
+   "salted wheat flour": [
+    1,
+    3
+   ],
+   "roasted salted wheat flour": [
+    1,
+    3
+   ],
+   "salted whole wheat flour": [
+    1,
+    3
+   ],
+   "roasted salted whole wheat flour": [
+    1,
+    3
+   ],
+   "salted wild rice": [
+    1,
+    3
+   ],
+   "roasted salted wild rice": [
+    1,
+    3
+   ]
+  }
+ },
+ "powder_surface": {
+  "probed": 552,
+  "group1_before": 358,
+  "group1_after": 358,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "salted buckwheat": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted salted buckwheat": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted rice": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted wheat flour": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "wheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted oat flour": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (salted)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (rice, salt)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted parboiled rice": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted salted oat flour": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: toasted salted oat flour",
+   "unassessed_after": [
+    "toasted salted oat flour"
+   ]
+  },
+  "salted rice powder": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a powder of a food (salted rice powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+   "unassessed_after": []
+  },
+  "salted wheat flour, water": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+   "unassessed_after": []
+  },
+  "rice, salted buckwheat": {
+   "group_before": null,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised whole food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "buckwheat": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "wheat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "wheat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "unsalted rice": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "rice (salt free)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted buckwheat": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "buckwheat",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "toasted oat flour": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "oat flour",
+    "kind": "flour"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted milk": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "milk",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted egg": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "egg",
+    "kind": "whole_food"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted almonds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pinto beans": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pinto beans",
+    "kind": "legume"
+   },
+   "drivers_after": [
+    "legume with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted potatoes": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "potato",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted mango": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "mango (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (mango (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "kidney beans (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (kidney beans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "salted lychee": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "litchis",
+    "kind": "fruit"
+   },
+   "drivers_after": [
+    "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted kale": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "kale",
+    "kind": "vegetable"
+   },
+   "drivers_after": [
+    "vegetable with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
