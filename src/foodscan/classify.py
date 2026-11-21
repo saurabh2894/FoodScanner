@@ -269,6 +269,25 @@ def nut_added_salt_or_sugar(ing) -> bool:
     return _added(ing, _NUT_ADDED)
 
 
+# nut-guard-1 (owner review): the Group 3 driver for a nut or seed names the OBSERVED added substance. Salt or sugar only: the example "salted or sugared nuts and seeds" fits and is quoted. Brine, honey, syrup or a recognised
+# culinary substance such as an oil in the item's own bracket: the general Group 3 definition is quoted (class-instance; no FAO example names that form).
+_NUT_OBSERVED_ORDER = ("salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup", "brine", "brined")
+
+
+def nut_added_observed(ing) -> list:
+    seen = [w for w in _NUT_OBSERVED_ORDER if _added(ing, {w})]
+    seen += [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or "") if p.strip() and is_recognised(p.strip()) and lookup(p.strip())["kind"] == "culinary"]
+    return list(dict.fromkeys(seen))
+
+
+def nut_group3_driver(ing) -> str:
+    obs = nut_added_observed(ing)
+    if not obs or set(obs) <= {"salt", "salted", "sugar", "sugared"}:
+        return "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+    return ("nut or seed with added " + ", ".join(obs) + " (FAO Table 1 Group 3 definition: 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; "
+            "class-instance of that rule, no FAO example names this form)")
+
+
 def legume_added_salt_sugar_or_brine(ing) -> bool:
     if _added(ing, _LEGUME_ADDED):
         return True
@@ -428,7 +447,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="a canned, bottled or preserved " + ("nut or seed" if all(preserved_nut) else "food") + " (" + "; ".join(legume_preserved) + "): the FAO Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, using preservation methods such as canning and bottling, but the item does not say that any such substance is added, so added substances are not established and neither Group 1 nor Group 3 is established")
     if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable", "fruit"):
         if nut_salted:
-            what = ("nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" if kinds[0] == "nut_seed"
+            what = (nut_group3_driver(ings[0]) if kinds[0] == "nut_seed"
                     else ("fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" if kinds[0] == "fruit"
                           else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"))
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])

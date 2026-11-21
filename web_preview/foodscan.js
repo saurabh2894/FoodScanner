@@ -577,6 +577,14 @@
     const GRAIN_SALT_WORDS = new Set(["salt", "salted"]);
     const grainAddedSalt = (ing, kind) => (kind === "whole_food" || kind === "flour") && addedIn(ing, GRAIN_SALT_WORDS) && (() => { const row = lookup(ing.name); return !!row && SCOPED_TERMS.toasted.has(row.term); })();
     const nutAddedSaltOrSugar = (ing) => addedIn(ing, NUT_ADDED);
+    const NUT_OBSERVED_ORDER = ["salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup", "brine", "brined"];
+    const nutAddedObserved = (ing) => Array.from(new Set(NUT_OBSERVED_ORDER.filter((w) => addedIn(ing, new Set([w]))).concat((ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim()).filter((p) => p && isRecognised(p) && lookup(p).kind === "culinary").map((p) => p.toLowerCase()))));
+    const nutGroup3Driver = (ing) => {
+      const obs = nutAddedObserved(ing);
+      return !obs.length || obs.every((w) => ["salt", "salted", "sugar", "sugared"].includes(w))
+        ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+        : "nut or seed with added " + obs.join(", ") + " (FAO Table 1 Group 3 definition: 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; class-instance of that rule, no FAO example names this form)";
+    };
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED) || (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).some((p) => p.trim() && isRecognised(p.trim()) && lookup(p.trim()).kind === "culinary");
     function hitsFor(ing) {
       let hits = [];
@@ -636,7 +644,7 @@
       }
       if (ings.length === 1 && (kinds[0] === "nut_seed" || BRINE_KINDS.includes(kinds[0])))
         return nutSalted.length
-          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')" : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
+          ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? nutGroup3Driver(ings[0]) : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour") && nutSalted.length)
         return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };

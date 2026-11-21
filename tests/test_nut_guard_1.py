@@ -66,3 +66,22 @@ def test_synthetic_existing_kind_reasons_are_unchanged_text():
     assert reason("kidney beans (canned)") == ("a canned, bottled or preserved legume, vegetable or fruit (kidney beans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, "
                                               "but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
     assert reason("rice (XQ9)").startswith("a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (XQ9): xq9)")
+
+
+def driver(text):
+    a = analyse_text(f"Ingredients: {text}.", source="text")
+    assert a.group == 3
+    return a.drivers[0].detail
+
+
+GENERAL = "FAO Table 1 Group 3 definition: 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; class-instance of that rule, no FAO example names this form)"
+
+
+def test_synthetic_group_3_drivers_name_the_observed_added_substance():
+    assert driver("Walnuts (brine)") == "nut or seed with added brine (" + GENERAL
+    assert driver("Walnuts (sunflower oil)") == "nut or seed with added sunflower oil (" + GENERAL
+    assert driver("Walnuts (honey)") == "nut or seed with added honey (" + GENERAL
+    assert driver("Almonds (salt, sunflower oil)") == "nut or seed with added salt, sunflower oil (" + GENERAL
+    # salt or sugar only: the FAO example 'salted or sugared nuts and seeds' fits and stays quoted
+    for t in ("Walnuts (salted)", "Walnuts (sugar)", "Salted Walnuts", "Walnuts, Salt".replace(", Salt", " (salt)")):
+        assert driver(t) == "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')", t
