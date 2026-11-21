@@ -593,6 +593,12 @@
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
       return !!row && MILK_POWDER_ROWS.includes(row.term) && (toks.includes("powder") || toks.includes("powdered")) && toks.every((t) => MILK_POWDER_WORDS.has(t));
     }
+    // culinary-guard-1 (mirrors classify.is_fat_row / fat_powder)
+    const FAT_LAST_WORDS = new Set(["oil", "fat", "butter", "ghee", "lard", "palmolein", "olein"]);
+    const FAT_ROWS = new Set(["refined oil", "edible vegetable oil", "vegetable oil"]);
+    const isFatRow = (row) => !!row && row.kind === "culinary" && (FAT_LAST_WORDS.has(row.term.split(" ").slice(-1)[0]) || FAT_ROWS.has(row.term));
+    const fatBracketResidual = (ing) => (isFatRow(lookup(ing.name)) ? bracketResidual(ing).filter((p) => !(["oil", "fat"].includes(p.toLowerCase().split(" ").slice(-1)[0]) || ["oil", "fat"].some((w) => isFatRow(lookup(p.toLowerCase() + " " + w))))) : []);
+    const fatPowder = (ing, kind) => kind === "culinary" && isFatRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS) && !powderCompositionStated(ing);
     const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
     // salted grain guard (per-form-2a; mirrors classify.grain_added_salt): the 23 Batch-4 terms with salt added in the item's own name or bracket
     const GRAIN_SALT_WORDS = new Set(["salt", "salted"]);
@@ -650,7 +656,7 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const bracketUnknown = ings.filter((i) => (GUARDED_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i), lookup(i.name).kind]);
+      const bracketUnknown = ings.filter((i) => ((GUARDED_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length) || (lookup(i.name).kind === "culinary" && fatBracketResidual(i).length)).map((i) => [i.raw, lookup(i.name).kind === "culinary" ? fatBracketResidual(i) : bracketResidual(i), lookup(i.name).kind]);
       const wfCondition = ings.map((i) => [i.raw, wholeFoodObserved(i, lookup(i.name).kind)]).filter(([, o]) => o.length);
       const wfNested = ings.map((i) => [i.raw, wholeFoodNested(i, lookup(i.name).kind)]).filter(([, r]) => r.length);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
@@ -658,7 +664,13 @@
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const nutSalted = ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (GUARDED_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i)) || grainAddedSalt(i, kinds[n])).map((i) => i.raw);
-      if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.every(([, , k]) => k !== "nut_seed") ? "a bracket on a legume, vegetable, fruit or flour item" : (bracketUnknown.every(([, , k]) => k === "nut_seed") ? "a bracket on a nut or seed item" : "a bracket on a food item")) + " names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed" };
+      if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.some(([, , k]) => k === "culinary")
+          ? (bracketUnknown.every(([, , k]) => k === "culinary") ? "a bracket on a processed culinary ingredient" : "a bracket on a food item")
+          : (bracketUnknown.every(([, , k]) => k !== "nut_seed") ? "a bracket on a legume, vegetable, fruit or flour item" : (bracketUnknown.every(([, , k]) => k === "nut_seed") ? "a bracket on a nut or seed item" : "a bracket on a food item")))
+        + " names content the vocabulary does not recognise (" + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
+        + (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed") };
+      const fatPowders = ings.filter((i, n) => fatPowder(i, kinds[n])).map((i) => i.raw);
+      if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): oil powders are commonly made on a carrier such as a starch or maltodextrin, so the composition is not established and no group is asserted unless the item states 100%" };
       if (wfNested.length) return { group: null, drivers: [], reason: "a bracket names a different food inside the item (" + wfNested.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted" };
       if (wfCondition.length) return { group: null, drivers: [], reason: "an item whose own text names an added or preserving condition (" + wfCondition.map(([raw, o]) => raw + ": " + o.join(", ")).join("; ") + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted" };
       const legumePreserved = ings.filter((i, n) => GUARDED_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
@@ -791,8 +803,14 @@
     function splitPairsEx(raw) {
       const [parts, connectors] = splitTopLevelAndEx(raw);
       if (parts.length > 1 && !sharedCodeList(parts) && parts.every((p) => recognisableIng(normaliseIngredient(p)) || endsInCodeBracket(p)))
-        return [parts, connectors.reduce((n, c) => n + countWords(c), 0)];
+        return namesTwoOils(parts) ? [[raw], 0] : [parts, connectors.reduce((n, c) => n + countWords(c), 0)];     // culinary-guard-1: 'Corn and Canola Oil' names two oils, kept whole
       return [[raw], 0];
+    }
+    function namesTwoOils(parts) {
+      if (parts.length !== 2) return false;
+      const first = normaliseIngredient(parts[0]), second = normaliseIngredient(parts[1]);
+      if (!isFatRow(lookup(second.name)) || !lookup(first.name) || lookup(first.name).kind === "culinary") return false;
+      return ["oil", "fat"].some((w) => isFatRow(lookup(first.name + " " + w)));
     }
     const splitPairs = (raw) => splitPairsEx(raw)[0];
     const unclosedOpeners = (text) => {
