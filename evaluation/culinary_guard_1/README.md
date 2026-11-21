@@ -45,4 +45,13 @@ Phrases: `Corn and Canola Oil` abstain (overlay) ; `Corn and Sunflower Oil` 3 ->
 ## 5. Tests
 `tests/test_culinary_guard_1.py` (new, 54 cases): the 16 existing oil/fat rows plain, hydrogenated and interesterified; unknown brackets; supported source and oil-name brackets; powders and 100%; other culinary rows untouched; two-oil phrases kept whole; food plus oil lists; and a subprocess overlay of the 20 staged fats rows on a copy of the lexicon.
 
-## 6. Exact diff vs main 625f0fa
+## 6. Exact diff vs main 625f0fa (9 paths, `git diff --name-only main HEAD` on the committed merge tree)
+- `data/ingest/culinary_guard_1.json`
+- `evaluation/culinary_guard_1/README.md`
+- `evaluation/culinary_guard_1/applied_gate/applied_gate.json`
+- `evaluation/culinary_guard_1/overlay_fats_gate/applied_gate.json`
+- `scripts/parity_check.py`
+- `src/foodscan/classify.py`
+- `src/foodscan/pipeline.py`
+- `tests/test_culinary_guard_1.py`
+- `web_preview/foodscan.js`
