@@ -1,0 +1,271 @@
+{
+ "decisions_id": "pmc-decisions-4",
+ "inventory": "evaluation/pmc_reresearch_4/terms.csv",
+ "rule": "owner rule update 2026-11-21: any authoritative NOVA source places a term on its own; naming-only sources (FDC, WHO JECFA) never place; park only when no authoritative source covers the term; CONFLICT flagged",
+ "sources_used": {
+  "FAO 2019": "ca5644en.pdf sha256 c8024c19...ceff",
+  "Monteiro 2018": "PMC10261019",
+  "Monteiro 2019": "PMC10260459",
+  "Martinez Steele 2022": "PMC10127522",
+  "Lancet 2025": "https://www.fsp.usp.br/site/wp-content/uploads/2025/11/1-Monteiro-PIIS014067362501565X.pdf (fetched, 200, pdftotext; two-column text, so only an uninterrupted fragment is quoted)",
+  "NUPENS Nova page": "https://nupens.fsp.usp.br/en/food-classification-nova/ (fetched, 200)",
+  "FDC": "naming/form evidence only",
+  "WHO JECFA": "database home page reachable; dynamic search app, no per-term monograph read; naming-only"
+ },
+ "decisions": [
+  {
+   "term": "yeast",
+   "rank": 1,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods')",
+   "clause": "yeast; dried fruits (without added sugars) and vegetables",
+   "named": "exact term IS named (placed with the unprocessed or minimally processed foods)",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "sorghum flour",
+   "rank": 2,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "flour",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods')",
+   "clause": "flours; tapioca",
+   "named": "exact term not named (class-instance of the named class 'flours': flour of a grain: class-instance of the generic 'flours'; the NUPENS Nova page also places grain flours in group 1); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy)",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "soya flour",
+   "rank": 3,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "flour",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods')",
+   "clause": "flours; tapioca",
+   "named": "exact term not named (class-instance of the named class 'flours': flour of a legume: class-instance of the generic 'flours'); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy)",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "split pulse urad flour",
+   "rank": 4,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "flour",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods')",
+   "clause": "flours; tapioca",
+   "named": "exact term not named (class-instance of the named class 'flours': flour of a pulse: class-instance of the generic 'flours'); kind flour: single-item lists answer Group 1, multi-item lists abstain (the wheat flour policy)",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "cocoa powder",
+   "rank": 5,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 5 (row 'Other processed culinary ingredients')",
+   "clause": "unsweetened baking chocolate, cocoa powder and gelatin powder",
+   "named": "exact term IS named, WITH the condition 'unsweetened' (sweetened cocoa mixes are not covered)",
+   "fdc": [],
+   "clause_source": "PMC10127522",
+   "condition": "unsweetened: an item whose own name or bracket adds sugar must not take the Group 2 placement; the item-level mechanism (as for nuts and seeds) is NOT built for this kind yet, so this proposal needs it before it can merge"
+  },
+  {
+   "term": "cocoa butter",
+   "rank": 6,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/), group 2",
+   "clause": "Processed culinary ingredients are substances extracted from foods of the first group by physical procedures such as pressing, centrifugation, and concentration",
+   "named": "exact term not named (class-instance inference: cocoa butter is a fat pressed from cocoa beans); FDC names 'Oil, cocoa butter' (sr_legacy 171421; naming only)",
+   "fdc": [
+    "fdc_sr_legacy:171421"
+   ],
+   "clause_source": "NUPENS"
+  },
+  {
+   "term": "dry fruits",
+   "rank": 7,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "nut_seed",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 2 (row 'Other unprocessed or minimally processed foods')",
+   "clause": "dried fruits (without added sugars) and vegetables",
+   "named": "exact term not named (a class phrase covering dried fruit and, in Indian use, nuts); kind nut_seed so the item-level salt/sugar condition applies (the clause is conditioned 'without added sugars'; the nut clause is 'no added salt or sugar')",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "roasted gram",
+   "rank": 8,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "legumes such as beans, lentils, and chickpeas",
+   "named": "exact term not named (class-instance inference: gram is a pulse; FDC names 'bengal gram' as chickpea; roasting is a process named in the Group 1 definition on p.6); every pulse is Group 1, so the ambiguity between bengal, green and black gram does not change the placement",
+   "fdc": []
+  },
+  {
+   "term": "refined oil",
+   "rank": 9,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "Vegetable oils crushed from seeds, nuts or fruit (notably olives)",
+   "named": "exact term not named (class-instance: an oil; the plant is not stated on the label, which does not change the Group 2 placement of culinary oils)",
+   "fdc": []
+  },
+  {
+   "term": "butter oil",
+   "rank": 10,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "culinary",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "butter and lard obtained from milk and pork",
+   "named": "exact term not named (class-instance inference: a fat obtained from butter; whether it is anhydrous milk fat or ghee is not stated)",
+   "fdc": []
+  },
+  {
+   "term": "dehydrated vegetable",
+   "rank": 11,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_ROW",
+   "kind": "whole_food",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11",
+   "clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+   "named": "exact term not named (a class phrase: dried vegetables are named; 'dehydrated' read as dried is a definitional step; the contents are unstated, so this is a class-level row)",
+   "fdc": []
+  },
+  {
+   "term": "caster sugar",
+   "rank": 12,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_SYNONYM",
+   "to": "sugar",
+   "group_label": "FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11",
+   "clause": "sugar and molasses obtained from cane or beet",
+   "named": "exact term not named (same ingredient, fine granulation form: an inference; FDC names 'Sugars, granulated' and powdered forms, naming only)",
+   "fdc": []
+  },
+  {
+   "term": "natural vinegar",
+   "rank": 13,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_SYNONYM",
+   "to": "vinegar",
+   "group_label": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) table footnote 5 (row 'Other processed culinary ingredients')",
+   "clause": "vinegar; baking powder and baking soda",
+   "named": "exact term not named (the named term is 'vinegar'; reading 'natural' as the fermentation-derived kind is an inference)",
+   "fdc": [],
+   "clause_source": "PMC10127522"
+  },
+  {
+   "term": "mango pieces",
+   "rank": 14,
+   "paste_inputs": 1,
+   "disposition": "ACCEPT_SYNONYM",
+   "to": "mango",
+   "group_label": "Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) (Group 1 process list)",
+   "clause": "cutting, drying, crushing, grinding, fractioning, roasting,",
+   "named": "exact term not named (same fruit, cut form: 'cutting' is a named Group 1 process; the 'pieces' form is an inference)",
+   "fdc": [],
+   "clause_source": "LANCET"
+  },
+  {
+   "term": "liquid glucose",
+   "rank": 15,
+   "paste_inputs": 1,
+   "disposition": "MARKER_PROPOSAL",
+   "code": "classification_bearing",
+   "clause": "varieties of sugars (fructose, high-fructose corn syrup",
+   "clause_source_fao": true,
+   "pmc": "all syrups (excluding 100% maple syrup)",
+   "reason": "FAO 2019 (ca5644en.pdf) p.9 names 'varieties of sugars' (class) among ultra-processed ingredients and PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (table footnote 12, 'Other ultraprocessed foods') codes 'all syrups (excluding 100% maple syrup)' as ultra-processed: class-instance (glucose syrup in liquid form); FAO Group 2 names only maple syrup among syrups, so no conflict. STRONG marker proposal for the owner."
+  },
+  {
+   "term": "glucose syrup",
+   "rank": 16,
+   "paste_inputs": 1,
+   "disposition": "MARKER_PROPOSAL",
+   "code": "classification_bearing",
+   "clause": "varieties of sugars (fructose, high-fructose corn syrup",
+   "clause_source_fao": true,
+   "pmc": "all syrups (excluding 100% maple syrup)",
+   "reason": "FAO 2019 (ca5644en.pdf) p.9 names 'varieties of sugars' (class) among ultra-processed ingredients and PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (table footnote 12, 'Other ultraprocessed foods') codes 'all syrups (excluding 100% maple syrup)' as ultra-processed: class-instance (a syrup); FAO Group 2 names only maple syrup among syrups, so no conflict. STRONG marker proposal for the owner."
+  },
+  {
+   "term": "texturized soy protein",
+   "rank": 17,
+   "paste_inputs": 1,
+   "disposition": "MARKER_PROPOSAL",
+   "code": "classification_bearing",
+   "clause": "protein isolates or concentrates",
+   "pmc": "",
+   "reason": "NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/) (group 4) lists 'protein isolates or concentrates' among the substances of ultra-processed formulations and Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) names 'plant protein isolates'; FAO p.9 names 'soya protein isolate' (existing marker 'protein isolate'). Texturized soy protein as an instance of that class is an INFERENCE (extruded product of soy protein concentrate or flour). STRONG marker proposal for the owner."
+  },
+  {
+   "term": "defatted soya",
+   "rank": 18,
+   "paste_inputs": 1,
+   "disposition": "CONFLICT",
+   "code": "authoritative_sources_conflict",
+   "reason": "PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) (footnote 2) places generic 'flours' with the unprocessed or minimally processed foods, while Monteiro et al., Lancet 2025 'Ultra-processed foods and human health: the main thesis and the evidence' (fsp.usp.br PDF) describes ultra-processed foods as made from soy and other crops fractioned into starches, fibre, sugars, oils and fats, and proteins, and NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/) lists protein isolates or concentrates among group 4 substances: a defatted soy fraction is placed differently depending on which statement applies. FLAGGED, not parked and not staged."
+  },
+  {
+   "term": "cocoa solids",
+   "rank": 19,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa solids; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)"
+  },
+  {
+   "term": "cocoa nibs",
+   "rank": 20,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa nibs; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)"
+  },
+  {
+   "term": "cocoa mass",
+   "rank": 21,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "none of FAO 2019, Monteiro 2018/2019, Lancet 2025, NUPENS pages or PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) names or places cocoa mass; PMC10127522 (Martinez Steele et al., J Nutr 2022;153(1):225-241) places 'unsweetened baking chocolate' and 'cocoa powder' (cocoa mass or solids as the same thing is an unstated equivalence); FDC names cocoa products (naming only)"
+  },
+  {
+   "term": "carbonated water",
+   "rank": 22,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "the sources place carbonated SOFT DRINKS (products) and 'carbonating agents' (an additive class), not plain carbonated water as an ingredient; FDC names bottled non-carbonated waters (naming only)"
+  },
+  {
+   "term": "cereal extract",
+   "rank": 23,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "no authoritative source places a cereal or malt extract; PMC10127522 mentions malt flavour and malt syrup only inside ultra-processed corn-flake ingredient lists; FDC names 'Syrups, malt' (naming only)"
+  },
+  {
+   "term": "malt extract",
+   "rank": 24,
+   "paste_inputs": 1,
+   "disposition": "PARK",
+   "code": "no_authoritative_source_covers_it",
+   "reason": "no authoritative source places a cereal or malt extract; PMC10127522 mentions malt flavour and malt syrup only inside ultra-processed corn-flake ingredient lists; FDC names 'Syrups, malt' (naming only)"
+  }
+ ]
+}

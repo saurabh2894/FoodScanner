@@ -51,7 +51,7 @@ def source_row(d: dict, candidates: dict, batch_id: str = "demand-decisions-1") 
             + f"; demand-driven row ({batch_id})")
 
 
-def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_src: Path, evaluation: Path, work: Path) -> dict:
+def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_src: Path, evaluation: Path, work: Path, extra_texts: dict | None = None) -> dict:
     sys.path.insert(0, str(repo_src))
     from foodscan.classify import is_recognised
     from foodscan.normalise import normalise_ingredient
@@ -75,7 +75,14 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
         if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM") and {d["term"].lower(), d.get("row_term", "").lower()} & held and not d.get("owner_override"):
             errors.append(f"{d['term']}: is a standing exclusion of the lexicon-1 senior review; it may not be staged without an owner decision")
         if d["disposition"] in ("ACCEPT_ROW", "ACCEPT_SYNONYM"):
-            if re.sub(r"\s+", " ", d["clause"]) not in table and re.sub(r"\s+", " ", d["clause"]) not in prose:
+            src_name = d.get("clause_source")
+            if src_name:
+                doc = (extra_texts or {}).get(src_name)
+                if doc is None or re.sub(r"\s+", " ", d["clause"]) not in doc:
+                    errors.append(f"{d['term']}: clause not found verbatim in {src_name}")
+                if len(d["clause"].split()) > 40:
+                    errors.append(f"{d['term']}: clause longer than 40 words (quote only the single clause relied on)")
+            elif re.sub(r"\s+", " ", d["clause"]) not in table and re.sub(r"\s+", " ", d["clause"]) not in prose:
                 errors.append(f"{d['term']}: clause not found verbatim in the FAO text")
             for i in d["fdc"]:
                 if i not in cands:
@@ -96,7 +103,7 @@ def run(dec: dict, inventory: Path, candidates_csv: Path, fao_text: Path, repo_s
             if vb.flat(d["term"]) in lex or vb.flat(d["term"]) in syn:
                 errors.append(f"{d['term']}: already a lexicon term or synonym")
             syns.append({"from": d["term"], "to": d["to"], "source": source_row(d, cands, dec['decisions_id'])})
-        elif d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL"):
+        elif d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL", "CONFLICT"):
             if not (d.get("reason") or "").strip():
                 errors.append(f"{d['term']}: no one-line reason")
         else:
@@ -134,7 +141,7 @@ def write(g: dict, out: Path, force: bool) -> None:
     w("lexicon_candidate_rows.csv", ["term", "kind", "source"], [[r["term"], r["kind"], r["source"]] for r in g["rows"]])
     w("synonyms_candidate_rows.csv", ["from", "to", "source"], [[s["from"], s["to"], s["source"]] for s in g["synonyms"]])
     w("marker_proposals.csv", ["rank", "term", "paste_inputs", "fao_term_named", "why"], [[d["rank"], d["term"], d["paste_inputs"], d["clause"], d["reason"]] for d in D if d["disposition"] == "MARKER_PROPOSAL"])
-    w("ambiguity_queue.csv", ["rank", "term", "paste_inputs", "disposition", "code", "reason"], [[d["rank"], d["term"], d["paste_inputs"], d["disposition"], d["code"], d["reason"]] for d in D if d["disposition"] in ("PARK", "LABEL_BOUND")])
+    w("ambiguity_queue.csv", ["rank", "term", "paste_inputs", "disposition", "code", "reason"], [[d["rank"], d["term"], d["paste_inputs"], d["disposition"], d["code"], d["reason"]] for d in D if d["disposition"] in ("PARK", "LABEL_BOUND", "CONFLICT")])
     (out / "gate_report.json").write_text(json.dumps({k: v for k, v in g.items() if k not in ("decisions",)}, indent=1, ensure_ascii=False, default=str) + "\n", encoding="utf-8")
     f = g["flip"]
     L = [f"# Gate report: {g['decisions_id']}", "", f"**Verdict: {g['verdict']}**" + (": " + "; ".join(g["errors"]) if g["errors"] else ""), "", "Nothing was merged.", "",
@@ -144,7 +151,7 @@ def write(g: dict, out: Path, force: bool) -> None:
         L += [f"| flip check ({f['inputs']} frozen inputs, separate fresh processes) | " + ", ".join(f"{k} {v}" for k, v in f["changed_counts"].items()) + " |",
               f"| harness proof | lexicon rows {f['harness'].get('lexicon_rows_before')} -> {f['harness'].get('lexicon_rows_after')}; synonym rows {f['harness'].get('synonym_rows_added')}; all {f['harness'].get('terms_recognised_after')} terms recognised after |"]
     L += ["", "## Candidate rows", ""] + [f"- `{r['term']}` ({r['kind']}) for demand term `{r['demand_term']}`" for r in g["rows"]] + [f"- synonym `{s['from']}` -> `{s['to']}`" for s in g["synonyms"]]
-    for disp, title in (("MARKER_PROPOSAL", "Marker proposals (classification-bearing: owner decision, not staged)"), ("LABEL_BOUND", "Label-bound (conditioned clause, never staged)"), ("PARK", "Parked")):
+    for disp, title in (("MARKER_PROPOSAL", "Marker proposals (classification-bearing: owner decision, not staged)"), ("CONFLICT", "CONFLICT between authoritative sources (flagged, not parked, not staged)"), ("LABEL_BOUND", "Label-bound (conditioned clause, never staged)"), ("PARK", "Parked")):
         L += ["", f"## {title}", ""] + [f"- #{d['rank']} `{d['term']}` ({d['paste_inputs']} inputs): {d.get('code', '')}: {d['reason']}" for d in D if d["disposition"] == disp]
     (out / "gate_report.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
@@ -158,12 +165,14 @@ def main(argv=None) -> int:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--src", type=Path, default=ROOT / "src")
     ap.add_argument("--evaluation", type=Path, default=ROOT / "evaluation")
+    ap.add_argument("--extra-text", action="append", default=[], help="NAME=path of a cached source text for clause_source checks (whitespace-normalised)")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--strict", action="store_true")
     a = ap.parse_args(argv)
+    extra = {kv.split("=", 1)[0]: re.sub(r"\s+", " ", Path(kv.split("=", 1)[1]).read_text(encoding="utf-8", errors="ignore")) for kv in a.extra_text}
     try:
         with tempfile.TemporaryDirectory() as td:
-            g = run(json.loads(a.decisions.read_text(encoding="utf-8")), a.inventory, a.candidates, a.fao_text, a.src, a.evaluation, Path(td))
+            g = run(json.loads(a.decisions.read_text(encoding="utf-8")), a.inventory, a.candidates, a.fao_text, a.src, a.evaluation, Path(td), extra)
             write(g, a.out, a.force)
         print(f"verdict {g['verdict']}; {g['by_disposition']}; errors {g['errors']}")
         return 3 if (a.strict and g["errors"]) else 0

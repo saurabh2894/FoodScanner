@@ -1,0 +1,20 @@
+{
+ "batch_id": "marker-proposals-4b",
+ "note": "PROPOSAL ONLY (not merged; owner decision). Strong derived-substance marker, CLASSIFICATION-BEARING. Source: NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/), Group 4 paragraph, a NOVA method source read in full; Lancet 2025 (USP-hosted PDF) names plant protein isolates. Texturized soy protein as an instance of 'protein isolates or concentrates' is an INFERENCE (extruded soy protein concentrate/flour), not stated by the source.",
+ "marker_class": "derived_substance",
+ "strength": "strong",
+ "clause": {
+  "where": "NUPENS, Food classification Nova (nupens.fsp.usp.br/en/food-classification-nova/), Group 4 paragraph",
+  "text": "These substances include sugar, oils, and fats for domestic use, protein isolates or concentrates, interesterified oils, hydrogenated fat, modified starches, and various substances for exclusive industrial use."
+ },
+ "basis": {
+  "where": "NUPENS, Food classification Nova, Group 4 paragraph",
+  "text": "Ultra-processed foods – which can be foods and drinks – are not really foods but formulations of substances obtained by fractionating foods from the first group."
+ },
+ "rows": [
+  {
+   "term": "texturized soy protein",
+   "coverage": "INFERENCE: instance of the NUPENS class 'protein isolates or concentrates' (exact term not named); not placed by FAO or PMC10127522"
+  }
+ ]
+}
