@@ -244,6 +244,21 @@ def bracket_residual(ing) -> list:
     return residual
 
 
+# Salted grain guard (per-form-2a): the 23 Batch-4 grain/flour terms (the _SCOPED_TERMS set) with salt added in the item's OWN name or bracket take Group 3, never Group 1 through the global 'salted' descriptor.
+# Source (FAO 2019 ca5644en, quoted in evaluation/per_form_2a/README.md): "They are made by adding salt, oil, sugar or other substances from group 2 to group 1 foods." (p.7 prose); "Some of what are now
+# ultra-processed foods were originally manufactured only with group 1 foods and salt or sugar or other substances from group 2, and thus would be classed in NOVA group 3 as processed foods." (p.9). INFERENCE
+# LEVEL: class-instance of that stated rule; no clause names a salted grain (the named analogues are salted nuts and seeds, and bread of wheat flour, water, salt and yeast). Salt only (not sugar, oil): the
+# batch scope. Negated forms ("unsalted", "no added salt", "salt free") are not matched.
+_GRAIN_SALT_WORDS = frozenset({"salt", "salted"})
+
+
+def grain_added_salt(ing, kind: str) -> bool:
+    if kind not in ("whole_food", "flour") or not _added(ing, _GRAIN_SALT_WORDS):
+        return False
+    row = lookup(ing.name)
+    return bool(row) and row["term"] in _SCOPED_TERMS["toasted"]
+
+
 def nut_added_salt_or_sugar(ing) -> bool:
     return _added(ing, _NUT_ADDED)
 
@@ -394,7 +409,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if bracket_unknown:
         return Classification(None, reason="a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i))]
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
         return Classification(None, reason="a canned, bottled or preserved legume, vegetable or fruit (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
@@ -405,6 +420,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
                           else f"{kinds[0]} with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)"))
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
+    if len(ings) == 1 and kinds[0] in ("whole_food", "flour") and nut_salted:            # only the salted-grain guard can fill nut_salted for these kinds
+        return Classification(3, drivers=[Driver(ings[0].raw, "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         what = "powdered milk (FAO Table 1 Group 1: 'fresh, powdered or pasteurized milk')" if milk_powder_named(ings[0]) else "single recognised unprocessed food"
         return Classification(1, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])

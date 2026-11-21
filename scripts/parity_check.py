@@ -221,6 +221,10 @@ CORPUS = [
     # per-form-1 amendment 2 (tests/test_per_form_1.py, SYNTHETIC): 'toasted' narrowed to the 23 Batch-4 grain/flour terms, no other qualifier
     "Ingredients: Toasted Milk", "Ingredients: Toasted Egg", "Ingredients: Toasted Sweetened Oat Flour", "Ingredients: Toasted Honey Oat Flour", "Ingredients: Toasted Flavoured Oat Flour", "Ingredients: Toasted Brown Rice",
     "Ingredients: Toasted Whole Wheat Flour", "Ingredients: Toasted Oats", "Ingredients: Roasted Milk", "Ingredients: Milk Solids (Cow Milk)",
+    # salted-grain guard (tests/test_salted_grain_guard.py, SYNTHETIC): 23 Batch-4 grain/flour terms with salt added take Group 3; other rows unchanged
+    "Ingredients: Salted Buckwheat", "Ingredients: Roasted Salted Buckwheat", "Ingredients: Salted Rice", "Ingredients: Salted Wheat Flour", "Ingredients: Salted Oat Flour", "Ingredients: Rice (salted)",
+    "Ingredients: Rice (Rice, Salt)", "Ingredients: Unsalted Rice", "Ingredients: Rice (no added salt)", "Ingredients: Salted Milk", "Ingredients: Salted Egg", "Ingredients: Rice, Salted Buckwheat.",
+    "Ingredients: Salted Wheat Flour, Water.", "Ingredients: Salted Parboiled Rice", "Ingredients: Salted Almonds", "Ingredients: Salted Pinto Beans",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
