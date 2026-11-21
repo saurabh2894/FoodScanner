@@ -68,7 +68,8 @@ def compare_sets(B: dict, A: dict, terms: list[str]) -> dict:
             continue
         txt = json.dumps([B[k].get(f) for f in ("unassessed", "ingredients", "drivers", "reason")] + [A[k].get(f) for f in ("unassessed", "ingredients", "drivers", "reason")]).lower()
         diff_unassessed = [u for u in B[k]["unassessed"] if u not in A[k]["unassessed"]] + [u for u in A[k]["unassessed"] if u not in B[k]["unassessed"]]
-        hit = sorted({t for t in low for u in diff_unassessed + [d for d in A[k]["drivers"] if d not in B[k]["drivers"]] if t in u.lower()})
+        hay = diff_unassessed + [d for d in A[k]["drivers"] if d not in B[k]["drivers"]] + ([A[k]["reason"]] if A[k].get("reason") != B[k].get("reason") and A[k].get("reason") else [])
+        hit = sorted({t for t in low for u in hay if t in u.lower()})
         e = {"input": k, "changed": ch, "group": [B[k]["group"], A[k]["group"]], "status": [B[k]["status"], A[k]["status"]], "unassessed_diff": diff_unassessed, "staged_terms": hit}
         listed.append(e)
         if not hit:

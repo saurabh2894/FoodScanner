@@ -54,7 +54,13 @@ def lexicon() -> dict[str, dict[str, str]]:
 
 @cache
 def _descriptors() -> frozenset:
-    return frozenset(r["word"].lower() for r in load_table("descriptors.csv"))
+    """Global descriptors: rows with no 'kinds' value. Kind-scoped rows (e.g. 'toasted': whole_food;flour) are in _scoped_descriptors()."""
+    return frozenset(r["word"].lower() for r in load_table("descriptors.csv") if not (r.get("kinds") or "").strip())
+
+
+@cache
+def _scoped_descriptors() -> dict:
+    return {r["word"].lower(): frozenset(k.strip() for k in r["kinds"].split(";") if k.strip()) for r in load_table("descriptors.csv") if (r.get("kinds") or "").strip()}
 
 
 def _singular(tok: str) -> str:
@@ -77,6 +83,25 @@ def _lexicon_index() -> dict[str, dict[str, str]]:
     for term, row in lexicon().items():
         idx.setdefault(_singular_phrase(term), row)
     return idx
+
+
+# 'toasted' (per-form-1, owner amendment 2): source-fit plain grain forms ONLY. The word is dropped only when the remaining name resolves to one of the 23 terms Batch 4 placed (9 grain whole_food rows + 14 flour
+# rows, enumerated in evaluation/per_form_1/README.md and asserted by tests/test_per_form_1.py), and the name carries NO other qualifier: the only other words allowed are benign condition/provenance words below.
+# 'Toasted Salted Oat Flour', 'Toasted Sweetened Oat Flour', toasted milk/egg/anything else: not recognised (abstain). Global descriptors are NOT stripped on this path.
+_SCOPED_TERMS = {"toasted": frozenset({"barley", "black rice", "buckwheat", "millet", "parboiled rice", "red rice", "rice", "sorghum", "wild rice",
+                                       "amaranth flour", "barley flour", "buckwheat flour", "cornmeal", "millet flour", "oat flour", "quinoa flour", "rice flour", "rye flour", "semolina", "sorghum flour",
+                                       "spelt flour", "wheat flour", "whole wheat flour"})}
+_SCOPED_BENIGN = frozenset({"unsalted", "organic", "whole", "plain", "pure", "white", "brown", "red", "common", "edible"})
+
+
+def _scoped_lookup(name: str, scoped: dict, lex: dict, idx: dict):
+    words = {t for t in name.split() if t in scoped}
+    others = [t for t in name.split() if t not in scoped]
+    for cand in (" ".join(others), " ".join(t for t in others if t not in _SCOPED_BENIGN)):
+        row = lex.get(cand) or idx.get(_singular_phrase(cand))
+        if row and all(row["kind"] in scoped[w] and row["term"] in _SCOPED_TERMS.get(w, frozenset()) for w in words):
+            return row
+    return None
 
 
 def lookup(name: str) -> dict[str, str] | None:
@@ -105,6 +130,9 @@ def lookup(name: str) -> dict[str, str] | None:
             return lex[kept]
         if _singular_phrase(kept) in idx:
             return idx[_singular_phrase(kept)]
+    scoped = _scoped_descriptors()
+    if any(t in scoped for t in name.split()):               # kind- and TERM-scoped descriptor ('toasted'): see _scoped_lookup
+        return _scoped_lookup(name, scoped, lex, idx)
     return None
 
 
@@ -187,18 +215,30 @@ def powder_routed(ing, kind: str) -> bool:
 # Unknown additions on the same item are never laundered (class-bulk-3, owner requirement): the guard reads the item's own bracket for salt/sugar/brine, but a bracket on a legume, vegetable or fruit
 # item that names content the vocabulary does not recognise ("Dried Mango (XQ9)", "Dried Blueberries (Sunflower Oil)") used to be ignored and the item answered Group 1. Such an item now ABSTAINS: neither
 # Group 1 nor Group 3 is established while part of the item is unassessed. Benign bracket parts: recognised foods, descriptors, condition words handled by the guard, negation/connector words, digits/codes.
-_RESIDUAL_EXTRA_KINDS = ("flour",)       # class-bulk-4: the flour kind joins the unknown-bracket abstention (a flour row must not launder 'Oat Flour (XQ9)'); whole_food grains are an owner decision (P-D)
+_RESIDUAL_EXTRA_KINDS = ("flour", "whole_food")       # class-bulk-4 added flour (a flour row must not launder 'Oat Flour (XQ9)'); per-form-1 adds whole_food (owner ruling: 'Rice (XQ9)' Group 1 -> abstain)
 _BRACKET_BENIGN = frozenset({"with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"})
+
+
+# Species-of-origin provenance (per-form-1, owner decision): a species word from the CLOSED set {cow, buffalo, goat} is benign ONLY inside a bracket that also holds the word 'milk', and ONLY when the head item
+# is itself a plain milk item (head row kind whole_food and head term in milk, toned milk, double toned milk, buffalo milk; NOT 'milk solids': owner amendment, a solids fraction is not established as
+# identical to milk, so 'Milk solids (... cow milk)' stays abstained). It is resolved here, in the bracket check: no lexicon row, no
+# synonym, no globally recognised word ('cow milk' as an ingredient name stays unrecognised). 'Rice (Cow Milk)', 'Milk (Cow)' (no milk word in the bracket) and any other head keep the abstention.
+_SPECIES_WORDS = frozenset({"cow", "buffalo", "goat"})
+_MILK_PROVENANCE_WORDS = frozenset({"milk", "toned", "double", "solids"})
 
 
 def bracket_residual(ing) -> list:
     if not ing.inner:
         return []
     ok_tokens = _descriptors() | _BRACKET_BENIGN | _LEGUME_ADDED | _LEGUME_PRESERVED
+    head = lookup(ing.name)
+    head_is_milk = bool(head) and head["kind"] == "whole_food" and head["term"] in (_MILK_TERMS - {"milk solids"})
     residual = []
     for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
         toks = re.findall(r"[a-z]+", part)
         if not toks or is_recognised(part.strip()) or all(t in ok_tokens for t in toks):
+            continue
+        if head_is_milk and "milk" in toks and set(toks) & _SPECIES_WORDS and all(t in ok_tokens or t in _SPECIES_WORDS or t in _MILK_PROVENANCE_WORDS for t in toks):
             continue
         residual.append(part.strip())
     return residual

@@ -150,7 +150,7 @@
     }
     // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
     const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
-    const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => descriptors.has(t) || FORM_WORDS_EXTRA.has(t));
+    const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => allDescriptorWords.has(t) || FORM_WORDS_EXTRA.has(t));
     // "Rice Bran Oil Seasoning : Onion" -> [prefix, label, rest]; mirrors parser._peel_label
     function peelLabel(item) {
       const colon = colonAtDepth0(item);
@@ -355,7 +355,10 @@
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])" + esc(flatten(r.term)) + "(?![a-z])"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
-    const descriptors = new Set(T.descriptors.map((r) => r.word.toLowerCase()));
+    const descriptors = new Set(T.descriptors.filter((r) => !(r.kinds || "").trim()).map((r) => r.word.toLowerCase()));
+    const allDescriptorWords = new Set(T.descriptors.map((r) => r.word.toLowerCase()));      // every descriptors.csv row, incl. kind-scoped ones: label form words and the truncation test (mirrors parser._form_words and pipeline._vocab)
+    const scopedDescriptors = {};          // kind-scoped descriptors ('toasted': whole_food;flour), mirrors classify._scoped_descriptors
+    for (const r of T.descriptors) if ((r.kinds || "").trim()) scopedDescriptors[r.word.toLowerCase()] = new Set(r.kinds.split(";").map((k) => k.trim()).filter(Boolean));
     const singular = (t) => {
       if (t.length > 3 && t.endsWith("ies")) return t.slice(0, -3) + "y";
       if (t.length > 4 && t.endsWith("oes")) return t.slice(0, -2);
@@ -366,6 +369,18 @@
     const lexIndex = {};
     for (const term of Object.keys(lexicon)) { const k = singularPhrase(term); if (!(k in lexIndex)) lexIndex[k] = lexicon[term]; }
     const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+    // 'toasted' (per-form-1, owner amendment 2): dropped only when the remaining name is one of the 23 terms Batch 4 placed and carries no other qualifier (mirrors classify._scoped_lookup)
+    const SCOPED_TERMS = { toasted: new Set(["barley", "black rice", "buckwheat", "millet", "parboiled rice", "red rice", "rice", "sorghum", "wild rice", "amaranth flour", "barley flour", "buckwheat flour", "cornmeal", "millet flour", "oat flour", "quinoa flour", "rice flour", "rye flour", "semolina", "sorghum flour", "spelt flour", "wheat flour", "whole wheat flour"]) };
+    const SCOPED_BENIGN = new Set(["unsalted", "organic", "whole", "plain", "pure", "white", "brown", "red", "common", "edible"]);
+    function scopedLookup(name) {
+      const words = name.split(" ").filter((t) => has(scopedDescriptors, t));
+      const others = name.split(" ").filter((t) => t && !has(scopedDescriptors, t));
+      for (const cand of [others.join(" "), others.filter((t) => !SCOPED_BENIGN.has(t)).join(" ")]) {
+        const row = has(lexicon, cand) ? lexicon[cand] : has(lexIndex, singularPhrase(cand)) ? lexIndex[singularPhrase(cand)] : null;
+        if (row && words.every((w) => scopedDescriptors[w].has(row.kind) && SCOPED_TERMS[w] && SCOPED_TERMS[w].has(row.term))) return row;
+      }
+      return null;
+    }
     // mirrors classify.lookup: exact, singular, then both again without descriptor words
     function lookup(name) {
       if (has(lexicon, name)) return lexicon[name];
@@ -382,6 +397,7 @@
         if (has(lexicon, kept)) return lexicon[kept];
         if (has(lexIndex, singularPhrase(kept))) return lexIndex[singularPhrase(kept)];
       }
+      if (name.split(" ").some((t) => has(scopedDescriptors, t))) return scopedLookup(name);   // kind- and TERM-scoped descriptor ('toasted'); mirrors classify._scoped_lookup
       return null;
     }
     const isRecognised = (name) => lookup(name) !== null;
@@ -518,13 +534,19 @@
     }
     // unknown additions on the same item are never laundered (mirrors classify.bracket_residual)
     const BRACKET_BENIGN = new Set(["with", "without", "skin", "peel", "added", "no", "non", "free", "of", "in", "from", "as", "the", "a", "an", "natural", "cooked", "organic", "whole", "percent", "less", "than", "only", "pure", "plain", "ins", "e"]);
+    // species-of-origin provenance (mirrors classify.bracket_residual): cow/buffalo/goat is benign only in a bracket that holds 'milk' and only on a milk head item
+    const SPECIES_WORDS = new Set(["cow", "buffalo", "goat"]);
+    const MILK_PROVENANCE_WORDS = new Set(["milk", "toned", "double", "solids"]);
     function bracketResidual(ing) {
       if (!ing.inner) return [];
       const ok = (t) => descriptors.has(t) || BRACKET_BENIGN.has(t) || LEGUME_ADDED.has(t) || LEGUME_PRESERVED.has(t);
+      const head = lookup(ing.name);
+      const headIsMilk = !!head && head.kind === "whole_food" && MILK_TERMS.includes(head.term) && head.term !== "milk solids";
       const residual = [];
       for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
         const toks = part.match(/[a-z]+/g) || [];
         if (!toks.length || isRecognised(part.trim()) || toks.every(ok)) continue;
+        if (headIsMilk && toks.includes("milk") && toks.some((t) => SPECIES_WORDS.has(t)) && toks.every((t) => ok(t) || SPECIES_WORDS.has(t) || MILK_PROVENANCE_WORDS.has(t))) continue;
         residual.push(part.trim());
       }
       return residual;
@@ -594,7 +616,7 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };
-      const bracketUnknown = ings.filter((i) => (BRINE_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
+      const bracketUnknown = ings.filter((i) => (BRINE_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length).map((i) => [i.raw, bracketResidual(i)]);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" };
@@ -647,7 +669,7 @@
       const last = toks[toks.length - 1];
       if (last.length >= 3 && !vocabWords.has(last) && vocabList.some((w) => w.startsWith(last))) return true;
       for (let k = 0; k < toks.length; k++)      // drop leading descriptor words one at a time: "pasteurized toned" -> "toned" is the start of "toned milk"
-        if ((k === 0 || descriptors.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
+        if ((k === 0 || allDescriptorWords.has(toks[k - 1])) && phraseList.some((p) => p.startsWith(toks.slice(k).join(" ") + " "))) return true;
       return false;
     }
     // mirrors pipeline._split_amp_pair: an '&' pair inside a bracket splits only when each side is recognised WITH its shared modifier; the shared percentage is a note, not copied onto the items

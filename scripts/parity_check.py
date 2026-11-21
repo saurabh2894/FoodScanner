@@ -211,6 +211,16 @@ CORPUS = [
     # engine-fixes-1 (tests/test_engine_fixes_1.py, SYNTHETIC): target-safe synonym rewrite; bok choy routes to bok choy cabbage, which is unchanged
     "Ingredients: Bok Choy", "Ingredients: Bok Choy Cabbage", "Ingredients: Pak Choi", "Ingredients: Bok Choy (raw)", "Ingredients: Salted Bok Choy", "Ingredients: Baby Bok Choy", "Ingredients: Bok Choy, Bok Choy Cabbage.",
     "Ingredients: Rice, Bok Choy.", "Ingredients: Chinese Cabbage", "Ingredients: Moong Dal", "Ingredients: Moong", "Ingredients: Jerusalem Artichokes",
+    # per-form-1 (tests/test_per_form_1.py, SYNTHETIC): roasted/toasted plain grains and flours; whole_food unknown-bracket abstention; parked forms
+    "Ingredients: Roasted Buckwheat", "Ingredients: Toasted Oat Flour", "Ingredients: Toasted Rice", "Ingredients: Toasted Unsalted Oat Flour", "Ingredients: Toasted Salted Oat Flour", "Ingredients: Toasted Almonds",
+    "Ingredients: Rice, Toasted Oat Flour.", "Ingredients: Toasted Oat Flour, Salt.", "Ingredients: Rice (XQ9)", "Ingredients: Milk (XQ9)", "Ingredients: Wheat (XQ9)", "Ingredients: Toasted Oat Flour (XQ9)",
+    "Ingredients: Rice (Basmati)", "Ingredients: Milk (Skimmed)", "Ingredients: Enriched Wheat Flour", "Ingredients: Fortified Wheat Flour", "Ingredients: Sprouted Ragi", "Ingredients: Pearled Barley", "Ingredients: Vitamins and Minerals",
+    # per-form-1 round 2 (tests/test_per_form_1.py, SYNTHETIC): species-of-origin provenance in a milk bracket on a milk head item only
+    "Ingredients: Milk (Pasteurized Cow Milk)", "Ingredients: Milk (Buffalo Milk)", "Ingredients: Milk (Goat Milk)", "Ingredients: Milk (Cow)", "Ingredients: Rice (Cow Milk)", "Ingredients: Rice (Cow)",
+    "Ingredients: Goat Milk (Pasteurized)", "Ingredients: Toned Milk (Cow Milk)", "Ingredients: Egg (Cow Milk)", "Ingredients: Milk (Cow Milk, XQ9)", "Ingredients: Milk solids (Pasteurized skimmed cow milk)",
+    # per-form-1 amendment 2 (tests/test_per_form_1.py, SYNTHETIC): 'toasted' narrowed to the 23 Batch-4 grain/flour terms, no other qualifier
+    "Ingredients: Toasted Milk", "Ingredients: Toasted Egg", "Ingredients: Toasted Sweetened Oat Flour", "Ingredients: Toasted Honey Oat Flour", "Ingredients: Toasted Flavoured Oat Flour", "Ingredients: Toasted Brown Rice",
+    "Ingredients: Toasted Whole Wheat Flour", "Ingredients: Toasted Oats", "Ingredients: Roasted Milk", "Ingredients: Milk Solids (Cow Milk)",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
