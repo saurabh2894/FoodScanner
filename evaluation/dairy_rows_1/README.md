@@ -37,3 +37,10 @@ With the guard in the base, the holes the earlier version of this proposal repor
 3. Egg powder: `100% X powder` and `whole X powder` give Group 1 under the powder standard; the bare `X powder` abstains. No egg-powder exception exists.
 
 ## 5. Exact diff vs main 342e662
+- `data/ingest/dairy_rows_1.json`
+- `evaluation/dairy_rows_1/README.md`
+- `evaluation/dairy_rows_1/applied_gate/applied_gate.json`
+- `scripts/parity_check.py`
+- `src/foodscan/resources/lexicon.csv`
+- `tests/test_dairy_rows_1.py`
+- `tests/test_species_milk_2b.py`
