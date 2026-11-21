@@ -1,0 +1,163 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,167684,"Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167691,"Vegetable oil-butter spread, reduced calorie",spread,Fat/oil spread: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,167692,"Salad dressing, blue or roquefort cheese dressing, light",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167693,"Salad dressing, french dressing, reduced calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167695,"Mayonnaise, made with tofu",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167699,"Salad dressing, blue or roquefort cheese dressing, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167700,"Salad Dressing, mayonnaise-like, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167704,"Salad dressing, bacon and tomato",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167736,"Mayonnaise dressing, no cholesterol",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,167737,"Oil, corn, peanut, and olive",blended_oil,Multi-oil blend; not a single-ingredient plain commodity
+sr_legacy,168093,"Salad dressing, peppercorn dressing, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168094,"Mayonnaise, reduced-calorie or diet, cholesterol-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168096,"Salad dressing, italian dressing, reduced calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168099,"Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168100,"Creamy dressing, made with sour cream and/or buttermilk and oil, reduced calorie, cholesterol-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168109,"Salad Dressing, coleslaw, reduced fat",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168112,"Salad dressing, mayonnaise and mayonnaise-type, low calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,168115,"Mayonnaise, low sodium, low calorie or diet",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169052,"Margarine-like, butter-margarine blend, 80% fat, stick, without salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,169053,"Margarine-like, vegetable oil-butter spread, reduced calorie, tub, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,169055,"Salad dressing, caesar dressing, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169056,"Salad dressing, coleslaw",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169057,"Salad dressing, green goddess, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169860,"Margarine-like, vegetable oil spread, stick or tub, sweetened",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,169867,"Oil, corn and canola",blended_oil,Multi-oil blend; not a single-ingredient plain commodity
+sr_legacy,169875,"Salad dressing, sweet and sour",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169876,"Salad dressing, blue or roquefort cheese, low calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169877,"Salad dressing, caesar, low calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,169894,"Butter replacement, without fat, powder",imitation_substitute,Butter replacement / imitation powder
+sr_legacy,169895,"Salad dressing, buttermilk, lite",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171002,"Salad dressing, KRAFT Mayo Light Mayonnaise",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171003,"Salad dressing, KRAFT Mayo Fat Free Mayonnaise Dressing",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171004,"Salad dressing, KRAFT MIRACLE WHIP FREE Nonfat Dressing",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171005,"Salad dressing, russian dressing",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171006,"Salad dressing, sesame seed dressing, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171007,"Salad dressing, russian dressing, low calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171008,"Salad dressing, thousand island dressing, reduced fat",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171009,"Salad dressing, mayonnaise, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171010,"Salad dressing, mayonnaise, soybean and safflower oil, with salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171011,"Shortening, household, soybean (partially hydrogenated)-cottonseed (partially hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,171012,"Oil, soybean, salad or cooking, (partially hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,171018,"Margarine, regular, hard, soybean (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,171019,"Salad dressing, italian dressing, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171020,"Salad dressing, french dressing, commercial, regular, without salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171021,"Salad dressing, french dressing, reduced fat, without salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171022,"Salad dressing, italian dressing, commercial, regular, without salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171023,"Salad dressing, italian dressing, reduced fat, without salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171034,"Salad dressing, honey mustard dressing, reduced calorie",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171035,"Margarine-like spread, BENECOL Light Spread",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171036,"Salad dressing, spray-style dressing, assorted flavors",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171037,"Salad Dressing, mayonnaise, light, SMART BALANCE, Omega Plus light",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171038,"Margarine-like, vegetable oil spread, 60% fat, tub, with salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171039,"Margarine-like vegetable-oil spread, stick/tub/bottle, 60% fat, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171040,"Margarine, regular, 80% fat, composite, stick, without salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171041,"Margarine-like, vegetable oil spread, 60% fat, stick/tub/bottle, without salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171043,"Salad dressing, honey mustard, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171044,"Salad dressing, poppyseed, creamy",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171045,"Salad dressing, caesar, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171046,"Dressing, honey mustard, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171402,"Salad dressing, thousand island, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171403,"Salad dressing, mayonnaise type, regular, with salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171404,"Salad dressing, french dressing, reduced fat",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171405,"Salad dressing, italian dressing, commercial, reduced fat",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171406,"Salad dressing, mayonnaise, imitation, soybean",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171407,"Salad dressing, mayonnaise, imitation, milk cream",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171408,"Salad dressing, mayonnaise, imitation, soybean without cholesterol",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171409,"Sandwich spread, with chopped pickle, regular, unspecified oils",spread,Fat/oil spread: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171414,"Salad dressing, french dressing, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171415,"Margarine,spread, 35-39% fat, tub",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171416,"Salad dressing, french, home recipe",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171417,"Salad dressing, home recipe, vinegar and oil",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171418,"Salad dressing, mayonnaise, soybean oil, without salt",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171419,"Salad dressing, french, cottonseed, oil, home recipe",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171420,"Salad dressing, french dressing, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171430,"Oil, PAM cooking spray, original",whipped_spray,Aerosol spray or whipped fat formulation
+sr_legacy,171431,"Margarine, margarine-like vegetable oil spread, 67-70% fat, tub",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171432,"Margarine, 80% fat, tub, CANOLA HARVEST Soft Spread (canola, palm and palm kernel oils)",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171433,"Oil, cooking and salad, ENOVA, 80% diglycerides",modified_oil,Enzymatically modified oil consisting of diacylglycerols (diglycerides)
+sr_legacy,171434,"Margarine-like, vegetable oil spread, approximately 37% fat, unspecified oils, with salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171435,"Margarine, regular, 80% fat, composite, stick, with salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171436,"Margarine, regular, 80% fat, composite, tub, with salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171437,"Margarine-like, vegetable oil spread, 60% fat, stick, with salt, with added vitamin D",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,171440,"Oil, industrial, soy, fully hydrogenated",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,171441,"Oil, industrial, cottonseed, fully hydrogenated",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,171442,"Oil, flaxseed, contains added sliced flaxseed",conditioned_with,Contains added food inclusions (sliced flaxseed)
+sr_legacy,171443,"Mayonnaise, reduced fat, with olive oil",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,171444,"Salad dressing, mayonnaise-type, light",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,172327,"Shortening, household, lard and vegetable oil",shortening,Shortening: industrial formulated fat product (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172328,"Oil, sunflower, linoleic, (partially hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172329,"Shortening bread, soybean (hydrogenated) and cottonseed",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172330,"Shortening cake mix, soybean (hydrogenated) and cottonseed (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172331,"Shortening frying (heavy duty), palm (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172332,Shortening household soybean (hydrogenated) and palm,standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172333,"Shortening frying (heavy duty), soybean (hydrogenated), linoleic (less than 1%)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172334,"Shortening, confectionery, fractionated palm",shortening,Shortening: industrial formulated fat product (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172339,"Margarine-like, margarine-butter blend, soybean oil and butter",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172342,"Fish oil, menhaden, fully hydrogenated",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172346,"Margarine, regular, 80% fat, composite, stick, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172347,"Margarine, regular, 80% fat, composite, tub, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172348,"Margarine-like, vegetable oil spread, 60% fat, stick, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172349,"Margarine, regular, 80% fat, composite, tub, without salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172350,"Margarine-like, vegetable oil spread, 60% fat, stick/tub/bottle, without salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172351,"Margarine-like, vegetable oil spread, fat free, liquid, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172352,"Margarine-like spread with yogurt, 70% fat, stick, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172353,"Margarine-like, vegetable oil spread, fat-free, tub",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172354,"Margarine-like, vegetable oil spread, 20% fat, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172355,"Margarine-like, vegetable oil spread, 20% fat, without salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172356,"Salad dressing, thousand island dressing, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,172358,"Oil, industrial, canola with antifoaming agent, principal uses salads, woks and light frying",conditioned_with,Contains added antifoaming agent (food additive)
+sr_legacy,172359,"Oil, industrial, canola for salads, woks and light frying",industrial_oil_mix,Industrial culinary oil formulated for commercial high-heat frying
+sr_legacy,172360,"Oil, industrial, canola (partially hydrogenated) oil for deep fat frying",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172361,"Oil, industrial, soy (partially hydrogenated), multiuse for non-dairy butter flavor",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172362,"Oil, industrial, soy ( partially hydrogenated), all purpose",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172363,"Oil, industrial, soy (partially hydrogenated ) and soy (winterized), pourable clear fry",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172364,"Oil, industrial, soy (partially hydrogenated)  and cottonseed, principal use as a tortilla shortening",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172366,"Oil, industrial, palm kernel (hydrogenated) , used for whipped toppings, non-dairy",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172367,"Oil, industrial, coconut (hydrogenated), used for whipped toppings and coffee whiteners",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172368,"Oil, industrial, palm and palm kernel, filling fat (non-hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172369,"Margarine, industrial, soy and partially hydrogenated soy oil, use for baking, sauces and candy",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,172371,"Margarine-like spread, SMART BALANCE Regular Buttery Spread with flax oil",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,172372,"Margarine-like spread, SMART BALANCE Light Buttery Spread",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173562,"Salad dressing, blue or roquefort cheese dressing, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173565,"Oil, soybean, salad or cooking, (partially hydrogenated) and cottonseed",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173566,"Shortening industrial, lard and vegetable oil",shortening,Shortening: industrial formulated fat product (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173567,"Shortening frying (heavy duty), beef tallow and cottonseed",shortening,Shortening: industrial formulated fat product (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173568,"Shortening confectionery, coconut (hydrogenated) and or palm kernel (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173569,"Shortening industrial, soybean (hydrogenated) and cottonseed",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173574,"Shortening, special purpose for cakes and frostings, soybean (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173575,"Shortening, special purpose for baking, soybean (hydrogenated) palm and cottonseed",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173579,"Shortening, multipurpose, soybean (hydrogenated) and palm (hydrogenated)",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173580,"Margarine-like, vegetable oil-butter spread, tub, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173582,"Margarine-like, vegetable oil spread, 60% fat, tub, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173583,"Margarine-like, vegetable oil spread, 60% fat, stick/tub/bottle, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173584,"Shortening, vegetable, household, composite",shortening,Shortening: industrial formulated fat product (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173585,"Margarine, regular, 80% fat, composite, stick, without salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173586,"Margarine-like spread with yogurt, approximately 40% fat, tub, with salt",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173587,"Margarine, 80% fat, stick, includes regular and hydrogenated corn and soybean oils",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173588,"Margarine, margarine-type vegetable oil spread, 70% fat, soybean and partially hydrogenated soybean, stick",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173589,"Margarine Spread, 40-49% fat, tub",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173590,"Salad dressing, italian dressing, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173591,"Salad dressing, ranch dressing, fat-free",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173592,"Salad dressing, ranch dressing, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173593,"Salad dressing, ranch dressing, reduced fat",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173594,"Salad dressing, mayonnaise, light",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+sr_legacy,173595,"Oil, industrial, coconut, principal uses candy coatings, oil sprays, roasting nuts",whipped_spray,Aerosol spray or whipped fat formulation
+sr_legacy,173596,"Oil, industrial, soy (partially hydrogenated), principal uses popcorn and flavoring vegetables",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173597,"Shortening, industrial, soy (partially hydrogenated), pourable liquid fry shortening",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173598,"Oil, industrial, soy, refined, for woks and light frying",industrial_oil_mix,Industrial culinary oil formulated for commercial high-heat frying
+sr_legacy,173599,"Margarine-like shortening, industrial, soy (partially hydrogenated), cottonseed, and soy, principal use flaky pastries",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173601,"Oil, industrial, palm kernel (hydrogenated), confection fat, uses similar to 95 degree hard butter",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173602,"Oil, industrial, palm kernel (hydrogenated), confection fat, intermediate grade product",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173603,"Oil, industrial, palm kernel (hydrogenated), filling fat",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173604,"Oil, industrial, soy (partially hydrogenated ), palm, principal uses icings and fillings",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173605,"Margarine, industrial, non-dairy, cottonseed, soy oil (partially hydrogenated ), for flaky pastries",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173606,"Shortening, industrial, soy (partially hydrogenated ) and corn for frying",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173607,"Shortening, industrial, soy (partially hydrogenated ) for baking and confections",standing_rule,"Standing owner rule: hydrogenated/interesterified fats are handled by Group 4 markers, never candidate rows"
+sr_legacy,173608,"Margarine-like spread, SMART BEAT Super Light without saturated fat",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173609,"Margarine-like spread, SMART BEAT Smart Squeeze",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+sr_legacy,173610,"Margarine-like spread, SMART BALANCE Omega Plus Spread (with plant sterols & fish oil)",margarine,Margarine/margarine-like product: ultra-processed formulation (FAO 2019 Table 1 Group 4 p.12)
+foundation,2758986,"Mayonnaise, Regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+foundation,2758987,"Salad dressing, Italian dressing, commercial, regular",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation
+foundation,2758988,"Dressing, Ranch",dressing_mayo,Salad dressing / mayonnaise / emulsion product: ultra-processed formulation

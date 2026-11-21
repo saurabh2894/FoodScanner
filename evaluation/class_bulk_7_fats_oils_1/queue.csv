@@ -1,0 +1,17 @@
+dataset,fdc_id,record_name,reason_code,reason
+sr_legacy,171400,"Fat, beef tallow",queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,171401,Lard,queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,171426,"Oil, soybean lecithin",queue_fraction,Lipid fraction / phospholipid extract (lecithin); food additive rather than plain culinary oil
+sr_legacy,172340,"Fish oil, herring",queue_fish_oil,Fish/marine oil: SOURCE-SILENT in FAO 2019 Table 1 Group 2; queued pending policy decision
+sr_legacy,172341,"Fish oil, menhaden",queue_fish_oil,Fish/marine oil: SOURCE-SILENT in FAO 2019 Table 1 Group 2; queued pending policy decision
+sr_legacy,172343,"Fish oil, salmon",queue_fish_oil,Fish/marine oil: SOURCE-SILENT in FAO 2019 Table 1 Group 2; queued pending policy decision
+sr_legacy,172344,"Butter, light, stick, without salt",queue_dairy_fat,Dairy butter/fat: Group 2 culinary fat owned in Batch 7 (dairy queue defers)
+sr_legacy,172345,"Animal fat, bacon grease",queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,172365,"Oil, industrial, coconut, confection fat, typical basis for ice cream coatings",queue_fraction,Industrial confection fat / specialty fat fraction
+sr_legacy,173564,"Fat, chicken",queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,173571,"Fat, turkey",queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,173572,"Fat, goose",queue_animal_fat,Animal fat: Group 2 culinary fat (Table 1 Group 2 p.11 names lard; tallow/suet/poultry fat are animal fat class-instances); queued pending animal-fat staging decision
+sr_legacy,173577,"Fish oil, cod liver",queue_fish_oil,Fish/marine oil: SOURCE-SILENT in FAO 2019 Table 1 Group 2; queued pending policy decision
+sr_legacy,173578,"Fish oil, sardine",queue_fish_oil,Fish/marine oil: SOURCE-SILENT in FAO 2019 Table 1 Group 2; queued pending policy decision
+sr_legacy,173581,"Butter, light, stick, with salt",queue_dairy_fat,Dairy butter/fat: Group 2 culinary fat owned in Batch 7 (dairy queue defers)
+sr_legacy,173600,"Oil, industrial, palm kernel, confection fat, uses similar to high quality cocoa butter",queue_fraction,Industrial confection fat / specialty fat fraction
