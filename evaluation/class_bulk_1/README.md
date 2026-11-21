@@ -182,7 +182,7 @@ Why: `descriptors.csv` drops salted/sugared words, so `salted soybeans` answered
 ## 6. Gates (applied state)
 BEFORE = a worktree of main (646ba5b, no legume rows, old classifier); AFTER = the COMMITTED branch source; each analysed in a SEPARATE fresh process (`scripts/applied_gate.py`; the same result was reproduced on the clean committed tree).
 - (a) After-build proof: 21 of 21 staged terms are recognised after and were NOT recognised before; lexicon rows 160 -> 181 (+21 added, 0 removed, 0 sources changed, 12 kinds retyped); synonyms.csv and markers.csv byte-identical.
-- (b) Frozen 66: changed inputs 0, unexplained 0, abstain->4 0, abstain->1 0, other group changes 0. Out-of-sample 32: changed 0, unexplained 0, abstain->4 0, abstain->1 0, other 0. (0 changes = no corpus evidence either way: none of the 98 inputs holds a staged or retyped legume term; these rows are not corpus-validated.)
+- (b) Frozen 66: changed inputs 0, unexplained 0, abstain->4 0, abstain->1 0, other group changes 0. Out-of-sample 32: changed 0, unexplained 0, abstain->4 0, abstain->1 0, other 0. (0 changes: none of the 98 inputs was altered by the new rows or the guard, so the corpus gives no evidence either way; the rows are not corpus-validated.)
 - Drift over 286 existing lexicon terms and synonyms analysed alone: 0 differences.
 - (c) Controls (label order, as the item would appear). Negative: never Group 1 via the new rows; positive: the placement is kept.
 
