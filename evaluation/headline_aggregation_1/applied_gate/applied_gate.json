@@ -18,6 +18,25 @@
  "frozen_66": {
   "changed": [
    {
+    "input": "b1/N07",
+    "changed": [
+     "reason"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [],
+    "staged_terms": [
+     "other open item",
+     "other open items"
+    ]
+   },
+   {
     "input": "b1/N11",
     "changed": [
      "reason"
@@ -124,6 +143,25 @@
   "changed": [
    {
     "input": "S08",
+    "changed": [
+     "reason"
+    ],
+    "group": [
+     null,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [],
+    "staged_terms": [
+     "other open item",
+     "other open items"
+    ]
+   },
+   {
+    "input": "S11",
     "changed": [
      "reason"
     ],
