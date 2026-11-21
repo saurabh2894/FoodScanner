@@ -105,11 +105,11 @@ def test_flip_harness_reports_a_harmless_row_with_attributed_unassessed_drops_on
 
 
 def test_flip_harness_detects_and_blocks_a_group_flip():
-    rows = [{"term": "cow milk", "kind": "whole_food", "source": "PROVISIONAL: test"}]               # b2/M02 and b3/Q06 abstain today; with this row they become Group 1
+    # UPDATED (per-form-2b): 'cow milk' became a lexicon row (species-head milk recognition), so the probe term moved, as the run_flip assertion instructs. 'synthetic vinegar' is the one unassessed item of the
+    # frozen b1/N10 list; with a row for it that list becomes fully recognised and moves None -> 3. Same purpose: the harness detects and blocks a group flip.
+    rows = [{"term": "synthetic vinegar", "kind": "whole_food", "source": "PROVISIONAL: test"}]
     _, a = run_flip(rows)
-    # UPDATED (per-form-1): b3/Q10 'Milk solids (Pasteurized skimmed cow milk)' now abstains because its bracket names 'cow', which the vocabulary does not recognise (whole_food unknown-bracket abstention);
-    # the 'cow milk' row makes that bracket recognisable again, so Q10 joins the flips (None -> 1).
-    assert a["flips"] == ["b2/M02", "b3/Q06", "b3/Q10"] and a["group_flips"] == {"b2/M02": [None, 1], "b3/Q06": [None, 1], "b3/Q10": [None, 1]} and a["unexplained"] == []
+    assert a["flips"] == ["b1/N10"] and a["group_flips"] == {"b1/N10": [None, 3]} and a["unexplained"] == []
 
 
 def test_flip_harness_proves_the_after_build_holds_the_change_and_refuses_otherwise(monkeypatch):

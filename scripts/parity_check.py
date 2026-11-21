@@ -225,6 +225,9 @@ CORPUS = [
     "Ingredients: Salted Buckwheat", "Ingredients: Roasted Salted Buckwheat", "Ingredients: Salted Rice", "Ingredients: Salted Wheat Flour", "Ingredients: Salted Oat Flour", "Ingredients: Rice (salted)",
     "Ingredients: Rice (Rice, Salt)", "Ingredients: Unsalted Rice", "Ingredients: Rice (no added salt)", "Ingredients: Salted Milk", "Ingredients: Salted Egg", "Ingredients: Rice, Salted Buckwheat.",
     "Ingredients: Salted Wheat Flour, Water.", "Ingredients: Salted Parboiled Rice", "Ingredients: Salted Almonds", "Ingredients: Salted Pinto Beans",
+    # per-form-2b (tests/test_species_milk_2b.py, SYNTHETIC): species-head milk recognition (cow milk, goat milk); species words alone and milk solids stay abstained
+    "Ingredients: Cow Milk", "Ingredients: Goat Milk", "Ingredients: Goat Milk (Pasteurized)", "Ingredients: Pasteurised Cow Milk", "Ingredients: Cow Milk Powder", "Ingredients: Goat Milk Powder", "Ingredients: Cow",
+    "Ingredients: Rice (Cow Milk)", "Ingredients: Rice (Buffalo Milk)", "Ingredients: Milk Solids (Pasteurized Skimmed Cow Milk)", "Ingredients: Cow Milk, Starter Culture", "Ingredients: Sheep Milk", "Ingredients: Cow Milk Solids",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",

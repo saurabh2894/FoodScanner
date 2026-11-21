@@ -506,7 +506,7 @@
 
     /* ---------- classify ---------- */
     // A colour word that is only a short bracketed function note on a named ingredient ("Turmeric (Colouring & Spices)") is not a declared ADDED colour.
-    const MILK_TERMS = ["milk", "toned milk", "double toned milk", "buffalo milk", "milk solids"];   // milk context of the milk-plus-culture rule
+    const MILK_TERMS = ["milk", "toned milk", "double toned milk", "buffalo milk", "milk solids", "cow milk", "goat milk"];   // milk context of the milk-plus-culture rule
     const NOTE_PREFIX = "(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*", NOTE_COLOUR = "colou?r(?:ant)?(?: agent)?", NOTE_OTHER = "(?:spices?|seasoning|flavou?rs?)";
     const COLOUR_NOTE = new RegExp(`^${NOTE_PREFIX}(?:${NOTE_COLOUR}(?: (?:and|&) ${NOTE_OTHER})?|${NOTE_OTHER} (?:and|&) ${NOTE_COLOUR})$`);
     const isColourNote = (inner) => COLOUR_NOTE.test(inner.trim());
@@ -545,6 +545,7 @@
       const residual = [];
       for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
         const toks = part.match(/[a-z]+/g) || [];
+        if (toks.some((t) => SPECIES_WORDS.has(t)) && !headIsMilk) { residual.push(part.trim()); continue; }       // per-form-2b: a species-milk part is benign only on a plain milk head item
         if (!toks.length || isRecognised(part.trim()) || toks.every(ok)) continue;
         if (headIsMilk && toks.includes("milk") && toks.some((t) => SPECIES_WORDS.has(t)) && toks.every((t) => ok(t) || SPECIES_WORDS.has(t) || MILK_PROVENANCE_WORDS.has(t))) continue;
         residual.push(part.trim());
@@ -563,8 +564,8 @@
       return toks.includes("whole") && !toks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
     }
     // powdered milk is placed by name (FAO Table 1 Group 1 'fresh, powdered or pasteurized milk'): mirrors classify.milk_powder_named
-    const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk"];
-    const MILK_POWDER_WORDS = new Set(["milk", "toned", "double", "buffalo", "whole", "skimmed", "skim", "powder", "powdered"]);
+    const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk"];
+    const MILK_POWDER_WORDS = new Set(["milk", "toned", "double", "buffalo", "cow", "goat", "whole", "skimmed", "skim", "powder", "powdered"]);
     function milkPowderNamed(ing) {
       const row = lookup(ing.name);
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];

@@ -68,15 +68,17 @@ def test_synthetic_species_of_origin_in_a_milk_bracket_on_a_milk_item_is_benign_
     assert g(t)[0] == 1, t
 
 
-@pytest.mark.parametrize("t", ["Milk (Cow)", "Rice (Cow)", "Rice (Cow Milk)", "Egg (Cow Milk)", "Milk (Cow Cheese)", "Milk (Cow Milk, XQ9)", "Goat Milk (Pasteurized)", "Cow Milk", "Milk solids (Pasteurized skimmed cow milk)", "Milk Solids (Cow Milk)"])
+# UPDATED (per-form-2b): 'Goat Milk (Pasteurized)' and 'Cow Milk' left this list: 'cow milk' and 'goat milk' are recognised head names now. 'Rice (Buffalo Milk)' joined it: 'buffalo milk' is a lexicon row, and a species-milk
+# bracket part is benign only on a plain milk head item (previously that form slipped through as Group 1).
+@pytest.mark.parametrize("t", ["Milk (Cow)", "Rice (Cow)", "Rice (Cow Milk)", "Rice (Buffalo Milk)", "Egg (Cow Milk)", "Milk (Cow Cheese)", "Milk (Cow Milk, XQ9)", "Milk solids (Pasteurized skimmed cow milk)", "Milk Solids (Cow Milk)"])
 def test_synthetic_negative_a_species_word_anywhere_else_stays_unrecognised_and_the_abstention_stands(t):
     group, a = g(t)
     assert group is None, t
 
 
-def test_synthetic_the_species_word_is_not_a_recognised_word_and_the_frozen_q10_label_stays_abstained_on_its_own_evidence():
+def test_synthetic_the_species_word_alone_is_not_recognised_and_the_frozen_q10_label_stays_abstained_on_its_own_evidence():
     from foodscan.classify import is_recognised
-    assert not is_recognised("cow milk") and not is_recognised("goat milk") and not is_recognised("cow")
+    assert is_recognised("cow milk") and is_recognised("goat milk") and not is_recognised("cow") and not is_recognised("goat")      # per-form-2b: the head names are recognised, the species words alone are not
     a = analyse_text((ROOT / "evaluation" / "fresh_batch_3" / "inputs" / "Q10.txt").read_text(encoding="utf-8"), source="text")
     # b3/Q10 'Milk solids (Pasteurized skimmed cow milk)': 'milk solids' is not established as identical to milk (owner ruling) and no quoted source places this exact form (FAO names 'fresh, powdered or pasteurized
     # milk', not milk solids), so it stays abstained, attributed to the unknown-bracket rule. Group 1 for it would be an unjustified placement.
