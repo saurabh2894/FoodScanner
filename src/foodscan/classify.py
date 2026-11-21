@@ -178,6 +178,9 @@ def legume_preserved_form(ing) -> bool:
 # vegetable keeps its guard (not routed).
 _POWDER_WORDS = frozenset({"powder", "powdered"})
 _POWDER_ROUTED = ("whole_food", "legume", "vegetable", "fruit")
+# nut-guard-1 (owner decision): the canned/bottled/preserved, brine and unrecognised-bracket guards of the legume, vegetable and fruit kinds also apply to kind nut_seed. Measured before the change: almonds (brine), almonds (canned) and
+# almonds (XQ9) answered Group 1. Same item-level reading (the item's own name and bracket); no new source: FAO Group 3 "using preservation methods such as canning and bottling" with added salt, oil, sugar. Inference level: class-instance of that rule.
+_GUARDED_KINDS = _BRINE_KINDS + ("nut_seed",)
 
 
 def powder_composition_stated(ing) -> bool:
@@ -401,7 +404,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _BRINE_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
+    bracket_unknown = [(i.raw, bracket_residual(i)) for i, k in zip(ings, kinds) if k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
     if unplaced:
@@ -412,8 +415,8 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if bracket_unknown:
         return Classification(None, reason="a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (" + "; ".join(f"{raw}: {', '.join(r)}" for raw, r in bracket_unknown)
                               + "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")
-    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _BRINE_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
-    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _BRINE_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
+    legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:
         return Classification(None, reason="a canned, bottled or preserved legume, vegetable or fruit (" + "; ".join(legume_preserved) + "): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established")
     if len(ings) == 1 and kinds[0] in ("nut_seed", "legume", "vegetable", "fruit"):

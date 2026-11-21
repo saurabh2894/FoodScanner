@@ -1,0 +1,5855 @@
+{
+ "rule_id": "nut-guard-1",
+ "base_src": "/tmp/base_n1/src",
+ "after_src": "/home/user/FoodScanner/src",
+ "lexicon_rows": {
+  "before": 406,
+  "after": 406,
+  "added": [],
+  "removed": [],
+  "kind_changed": {},
+  "source_changed": []
+ },
+ "synonyms_markers_untouched": {
+  "synonyms.csv": true,
+  "markers.csv": true
+ },
+ "after_build_proof": {},
+ "frozen_66": {
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "out_of_sample": {
+  "inputs": 32,
+  "changed": [],
+  "unexplained": [],
+  "abstain_to_4": [],
+  "abstain_to_1": [],
+  "abstain_to_2_3": [],
+  "other_group_change": []
+ },
+ "drift": {
+  "probed": 556,
+  "differences": {},
+  "expected_owner_ruled": {}
+ },
+ "descriptor_surface": {
+  "probed": 812,
+  "changed": 0,
+  "by_word_and_kind": {},
+  "changed_kinds_outside_scope": [],
+  "group_moves": {}
+ },
+ "salted_surface": {
+  "rows_probed": 49,
+  "probed": 147,
+  "changed": 0,
+  "newly_group1": [],
+  "by_form": {
+   "salted {x}": {
+    "probed": 49,
+    "group1_before": 28,
+    "group1_after": 28,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "roasted salted {x}": {
+    "probed": 49,
+    "group1_before": 28,
+    "group1_after": 28,
+    "changed": 0,
+    "newly_group1": []
+   },
+   "toasted salted {x}": {
+    "probed": 49,
+    "group1_before": 0,
+    "group1_after": 0,
+    "changed": 0,
+    "newly_group1": []
+   }
+  },
+  "group1_before": 56,
+  "group1_after": 56,
+  "changes": {}
+ },
+ "powder_surface": {
+  "probed": 558,
+  "group1_before": 364,
+  "group1_after": 364,
+  "changed": {},
+  "group1_after_forms_not_stated": [],
+  "owner_allowed_group1_forms": [
+   "buffalo milk powder",
+   "cow milk powder",
+   "goat milk powder",
+   "milk powder",
+   "toned milk powder"
+  ],
+  "newly_group4_or_other": {}
+ },
+ "controls": {
+  "rice (XQ9)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "rice",
+    "kind": "whole_food"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (rice (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "kidney beans (canned)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "kidney beans",
+    "kind": "legume"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (kidney beans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "mango (preserved)": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": {
+    "term": "mango",
+    "kind": "fruit"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (mango (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "cashew": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredient list looks truncated (ends mid-word: \"cashew\")",
+   "unassessed_after": [
+    "cashew"
+   ]
+  },
+  "peanuts": {
+   "group_before": null,
+   "group_after": null,
+   "row_after": null,
+   "drivers_after": [],
+   "reason_after": "ingredients not in the local vocabulary, so processing level cannot be judged: peanuts",
+   "unassessed_after": [
+    "peanuts"
+   ]
+  },
+  "almonds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "almonds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "almonds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (almonds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "almonds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (almonds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "almonds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted almonds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted almonds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (almonds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "almonds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "almonds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "almonds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pumpkin seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pumpkin seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pumpkin seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pumpkin seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pumpkin seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pumpkin seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pumpkin seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pumpkin seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pumpkin seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pumpkin seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pumpkin seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pumpkin seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "flax seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "flax seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (flax seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "flax seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (flax seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "flax seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted flax seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted flax seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (flax seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "flax seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "flax seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "flax seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "acorns (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "acorns (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (acorns (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "acorns (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (acorns (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "acorns (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted acorns": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted acorns": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (acorns (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "acorns (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "acorns (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "acorns",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "beechnuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "beechnuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (beechnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "beechnuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (beechnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "beechnuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted beechnuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted beechnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (beechnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "beechnuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "beechnuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "beechnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "brazil nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "brazil nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (brazil nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "brazil nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (brazil nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "brazil nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted brazil nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted brazil nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (brazil nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "brazil nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "brazil nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "brazil nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "butternuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "butternuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (butternuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "butternuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (butternuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "butternuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted butternuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted butternuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (butternuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "butternuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "butternuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "butternuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "cashew nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "cashew nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (cashew nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "cashew nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cashew nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "cashew nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted cashew nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted cashew nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (cashew nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "cashew nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "cashew nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "cashew nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chestnuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chestnuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chestnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chestnuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chestnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "chestnuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted chestnuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted chestnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chestnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "chestnuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chestnuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chestnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chia seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chia seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (chia seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "chia seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chia seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "chia seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted chia seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted chia seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (chia seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "chia seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "chia seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "chia seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "ginkgo nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "ginkgo nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (ginkgo nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "ginkgo nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (ginkgo nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "ginkgo nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted ginkgo nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted ginkgo nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (ginkgo nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "ginkgo nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "ginkgo nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "ginkgo nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hazelnuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hazelnuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hazelnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hazelnuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hazelnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "hazelnuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted hazelnuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted hazelnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hazelnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "hazelnuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hazelnuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hazelnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hickory nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hickory nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (hickory nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "hickory nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hickory nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "hickory nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted hickory nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted hickory nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (hickory nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "hickory nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "hickory nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "hickory nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "macadamia nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "macadamia nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (macadamia nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "macadamia nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (macadamia nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "macadamia nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted macadamia nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted macadamia nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (macadamia nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "macadamia nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "macadamia nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "macadamia nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pecans (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pecans (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pecans (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pecans (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pecans (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pecans (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pecans": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pecans": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pecans (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pecans (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pecans (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pecans",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pili nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pili nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pili nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pili nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pili nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pili nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pili nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pili nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pili nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pili nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pili nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pili nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pine nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pine nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pine nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pine nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pine nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pine nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pine nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pine nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pine nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pine nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pine nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pine nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pistachio nuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pistachio nuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (pistachio nuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "pistachio nuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pistachio nuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pistachio nuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted pistachio nuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted pistachio nuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (pistachio nuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "pistachio nuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "pistachio nuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "pistachio nuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "safflower seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "safflower seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (safflower seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "safflower seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (safflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "safflower seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted safflower seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted safflower seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (safflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "safflower seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "safflower seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "safflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sesame seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sesame seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sesame seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sesame seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sesame seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sesame seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted sesame seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted sesame seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sesame seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sesame seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sesame seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sesame seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sunflower seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sunflower seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (sunflower seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "sunflower seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sunflower seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sunflower seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted sunflower seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted sunflower seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (sunflower seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "sunflower seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "sunflower seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "sunflower seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "walnuts (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "walnuts (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (walnuts (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "walnuts (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (walnuts (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "walnuts (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted walnuts": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted walnuts": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (walnuts (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "walnuts (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "walnuts (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "walnuts",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (canned)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "watermelon seeds (bottled)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (bottled)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "watermelon seeds (preserved)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a canned, bottled or preserved legume, vegetable or fruit (watermelon seeds (preserved)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+   "unassessed_after": []
+  },
+  "watermelon seeds (brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (in brine)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (XQ9)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (watermelon seeds (XQ9): xq9), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "watermelon seeds (sunflower oil)": {
+   "group_before": 1,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (salted)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (no added salt)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "salted watermelon seeds": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "roasted watermelon seeds": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds, salt": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": null,
+   "drivers_after": [
+    "recognised whole food",
+    "recognised culinary"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (sugar)": {
+   "group_before": 3,
+   "group_after": 3,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (cooked)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (raw)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (whole)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (skin removed)": {
+   "group_before": 1,
+   "group_after": null,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [],
+   "reason_after": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (watermelon seeds (skin removed): skin removed), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+   "unassessed_after": []
+  },
+  "watermelon seeds (peeled)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  },
+  "watermelon seeds (dried)": {
+   "group_before": 1,
+   "group_after": 1,
+   "row_after": {
+    "term": "watermelon seeds",
+    "kind": "nut_seed"
+   },
+   "drivers_after": [
+    "single recognised unprocessed food"
+   ],
+   "reason_after": null,
+   "unassessed_after": []
+  }
+ },
+ "blockers": [],
+ "verdict": "READY_FOR_REVIEW"
+}
