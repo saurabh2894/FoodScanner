@@ -1,0 +1,24 @@
+{
+ "batch_id": "marker-rows-2-PROPOSAL",
+ "note": "PROPOSAL ONLY (classification-bearing; NOT approved, NOT merged into markers.csv): whey forms as strong derived-substance markers. FAO p.9 names 'whey protein'; Monteiro et al. 2018 (PHN 21(1):5-17, PMC10261019, licence unverified; paraphrase) names whey among Group 4 ingredient sources extracted directly from foods; PMC10127522 (licence unverified; paraphrase) lists whey among non-culinary substances that make a bread ultra-processed. Instances of the named class 'whey', exact terms not named.",
+ "marker_class": "derived_substance",
+ "strength": "strong",
+ "clause": {
+  "where": "FAO 2019 (Monteiro et al.), ca5644en.pdf, p. 9 (section 2, ingredients characteristic of ultra-processed foods)",
+  "text": "include varieties of sugars (fructose, high-fructose corn syrup, ‘fruit juice concentrates’, invert sugar, maltodextrin, dextrose, lactose), modified oils (hydrogenated or interesterified oils) and sources of protein (hydrolysed proteins, soya protein isolate, gluten, casein, whey protein, and ‘mechanically separated meat’)"
+ },
+ "basis": {
+  "where": "FAO 2019, ca5644en.pdf, p. 10 (section 3, identifying ultra-processed foods)",
+  "text": "The presence in the list of ingredients of one or more of these food substances identifies a product as ultra-processed."
+ },
+ "rows": [
+  {
+   "term": "whey powder",
+   "coverage": "instance of the named FAO term 'whey protein' (class-level coverage) and of 'whey' named by Monteiro 2018 (PMC10261019, licence unverified, paraphrase), corroborated by PMC10127522 (licence unverified, paraphrase); exact term not named by the FAO clause; dried form of the same ingredient is an inference"
+  },
+  {
+   "term": "whey solids",
+   "coverage": "instance of the named FAO term 'whey protein' (class-level coverage) and of 'whey' named by Monteiro 2018 (PMC10261019, licence unverified, paraphrase), corroborated by PMC10127522 (licence unverified, paraphrase); exact term not named by the FAO clause; 'solids' as the dried whey fraction is an inference"
+  }
+ ]
+}

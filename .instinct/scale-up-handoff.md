@@ -46,6 +46,8 @@ Branch base: main 3df79d7. Suite 777 passed + 6 xfailed (known plural gap, stric
 
 - [x] main ac6ead1: pmc-reresearch-2 merged (coconut fat). Branch claude/dehydrated-forms-1: 3 term-level synonyms (dehydrated onion, onion flakes, onions flakes -> onion); no 'dehydrated' or 'flakes' descriptor (owner); awaiting verification, NOT merged.
 
+- [x] main de86733: dehydrated-forms-1 merged. Branch claude/pmc-reresearch-3: re-read of the remaining parks; one proposal (whey powder / whey solids strong markers, NOT in markers.csv); everything else stays parked; awaiting owner decision.
+
 ## 4. Remaining steps (in order)
 - [ ] Owner verification of the branch (they verify independently), then a bounded merge instruction. STOP before any merge to main.
 - [ ] Owner decisions listed in FINDINGS.md (plural/leaf synonyms, S19 status change, untested targets).

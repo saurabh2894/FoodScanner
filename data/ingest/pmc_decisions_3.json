@@ -1,0 +1,106 @@
+{
+ "decisions_id": "pmc-decisions-3",
+ "conditions": [
+  "read-only use of the cached copies, no bulk import",
+  "paraphrase only, identifier cited with 'licence unverified'",
+  "never sole support beyond FAO/Monteiro: then park and flag"
+ ],
+ "decisions": [
+  {
+   "term": "whey powder",
+   "disposition": "PROPOSAL (marker, classification-bearing)",
+   "sources_say": "FAO p.9 names 'whey protein'; Monteiro 2018 names whey among Group 4 ingredient sources extracted from foods; PMC10127522 lists whey among non-culinary substances making a bread ultra-processed",
+   "result": "three admissible sources name whey or whey protein; a strong-marker row needs the owner's approval"
+  },
+  {
+   "term": "whey solids",
+   "disposition": "PROPOSAL (marker, classification-bearing)",
+   "sources_say": "same as whey powder",
+   "result": "same: 'solids' as the dried whey fraction is an inference"
+  },
+  {
+   "term": "dry fruits",
+   "disposition": "PARK",
+   "sources_say": "FAO and PMC name DRIED fruit; 'dry fruits' in Indian use covers nuts and dried fruit together",
+   "result": "a class phrase that mixes the conditioned nuts clause with dried fruit: not one ingredient; needs an Indian naming source"
+  },
+  {
+   "term": "roasted gram",
+   "disposition": "PARK",
+   "sources_say": "legumes and 'roasting' are named (FAO, Monteiro 2019, PMC); 'gram' as chickpea is not",
+   "result": "naming source needed (FSSAI blocked)"
+  },
+  {
+   "term": "refined oil",
+   "disposition": "PARK",
+   "sources_say": "vegetable oils are Group 2 (FAO, PMC) but 'refined oil' names no plant",
+   "result": "no single oil identified; stays unassessed"
+  },
+  {
+   "term": "butter oil",
+   "disposition": "PARK",
+   "sources_say": "butter and ghee-type fats: FAO names butter and lard; PMC names unsalted butter, lard and cream",
+   "result": "'butter oil' is not named and may be anhydrous milk fat or ghee: no source equates it"
+  },
+  {
+   "term": "defatted soya",
+   "disposition": "PARK",
+   "sources_say": "Monteiro names 'soya protein isolate' (Group 4); PMC codes soy products such as meatless patties as ultra-processed",
+   "result": "defatted soya is not an isolate and no source names it"
+  },
+  {
+   "term": "texturized soy protein",
+   "disposition": "PARK",
+   "sources_say": "same as defatted soya",
+   "result": "not named; a marker would extend beyond the named 'soya protein isolate'"
+  },
+  {
+   "term": "cocoa butter",
+   "disposition": "PARK",
+   "sources_say": "PMC names cocoa powder (already parked: single source); no source names cocoa butter, solids, nibs or mass",
+   "result": "single admissible source or broader than FAO (standing reason)"
+  },
+  {
+   "term": "cocoa solids",
+   "disposition": "PARK",
+   "sources_say": "same",
+   "result": "single admissible source or broader than FAO (standing reason)"
+  },
+  {
+   "term": "cocoa nibs",
+   "disposition": "PARK",
+   "sources_say": "same",
+   "result": "single admissible source or broader than FAO (standing reason)"
+  },
+  {
+   "term": "cocoa mass",
+   "disposition": "PARK",
+   "sources_say": "same",
+   "result": "single admissible source or broader than FAO (standing reason)"
+  },
+  {
+   "term": "carbonated water",
+   "disposition": "PARK",
+   "sources_say": "FAO Group 4 lists carbonating agents as an additive class and PMC codes carbonated soft drinks as ultra-processed products; neither names plain carbonated water",
+   "result": "an ingredient 'carbonated water' is not placed by any source read"
+  },
+  {
+   "term": "cereal extract",
+   "disposition": "PARK",
+   "sources_say": "PMC names 'malt flavor' and 'malt syrup' inside ultra-processed corn flakes ingredient lists",
+   "result": "extracts are not placed; stays unassessed"
+  },
+  {
+   "term": "malt extract",
+   "disposition": "PARK",
+   "sources_say": "same",
+   "result": "stays unassessed (held category C and no placement)"
+  },
+  {
+   "term": "mango pieces",
+   "disposition": "PARK",
+   "sources_say": "dried or fresh fruit is Group 1; 'pieces' is a cut form no source names",
+   "result": "no per-term source; no generic descriptor"
+  }
+ ]
+}
