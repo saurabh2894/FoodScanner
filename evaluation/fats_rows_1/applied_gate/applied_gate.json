@@ -3,8 +3,8 @@
  "base_src": "/tmp/base_f/src",
  "after_src": "/home/user/FoodScanner/src",
  "lexicon_rows": {
-  "before": 406,
-  "after": 426,
+  "before": 411,
+  "after": 431,
   "added": [
    "almond oil",
    "apricot kernel oil",
@@ -237,39 +237,39 @@
   "other_group_change": []
  },
  "drift": {
-  "probed": 556,
+  "probed": 561,
   "differences": {},
   "expected_owner_ruled": {}
  },
  "descriptor_surface": {
-  "probed": 812,
+  "probed": 822,
   "changed": 0,
   "by_word_and_kind": {},
   "changed_kinds_outside_scope": [],
   "group_moves": {}
  },
  "salted_surface": {
-  "rows_probed": 49,
-  "probed": 147,
+  "rows_probed": 54,
+  "probed": 162,
   "changed": 0,
   "newly_group1": [],
   "by_form": {
    "salted {x}": {
-    "probed": 49,
+    "probed": 54,
     "group1_before": 5,
     "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "roasted salted {x}": {
-    "probed": 49,
+    "probed": 54,
     "group1_before": 5,
     "group1_after": 5,
     "changed": 0,
     "newly_group1": []
    },
    "toasted salted {x}": {
-    "probed": 49,
+    "probed": 54,
     "group1_before": 0,
     "group1_after": 0,
     "changed": 0,
@@ -281,9 +281,9 @@
   "changes": {}
  },
  "powder_surface": {
-  "probed": 558,
-  "group1_before": 364,
-  "group1_after": 364,
+  "probed": 573,
+  "group1_before": 373,
+  "group1_after": 373,
   "changed": {},
   "group1_after_forms_not_stated": [],
   "owner_allowed_group1_forms": [
