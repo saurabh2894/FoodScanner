@@ -192,8 +192,8 @@ def powder_composition_stated(ing) -> bool:
 # (clause names only 'dried') the composition of a milk powder IS source-established. An item whose whole text is "<optional fat-grade word> milk powder" (milk, toned milk, double toned milk,
 # buffalo milk; grade words whole/skimmed/skim are fat grades, not composition statements) keeps its plain Group 1 placement. 'milk solids powder' / 'milk solids' (a solids fraction is not the
 # named powdered-milk form) and any item with extra words (a bracket naming an additive, a blend) stay under the powder standard.
-_MILK_POWDER_ROWS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk"})
-_MILK_POWDER_WORDS = frozenset({"milk", "toned", "double", "buffalo", "whole", "skimmed", "skim", "powder", "powdered"})
+_MILK_POWDER_ROWS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk"})
+_MILK_POWDER_WORDS = frozenset({"milk", "toned", "double", "buffalo", "cow", "goat", "whole", "skimmed", "skim", "powder", "powdered"})
 
 
 def milk_powder_named(ing) -> bool:
@@ -236,6 +236,9 @@ def bracket_residual(ing) -> list:
     residual = []
     for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
         toks = re.findall(r"[a-z]+", part)
+        if set(toks) & _SPECIES_WORDS and not head_is_milk:         # per-form-2b: 'cow milk'/'goat milk'/'buffalo milk' are recognised names now, but a species-milk part is benign ONLY on a plain milk head item
+            residual.append(part.strip())
+            continue
         if not toks or is_recognised(part.strip()) or all(t in ok_tokens for t in toks):
             continue
         if head_is_milk and "milk" in toks and set(toks) & _SPECIES_WORDS and all(t in ok_tokens or t in _SPECIES_WORDS or t in _MILK_PROVENANCE_WORDS for t in toks):
@@ -286,7 +289,7 @@ class _Hit:
 # "Beetroot powder (for natural colour)") says what the food is used for. It is not a declared ADDED colour, so it
 # is not a marker (research/04). An added colour is declared as the ingredient itself: "Colour (INS 150d)",
 # "Natural colour (annatto)", "Food colour - E122", or a "Contains ... colour" line.
-_MILK_TERMS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "milk solids"})      # lexicon terms that count as the milk of the milk-plus-culture rule
+_MILK_TERMS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "milk solids", "cow milk", "goat milk"})      # lexicon terms that count as the milk of the milk-plus-culture rule
 _NOTE_PREFIX = r"(?:(?:for|as|used|a|an|the|to|give|added|natural|permitted|food|synthetic|artificial) )*"
 _NOTE_COLOUR = r"colou?r(?:ant)?(?: agent)?"
 _NOTE_OTHER = r"(?:spices?|seasoning|flavou?rs?)"

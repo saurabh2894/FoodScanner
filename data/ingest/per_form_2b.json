@@ -1,0 +1,43 @@
+{
+ "rule_id": "per-form-2b",
+ "status": "Controls for species-head milk recognition (per-form-2b).",
+ "negative_controls": [
+  "cow",
+  "goat",
+  "sheep milk",
+  "human milk",
+  "cow cheese",
+  "cow milk solids",
+  "cow's milk",
+  "milk solids (pasteurized skimmed cow milk)",
+  "milk solids (cow milk)",
+  "rice (cow milk)",
+  "rice (buffalo milk)",
+  "rice (goat milk)",
+  "milk (cow)",
+  "egg (cow milk)",
+  "fortified cow milk powder",
+  "cow milk solids powder",
+  "salted rice",
+  "salted milk"
+ ],
+ "positive_controls": [
+  "cow milk",
+  "goat milk",
+  "goat milk (pasteurized)",
+  "pasteurised cow milk",
+  "toned cow milk",
+  "milk (cow milk)",
+  "milk (goat milk)",
+  "buffalo milk",
+  "milk",
+  "cow milk powder",
+  "skimmed cow milk powder",
+  "goat milk powder",
+  "cow milk, starter culture",
+  "salted cow milk",
+  "salted milk",
+  "milk powder",
+  "milk (pasteurized cow milk)"
+ ]
+}
