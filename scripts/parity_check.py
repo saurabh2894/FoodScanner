@@ -148,6 +148,9 @@ CORPUS = [
     # demand-bulk-1 rows (tests/test_demand_bulk_1.py, SYNTHETIC)
     "Ingredients: Starch", "Ingredients: Rice, tapioca starch, salt.", "Ingredients: Modified starch, rice.", "Ingredients: Beans, water, salt.", "Ingredients: Wheat flour.", "Ingredients: Wheat flour, salt.",
     "Ingredients: Cabbage, cranberry, sugar.", "Ingredients: Edible peanut oil.", "Ingredients: Water, potable water, sugar.", "Ingredients: Cocoa butter, wheat gluten, apple juice, yeast extract, glucose syrup.",
+    # held-sources-1 (tests/test_held_sources_1.py, SYNTHETIC + the owner's acceptance label text)
+    "Ingredients: Banana powder", "Ingredients: Rice, banana powder, salt.", "Ingredients: Banana powder, maltodextrin.", "Ingredients: Strawberry powder, Beetroot powder (for natural colour).", "Ingredients: Rice, vitamins and minerals.",
+    "Ingredients: Multigrain Flour Blend (45.7%) [Sprouted Ragi & Jowar (23.4%), Rice & Oat (22.3%)], Whole Milk Powder (29.5%), Date Powder (9%), Banana Powder, Strawberry Powder (5%), Skimmed Milk Powder, Vitamins and Minerals, Beetroot Powder, Antioxidant (Natural Tocopherol).",
     # marker-rows-1 (tests/test_marker_rows_1.py, SYNTHETIC): approved FAO section 3 substances are strong markers; claims and look-alikes are not
     "Ingredients: Rice, wheat gluten, salt.", "Ingredients: Water, fructose.", "Ingredients: Rice, hydrolysed vegetable protein, salt.", "Ingredients: Rice, Hydrolyzed Vegetable Protein.", "Ingredients: Water, lemon juice concentrate.",
     "Ingredients: Water, apple juice concentrate, salt.", "Ingredients: Oats, gluten free.", "Ingredients: Wheat flour (gluten free), salt.", "Ingredients: Rice, fructooligosaccharide.", "Ingredients: Water, orange juice concentrate.",

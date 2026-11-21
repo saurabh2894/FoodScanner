@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import clause_tier  # noqa: E402
 
-KINDS = {"whole_food", "culinary", "flour", "herb_spice", "neutral", "culture"}
+KINDS = {"whole_food", "culinary", "flour", "herb_spice", "neutral", "culture", "food_powder"}
 REQUIRED = ["term", "kind", "source", "fdc_ids", "rule_id"]
 COMPARE = ["group", "drivers", "status", "reason", "warnings", "ingredients", "unassessed", "ins_mappings"]
 

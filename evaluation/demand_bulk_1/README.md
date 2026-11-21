@@ -24,3 +24,9 @@ My first draft accepted starch, tapioca starch and cranberry. The gate's standin
 
 ## Gates
 Flip check (66 frozen inputs, separate fresh processes): group 0, drivers 0, status 0, warnings 0; reason text changed on 1 input and 5 inputs lost an unassessed item (all attributed to the new rows, 0 unexplained). Out-of-sample set re-run from the cache vs main: group and status unchanged on 32/32; 3 labels differ in what is still unassessed: S01 loses "red cabbage", S15 and S24 lose "Wheat Flour" (group 4 stays 4). Suite 1080 passed + 4 expected failures; parity 418/418 (10 new synthetic texts).
+
+## Junior cross-check (antigravity/demand-bulk-1, read-only reference; 38 of its 40 dispositions agree with this batch)
+- Divergence, resolved: `wheat flour` is LABEL_BOUND there and a kind-`flour` row here (owner confirmed kind flour: single-item lists answer, multi-item lists abstain).
+- Its quote "substances extracted from whole foods, such as casein, lactose, whey, gluten" is not in FAO Table 1. The nearest verbatim text is Monteiro et al. 2018, Public Health Nutr 21(1):5-17 (PMC10261019): "Some of these are directly extracted from foods, such as casein, lactose, whey and gluten." That is new, citable evidence naming "whey" and "lactose" (carried into the next batch as marker proposals for whey powder / whey solids, owner decision).
+- Its `beans` provenance cites FDC 169961 "Beans, snap, green, raw" (a different food), its rule file's `clause.text` is the string "Table 1 Group 1 p.11" and its gate ran without --fao-text, so its verbatim-clause check was vacuous; the merged rows here quote the clauses verbatim and the clause check passes against the report text.
+- Its yeast-extract rationale ("Group 4") contradicts the standing decision that yeast extract is not a marker (outcome identical: parked). Its pin of `corn flakes` at tests/test_vocabulary_layer.py:55 corroborates holding that term.

@@ -229,6 +229,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
+    if len(ings) == 1 and kinds[0] == "food_powder":
+        # A powder of one food is Group 1 only as the SOLE item of the list: the term alone does not establish that it is free of carriers or anti-caking agents,
+        # so the answer rests on the list naming nothing else (held-sources-1; FAO p.10 Group 1 definition names 'powdering' of natural foods).
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
         return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
     rows = [lookup(i.name) for i in ings]
@@ -238,6 +242,9 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         # else in it (no sugar, sweetener, flavour or other marker: those returned above or fall outside this rule). Not keyed off product words.
         return Classification(1, drivers=[Driver(i.raw, "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or "
                                                  "artificial sweeteners; fermentation of milk to make yoghurt)", "NUPENS-USP classification page (research/04)", i.section) for i in ings])
+    powders = [i.raw for i, k in zip(ings, kinds) if k == "food_powder"]
+    if powders:
+        return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
     has_food = any(k == "whole_food" for _, k in substantive)
