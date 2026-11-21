@@ -401,6 +401,19 @@
       return null;
     }
     const isRecognised = (name) => lookup(name) !== null;
+    // headline aggregation (mirrors classify.other_open_items): names the other ACTIVE blockers of an abstention headed by weak markers, a colour note or a sweetener-foods entry
+    function otherOpenItems(ings, skip) {
+      const parts = [];
+      ings = ings.filter((i) => !skip.has(i.raw));
+      const unrec = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
+      if (unrec.length) parts.push("not in the local vocabulary: " + unrec.join(", "));
+      const rec = ings.filter((i) => isRecognised(i.name)).map((i) => [i, lookup(i.name).kind]);
+      const unpl = rec.filter(([, k]) => k === "unplaced").map(([i]) => i.raw);
+      if (unpl.length) parts.push("recognised by name only, no source read places " + unpl.join(", "));
+      const pw = rec.filter(([i, k]) => fatPowder(i, k) || (powderRouted(i, k) && !powderCompositionStated(i))).map(([i]) => i.raw);
+      if (pw.length) parts.push("a powder is named without a stated composition: " + pw.join(", "));
+      return parts.length ? "; other open items: " + parts.join("; ") : "";
+    }
 
     /* ---------- declared role (mirrors roles.py): the class the SCANNED label names for the entry a code sits in; display only ---------- */
     const ROLE_FILLER = new Set(["contains", "contain", "permitted", "natural", "synthetic", "artificial", "nature", "identical", "added", "food", "class", "i", "ii", "iii", "1", "2", "substance", "substances", "and", "&", "the", "of"]);
@@ -661,12 +674,12 @@
       if (strong.length) return { group: 4, drivers: strong, reason: null };
       // A colour note on a named food leaves open whether a colour is added: without an independent marker (above) the result stays uncertain.
       const colourNotes = ings.filter(colourNoteOnly).map((i) => i.raw);
-      if (colourNotes.length) return { group: null, drivers: weak, reason: `a colour note on a named ingredient (${colourNotes.join("; ")}) leaves open whether a colour is added, and no other marker decides the group` };
+      if (colourNotes.length) return { group: null, drivers: weak, reason: `a colour note on a named ingredient (${colourNotes.join("; ")}) leaves open whether a colour is added, and no other marker decides the group${otherOpenItems(ings, new Set([...colourNotes, ...weak.map((d) => d.ingredient)]))}` };
       const sweetFoodEntries = ings.filter(sweetenerFoodsOnly).map((i) => i.raw);
-      if (sweetFoodEntries.length) return { group: null, drivers: weak, reason: `a sweetener entry whose bracket names only foods (${sweetFoodEntries.join("; ")}) leaves open whether a sweetener additive is added, and no other marker decides the group` };
+      if (sweetFoodEntries.length) return { group: null, drivers: weak, reason: `a sweetener entry whose bracket names only foods (${sweetFoodEntries.join("; ")}) leaves open whether a sweetener additive is added, and no other marker decides the group${otherOpenItems(ings, new Set([...sweetFoodEntries, ...weak.map((d) => d.ingredient)]))}` };
       if (weak.length) {
         const names = [...new Set(weak.map((d) => `${d.ingredient} -> ${d.detail}`))].sort().join("; ");
-        return { group: null, drivers: weak, reason: `only weak or unlisted markers present (${names}); not enough to call a group` };
+        return { group: null, drivers: weak, reason: `only weak or unlisted markers present (${names}); not enough to call a group${otherOpenItems(ings, new Set(weak.map((d) => d.ingredient)))}` };
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") };

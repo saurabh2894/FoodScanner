@@ -471,6 +471,25 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
     return hits
 
 
+def other_open_items(ings, skip=()) -> str:
+    """Headline aggregation (owner Priority 2): when an abstention is headed by weak or unlisted markers, a colour note or a sweetener-foods entry, the other ACTIVE blockers are named as well, so the headline does not look like the
+    only open point: items not in the vocabulary, recognised-by-name-only items that no source places, and the powder of a food or of an oil or fat whose composition is not stated. Group names set aside as metadata are not
+    ingredients here. Returns '' when there is nothing else; it never changes a group and is only appended to an abstention that already exists."""
+    parts = []
+    ings = [i for i in ings if i.raw not in skip]                 # an item already named by the headline (the weak marker, the colour note, the sweetener entry) is not repeated
+    unrec = [i.raw for i in ings if not is_recognised(i.name)]
+    if unrec:
+        parts.append("not in the local vocabulary: " + ", ".join(unrec))
+    rec = [(i, lookup(i.name)["kind"]) for i in ings if is_recognised(i.name)]
+    unpl = [i.raw for i, k in rec if k == "unplaced"]
+    if unpl:
+        parts.append("recognised by name only, no source read places " + ", ".join(unpl))
+    pw = [i.raw for i, k in rec if fat_powder(i, k) or (powder_routed(i, k) and not powder_composition_stated(i))]
+    if pw:
+        parts.append("a powder is named without a stated composition: " + ", ".join(pw))
+    return ("; other open items: " + "; ".join(parts)) if parts else ""
+
+
 def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None = None) -> Classification:
     strong: list[Driver] = []
     weak: list[Driver] = []
@@ -491,15 +510,15 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     # marker (checked above) the result stays uncertain; it is never read as a confident group from the foods alone.
     notes = [i.raw for i in ings if colour_note_only(i)]
     if notes:
-        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a colour note on a named ingredient (" + "; ".join(notes) + ") leaves open whether a colour is added, and no other marker decides the group" + other_open_items(ings, set(notes) | {d.ingredient for d in weak}))
 
     sweet = [i.raw for i in ings if sweetener_foods_only(i)]
     if sweet:
-        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group")
+        return Classification(None, drivers=weak, reason="a sweetener entry whose bracket names only foods (" + "; ".join(sweet) + ") leaves open whether a sweetener additive is added, and no other marker decides the group" + other_open_items(ings, set(sweet) | {d.ingredient for d in weak}))
 
     if weak:
         names = "; ".join(sorted({f"{d.ingredient} -> {d.detail}" for d in weak}))
-        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group")
+        return Classification(None, drivers=weak, reason=f"only weak or unlisted markers present ({names}); not enough to call a group" + other_open_items(ings, {d.ingredient for d in weak}))
 
     unrecognised = [i.raw for i in ings if not is_recognised(i.name)]
     if unrecognised:
