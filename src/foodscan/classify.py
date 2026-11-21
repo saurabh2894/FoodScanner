@@ -255,10 +255,10 @@ def bracket_residual(ing) -> list:
 # positively supported case: for the 23 grain/flour terms of the per-form-2a guard, SALT alone keeps its Group 3 answer; any other observed condition on such an item still abstains. No source read or rule states the final group
 # for salted or sugared milk or eggs (an open owner decision), so none is asserted. The general Group 3 definition ("adding salt, oil, sugar or other group 2 ingredients to group 1 foods") is not denied: what is not established is
 # this item's form and composition from the label evidence.
-# Same-food equivalences (explicit, not a taxonomy): the identical row; egg and eggs; a plain milk row with milk, cow milk, buffalo milk or goat milk (the species-milk brackets of per-form-1 and per-form-2b); 'milk solids' with the plain milk it is made from (frozen label b3/Q04); and the class-phrase row
+# Same-food equivalences (explicit, not a taxonomy): the identical row; egg and eggs; a plain milk row with milk, cow milk, buffalo milk or goat milk (the species-milk brackets of per-form-1 and per-form-2b); and the class-phrase row
 # 'dehydrated vegetable' with a vegetable row (its source names dried vegetables as a class). Everything else, including two different plants, a milk fraction IN milk, or a species milk not listed, stays distinct.
 _SAME_MILK_PARTS = frozenset({"milk", "cow milk", "buffalo milk", "goat milk"})
-_SOLIDS_SOURCE_MILKS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk"})        # 'Milk solids (Toned Milk)': the bracket names the milk the solids come from (frozen label b3/Q04, supported milk-plus-culture rule)
+
 
 
 def whole_food_observed(ing, kind: str) -> list:
@@ -266,8 +266,9 @@ def whole_food_observed(ing, kind: str) -> list:
         return []
     obs = nut_added_observed(ing) + [w for w in sorted(_LEGUME_PRESERVED) if _added(ing, {w})]
     obs = list(dict.fromkeys(obs))
-    if grain_added_salt(ing, kind):                                  # per-form-2a: salt on these 23 terms is a supported Group 3; only salt is exempt
-        obs = [o for o in obs if "salt" not in o.split() and o != "salted"]
+    if grain_added_salt(ing, kind):                                  # per-form-2a: salt on these 23 terms is a supported Group 3; only salt itself (the words 'salt'/'salted' or a lexicon salt row) is exempt
+        salt_rows = {r["term"] for r in load_table("lexicon.csv") if r["kind"] == "culinary" and (r["term"] == "salt" or r["term"].endswith(" salt"))}
+        obs = [o for o in obs if o not in ("salt", "salted") and not ((lookup(o) or {}).get("term") in salt_rows)]
     return obs
 
 
@@ -281,7 +282,7 @@ def whole_food_nested(ing, kind: str) -> list:
         if not row or row["kind"] in ("neutral", "culture", "culinary"):
             continue
         ht, pt = head["term"], row["term"]
-        if pt == ht or {ht, pt} <= {"egg", "eggs"} or (ht in (_MILK_TERMS - {"milk solids"}) and pt in _SAME_MILK_PARTS) or (ht == "dehydrated vegetable" and row["kind"] == "vegetable") or (ht == "milk solids" and pt in _SOLIDS_SOURCE_MILKS):
+        if pt == ht or {ht, pt} <= {"egg", "eggs"} or (ht in (_MILK_TERMS - {"milk solids"}) and pt in _SAME_MILK_PARTS) or (ht == "dehydrated vegetable" and row["kind"] == "vegetable"):
             continue
         out.append(part.strip())
     return out

@@ -557,11 +557,13 @@
     const legumePreservedForm = (ing) => addedIn(ing, LEGUME_PRESERVED);
     // whole-food-guard-1 (mirrors classify.whole_food_observed / whole_food_nested): abstention only; explicit same-food equivalences, no taxonomy
     const SAME_MILK_PARTS = new Set(["milk", "cow milk", "buffalo milk", "goat milk"]);
-    const SOLIDS_SOURCE_MILKS = new Set(["milk", "toned milk", "double toned milk", "buffalo milk"]);
     function wholeFoodObserved(ing, kind) {
       if (kind !== "whole_food") return [];
       let obs = Array.from(new Set(nutAddedObserved(ing).concat(Array.from(LEGUME_PRESERVED).sort().filter((w) => addedIn(ing, new Set([w]))))));
-      if (grainAddedSalt(ing, kind)) obs = obs.filter((o) => !o.split(" ").includes("salt") && o !== "salted");
+      if (grainAddedSalt(ing, kind)) {
+        const saltRows = new Set(T.lexicon.filter((r) => r.kind === "culinary" && (r.term === "salt" || r.term.endsWith(" salt"))).map((r) => r.term));
+        obs = obs.filter((o) => o !== "salt" && o !== "salted" && !(lookup(o) && saltRows.has(lookup(o).term)));
+      }
       return obs;
     }
     function wholeFoodNested(ing, kind) {
@@ -571,7 +573,7 @@
         const row = p ? lookup(p) : null;
         if (!row || ["neutral", "culture", "culinary"].includes(row.kind)) return false;
         const ht = head.term, pt = row.term;
-        return !(pt === ht || (["egg", "eggs"].includes(ht) && ["egg", "eggs"].includes(pt)) || (MILK_TERMS.includes(ht) && ht !== "milk solids" && SAME_MILK_PARTS.has(pt)) || (ht === "dehydrated vegetable" && row.kind === "vegetable") || (ht === "milk solids" && SOLIDS_SOURCE_MILKS.has(pt)));
+        return !(pt === ht || (["egg", "eggs"].includes(ht) && ["egg", "eggs"].includes(pt)) || (MILK_TERMS.includes(ht) && ht !== "milk solids" && SAME_MILK_PARTS.has(pt)) || (ht === "dehydrated vegetable" && row.kind === "vegetable"));
       });
     }
     // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour

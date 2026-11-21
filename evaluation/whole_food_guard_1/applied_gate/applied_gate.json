@@ -16,12 +16,35 @@
  },
  "after_build_proof": {},
  "frozen_66": {
-  "changed": [],
+  "changed": [
+   {
+    "input": "b3/Q04",
+    "changed": [
+     "group",
+     "reason",
+     "drivers"
+    ],
+    "group": [
+     1,
+     null
+    ],
+    "status": [
+     "complete",
+     "complete"
+    ],
+    "unassessed_diff": [],
+    "staged_terms": [
+     "a bracket names a different food inside the item"
+    ]
+   }
+  ],
   "unexplained": [],
   "abstain_to_4": [],
   "abstain_to_1": [],
   "abstain_to_2_3": [],
-  "other_group_change": []
+  "other_group_change": [
+   "b3/Q04"
+  ]
  },
  "out_of_sample": {
   "inputs": 32,
@@ -8431,15 +8454,13 @@
   },
   "milk solids (toned milk)": {
    "group_before": 1,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (milk solids (toned milk): toned milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "milk solids (salt, sunflower oil)": {
@@ -8499,15 +8520,13 @@
   },
   "milk solids (milk)": {
    "group_before": 1,
-   "group_after": 1,
+   "group_after": null,
    "row_after": {
     "term": "milk solids",
     "kind": "whole_food"
    },
-   "drivers_after": [
-    "single recognised unprocessed food"
-   ],
-   "reason_after": null,
+   "drivers_after": [],
+   "reason_after": "a bracket names a different food inside the item (milk solids (milk): milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
    "unassessed_after": []
   },
   "yeast": {

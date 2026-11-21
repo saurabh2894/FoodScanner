@@ -1,6 +1,6 @@
 """whole-food-guard-1 (SYNTHETIC; abstention only). A recognised whole_food item is not answered Group 1 when its own name or bracket names an added or preserving condition (salt, sugar, brine, an oil, canned/bottled/preserved),
 or when its own bracket names a different food that is not explicitly the same food. The one exemption is SALT on the 23 grain/flour terms (a supported Group 3); any other observed condition on those terms still abstains.
-Same-food equivalences are explicit (identical row, egg/eggs, plain milk with milk/cow/buffalo/goat milk, milk solids with the plain milk they are made from, 'dehydrated vegetable' with a vegetable row); there is no class taxonomy. No Group 3 is asserted for salted or sugared milk or eggs."""
+Same-food equivalences are explicit (identical row, egg/eggs, plain milk with milk/cow/buffalo/goat milk, 'dehydrated vegetable' with a vegetable row); there is no class taxonomy. No Group 3 is asserted for salted or sugared milk or eggs."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -38,7 +38,7 @@ def test_synthetic_the_23_grain_terms_keep_their_group_3_and_negations_keep_grou
         assert g(t)[0] == 1, t
 
 
-@pytest.mark.parametrize("t", ["Rice (Egg)", "Eggs (Rice)", "Milk (Rice)", "Milk (Egg)", "Dahi (Rice)", "Wheat (Egg)", "Rice (Wheat)", "Rice (Walnuts)", "Milk (Milk Solids)", "Milk (Toned Milk)", "Dehydrated Vegetable (Peas)", "Milk Solids (Eggs)"])
+@pytest.mark.parametrize("t", ["Rice (Egg)", "Eggs (Rice)", "Milk (Rice)", "Milk (Egg)", "Dahi (Rice)", "Wheat (Egg)", "Rice (Wheat)", "Rice (Walnuts)", "Milk (Milk Solids)", "Milk (Toned Milk)", "Dehydrated Vegetable (Peas)", "Milk Solids (Eggs)", "Milk Solids (Toned Milk)", "Milk Solids (Milk)"])
 def test_synthetic_a_distinct_nested_food_abstains_with_an_accurate_reason(t):
     group, a = g(t)
     assert group is None and a.reason.startswith("a bracket names a different food inside the item (") and "not recognise" not in a.reason, t
@@ -68,6 +68,14 @@ def test_synthetic_condition_reasons_name_the_observed_condition_and_keep_the_ge
     assert "(Salted Milk: salted)" in g("Salted Milk")[1].reason and "(Eggs (canned): canned)" in g("Eggs (canned)")[1].reason
 
 
+def test_synthetic_only_salt_itself_is_exempt_not_any_phrase_containing_the_word():
+    for t in ("Rice (Rice, Salt)", "Rice (Rice, Sea Salt)", "Rice (Rice, Iodised Salt)", "Rice (Rice, Black Salt)", "Rice (Rice, Rock Salt)"):
+        assert g(t)[0] == 3, t
+    for t in ("Rice (Rice, Salted Butter)", "Rice (Rice, Salt, Butter)", "Rice (Rice, Salt, Sugar)", "Rice (Rice, Salt, Honey)"):
+        group, a = g(t)
+        assert group is None and "names an added or preserving condition" in a.reason, t
+
+
 @pytest.mark.parametrize("t,observed", [("Rice (salt, sunflower oil)", "sunflower oil"), ("Salted Rice (canned)", "canned"), ("Rice (salt, sugar)", "sugar"), ("Salted Buckwheat (brine)", "brine"), ("Rice (Rice, Salt, Sunflower Oil)", "sunflower oil")])
 def test_synthetic_scoped_grain_salt_is_exempt_but_other_conditions_still_abstain(t, observed):
     group, a = g(t)
@@ -83,7 +91,7 @@ def test_synthetic_same_class_distinct_foods_are_not_equated():
     # two different plants, a plant and a nut, a milk fraction in milk and a toned milk in milk are not the same food merely by class or token
     for t in ("Rice (Wheat)", "Wheat (Rice)", "Rice (Walnuts)", "Ragi (Oat)", "Milk (Milk Solids)", "Milk (Toned Milk)", "Dahi (Milk)", "Eggs (Milk)"):
         assert g(t)[0] is None, t
-    for t in ("Rice (Rice)", "Rice (Brown Rice)", "Eggs (Egg)", "Egg (Eggs)", "Milk (Cow Milk)", "Buffalo Milk (Milk)", "Toned Milk (Goat Milk)", "Dehydrated Vegetable (Onion)", "Milk Solids (Toned Milk)", "Milk Solids (Milk)"):   # the solids with the milk they are made from: frozen b3/Q04
+    for t in ("Rice (Rice)", "Rice (Brown Rice)", "Eggs (Egg)", "Egg (Eggs)", "Milk (Cow Milk)", "Buffalo Milk (Milk)", "Toned Milk (Goat Milk)", "Dehydrated Vegetable (Onion)"):
         assert g(t)[0] == 1, t
 
 
