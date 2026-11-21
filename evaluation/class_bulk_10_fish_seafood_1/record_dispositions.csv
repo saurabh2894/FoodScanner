@@ -9,7 +9,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 171949,"Fish, bluefish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefish),bluefish
 171950,"Fish, burbot, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (burbot),burbot
 171951,"Fish, butterfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (butterfish),butterfish
-171952,"Fish, carp, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common carp),common carp
+171952,"Fish, carp, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic carp; biological species unstated); deferred under per-species unit,NONE
 171953,"Fish, cisco, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (cisco),cisco
 171954,"Fish, cisco, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
 171955,"Fish, cod, Atlantic, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic cod),atlantic cod
@@ -26,7 +26,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 171966,"Crustaceans, crab, blue, canned",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
 171967,"Crustaceans, crab, blue, crab cakes, home recipe",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
 171968,"Crustaceans, crab, dungeness, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (dungeness crab),dungeness crab
-171969,"Crustaceans, crab, queen, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (queen crab),queen crab
+171969,"Crustaceans, crab, queen, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snow crab),snow crab
 171970,"Crustaceans, shrimp, mixed species, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
 171971,"Crustaceans, shrimp, mixed species, cooked, moist heat (may contain additives to retain moisture)",sr_legacy,Finfish and Shellfish Products,QUEUE,plain_form_not_stated,Source indicates product may contain additives to retain moisture,NONE
 171972,"Crustaceans, shrimp, mixed species, canned",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
@@ -65,7 +65,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 172005,"Fish, tuna, skipjack, fresh, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (skipjack tuna),skipjack tuna
 172006,"Fish, tuna, yellowfin, fresh, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (yellowfin tuna),yellowfin tuna
 172007,"Crustaceans, crab, dungeness, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (dungeness crab),dungeness crab
-172008,"Crustaceans, crab, queen, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (queen crab),queen crab
+172008,"Crustaceans, crab, queen, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snow crab),snow crab
 172009,"Crustaceans, spiny lobster, mixed species, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
 172010,"Mollusks, cuttlefish, mixed species, cooked, moist heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
 173668,"Fish, herring, Atlantic, kippered",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Kippered fish (salted and smoked herring),NONE
@@ -105,7 +105,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 173702,"Fish, surimi",sr_legacy,Finfish and Shellfish Products,REJECT,surimi_imitation,Surimi-based imitation seafood formulation,NONE
 173703,"Fish, swordfish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
 173704,"Fish, swordfish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
-173705,"Fish, tilefish, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilefish),tilefish
+173705,"Fish, tilefish, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic tilefish; biological species unstated); deferred under per-species unit,NONE
 173706,"Fish, tuna, fresh, bluefin, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefin tuna),bluefin tuna
 173707,"Fish, tuna, fresh, bluefin, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (bluefin tuna),bluefin tuna
 173708,"Fish, tuna, light, canned in oil, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
@@ -120,7 +120,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 173717,"Fish, trout, rainbow, farmed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
 173718,"Fish, trout, rainbow, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
 173719,"Fish, salmon, coho, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (coho salmon),coho salmon
-173720,"Mollusks, conch, baked or broiled",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (conch),conch
+173720,"Mollusks, conch, baked or broiled",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic conch; biological species unstated); deferred under per-species unit,NONE
 173721,"Salmon nuggets, breaded, frozen, heated",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
 173722,"Salmon nuggets, cooked as purchased, unheated",sr_legacy,Finfish and Shellfish Products,REJECT,formulated_prepared,Prepared or formulated seafood dish,NONE
 173723,"Salmon, sockeye, canned, drained solids, without skin and bones",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
@@ -130,7 +130,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 174182,"Fish, anchovy, european, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (european anchovy),european anchovy
 174183,"Fish, anchovy, european, canned in oil, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
 174184,"Fish, bass, fresh water, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
-174185,"Fish, carp, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (common carp),common carp
+174185,"Fish, carp, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic carp; biological species unstated); deferred under per-species unit,NONE
 174186,"Fish, catfish, channel, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (channel catfish),channel catfish
 174187,"Fish, catfish, channel, cooked, breaded and fried",sr_legacy,Finfish and Shellfish Products,REJECT,breaded_battered_fried,"Breaded, battered, or preformed fish product",NONE
 174188,"Fish, caviar, black and red, granular",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_roe_special,Fish roe or caviar (organ/reproductive product deferred for special policy),NONE
@@ -233,7 +233,7 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 175149,"Fish, sturgeon, mixed species, smoked",sr_legacy,Finfish and Shellfish Products,REJECT,smoked_cured,Smoked fish product (cured/preserved),NONE
 175150,"Fish, sucker, white, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (white sucker),white sucker
 175151,"Fish, sunfish, pumpkin seed, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pumpkinseed sunfish),pumpkinseed sunfish
-175152,"Fish, tilefish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilefish),tilefish
+175152,"Fish, tilefish, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic tilefish; biological species unstated); deferred under per-species unit,NONE
 175153,"Fish, trout, mixed species, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_mixed_species,FDC record states mixed species or multiple species; cannot collapse to a single species identity,NONE
 175154,"Fish, trout, rainbow, wild, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
 175155,"Fish, trout, rainbow, wild, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (rainbow trout),rainbow trout
@@ -257,33 +257,33 @@ fdc_id,record_name,dataset,category_name,disposition,reason_code,reason,canonica
 175173,"Mollusks, oyster, eastern, farmed, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (eastern oyster),eastern oyster
 175174,"Salmon, sockeye, canned, total can contents",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
 175175,"Fish, salmon, pink, canned, drained solids",sr_legacy,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
-175176,"Fish, tilapia, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
-175177,"Fish, tilapia, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
+175176,"Fish, tilapia, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic tilapia; biological species unstated); deferred under per-species unit,NONE
+175177,"Fish, tilapia, cooked, dry heat",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic tilapia; biological species unstated); deferred under per-species unit,NONE
 175178,"Fish, cod, Pacific, cooked",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific cod),pacific cod
-175179,"Crustaceans, shrimp, raw",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
-175180,"Crustaceans, shrimp, cooked",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
+175179,"Crustaceans, shrimp, raw",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic shrimp; biological species unstated); deferred under per-species unit,NONE
+175180,"Crustaceans, shrimp, cooked",sr_legacy,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic shrimp; biological species unstated); deferred under per-species unit,NONE
 175181,"Fish, trout, brook, raw, New York State",sr_legacy,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (brook trout),brook trout
 333374,"Fish, haddock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (haddock),haddock
-333476,"Fish, pollock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pollock),pollock
+333476,"Fish, pollock, raw",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic pollock; unstated whether Alaska pollock (Gadus chalcogrammus) or Atlantic pollock (Pollachius virens)); deferred under per-species unit,NONE
 334194,"Fish, tuna, light, canned in water, drained solids",foundation,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
 2684440,"Fish, salmon, sockeye, wild caught, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sockeye salmon),sockeye salmon
 2684441,"Fish, salmon, Atlantic, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic salmon),atlantic salmon
-2684442,"Fish, tilapia, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (tilapia),tilapia
-2684443,"Crustaceans, shrimp, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (shrimp),shrimp
+2684442,"Fish, tilapia, farm raised, raw",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic tilapia; biological species unstated); deferred under per-species unit,NONE
+2684443,"Crustaceans, shrimp, farm raised, raw",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic shrimp; biological species unstated); deferred under per-species unit,NONE
 2684444,"Fish, cod, Atlantic, wild caught, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (atlantic cod),atlantic cod
-2684445,"Fish, catfish, farm raised, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (catfish),catfish
+2684445,"Fish, catfish, farm raised, raw",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic catfish; biological species unstated); deferred under per-species unit,NONE
 2684446,"Crustaceans, crab, blue swimming, lump, pasteurized, refrigerated",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (blue swimming crab),blue swimming crab
 2747652,"Anchovies, canned in olive oil, with salt, drained",foundation,Finfish and Shellfish Products,REJECT,canned_fish,"Canned fish or shellfish product (with oil, water, sauce, or brine)",NONE
 2747654,"Cod, Pacific or Alaskan, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (pacific cod),pacific cod
-2747656,"Halibut, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (halibut),halibut
-2747657,"Lobster, tail only, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (lobster),lobster
+2747656,"Halibut, frozen, wild caught",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic halibut; biological species unstated); deferred under per-species unit,NONE
+2747657,"Lobster, tail only, frozen, wild caught",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic lobster; biological species unstated); deferred under per-species unit,NONE
 2747658,"Mahi mahi, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (mahimahi),mahimahi
 2747666,"Scallops, bay, Patagonian, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (patagonian bay scallop),patagonian bay scallop
 2747667,"Scallops, sea, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (sea scallop),sea scallop
 2747668,"Sea bass, Chilean, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (chilean sea bass),chilean sea bass
-2747669,"Snapper, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snapper),snapper
+2747669,"Snapper, frozen, wild caught",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic snapper; biological species unstated); deferred under per-species unit,NONE
 2747670,"Snow crab, legs only, frozen  ",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (snow crab),snow crab
-2747671,"Squid (calamari), frozen, tubes only",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (squid),squid
-2747672,"Swordfish, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (swordfish),swordfish
+2747671,"Squid (calamari), frozen, tubes only",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic squid; biological species unstated); deferred under per-species unit,NONE
+2747672,"Swordfish, frozen, wild caught",foundation,Finfish and Shellfish Products,QUEUE,queue_generic_unspecified_identity,Unresolved generic identity (generic swordfish; biological species unstated); deferred under per-species unit,NONE
 2747673,"Tuna, ahi or yellowfin, frozen, wild caught",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (yellowfin tuna),yellowfin tuna
 2768188,"Alaska Pollock, raw",foundation,Finfish and Shellfish Products,ACCEPT,plain_species_seafood,Plain source-stated species (alaska pollock),alaska pollock

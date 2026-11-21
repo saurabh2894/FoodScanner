@@ -1,11 +1,11 @@
 # Batch 10 Candidate Staging: Plain Fish & Seafood (`class_bulk_10_fish_seafood_1`)
 
 ## 1. Summary & Staging Scope
-- **Task**: Candidate staging for Batch 10 (plain fish and seafood) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, repaired under Task 13.
+- **Task**: Candidate staging for Batch 10 (plain fish and seafood) based on cached USDA FoodData Central (FDC) records and FAO 2019 NOVA definitions, cleaned and finalized under Task 14.
 - **Role**: Generator/Researcher staging evidence and candidates for senior review (Claude). Zero changes to application source code, parser, classifier, or runtime resources (`lexicon.csv`, `synonyms.csv`, `markers.csv` untouched).
 - **Branch**: `antigravity/class-bulk-10-fish-seafood`
 - **Original Base Commit**: `46ad81c94757f92daaee0bf24c29d02f49965c07` (main HEAD)
-- **Primary Handoff Unit**: `canonical_candidates.csv` (80 candidate rows, exactly 1 row per source-stated species identity).
+- **Primary Handoff Unit**: `canonical_candidates.csv` (68 candidate rows, exactly 1 row per source-stated biological species identity).
 - **Complete Provenance Map**: `record_dispositions.csv` (288 rows, exactly 1 row per cached in-scope FDC record).
 - **Status**: COMPLETE; artifacts staged additions-only under `evaluation/class_bulk_10_fish_seafood_1/`.
 
@@ -17,49 +17,53 @@ All counts are strictly derived from the underlying CSV artifacts (`record_dispo
 | Measure | Count | Notes |
 |---|---|---|
 | **Total FDC records in scope** | **288** | Category exactly 'Finfish and Shellfish Products' (264 SR Legacy + 24 Foundation) |
-| **ACCEPT (candidate records)** | **167** | Plain whole fish, fillets, steaks, crustaceans, and mollusks of specific source-stated species |
-| **QUEUE (pending owner decision)** | **62** | Mixed/unspecified species (49), moisture additive warnings (5), rare species (3), roe/caviar (3), fried methods (2) |
+| **ACCEPT (candidate records)** | **149** | Plain whole fish, fillets, steaks, crustaceans, and mollusks of specific source-stated biological species |
+| **QUEUE (pending owner decision)** | **80** | Mixed/unspecified species (49), generic identity unstated (18), moisture additive warnings (5), rare species (3), roe/caviar (3), fried methods (2) |
 | **REJECT (conditioned / out of scope)** | **59** | Canned fish (30), breaded/battered/sticks (9), smoked/kippered (8), salted/pickled (4), surimi (4), formulated dishes (4) |
-| **Total Artifact Sum (Tie-Out)** | **288** | **EXACT TIE**: `candidates = accept (167) + queue (62) + reject (59)` |
+| **Total Artifact Sum (Tie-Out)** | **288** | **EXACT TIE**: `candidates = accept (149) + queue (80) + reject (59)` |
 
 ### In-Scope Category Breakdown
 - `Finfish and Shellfish Products`: 288 records (264 SR Legacy + 24 Foundation)
 
 ---
 
-## 3. Task 13 Staging Repairs & Guard Enforcements
+## 3. Evidence Corrections (Task 14)
 
-1. **Primary Review Handoff**: `canonical_candidates.csv` is now the concise primary review artifact (80 candidate rows). `accept_records.csv` (167 rows) is retained for full transparency as a record-level mapping, and `record_dispositions.csv` (288 rows) provides a single deterministic map of every in-scope category record.
-2. **Species Identity as Candidate Unit**: Biologically distinct fish are no longer collapsed under broad culinary buckets. For instance, Pacific and Atlantic species (Atlantic salmon, Chinook salmon, Coho salmon, Sockeye salmon, Pink salmon, Chum salmon) are staged as distinct species candidates rather than merged into a single generic "salmon" label.
-3. **Explicit Mixed Species Preserved in Queue**: 49 records where the FDC description explicitly states `mixed species` or multiple species (e.g. `Fish, grouper, mixed species`, `Mollusks, clam, mixed species`, `Fish, flatfish (flounder and sole species)`) are preserved explicitly and placed in QUEUE under `queue_mixed_species`. No species identity is invented or collapsed from generic group names.
-4. **Smoked & Kippered Isolation**: `Fish, herring, Atlantic, kippered` (FDC 173668) and 7 smoked fish records are rejected under `smoked_cured`.
-5. **Cooking Methods with Added Fat**: `Mollusks, squid, mixed species, cooked, fried` (FDC 171982) and `Mollusks, abalone, mixed species, cooked, fried` (FDC 174213) are isolated to QUEUE under `queue_cooking_added_fat`.
-6. **Preformed / Breaded Products**: Preformed frozen fish sticks (FDC 174195) and breaded/batter-dipped cuts are rejected under `breaded_battered_fried`.
+1. **Exact Verbatim FAO Quotations**:
+   - The continuous examples clause in Table 1 Group 1 p. 11 is quoted verbatim without splicing: `"meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"`.
+   - Leading thermal text (*"fresh, chilled or frozen"*) and trailing offal text (*"or offal"*) have been excised from the examples quotation.
+2. **Observed Descriptors vs Absence of Ingredients**:
+   - Blanket assertions of "no added salt/oil/additives" have been replaced with precise statements of observed physical attributes and explicit acknowledgment that SR Legacy commodity descriptors do not publish formal ingredient declarations; absence of additive terms in a descriptor confirms no declared additives in the name, but is not an ingredient-list guarantee.
+3. **Generic & Unspecified Identities Queued**:
+   - In accordance with the per-species candidate unit, 18 records that only state generic family, genus, or market categories without species resolution (generic pollock, shrimp, lobster tail, catfish, halibut, snapper, squid, conch, tilapia, carp, tilefish) have been moved to QUEUE under `queue_generic_unspecified_identity`.
+   - Queen crab and Snow crab (*Chionoecetes opilio*) are reconciled under `snow crab` with candidate alias `queen crab`.
+   - Exactly **68 distinct source-stated biological species candidates** are staged in `canonical_candidates.csv`.
 
 ---
 
-## 4. Proposed Canonical Species Candidates (`canonical_candidates.csv`: 80 rows)
+## 4. Proposed Canonical Species Candidates (`canonical_candidates.csv`: 68 rows)
 
-The 167 accepted plain records collapse into exactly 80 distinct biological species candidates:
+The 149 accepted plain records collapse into exactly 68 distinct biological species candidates:
 
 | Category Sub-class | Count | Example Species Candidates |
 |---|---|---|
 | **Salmonids** | 8 | `atlantic salmon`, `chinook salmon`, `coho salmon`, `sockeye salmon`, `pink salmon`, `chum salmon`, `rainbow trout`, `brook trout` |
-| **Gadoids (Cods & Pollocks)** | 5 | `atlantic cod`, `pacific cod`, `atlantic pollock`, `alaska pollock`, `pollock` |
+| **Gadoids (Cods & Pollocks)** | 4 | `atlantic cod`, `pacific cod`, `atlantic pollock`, `alaska pollock` |
 | **Scombroids (Tunas & Mackerels)** | 6 | `bluefin tuna`, `yellowfin tuna`, `skipjack tuna`, `atlantic mackerel`, `spanish mackerel`, `king mackerel` |
 | **Clupeoids (Herrings & Anchovies)** | 4 | `atlantic herring`, `pacific herring`, `european anchovy`, `american shad` |
-| **Crustaceans (Crabs, Lobsters, Shrimps)** | 9 | `blue crab`, `dungeness crab`, `alaska king crab`, `queen crab`, `snow crab`, `blue swimming crab`, `northern lobster`, `lobster`, `shrimp` |
-| **Mollusks (Oysters, Mussels, Octopuses, Scallops)** | 9 | `eastern oyster`, `pacific oyster`, `blue mussel`, `common octopus`, `sea scallop`, `patagonian bay scallop`, `conch`, `squid` |
-| **Other Freshwater & Marine Finfish** | 39 | `striped bass`, `chilean sea bass`, `bluefish`, `burbot`, `butterfish`, `common carp`, `cisco`, `cusk`, `freshwater drum`, `haddock`, `greenland halibut`, `halibut`, `ling`, `lingcod`, `mahimahi`, `milkfish`, `monkfish`, `striped mullet`, `atlantic ocean perch`, `northern pike`, `walleye pike`, `florida pompano`, `ocean pout`, `orange roughy`, `sablefish`, `scup`, `sheepshead`, `rainbow smelt`, `spot croaker`, `atlantic croaker`, `white sucker`, `pumpkinseed sunfish`, `swordfish`, `tilapia`, `tilefish`, `european turbot`, `atlantic wolffish`, `snapper`, `catfish`, `channel catfish` |
+| **Crustaceans (Crabs, Lobsters)** | 6 | `blue crab`, `dungeness crab`, `alaska king crab`, `snow crab` (alias: `queen crab`), `blue swimming crab`, `northern lobster` |
+| **Mollusks (Oysters, Mussels, Octopuses, Scallops)** | 6 | `eastern oyster`, `pacific oyster`, `blue mussel`, `common octopus`, `sea scallop`, `patagonian bay scallop` |
+| **Other Freshwater & Marine Finfish** | 34 | `striped bass`, `chilean sea bass`, `bluefish`, `burbot`, `butterfish`, `channel catfish`, `cisco`, `cusk`, `freshwater drum`, `haddock`, `greenland halibut`, `ling`, `lingcod`, `mahimahi`, `milkfish`, `monkfish`, `striped mullet`, `atlantic ocean perch`, `northern pike`, `walleye pike`, `florida pompano`, `ocean pout`, `orange roughy`, `sablefish`, `scup`, `sheepshead`, `rainbow smelt`, `spot croaker`, `atlantic croaker`, `white sucker`, `pumpkinseed sunfish`, `swordfish`, `european turbot`, `atlantic wolffish` |
 
 - **Already covered in lexicon.csv**: 0 (zero fish/seafood terms exist in `lexicon.csv`)
-- **Genuinely new species proposals**: 80
+- **Genuinely new biological species proposals**: 68
 - **Variant/synonym candidates**: Surfaced purely as candidate aliases in `canonical_candidates.csv`; `synonyms.csv` is not modified.
 
 ---
 
-## 5. Queue Breakdown (62 rows)
-- `queue_mixed_species`: **49 rows** (records explicitly stating mixed species, multiple species, or unstated biological identity; e.g. clam mixed species, grouper mixed species, flatfish flounder and sole, crayfish mixed species, snapper mixed species, trout mixed species).
+## 5. Queue Breakdown (80 rows)
+- `queue_mixed_species`: **49 rows** (records explicitly stating mixed species, multiple species, or unstated biological identity; e.g. clam mixed species, grouper mixed species, flatfish flounder and sole, crayfish mixed species).
+- `queue_generic_unspecified_identity`: **18 rows** (records with generic market or family terms lacking specific species resolution: generic pollock, shrimp, lobster tail, catfish, halibut, snapper, squid, conch, tilapia, carp, tilefish).
 - `plain_form_not_stated`: **5 rows** (explicit warning: `may contain additives to retain moisture`).
 - `queue_rare_species`: **3 rows** (green turtle, frog legs, terrestrial snail).
 - `queue_roe_special`: **3 rows** (sturgeon caviar, mixed fish roe).
