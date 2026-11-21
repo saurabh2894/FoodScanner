@@ -232,6 +232,9 @@ CORPUS = [
     "Ingredients: Cashew Nuts", "Ingredients: Walnuts", "Ingredients: Sesame Seeds", "Ingredients: Chia Seeds", "Ingredients: Chestnuts", "Ingredients: Pistachio Nuts", "Ingredients: Salted Cashew Nuts",
     "Ingredients: Walnuts, Sugar", "Ingredients: Sesame Seeds, Salt", "Ingredients: Roasted Cashew Nuts", "Ingredients: Oil Roasted Cashew Nuts", "Ingredients: Lotus Seeds", "Ingredients: Breadfruit Seeds",
     "Ingredients: Almond Butter", "Ingredients: Cashew Nuts (salted)", "Ingredients: Hazelnuts, Pecans, Brazil Nuts",
+    # dairy-rows-1 (tests/test_dairy_rows_1.py, SYNTHETIC): five whole_food rows (sheep milk; duck, goose, quail, turkey eggs); held and other forms stay unrecognised
+    "Ingredients: Sheep Milk", "Ingredients: Duck Eggs", "Ingredients: Quail Eggs", "Ingredients: Salted Duck Eggs", "Ingredients: Duck Eggs, Salt", "Ingredients: Sheep Milk (XQ9)", "Ingredients: Duck Eggs (cow milk)",
+    "Ingredients: 100% Goose Eggs Powder", "Ingredients: Turkey Eggs Powder", "Ingredients: Human Milk", "Ingredients: Sheep Milk Powder", "Ingredients: Rice (Sheep Milk)",
     # photo-path resilience (tests/test_photo_path_resilience.py)
     "REDIENTS: Wheat flour, sugar, edible vegetable oil (palm), invert sugar syrup, salt, raising agents (INS 503(ii), INS 500(ii)), emulsifier (INS 322).",
     "REDIENTS: Rice, salt, sugar, edible vegetable oil, water, turmeric, cumin, garlic.", "GREDIENTS: Rice, salt, sugar, oil, water, cumin.",
