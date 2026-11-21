@@ -1,4 +1,4 @@
-# pmc_reresearch_3: remaining parked terms re-read against the three admissible PMC copies (branch claude/pmc-reresearch-3, off main de86733)
+# pmc_reresearch_3 (UPDATE: the whey marker proposal was APPROVED and is merged on main via claude/markers-2; the 15 parks below are what this branch still adds): remaining parked terms re-read against the three admissible PMC copies (branch claude/pmc-reresearch-3, off main de86733)
 
 Sources re-read (cached, read-only, paraphrase, licence unverified): Monteiro 2018 (PMC10261019), Monteiro 2019 (PMC10260459), Martinez Steele 2022 (PMC10127522), plus FAO 2019. 17 terms decided in data/ingest/pmc_decisions_3.json. NO lexicon, synonym or marker change on this branch.
 

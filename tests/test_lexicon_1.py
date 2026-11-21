@@ -11,9 +11,9 @@ ROOT = Path(__file__).resolve().parent.parent
 
 ADDED_TERMS = {
     # Package A (nuts and seeds)
-    "almonds": "whole_food",
-    "pumpkin seeds": "whole_food",
-    "flax seeds": "whole_food",
+    "almonds": "nut_seed",     # provenance-fixes-1: conditioned nut/seed kind (item-level salt/sugar condition)
+    "pumpkin seeds": "nut_seed",     # provenance-fixes-1: conditioned nut/seed kind (item-level salt/sugar condition)
+    "flax seeds": "nut_seed",     # provenance-fixes-1: conditioned nut/seed kind (item-level salt/sugar condition)
     # Package B (herbs and spices)
     "ajwain": "herb_spice",
     "bishop's seed": "herb_spice",
@@ -114,7 +114,7 @@ def test_condition_handling_processed_forms_stay_unassessed():
 
 def test_normalise_ingredient_maps_new_terms_to_kind():
     # Test that normalise_ingredient together with lookup maps new terms to their kind
-    for term, expected_kind in [("Almonds", "whole_food"), ("Ajwain", "herb_spice"), ("Black Raisin", "whole_food")]:
+    for term, expected_kind in [("Almonds", "nut_seed"), ("Ajwain", "herb_spice"), ("Black Raisin", "whole_food")]:
         norm = normalise_ingredient(term)
         assert norm.name == term.lower()
         info = lookup(norm.name)

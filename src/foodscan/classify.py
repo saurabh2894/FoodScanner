@@ -108,6 +108,22 @@ def lookup(name: str) -> dict[str, str] | None:
     return None
 
 
+# Item-level condition for the nut/seed rows (kind nut_seed): FAO Table 1 Group 1 covers tree and ground nuts and other oily seeds "(with no added salt or sugar)" and Group 3 covers
+# "salted or sugared nuts and seeds". The condition is about the nuts themselves, so it is read from the item's OWN name and bracket ("salted almonds", "almonds (almonds, salt)"),
+# never from the rest of the product (a plain "almonds" entry in a sweetened biscuit list keeps the placement). provenance_audit_1 dropped-condition finding.
+_NUT_ADDED = frozenset({"salt", "salted", "sugar", "sugared", "sweetened", "candied", "caramelised", "caramelized", "honey", "glazed", "jaggery", "syrup"})
+
+
+def nut_added_salt_or_sugar(ing) -> bool:
+    toks = re.findall(r"[a-z]+", ing.text.lower())
+    for i, t in enumerate(toks):
+        if t in _NUT_ADDED:
+            if any(x in ("no", "without", "non", "free") for x in toks[max(0, i - 2):i]) or (i + 1 < len(toks) and toks[i + 1] == "free"):
+                continue                                           # "no added salt", "salt free": the condition is met, not broken
+            return True
+    return False
+
+
 def is_recognised(name: str) -> bool:
     return lookup(name) is not None
 
@@ -242,11 +258,16 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)")
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
+    nut_salted = [i.raw for i, k in zip(ings, kinds) if k == "nut_seed" and nut_added_salt_or_sugar(i)]
+    if len(ings) == 1 and kinds[0] == "nut_seed":
+        if nut_salted:
+            return Classification(3, drivers=[Driver(ings[0].raw, "nut or seed with added salt or sugar (FAO Table 1 Group 3: 'salted or sugared nuts and seeds')", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "food_powder":
         # A powder of one food is Group 1 only as the SOLE item of the list: the term alone does not establish that it is free of carriers or anti-caking agents,
-        # so the answer rests on the list naming nothing else (held-sources-1; FAO p.10 Group 1 definition names 'powdering' of natural foods).
+        # so the answer rests on the list naming nothing else (held-sources-1; FAO p.6 Group 1 definition names 'powdering' of natural foods).
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised powder of one food, nothing else listed (the term alone does not establish the absence of carriers; the list names none)", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] == "culinary":
         return Classification(2, drivers=[Driver(ings[0].raw, "single processed culinary ingredient", lookup(ings[0].name)["source"], ings[0].section)])
@@ -262,10 +283,10 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="a powder of a food (" + "; ".join(powders) + ") is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged")
     if "flour" in kinds:
         return Classification(None, reason="flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list")
-    has_food = any(k == "whole_food" for _, k in substantive)
-    has_culinary = any(k == "culinary" for _, k in substantive)
+    has_food = any(k in ("whole_food", "nut_seed") for _, k in substantive)
+    has_culinary = any(k == "culinary" for _, k in substantive) or bool(nut_salted)           # salt or sugar added to the nuts themselves is a Group 2 substance on a Group 1 food: Group 3
     if has_food and has_culinary:
-        drv = [Driver(i.raw, f"recognised {k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
+        drv = [Driver(i.raw, f"recognised {'whole food' if k == 'nut_seed' else k.replace('_', ' ')}", lookup(i.name)["source"], i.section) for i, k in substantive]
         return Classification(3, drivers=drv)
     return Classification(None, reason="recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern")
 

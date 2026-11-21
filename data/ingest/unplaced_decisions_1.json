@@ -55,7 +55,7 @@
    "paste_inputs": 1,
    "disposition": "ACCEPT_ROW",
    "kind": "unplaced",
-   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list)",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.6 (Group 1 definition, process list)",
    "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
    "named": "exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified",
    "fdc": []
@@ -66,7 +66,7 @@
    "paste_inputs": 1,
    "disposition": "ACCEPT_ROW",
    "kind": "unplaced",
-   "group_label": "FAO 2019 (ca5644en.pdf) p.10 (Group 1 definition, process list)",
+   "group_label": "FAO 2019 (ca5644en.pdf) p.6 (Group 1 definition, process list)",
    "clause": "Minimally processed foods are natural foods altered by methods that include removal of inedible or unwanted parts, and also processes that include drying, crushing, grinding, powdering, fractioning, filtering, roasting, boiling, non-alcoholic fermentation, pasteurization, chilling, freezing, placing in containers, and vacuum packaging.",
    "named": "exact term not named by the clause or by any source read (sprout, sprouted and germination: 0 mentions in FAO 2019, Monteiro 2018, Monteiro 2019 and the NUPENS pages); UNPLACED (recognition only, no group effect): the listed processes do not include sprouting and only the open clause 'other methods that do not add salt, sugar, oils or fats or other food substances' could cover it, which is an inference; the grain itself is an existing row; abstention reason: no source places a sprouted form, so any list holding it abstains and it is never counted as classified",
    "fdc": []

@@ -1,0 +1,7 @@
+# markers_2: whey powder and whey solids (CLASSIFICATION-BEARING; branch claude/markers-2, off main de86733)
+
+Owner-approved (2026-11-21) strong derived_substance markers. Sources: FAO 2019 p.9 names "whey protein" (the verbatim clause and the p.10 identification sentence are quoted in each row's source and checked against the report text by scripts/marker_batch.py); Monteiro et al. 2018 (PMC10261019) names whey among substances directly extracted from foods and PMC10127522 lists whey among non-culinary substances (both licence unverified, paraphrased). Each row states: instance of the named class (class-level coverage, exact term not named by the clause) and that the dried form (powder / solids) is an INFERENCE, not stated by a source.
+
+## Gate (before/after builds in separate fresh processes; every change attributed to a marker + clause)
+Frozen 66: exactly three inputs change, DRIVERS only, group 4 -> 4, status unchanged: b1/N05 (whey powder), dev/F06 (whey powder), neg/R5 (whey solids). Out-of-sample 32: no change. Unexplained: 0. Abstain -> Group 4 moves: 0. This is exactly the flip evidence the proposal gate predicted; nothing differs.
+Suite 1165 passed + 5 expected failures; parity 468/468. Note: the unmerged branch claude/pmc-reresearch-3 still holds the proposal files and a test asserting these rows are NOT in markers.csv; that test must be updated when that branch is merged.
