@@ -24,7 +24,7 @@ Run:
 PYTHONPATH=src python scripts/ingest_nalt_names.py --rdf /path/to/nalt-full_dwn.rdf.zip --out /tmp/nalt-review.json
 ```
 
-The script parses Product concepts, checks food-class ancestry or existing-head hints and emits a review-only JSON queue. It does not assign a NOVA group, write runtime CSVs or generate singular forms. The checked archive run left 196 verbatim naming candidates after this slice. Those are proposals, not 196 usable foods. Source concepts can aggregate different foods: generic mushrooms must not be mapped to one species, star anise is not aniseed, and local winter-melon names need care. An existing-head hint is not proof of identity. `discovery_queue.json` records this run; `admission.json` records the separate reviewed subset and unresolved cases.
+The script parses Product concepts, checks food-class ancestry or existing-head hints and emits a review-only JSON queue. It does not assign a NOVA group, write runtime CSVs or generate singular forms. The checked archive run left 196 verbatim naming candidates after this slice. Those are proposals, not 196 usable foods. Source concepts can aggregate different foods: generic mushrooms must not be mapped to one species, star anise is not aniseed, and local winter-melon names need care. An existing-head hint is not proof of identity. `review.json` records this run's counts and archive hash; the full queue is generated locally by the command above rather than checked in. `admission.json` records the separate reviewed subset and unresolved cases.
 
 ## Form scope and retained holds
 
