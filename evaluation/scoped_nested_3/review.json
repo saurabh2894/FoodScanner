@@ -1,0 +1,149 @@
+{
+  "scope": "Two narrow reliability fixes; no vocabulary additions",
+  "canonical_rows": 512,
+  "aliases": 156,
+  "new_tests": 69,
+  "suite": {
+    "passed": 2520,
+    "failed": 2,
+    "skipped": 2,
+    "deselected": 1,
+    "xfailed": 5
+  },
+  "parity": {
+    "passed": 1271,
+    "total": 1271,
+    "photo_text_paths": 1018,
+    "paste_paths": 253
+  },
+  "frozen_paste_cases": 66,
+  "frozen_changed": 0,
+  "legacy_conditioned_cases": 6108,
+  "legacy_conditioned_changes": [
+    {
+      "input": "sugar-apples",
+      "before": {
+        "answered": true,
+        "group": 3,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      },
+      "after": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      }
+    },
+    {
+      "input": "sugar-apples powder",
+      "before": {
+        "answered": true,
+        "group": 3,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples powder"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      },
+      "after": {
+        "answered": false,
+        "group": null,
+        "reason": "a powder of a food (sugar-apples powder) is named without its composition: the label does not say whether it is that food alone or carries carriers or anti-caking agents, so the level cannot be judged",
+        "ingredients": [
+          "sugar-apples powder"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      }
+    },
+    {
+      "input": "100% sugar-apples powder",
+      "before": {
+        "answered": true,
+        "group": 3,
+        "reason": null,
+        "ingredients": [
+          "100% sugar-apples powder"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      },
+      "after": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "ingredients": [
+          "100% sugar-apples powder"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      }
+    },
+    {
+      "input": "sugar-apples (Rice)",
+      "before": {
+        "answered": true,
+        "group": 3,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples (Rice)"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      },
+      "after": {
+        "answered": true,
+        "group": 1,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples (Rice)"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      }
+    },
+    {
+      "input": "sugar-apples (canned)",
+      "before": {
+        "answered": true,
+        "group": 3,
+        "reason": null,
+        "ingredients": [
+          "sugar-apples (canned)"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      },
+      "after": {
+        "answered": false,
+        "group": null,
+        "reason": "a canned, bottled or preserved legume, vegetable or fruit (sugar-apples (canned)): FAO Group 3 names vegetables and legumes preserved in brine and fruit in syrup, but the item does not say that salt, sugar, syrup or brine is added, so neither Group 1 nor Group 3 is established",
+        "ingredients": [
+          "sugar-apples (canned)"
+        ],
+        "unassessed": [],
+        "status": "complete"
+      }
+    }
+  ],
+  "limitations": [
+    "The same two baseline failures remain: millet-puff OCR section heading and fenugreek evidence fixture.",
+    "Restricted reference tests are not run; the pending reference was not fetched or used.",
+    "The absent out-of-sample-32 cache was not reconstructed.",
+    "Synthetic OCR-text parity is not original-photo OCR validation."
+  ],
+  "source_urls": [
+    "https://www.fao.org/4/ca5644en/ca5644en.pdf",
+    "https://fdc.nal.usda.gov/download-datasets/"
+  ]
+}
