@@ -1,0 +1,1092 @@
+{
+  "scope": "Flour added-condition reliability only; no vocabulary additions",
+  "baseline_main": "8c927a5ff832c8d7cbcb58e9bf5b79712888524b",
+  "canonical_rows": 512,
+  "aliases": 156,
+  "new_synthetic_tests": 613,
+  "suite": {
+    "passed": 3133,
+    "failed": 2,
+    "skipped": 2,
+    "deselected": 1,
+    "xfailed": 5
+  },
+  "parity": {
+    "passed": 2503,
+    "total": 2503,
+    "ocr_text_paths": 1634,
+    "paste_paths": 869
+  },
+  "frozen_paste_cases": 66,
+  "full_field_frozen_changes": 0,
+  "canonical_normalisation_cases": 512,
+  "canonical_normalisation_changes": 0,
+  "legacy_conditioned_cases": 6108,
+  "legacy_changes_by_category": {
+    "added-substance": 67,
+    "unspecified-preserved-form": 19
+  },
+  "legacy_conditioned_changes": [
+    {
+      "input": "whole wheat flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "whole wheat flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "whole wheat flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "whole wheat flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "Salted refined wheat flour",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "refined wheat flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "refined wheat flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "refined wheat flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "refined wheat flour (salt)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "refined wheat flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "rice flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rice flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rice flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rice flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "Salted potato flour",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "potato flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "potato flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "potato flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "potato flour (salt)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "potato flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "Salted besan",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "besan (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "besan (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "besan (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "besan (salt)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "besan (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "wheat flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "wheat flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "wheat flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "wheat flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "sorghum flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "sorghum flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "sorghum flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "sorghum flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "Salted soya flour",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "soya flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "soya flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "soya flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "soya flour (salt)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "soya flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "Salted split pulse urad flour",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "split pulse urad flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "split pulse urad flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "split pulse urad flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "split pulse urad flour (salt)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "split pulse urad flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "amaranth flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "amaranth flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "amaranth flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "amaranth flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "barley flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "barley flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "barley flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "barley flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "buckwheat flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "buckwheat flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "buckwheat flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "buckwheat flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "cornmeal (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "cornmeal (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "cornmeal (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "cornmeal (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "millet flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "millet flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "millet flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "millet flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "oat flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "oat flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "oat flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "oat flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "quinoa flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "quinoa flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "quinoa flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "quinoa flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "rye flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rye flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rye flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "rye flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "semolina (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "semolina (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "semolina (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "semolina (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    },
+    {
+      "input": "spelt flour (Mango, Sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "spelt flour (Sunflower Oil)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "spelt flour (sugar)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "added-substance"
+    },
+    {
+      "input": "spelt flour (canned)",
+      "before": {
+        "answered": true,
+        "group": 1
+      },
+      "after": {
+        "answered": false,
+        "group": null
+      },
+      "category": "unspecified-preserved-form"
+    }
+  ],
+  "wider_flour_cases": 703,
+  "wider_flour_headline_changes": {
+    "group1_to_abstention": 130,
+    "removed_group3_answers": 0
+  },
+  "source": "https://www.fao.org/4/ca5644en/ca5644en.pdf",
+  "rationale": {
+    "added-substance": "The minimal-processing condition does not establish plain Group1 when the item explicitly names an added substance. Abstention only; no new Group3 assertion.",
+    "unspecified-preserved-form": "An unspecified canned flour does not establish plain flour composition or a qualified Group3 product. Uncertainty, not an assertion that every canned food is Group3."
+  },
+  "retained_controls": [
+    "plain flour",
+    "named minimal forms already recognised",
+    "salted-grain Group3 including salt-plus-sugar",
+    "source-supported Group1 mixtures",
+    "vitamin/mineral additions",
+    "strong Group4 markers",
+    "unknown bracket content",
+    "recognition-only sprouted grains",
+    "existing culinary exclusions"
+  ],
+  "unchanged_source_gaps": [
+    "Some historical flour rows are provisional/unsourced; no upgrade claimed",
+    "Puff-photo section heading baseline failure",
+    "Historical fenugreek evidence fixture absent",
+    "Restricted reference not fetched; dependent tests excluded",
+    "Original-photo OCR assets and OOS32 not verified",
+    "Nested powder/form review remains open; aliases held"
+  ]
+}
