@@ -1,0 +1,1626 @@
+{
+  "base": "17641ff075b8e4d811ff8a1eae653f4733971619",
+  "new_foods": [
+    {
+      "term": "mushroom",
+      "kind": "vegetable",
+      "concept_id": "7329",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "nalt_preferred_label": "mushrooms",
+      "evidence_basis": "exact-named mushroom example; food means edible fungi only",
+      "nova_clause": "fungi such as fresh or dried mushrooms",
+      "decision": "admit plain food, retain all existing form guards"
+    },
+    {
+      "term": "lettuce",
+      "kind": "vegetable",
+      "concept_id": "43828",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/43828",
+      "nalt_preferred_label": "lettuce",
+      "evidence_basis": "class-instance of edible plant parts (leaf or stem); leafy vegetables are named, celery is not named",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "admit plain food, retain all existing form guards"
+    },
+    {
+      "term": "mangosteen",
+      "kind": "fruit",
+      "concept_id": "42329",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/42329",
+      "nalt_preferred_label": "mangosteens",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "admit plain food, retain all existing form guards"
+    },
+    {
+      "term": "durian",
+      "kind": "fruit",
+      "concept_id": "34902",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/34902",
+      "nalt_preferred_label": "durians",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "admit plain food, retain all existing form guards"
+    },
+    {
+      "term": "rambutan",
+      "kind": "fruit",
+      "concept_id": "54627",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/54627",
+      "nalt_preferred_label": "rambutans",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "admit plain food, retain all existing form guards"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "blackcurrants",
+      "verbatim_label": "blackcurrants",
+      "derived_singular": false,
+      "targets": [
+        "black currants"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/17748",
+      "pref": [
+        "black currants"
+      ],
+      "scope": [],
+      "alt": [
+        "blackcurrants"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/17748"
+    },
+    {
+      "name": "blackcurrant",
+      "verbatim_label": "blackcurrants",
+      "derived_singular": true,
+      "targets": [
+        "black currants"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/17748",
+      "pref": [
+        "black currants"
+      ],
+      "scope": [],
+      "alt": [
+        "blackcurrants"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/17748"
+    },
+    {
+      "name": "soy beans",
+      "verbatim_label": "soy beans",
+      "derived_singular": false,
+      "targets": [
+        "soybean"
+      ],
+      "kinds": [
+        "legume"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/43259",
+      "pref": [
+        "soybeans"
+      ],
+      "scope": [],
+      "alt": [
+        "soy beans",
+        "soyabeans"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/43259"
+    },
+    {
+      "name": "soy bean",
+      "verbatim_label": "soy beans",
+      "derived_singular": true,
+      "targets": [
+        "soybean"
+      ],
+      "kinds": [
+        "legume"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/43259",
+      "pref": [
+        "soybeans"
+      ],
+      "scope": [],
+      "alt": [
+        "soy beans",
+        "soyabeans"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/43259"
+    },
+    {
+      "name": "filberts",
+      "verbatim_label": "filberts",
+      "derived_singular": false,
+      "targets": [
+        "hazelnuts"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/29370",
+      "pref": [
+        "hazelnuts"
+      ],
+      "scope": [],
+      "alt": [
+        "filberts",
+        "hazel nuts"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/29370"
+    },
+    {
+      "name": "filbert",
+      "verbatim_label": "filberts",
+      "derived_singular": true,
+      "targets": [
+        "hazelnuts"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/29370",
+      "pref": [
+        "hazelnuts"
+      ],
+      "scope": [],
+      "alt": [
+        "filberts",
+        "hazel nuts"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/29370"
+    },
+    {
+      "name": "hazel nuts",
+      "verbatim_label": "hazel nuts",
+      "derived_singular": false,
+      "targets": [
+        "hazelnuts"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/29370",
+      "pref": [
+        "hazelnuts"
+      ],
+      "scope": [],
+      "alt": [
+        "filberts",
+        "hazel nuts"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/29370"
+    },
+    {
+      "name": "hazel nut",
+      "verbatim_label": "hazel nuts",
+      "derived_singular": true,
+      "targets": [
+        "hazelnuts"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/29370",
+      "pref": [
+        "hazelnuts"
+      ],
+      "scope": [],
+      "alt": [
+        "filberts",
+        "hazel nuts"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/29370"
+    },
+    {
+      "name": "chick peas",
+      "verbatim_label": "chick peas",
+      "derived_singular": false,
+      "targets": [
+        "chickpea"
+      ],
+      "kinds": [
+        "legume"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/16207",
+      "pref": [
+        "chickpeas"
+      ],
+      "scope": [],
+      "alt": [
+        "chick peas",
+        "garbanzo beans"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/16207"
+    },
+    {
+      "name": "chick pea",
+      "verbatim_label": "chick peas",
+      "derived_singular": true,
+      "targets": [
+        "chickpea"
+      ],
+      "kinds": [
+        "legume"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/16207",
+      "pref": [
+        "chickpeas"
+      ],
+      "scope": [],
+      "alt": [
+        "chick peas",
+        "garbanzo beans"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/16207"
+    },
+    {
+      "name": "sunflowerseeds",
+      "verbatim_label": "sunflowerseeds",
+      "derived_singular": false,
+      "targets": [
+        "sunflower seeds"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/55768",
+      "pref": [
+        "sunflower seed"
+      ],
+      "scope": [],
+      "alt": [
+        "sunflowerseeds"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/55768"
+    },
+    {
+      "name": "sunflowerseed",
+      "verbatim_label": "sunflowerseeds",
+      "derived_singular": true,
+      "targets": [
+        "sunflower seeds"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/55768",
+      "pref": [
+        "sunflower seed"
+      ],
+      "scope": [],
+      "alt": [
+        "sunflowerseeds"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/55768"
+    },
+    {
+      "name": "linseed",
+      "verbatim_label": "linseed",
+      "derived_singular": false,
+      "targets": [
+        "flax seeds"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/40527",
+      "pref": [
+        "linseed"
+      ],
+      "scope": [],
+      "alt": [
+        "flaxseed",
+        "flax seed"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/40527"
+    },
+    {
+      "name": "aubergines",
+      "verbatim_label": "aubergines",
+      "derived_singular": false,
+      "targets": [
+        "eggplant"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/13795",
+      "pref": [
+        "eggplants"
+      ],
+      "scope": [],
+      "alt": [
+        "aubergines",
+        "brinjals"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/13795"
+    },
+    {
+      "name": "aubergine",
+      "verbatim_label": "aubergines",
+      "derived_singular": true,
+      "targets": [
+        "eggplant"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/13795",
+      "pref": [
+        "eggplants"
+      ],
+      "scope": [],
+      "alt": [
+        "aubergines",
+        "brinjals"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/13795"
+    },
+    {
+      "name": "brinjals",
+      "verbatim_label": "brinjals",
+      "derived_singular": false,
+      "targets": [
+        "eggplant"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/13795",
+      "pref": [
+        "eggplants"
+      ],
+      "scope": [],
+      "alt": [
+        "aubergines",
+        "brinjals"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/13795"
+    },
+    {
+      "name": "brinjal",
+      "verbatim_label": "brinjals",
+      "derived_singular": true,
+      "targets": [
+        "eggplant"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/13795",
+      "pref": [
+        "eggplants"
+      ],
+      "scope": [],
+      "alt": [
+        "aubergines",
+        "brinjals"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/13795"
+    },
+    {
+      "name": "sweetpotatoes",
+      "verbatim_label": "sweetpotatoes",
+      "derived_singular": false,
+      "targets": [
+        "sweet potatoes"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/47647",
+      "pref": [
+        "sweet potatoes"
+      ],
+      "scope": [],
+      "alt": [
+        "sweetpotatoes"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/47647"
+    },
+    {
+      "name": "sweetpotato",
+      "verbatim_label": "sweetpotatoes",
+      "derived_singular": true,
+      "targets": [
+        "sweet potatoes"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/47647",
+      "pref": [
+        "sweet potatoes"
+      ],
+      "scope": [],
+      "alt": [
+        "sweetpotatoes"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/47647"
+    },
+    {
+      "name": "kiwi fruit",
+      "verbatim_label": "kiwi fruit",
+      "derived_singular": false,
+      "targets": [
+        "kiwifruit"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/3217",
+      "pref": [
+        "kiwifruit"
+      ],
+      "scope": [],
+      "alt": [
+        "kiwis (fruit)",
+        "kiwi fruit"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/3217"
+    },
+    {
+      "name": "passionfruits",
+      "verbatim_label": "passionfruits",
+      "derived_singular": false,
+      "targets": [
+        "passion-fruit"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/56994",
+      "pref": [
+        "passion fruits"
+      ],
+      "scope": [],
+      "alt": [
+        "passionfruits"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/56994"
+    },
+    {
+      "name": "passionfruit",
+      "verbatim_label": "passionfruits",
+      "derived_singular": true,
+      "targets": [
+        "passion-fruit"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/56994",
+      "pref": [
+        "passion fruits"
+      ],
+      "scope": [],
+      "alt": [
+        "passionfruits"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/56994"
+    },
+    {
+      "name": "water cress",
+      "verbatim_label": "water cress",
+      "derived_singular": false,
+      "targets": [
+        "watercress"
+      ],
+      "kinds": [
+        "vegetable"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/43832",
+      "pref": [
+        "watercress"
+      ],
+      "scope": [],
+      "alt": [
+        "water cress"
+      ],
+      "decision": "admit reviewed same-food alias",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/43832"
+    },
+    {
+      "name": "linseeds",
+      "verbatim_label": "linseed",
+      "derived_singular": false,
+      "targets": [
+        "flax seeds"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/40527",
+      "pref": [
+        "linseed"
+      ],
+      "scope": [],
+      "alt": [
+        "flaxseed",
+        "flax seed"
+      ],
+      "decision": "admit manually reviewed regular English plural of exact same-food label",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/40527",
+      "derived_plural": true
+    },
+    {
+      "name": "flaxseeds",
+      "verbatim_label": "flaxseed",
+      "derived_singular": false,
+      "targets": [
+        "flax seeds"
+      ],
+      "kinds": [
+        "nut_seed"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/40527",
+      "pref": [
+        "linseed"
+      ],
+      "scope": [],
+      "alt": [
+        "flaxseed",
+        "flax seed"
+      ],
+      "decision": "admit manually reviewed regular English plural of exact same-food label",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/40527",
+      "derived_plural": true
+    },
+    {
+      "name": "kiwi fruits",
+      "verbatim_label": "kiwi fruit",
+      "derived_singular": false,
+      "targets": [
+        "kiwifruit"
+      ],
+      "kinds": [
+        "fruit"
+      ],
+      "uri": "https://lod.nal.usda.gov/nalt/3217",
+      "pref": [
+        "kiwifruit"
+      ],
+      "scope": [],
+      "alt": [
+        "kiwis (fruit)",
+        "kiwi fruit"
+      ],
+      "decision": "admit manually reviewed regular English plural of exact same-food label",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/3217",
+      "derived_plural": true
+    }
+  ],
+  "held_discovery_candidates": [
+    {
+      "name": "apple fruits",
+      "uri": "https://lod.nal.usda.gov/nalt/11308",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "apple fruit",
+      "uri": "https://lod.nal.usda.gov/nalt/11308",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "ewe milk",
+      "uri": "https://lod.nal.usda.gov/nalt/38845",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "ovine milk",
+      "uri": "https://lod.nal.usda.gov/nalt/38845",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "sapodilla plum",
+      "uri": "https://lod.nal.usda.gov/nalt/51400",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "melon pawpaws",
+      "uri": "https://lod.nal.usda.gov/nalt/22509",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "melon pawpaw",
+      "uri": "https://lod.nal.usda.gov/nalt/22509",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "melon papaws",
+      "uri": "https://lod.nal.usda.gov/nalt/22509",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "melon papaw",
+      "uri": "https://lod.nal.usda.gov/nalt/22509",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "bovine milk",
+      "uri": "https://lod.nal.usda.gov/nalt/631",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "dairy milk",
+      "uri": "https://lod.nal.usda.gov/nalt/631",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "dewberries",
+      "uri": "https://lod.nal.usda.gov/nalt/17839",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "dewberry",
+      "uri": "https://lod.nal.usda.gov/nalt/17839",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "cremini mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "cremini mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "cultivated mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "cultivated mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "button mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "button mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "tree mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "tree mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "edible mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "edible mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "abalone mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "abalone mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "portobello mushrooms",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "portobello mushroom",
+      "uri": "https://lod.nal.usda.gov/nalt/7329",
+      "decision": "held outside runtime",
+      "reason": "Generic edible-mushroom concept aggregates distinct species. Add the generic food separately; do not map it to one species."
+    },
+    {
+      "name": "bread wheat",
+      "uri": "https://lod.nal.usda.gov/nalt/39377",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "dried vegetables",
+      "uri": "https://lod.nal.usda.gov/nalt/34536",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "dried vegetable",
+      "uri": "https://lod.nal.usda.gov/nalt/34536",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "field corn",
+      "uri": "https://lod.nal.usda.gov/nalt/29126",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "feed corn",
+      "uri": "https://lod.nal.usda.gov/nalt/29126",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "mexican husk tomatoes",
+      "uri": "https://lod.nal.usda.gov/nalt/302994",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "mexican husk tomato",
+      "uri": "https://lod.nal.usda.gov/nalt/302994",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "sweet oranges",
+      "uri": "https://lod.nal.usda.gov/nalt/26518",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "sweet orange",
+      "uri": "https://lod.nal.usda.gov/nalt/26518",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "lychees",
+      "uri": "https://lod.nal.usda.gov/nalt/49486",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "leechees",
+      "uri": "https://lod.nal.usda.gov/nalt/49486",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "leechee",
+      "uri": "https://lod.nal.usda.gov/nalt/49486",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "lichees",
+      "uri": "https://lod.nal.usda.gov/nalt/49486",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "lichee",
+      "uri": "https://lod.nal.usda.gov/nalt/49486",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "hot peppers",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "hot pepper",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "cayenne peppers",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "cayenne pepper",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chile peppers",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chile pepper",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chili peppers",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chili pepper",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chilli peppers",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "chilli pepper",
+      "uri": "https://lod.nal.usda.gov/nalt/22077",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "tumeric",
+      "uri": "https://lod.nal.usda.gov/nalt/30814",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "clementine mandarins",
+      "uri": "https://lod.nal.usda.gov/nalt/26507",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "clementine mandarin",
+      "uri": "https://lod.nal.usda.gov/nalt/26507",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "escarole",
+      "uri": "https://lod.nal.usda.gov/nalt/26242",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "manioc",
+      "uri": "https://lod.nal.usda.gov/nalt/22819",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "gherkins",
+      "uri": "https://lod.nal.usda.gov/nalt/30502",
+      "decision": "held outside runtime",
+      "reason": "Gherkin can mean a pickled preparation; no generic cucumber alias."
+    },
+    {
+      "name": "gherkin",
+      "uri": "https://lod.nal.usda.gov/nalt/30502",
+      "decision": "held outside runtime",
+      "reason": "Gherkin can mean a pickled preparation; no generic cucumber alias."
+    },
+    {
+      "name": "longanberries",
+      "uri": "https://lod.nal.usda.gov/nalt/33669",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "longanberry",
+      "uri": "https://lod.nal.usda.gov/nalt/33669",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "anise",
+      "uri": "https://lod.nal.usda.gov/nalt/9613",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "star anise",
+      "uri": "https://lod.nal.usda.gov/nalt/9613",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "catjang peas",
+      "uri": "https://lod.nal.usda.gov/nalt/16217",
+      "decision": "held outside runtime",
+      "reason": "Catjang and pigeon peas need independent identity review."
+    },
+    {
+      "name": "catjang pea",
+      "uri": "https://lod.nal.usda.gov/nalt/16217",
+      "decision": "held outside runtime",
+      "reason": "Catjang and pigeon peas need independent identity review."
+    },
+    {
+      "name": "pigeonpeas",
+      "uri": "https://lod.nal.usda.gov/nalt/16217",
+      "decision": "held outside runtime",
+      "reason": "Catjang and pigeon peas need independent identity review."
+    },
+    {
+      "name": "pigeonpea",
+      "uri": "https://lod.nal.usda.gov/nalt/16217",
+      "decision": "held outside runtime",
+      "reason": "Catjang and pigeon peas need independent identity review."
+    },
+    {
+      "name": "collard greens",
+      "uri": "https://lod.nal.usda.gov/nalt/19492",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "mandarin orange",
+      "uri": "https://lod.nal.usda.gov/nalt/26512",
+      "decision": "held outside runtime",
+      "reason": "Mandarin routes already differ; do not silently remap them."
+    },
+    {
+      "name": "kinnows",
+      "uri": "https://lod.nal.usda.gov/nalt/26512",
+      "decision": "held outside runtime",
+      "reason": "Mandarin routes already differ; do not silently remap them."
+    },
+    {
+      "name": "kinnow",
+      "uri": "https://lod.nal.usda.gov/nalt/26512",
+      "decision": "held outside runtime",
+      "reason": "Mandarin routes already differ; do not silently remap them."
+    },
+    {
+      "name": "kinnow mandarins",
+      "uri": "https://lod.nal.usda.gov/nalt/26512",
+      "decision": "held outside runtime",
+      "reason": "Mandarin routes already differ; do not silently remap them."
+    },
+    {
+      "name": "kinnow mandarin",
+      "uri": "https://lod.nal.usda.gov/nalt/26512",
+      "decision": "held outside runtime",
+      "reason": "Mandarin routes already differ; do not silently remap them."
+    },
+    {
+      "name": "sunchoke",
+      "uri": "https://lod.nal.usda.gov/nalt/12573",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "grape berries",
+      "uri": "https://lod.nal.usda.gov/nalt/41690",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "grape berry",
+      "uri": "https://lod.nal.usda.gov/nalt/41690",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "cashew nut",
+      "uri": "https://lod.nal.usda.gov/nalt/8335",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "haricot beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "haricot bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "french beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "french bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "bush beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "bush bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "pole beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "pole bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "wax beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "wax bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "bushbeans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "bushbean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "string beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "string bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "snapbeans",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "snapbean",
+      "uri": "https://lod.nal.usda.gov/nalt/16213",
+      "decision": "held outside runtime",
+      "reason": "Haricot can mean a dry bean, not a fresh snap bean."
+    },
+    {
+      "name": "wintermelons",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "wintermelon",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "winter melons",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "winter melon",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "honey dew melons",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "honey dew melon",
+      "uri": "https://lod.nal.usda.gov/nalt/30536",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "bamboo sprouts",
+      "uri": "https://lod.nal.usda.gov/nalt/15691",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "bamboo sprout",
+      "uri": "https://lod.nal.usda.gov/nalt/15691",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "blackeyed beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "blackeyed bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black eyed peas",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black eyed pea",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "southern peas",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "southern pea",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "southernpea",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "blackeyed peas",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "blackeyed pea",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black-eyed beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black-eyed bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black eyed beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black eyed bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black-eyed peas",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "black-eyed pea",
+      "uri": "https://lod.nal.usda.gov/nalt/16208",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "globe artichokes",
+      "uri": "https://lod.nal.usda.gov/nalt/12567",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "globe artichoke",
+      "uri": "https://lod.nal.usda.gov/nalt/12567",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "faba beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "faba bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "fababeans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "fababean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "broad beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "broad bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "horsebeans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "horsebean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "horse beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "horse bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "fava beans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "fava bean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "favabeans",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "favabean",
+      "uri": "https://lod.nal.usda.gov/nalt/16211",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "barbados cherries",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "barbados cherry",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "acerola fruits",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "acerola fruit",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "west indian cherries",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "west indian cherry",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "acerola cherries",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "acerola cherry",
+      "uri": "https://lod.nal.usda.gov/nalt/131668",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "cardamon",
+      "uri": "https://lod.nal.usda.gov/nalt/22375",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "caprine milk",
+      "uri": "https://lod.nal.usda.gov/nalt/43355",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "pearl onions",
+      "uri": "https://lod.nal.usda.gov/nalt/6633",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "pearl onion",
+      "uri": "https://lod.nal.usda.gov/nalt/6633",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "pomelos",
+      "uri": "https://lod.nal.usda.gov/nalt/26519",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "pomelo",
+      "uri": "https://lod.nal.usda.gov/nalt/26519",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "shaddock",
+      "uri": "https://lod.nal.usda.gov/nalt/26519",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "persimmon fruits",
+      "uri": "https://lod.nal.usda.gov/nalt/33788",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "persimmon fruit",
+      "uri": "https://lod.nal.usda.gov/nalt/33788",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "loganberries",
+      "uri": "https://lod.nal.usda.gov/nalt/19035",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "loganberry",
+      "uri": "https://lod.nal.usda.gov/nalt/19035",
+      "decision": "held outside runtime",
+      "reason": "Distinct food or ambiguous common-name meaning. A thesaurus aggregate is not exact food identity."
+    },
+    {
+      "name": "mustard leaves",
+      "uri": "https://lod.nal.usda.gov/nalt/19330",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "mustard leave",
+      "uri": "https://lod.nal.usda.gov/nalt/19330",
+      "decision": "held outside runtime",
+      "reason": "Invalid singular generated by morphology; not a source label."
+    },
+    {
+      "name": "leaf mustard",
+      "uri": "https://lod.nal.usda.gov/nalt/19330",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "courgettes",
+      "uri": "https://lod.nal.usda.gov/nalt/29712",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "courgette",
+      "uri": "https://lod.nal.usda.gov/nalt/29712",
+      "decision": "held outside runtime",
+      "reason": "Not reviewed for exact food-part, identity and all inherited form routes in this slice."
+    },
+    {
+      "name": "flaxseed",
+      "uri": "https://lod.nal.usda.gov/nalt/40527",
+      "decision": "held outside runtime",
+      "reason": "Global synonym substitution rewrites established canonical flaxseed oil to unmatched flax seeds oil, losing supported Group 2. Hold this singular alias instead of broadening normalisation."
+    }
+  ],
+  "archive": {
+    "url": "https://lod.nal.usda.gov/downloads/nalt-full_dwn.rdf.zip",
+    "bytes": 8515264,
+    "content_type": "application/zip",
+    "last_modified": "Wed, 24 Jul 2024 17:40:15 GMT"
+  },
+  "license": "USDA NAL Agricultural Thesaurus, CC BY 4.0, adapted naming and reviewed singular forms. No USDA endorsement.",
+  "held_food_heads": [
+    {
+      "term": "cranberry",
+      "kind": "fruit",
+      "concept_id": "29833",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/29833",
+      "nalt_preferred_label": "cranberries",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "HOLD",
+      "reason": "Existing standing plain/dried-status hold remains; current NALT category does not settle it. data/ingest/class_fruits_1.json canonical cranberries."
+    },
+    {
+      "term": "coconut",
+      "kind": "fruit",
+      "concept_id": "27585",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/27585",
+      "nalt_preferred_label": "coconuts",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "HOLD",
+      "reason": "Existing nut/seed identity and form review remains. Not silently reclassified as a fruit."
+    },
+    {
+      "term": "celery",
+      "kind": "vegetable",
+      "concept_id": "11117",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/11117",
+      "nalt_preferred_label": "celery",
+      "evidence_basis": "class-instance of edible plant parts (leaf or stem); leafy vegetables are named, celery is not named",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "HOLD",
+      "reason": "Existing curing-powder/descriptor collision hold remains. data/ingest/class_vegetables_1.json celery."
+    },
+    {
+      "term": "tamarind",
+      "kind": "fruit",
+      "concept_id": "65440",
+      "page": "https://lod.nal.usda.gov/nalt/en/page/65440",
+      "nalt_preferred_label": "tamarinds",
+      "evidence_basis": "class-instance of fruit",
+      "nova_clause": "Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables",
+      "decision": "HOLD",
+      "reason": "Existing raw-fruit/pulp/paste scope hold remains. data/ingest/class_fruits_1.json queue_words tamarinds."
+    }
+  ]
+}
