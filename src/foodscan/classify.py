@@ -253,12 +253,18 @@ def animal_powder(ing, kind: str) -> bool:
     return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS)
 
 
+# direct-culinary-2: scoped to the three newly source-placed culinary identities.
+# Existing non-fat culinary rows and raw-food mixture policy are unchanged.
+_SOURCE_PLACED_CULINARY = frozenset({"corn starch", "baking powder", "baking soda"})
+
+
 def fat_bracket_residual(ing) -> list:
     """Bracket content on an OIL or FAT row that does not establish a culinary-only composition (culinary-guard-1). Supported parts: (a) a recognised culinary row (another oil, salt, sugar, a starch: group 2 items),
     (b) the source word of a recognised oil ('palm', 'coconut': palm oil and coconut oil are rows), (c) descriptor, condition, negation, connector and code words already benign for every kind. Everything else is residual:
     an unrecognised part ('XQ9', 'Gingelly Oil', 'Mineral Oil', 'Essential Oil': a suffix 'oil' or 'fat' is not an identity and no alias is assumed) and a RECOGNISED part that is not a culinary row ('Rice', 'Milk': a distinct
-    food or carrier). Other culinary rows (salt, sugar, vinegar, ...) are outside this proposal."""
-    if not is_fat_row(lookup(ing.name)) or not ing.inner:
+    food or carrier). direct-culinary-2 also applies this composition check to corn starch, baking powder and baking soda only; other non-fat culinary rows stay outside the check."""
+    head = lookup(ing.name)
+    if not head or not (is_fat_row(head) or head["term"] in _SOURCE_PLACED_CULINARY) or not ing.inner:
         return []
     ok_tokens = _descriptors() | _BRACKET_BENIGN | _LEGUME_ADDED | _LEGUME_PRESERVED
     out = []
@@ -267,8 +273,10 @@ def fat_bracket_residual(ing) -> list:
         toks = re.findall(r"[a-z]+", p.lower())
         if not toks:
             continue
-        if any(is_fat_row(lookup(f"{p.lower()} {w}")) for w in ("oil", "fat")):
+        if is_fat_row(head) and any(is_fat_row(lookup(f"{p.lower()} {w}")) for w in ("oil", "fat")):
             continue                                  # the source word of a recognised oil ('corn' when 'corn oil' is a row), even where the bare word is also a food row
+        if head["term"] == "corn starch" and p.lower() in {"corn", "maize"}:
+            continue                                  # closed corn/maize starch source identity, USDA NALT29170
         row = lookup(p)
         if row:
             if row["kind"] != "culinary":
@@ -340,6 +348,11 @@ _SAME_MILK_PARTS = frozenset({"milk", "cow milk", "buffalo milk", "goat milk"})
 
 
 def whole_food_observed(ing, kind: str) -> list:
+    if kind == "flour":
+        # Recognition of a new culinary child must not create a plain-flour Group1.
+        # Other historical flour conditions stay unchanged pending separate review.
+        return [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or "")
+                if lookup(p.strip()) and lookup(p.strip())["term"] in _SOURCE_PLACED_CULINARY]
     if kind != "whole_food":
         return []
     obs = nut_added_observed(ing) + [w for w in sorted(_LEGUME_PRESERVED) if _added(ing, {w})]

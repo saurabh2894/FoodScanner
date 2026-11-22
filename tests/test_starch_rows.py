@@ -37,8 +37,15 @@ def test_synthetic_negative_modified_forms_are_never_captured_by_the_plain_rows_
 
 
 @pytest.mark.parametrize("t", ["modified corn starch", "modified tapioca starch", "pregelatinised starch", "acid treated starch", "oxidised starch", "corn starch", "maize starch", "potato starch", "starch, modified"])
-def test_synthetic_negative_other_starch_names_are_not_recognised_as_plain_starch(t):
-    assert not is_recognised(normalise_ingredient(t).name)                         # they stay unassessed and abstain; none is read as plain starch
+def test_synthetic_negative_other_starch_names_retain_holds_except_source_reviewed_corn(t):
+    if t in {'corn starch', 'maize starch'}:
+        # direct-culinary-2: exact corn-starch class + corn/maize identity; not a
+        # generic starch-name lift. Modified and potato controls below stay held.
+        assert normalise_ingredient(t).name == 'corn starch'
+        assert g(t)[0] == 2
+        assert 'starches extracted from corn and other plants' in LEX['corn starch']['source']
+    else:
+        assert not is_recognised(normalise_ingredient(t).name)
 
 
 def test_synthetic_the_modified_starch_marker_row_is_unchanged():

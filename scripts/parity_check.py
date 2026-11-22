@@ -366,6 +366,20 @@ PASTE = [
     "Ingredients: Water, Xanthan gum (INS 415), Guar gum (INS 412).",
     "Ingredients: Rice, sequestrant - E385, dough conditioner (INS 223).",
 ]
+# direct-culinary-2: source-scoped forms, not a measured accuracy sample.
+_DIRECT_CULINARY_NAMES = ["corn starch", "baking powder", "baking soda", "cornstarch", "maize starch"]
+_DIRECT_CULINARY_FORMS = ["{t}", "{t} (salt)", "{t} (sugar)", "{t} (XQ9)", "{t} (Rice)",
+    "{t} (Mango, Sugar)", "{t} (Milk)", "100% {t} (Rice)", "{t}, Maltodextrin",
+    "Wheat Flour ({t})", "Refined Wheat Flour ({t})", "Corn Oil ({t})", "{t} (Corn Oil)",
+    "{t} (no added salt)", "Modified {t}", "{t} (modified)", "{t} (pregelatinized)",
+    "{t} flour", "{t} milk", "{t} oil"]
+_DIRECT_CULINARY_TEXTS = ["Ingredients: " + form.format(t=t) + "."
+    for t in _DIRECT_CULINARY_NAMES for form in _DIRECT_CULINARY_FORMS]
+_DIRECT_CULINARY_TEXTS += [f"Ingredients: {t} ({origin})."
+    for t in ["corn starch", "cornstarch", "maize starch"] for origin in ["corn", "maize"]]
+for _texts in (CORPUS, PASTE):
+    _texts.extend(t for t in _DIRECT_CULINARY_TEXTS if t not in _texts)
+
 TOTAL = len(CORPUS) + len(PASTE)
 
 

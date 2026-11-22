@@ -65,9 +65,13 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
         assert conc not in rows, f"concentrate {conc} should not be in lexicon.csv"
 
     # Starches
-    # owner decision (2026-11-21, pmc-decisions-1): the hold is LIFTED for plain starch and tapioca starch ONLY (kind culinary, FAO Group 2 clause + PMC10127522 corroboration); the rest stay out
-    for starch in ["corn starch", "potato starch", "modified starch", "maize starch"]:
+    # Historical pmc-decisions-1 lifted plain/tapioca starch only. Later direct-culinary-2
+    # adds corn starch under the exact FAO corn-starch class and USDA NALT identity.
+    # Potato and modified forms remain excluded; maize starch is an alias, not a row.
+    for starch in ["potato starch", "modified starch", "maize starch"]:
         assert starch not in rows, f"starch {starch} should not be in lexicon.csv"
+    assert rows['corn starch']['kind'] == 'culinary'
+    assert 'starches extracted from corn and other plants' in rows['corn starch']['source']
     for starch in ["tapioca starch", "starch"]:
         assert starch not in rows or (rows[starch]["kind"] == "culinary" and "PMC10127522" in rows[starch]["source"]), f"{starch} may only be the owner-lifted culinary row"
 
