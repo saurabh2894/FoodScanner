@@ -548,8 +548,21 @@
     const BRINE_KINDS = ["legume", "vegetable", "fruit"];
     const GUARDED_KINDS = BRINE_KINDS.concat(["nut_seed"]);   // nut-guard-1: the canned/brine/bracket guards also apply to kind nut_seed
     const LEGUME_ADDED = new Set([...NUT_ADDED, "brine", "brined"]);
+    // FAO Table 1 permits vitamin/mineral additions to Group 1 foods.
+    // Other recognition-only bracket items still have no NOVA placement.
+    const NUTRIENT_LABELS = new Set(["vitamins and minerals", "vitamins & minerals", "vitamins", "minerals"]);
+    function nestedUnplaced(ing) {
+      const out = [];
+      for (const part of (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/)) {
+        const row = lookup(part.trim());
+        if (row && row.kind === "unplaced" && !NUTRIENT_LABELS.has(row.term)) out.push(part.trim() + " (inside " + ing.raw + ")");
+      }
+      return [...new Set(out)];
+    }
     function addedIn(ing, words) {
-      const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
+      // Exact existing fruit name, not an added-sugar declaration. Keep two tokens.
+      const text = ing.text.toLowerCase().replace(/\bsugar\s+(apples?)\b/g, "fruit $1");
+      const toks = text.match(/[a-z]+/g) || [];
       for (let i = 0; i < toks.length; i++) {
         if (words.has(toks[i])) {
           if (toks.slice(Math.max(0, i - 2), i).some((x) => ["no", "without", "non", "free"].includes(x)) || (i + 1 < toks.length && toks[i + 1] === "free")) continue;
@@ -712,7 +725,7 @@
       const wfCondition = ings.map((i) => [i.raw, wholeFoodObserved(i, lookup(i.name).kind)]).filter(([, o]) => o.length);
       const wfNested = ings.map((i) => [i.raw, wholeFoodNested(i, lookup(i.name).kind)]).filter(([, r]) => r.length);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
-      const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw);
+      const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw).concat(ings.flatMap(nestedUnplaced));
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" + otherOpenItems(ings, new Set(unplacedNames)) };
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const kinds0 = ings.map((i) => lookup(i.name).kind);
@@ -1027,7 +1040,7 @@
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
-      const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw))];
+      const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced)))];
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
@@ -1074,7 +1087,7 @@
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
-        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || (l && l.kind === "unplaced"); }).length } };
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0; }).length } };
       const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
       const blocking = truncation || unread || headingRisk || lost;
       const r = classifyIngredients(ings, parsed.declarations);
