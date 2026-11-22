@@ -619,12 +619,25 @@
     }
     // descriptor "powder" routing (mirrors classify.powder_routed): whole_food, legume and vegetable items carrying the word follow the food_powder behaviour
     const POWDER_WORDS = new Set(["powder", "powdered"]);
-    const POWDER_ROUTED = ["whole_food", "legume", "vegetable", "fruit"];
+    const POWDER_ROUTED = ["whole_food", "legume", "vegetable", "fruit", "nut_seed"];
     function powderCompositionStated(ing) {
-      if (/(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase())) return true;
-      const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
-      const row = lookup(ing.name);
-      return toks.includes("whole") && !toks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
+      const ownRaw = splitBrackets(ing.raw)[0], ownToks = ownRaw.toLowerCase().match(/[a-z]+/g) || [];
+      const row = lookup(ing.name), claims = [ownRaw];
+      const base = lookup(flatten(ing.name.replace(/\b(?:powder|powdered)\b/g, " ")));
+      const qualityWords = new Set(["whole", "pure", "plain", "powder", "powdered", "percent", "natural", "organic", "only"]);
+      for (const part of rawBracketParts(ing.raw)) {
+        const toks = part.toLowerCase().match(/[a-z]+/g) || [];
+        if (toks.every((t) => qualityWords.has(t))) { claims.push(part); continue; }
+        const child = normaliseIngredient(part), childRow = lookup(child.name);
+        if (childRow && ((base && childRow.term === base.term) || (row && childRow.term === row.term))) {
+          const childOwn = splitBrackets(part)[0], childToks = childOwn.toLowerCase().match(/[a-z]+/g) || [];
+          if (/(?<![\d.])100(?:\.0+)?\s*%/.test(childOwn.toLowerCase())) return true;
+          if (childToks.includes("whole") && !childToks.includes("milk") && !MILK_TERMS.includes(childRow.term)) return true;
+        }
+      }
+      if (claims.some((part) => /(?<![\d.])100(?:\.0+)?\s*%/.test(part.toLowerCase()))) return true;
+      const toks = claims.join(" ").toLowerCase().match(/[a-z]+/g) || [];
+      return toks.includes("whole") && !ownToks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
     }
     // powdered milk is placed by name (FAO Table 1 Group 1 'fresh, powdered or pasteurized milk'): mirrors classify.milk_powder_named
     const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk"];
@@ -666,7 +679,57 @@
     };
     const fatPowderStated = (ing) => /(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase().replace(/[(\[{][^)\]}]*[)\]}]/g, ""));
     const fatPowder = (ing, kind) => kind === "culinary" && isFatRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS) && !fatPowderStated(ing);
-    const powderRouted = (ing, kind) => POWDER_ROUTED.includes(kind) && addedIn(ing, POWDER_WORDS) && !(kind === "whole_food" && milkPowderNamed(ing)) && !(BRINE_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing)));
+    function powderRouted(ing, kind) {
+      if (!POWDER_ROUTED.includes(kind)) return false;
+      // A named child is not a powder form of its parent.
+      let powderNamed = addedIn({ raw: ing.raw, name: ing.name, inner: "", text: ing.name }, POWDER_WORDS);
+      for (const part of (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/)) {
+        const toks = part.match(/[a-z]+/g) || [];
+        if (!lookup(part.trim()) && toks.length && toks.every((t) => descriptors.has(t) || BRACKET_BENIGN.has(t)))
+          powderNamed = powderNamed || addedIn({ raw: part, name: part, inner: "", text: part }, POWDER_WORDS);
+      }
+      if (!powderNamed) return false;
+      if (kind === "whole_food" && milkPowderNamed(ing)) return false;
+      if (GUARDED_KINDS.includes(kind) && (legumeAddedSaltSugarOrBrine(ing) || legumePreservedForm(ing))) return false;
+      return true;
+    }
+    function rawBracketParts(raw) {
+      const groups = [], parts = [];
+      let depth = 0, start = 0;
+      for (let n = 0; n < raw.length; n++) {
+        const ch = raw[n];
+        if (OPEN.includes(ch)) { if (!depth) start = n + 1; depth++; }
+        else if (CLOSE.includes(ch)) { if (depth === 1) groups.push(raw.slice(start, n)); depth = Math.max(depth - 1, 0); }
+      }
+      if (depth) groups.push(raw.slice(start));
+      for (const group of groups) {
+        depth = 0; start = 0;
+        for (const m of group.matchAll(/[()\[\]{},;&]|\band\b/gi)) {
+          const token = m[0];
+          if (OPEN.includes(token)) depth++;
+          else if (CLOSE.includes(token)) depth = Math.max(depth - 1, 0);
+          else if (!depth) { parts.push(group.slice(start, m.index).trim()); start = m.index + token.length; }
+        }
+        parts.push(group.slice(start).trim());
+      }
+      return parts.filter(Boolean);
+    }
+    function nestedPowderUnresolved(ing) {
+      if (!ing.inner) return [];
+      const out = [];
+      for (const part of rawBracketParts(ing.raw)) {
+        const child = normaliseIngredient(part), row = lookup(child.name);
+        let unresolved = nestedPowderUnresolved(child).length > 0;
+        if (row) {
+          const kind = row.kind;
+          unresolved = unresolved || animalPowder(child, kind) || fatPowder(child, kind);
+          if (kind === "food_powder" || powderRouted(child, kind))
+            unresolved = unresolved || !powderCompositionStated(child);
+        }
+        if (unresolved) out.push(part + " (inside " + ing.raw + ")");
+      }
+      return [...new Set(out)];
+    }
     // salted grain guard (per-form-2a; mirrors classify.grain_added_salt): the 23 Batch-4 terms with salt added in the item's own name or bracket
     const GRAIN_SALT_WORDS = new Set(["salt", "salted"]);
     const grainAddedSalt = (ing, kind) => (kind === "whole_food" || kind === "flour") && addedIn(ing, GRAIN_SALT_WORDS) && (() => { const row = lookup(ing.name); return !!row && SCOPED_TERMS.toasted.has(row.term); })();
@@ -746,6 +809,8 @@
       if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%" };
       if (wfNested.length) return { group: null, drivers: [], reason: "a bracket names a different food inside the item (" + wfNested.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted" };
       if (wfCondition.length) return { group: null, drivers: [], reason: "an item whose own text names an added or preserving condition (" + wfCondition.map(([raw, o]) => raw + ": " + o.join(", ")).join("; ") + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted" };
+      const nestedPowders = ings.flatMap(nestedPowderUnresolved);
+      if (nestedPowders.length) return { group: null, drivers: [], reason: "a nested powder's form or composition is not established (" + nestedPowders.join("; ") + "), so it cannot inherit the outer food's plain placement and no group is asserted" };
       const legumePreserved = ings.filter((i, n) => GUARDED_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) {
         const preservedNut = ings.map((i, n) => [i, kinds[n]]).filter(([i, k]) => GUARDED_KINDS.includes(k) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map(([, k]) => k === "nut_seed");
