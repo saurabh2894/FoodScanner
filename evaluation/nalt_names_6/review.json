@@ -1,0 +1,57 @@
+{
+  "base": "17641ff075b8e4d811ff8a1eae653f4733971619",
+  "canonical_entries": 517,
+  "aliases": 189,
+  "new_canonical_heads": 5,
+  "new_aliases": 26,
+  "allowed_suite": {
+    "passed": 4750,
+    "failed_same_fresh_baseline": 2,
+    "skipped": 2,
+    "deselected_restricted_reference": 1,
+    "xfailed": 5
+  },
+  "new_synthetic_tests": 545,
+  "parity": {
+    "total": 6283,
+    "ocr_text_path": 3524,
+    "paste_path": 2759
+  },
+  "existing_normalisation_drift": {
+    "checked": 675,
+    "differences": 0
+  },
+  "additional_proof": {
+    "alias_parent_interactions": {
+      "count": 40326,
+      "mismatches": []
+    },
+    "wide_full_field_parity": {
+      "count": 51745,
+      "mismatches": []
+    },
+    "frozen_66": {
+      "count": 66,
+      "changed_groups": [],
+      "changed_fields": []
+    }
+  },
+  "unverified": [
+    "Original full-photo OCR assets and out-of-sample32 are not newly validated.",
+    "The two fresh-baseline failures remain: OCR section extraction for a cached millet-puff image, and missing historical fenugreek demand evidence."
+  ],
+  "source_scope": "NALT supplies food identity/category only, never NOVA; FAO Table 1 places plain edible foods and the explicitly reviewed minimal forms. Five-food dried and whole/pure powder forms are tested. No runtime Python/JS classifier or marker code changed.",
+  "retained_holds": [
+    "cranberry and dried/sweetened cranberry forms",
+    "tamarind and pulp/paste scope",
+    "coconut nut/seed and form scope",
+    "celery and curing-powder scope",
+    "flaxseed singular alias, which would destroy established flaxseed-oil Group 2"
+  ],
+  "intake_run": {
+    "archive_sha256": "0473c3e6866458e729e4719e3bacbddf3a71880d1669820cad3d7114b08abcea",
+    "archive_member": "nalt-full_dwn_20240716.rdf",
+    "records": 83655,
+    "candidates": 196
+  }
+}
