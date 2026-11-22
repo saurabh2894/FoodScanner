@@ -65,6 +65,11 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] == "tumeric":
+        # Current NALT Product30814 explicitly lists this spelling of turmeric, a spice.
+        assert normalise_ingredient(d["term"]).name == "turmeric"
+        assert grp("Ingredients: Tumeric.")[0] == grp("Ingredients: Turmeric.")[0]  # recognition-only alias, no new standalone-spice rule
+        return
     if d["term"] == "maida":
         # scoped-powder-5: FSSAI2.4.2 names this exact food identity.
         # Qualified/protein-rich/durum forms remain negative controls in test_scoped_names_5.

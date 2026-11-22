@@ -1,5 +1,5 @@
 from,to,source
-invert syrup,invert sugar,research/02 synthetic example ("invert syrup") classed with marker class 1 "invert sugar"
+invert syrup,invert sugar,"research/02 synthetic example (""invert syrup"") classed with marker class 1 ""invert sugar"""
 invert sugar syrup,invert sugar,research/02 marker class 1 (variant spelling of invert sugar)
 high fructose corn syrup,glucose-fructose syrup,research/02 marker class 1 lists HFCS / glucose-fructose syrup as one class
 hfcs,glucose-fructose syrup,research/02 marker class 1 (abbreviation of high fructose corn syrup)
@@ -20,18 +20,18 @@ emulsifiers,emulsifier,research/02 marker class 2 (plural)
 sweeteners,sweetener,research/02 marker class 2 (plural)
 enhancers,enhancer,research/02 marker class 2 (plural)
 raising agents,raising agent,research/02 qualification (plural)
-stabilizer,stabiliser,US spelling variant (class not in research/02: see markers.csv "unlisted")
-stabilizers,stabiliser,plural (class not in research/02: see markers.csv "unlisted")
+stabilizer,stabiliser,"US spelling variant (class not in research/02: see markers.csv ""unlisted"")"
+stabilizers,stabiliser,"plural (class not in research/02: see markers.csv ""unlisted"")"
 o11,oil,"OCR misread of the word Oil seen on a real photo (millet puff pack, 2026-11-20); matched as a whole token only"
-0il,oil,"OCR misread of the word Oil (zero for O) seen in the browser OCR of the same real photo (2026-11-20); matched as a whole token only"
-acidity regulators,acidity regulator,"plural of the marker term 'acidity regulator' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-preservatives,preservative,"plural of the marker term 'preservative' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-antioxidants,antioxidant,"plural of the marker term 'antioxidant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-stabilisers,stabiliser,"plural of the marker term 'stabiliser' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-thickeners,thickener,"plural of the marker term 'thickener' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-anticaking agents,anticaking agent,"plural of the marker term 'anticaking agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-flour treatment agents,flour treatment agent,"plural of the marker term 'flour treatment agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
-humectants,humectant,"plural of the marker term 'humectant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)"
+0il,oil,OCR misread of the word Oil (zero for O) seen in the browser OCR of the same real photo (2026-11-20); matched as a whole token only
+acidity regulators,acidity regulator,plural of the marker term 'acidity regulator' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+preservatives,preservative,plural of the marker term 'preservative' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+antioxidants,antioxidant,plural of the marker term 'antioxidant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+stabilisers,stabiliser,plural of the marker term 'stabiliser' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+thickeners,thickener,plural of the marker term 'thickener' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+anticaking agents,anticaking agent,plural of the marker term 'anticaking agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+flour treatment agents,flour treatment agent,plural of the marker term 'flour treatment agent' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
+humectants,humectant,plural of the marker term 'humectant' in markers.csv (research/02 names these classes in the plural; without this a plural heading was not recognised)
 mung bean,moong dal,PROVISIONAL: common Indian-market name for the same pulse/salt (author knowledge; not from a research file)
 mung beans,moong dal,PROVISIONAL: common Indian-market name for the same pulse/salt (author knowledge; not from a research file)
 mung dal,moong dal,PROVISIONAL: common Indian-market name for the same pulse/salt (author knowledge; not from a research file)
@@ -75,7 +75,7 @@ soybean seeds,soybean,PROVISIONAL spelling or form variant of the lexicon term s
 lodised salt,iodised salt,"PROVISIONAL variant spelling (OCR/record typo seen on labels F08, F10, F13, M07, N04, N15, Q03, F02, M10, R2)"
 lodized salt,iodised salt,"PROVISIONAL variant spelling (OCR/record typo seen on labels F08, F10, F13, M07, N04, N15, Q03, F02, M10, R2)"
 iodized salt,iodised salt,"PROVISIONAL variant spelling (US spelling variant seen on labels F07, M15, N12, Q14)"
-cotton seed oil,cottonseed oil,"PROVISIONAL variant spelling (open-compound spelling seen on label F15)"
+cotton seed oil,cottonseed oil,PROVISIONAL variant spelling (open-compound spelling seen on label F15)
 refined palmolein oil,palmolein,"PROVISIONAL variant spelling (oil-form phrasing seen on labels F09, N05, R2)"
 anise seed,aniseed,"PROVISIONAL: alias of existing lexicon row ""aniseed"" (same ingredient (anise), same part (the seed), same form: 'aniseed' is the existing row's spelling of 'anise seed'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171316 ""Spices, anise seed"""
 caraway seed,caraway,"PROVISIONAL: alias of existing lexicon row ""caraway"" (same ingredient and part: the spice caraway is the seed; no other part is sold as 'caraway'); variant-policy-1; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 170918 ""Spices, caraway seed"""
@@ -188,3 +188,63 @@ water cress,watercress,"USDA NAL Agricultural Thesaurus Product 43832, https://l
 linseeds,flax seeds,"USDA NAL Agricultural Thesaurus Product 40527, https://lod.nal.usda.gov/nalt/en/page/40527, current page checked 2026-11-22, CC BY 4.0; exact same-food naming/spelling only; no new NOVA placement or form permission; inherits target item-own conditions. Bulk 2024 archive used for discovery only. Manually reviewed ordinary plural of the English food label."
 flaxseeds,flax seeds,"USDA NAL Agricultural Thesaurus Product 40527, https://lod.nal.usda.gov/nalt/en/page/40527, current page checked 2026-11-22, CC BY 4.0; exact same-food naming/spelling only; no new NOVA placement or form permission; inherits target item-own conditions. Bulk 2024 archive used for discovery only. Manually reviewed ordinary plural of the English food label."
 kiwi fruits,kiwifruit,"USDA NAL Agricultural Thesaurus Product 3217, https://lod.nal.usda.gov/nalt/en/page/3217, current page checked 2026-11-22, CC BY 4.0; exact same-food naming/spelling only; no new NOVA placement or form permission; inherits target item-own conditions. Bulk 2024 archive used for discovery only. Manually reviewed ordinary plural of the English food label."
+peanuts,peanut,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/11693 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+ground nuts,peanut,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/11693 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+groundnuts,peanut,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/11693 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+black eyed beans,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+blackeyed beans,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+black eyed peas,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+blackeyed peas,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+southernpea,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+southern peas,cowpeas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16208 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+faba beans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+fababeans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+broad beans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+horsebeans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+horse beans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+fava beans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+favabeans,broadbeans,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16211 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+pigeonpeas,pigeon peas,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16217 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+mustard leaves,mustard greens,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/19330 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+leaf mustard,mustard greens,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/19330 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+spinach beets,swiss chard,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/16805 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+collard greens,collards,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/19492 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+barbados cherries,acerola,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/131668 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+acerola fruits,acerola,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/131668 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+west indian cherries,acerola,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/131668 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+acerola cherries,acerola,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/131668 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+apple fruits,apples,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/11308 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+globe artichokes,artichokes,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/12567 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+bamboo sprouts,bamboo shoots,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/15691 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+asparagus spears,asparagus,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/13009 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+cardamon,cardamom,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/22375 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+manioc,cassava,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/22819 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+clementine mandarins,clementines,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/26507 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+sweet oranges,oranges,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/26518 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+pomelos,pummelo,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/26519 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+shaddock,pummelo,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/26519 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+cacao butter,cocoa butter,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/27554 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+copra oil,coconut oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/27581 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+maize oil,corn oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/28879 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+grape seed oil,grapeseed oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/28882 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+soy oil,soybean oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/28891 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+sunflower seed oil,sunflower oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/28892 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+sunflowerseed oil,sunflower oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/28892 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+linseed oil,flaxseed oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/34737 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+flax seed oil,flaxseed oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/34737 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+ground nut oil,peanut oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/43902 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+butteroil,butter oil,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/9158 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+soy flour,soya flour,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/40636 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+soyabean flour,soya flour,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/40636 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+soya bean flour,soya flour,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/40636 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+soybean flour,soya flour,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/40636 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+ewe milk,sheep milk,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/38845 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+ovine milk,sheep milk,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/38845 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+caprine milk,goat milk,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/43355 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+tumeric,turmeric,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/30814 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+lychees,litchis,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/49486 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+leechees,litchis,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/49486 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+lichees,litchis,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/49486 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+barley meal,barley flour,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/15860 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+corn meal,cornmeal,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/29164 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"
+maize meal,cornmeal,"USDA NALT current Product naming evidence only, checked2026-11-22, https://lod.nal.usda.gov/nalt/en/page/29164 ; CC BY4.0; retains target form and NOVA conditions (nalt-names-7)"

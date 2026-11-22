@@ -18,8 +18,10 @@ def g(text):
     return a.group if a.answered else None
 
 
-def test_synthetic_all_23_nut_seed_rows_are_covered():
-    assert len(ROWS) == 23 and {"almonds", "pumpkin seeds", "flax seeds", "walnuts", "cashew nuts"} <= set(ROWS)
+def test_synthetic_all_24_nut_seed_rows_are_covered():
+    # nalt-names-7 adds separately sourced plain peanut to all existing nut-condition guards.
+    assert "peanut" in ROWS
+    assert len(ROWS) == 24 and {"almonds", "pumpkin seeds", "flax seeds", "walnuts", "cashew nuts"} <= set(ROWS)
 
 
 @pytest.mark.parametrize("t", ROWS)

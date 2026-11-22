@@ -112,6 +112,10 @@ def test_condition_handling_processed_forms_stay_unassessed():
         r = analyse_text(f"Ingredients: {item}.", source="text")
         if item in approved_markers:
             assert r.answered and r.group == 4 and item not in r.unassessed, f"{item} is an approved strong marker"
+        elif item == "salted roasted peanuts":
+            # nalt-names-7: ground-nut identity plus FAO named roasting and salted-nut Group3 clauses.
+            # Still no conditioned lexicon row and never Group1 merely because peanut is now recognised.
+            assert r.answered and r.group == 3 and item not in r.unassessed
         else:
             assert item in r.unassessed, f"{item} should stay unassessed"
 

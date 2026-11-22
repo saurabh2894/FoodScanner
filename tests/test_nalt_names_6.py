@@ -40,7 +40,14 @@ def test_source_supported_milk_mixture_keeps_its_route(term):
 @pytest.mark.parametrize('form', ['{t}', 'Salted {t}', '{t} (Sugar)', '{t} powder', '100% {t} powder', '{t} powder (100% Rice)', '{t} (Banana Powder)', '{t} (Milk Powder)', '{t} oil', '{t} extract', '{t} juice', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)', 'Cashew Nuts ({t} Powder)', 'Cashew Nuts (100% {t} Powder)'])
 def test_alias_inherits_exact_target_not_an_extra_form_permission(alias, target, form):
     assert lookup(normalise_ingredient(alias).name)['term'] == target
-    assert answer(form.format(t=alias)) == answer(form.format(t=target))
+    if form == "{t} oil" and alias in {"linseed", "sunflowerseed"}:
+        # nalt-names-7 separately admits these ENTIRE oil names under current Product34737/28892.
+        # A short seed alias must not override the source-supported longer oil phrase.
+        current = json.loads((ROOT / "evaluation/nalt_names_7/admission.json").read_text())
+        assert alias + " oil" in {x["name"] for x in current["aliases"]}
+        assert answer(form.format(t=alias)) == 2
+    else:
+        assert answer(form.format(t=alias)) == answer(form.format(t=target))
 
 @pytest.mark.parametrize('term', ['star anise', 'winter melon', 'gherkin', 'haricot beans', 'catjang peas', 'mustard leave', 'poisonous mushrooms', 'coconut milk powder', 'cranberry extract', 'tamarind concentrate'])
 def test_unadmitted_ambiguities_and_derivatives_have_no_new_route(term):

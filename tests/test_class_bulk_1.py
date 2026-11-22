@@ -78,6 +78,9 @@ def test_synthetic_the_applied_state_gate_is_clean_and_the_21_rows_are_really_in
     # scoped-powder-5: NALT16207 independently supports these food names.
     # The historical batch gate is unchanged; only these later aliases leave its queue.
     later |= {"garbanzo bean", "garbanzo beans"}
+    # nalt-names-7: only exact current Product16208/16211 naming admissions, not the old candidate queue.
+    current = json.loads((ROOT / "evaluation" / "nalt_names_7" / "admission.json").read_text())
+    later |= {x["name"] for x in current["aliases"] if x["concept_id"] in {16208,16211}}
     assert cand and not (({r["from"] for r in cand} & syn) - later) and "black turtle beans" not in syn
 
 

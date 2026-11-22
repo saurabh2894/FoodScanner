@@ -1091,6 +1091,16 @@ for _texts in (CORPUS, PASTE):
     _texts.extend(t for t in _NALT_6_TEXTS if t not in _texts)
 
 
+# nalt-names-7: current-source naming/forms. Synthetic, not image or label accuracy.
+_NALT_7_MANIFEST = json.loads((ROOT / "evaluation" / "nalt_names_7" / "admission.json").read_text())
+_NALT_7_NAMES = [x["name"] for x in _NALT_7_MANIFEST["aliases"]] + ["peanut"]
+_NALT_7_FORMS = ["{t}", "Raw {t}", "Dried {t}", "Roasted {t}", "Salted {t}", "Sugared {t}", "{t} (Salt)", "{t} (Sugar)", "{t} (Brine)", "{t} (XQ9)", "{t} powder", "100% {t} powder", "Whole {t} powder", "{t} powder (100% Rice)", "{t} powder (Sugar)", "{t} butter", "{t} flour", "{t} oil", "{t} extract", "{t} juice", "{t} solids", "{t} protein isolate", "Mango ({t} Powder)", "Mango (100% {t} Powder)", "Cashew Nuts ({t} Powder)", "Cashew Nuts (100% {t} Powder)", "{t} (Milk Powder)", "{t} (Banana Powder)", "{t} (100% Rice, Banana Powder)", "Hydrogenated {t}", "Interesterified {t}", "{t} (Rice)", "{t} (Palm, Salt)"]
+_NALT_7_TEXTS = ["Ingredients: " + f.format(t=t) + "." for t in _NALT_7_NAMES for f in _NALT_7_FORMS]
+_NALT_7_TEXTS += ["Ingredients: " + t + "." for t in ["Swiss Chard", "Groundnut Oil", "Flaxseed Oil", "Bovine Milk Solids", "Chard", "Star Anise", "Winter Melon", "Haricot Beans", "Catjang Peas", "Cranberry", "Tamarind", "Coconut", "Celery"]]
+for _texts in (CORPUS, PASTE):
+    _texts.extend(t for t in _NALT_7_TEXTS if t not in _texts)
+
+
 TOTAL = len(CORPUS) + len(PASTE)
 
 

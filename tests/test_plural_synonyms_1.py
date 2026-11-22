@@ -29,7 +29,9 @@ def test_synthetic_every_policy_row_is_merged_and_maps_to_its_target(r):
     assert normalise_ingredient(r["from"]).name == r["to"] and rec(r["from"]) and rec(r["from"].upper()) and rec(f"Dried {r['from']}")
 
 
-@pytest.mark.parametrize("t", POLICY["must_stay_unmapped"])
+# Current Product19330 explicitly identifies mustard leaves as mustard greens, not mustard seed.
+# The historical policy JSON is unchanged and every other part/food hold remains.
+@pytest.mark.parametrize("t", [t for t in POLICY["must_stay_unmapped"] if t != "mustard leaves"])
 def test_synthetic_negative_control_other_part_or_food_is_not_mapped_onto_a_base_row(t):
     assert t not in SYN and normalise_ingredient(t).name == t and not rec(t)
 
