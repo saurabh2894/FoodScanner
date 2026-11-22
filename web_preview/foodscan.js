@@ -583,6 +583,7 @@
     // whole-food-guard-1 (mirrors classify.whole_food_observed / whole_food_nested): abstention only; explicit same-food equivalences, no taxonomy
     const SAME_MILK_PARTS = new Set(["milk", "cow milk", "buffalo milk", "goat milk"]);
     function wholeFoodObserved(ing, kind) {
+      if (kind === "flour") return (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter((p) => lookup(p) && SOURCE_PLACED_CULINARY.has(lookup(p).term));
       if (kind !== "whole_food") return [];
       let obs = Array.from(new Set(nutAddedObserved(ing).concat(Array.from(LEGUME_PRESERVED).sort().filter((w) => addedIn(ing, new Set([w]))))));
       if (grainAddedSalt(ing, kind)) {
@@ -630,14 +631,18 @@
     const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalPowder = (ing, kind) => kind === "whole_food" && isAnimalRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS);
+    // direct-culinary-2: no blanket culinary or raw-food guard expansion.
+    const SOURCE_PLACED_CULINARY = new Set(["corn starch", "baking powder", "baking soda"]);
     const fatBracketResidual = (ing) => {
-      if (!isFatRow(lookup(ing.name)) || !ing.inner) return [];
+      const head = lookup(ing.name);
+      if (!head || !(isFatRow(head) || SOURCE_PLACED_CULINARY.has(head.term)) || !ing.inner) return [];
       const ok = (t) => descriptors.has(t) || BRACKET_BENIGN.has(t) || LEGUME_ADDED.has(t) || LEGUME_PRESERVED.has(t);
       const out = [];
       for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
         const p = part.trim(), toks = p.toLowerCase().match(/[a-z]+/g) || [];
         if (!toks.length) continue;
-        if (["oil", "fat"].some((w) => isFatRow(lookup(p.toLowerCase() + " " + w)))) continue;
+        if (isFatRow(head) && ["oil", "fat"].some((w) => isFatRow(lookup(p.toLowerCase() + " " + w)))) continue;
+        if (head.term === "corn starch" && ["corn", "maize"].includes(p.toLowerCase())) continue;
         const row = lookup(p);
         if (row) { if (row.kind !== "culinary") out.push(p); }
         else if (!toks.every(ok)) out.push(p);
