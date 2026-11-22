@@ -596,8 +596,10 @@
     // whole-food-guard-1 (mirrors classify.whole_food_observed / whole_food_nested): abstention only; explicit same-food equivalences, no taxonomy
     const SAME_MILK_PARTS = new Set(["milk", "cow milk", "buffalo milk", "goat milk"]);
     function wholeFoodObserved(ing, kind) {
-      if (kind === "flour") return (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter((p) => lookup(p) && SOURCE_PLACED_CULINARY.has(lookup(p).term));
-      if (kind !== "whole_food") return [];
+      // scoped-flour-4: mirror the bounded added-condition check, not a raw-food mixture ban.
+      if (!["whole_food", "flour"].includes(kind)) return [];
+      // Keep the existing supported Group 3 salted-grain route and prior culinary exclusions.
+      if (kind === "flour" && grainAddedSalt(ing, kind)) return (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter((p) => lookup(p) && SOURCE_PLACED_CULINARY.has(lookup(p).term));
       let obs = Array.from(new Set(nutAddedObserved(ing).concat(Array.from(LEGUME_PRESERVED).sort().filter((w) => addedIn(ing, new Set([w]))))));
       if (grainAddedSalt(ing, kind)) {
         const saltRows = new Set(T.lexicon.filter((r) => r.kind === "culinary" && (r.term === "salt" || r.term.endsWith(" salt"))).map((r) => r.term));
