@@ -1,0 +1,546 @@
+{
+  "date": "2026-11-22",
+  "base": "e4bb96fb73a746095c522ee7b0eb0b2f53f0dfee",
+  "aliases": [
+    {
+      "name": "peanuts",
+      "target": "peanut",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/11693",
+      "concept_id": 11693
+    },
+    {
+      "name": "ground nuts",
+      "target": "peanut",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/11693",
+      "concept_id": 11693
+    },
+    {
+      "name": "groundnuts",
+      "target": "peanut",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/11693",
+      "concept_id": 11693
+    },
+    {
+      "name": "black eyed beans",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "blackeyed beans",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "black eyed peas",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "blackeyed peas",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "southernpea",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "southern peas",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208
+    },
+    {
+      "name": "faba beans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "fababeans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "broad beans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "horsebeans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "horse beans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "fava beans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "favabeans",
+      "target": "broadbeans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16211",
+      "concept_id": 16211
+    },
+    {
+      "name": "pigeonpeas",
+      "target": "pigeon peas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16217",
+      "concept_id": 16217
+    },
+    {
+      "name": "mustard leaves",
+      "target": "mustard greens",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/19330",
+      "concept_id": 19330
+    },
+    {
+      "name": "leaf mustard",
+      "target": "mustard greens",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/19330",
+      "concept_id": 19330
+    },
+    {
+      "name": "spinach beets",
+      "target": "swiss chard",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16805",
+      "concept_id": 16805
+    },
+    {
+      "name": "collard greens",
+      "target": "collards",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/19492",
+      "concept_id": 19492
+    },
+    {
+      "name": "barbados cherries",
+      "target": "acerola",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/131668",
+      "concept_id": 131668
+    },
+    {
+      "name": "acerola fruits",
+      "target": "acerola",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/131668",
+      "concept_id": 131668
+    },
+    {
+      "name": "west indian cherries",
+      "target": "acerola",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/131668",
+      "concept_id": 131668
+    },
+    {
+      "name": "acerola cherries",
+      "target": "acerola",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/131668",
+      "concept_id": 131668
+    },
+    {
+      "name": "apple fruits",
+      "target": "apples",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/11308",
+      "concept_id": 11308
+    },
+    {
+      "name": "globe artichokes",
+      "target": "artichokes",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/12567",
+      "concept_id": 12567
+    },
+    {
+      "name": "bamboo sprouts",
+      "target": "bamboo shoots",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/15691",
+      "concept_id": 15691
+    },
+    {
+      "name": "asparagus spears",
+      "target": "asparagus",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/13009",
+      "concept_id": 13009
+    },
+    {
+      "name": "cardamon",
+      "target": "cardamom",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/22375",
+      "concept_id": 22375
+    },
+    {
+      "name": "manioc",
+      "target": "cassava",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/22819",
+      "concept_id": 22819
+    },
+    {
+      "name": "clementine mandarins",
+      "target": "clementines",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26507",
+      "concept_id": 26507
+    },
+    {
+      "name": "sweet oranges",
+      "target": "oranges",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26518",
+      "concept_id": 26518
+    },
+    {
+      "name": "pomelos",
+      "target": "pummelo",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26519",
+      "concept_id": 26519
+    },
+    {
+      "name": "shaddock",
+      "target": "pummelo",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26519",
+      "concept_id": 26519
+    },
+    {
+      "name": "cacao butter",
+      "target": "cocoa butter",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/27554",
+      "concept_id": 27554
+    },
+    {
+      "name": "copra oil",
+      "target": "coconut oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/27581",
+      "concept_id": 27581
+    },
+    {
+      "name": "maize oil",
+      "target": "corn oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28879",
+      "concept_id": 28879
+    },
+    {
+      "name": "grape seed oil",
+      "target": "grapeseed oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28882",
+      "concept_id": 28882
+    },
+    {
+      "name": "soy oil",
+      "target": "soybean oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28891",
+      "concept_id": 28891
+    },
+    {
+      "name": "sunflower seed oil",
+      "target": "sunflower oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28892",
+      "concept_id": 28892
+    },
+    {
+      "name": "sunflowerseed oil",
+      "target": "sunflower oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28892",
+      "concept_id": 28892
+    },
+    {
+      "name": "linseed oil",
+      "target": "flaxseed oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/34737",
+      "concept_id": 34737
+    },
+    {
+      "name": "flax seed oil",
+      "target": "flaxseed oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/34737",
+      "concept_id": 34737
+    },
+    {
+      "name": "ground nut oil",
+      "target": "peanut oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/43902",
+      "concept_id": 43902
+    },
+    {
+      "name": "butteroil",
+      "target": "butter oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/9158",
+      "concept_id": 9158
+    },
+    {
+      "name": "soy flour",
+      "target": "soya flour",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/40636",
+      "concept_id": 40636
+    },
+    {
+      "name": "soyabean flour",
+      "target": "soya flour",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/40636",
+      "concept_id": 40636
+    },
+    {
+      "name": "soya bean flour",
+      "target": "soya flour",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/40636",
+      "concept_id": 40636
+    },
+    {
+      "name": "soybean flour",
+      "target": "soya flour",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/40636",
+      "concept_id": 40636
+    },
+    {
+      "name": "ewe milk",
+      "target": "sheep milk",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/38845",
+      "concept_id": 38845
+    },
+    {
+      "name": "ovine milk",
+      "target": "sheep milk",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/38845",
+      "concept_id": 38845
+    },
+    {
+      "name": "caprine milk",
+      "target": "goat milk",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/43355",
+      "concept_id": 43355
+    },
+    {
+      "name": "tumeric",
+      "target": "turmeric",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/30814",
+      "concept_id": 30814
+    },
+    {
+      "name": "lychees",
+      "target": "litchis",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/49486",
+      "concept_id": 49486
+    },
+    {
+      "name": "leechees",
+      "target": "litchis",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/49486",
+      "concept_id": 49486
+    },
+    {
+      "name": "lichees",
+      "target": "litchis",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/49486",
+      "concept_id": 49486
+    },
+    {
+      "name": "barley meal",
+      "target": "barley flour",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/15860",
+      "concept_id": 15860
+    },
+    {
+      "name": "corn meal",
+      "target": "cornmeal",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/29164",
+      "concept_id": 29164
+    },
+    {
+      "name": "maize meal",
+      "target": "cornmeal",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/29164",
+      "concept_id": 29164
+    }
+  ],
+  "redundant_not_added": [],
+  "new_foods": [
+    {
+      "term": "peanut",
+      "kind": "nut_seed",
+      "source": "PROVISIONAL (nalt-names-7): Martinez Steele et al., J Nutr2023, Table1 Group1 explicitly names \"Nuts, peanuts, and other oilseeds without salt or sugar\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ ; peanut is a reviewed singular adaptation of the named peanuts food. FAO2019 Table1 Group1 p.11 separately names \"tree and ground nuts and other oily seeds (with no added salt or sugar)\"; https://www.fao.org/4/ca5644en/ca5644en.pdf . USDA NALT current Product11693 explicitly binds peanuts to groundnuts/ground nuts and nuts (identity/category only, not NOVA), https://lod.nal.usda.gov/nalt/en/page/11693 ; checked2026-11-22, CC BY4.0. Plain edible seed only; CONDITION KEPT AT ITEM LEVEL (nut_seed), added salt/sugar is Group3. FAO named minimal roasting/grinding/powdering processes permit plain roasted or explicitly whole/pure same-item powder, not an unspecified powder, nut butter, flour, oil-roasting, extract or other derivative. Existing FAO Group4 protein-isolates marker is separate; no strong marker is added.",
+      "inference_level": "NAMED peanuts in current NOVA Table1; singular adaptation reviewed. FAO groundnuts is independent corroboration."
+    }
+  ],
+  "held": [
+    "cranberry",
+    "tamarind",
+    "coconut",
+    "celery",
+    "beets",
+    "arrowroot",
+    "groundnut",
+    "flaxseed",
+    "mungo beans",
+    "mungobeans",
+    "blackgram",
+    "haricot beans",
+    "star anise",
+    "winter melon",
+    "catjang peas",
+    "ginger root",
+    "jaggary",
+    "jagghery",
+    "bovine milk",
+    "chard"
+  ],
+  "rationale": {
+    "peanut": "Current NOVA Table1 explicitly names peanuts without salt or sugar; FAO groundnuts independently corroborates. NALT current Product binds names; only plain/conditional edible food and named minimal forms are admitted.",
+    "cowpeas": "Only blackeye/southern synonyms corroborated by existing FDC naming in target source; overly broad any-Vigna definition is NOT relied on.",
+    "swiss chard": "Current chard definition specifies edible green leaves, not beet root; existing FDC target explicitly names Chard, swiss, raw.",
+    "bovine milk": "A generic milk substitution extends the existing milk solids Group1 route to bovine milk solids, outside the source-reviewed milk scope. Held rather than broadening that known gap or changing classifier code.",
+    "mungo": "Name ambiguities between Vigna radiata and Vigna mungo not settled by a broad thesaurus synonym.",
+    "chard": "Short suffix alias rewrites the existing canonical swiss chard into swiss swiss chard, destroying its supported route. Held, with regression control. Spinach beets can map directly without that alias.",
+    "historical_controls": "Only current evidence-backed Peanuts/salted-roasted Peanuts, Maize Oil, Tumeric, Mustard Leaves, selected pulse names and entire Linseed Oil/Sunflowerseed Oil phrases supersede old abstentions. Original ledgers stay unchanged; all other negatives remain."
+  },
+  "target_evidence": {
+    "cowpeas": {
+      "kind": "legume",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named by the clause (an instance of the class 'legumes'); plain dry/raw seed form (inference level: class-instance); FDC category 'Legumes and Legume Products' (naming evidence only, CC0); CONDITION KEPT AT ITEM LEVEL (kind legume): FAO Group 3 names 'canned or bottled vegetables or legumes (pulses) preserved in brine' (p.7 prose; Table 1 Group 3 p.12 'Canned or bottled vegetables and legumes in brine') and defines Group 3 as 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; an item whose own name or bracket adds salt, sugar or brine never takes Group 1 through this row (Group 3 by the definition or the brine example; canned/bottled/preserved forms that do not say brine, salt or sugar abstain); roasted and boiled plain forms are unchanged (FAO Group 1 definition p.6 names roasting and boiling); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2644284 \"Blackeye pea, dry\"; sr_legacy FDC id 173758 \"Cowpeas, common (blackeyes, crowder, southern), mature seeds, raw\""
+    },
+    "broadbeans": {
+      "kind": "legume",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named by the clause (an instance of the class 'legumes'); plain dry/raw seed form (inference level: class-instance); FDC category 'Legumes and Legume Products' (naming evidence only, CC0); CONDITION KEPT AT ITEM LEVEL (kind legume): FAO Group 3 names 'canned or bottled vegetables or legumes (pulses) preserved in brine' (p.7 prose; Table 1 Group 3 p.12 'Canned or bottled vegetables and legumes in brine') and defines Group 3 as 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; an item whose own name or bracket adds salt, sugar or brine never takes Group 1 through this row (Group 3 by the definition or the brine example; canned/bottled/preserved forms that do not say brine, salt or sugar abstain); roasted and boiled plain forms are unchanged (FAO Group 1 definition p.6 names roasting and boiling); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 175205 \"Broadbeans (fava beans), mature seeds, raw\""
+    },
+    "pigeon peas": {
+      "kind": "legume",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named by the clause (an instance of the class 'legumes'); plain dry/raw seed form (inference level: class-instance); FDC category 'Legumes and Legume Products' (naming evidence only, CC0); CONDITION KEPT AT ITEM LEVEL (kind legume): FAO Group 3 names 'canned or bottled vegetables or legumes (pulses) preserved in brine' (p.7 prose; Table 1 Group 3 p.12 'Canned or bottled vegetables and legumes in brine') and defines Group 3 as 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; an item whose own name or bracket adds salt, sugar or brine never takes Group 1 through this row (Group 3 by the definition or the brine example; canned/bottled/preserved forms that do not say brine, salt or sugar abstain); roasted and boiled plain forms are unchanged (FAO Group 1 definition p.6 names roasting and boiling); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 172436 \"Pigeon peas (red gram), mature seeds, raw\""
+    },
+    "mustard greens": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169256 \"Mustard greens, raw\"; sr_legacy FDC id 169258 \"Mustard greens, frozen, unprepared\""
+    },
+    "swiss chard": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169991 \"Chard, swiss, raw\""
+    },
+    "collards": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2685574 \"Collards, raw\"; sr_legacy FDC id 170406 \"Collards, raw\"; sr_legacy FDC id 170408 \"Collards, frozen, chopped, unprepared\""
+    },
+    "acerola": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171686 \"Acerola, (west indian cherry), raw\""
+    },
+    "apples": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 1105430 \"Apples, red delicious, with skin, raw\"; foundation FDC id 1105547 \"Apples, honeycrisp, with skin, raw\"; foundation FDC id 1105664 \"Apples, granny smith, with skin, raw\"; foundation FDC id 1105781 \"Apples, gala, with skin, raw\"; foundation FDC id 1105897 \"Apples, fuji, with skin, raw\"; foundation FDC id 1750339 \"Apples, red delicious, with skin, raw\"; foundation FDC id 1750340 \"Apples, fuji, with skin, raw\"; foundation FDC id 1750341 \"Apples, gala, with skin, raw\"; foundation FDC id 1750342 \"Apples, granny smith, with skin, raw\"; foundation FDC id 1750343 \"Apples, honeycrisp, with skin, raw\"; sr_legacy FDC id 167793 \"Apples, raw, fuji, with skin (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 168201 \"Apples, raw, red delicious, with skin (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 168202 \"Apples, raw, golden delicious, with skin\"; sr_legacy FDC id 168203 \"Apples, raw, granny smith, with skin (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 168204 \"Apples, raw, gala, with skin (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 171688 \"Apples, raw, with skin (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 171689 \"Apples, raw, without skin\"; sr_legacy FDC id 171694 \"Apples, frozen, unsweetened, unheated (Includes foods for USDA's Food Distribution Program)\""
+    },
+    "artichokes": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 168387 \"Artichokes, (globe or french), frozen, unprepared\"; sr_legacy FDC id 169205 \"Artichokes, (globe or french), raw\""
+    },
+    "bamboo shoots": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169210 \"Bamboo shoots, raw\""
+    },
+    "asparagus": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2710823 \"Asparagus, green, raw\"; sr_legacy FDC id 168389 \"Asparagus, raw\"; sr_legacy FDC id 169208 \"Asparagus, frozen, unprepared\""
+    },
+    "cardamom": {
+      "kind": "herb_spice",
+      "source": "PROVISIONAL author seed (spice)"
+    },
+    "cassava": {
+      "kind": "vegetable",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"starchy roots and tubers such as potatoes, sweet potatoes and cassava\"; exact term IS named by the clause; plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169985 \"Cassava, raw\""
+    },
+    "clementines": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 168195 \"Clementines, raw\""
+    },
+    "oranges": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 327501 \"Oranges, raw, navels (Includes foods for USDA's Food Distribution Program)\"; foundation FDC id 746771 \"Oranges, raw, navels\"; sr_legacy FDC id 169916 \"Oranges, raw, California, valencias\"; sr_legacy FDC id 169917 \"Oranges, raw, navels (Includes foods for USDA's Food Distribution Program)\"; sr_legacy FDC id 169918 \"Oranges, raw, Florida\""
+    },
+    "pummelo": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 167754 \"Pummelo, raw\""
+    },
+    "cocoa butter": {
+      "kind": "culinary",
+      "source": "PROVISIONAL: NUPENS 'Food classification Nova' page (nupens.fsp.usp.br/en/food-classification-nova/), group 2 \"Processed culinary ingredients are substances extracted from foods of the first group by physical procedures such as pressing, centrifugation, and concentration\"; exact term not named (class-instance inference: cocoa butter is a fat pressed from cocoa beans); FDC names 'Oil, cocoa butter' (sr_legacy 171421; naming only); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171421 \"Oil, cocoa butter\"; demand-driven row (pmc-decisions-4)"
+    },
+    "coconut oil": {
+      "kind": "culinary",
+      "source": "research/02 group 2 (oils)"
+    },
+    "corn oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL (fats-rows-1): Group 2 definition (p.11) \"Substances obtained directly from group 1 foods or from nature by industrial processes such as pressing, centrifuging, refining, extracting or mining. Used to prepare, season and cook group 1 foods.\"; the corn is not a named example of \"seeds, nuts or fruit\", so placement rests on the general definition; inference level: class-instance of the definition (an oil obtained from a group 1 food by pressing, extracting or refining), not of the example list; Group 2 processed culinary ingredient; no purity or ingredient-list claim (FDC names only the oil); FDC (CC0 1.0), naming evidence only, never placement: category Fats and Oils, sr_legacy FDC id 171029 \"Oil, corn, industrial and retail, all purpose salad or cooking\"; foundation FDC id 748323 \"Oil, corn\"; senior review evaluation/junior_reviews_4/07_fats_oils_review.md"
+    },
+    "grapeseed oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL (fats-rows-1): FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"Vegetable oils crushed from seeds, nuts or fruit (notably olives)\"; exact term not named by the clause (an oil from seeds, an instance of the class \"vegetable oils crushed from seeds, nuts or fruit\"); inference level: class-instance of vegetable oils; Group 2 processed culinary ingredient; no purity or ingredient-list claim (FDC names only the oil); FDC (CC0 1.0), naming evidence only, never placement: category Fats and Oils, sr_legacy FDC id 171028 \"Oil, grapeseed\"; senior review evaluation/junior_reviews_4/07_fats_oils_review.md"
+    },
+    "soybean oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt"
+    },
+    "sunflower oil": {
+      "kind": "culinary",
+      "source": "research/02 group 2 (oils)"
+    },
+    "flaxseed oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL (fats-rows-1): FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"Vegetable oils crushed from seeds, nuts or fruit (notably olives)\"; exact term not named by the clause (an oil from seeds, an instance of the class \"vegetable oils crushed from seeds, nuts or fruit\"); inference level: class-instance of vegetable oils; Group 2 processed culinary ingredient; no purity or ingredient-list claim (FDC names only the oil); FDC (CC0 1.0), naming evidence only, never placement: category Fats and Oils, sr_legacy FDC id 167702 \"Oil, flaxseed, cold pressed\"; senior review evaluation/junior_reviews_4/07_fats_oils_review.md"
+    },
+    "peanut oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL: FAO 2019 Table 1 Group 2 p.11 \"Vegetable oils crushed from seeds, nuts or fruit (notably olives)\"; exact term not named by the clause (a class phrase); 'edible' is a descriptor word; name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 171410 \"Oil, peanut, salad or cooking\"; foundation FDC id 1750348 \"Oil, peanut\"; demand-driven row (demand-decisions-1)"
+    },
+    "butter oil": {
+      "kind": "culinary",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 2 p.11 \"butter and lard obtained from milk and pork\"; exact term not named (class-instance inference: a fat obtained from butter; whether it is anhydrous milk fat or ghee is not stated); demand-driven row (pmc-decisions-4)"
+    },
+    "soya flour": {
+      "kind": "flour",
+      "source": "PROVISIONAL (nalt-names-7 source correction): Martinez Steele et al., J Nutr2023, current introduction defines Group1 to include \"grains, legumes, meat, fish, and milk that have undergone no processing or processing like grinding, roasting, pasteurization, freezing\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Class-instance of a ground legume, NOT exact-named soya flour. Current USDA NALT Product40636 explicitly binds soy flour, soya flour, soyabean flour, soybean flour and soya bean flour, under flour and soybean products (identity/category only); https://lod.nal.usda.gov/nalt/en/page/40636 . Plain flour only; existing kind flour keeps single-item placement and mixed-flour abstention, not a protein isolate/concentrate or an extra composition claim. The previously quoted flours/tapioca footnote was not reproduced in the current page retrieval and is not relied on; replaced here by the verified ground-legume definition."
+    },
+    "sheep milk": {
+      "kind": "whole_food",
+      "source": "PROVISIONAL (dairy-rows-1): FAO 2019 (ca5644en.pdf) Table 1 Group 1 definition (p.11): \"Edible parts of plants (fruit, seeds, leaves, stems, roots, tubers) or of or from animals (muscle, fat, offal, eggs, milk), and also fungi, algae, all after separation from nature.\" and example \"fresh, powdered or pasteurized milk\": milk is placed as an animal food with NO species restriction. Inference level: class-instance of the animal milk named by FAO (the species is not named by any NOVA source read and verified; same level as goat milk). Does not cover: standardised or recombined milk, flavoured or sweetened milk, milk fractions (milk solids), or human milk. FDC (CC0 1.0), naming and plain-form evidence only, never placement: sr_legacy FDC id 170882 Milk"
+    },
+    "goat milk": {
+      "kind": "whole_food",
+      "source": "PROVISIONAL (per-form-2b): species-qualified milk routed to the milk food. FAO 2019 (ca5644en.pdf) Table 1 Group 1 definition (p.11): \"Edible parts of plants (fruit, seeds, leaves, stems, roots, tubers) or of or from animals (muscle, fat, offal, eggs, milk), and also fungi, algae, all after separation from nature.\" and example \"fresh, powdered or pasteurized milk\": milk is placed as an animal food with NO species restriction. Inference level: goat milk is a class-instance of the animal milk named by FAO (the species is not named by any NOVA source read); no source read states goat milk separately. Does not cover: standardised or recombined milk, flavoured or sweetened milk, milk fractions (milk solids), or human milk."
+    },
+    "turmeric": {
+      "kind": "herb_spice",
+      "source": "PROVISIONAL author seed (spice)"
+    },
+    "litchis": {
+      "kind": "fruit",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169086 \"Litchis, raw\""
+    },
+    "barley flour": {
+      "kind": "flour",
+      "source": "PROVISIONAL (nalt-names-7 source correction): Martinez Steele et al., J Nutr2023, Table1 Group1 explicitly names \"Grains of wheat and other cereals that are dried, polished, or ground as grits or flour\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Class-instance of the other-cereal grain flour class, NOT exact-named barley flour. USDA NALT current Product15860 binds barley flour and barley meal under barley products and flour (identity/category only), https://lod.nal.usda.gov/nalt/en/page/15860 . Existing kind flour keeps single-item placement and mixed-flour abstention. This does not claim the narrower FAO corn/wheat/oats/cassava flour example literally names or by itself covers barley."
+    },
+    "cornmeal": {
+      "kind": "flour",
+      "source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"grits, flakes or flour made from corn, wheat, oats, or cassava\"; exact term not named by the clause (an instance of the class 'grains'; inference level: class-instance of grits/flour; the clause names flour of corn, wheat, oats and cassava; flours of rice, rye, barley, millet, sorghum, buckwheat, quinoa, amaranth are instances of 'flour made from ... grains' (not named)); plain grain or plain flour form (inference level: class-instance); FDC category 'Cereal Grains and Pasta' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169697 \"Cornmeal, whole-grain, yellow\"; sr_legacy FDC id 169750 \"Cornmeal, whole-grain, white\""
+    }
+  },
+  "form_caveats": [
+    "Sugared prefix still abstains because the current parser does not recognise it; explicit salt/sugar item brackets take Group3, and no new parser guard is added.",
+    "FAO Table1 Group4 protein-isolates marker remains Group4; this is not a new plain-peanut placement.",
+    "Generic bovine milk and chard aliases are held after demonstrated route/scope failures.",
+    "Only current Product preferred/synonym labels, not translated foreign names, taxon synonyms or automatically generated singular aliases are admitted. Peanut is a separately reviewed ordinary singular adaptation."
+  ],
+  "source_corrections": {
+    "soya flour": "PROVISIONAL (nalt-names-7 source correction): Martinez Steele et al., J Nutr2023, current introduction defines Group1 to include \"grains, legumes, meat, fish, and milk that have undergone no processing or processing like grinding, roasting, pasteurization, freezing\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Class-instance of a ground legume, NOT exact-named soya flour. Current USDA NALT Product40636 explicitly binds soy flour, soya flour, soyabean flour, soybean flour and soya bean flour, under flour and soybean products (identity/category only); https://lod.nal.usda.gov/nalt/en/page/40636 . Plain flour only; existing kind flour keeps single-item placement and mixed-flour abstention, not a protein isolate/concentrate or an extra composition claim. The previously quoted flours/tapioca footnote was not reproduced in the current page retrieval and is not relied on; replaced here by the verified ground-legume definition.",
+    "barley flour": "PROVISIONAL (nalt-names-7 source correction): Martinez Steele et al., J Nutr2023, Table1 Group1 explicitly names \"Grains of wheat and other cereals that are dried, polished, or ground as grits or flour\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Class-instance of the other-cereal grain flour class, NOT exact-named barley flour. USDA NALT current Product15860 binds barley flour and barley meal under barley products and flour (identity/category only), https://lod.nal.usda.gov/nalt/en/page/15860 . Existing kind flour keeps single-item placement and mixed-flour abstention. This does not claim the narrower FAO corn/wheat/oats/cassava flour example literally names or by itself covers barley."
+  }
+}
