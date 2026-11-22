@@ -32,7 +32,9 @@ def test_synthetic_added_salt_or_sugar_is_group_3_at_item_level(t):
     assert g("salted " + t)[0] == 3 and g(t + ", salt")[0] == 3 and g(t + ", sugar")[0] == 3, t
 
 
-@pytest.mark.parametrize("t", ["Lotus Seeds", "Breadfruit Seeds", "Breadnut Seeds", "Sisymbrium Seeds", "Almond Butter", "Cashew Nut Butter", "Tahini", "Chestnut Flour", "Sesame Flour", "Oil Roasted Cashew Nuts", "Honey Roasted Pecans", "Peanuts", "Coconut"])
+@pytest.mark.parametrize("t", ["Lotus Seeds", "Breadfruit Seeds", "Breadnut Seeds", "Sisymbrium Seeds", "Almond Butter", "Cashew Nut Butter", "Tahini", "Chestnut Flour", "Sesame Flour", "Oil Roasted Cashew Nuts", "Honey Roasted Pecans", "Coconut"])
+# Plain Peanuts now has separate current-source admission and controls in nalt_names_7.
+# Other historical held forms remain unchanged.
 def test_synthetic_held_and_other_forms_stay_unrecognised(t):
     assert g(t)[0] is None, t
 
