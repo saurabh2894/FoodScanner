@@ -75,6 +75,9 @@ def test_synthetic_the_applied_state_gate_is_clean_and_the_21_rows_are_really_in
     syn = {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}
     cand = list(csv.DictReader((OUT / "synonym_candidates.csv").open(encoding="utf-8", newline="")))
     later = {r["from"] for r in csv.DictReader((ROOT / "evaluation" / "synonyms_2" / "synonym_rows.csv").open(encoding="utf-8", newline=""))}      # UPDATED: 'moth bean' and 'mat bean' were applied later by the separately gated synonyms-2 batch (FDC Common Name evidence); Batch 1 itself did not touch synonyms.csv
+    # scoped-powder-5: NALT16207 independently supports these food names.
+    # The historical batch gate is unchanged; only these later aliases leave its queue.
+    later |= {"garbanzo bean", "garbanzo beans"}
     assert cand and not (({r["from"] for r in cand} & syn) - later) and "black turtle beans" not in syn
 
 
