@@ -17,7 +17,8 @@ SYN = {r["from"]: r for r in csv.DictReader((ROOT / "src" / "foodscan" / "resour
 ROWS = list(csv.DictReader((EV / "synonym_rows.csv").open(encoding="utf-8", newline="")))
 # UPDATED (engine-fixes-1): 'bok choy' was gate-excluded in synonyms-2 (prefix-of-target rewrite defect); the engine is now target-safe and the row is re-added, so it leaves the parked list (13 remain parked).
 # scoped-powder-5: Maida now has exact FSSAI2.4.2 naming evidence. The old parked.csv is retained as history; all other parked aliases remain negative controls.
-PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline="")) if r["alias"] not in {"bok choy", "maida"}]
+# nalt-names-6: current NALT Product 16207 explicitly gives chick peas as the same chickpea food. The parked.csv is retained as history; every other hold remains.
+PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline="")) if r["alias"] not in {"bok choy", "maida", "chick peas"}]
 
 
 def g(text):
@@ -25,8 +26,8 @@ def g(text):
     return (a.group if a.answered else None), a
 
 
-def test_synthetic_23_historical_rows_remain_and_12_other_aliases_are_parked():
-    assert len(ROWS) == 23 and len(PARKED) == 12
+def test_synthetic_23_historical_rows_remain_and_11_other_aliases_are_parked():
+    assert len(ROWS) == 23 and len(PARKED) == 11
     for r in ROWS:
         assert SYN[r["from"]]["to"] == r["to"] and r["source"].startswith("PROVISIONAL: alias of existing lexicon row") and "recognition routing only" in r["source"]
         assert "FDC id" in r["source"] and ("food_attribute.csv row" in r["source"] or "bracketed alternate name in the FDC description" in r["source"])

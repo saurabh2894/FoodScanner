@@ -70,7 +70,7 @@ def test_synthetic_the_applied_state_gate_is_clean_and_every_row_is_in_this_bran
     ps = C["powder_surface"]
     assert ps["group1_after_forms_not_stated"] == [] and ps["newly_group4_or_other"] == {}
     assert all(C["synonyms_markers_untouched"].values()) and set(C["lexicon_rows"]["kind_changed"]) == {"mango", "lemon", "dates", "black raisin"}
-    assert {t for t, r in LEX.items() if r["kind"] == "fruit"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"])
+    assert {t for t, r in LEX.items() if r["kind"] == "fruit"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"]) | {"mangosteen", "durian", "rambutan"}  # nalt-names-6: separately sourced plain fruits; no cranberry/tamarind/coconut hold lifted
 
 
 @pytest.mark.parametrize("t", ["Salted Plums", "Plums (in syrup)", "Mango (sweetened)", "Strawberries (sweetened)", "Strawberries (with sugar)", "Apples (Apples, Sugar)"])

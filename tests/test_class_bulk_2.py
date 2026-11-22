@@ -71,7 +71,7 @@ def test_synthetic_the_applied_state_gate_is_clean_and_every_row_is_in_the_lexic
     assert ps["group1_after_forms_not_stated"] == [] and ps["newly_group4_or_other"] == {}
     assert C["drift"]["expected_owner_ruled"] == {"banana powder": [1, None], "strawberry powder": [1, None], "beetroot powder": [1, None]}
     assert all(C["synonyms_markers_untouched"].values()) and set(C["lexicon_rows"]["kind_changed"]) == {"cucumber", "tomato", "potato", "onion", "carrot", "cabbage"}
-    assert {t for t, r in LEX.items() if r["kind"] == "vegetable"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"])
+    assert {t for t, r in LEX.items() if r["kind"] == "vegetable"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"]) | {"mushroom", "lettuce"}  # nalt-names-6: separately sourced plain-food heads; historical gate unchanged
 
 
 @pytest.mark.parametrize("t", ["Salted Potatoes", "Potatoes (in brine)", "Carrots (sweetened)", "Salted Kale", "Carrots (Carrots, Salt)", "Tomato (with sugar)"])

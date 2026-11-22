@@ -1082,6 +1082,15 @@ _POWDER_5_TEXTS = ["Ingredients: almonds powder.","Ingredients: pumpkin seeds po
 for _texts in (CORPUS, PASTE):
     _texts.extend(t for t in _POWDER_5_TEXTS if t not in _texts)
 
+# nalt-names-6: synthetic source/form controls, not a measured label or OCR accuracy sample.
+_NALT_6_NAMES = ["mushroom", "lettuce", "mangosteen", "durian", "rambutan", "aubergine", "aubergines", "brinjal", "brinjals", "filbert", "filberts", "hazel nut", "hazel nuts", "soy bean", "soy beans", "chick pea", "chick peas", "linseed", "linseeds", "flaxseeds", "sunflowerseed", "sunflowerseeds", "blackcurrant", "blackcurrants", "sweetpotato", "sweetpotatoes", "passionfruit", "passionfruits", "kiwi fruit", "kiwi fruits", "water cress"]
+_NALT_6_FORMS = ["{t}", "Fresh {t}", "Dried {t}", "Salted {t}", "{t} (Salt)", "{t} (Sugar)", "Canned {t}", "{t} juice", "{t} extract", "{t} puree", "{t} powder", "100% {t} powder", "Whole {t} powder", "{t} powder (100% Rice)", "{t} (Banana Powder)", "100% {t} (Banana Powder)", "{t} (Milk Powder)", "Mango ({t} Powder)", "Mango (100% {t} Powder)", "Cashew Nuts ({t} Powder)", "Cashew Nuts (100% {t} Powder)"]
+_NALT_6_TEXTS = ["Ingredients: " + f.format(t=t) + "." for t in _NALT_6_NAMES for f in _NALT_6_FORMS]
+_NALT_6_TEXTS += ["Ingredients: Flaxseed Oil.", "Ingredients: Cranberry.", "Ingredients: Dried Cranberries (Sugar).", "Ingredients: Tamarind.", "Ingredients: Coconut.", "Ingredients: Celery Powder."]
+for _texts in (CORPUS, PASTE):
+    _texts.extend(t for t in _NALT_6_TEXTS if t not in _texts)
+
+
 TOTAL = len(CORPUS) + len(PASTE)
 
 
