@@ -150,7 +150,10 @@ _LEGUME_ADDED = _NUT_ADDED | frozenset({"brine", "brined"})
 
 
 def _added(ing, words) -> bool:
-    toks = re.findall(r"[a-z]+", ing.text.lower())
+    # scoped-nested-3: the existing fruit name sugar-apples is not added sugar.
+    # Keep two tokens so the existing negation window is not shortened.
+    text = re.sub(r"\bsugar\s+(apples?)\b", r"fruit \1", ing.text.lower())
+    toks = re.findall(r"[a-z]+", text)
     for i, t in enumerate(toks):
         if t in words:
             if any(x in ("no", "without", "non", "free") for x in toks[max(0, i - 2):i]) or (i + 1 < len(toks) and toks[i + 1] == "free"):
@@ -284,6 +287,21 @@ def fat_bracket_residual(ing) -> list:
         elif not all(t in ok_tokens for t in toks):
             out.append(p)
     return out
+
+
+# The four nutrient labels remain outside this check: FAO Table 1 expressly
+# includes Group 1 foods with vitamins/minerals added. Recognition-only grain
+# forms have no equivalent placement and must not disappear inside brackets.
+_NUTRIENT_LABELS = frozenset({"vitamins and minerals", "vitamins & minerals", "vitamins", "minerals"})
+
+
+def nested_unplaced(ing) -> list[str]:
+    out = []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or ""):
+        row = lookup(part.strip())
+        if row and row["kind"] == "unplaced" and row["term"] not in _NUTRIENT_LABELS:
+            out.append(f"{part.strip()} (inside {ing.raw})")
+    return list(dict.fromkeys(out))
 
 
 def fat_powder_stated(ing) -> bool:
@@ -583,6 +601,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     wf_nested = [(i.raw, whole_food_nested(i, k)) for i, k in zip(ings, kinds) if whole_food_nested(i, k)]
     kinds = ["food_powder" if powder_routed(i, k) else k for i, k in zip(ings, kinds)]
     unplaced = [i.raw for i, k in zip(ings, kinds) if k == "unplaced"]
+    unplaced += [name for i in ings for name in nested_unplaced(i)]
     if unplaced:
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.

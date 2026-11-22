@@ -11,7 +11,7 @@ from functools import cache
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
+from .classify import _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, nested_unplaced, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference
@@ -426,7 +426,9 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unassessed = list(dict.fromkeys(
         [i.raw for i in ings if not _recognisable(i)]
         + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
-    unplaced = list(dict.fromkeys(i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"))
+    unplaced = list(dict.fromkeys(
+        [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"]
+        + [name for i in ings for name in nested_unplaced(i)]))
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(items)] + amp_notes
@@ -507,7 +509,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
-        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or (_lookup(i.name) or {}).get("kind") == "unplaced")}}
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i))}}
     common["completeness"] = completeness
     if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
         blocking = blocking or f"{unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost"

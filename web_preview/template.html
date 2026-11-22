@@ -293,7 +293,7 @@
       var c = a.completeness, w = c.words;
       card.appendChild(el("div", {}, [
         el("h3", { text: "Completeness: " + c.status }),
-        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are outside the vocabulary. " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
+        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are not fully assessed. " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
         el("ul", { "class": "plain" }, c.reasons.map(function (r) { return el("li", { text: r }); }))
       ]));
     }
@@ -500,7 +500,7 @@
       stage = "Recognising text"; lastEvent = Date.now();
       var res = await worker.recognize(img);
       if (over) return;
-      // Yield of a reading = ingredients found minus those outside the vocabulary (0 when no list was found).
+      // Yield of a reading = ingredients found minus those not fully assessed (0 when no list was found).
       function yieldOf(a) { return a.ingredients.length ? Math.max(0, a.ingredients.length - a.unassessed.length - (a.unplaced ? a.unplaced.length : 0)) : 0; }
       var text = res.data.text, a1 = engine.analyseText(text, { source: "ocr" }), note = "";
       var ocrNotes = [], codesOf = function (a) { return a.ins.map(function (u) { return u.code; }); };
