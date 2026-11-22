@@ -366,13 +366,16 @@ _SAME_MILK_PARTS = frozenset({"milk", "cow milk", "buffalo milk", "goat milk"})
 
 
 def whole_food_observed(ing, kind: str) -> list:
-    if kind == "flour":
-        # Recognition of a new culinary child must not create a plain-flour Group1.
-        # Other historical flour conditions stay unchanged pending separate review.
+    # scoped-flour-4: an added/preserving condition cannot borrow plain-flour
+    # Group 1. Keep the existing salt-only placement for its bounded grain set.
+    if kind not in ("whole_food", "flour"):
+        return []
+    if kind == "flour" and grain_added_salt(ing, kind):
+        # Preserve existing positive salted-grain routes, including another
+        # Group 2 ingredient. This patch removes unsupported plain Group 1;
+        # it does not expand or remove an established Group 3 route.
         return [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or "")
                 if lookup(p.strip()) and lookup(p.strip())["term"] in _SOURCE_PLACED_CULINARY]
-    if kind != "whole_food":
-        return []
     obs = nut_added_observed(ing) + [w for w in sorted(_LEGUME_PRESERVED) if _added(ing, {w})]
     obs = list(dict.fromkeys(obs))
     if grain_added_salt(ing, kind):                                  # per-form-2a: salt on these 23 terms is a supported Group 3; only salt itself (the words 'salt'/'salted' or a lexicon salt row) is exempt
