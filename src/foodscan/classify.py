@@ -19,7 +19,7 @@ import re
 from dataclasses import dataclass, field
 from functools import cache
 
-from .normalise import Ingredient, flatten, normalise_ingredient, normalise_list
+from .normalise import Ingredient, flatten, normalise_ingredient, normalise_list, _split_brackets
 from .tables import load_table
 
 
@@ -180,18 +180,40 @@ def legume_preserved_form(ing) -> bool:
 # Every other reading abstains, alone or in a list; unrecognised co-ingredients are reported before this point and are never laundered by the abstention. A salted/brined/preserved legume or
 # vegetable keeps its guard (not routed).
 _POWDER_WORDS = frozenset({"powder", "powdered"})
-_POWDER_ROUTED = ("whole_food", "legume", "vegetable", "fruit")
+_POWDER_ROUTED = ("whole_food", "legume", "vegetable", "fruit", "nut_seed")
 # nut-guard-1 (owner decision): the canned/bottled/preserved, brine and unrecognised-bracket guards of the legume, vegetable and fruit kinds also apply to kind nut_seed. Measured before the change: almonds (brine), almonds (canned) and
 # almonds (XQ9) answered Group 1. Same item-level reading (the item's own name and bracket); no new source: FAO Group 3 "using preservation methods such as canning and bottling" with added salt, oil, sugar. Inference level: class-instance of that rule.
 _GUARDED_KINDS = _BRINE_KINDS + ("nut_seed",)
 
 
 def powder_composition_stated(ing) -> bool:
-    if re.search(r"(?<![\d.])100(?:\.0+)?\s*%", ing.raw.lower()):
-        return True
-    toks = re.findall(r"[a-z]+", ing.text.lower())
+    # A named child's percentage or 'whole' describes that child, not this food.
+    # Descriptor-only claims such as (100%) still describe this powder itself.
+    own_raw = _split_brackets(ing.raw)[0]
+    own_toks = re.findall(r"[a-z]+", own_raw.lower())
     row = lookup(ing.name)
-    return "whole" in toks and "milk" not in toks and not (row and row["term"] in _MILK_TERMS)
+    claims = [own_raw]
+    base = lookup(flatten(re.sub(r"\b(?:powder|powdered)\b", " ", ing.name)))
+    quality_words = {"whole", "pure", "plain", "powder", "powdered", "percent", "natural", "organic", "only"}
+    for part in raw_bracket_parts(ing.raw):
+        toks = re.findall(r"[a-z]+", part.lower())
+        if set(toks) <= quality_words:
+            claims.append(part)
+            continue
+        # An explicit composition of the very same food is not a borrowed claim.
+        child = normalise_ingredient(part)
+        child_row = lookup(child.name)
+        if child_row and ((base and child_row["term"] == base["term"]) or (row and child_row["term"] == row["term"])):
+            child_own = _split_brackets(part)[0]
+            child_toks = re.findall(r"[a-z]+", child_own.lower())
+            if re.search(r"(?<![\d.])100(?:\.0+)?\s*%", child_own.lower()):
+                return True
+            if "whole" in child_toks and "milk" not in child_toks and child_row["term"] not in _MILK_TERMS:
+                return True
+    if any(re.search(r"(?<![\d.])100(?:\.0+)?\s*%", part.lower()) for part in claims):
+        return True
+    toks = re.findall(r"[a-z]+", " ".join(claims).lower())
+    return "whole" in toks and "milk" not in own_toks and not (row and row["term"] in _MILK_TERMS)
 
 
 # Powdered MILK is placed by the source BY NAME (owner post-merge refinement): FAO Table 1 Group 1 lists "frozen eggs; fresh, powdered or pasteurized milk" (p. 11), so unlike vegetable powders
@@ -310,13 +332,70 @@ def fat_powder_stated(ing) -> bool:
 
 
 def powder_routed(ing, kind: str) -> bool:
-    if kind not in _POWDER_ROUTED or not _added(ing, _POWDER_WORDS):
+    if kind not in _POWDER_ROUTED:
+        return False
+    # A named child such as Milk Powder is not a powder form of its parent.
+    powder_named = _added(Ingredient(ing.raw, ing.name, ""), _POWDER_WORDS)
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner or ""):
+        toks = re.findall(r"[a-z]+", part)
+        if not lookup(part.strip()) and toks and all(t in _descriptors() | _BRACKET_BENIGN for t in toks):
+            powder_named = powder_named or _added(Ingredient(part, part, ""), _POWDER_WORDS)
+    if not powder_named:
         return False
     if kind == "whole_food" and milk_powder_named(ing):
         return False
-    if kind in _BRINE_KINDS and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing)):
+    if kind in _GUARDED_KINDS and (legume_added_salt_sugar_or_brine(ing) or legume_preserved_form(ing)):
         return False
     return True
+
+
+def raw_bracket_parts(raw: str) -> list[str]:
+    """Immediate children, retaining each child's own nested brackets."""
+    groups, depth, start = [], 0, 0
+    for n, ch in enumerate(raw):
+        if ch in "([{":
+            if depth == 0:
+                start = n + 1
+            depth += 1
+        elif ch in ")]}":
+            if depth == 1:
+                groups.append(raw[start:n])
+            depth = max(depth - 1, 0)
+    if depth:
+        groups.append(raw[start:])
+    parts = []
+    for group in groups:
+        depth, start = 0, 0
+        for m in re.finditer(r"[()\[\]{},;&]|\band\b", group, re.I):
+            token = m.group()
+            if token in "([{":
+                depth += 1
+            elif token in ")]}":
+                depth = max(depth - 1, 0)
+            elif depth == 0:
+                parts.append(group[start:m.start()].strip())
+                start = m.end()
+        parts.append(group[start:].strip())
+    return [p for p in parts if p]
+
+
+def nested_powder_unresolved(ing) -> list[str]:
+    """A child's own composition must be established at every bracket depth."""
+    if not ing.inner:
+        return []
+    out = []
+    for part in raw_bracket_parts(ing.raw):
+        child = normalise_ingredient(part)
+        row = lookup(child.name)
+        unresolved = bool(nested_powder_unresolved(child))
+        if row:
+            kind = row["kind"]
+            unresolved = unresolved or animal_powder(child, kind) or fat_powder(child, kind)
+            if kind == "food_powder" or powder_routed(child, kind):
+                unresolved = unresolved or not powder_composition_stated(child)
+        if unresolved:
+            out.append(f"{part} (inside {ing.raw})")
+    return list(dict.fromkeys(out))
 
 
 # Unknown additions on the same item are never laundered (class-bulk-3, owner requirement): the guard reads the item's own bracket for salt/sugar/brine, but a bracket on a legume, vegetable or fruit
@@ -634,6 +713,9 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if wf_condition:
         return Classification(None, reason="an item whose own text names an added or preserving condition (" + "; ".join(f"{raw}: {', '.join(o)}" for raw, o in wf_condition)
                               + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted")
+    nested_powders = [p for i in ings for p in nested_powder_unresolved(i)]
+    if nested_powders:
+        return Classification(None, reason="a nested powder's form or composition is not established (" + "; ".join(nested_powders) + "), so it cannot inherit the outer food's plain placement and no group is asserted")
     nut_salted = animal_dry + [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:

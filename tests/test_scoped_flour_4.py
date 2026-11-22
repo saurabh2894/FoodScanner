@@ -74,8 +74,10 @@ def test_strong_marker_keeps_priority(term, form):
     assert group(form.format(t=term)) == 4
 
 
-def test_no_pending_alias_is_accidentally_released():
-    assert group('Maida') is None
-    assert group('Cashew') is None
-    assert group('Pistachio') is None
-    assert group('Garbanzo Bean') is None
+def test_unplaced_derivatives_are_not_accidentally_released():
+    # scoped-powder-5 sources only the plain food names, not their derivatives.
+    # Exact-name positives are now checked in test_scoped_names_5.py.
+    assert group('Maida Milk') is None
+    assert group('Cashew Milk') is None
+    assert group('Pistachio Milk') is None
+    assert group('Garbanzo Bean Oil') is None
