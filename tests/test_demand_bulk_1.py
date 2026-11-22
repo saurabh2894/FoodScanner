@@ -65,6 +65,12 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] == "maida":
+        # scoped-powder-5: FSSAI2.4.2 names this exact food identity.
+        # Qualified/protein-rich/durum forms remain negative controls in test_scoped_names_5.
+        assert normalise_ingredient(d["term"]).name == "refined wheat flour"
+        assert grp("Ingredients: Maida.")[0] == 1
+        return
     if d["term"] in ("pasteurized cow milk", "pasteurised cow milk"):
         # per-form-2b (owner decision 2026-11-21: species-head milk recognition): recognised ONLY as the milk row 'cow milk' (descriptor 'pasteurized/pasteurised' dropped)
         from foodscan.classify import lookup
