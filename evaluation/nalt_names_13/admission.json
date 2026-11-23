@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-22",
+  "main_base": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "local_base": "nalt_names_12, unpublished",
+  "state": "LOCAL VALIDATED, unpublished, no commit or deployment",
+  "new_foods": [
+    {
+      "term": "greengram",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term greengram is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Plain edible Vigna radiata pulse, including whole or split seeds, not an assertion that whole seeds equal split dal. NALT Product16192 names greengram and mungbeans (https://lod.nal.usda.gov/nalt/16192); the IISc-hosted Pulses of Life proceedings explicitly describe whole and split pulse use (https://wgbis.ces.iisc.ac.in/energy/lake2016/proceedings/Keynote/T4_PULSES_OF_LIFE-MDS.pdf). No alias to moong dal is added or changed. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "blackgram",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term blackgram is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Plain edible Vigna mungo seed/pod food, not straw or forage. NALT Product17757 names blackgram and urd beans (https://lod.nal.usda.gov/nalt/17757); Feedipedia explicitly distinguishes Vigna mungo from Vigna radiata and describes edible seeds, dehulled/split seeds and green pods (https://feedipedia.review.fao.org/node/236). This row does not assert that a whole seed equals split urad dal; no such alias is added or changed. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "mungo beans",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term mungo beans is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Overlapping plain-legume food-name category, not an exclusive species or same-food alias. NALT Product16192 uses mungo beans for Vigna radiata (https://lod.nal.usda.gov/nalt/16192), whereas Feedipedia also names Vigna mungo mungo bean and explicitly distinguishes the species (https://feedipedia.review.fao.org/node/236). Both documented edible-seed readings independently instantiate the NOVA legume clause. The row supplies no placement for an extract, feed product, recipe or unspecified preparation. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "mungobeans",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term mungobeans is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Overlapping plain-legume food-name category using the joined spelling explicitly paired with mungo beans in NALT Product16192 (https://lod.nal.usda.gov/nalt/16192). That record is Vigna radiata naming evidence. The spaced name also denotes Vigna mungo in Feedipedia (https://feedipedia.review.fao.org/node/236); this row does not claim the two pulses are identical or claim an independently verified exclusive species for every joined-spelling use. Both physical culinary seed readings are separately covered by the positive legume clause. No same-food alias to either split dal is created. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "catjang peas",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term catjang peas is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Overlapping plain edible legume seed/pod food-name category, not a pigeon-pea or cowpea equivalence alias. NALT Product16217 uses catjang peas under Cajanus cajan (https://lod.nal.usda.gov/nalt/16217); Feedipedia independently describes dry pigeon-pea seeds/split dhal and culinary immature pods (https://feedipedia.review.fao.org/node/329). PROSEA identifies catjang cowpea as Vigna unguiculata cultivar group Biflora and explicitly describes edible tender pods and whole/split dried seeds (https://prosea.prota4u.org/view.aspx?id=4). The NOVA legume and plain-vegetable clauses separately cover those physical foods. PROSEA forage, hay, silage and manure uses are NOT included. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "haricot beans",
+      "kind": "legume",
+      "source": "PROVISIONAL (nalt-names-13): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Lentils, chickpeas, and other legumes\" and \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Exact term haricot beans is not named: class-instance of these plain-food classes, not an exact-named food or NOVA placement supplied by NALT. Overlapping plain edible bean seed/pod food-name category, not an alias to snap beans or any specific white seed. NALT Product16213 explicitly defines immature succulent Phaseolus vulgaris pods and lists haricot beans (https://lod.nal.usda.gov/nalt/16213); Collins defines small white beans often sold dried (https://www.collinsdictionary.com/dictionary/english/haricot-bean); Iowa State Extension independently distinguishes dry edible seeds from green snap beans despite their shared species (https://www.extension.iastate.edu/alternativeag/dry-edible-bean). The positive NOVA legume and plain-vegetable clauses independently cover the documented culinary forms. Shared taxonomy is not used to assert identical physical foods. Positive minimal-process scope from Monteiro et al., FAO2019 Table1 Group1 (https://www.fao.org/4/ca5644en/ca5644en.pdf): \"Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.\" This condition applies to the same original food without added substances, not an unspecified powder, flour, extract, oil, isolate, recipe or preserved product. Explicit same-food-only composition is required for ambiguous grinding/powder forms. Leaves, hulls, straw, forage, hay and silage are outside this seed/pod admission. Not a strong marker. Table1 Group3 in Martinez Steele et al. separately states \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Existing item-own salt/sugar/brine and unknown-condition guards are unchanged.",
+      "inference_level": "class-instance, not exact-named food"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "mungbeans",
+      "target": "greengram",
+      "source": "USDA NALT Product16192, https://lod.nal.usda.gov/nalt/16192, current2026-11-22, CC BY4.0: explicit product spellings mungbeans and greengram for Vigna radiata; independent whole/split edible seed corroboration https://wgbis.ces.iisc.ac.in/energy/lake2016/proceedings/Keynote/T4_PULSES_OF_LIFE-MDS.pdf. Naming only, not NOVA placement or a split-dal identity assertion; separately reviewed greengram food/form conditions retained (nalt-names-13)."
+    },
+    {
+      "name": "urd beans",
+      "target": "blackgram",
+      "source": "USDA NALT Product17757, https://lod.nal.usda.gov/nalt/17757, current2026-11-22, CC BY4.0: explicit product spellings urd beans and blackgram for Vigna mungo; independent seed/pod food identity https://feedipedia.review.fao.org/node/236. Naming only, not NOVA placement or a whole-seed/split-dal equivalence; separately reviewed blackgram food/form conditions retained (nalt-names-13)."
+    }
+  ],
+  "held": [
+    "cranberry",
+    "tamarind",
+    "coconut",
+    "celery",
+    "beets",
+    "arrowroot",
+    "star anise",
+    "winter melon",
+    "ginger root",
+    "jaggary",
+    "jagghery",
+    "bovine milk",
+    "chard",
+    "groundnut",
+    "flaxseed",
+    "tree mushrooms",
+    "scallions",
+    "spring onions",
+    "portabello mushrooms",
+    "portobella mushrooms",
+    "cashew fruit",
+    "cashew apple",
+    "truffles",
+    "dried vegetables",
+    "edible fungi",
+    "wild edible mushrooms",
+    "bush beans",
+    "pole beans",
+    "bushbeans",
+    "peppers (hot)",
+    "shea butter",
+    "shea oil",
+    "chili peppers"
+  ],
+  "source_backed_prior_hold_lifts": [
+    "greengram",
+    "blackgram",
+    "mungo beans",
+    "mungobeans",
+    "catjang peas",
+    "haricot beans",
+    "mungbeans",
+    "urd beans"
+  ],
+  "historical_holds_preserved_in": [
+    "nalt_names_8/admission.json",
+    "nalt_names_9/admission.json",
+    "nalt_names_10/admission.json",
+    "nalt_names_11/admission.json",
+    "nalt_names_12/admission.json"
+  ],
+  "notes": [
+    "Six head records and two aliases are food-name/category counts, not disjoint foods or measured coverage.",
+    "No existing whole-pulse/split-dal alias is changed. No classifier, browser engine, marker or importer mutation."
+  ]
+}
