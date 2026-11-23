@@ -344,7 +344,7 @@ def py_result(text, source="ocr"):
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
                  "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial, "ref_source": u.ref_source,
-                 "class_conflict": u.class_conflict, "declared": u.declared, "declared_roles": list(u.declared_roles), "role_notes": u.role_notes} for u in a.ins_mappings],
+                 "declaration_only": u.declaration_only, "class_conflict": u.class_conflict, "declared": u.declared, "declared_roles": list(u.declared_roles), "role_notes": u.role_notes} for u in a.ins_mappings],
     }
 
 
@@ -1195,6 +1195,15 @@ _conflict_controls = ["Ingredients: Milk, " + term + " (" + prefix + code + ")" 
     for prefix in ["", "INS ", "E"] for suffix in ["", ", maltodextrin"]]
 PAIRS += [(t,s)for t in _conflict_controls for s in ["ocr","text"]]
 PAIRS += [(t.replace("Milk, ","Milk. Contains "),s)for t in _conflict_controls for s in ["ocr","text"]]
+TOTAL = len(PAIRS)
+
+
+_declaration_controls = ["Ingredients: Milk. " + claim + "."
+    for claim in ["Contains Stabilizer (INS 999)","Contains INS 999","Contains Raising Agent (INS 500(ii))",
+                  "Contains Preservative (INS 211)","Contains INS 102","Contains Color (102)",
+                  "Contains no Stabilizer (999)","May contain INS 999","Contains milk","Contains wheat",
+                  "Contains no Color (102), contains Stabilizer (999)"]]
+PAIRS += [(t,s)for t in _declaration_controls for s in ["ocr","text"]]
 TOTAL = len(PAIRS)
 
 

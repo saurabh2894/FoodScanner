@@ -107,6 +107,7 @@
   {% if result.ins_mappings %}
     {% macro effect(u) -%}
       {%- if u.class_conflict -%}Class/code mismatch (entry unresolved; no marker evidence used)
+      {%- elif u.declaration_only -%}Declaration only (outside the ingredient list; code mapping alone does not decide a group)
       {%- elif u.name is none and u.ref_name -%}No decision rule (the JECFA page read names it, but it cannot decide a group; unknown stays unknown)
       {%- elif u.name is none -%}Code not in the table (cannot count as a marker; if nothing else decides, the result stays uncertain)
       {%- elif u.strength == 'strong' -%}Ultra-processing marker
@@ -114,7 +115,7 @@
       {%- else -%}Not a marker by itself{%- endif -%}
     {%- endmacro %}
     <h3>Additive codes</h3>
-    {% set named = result.ins_mappings | selectattr('name') | rejectattr('class_conflict') | list | length %}
+    {% set named = result.ins_mappings | selectattr('name') | rejectattr('class_conflict') | rejectattr('declaration_only') | list | length %}
     <p class="src">{{ result.ins_mappings | length }} found: {{ named }} with a usable decision rule, {{ result.ins_mappings | length - named }} without.</p>
     {% for group in result.ins_mappings | groupby('ingredient') %}
       <div class="insgroup">
@@ -127,7 +128,7 @@
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
             {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} {{ 'Name is provisional' if 'PROVISIONAL' in u.ref_source else 'Name checked against its source page' }} ({{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
             {% for n in u.role_notes %}<span class="src">{{ n }}</span>{% endfor %}
-            <span class="effect">{{ u.role_label if (not u.class_conflict and u.role_label and u.strength not in ('strong', 'weak', 'weak_specific')) else effect(u) }}</span>
+            <span class="effect">{{ u.role_label if (not u.class_conflict and not u.declaration_only and u.role_label and u.strength not in ('strong', 'weak', 'weak_specific')) else effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>
         {% endfor %}

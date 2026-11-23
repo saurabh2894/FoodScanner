@@ -657,6 +657,13 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
             if any(u.class_conflict for u in ing.ins):
                 weak.append(Driver(clause, "declared class and local code mapping differ; entry unresolved", "label wording versus existing project mapping; no source resolves this mismatch"))
                 continue
+            # Keep existing positive cosmetic declarations. Other additive/code
+            # evidence blocks an unsupported lower-group answer, not a new Group 4 route.
+            for h in _hits_for(ing):
+                if h.strength != "strong":
+                    weak.append(Driver(clause, h.detail, h.source))
+                elif h.marker_class == "ins":
+                    weak.append(Driver(clause, "code stated outside ingredient list; verify declaration before using its mapped marker", h.source))
             for pat, row in _markers():
                 if row["strength"] == "strong" and row["marker_class"] == "cosmetic_additive" and pat.search(ing.text):
                     strong.append(Driver(decl, f'declared in "Contains" statement: "{row["term"]}"', row["source"]))

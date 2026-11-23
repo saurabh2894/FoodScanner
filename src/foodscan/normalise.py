@@ -53,6 +53,7 @@ class InsUse:
     ref_source: str | None = None
     # Declared role (roles.py): the class the SCANNED label names for the entry this code sits in ("Acidity Regulator (INS 330)" -> acidity regulator).
     # Read from the label text only, never from the code. Display only: it never feeds a decision.
+    declaration_only: bool = False  # positive statement outside the ingredient list
     entry_conflict: bool = False  # another code in this same declaration may disagree
     declared: str | None = None            # the label's own wording for the entry
     declared_roles: tuple[str, ...] = ()   # canonical roles read from it; () when the label names no class

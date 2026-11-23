@@ -179,7 +179,7 @@
   };
   EFFECTS.weak_specific = EFFECTS.weak;
   EFFECTS.reference = { tone: "unknown", label: "No decision rule", help: "A JECFA database page that was read names this code, but this project has no rule for it, so it cannot decide a group. Unknown stays unknown: it does not mean the product is or is not ultra-processed." };
-  function effectOf(u) { if (u.class_conflict) return {tone:"unknown",label:"Class/code mismatch",help:"No marker evidence from this entry is used until the mismatch is resolved."}; return u.name === null ? (u.ref_name ? EFFECTS.reference : EFFECTS.unknown) : (EFFECTS[u.strength] || EFFECTS.unlisted); }
+  function effectOf(u) { if (u.declaration_only && !u.class_conflict) return {tone:"unknown",label:"Declaration only",help:"Stated outside the ingredient list. Its code mapping alone does not decide a group."}; if (u.class_conflict) return {tone:"unknown",label:"Class/code mismatch",help:"No marker evidence from this entry is used until the mismatch is resolved."}; return u.name === null ? (u.ref_name ? EFFECTS.reference : EFFECTS.unknown) : (EFFECTS[u.strength] || EFFECTS.unlisted); }
   function shortSource(src) {
     if (!src) return "";
     if (/^research\//.test(src)) return "Project research notes";
@@ -187,7 +187,7 @@
     return src.slice(0, 48);
   }
   function insBlock(uses) {
-    var named = uses.filter(function (u) { return u.name !== null && !u.class_conflict; }).length, unknown = uses.length - named;
+    var named = uses.filter(function (u) { return u.name !== null && !u.class_conflict && !u.declaration_only; }).length, unknown = uses.length - named;
     var groups = [], index = {};
     uses.forEach(function (u) {
       var key = (u.ingredient || "") + "||" + (u.section || "");
@@ -217,7 +217,7 @@
         }
         if (u.source) main.appendChild(el("span", { "class": "src", text: "Source: " + shortSource(u.source) }));
         (u.role_notes || []).forEach(function (n) { main.appendChild(el("span", { "class": "src", text: n })); });
-        var declaredPill = (!u.class_conflict && u.declared_roles && u.declared_roles.length && ["strong", "weak", "weak_specific"].indexOf(u.strength) < 0) ? "Declared as " + u.declared_roles.join(" & ") : null;
+        var declaredPill = (!u.class_conflict && !u.declaration_only && u.declared_roles && u.declared_roles.length && ["strong", "weak", "weak_specific"].indexOf(u.strength) < 0) ? "Declared as " + u.declared_roles.join(" & ") : null;
         if (declaredPill) eff = { tone: "neutral", label: declaredPill, help: "The class this label itself declares for the entry. See the notes under the code for what the NOVA source says about that role." };
         return el("li", { "class": "ins-row" }, [
           el("span", { "class": "ins-code", text: "INS " + u.code }),

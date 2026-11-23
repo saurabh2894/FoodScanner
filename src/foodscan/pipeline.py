@@ -435,8 +435,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unplaced = list(dict.fromkeys(
         [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"]
         + [name for i in ings for name in nested_unplaced(i)]))
-    declaration_conflicts = [i for decl in parsed.declarations for i in normalise_list(split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE))) if any(u.class_conflict for u in i.ins)]
-    uses = [u for i in ings + declaration_conflicts for u in i.ins]
+    declaration_evidence = [i for decl in parsed.declarations for i in normalise_list(split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE))) if i.ins or _hits_for(i)]
+    uses = [u for i in ings for u in i.ins] + [replace(u, declaration_only=True) for i in declaration_evidence for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(items)] + amp_notes
     section_warnings += [f'Milk composition declaration (not an added ingredient): "{seg}". No vitamin, added-solid or milk-fat ingredient was inferred.' for seg in parsed.composition]
@@ -447,7 +447,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
     section_warnings += [f'"{i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class' for i in ings if sweetener_foods_only(i)]
     section_warnings += [f'"{i.raw}": additive-absence wording is not treated as a positive ingredient or code declaration; the entry stays unresolved' for i in ings if is_additive_absence_claim(i.raw)]
-    section_warnings += [f'"{i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used' for i in ings + declaration_conflicts if any(u.class_conflict for u in i.ins)]
+    section_warnings += [f'"{i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used' for i in ings + declaration_evidence if any(u.class_conflict for u in i.ins)]
     section_warnings += _role_phrase_notes(ings)
     pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
     section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]

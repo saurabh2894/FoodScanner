@@ -495,7 +495,7 @@
         const classes = row ? (row.functional_class || "").split(";").map((x) => x.trim()).filter(Boolean) : [];
         const ref = row ? null : insRef[code];
         uses.push({ code, name: row ? row.name : null, source: row ? row.source : null, classes, strength: row ? row.strength : null, ingredient: null, section: null,
-          ref_name: ref ? ref.name : null, ref_classes: ref ? (ref.functional_classes || "").split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && (ref.reading || "").startsWith("partial")), ref_source: ref ? (ref.source || null) : null, declared: null, declared_roles: [], role_notes: [] });
+          ref_name: ref ? ref.name : null, ref_classes: ref ? (ref.functional_classes || "").split(";").map((x) => x.trim()).filter(Boolean) : [], ref_partial: !!(ref && (ref.reading || "").startsWith("partial")), ref_source: ref ? (ref.source || null) : null, declaration_only:false, declared: null, declared_roles: [], role_notes: [] });
       };
       const low = text.toLowerCase().replace(BARE_RE, (...a) => {
         const m = a[0], groups = a[a.length - 1];
@@ -795,6 +795,10 @@
           const ing = normaliseIngredient(clause);
           if (ing.ins.some((u) => u.class_conflict)) {
             weak.push({ingredient:clause, detail:"declared class and local code mapping differ; entry unresolved", source:"label wording versus existing project mapping; no source resolves this mismatch", section:null}); continue;
+          }
+          for (const h of hitsFor(ing)) {
+            if (h.strength !== "strong") weak.push({ingredient:clause, detail:h.detail, source:h.source, section:null});
+            else if (h.marker_class === "ins") weak.push({ingredient:clause, detail:"code stated outside ingredient list; verify declaration before using its mapped marker", source:h.source, section:null});
           }
           for (const { re, row } of markers)
             if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(ing.text))
@@ -1136,7 +1140,7 @@
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced)))];
-      const declarationConflicts = parsed.declarations.flatMap((d) => splitItemsText(d.replace(/^contains?\s*:?[ ]*/i, "")).map(normaliseIngredient)).filter((i) => i.ins.some((u) => u.class_conflict));
+      const declarationEvidence = parsed.declarations.flatMap((d) => splitItemsText(d.replace(/^contains?\s*:?[ ]*/i, "")).map(normaliseIngredient)).filter((i) => i.ins.length || hitsFor(i).length);
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
       sectionWarnings.push(...parsed.composition.map((seg) => `Milk composition declaration (not an added ingredient): "${seg}". No vitamin, added-solid or milk-fat ingredient was inferred.`));
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
@@ -1144,7 +1148,7 @@
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
       sectionWarnings.push(...ings.filter(sweetenerFoodsOnly).map((i) => `"${i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class`));
       sectionWarnings.push(...ings.filter((i) => isAdditiveAbsenceClaim(i.raw)).map((i) => `"${i.raw}": additive-absence wording is not treated as a positive ingredient or code declaration; the entry stays unresolved`));
-      sectionWarnings.push(...ings.concat(declarationConflicts).filter((i) => i.ins.some((u) => u.class_conflict)).map((i) => `"${i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used`));
+      sectionWarnings.push(...ings.concat(declarationEvidence).filter((i) => i.ins.some((u) => u.class_conflict)).map((i) => `"${i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used`));
       sectionWarnings.push(...roleNotes(ings));
       const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
       sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));
@@ -1152,7 +1156,7 @@
       if (implausible) sectionWarnings.push("Few of the items were recognised, so this text may not be the ingredient list");
       sectionWarnings.push(...possibleMisreads(ings));
       if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
-      const common = { ingredients: items, ins: ings.concat(declarationConflicts).flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, unplaced, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins).concat(declarationEvidence.flatMap((i) => i.ins.map((u) => ({...u,declaration_only:true})))), warnings: [...sectionWarnings], unassessed, unplaced, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null, vocabLast = false;      // vocabLast: the last item is not in the vocabulary but does not look cut off (a vocabulary gap, not a truncation)
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1])) {
