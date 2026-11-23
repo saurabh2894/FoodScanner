@@ -1,0 +1,15 @@
+{
+  "name": "foodscan-browser-checks",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local-only browser reliability checks for FoodScanner",
+  "scripts": {
+    "test:provenance": "python scripts/run_provenance_check.py"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

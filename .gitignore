@@ -8,3 +8,4 @@ web_preview/dist/
 web_preview/vendor/
 .vercel
 data/cache/
+node_modules/
