@@ -1,0 +1,3699 @@
+{
+  "b1/N01": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"hydrogenated\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Sugar",
+      "Refined Wheat flour (Maida)",
+      "Hydrogenated vegetable fats",
+      "Fractionated vegetable fats",
+      "Milk solids",
+      "Cocoa solids (3.8%)",
+      "Emulsifier (Soya lecithin and 476)",
+      "Raising agent (500 (ii))",
+      "Yeast",
+      "Iodised salt",
+      "Flour treatment agent (516)",
+      "Artificial (Vanilla) flavouring substances"
+    ],
+    "unassessed": [
+      "Fractionated vegetable fats",
+      "Cocoa solids (3.8%)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "500(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": "Raising agent",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Raising agent\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "516",
+        "name": null,
+        "ref_name": null,
+        "declared": "Flour treatment agent",
+        "declared_roles": [
+          "flour treatment agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flour treatment agent\".",
+          "Declared as flour treatment agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b1/N02": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Refined wheat flour (maida)",
+      "refined (palm & palmolein) oil",
+      "sugar",
+      "liquid glucose",
+      "raising agents [503(ii), 341(ii), 500(ii) & 450(i)]",
+      "butter (1.2%)",
+      "black salt",
+      "milk solids",
+      "dehydrated vegetable (chives) (1%)",
+      "iodised salt",
+      "nature identical flavouring substance",
+      "dough conditioner (223)"
+    ],
+    "unassessed": [
+      "liquid glucose",
+      "dough conditioner (223)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "503(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": "raising agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"raising agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "341(ii)",
+        "name": null,
+        "ref_name": null,
+        "declared": "raising agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"raising agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "500(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": "raising agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"raising agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "450(i)",
+        "name": null,
+        "ref_name": null,
+        "declared": "raising agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"raising agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b1/N03": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Supergrain blend (whole wheat (atta), jowar) (83%)",
+      "guar gum",
+      "iodised salt",
+      "rosemary (antioxidant) [INS 392]",
+      "Mixed spices (onion, coriander, chilli, turmeric, garlic, cumin, aniseed, fenugreek, black pepper, ginger, clove, cardamom, nutmeg)",
+      "tapioca starch",
+      "desi khand",
+      "iodised salt",
+      "edible vegetable oil (soyabean)",
+      "natural colors",
+      "nature identical flavors",
+      "guar gum",
+      "citric acid (acidity regulator) [INS 330)",
+      "baking soda (raising agent) [INS 500(ii)]"
+    ],
+    "unassessed": [
+      "guar gum",
+      "desi khand",
+      "Supergrain blend (group name; its contents were assessed separately)",
+      "Mixed spices (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "392",
+        "name": null,
+        "ref_name": "Rosemary extract",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "500(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      }
+    ]
+  },
+  "b1/N04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"As Flavouring Agent.\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "INS 627 (disodium guanylate)",
+      "INS 631 (disodium inosinate)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Cereal Products (66%) (Rice Meal (43%), Com Meal (23%))",
+      "Edible Vegetable Oil (Rice Bran Oil)",
+      "*Seasoning (Sugar, &quot;Spices & Condiments, lodised Salt, Rice Flour, Flavour (Natural & Nature Identical Flavouring Substances), Acidity Regulators (330, 196), Black Salt, Flavour Enhancers (627, 631), Colours (160c 150d))",
+      "Gram Meal (0.5%)"
+    ],
+    "unassessed": [
+      "Rice Meal (43%)",
+      "Com Meal (23%)",
+      "&quot",
+      "Spices & Condiments",
+      "Gram Meal (0.5%)",
+      "Cereal Products (66%) (group name; its contents were assessed separately)",
+      "Seasoning (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "Acidity Regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "196",
+        "name": null,
+        "ref_name": null,
+        "declared": "Acidity Regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "627",
+        "name": "disodium guanylate",
+        "ref_name": null,
+        "declared": "Flavour Enhancers",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flavour Enhancers\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "631",
+        "name": "disodium inosinate",
+        "ref_name": null,
+        "declared": "Flavour Enhancers",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flavour Enhancers\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b1/N05": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)",
+      "\"whey powder\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "INS 627 (disodium guanylate)",
+      "INS 631 (disodium inosinate)",
+      "\"colour\" (cosmetic_additive)",
+      "\"hydrogenated\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Tapioca Starch",
+      "Refined Palmolein Oil",
+      "Soya Flour (9%)",
+      "Split Pulse Urad (Urad Dal) Flour",
+      "Mixed Spices (Refined Sugar, Edible Common Salt, Maltodextrin, Black Salt, Red Chilli Powder, Dried Mango Powder, Onion Powder, Glucose Powder, Preservative (INS 262i), Coriander Powder, Cumin Powder, Fennel, Whey Powder, Ginger Powder, Garlic Powder, Clove Powder, Yeast Extract, Pipal, Black Pepper, Acidity Regulator (INS 296), Flavour Enhancer (INS 627, INS 631), Turmeric Powder, Anticaking Agent (INS 551), Bay Leaf, Acidity Regulator (INS 330), Colour (INS 160c), Nutmeg, Capsicum Powder, Cinnamon, Asafoetida)",
+      "Hydrogenated Vegetable Oil (Vanaspati)",
+      "Natural Flavouring Substance",
+      "Nature Identical Flavouring Substance"
+    ],
+    "unassessed": [
+      "Glucose Powder",
+      "Yeast Extract",
+      "Pipal",
+      "Mixed Spices (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "262i",
+        "name": null,
+        "ref_name": null,
+        "declared": "Preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "296",
+        "name": null,
+        "ref_name": "DL-Malic acid",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "627",
+        "name": "disodium guanylate",
+        "ref_name": null,
+        "declared": "Flavour Enhancer",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flavour Enhancer\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "631",
+        "name": "disodium inosinate",
+        "ref_name": null,
+        "declared": "Flavour Enhancer",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flavour Enhancer\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "551",
+        "name": null,
+        "ref_name": "Silicon Dioxide, Amorphous",
+        "declared": "Anticaking Agent",
+        "declared_roles": [
+          "anticaking agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Anticaking Agent\".",
+          "Declared as anticaking agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "160c",
+        "name": null,
+        "ref_name": null,
+        "declared": "Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Colour\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b1/N06": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "ingredients": [
+      "SUGAR",
+      "MILK SOLIDS",
+      "COCOA BUTTER",
+      "COCOA SOLIDS",
+      "PERMITTED EMULSIFIERS (E322, E476)"
+    ],
+    "unassessed": [
+      "COCOA SOLIDS"
+    ],
+    "ins_mappings": [
+      {
+        "code": "322",
+        "name": "lecithin",
+        "ref_name": null,
+        "declared": "PERMITTED EMULSIFIERS",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED EMULSIFIERS\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "476",
+        "name": null,
+        "ref_name": "Polyglycerol Esters of interesterified Ricinoleic Acid",
+        "declared": "PERMITTED EMULSIFIERS",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED EMULSIFIERS\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b1/N07": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: cocoa nibs (45%); other open items: a powder is named and its composition is not established: date powder (45%)",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "cocoa(cocoa nibs (45%), cocoa butter (10%))",
+      "date powder (45%)"
+    ],
+    "unassessed": [
+      "cocoa nibs (45%)",
+      "cocoa (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": []
+  },
+  "b1/N08": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "ingredients": [
+      "Pasteurised Toned Milk",
+      "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+    ],
+    "unassessed": [
+      "Active Lactic Culture and Probiotic Culture (Bifidobacterium lactis & Lactobacillus acidophilus)"
+    ],
+    "ins_mappings": []
+  },
+  "b1/N09": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [
+      "Milk composition declaration (not an added ingredient): \"Fat 6.00% Min., SNF 9.00% Min.\". No vitamin, added-solid or milk-fat ingredient was inferred.",
+      "Existing milk mappings may be PROVISIONAL: NOVA names milk, not each species or standardised class. The composition note supplies no new placement evidence; see full source evidence."
+    ],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "ingredients": [
+      "Pasteurized Buffalo Milk"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b1/N10": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (PERMITED CLASS II PRESERVATIVE -> \"preservative\" (unlisted_additive)); not enough to call a group; other open items: not in the local vocabulary: Synthetic Vinegar",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"preservative\" (unlisted_additive)"
+    ],
+    "ingredients": [
+      "Mango Pieces",
+      "Salt",
+      "Chilli Powder",
+      "Sesame Oil (Gingelly Oil)",
+      "Mustard",
+      "Fenugreek",
+      "Asafoetida",
+      "Synthetic Vinegar"
+    ],
+    "unassessed": [
+      "Synthetic Vinegar"
+    ],
+    "ins_mappings": []
+  },
+  "b1/N11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (Acidity regulators (INS 330 & INS 260) -> \"acidity regulator\" (unlisted_additive); Acidity regulators (INS 330 & INS 260) -> INS 260 (not in local mapping); Acidity regulators (INS 330 & INS 260) -> INS 330 (not in local mapping); Preservative (INS 211) -> \"preservative\" (unlisted_additive); Preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group; other open items: not in the local vocabulary: lodised salt brine, Mixed spices powder",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "INS 330 (not in local mapping)",
+      "INS 260 (not in local mapping)",
+      "\"preservative\" (unlisted_additive)",
+      "INS 211 (sodium benzoate)"
+    ],
+    "ingredients": [
+      "Mango (54%)",
+      "lodised salt brine",
+      "Refined sesame oil",
+      "Red chilli powder (5.7%)",
+      "Mixed spices powder",
+      "Mustard seeds (0.3%)",
+      "Acidity regulators (INS 330 & INS 260)",
+      "Preservative (INS 211)"
+    ],
+    "unassessed": [
+      "lodised salt brine",
+      "Mixed spices powder"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "Acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": "Acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "Preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "b1/N12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"emulsifying & stabilizing agent (INS 1422, INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Tomato puree (67%)",
+      "water",
+      "sugar",
+      "liquid glucose",
+      "iodized salt",
+      "starch",
+      "emulsifying & stabilizing agent (INS 1422, INS 415)",
+      "acidity regulator (INS 260)",
+      "spices & condiments",
+      "preservative (INS 211)"
+    ],
+    "unassessed": [
+      "Tomato puree (67%)",
+      "liquid glucose",
+      "spices & condiments"
+    ],
+    "ins_mappings": [
+      {
+        "code": "1422",
+        "name": null,
+        "ref_name": "Acetylated Distarch Adipate",
+        "declared": "emulsifying & stabilizing agent",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifying & stabilizing agent\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "415",
+        "name": null,
+        "ref_name": "Xanthan Gum",
+        "declared": "emulsifying & stabilizing agent",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifying & stabilizing agent\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": "acidity regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "permitted class II preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"permitted class II preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "b1/N13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"lemon juice concentrate\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Refined soybean oil (fortified with vitamin A & D)",
+      "water",
+      "sugar",
+      "thickeners - E1442, E1450",
+      "natural vinegar",
+      "iodised salt",
+      "spices & condiments",
+      "lemon juice concentrate",
+      "preservative - E202",
+      "nature identical and natural flavouring substances",
+      "sequestrant - E385"
+    ],
+    "unassessed": [
+      "spices & condiments"
+    ],
+    "ins_mappings": [
+      {
+        "code": "1442",
+        "name": null,
+        "ref_name": null,
+        "declared": "thickeners - E1442, E1450",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickeners - E1442, E1450\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "1450",
+        "name": null,
+        "ref_name": null,
+        "declared": "thickeners - E1442, E1450",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickeners - E1442, E1450\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": "preservative - E202",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"preservative - E202\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "385",
+        "name": null,
+        "ref_name": null,
+        "declared": "sequestrant - E385",
+        "declared_roles": [
+          "sequestrant"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"sequestrant - E385\".",
+          "Declared as sequestrant: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b1/N14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"protein isolate\" (derived_substance)"
+    ],
+    "ingredients": [
+      "Whole Grains (34%) (Rolled Oats, Ragi Flakes, Jowar Flakes, Quinoa Flakes, Brown Rice Flakes)",
+      "Protein Blend (24%) {Texturized Soy Protein, Soy Protein Isolate}",
+      "Dry Fruits, Nuts & Seeds (22%) (Black Raisin, Cranberry, Almonds, Flax Seeds, Pumpkin Seeds)",
+      "Organic Jaggery",
+      "Cocoa Powder (7%)",
+      "Dates",
+      "Rice Bran Oil",
+      "Himalayan Pink Salt"
+    ],
+    "unassessed": [
+      "Ragi Flakes",
+      "Jowar Flakes",
+      "Quinoa Flakes",
+      "Brown Rice Flakes",
+      "Texturized Soy Protein",
+      "Cranberry",
+      "Cocoa Powder (7%)",
+      "Himalayan Pink Salt",
+      "Whole Grains (34%) (group name; its contents were assessed separately)",
+      "Protein Blend (24%) (group name; its contents were assessed separately)",
+      "Dry Fruits, Nuts & Seeds (22%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": []
+  },
+  "b1/N15": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (Stabilizer (INS471) -> declared class and local code mapping differ; entry unresolved); not enough to call a group; other open items: not in the local vocabulary: Roasted Peanuts (91%) Sugar",
+    "warnings": [
+      "\"Stabilizer (INS471)\": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used",
+      "\"Roasted Peanuts (91%) Sugar\" has text after a percentage; a comma may be missing between two ingredients"
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "declared class and local code mapping differ; entry unresolved"
+    ],
+    "ingredients": [
+      "Roasted Peanuts (91%) Sugar",
+      "Stabilizer (INS471)",
+      "lodised Salt"
+    ],
+    "unassessed": [
+      "Roasted Peanuts (91%) Sugar"
+    ],
+    "ins_mappings": [
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": "Stabilizer",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      }
+    ]
+  },
+  "b1/N16": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500(ii)], Edible lodized Salt, Cocoa powder Vitamins, Soy Protein Isolate (0.28%), Nature-identical flavouring substances\": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used",
+      "\"Wheat Flour (Atta) (6.5%) Milk Solids (6%)\" has text after a percentage; a comma may be missing between two ingredients",
+      "A bracket near \"Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "declared in \"Contains\" statement: \"colour\"",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "ingredients": [
+      "Cereal extract (49%) [Barley, Wheat, Millet)",
+      "Malted Barley (Extracted solids) (21%)",
+      "Sugar",
+      "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+      "Minerals",
+      "Wheat gluten",
+      "Natural Colour (INS 150 Acidity Regulators (INS 501, INS 500(ii)], Edible lodized Salt, Cocoa powder Vitamins, Soy Protein Isolate (0.28%), Nature-identical flavouring substances"
+    ],
+    "unassessed": [
+      "Malted Barley (Extracted solids) (21%)",
+      "Wheat Flour (Atta) (6.5%) Milk Solids (6%)",
+      "Cereal extract (49%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "150",
+        "name": null,
+        "ref_name": null,
+        "declared": "Natural Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "This entry declares colour, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "501",
+        "name": null,
+        "ref_name": null,
+        "declared": "Natural Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "This entry declares colour, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "500(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": "Natural Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "This entry declares colour, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      }
+    ]
+  },
+  "b2/M01": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"colour\""
+    ],
+    "ingredients": [
+      "Butter",
+      "common salt"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b2/M02": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "ingredients": [
+      "PASTEURISED COW MILK"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b2/M03": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "ingredients": [
+      "Pasteurised double toned milk",
+      "Milk Solids",
+      "Active Lactic Cultures (L.bacillus delbrueckii subsp. bulgaricus, S.thermophilus)"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b2/M04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "WATER",
+      "DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE)",
+      "IODISED SALT",
+      "STABILIZER (INS 466)",
+      "NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA)",
+      "ACIDITY REGULATOR (INS 330)"
+    ],
+    "unassessed": [
+      "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "466",
+        "name": null,
+        "ref_name": "Sodium Carboxymethyl Cellulose",
+        "declared": "STABILIZER",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"STABILIZER\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATOR",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATOR\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b2/M05": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "WATER",
+      "DOUBLE TONED MILK DAHI (40%) (MILK SOLIDS, STARTER CULTURE)",
+      "IODISED SALT",
+      "STABILIZER (INS 466)",
+      "NATURE IDENTICAL FLAVOURING SUBSTANCES (MASALA)",
+      "ACIDITY REGULATOR (INS 330)"
+    ],
+    "unassessed": [
+      "DOUBLE TONED MILK DAHI (40%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "466",
+        "name": null,
+        "ref_name": "Sodium Carboxymethyl Cellulose",
+        "declared": "STABILIZER",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"STABILIZER\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATOR",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATOR\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b2/M06": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "ingredients": [
+      "Pasteurised Toned Milk",
+      "Active Lactic Cultures"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b2/M07": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [
+      "\"firming\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Mozzarella Cheese (Pasteurized Milk, Pasteurized Skimmed Milk, lodised Salt, Firming Agent (INS 509), Microbial Cultures and Microbial Rennet.)"
+    ],
+    "unassessed": [
+      "Microbial Cultures and Microbial Rennet",
+      "Mozzarella Cheese (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "509",
+        "name": null,
+        "ref_name": null,
+        "declared": "Firming Agent",
+        "declared_roles": [
+          "firming agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Firming Agent\".",
+          "Declared as firming agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool counts it as a marker on the basis of research/02, not of that source."
+        ]
+      }
+    ]
+  },
+  "b2/M08": {
+    "answered": true,
+    "group": 3,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "recognised whole food",
+      "recognised culinary"
+    ],
+    "ingredients": [
+      "Milk solids",
+      "Sugar"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b2/M09": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "INS 471 (emulsifier)"
+    ],
+    "ingredients": [
+      "WHEAT FLOUR (63%)",
+      "REFINED PALM OIL",
+      "SUGAR",
+      "WHEAT BRAN (4.7%)",
+      "LIQUID GLUCOSE",
+      "MILK SOLIDS",
+      "MALTODEXTRIN",
+      "RAISING AGENTS (INS 500, INS 503)",
+      "IODISED SALT",
+      "EMULSIFIERS (INS 322, INS 471, INS 472c)",
+      "MALT EXTRACT AND DOUGH CONDITIONER (INS 223)"
+    ],
+    "unassessed": [
+      "WHEAT BRAN (4.7%)",
+      "LIQUID GLUCOSE"
+    ],
+    "ins_mappings": [
+      {
+        "code": "500",
+        "name": null,
+        "ref_name": null,
+        "declared": "RAISING AGENTS",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"RAISING AGENTS\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "503",
+        "name": null,
+        "ref_name": null,
+        "declared": "RAISING AGENTS",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"RAISING AGENTS\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "322",
+        "name": "lecithin",
+        "ref_name": null,
+        "declared": "EMULSIFIERS",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"EMULSIFIERS\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": "EMULSIFIERS",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"EMULSIFIERS\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "472c",
+        "name": null,
+        "ref_name": null,
+        "declared": "EMULSIFIERS",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"EMULSIFIERS\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "223",
+        "name": null,
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      }
+    ]
+  },
+  "b2/M10": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"Masala *TASTEMAKER\u24c7: Mixed Spices (55.7%) (Garlic powder (36.4%), Red chilli flakes, Onion powder...\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "\"thickener\" (cosmetic_additive)",
+      "\"humectant\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Refined wheat flour (Maida)",
+      "Palm oil",
+      "lodized salt",
+      "Wheat gluten",
+      "Thickeners (508&412)",
+      "Acidity regulators (501 (i) & 500 (i))",
+      "Humectant (451)"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "508",
+        "name": null,
+        "ref_name": "Potassium chloride",
+        "declared": "Thickeners",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Thickeners\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "412",
+        "name": null,
+        "ref_name": "Guar Gum",
+        "declared": "Thickeners",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Thickeners\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "501(i)",
+        "name": null,
+        "ref_name": "Potassium Carbonate",
+        "declared": "Acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "500(i)",
+        "name": null,
+        "ref_name": "Sodium Carbonate",
+        "declared": "Acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "451",
+        "name": null,
+        "ref_name": null,
+        "declared": "Humectant",
+        "declared_roles": [
+          "humectant"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Humectant\".",
+          "Declared as humectant: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool counts it as a marker on the basis of research/02, not of that source."
+        ]
+      }
+    ]
+  },
+  "b2/M11": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "Text after a full stop was not read as ingredients but looks like more of the list: \"FLAVOUR ENHANCER (INS 627, INS 631), NATURAL & NATURE IDENTICAL FLAVOURING SUBSTANCES (MINT ).\""
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"maltodextrin\" (derived_substance)"
+    ],
+    "ingredients": [
+      "POTATO (88%)",
+      "EDIBLE VEGETABLE OIL (PALMOLEIN)",
+      "EDIBLE COMMON SALT",
+      "MALTODEXTRIN",
+      "SPICES & CONDIMENTS 2 % (CUMIN, CORIANDER. CINNAMON)",
+      "DEHYDRATED VEGETABLE POWDER (ONION, GARLIC)",
+      "SUGAR",
+      "BLACK SALT",
+      "ACIDITY REGULATOR (INS 330)",
+      "ANTICAKING AGENT (INS 551)"
+    ],
+    "unassessed": [
+      "CORIANDER. CINNAMON",
+      "SPICES & CONDIMENTS 2 % (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATOR",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATOR\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "551",
+        "name": null,
+        "ref_name": "Silicon Dioxide, Amorphous",
+        "declared": "ANTICAKING AGENT",
+        "declared_roles": [
+          "anticaking agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ANTICAKING AGENT\".",
+          "Declared as anticaking agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b2/M12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "WATER",
+      "SUGAR",
+      "TOMATO PASTE (28\u00b0B) 24.7%",
+      "EDIBLE COMMON SALT",
+      "EMULSIFYING & STABILIZING AGENT (INS 1422 & INS 415)",
+      "ACETIC ACID (INS 260)",
+      "ONION POWDER",
+      "GARLIC POWDER",
+      "MIXED SPICES (CLOVE, CINNAMON, CHILLI) PRESERVATIVE (INS 211)"
+    ],
+    "unassessed": [
+      "TOMATO PASTE (28\u00b0B) 24.7%",
+      "MIXED SPICES (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "1422",
+        "name": null,
+        "ref_name": "Acetylated Distarch Adipate",
+        "declared": "EMULSIFYING & STABILIZING AGENT",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"EMULSIFYING & STABILIZING AGENT\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "415",
+        "name": null,
+        "ref_name": "Xanthan Gum",
+        "declared": "EMULSIFYING & STABILIZING AGENT",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"EMULSIFYING & STABILIZING AGENT\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "PERMITTED CLASS II PRESERVATIVE",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED CLASS II PRESERVATIVE\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "b2/M13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "INS 150d (caramel IV (sulfite ammonia caramel))",
+      "\"sweetener\" (cosmetic_additive)",
+      "INS 950 (acesulfame potassium)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Carbonated water",
+      "color (150d)",
+      "acidity regulators(338,330)",
+      "sweeteners(955,950)",
+      "preservative (211)",
+      "caffeine (13mg/100g)",
+      "flavour (natural flavouring substance)",
+      "stabilizer (436)"
+    ],
+    "unassessed": [
+      "caffeine (13mg/100g)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "150d",
+        "name": "caramel IV (sulfite ammonia caramel)",
+        "ref_name": null,
+        "declared": "color",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"color\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "338",
+        "name": null,
+        "ref_name": null,
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "955",
+        "name": null,
+        "ref_name": null,
+        "declared": "sweeteners",
+        "declared_roles": [
+          "sweetener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"sweeteners\".",
+          "Declared as sweetener: the NOVA source lists artificial sweeteners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "950",
+        "name": "acesulfame potassium",
+        "ref_name": null,
+        "declared": "sweeteners",
+        "declared_roles": [
+          "sweetener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"sweeteners\".",
+          "Declared as sweetener: the NOVA source lists artificial sweeteners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "436",
+        "name": null,
+        "ref_name": null,
+        "declared": "stabilizer",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"stabilizer\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b2/M14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Sugar",
+      "mixed fruit pulp blend - 60% (papaya pulp, pear pulp, apple juice, banana pulp, pineapple juice, orange juice, mango pulp, grape juice)",
+      "acidity regulator - E330",
+      "thickener - E440",
+      "iodised salt",
+      "vitamins",
+      "mineral",
+      "preservative - E202",
+      "natural flavouring substances",
+      "food colour - E122"
+    ],
+    "unassessed": [
+      "papaya pulp",
+      "pear pulp",
+      "banana pulp",
+      "mango pulp",
+      "mixed fruit pulp blend - 60% (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "acidity regulator - E330",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulator - E330\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "440",
+        "name": "pectin",
+        "ref_name": null,
+        "declared": "thickener - E440",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickener - E440\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": "preservative - E202",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"preservative - E202\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "122",
+        "name": null,
+        "ref_name": null,
+        "declared": "food colour - E122",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"food colour - E122\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b2/M15": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"invert sugar\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)",
+      "INS 102 (tartrazine)"
+    ],
+    "ingredients": [
+      "Sugar",
+      "liquid glucose",
+      "invert sugar syrup",
+      "raw mango pulp (5%)",
+      "caster sugar",
+      "acidity regulators (INS 296, INS 331, INS 334, INS 297)",
+      "thickener (INS 440)",
+      "iodized salt",
+      "artificial flavouring substances - raw mango",
+      "potassium sorbate (INS 202)",
+      "synthetic food colour (INS 102, INS 133)",
+      "chilli powder",
+      "cumin powder"
+    ],
+    "unassessed": [
+      "liquid glucose",
+      "raw mango pulp (5%)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "296",
+        "name": null,
+        "ref_name": "DL-Malic acid",
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "331",
+        "name": null,
+        "ref_name": null,
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "334",
+        "name": null,
+        "ref_name": "L(+)-Tartaric acid",
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "297",
+        "name": null,
+        "ref_name": null,
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "440",
+        "name": "pectin",
+        "ref_name": null,
+        "declared": "thickener",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickener\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "102",
+        "name": "tartrazine",
+        "ref_name": null,
+        "declared": "synthetic food colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"synthetic food colour\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "133",
+        "name": null,
+        "ref_name": null,
+        "declared": "synthetic food colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"synthetic food colour\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b3/Q01": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "ingredients": [
+      "PASTEURISED HOMOGENISED TONED MILK"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q02": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "ingredients": [
+      "Milk solids"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q03": {
+    "answered": true,
+    "group": 3,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "recognised whole food",
+      "recognised culinary"
+    ],
+    "ingredients": [
+      "Water",
+      "Curd",
+      "lodised Salt"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q04": {
+    "answered": false,
+    "group": null,
+    "reason": "a bracket names a different food inside the item (Milk Solids (Toned Milk): toned milk): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Milk Solids (Toned Milk)",
+      "Active Culture"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q05": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A Palmitate & Vitamin D (Ergocalciferol)",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Milk Solids (Toned Milk)",
+      "Vitamin A Palmitate & Vitamin D (Ergocalciferol)"
+    ],
+    "unassessed": [
+      "Vitamin A Palmitate & Vitamin D (Ergocalciferol)"
+    ],
+    "ins_mappings": []
+  },
+  "b3/Q06": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "single recognised unprocessed food"
+    ],
+    "ingredients": [
+      "Pasteurized Cow Milk"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q07": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Milk & Milk Solids Milk",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Milk & Milk Solids Milk"
+    ],
+    "unassessed": [
+      "Milk & Milk Solids Milk"
+    ],
+    "ins_mappings": []
+  },
+  "b3/Q08": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)",
+    "warnings": [],
+    "status": "uncertain",
+    "drivers": [],
+    "ingredients": [
+      "Milk solids",
+      "Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+    ],
+    "unassessed": [
+      "Vitamin A (Retinyl Palmitate) and Vitamin D(Ergocalciferol)"
+    ],
+    "ins_mappings": []
+  },
+  "b3/Q09": {
+    "answered": false,
+    "group": null,
+    "reason": "recognised ingredients, but the combination does not match a group 1, 2 or 3 pattern",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Milk",
+      "Milk Solids"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q10": {
+    "answered": false,
+    "group": null,
+    "reason": "a bracket on a legume, vegetable, fruit or flour item names content the vocabulary does not recognise (Milk solids (Pasteurized skimmed cow milk): pasteurized skimmed cow milk), so neither Group 1 nor Group 3 is established while part of the item is unassessed",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Milk solids (Pasteurized skimmed cow milk)"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "b3/Q11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (Acidity Regulator (INS 339 (ii)) -> \"acidity regulator\" (unlisted_additive); Acidity Regulator (INS 339 (ii)) -> INS 339(ii) (not in local mapping); Stabilizers (INS 418, INS 407) -> \"stabiliser\" (unlisted_additive); Stabilizers (INS 418, INS 407) -> INS 407 (not in local mapping); Stabilizers (INS 418, INS 407) -> INS 418 (not in local mapping)); not enough to call a group; other open items: not in the local vocabulary: Cereal product (3%); recognised by name only, no source read places Minerals, Vitamins",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "INS 339(ii) (not in local mapping)",
+      "\"stabiliser\" (unlisted_additive)",
+      "INS 418 (not in local mapping)",
+      "INS 407 (not in local mapping)"
+    ],
+    "ingredients": [
+      "Toned Milk (60%)",
+      "Water",
+      "Sugar",
+      "Cereal product (3%)",
+      "Milk Solids",
+      "Minerals",
+      "Acidity Regulator (INS 339 (ii))",
+      "Stabilizers (INS 418, INS 407)",
+      "Vitamins"
+    ],
+    "unassessed": [
+      "Cereal product (3%)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "339(ii)",
+        "name": null,
+        "ref_name": "Disodium Hydrogen Phosphate",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "418",
+        "name": null,
+        "ref_name": null,
+        "declared": "Stabilizers",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Stabilizers\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "407",
+        "name": null,
+        "ref_name": null,
+        "declared": "Stabilizers",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Stabilizers\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b3/Q12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"dity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 471 (emulsifier)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Skimmed Milk (80%)",
+      "Sugar",
+      "Water",
+      "Milk Solids",
+      "Cocoa Powder (1.5%)",
+      "Emulsifier & Stabilizers [INS 471, INS 407, INS 412]",
+      "Flavour (Natural Flavouring Substances)",
+      "Acidity Regulator [INS 339 (ii), Edible Common Salt, Vitamin A & Vitamin D"
+    ],
+    "unassessed": [
+      "Cocoa Powder (1.5%)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": "Emulsifier & Stabilizers",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Emulsifier & Stabilizers\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "407",
+        "name": null,
+        "ref_name": null,
+        "declared": "Emulsifier & Stabilizers",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Emulsifier & Stabilizers\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "412",
+        "name": null,
+        "ref_name": "Guar Gum",
+        "declared": "Emulsifier & Stabilizers",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Emulsifier & Stabilizers\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "339(ii)",
+        "name": null,
+        "ref_name": "Disodium Hydrogen Phosphate",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "b3/Q13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)",
+      "INS 102 (tartrazine)",
+      "\"colour\" (cosmetic_additive)",
+      "INS 110 (sunset yellow FCF)",
+      "declared in \"Contains\" statement: \"sweetener\"",
+      "declared in \"Contains\" statement: \"colour\""
+    ],
+    "ingredients": [
+      "Carbonated Water",
+      "Sugar",
+      "Acidity Regulator (330)",
+      "Natural Flavoring Substances",
+      "Preservative (211)",
+      "Caffeine",
+      "Stabilizer (414)",
+      "Antioxidant (300)",
+      "Synthetic Food Color (102)",
+      "Synthetic Food Color (110)"
+    ],
+    "unassessed": [
+      "Caffeine"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "Preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "414",
+        "name": null,
+        "ref_name": null,
+        "declared": "Stabilizer",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Stabilizer\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "300",
+        "name": null,
+        "ref_name": null,
+        "declared": "Antioxidant",
+        "declared_roles": [
+          "antioxidant"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Antioxidant\".",
+          "Declared as antioxidant: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives ('with or without added anti-oxidants') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "102",
+        "name": "tartrazine",
+        "ref_name": null,
+        "declared": "Synthetic Food Color",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Synthetic Food Color\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "110",
+        "name": "sunset yellow FCF",
+        "ref_name": null,
+        "declared": "Synthetic Food Color",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Synthetic Food Color\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "150d",
+        "name": "caramel IV (sulfite ammonia caramel)",
+        "ref_name": null,
+        "declared": "Permitted Natural Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Permitted Natural Colour\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "b3/Q14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Emulsifying & Stabilizing Agent (INS1422, INS415)\": \"emulsifying & stabilizing agent\" is read as the emulsifier class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"emulsifier\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Tomato Puree (67%)",
+      "Water",
+      "Sugar",
+      "Liquid Glucose",
+      "Iodized Salt",
+      "Starch",
+      "Emulsifying & Stabilizing Agent (INS1422, INS415)",
+      "Acidity Regulator (INS260)",
+      "Onion Powder",
+      "Garlic Powder",
+      "Spices & Condiments",
+      "Preservative (INS211)"
+    ],
+    "unassessed": [
+      "Tomato Puree (67%)",
+      "Liquid Glucose",
+      "Spices & Condiments"
+    ],
+    "ins_mappings": [
+      {
+        "code": "1422",
+        "name": null,
+        "ref_name": "Acetylated Distarch Adipate",
+        "declared": "Emulsifying & Stabilizing Agent",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Emulsifying & Stabilizing Agent\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "415",
+        "name": null,
+        "ref_name": "Xanthan Gum",
+        "declared": "Emulsifying & Stabilizing Agent",
+        "declared_roles": [
+          "emulsifier",
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Emulsifying & Stabilizing Agent\".",
+          "That wording is mapped to the class by a provisional role-phrase mapping (no source names the phrase).",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "Preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "neg/R1": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (PAST STABILIZER (INS 509) -> \"stabiliser\" (unlisted_additive); PAST STABILIZER (INS 509) -> INS 509 (not in local mapping)); not enough to call a group; other open items: not in the local vocabulary: MICROBIAL CULTU",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"stabiliser\" (unlisted_additive)",
+      "INS 509 (not in local mapping)"
+    ],
+    "ingredients": [
+      "PASTEURIZED MILK",
+      "PAST STABILIZER (INS 509)",
+      "MICROBIAL CULTU"
+    ],
+    "unassessed": [
+      "MICROBIAL CULTU"
+    ],
+    "ins_mappings": [
+      {
+        "code": "509",
+        "name": null,
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      }
+    ]
+  },
+  "neg/R2": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredients not in the local vocabulary, so processing level cannot be judged: Refined Palmolien Oil, Spices & Condiments",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Potatoes",
+      "Refined Palmolien Oil",
+      "Edible Peanut Oil",
+      "lodized salt",
+      "Red Chilli Powder",
+      "Spices & Condiments"
+    ],
+    "unassessed": [
+      "Refined Palmolien Oil",
+      "Spices & Condiments"
+    ],
+    "ins_mappings": []
+  },
+  "neg/R3": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "ingredients": [
+      "Milk Solids (Malai Curd)",
+      "Potable Water",
+      "Sugar",
+      "Salt",
+      "Starter Culture"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "neg/R4": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"apple juice concentrate\" (derived_substance)",
+      "\"colour\" (cosmetic_additive)",
+      "INS 150d (caramel IV (sulfite ammonia caramel))",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "WATER",
+      "SUGAR",
+      "APPLE JUICE CONCENTRATE (2.1%) [EQUIVALENT TO 14% APPLE JUICE (RECONSTITUTED)]",
+      "ACIDITY REGULATORS (INS 296, INS 330, INS 331(iii)]",
+      "STABILIZER (INS 440)",
+      "FOOD COLOUR (INS 150d)",
+      "ANTIOXIDANT (INS 300)",
+      "NATURE-IDENTICAL FLAVOURING SUBSTANCE (APPLE) (INS-INTERNATIONAL NUMBERING SYSTEM)"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "296",
+        "name": null,
+        "ref_name": "DL-Malic acid",
+        "declared": "ACIDITY REGULATORS",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATORS\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATORS",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATORS\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "331(iii)",
+        "name": null,
+        "ref_name": null,
+        "declared": "ACIDITY REGULATORS",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATORS\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "440",
+        "name": "pectin",
+        "ref_name": null,
+        "declared": "STABILIZER",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"STABILIZER\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "150d",
+        "name": "caramel IV (sulfite ammonia caramel)",
+        "ref_name": null,
+        "declared": "FOOD COLOUR",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"FOOD COLOUR\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "300",
+        "name": null,
+        "ref_name": null,
+        "declared": "ANTIOXIDANT",
+        "declared_roles": [
+          "antioxidant"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ANTIOXIDANT\".",
+          "Declared as antioxidant: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives ('with or without added anti-oxidants') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "neg/R5": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"fructose\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 471 (emulsifier)",
+      "\"whey solids\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Reconstituted skimmed MILK",
+      "sugar",
+      "cocoa butter \u00b9",
+      "glucose syrup",
+      "ALMONDS",
+      "coconut fat",
+      "skimmed MILK powder",
+      "butter oil (MILK)",
+      "fructose",
+      "skimmed MILK powder or concentrate",
+      "cocoa mass \u00b9",
+      "emulsifiers (E471, E442, E476)",
+      "stabilisers (locust bean gum, guar gum, carrageenan)",
+      "exhausted vanilla bean pieces",
+      "whey solids (MILK)",
+      "natural vanilla flavouring \u00b9 (with MILK)",
+      "flavouring",
+      "colour (carotenes)"
+    ],
+    "unassessed": [
+      "Reconstituted skimmed MILK",
+      "cocoa butter \u00b9",
+      "glucose syrup",
+      "skimmed MILK powder or concentrate",
+      "cocoa mass \u00b9",
+      "exhausted vanilla bean pieces"
+    ],
+    "ins_mappings": [
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": "emulsifiers",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifiers\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "442",
+        "name": null,
+        "ref_name": null,
+        "declared": "emulsifiers",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifiers\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "476",
+        "name": null,
+        "ref_name": "Polyglycerol Esters of interesterified Ricinoleic Acid",
+        "declared": "emulsifiers",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifiers\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "neg/R6": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "declared in \"Contains\" statement: \"colour\"",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "ingredients": [
+      "CARBONATED WATER",
+      "SUGAR",
+      "ACIDITY REGULATOR (INS 330)",
+      "CLASS II PRESERVATIVE (INS 211)"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATOR",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATOR\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "CLASS II PRESERVATIVE",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"CLASS II PRESERVATIVE\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "150d",
+        "name": "caramel IV (sulfite ammonia caramel)",
+        "ref_name": null,
+        "declared": "PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS",
+        "declared_roles": [
+          "flavour",
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "122",
+        "name": null,
+        "ref_name": null,
+        "declared": "PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS",
+        "declared_roles": [
+          "flavour",
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "102",
+        "name": "tartrazine",
+        "ref_name": null,
+        "declared": "PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS",
+        "declared_roles": [
+          "flavour",
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "124",
+        "name": null,
+        "ref_name": null,
+        "declared": "PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS",
+        "declared_roles": [
+          "flavour",
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "133",
+        "name": null,
+        "ref_name": null,
+        "declared": "PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS",
+        "declared_roles": [
+          "flavour",
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PERMITTED NATURAL AND SYNTHETIC FOOD COLOURS AND ADDED FLAVOURS\".",
+          "The codes listed with it share this entry, so the label does not say which code has which of these roles.",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker.",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "dev15/F01": {
+    "answered": false,
+    "group": null,
+    "reason": "ingredient list looks truncated (unclosed bracket)",
+    "warnings": [
+      "A bracket near \"ED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDI\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "A bracket near \"(MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STAR\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "A bracket near \", COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)"
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"raising agent\" (ordinary_additive)",
+      "INS 500i (not in local mapping)"
+    ],
+    "ingredients": [
+      "REFINED WHEAT FLOUR (MAIDAL SUGAR (331 Nutr REFINED PALM OIL, EDIBLE MAIZE STARCH, COCOA SOLIDS (2:7% Per 1 MILK SOLIDS, RAISING AGENTS (500i)& 503(0)1, EMULSIRERS r (471& 322(0)) AND IODISED SALT,"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "500i",
+        "name": null,
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      }
+    ]
+  },
+  "dev15/F02": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"ur Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar)\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)",
+      "INS 150d (caramel IV (sulfite ammonia caramel))",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Multigrain Flour Mix (64.8%) (Wheat Flour (Atta) (55.8%), Sorghum (Jowar) Flour (3%), Rice Flour (3 Corn Meal (3%)), Sugar, Cocoa Solids (5.3%), Minerals, Cereal Extract, lodized Salt, Colours (INS 150a, INS 150d), Edible Vegetable Oil (Palmolein), Flavours (Nature Identical & Artificial (Cream)), Vitamins, Antioxidant (INS 307b)"
+    ],
+    "unassessed": [
+      "Cocoa Solids (5.3%)",
+      "Cereal Extract",
+      "Multigrain Flour Mix (64.8%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "150a",
+        "name": null,
+        "ref_name": null,
+        "declared": "Colours",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Colours\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "150d",
+        "name": "caramel IV (sulfite ammonia caramel)",
+        "ref_name": null,
+        "declared": "Colours",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Colours\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "307b",
+        "name": null,
+        "ref_name": null,
+        "declared": "Antioxidant",
+        "declared_roles": [
+          "antioxidant"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Antioxidant\".",
+          "Declared as antioxidant: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives ('with or without added anti-oxidants') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "dev15/F03": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"hydrolysed vegetable protein\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "declared in \"Contains\" statement: \"flavour\""
+    ],
+    "ingredients": [
+      "Rolled Oats (73.9 %)",
+      "Maltodectrin",
+      "Salt",
+      "Spices and Condiments (34%) (Onions, Tumeric, Pepper, Cumin, Garlic, Fenugreek, Clove, Nutmeg, Red Chili)",
+      "Dried Vegetables (Carrots (1.15%), Onions Flakes (1.15%), Green Peas(0.69%))",
+      "Sugar",
+      "Starch",
+      "Hydrolysed Vegetable Protein",
+      "Wheat Powder",
+      "Flavour Enhancers NS 627",
+      "631)",
+      "Anlioxidant (320)"
+    ],
+    "unassessed": [
+      "Maltodectrin",
+      "631)",
+      "Anlioxidant (320)",
+      "Spices and Condiments (34%) (group name; its contents were assessed separately)",
+      "Dried Vegetables (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": []
+  },
+  "dev15/F04": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"hydrogenated\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "INS 322 (lecithin)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Sugar",
+      "hydrogenated edible vegetable oil (palm kernel oil)",
+      "milk solids",
+      "cocoa solids",
+      "emulsifiers (492, 322)",
+      "artificial flavouring substances (cocoa, vanilla)"
+    ],
+    "unassessed": [
+      "cocoa solids"
+    ],
+    "ins_mappings": [
+      {
+        "code": "492",
+        "name": null,
+        "ref_name": null,
+        "declared": "emulsifiers",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifiers\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "322",
+        "name": "lecithin",
+        "ref_name": null,
+        "declared": "emulsifiers",
+        "declared_roles": [
+          "emulsifier"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"emulsifiers\".",
+          "Declared as emulsifier: the NOVA source lists emulsifiers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "dev15/F05": {
+    "answered": true,
+    "group": 1,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)",
+      "milk fermented with a starter culture, nothing else listed (NUPENS-USP: plain yoghurt with no added sugar or artificial sweeteners; fermentation of milk to make yoghurt)"
+    ],
+    "ingredients": [
+      "Pasteurized Toned Milk",
+      "Active Lactic Culture"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "dev15/F06": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"STABILIZERS [INS 460(1), INS 471, INS 466, INS 407, INS 340, INS 452]\": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"whey powder\" (derived_substance)",
+      "\"emulsifier\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "WATER",
+      "DOUBLE TONED MILK (40%)",
+      "SUGAR",
+      "WHEY POWDER",
+      "MILK SOLIDS",
+      "COCOA SOLIDS (1%)",
+      "MALT EXTRACT",
+      "EMULSIFIERS",
+      "STABILIZERS [INS 460(1), INS 471, INS 466, INS 407, INS 340, INS 452]",
+      "NATURE IDENTICAL FLAVOURING SUBSTANCE (CHOCOLATE)",
+      "IODISED SALT"
+    ],
+    "unassessed": [
+      "COCOA SOLIDS (1%)",
+      "MALT EXTRACT"
+    ],
+    "ins_mappings": [
+      {
+        "code": "460",
+        "name": null,
+        "ref_name": null,
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "466",
+        "name": null,
+        "ref_name": "Sodium Carboxymethyl Cellulose",
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "407",
+        "name": null,
+        "ref_name": null,
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "340",
+        "name": null,
+        "ref_name": null,
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      },
+      {
+        "code": "452",
+        "name": null,
+        "ref_name": null,
+        "declared": "STABILIZERS",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "This entry declares stabiliser, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used."
+        ]
+      }
+    ]
+  },
+  "dev15/F07": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "\"thickener\" (cosmetic_additive)",
+      "\"wheat gluten\" (derived_substance)",
+      "\"maltodextrin\" (derived_substance)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "maida (refined wheat flour) (78.7%)",
+      "edible vegetable oil",
+      "iodized salt",
+      "wheat gluten (0.4%)",
+      "thickeners (508, 412)",
+      "acidity regulators [501(i), 500(i)]",
+      "stabilizer [339(ii)]",
+      "dehydrated vegetables [beans (9.5%), carrot (7.1%), onion (4.6%), cabbage (3.8%)]",
+      "instant noodle powder {maida (refined wheat flour) (15.9%), edible vegetable oil, iodized salt, wheat gluten (0.07%)}",
+      "spices and condiments (17.6%) [garlic, coriander, cumin, dried ginger, chillies, aniseed, fenugreek, black pepper, cardamom, nutmeg, caraway, cinnamon, cloves, turmeric]",
+      "sugar",
+      "iodized salt",
+      "hydrolyzed vegetable protein (defatted soya, maltodextrin)",
+      "natural flavours",
+      "natural flavouring substances",
+      "yeast extract",
+      "acidity regulator (330)",
+      "nature identical flavouring substances",
+      "flavour enhancer (635)",
+      "spices & condiments (67.8%) [garlic, chilli flakes, black pepper bits]",
+      "dehydrated onion",
+      "iodized salt",
+      "flavour enhancer (635)",
+      "acidity regulator (330)",
+      "nature identical flavouring substances"
+    ],
+    "unassessed": [
+      "defatted soya",
+      "yeast extract",
+      "instant noodle powder (group name; its contents were assessed separately)",
+      "spices and condiments (17.6%) (group name; its contents were assessed separately)",
+      "hydrolyzed vegetable protein (group name; its contents were assessed separately)",
+      "spices & condiments (67.8%) (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "508",
+        "name": null,
+        "ref_name": "Potassium chloride",
+        "declared": "thickeners",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickeners\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "412",
+        "name": null,
+        "ref_name": "Guar Gum",
+        "declared": "thickeners",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"thickeners\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "501(i)",
+        "name": null,
+        "ref_name": "Potassium Carbonate",
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "500(i)",
+        "name": null,
+        "ref_name": "Sodium Carbonate",
+        "declared": "acidity regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "339(ii)",
+        "name": null,
+        "ref_name": "Disodium Hydrogen Phosphate",
+        "declared": "stabilizer",
+        "declared_roles": [
+          "stabiliser"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"stabilizer\".",
+          "Declared as stabiliser: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "acidity regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "635",
+        "name": null,
+        "ref_name": null,
+        "declared": "flavour enhancer",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"flavour enhancer\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "635",
+        "name": null,
+        "ref_name": null,
+        "declared": "flavour enhancer",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"flavour enhancer\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "acidity regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"acidity regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "dev15/F08": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "\"Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)\": \"stabilizing agents\" is read as the stabiliser class by a provisional mapping (no source names the phrase)"
+    ],
+    "status": "complete",
+    "drivers": [
+      "\"wheat gluten\" (derived_substance)",
+      "INS 471 (emulsifier)"
+    ],
+    "ingredients": [
+      "Refined Wheat Flour (Maida) (96%)",
+      "Wheat Gluten",
+      "lodised Salt",
+      "Raising Agents (INS 500 (ii), INS 500(i))",
+      "Thickening & Stabilizing Agents (INS 452 (i), INS 451 (i), INS 471, INS 339 (ii), INS 412)",
+      "Acidity Regulators (INS 450 (iii), INS 501 (i))"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "500(ii)",
+        "name": "raising agent",
+        "ref_name": null,
+        "declared": "Raising Agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Raising Agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "500(i)",
+        "name": null,
+        "ref_name": "Sodium Carbonate",
+        "declared": "Raising Agents",
+        "declared_roles": [
+          "raising agent"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Raising Agents\".",
+          "Declared as raising agent: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "452(i)",
+        "name": "sodium polyphosphate",
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "451(i)",
+        "name": null,
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "471",
+        "name": "emulsifier",
+        "ref_name": null,
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "339(ii)",
+        "name": null,
+        "ref_name": "Disodium Hydrogen Phosphate",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "412",
+        "name": null,
+        "ref_name": "Guar Gum",
+        "declared": null,
+        "declared_roles": [],
+        "role_notes": []
+      },
+      {
+        "code": "450(iii)",
+        "name": null,
+        "ref_name": null,
+        "declared": "Acidity Regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "501(i)",
+        "name": null,
+        "ref_name": "Potassium Carbonate",
+        "declared": "Acidity Regulators",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulators\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      }
+    ]
+  },
+  "dev15/F09": {
+    "answered": false,
+    "group": null,
+    "reason": "flour-based list: bakery-fresh versus industrial formulation cannot be told from the ingredient list",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Bengal Gram Flour (Besan)",
+      "Refined Palmolein Oil",
+      "Ajwain",
+      "Cumin",
+      "Black Pepper",
+      "Clove",
+      "Edible Common Salt",
+      "Red Chilli",
+      "Turmeric",
+      "Asafoetida"
+    ],
+    "unassessed": [],
+    "ins_mappings": []
+  },
+  "dev15/F10": {
+    "answered": false,
+    "group": null,
+    "reason": "a colour note on a named ingredient (Turmeric (Colouring & Spices)) leaves open whether a colour is added, and no other marker decides the group; other open items: not in the local vocabulary: Rice Flakes (37%), Corn Flakes (6%), Dried Mango Black Salt; a powder is named and its composition is not established: Dehydrated Vegetable Powder (Onion, Garlic)",
+    "warnings": [
+      "\"Turmeric (Colouring & Spices)\": a colour note on a named ingredient is not counted as an added colour"
+    ],
+    "status": "complete",
+    "drivers": [],
+    "ingredients": [
+      "Rice Flakes (37%)",
+      "Edible Vegetable Oil (Palmolein Oil, Cottonseed Oil)",
+      "Roasted Gram (25%)",
+      "Corn Flakes (6%)",
+      "Ground Spices & Condiments (lodised Salt, Red Chilli, Dried Mango Black Salt, Ginger, Clove, Nutmeg, Black Pepper, Long Pepper, Cardamom, Asafoetida, Cumin, Mace, Cinnamon, Coriander, Mint, Fenugreek, Fennel Seeds, Turmeric (Colouring & Spices), Dehydrated Vegetable Powder (Onion, Garlic), Bishop's Seed, Mustard Seeds)",
+      "Dried Curry Leaves (0.5%)"
+    ],
+    "unassessed": [
+      "Rice Flakes (37%)",
+      "Corn Flakes (6%)",
+      "Dried Mango Black Salt",
+      "Ground Spices & Condiments (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": []
+  },
+  "dev15/F11": {
+    "answered": false,
+    "group": null,
+    "reason": "only weak or unlisted markers present (acidity regulator -> \"acidity regulator\" (unlisted_additive); preservative (INS 211) -> \"preservative\" (unlisted_additive); preservative (INS 211) -> INS 211 (sodium benzoate)); not enough to call a group; other open items: not in the local vocabulary: compounded Asafoetida",
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"acidity regulator\" (unlisted_additive)",
+      "\"preservative\" (unlisted_additive)",
+      "INS 211 (sodium benzoate)"
+    ],
+    "ingredients": [
+      "Green mangoes",
+      "edible common salt",
+      "edible rice bran oil",
+      "mustard",
+      "chilli powder",
+      "fenugreek",
+      "turmeric powder",
+      "acidity regulator",
+      "compounded Asafoetida",
+      "preservative (INS 211)"
+    ],
+    "unassessed": [
+      "compounded Asafoetida"
+    ],
+    "ins_mappings": [
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "dev15/F12": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [
+      "A bracket near \"and condiments (onion powder, chilli powder, dry mango powde\" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)",
+      "List may be incomplete (unclosed bracket). Group 4 stands because the markers found are already enough."
+    ],
+    "status": "uncertain",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "potato",
+      "edible vegetable oil (sunflower oil, corn oil, and/or canola oil)",
+      "spices and condiments (onion powder, chilli powder, dry mango powder, coriander powder, ginger powder, garlic powder, black pepper powder, turmeric powder, cumin powder, salt, black salt, sugar, tomato powder, citric acid, tartaric acid, natural flavors (e160b)"
+    ],
+    "unassessed": [
+      "citric acid",
+      "tartaric acid",
+      "spices and condiments (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "160b",
+        "name": null,
+        "ref_name": null,
+        "declared": "natural flavors",
+        "declared_roles": [
+          "flavour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"natural flavors\".",
+          "Declared as flavour: the NOVA source lists flavours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "dev15/F13": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Water",
+      "lodised Salt",
+      "Soybean (10%)",
+      "Sugar",
+      "Natural Colour (INS 150c)",
+      "Wheat",
+      "Acidity Regulator (INS 260)",
+      "Preservative (INS 202)"
+    ],
+    "unassessed": [],
+    "ins_mappings": [
+      {
+        "code": "150c",
+        "name": null,
+        "ref_name": null,
+        "declared": "Natural Colour",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Natural Colour\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": "Preservative",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservative\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  },
+  "dev15/F14": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"flavour\" (cosmetic_additive)",
+      "\"colour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "SUGAR",
+      "MIXED FRUIT PULP BLEND - 60% (PAPAYA PULP, PEAR PULP, APPLE JUICE, BANANA PULP, PINEAPPLE JUICE, ORANGE JUICE, MANGO PULP, GRAPE JUICE)",
+      "ACIDITY REGULATOR E330",
+      "THICKENER E440",
+      "IODISED SALT",
+      "VITAMINS",
+      "MINERAL",
+      "PRESERVATIVE-E202",
+      "NATURAL FLAVOURING SUBSTANCES",
+      "FOOD COLOUR-E122"
+    ],
+    "unassessed": [
+      "PAPAYA PULP",
+      "PEAR PULP",
+      "BANANA PULP",
+      "MANGO PULP",
+      "MIXED FRUIT PULP BLEND - 60% (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "330",
+        "name": null,
+        "ref_name": "Citric acid",
+        "declared": "ACIDITY REGULATOR E330",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"ACIDITY REGULATOR E330\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "440",
+        "name": "pectin",
+        "ref_name": null,
+        "declared": "THICKENER E440",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"THICKENER E440\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": "PRESERVATIVE-E202",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"PRESERVATIVE-E202\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "122",
+        "name": null,
+        "ref_name": null,
+        "declared": "FOOD COLOUR-E122",
+        "declared_roles": [
+          "colour"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"FOOD COLOUR-E122\".",
+          "Declared as colour: the NOVA source lists colours among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      }
+    ]
+  },
+  "dev15/F15": {
+    "answered": true,
+    "group": 4,
+    "reason": null,
+    "warnings": [],
+    "status": "complete",
+    "drivers": [
+      "\"thickener\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)",
+      "\"enhancer\" (cosmetic_additive)",
+      "\"flavour\" (cosmetic_additive)"
+    ],
+    "ingredients": [
+      "Water",
+      "Cotton Seed Oil",
+      "Sugar",
+      "iodised Salt",
+      "Chilli",
+      "Garlic",
+      "Onion",
+      "Thickener (INS 1422)",
+      "Ginger",
+      "Acidity Regulator (INS 260)",
+      "Flavour Enhancer (INS 635)",
+      "Spices (White Pepper, Schezwan Pepper)",
+      "Preservatives (INS 202, INS 211)",
+      "Natural Flavouring Substances"
+    ],
+    "unassessed": [
+      "Spices (group name; its contents were assessed separately)"
+    ],
+    "ins_mappings": [
+      {
+        "code": "1422",
+        "name": null,
+        "ref_name": "Acetylated Distarch Adipate",
+        "declared": "Thickener",
+        "declared_roles": [
+          "thickener"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Thickener\".",
+          "Declared as thickener: the NOVA source lists thickeners among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "260",
+        "name": null,
+        "ref_name": "Acetic Acid, Glacial",
+        "declared": "Acidity Regulator",
+        "declared_roles": [
+          "acidity regulator"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Acidity Regulator\".",
+          "Declared as acidity regulator: this class is not named in the NOVA source read (Monteiro et al. 2019, FAO); this tool does not use it to decide a group."
+        ]
+      },
+      {
+        "code": "635",
+        "name": null,
+        "ref_name": null,
+        "declared": "Flavour Enhancer",
+        "declared_roles": [
+          "flavour enhancer"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Flavour Enhancer\".",
+          "Declared as flavour enhancer: the NOVA source lists flavour enhancers among the additive classes of ultra-processed foods (Monteiro et al. 2019, FAO, pp. 9-11). This tool counts that class on the label as a Group 4 marker."
+        ]
+      },
+      {
+        "code": "202",
+        "name": null,
+        "ref_name": "Potassium Sorbate",
+        "declared": "Preservatives",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservatives\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      },
+      {
+        "code": "211",
+        "name": "sodium benzoate",
+        "ref_name": null,
+        "declared": "Preservatives",
+        "declared_roles": [
+          "preservative"
+        ],
+        "role_notes": [
+          "Declared on the label as: \"Preservatives\".",
+          "Declared as preservative: no Group 4 marker detected for this role per Monteiro et al. 2019, FAO, pp. 9-12: it is not among the additive classes the source says are used only in ultra-processed foods. The source says processed (Group 3) foods may contain such additives (additives that prolong product duration, protect original properties or prevent proliferation of microorganisms; 'with or without added preservatives') and also mentions them in its Group 4 definition, so this role does not by itself separate the groups."
+        ]
+      }
+    ]
+  }
+}

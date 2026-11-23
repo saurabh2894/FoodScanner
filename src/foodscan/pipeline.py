@@ -11,7 +11,7 @@ from functools import cache
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
-from .classify import _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, nested_unplaced, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
+from .classify import named_water_unresolved, plain_juice_stated, nested_juice_unresolved, _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, nested_unplaced, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference, is_additive_absence_claim
@@ -434,7 +434,10 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
     unplaced = list(dict.fromkeys(
         [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"]
-        + [name for i in ings for name in nested_unplaced(i)]))
+        + [name for i in ings for name in nested_unplaced(i)]
+        + [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "fruit_juice" and not (len(ings) == 1 and plain_juice_stated(i))]
+        + [name for i in ings for name in nested_juice_unresolved(i)]
+        + [name for i in ings for name in named_water_unresolved(i, len(ings) == 1)]))
     declaration_evidence = [i for decl in parsed.declarations for i in normalise_list(split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE))) if i.ins or _hits_for(i)]
     uses = [u for i in ings for u in i.ins] + [replace(u, declaration_only=True) for i in declaration_evidence for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
@@ -519,7 +522,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
-        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or any(u.class_conflict for u in i.ins) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i))}}
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or any(u.class_conflict for u in i.ins) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i) or ((_lookup(i.name) or {}).get("kind") == "fruit_juice" and not (len(ings) == 1 and plain_juice_stated(i))) or nested_juice_unresolved(i) or named_water_unresolved(i, len(ings) == 1))}}
     if parsed.composition:
         composition_words = sum(count_words(x) for x in parsed.composition)
         completeness["words"]["composition"] = composition_words

@@ -17,7 +17,12 @@ from foodscan.pipeline import analyse_text  # noqa: E402
 
 BISCUIT = ("Ingredients: Refined wheat flour, sugar, edible vegetable oil (palmolein), invert syrup, "
            "raising agents (INS 500(ii), INS 503(ii)), emulsifier (INS 471), salt, added flavour (vanilla).")
-CORPUS = [
+# Synthetic exact-source water form controls, not real-label validation.
+WATER_CONTROLS = ["Ingredients: " + f.format(t="Carbonated Water") + "." for f in ['{t}', 'Plain {t}', 'Salted {t}', 'Sugared {t}', 'Sweetened {t}', 'Flavoured {t}', 'Flavored {t}', 'Powdered {t}', 'Dried {t}', 'Refined {t}', 'Fresh {t}', '100% {t}', '{t} (100%)', '{t} (Water)', '{t} (Sugar)', '{t} (Rice)', '{t}, Sugar', '{t}, Water', '{t}, Rice', '{t}, Flavour', '{t}, Maltodextrin', '{t}, INS 999', '{t}, Preservative (INS 211)', 'Milk ({t})', 'Mango ({t})', 'Rice ({t})', 'Rice (Milk ({t}))', 'Sugar ({t})', '{t} concentrate', '{t} powder']]
+import csv
+with (ROOT / "src/foodscan/resources/descriptors.csv").open() as _fh:
+    WATER_CONTROLS += ["Ingredients: " + text + "." for row in csv.DictReader(_fh) for d in [next(iter(row.values()))] for text in [d + " Carbonated Water", "Carbonated Water " + d]]
+CORPUS = WATER_CONTROLS + [
     BISCUIT,
     "Ingredients: Whole wheat flour.",
     (ROOT / "tests/fixtures/native_n08_readings/second.txt").read_text(),
@@ -1204,6 +1209,14 @@ _declaration_controls = ["Ingredients: Milk. " + claim + "."
                   "Contains no Stabilizer (999)","May contain INS 999","Contains milk","Contains wheat",
                   "Contains no Color (102), contains Stabilizer (999)"]]
 PAIRS += [(t,s)for t in _declaration_controls for s in ["ocr","text"]]
+TOTAL = len(PAIRS)
+
+
+
+# Source-conditioned fruit forms. Synthetic controls, not accuracy evidence.
+_juice_names = ["apple juice", "grape juice", "orange juice", "pineapple juice"]
+_juice_forms = ["{}", "Fresh {}", "100% {}", "100% Fresh {}", "Fresh 100% {}", "100% Pasteurized {}", "100% Pasteurised {}", "{} (100%)", "100% Fresh {} (Sugar)", "100% Fresh {} powder", "{} concentrate", "{} nectar", "Milk ({})", "Mango ({})", "Mango (100% Fresh {})", "100% Fresh {}, Sugar", "{}, Maltodextrin", "{}, Flavour", "{}, INS 999"]
+PAIRS += [("Ingredients: " + form.format(name) + ".", source) for name in _juice_names for form in _juice_forms for source in ["ocr","text"]]
 TOTAL = len(PAIRS)
 
 

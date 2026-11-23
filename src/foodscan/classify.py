@@ -136,6 +136,43 @@ def lookup(name: str) -> dict[str, str] | None:
     return None
 
 
+def named_water_unresolved(ing, sole=False) -> list[str]:
+    """Exact dietary-water scope only; descriptor stripping is not form evidence."""
+    out = []
+    row = lookup(ing.name)
+    if row and row["kind"] == "named_water":
+        raw = ing.raw.lower().strip(" ,;:.")
+        if not (sole and raw in ("carbonated water", "plain carbonated water")):
+            out.append(ing.raw)
+    for part in raw_bracket_parts(ing.raw):
+        out.extend(named_water_unresolved(normalise_ingredient(part)))
+    return out
+
+
+def plain_juice_stated(ing) -> bool:
+    """Narrow FAO fresh/pasteurized juice clause, no descriptor stripping as proof."""
+    row = lookup(ing.name)
+    if not row or row["kind"] != "fruit_juice":
+        return False
+    # An explicit 100% is about this item, not a bracket child or a product claim.
+    term = re.escape(row["term"])
+    quality = r"(?:fresh|pasteuri[sz]ed)"
+    pct = r"100(?:\.0+)?\s*%"
+    raw = ing.raw.lower().strip(" ,;:.")
+    return bool(re.fullmatch(rf"(?:{pct}\s+{quality}|{quality}\s+{pct})\s+{term}", raw))
+
+
+def nested_juice_unresolved(ing) -> list[str]:
+    out = []
+    for part in raw_bracket_parts(ing.raw):
+        child = normalise_ingredient(part)
+        row = lookup(child.name)
+        if row and row["kind"] == "fruit_juice":
+            out.append(part + " (inside " + ing.raw + ")")
+        out.extend(nested_juice_unresolved(child))
+    return out
+
+
 # Item-level condition for the nut/seed rows (kind nut_seed): FAO Table 1 Group 1 covers tree and ground nuts and other oily seeds "(with no added salt or sugar)" and Group 3 covers
 # "salted or sugared nuts and seeds". The condition is about the nuts themselves, so it is read from the item's OWN name and bracket ("salted almonds", "almonds (almonds, salt)"),
 # never from the rest of the product (a plain "almonds" entry in a sweetened biscuit list keeps the placement). provenance_audit_1 dropped-condition finding.
@@ -635,6 +672,13 @@ def other_open_items(ings, skip=()) -> str:
     unpl = [i.raw for i, k in rec if k == "unplaced"]
     if unpl:
         parts.append("recognised by name only, no source read places " + ", ".join(unpl))
+    juices = [i.raw for i, k in rec if k == "fruit_juice" and not (len(ings0) == 1 and plain_juice_stated(i))]
+    juices += [name for i in ings for name in nested_juice_unresolved(i)]
+    if juices:
+        parts.append("a named juice's processing and composition are not established: " + ", ".join(juices))
+    waters = [p for i in ings for p in named_water_unresolved(i, len(ings0) == 1)]
+    if waters:
+        parts.append("a named water's plain form or standalone scope is not established: " + ", ".join(waters))
     # the powder condition is the classifier's own: an item whose FINAL kind is food_powder (routed by the word 'powder' or an explicit food_powder row such as banana, strawberry or beetroot powder) is uncertain unless it is the
     # sole item and states its composition; the powder of an oil or fat is uncertain unless its own name states 100%. A 100% inside a multi-item list does not resolve it.
     pw = [i.raw for i, k in rec if fat_powder(i, k) or ((k == "food_powder" or powder_routed(i, k)) and not (len(ings0) == 1 and powder_composition_stated(i)))]
@@ -704,6 +748,17 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         # Recognised by NAME only: no source places these items, so the list can never be answered from the rest of it. This only ever ADDS an abstention (a strong
         # marker returned above); it is vocabulary, not classification, and these items are never counted as classified.
         return Classification(None, reason="recognised by name only, and no source read places " + "; ".join(unplaced) + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" + other_open_items(ings, set(unplaced)))
+    juices = [i.raw for i, k in zip(ings, kinds) if k == "fruit_juice"]
+    nested_juices = [p for i in ings for p in nested_juice_unresolved(i)]
+    if juices or nested_juices:
+        if len(ings) == 1 and not nested_juices and plain_juice_stated(ings[0]):
+            return Classification(1, drivers=[Driver(ings[0].raw, "single explicitly 100% fresh or pasteurized fruit juice; FAO Table 1 Group 1 conditioned juice example", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(None, reason="a named fruit juice (" + "; ".join(juices + nested_juices) + "): FAO Group 1 covers fresh or pasteurized juice with no added sugar, sweeteners or flavours; the item's processing and composition are not established by this list, so no group is asserted")
+    waters = [p for i in ings for p in named_water_unresolved(i, len(ings) == 1)]
+    if waters:
+        return Classification(None, reason="a named water's plain form or standalone scope is not established: " + "; ".join(waters) + "; the source names plain or carbonated water as a dietary item, not treated forms or mixtures, so no group is asserted")
+    if len(ings) == 1 and kinds[0] == "named_water":
+        return Classification(1, drivers=[Driver(ings[0].raw, "single plain carbonated water; exact-named Group 1 dietary-water example (Khandpur et al. 2021 Table 3)", lookup(ings[0].name)["source"], ings[0].section)])
     substantive = [(i, k) for i, k in zip(ings, kinds) if k not in ("neutral", "culture")]
     if bracket_unknown:
         # nut-guard-1: the item kind is named accurately. Only non-nut items: the original text, unchanged. Only nut/seed items: a nut-specific text. A mix: kind-neutral text.

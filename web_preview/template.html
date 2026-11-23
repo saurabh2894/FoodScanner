@@ -358,7 +358,7 @@
     if (a.unplaced && a.unplaced.length) {
       card.appendChild(el("div", { "class": "unplaced" }, [
         el("h3", { text: "Recognised by name, not placed" }),
-        el("p", { "class": "hint", text: "These are in the vocabulary, but no source places them, so no processing level is assigned and the list cannot be classified. Recognition is vocabulary, not classification." }),
+        el("p", { "class": "hint", text: "These names are recognised, but their form or composition is not placed by the available evidence. An independent strong marker may still decide the product group. Recognition alone does not assign a processing level." }),
         el("ul", { "class": "plain" }, a.unplaced.map(function (u) { return el("li", { "class": "mono", text: u }); }))
       ]));
     }

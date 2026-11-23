@@ -35,7 +35,12 @@
 
 {% if result %}
 <div class="card {{ 'answer' if result.answered else 'abstain' }}">
+  {% if result.answered %}
   <h2>{{ result.headline }}</h2>
+  {% else %}
+  <h2>Not enough information</h2>
+  {% if result.reason %}<p>{{ result.reason }}</p>{% endif %}
+  {% endif %}
   {% if result.answered %}<p class="src">Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.</p>{% endif %}
   {% for w in result.warnings %}<p><strong>Warning:</strong> {{ w }}</p>{% endfor %}
   {% if result.reading_conflict %}
@@ -91,7 +96,7 @@
   {% if result.completeness.words.in_list %}
     {% set c = result.completeness %}
     <h3>Completeness: {{ c.status }}</h3>
-    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are outside the vocabulary. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
+    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are not fully assessed. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
     {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
   {% endif %}
   {% if result.ignored %}
@@ -103,6 +108,11 @@
     <h3>Not assessed</h3>
     <p class="src">Not in the vocabulary, or a group name whose contents were assessed.</p>
     <ul>{% for u in result.unassessed %}<li>{{ u }}</li>{% endfor %}</ul>
+  {% endif %}
+  {% if result.unplaced %}
+    <h3>Recognised by name, not placed</h3>
+    <p class="src">Naming alone does not establish this form's processing and composition.</p>
+    <ul>{% for u in result.unplaced %}<li>{{ u }}</li>{% endfor %}</ul>
   {% endif %}
   {% if result.ins_mappings %}
     {% macro effect(u) -%}

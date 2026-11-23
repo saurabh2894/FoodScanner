@@ -28,5 +28,11 @@ def test_synthetic_the_decision_record_marks_whey_as_approved_and_merged_and_eve
             assert d["disposition"].startswith("APPROVED AND MERGED")
         else:
             assert d["disposition"] == "PARK" and d["term"] not in MARKERS
+            if d["term"] == "carbonated water":
+                # named-water-23: exact new primary example; mixed/treated forms remain held.
+                assert d["term"] in LEX
+                assert analyse_text("Ingredients: Carbonated Water.", source="text").group == 1
+                assert not analyse_text("Ingredients: Carbonated Water, Sugar.", source="text").answered
+                continue
             if d["term"] not in APPROVED_4:                         # yeast, butter oil etc. were approved later (pmc-decisions-4)
                 assert d["term"] not in LEX

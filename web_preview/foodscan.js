@@ -415,6 +415,10 @@
       const rec = ings.filter((i) => isRecognised(i.name)).map((i) => [i, lookup(i.name).kind]);
       const unpl = rec.filter(([, k]) => k === "unplaced").map(([i]) => i.raw);
       if (unpl.length) parts.push("recognised by name only, no source read places " + unpl.join(", "));
+      const waters = ings.flatMap(i => namedWaterUnresolved(i, ings0.length === 1));
+      if (waters.length) parts.push("a named water's plain form or standalone scope is not established: " + waters.join(", "));
+      const juices = rec.filter(([i,k]) => k === "fruit_juice" && !(ings0.length === 1 && plainJuiceStated(i))).map(([i]) => i.raw).concat(ings.flatMap(nestedJuiceUnresolved));
+      if (juices.length) parts.push("a named juice's processing and composition are not established: " + juices.join(", "));
       const pw = rec.filter(([i, k]) => fatPowder(i, k) || ((k === "food_powder" || powderRouted(i, k)) && !(ings0.length === 1 && powderCompositionStated(i)))).map(([i]) => i.raw);
       if (pw.length) parts.push("a powder is named and its composition is not established: " + pw.join(", "));
       return parts.length ? "; other open items: " + parts.join("; ") : "";
@@ -787,6 +791,28 @@
         hits = hits.filter((h) => !(h.strength === "strong" && h.marker_class === "cosmetic_additive"));
       return hits;
     }
+    function namedWaterUnresolved(ing, sole=false) {
+      const out=[], row=lookup(ing.name), raw=ing.raw.toLowerCase().replace(/^[ ,;:.]+|[ ,;:.]+$/g, "");
+      if (row && row.kind === "named_water" && !(sole && ["carbonated water", "plain carbonated water"].includes(raw))) out.push(ing.raw);
+      for (const part of rawBracketParts(ing.raw)) out.push(...namedWaterUnresolved(normaliseIngredient(part)));
+      return out;
+    }
+    function plainJuiceStated(ing) {
+      const row = lookup(ing.name);
+      if (!row || row.kind !== "fruit_juice") return false;
+      const term = row.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const quality = "(?:fresh|pasteuri[sz]ed)", pct = "100(?:\\.0+)?\\s*%";
+      return new RegExp("^(?:" + pct + "\\s+" + quality + "|" + quality + "\\s+" + pct + ")\\s+" + term + "$").test(ing.raw.toLowerCase().replace(/^[ ,;:.]+|[ ,;:.]+$/g, ""));
+    }
+    function nestedJuiceUnresolved(ing) {
+      const out = [];
+      for (const part of rawBracketParts(ing.raw)) {
+        const child = normaliseIngredient(part), row = lookup(child.name);
+        if (row && row.kind === "fruit_juice") out.push(part + " (inside " + ing.raw + ")");
+        out.push(...nestedJuiceUnresolved(child));
+      }
+      return out;
+    }
     function classifyIngredients(ings, declarations) {
       const strong = [], weak = [];
       for (const ing of ings) for (const h of hitsFor(ing)) (h.strength === "strong" ? strong : weak).push({ ingredient: ing.raw, detail: h.detail, source: h.source, section: ing.section ?? null });
@@ -823,6 +849,14 @@
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
       const unplacedNames = ings.filter((i, n) => kinds[n] === "unplaced").map((i) => i.raw).concat(ings.flatMap(nestedUnplaced));
       if (unplacedNames.length) return { group: null, drivers: [], reason: "recognised by name only, and no source read places " + unplacedNames.join("; ") + ", so the processing level cannot be judged (recognition is vocabulary, not classification)" + otherOpenItems(ings, new Set(unplacedNames)) };
+      const juices = ings.filter((i,n) => kinds[n] === "fruit_juice").map(i => i.raw), nestedJuices = ings.flatMap(nestedJuiceUnresolved);
+      if (juices.length || nestedJuices.length) {
+        if (ings.length === 1 && !nestedJuices.length && plainJuiceStated(ings[0])) return {group:1,drivers:[{ingredient:ings[0].raw,detail:"single explicitly 100% fresh or pasteurized fruit juice; FAO Table 1 Group 1 conditioned juice example",source:lookup(ings[0].name).source,section:ings[0].section ?? null}],reason:null};
+        return {group:null,drivers:[],reason:"a named fruit juice (" + juices.concat(nestedJuices).join("; ") + "): FAO Group 1 covers fresh or pasteurized juice with no added sugar, sweeteners or flavours; the item's processing and composition are not established by this list, so no group is asserted"};
+      }
+      const waters = ings.flatMap(i => namedWaterUnresolved(i, ings.length === 1));
+      if (waters.length) return {group:null,drivers:[],reason:"a named water's plain form or standalone scope is not established: " + waters.join("; ") + "; the source names plain or carbonated water as a dietary item, not treated forms or mixtures, so no group is asserted"};
+      if (ings.length === 1 && kinds[0] === "named_water") return {group:1,drivers:[{ingredient:ings[0].raw,detail:"single plain carbonated water; exact-named Group 1 dietary-water example (Khandpur et al. 2021 Table 3)",source:lookup(ings[0].name).source,section:ings[0].section ?? null}],reason:null};
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const kinds0 = ings.map((i) => lookup(i.name).kind);
       const animalPowders = ings.filter((i, n) => animalPowder(i, kinds0[n])).map((i) => i.raw);
@@ -1139,7 +1173,7 @@
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
-      const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced)))];
+      const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced),ings.filter(i => lookup(i.name)?.kind === "fruit_juice" && !(ings.length === 1 && plainJuiceStated(i))).map(i => i.raw),ings.flatMap(nestedJuiceUnresolved),ings.flatMap(i => namedWaterUnresolved(i, ings.length === 1))))];
       const declarationEvidence = parsed.declarations.flatMap((d) => splitItemsText(d.replace(/^contains?\s*:?[ ]*/i, "")).map(normaliseIngredient)).filter((i) => i.ins.length || hitsFor(i).length);
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
       sectionWarnings.push(...parsed.composition.map((seg) => `Milk composition declaration (not an added ingredient): "${seg}". No vitamin, added-solid or milk-fat ingredient was inferred.`));
@@ -1190,7 +1224,7 @@
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
-        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || i.ins.some((u) => u.class_conflict) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0; }).length } };
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || i.ins.some((u) => u.class_conflict) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0 || (l && l.kind === "fruit_juice" && !(ings.length === 1 && plainJuiceStated(i))) || nestedJuiceUnresolved(i).length > 0 || namedWaterUnresolved(i, ings.length === 1).length > 0; }).length } };
       if (parsed.composition.length) {
         const compositionWords = parsed.composition.reduce((n, x) => n + countWords(x), 0);
         common.completeness.words.composition = compositionWords; common.completeness.words.excluded -= compositionWords;
@@ -1216,7 +1250,7 @@
         const key = item + "||" + reason;
         if (!seen.has(key)) { seen.add(key); out.push({ item, reason, need }); }
       }
-      (a.unplaced || []).forEach((item) => add(item, "Recognised by name, but no source available here places this form.", "A source that covers this exact form or a class that genuinely includes it."));
+      (a.unplaced || []).forEach((item) => add(item, "Recognised by name, but the available evidence does not establish this form in this list.", "A source that covers this exact form or a class that genuinely includes it."));
       const secs = (a.sections || []).map(([label, items]) => ({ label, items }));
       const ings = expand(secs.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, [], []);
       for (const ing of ings) {

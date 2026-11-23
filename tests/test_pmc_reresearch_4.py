@@ -25,6 +25,13 @@ def test_synthetic_approved_terms_are_shipped_and_parked_or_conflicted_terms_are
     lex, mk, syn = _col("lexicon.csv"), _col("markers.csv"), _col("synonyms.csv", "from")
     for d in DEC:
         t, k = d["term"], d["disposition"]
+        if t == "carbonated water":
+            # named-water-23 exact primary support supersedes no-source finding only.
+            from foodscan.pipeline import analyse_text
+            assert t in lex and t not in syn and t not in mk
+            assert analyse_text("Ingredients: Carbonated Water.", source="text").group == 1
+            assert not analyse_text("Ingredients: Carbonated Water (Sugar).", source="text").answered
+            continue
         if k == "ACCEPT_ROW":
             assert t in lex, t
         elif k == "ACCEPT_SYNONYM":

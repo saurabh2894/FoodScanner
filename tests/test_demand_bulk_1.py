@@ -65,6 +65,19 @@ def test_synthetic_the_synonym_maps_potable_water_to_water_and_nothing_else():
 
 @pytest.mark.parametrize("d", [d for d in DEC if d["disposition"] in ("PARK", "LABEL_BOUND", "MARKER_PROPOSAL")], ids=lambda d: d["term"])
 def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_recognised(d):
+    if d["term"] == "carbonated water":
+        from foodscan.classify import lookup
+        assert lookup(d["term"])["kind"] == "named_water"
+        assert grp("Ingredients: Carbonated Water.")[0] == 1
+        assert not analyse_text("Ingredients: Carbonated Water, Sugar.", source="text").answered
+        return
+    if d["term"] in ("apple juice", "grape juice", "orange juice", "pineapple juice"):
+        # fruit-forms-23: recognition does not lift the bare-form placement hold.
+        from foodscan.classify import lookup
+        assert lookup(normalise_ingredient(d["term"]).name)["kind"] == "fruit_juice"
+        a = analyse_text("Ingredients: " + d["term"] + ".", source="text")
+        assert not a.answered and d["term"] in a.unplaced
+        return
     if d["term"] == "tumeric":
         # Current NALT Product30814 explicitly lists this spelling of turmeric, a spice.
         assert normalise_ingredient(d["term"]).name == "turmeric"

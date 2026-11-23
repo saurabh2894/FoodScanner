@@ -95,3 +95,16 @@ def test_additive_codes_are_grouped_with_plain_effect_labels(monkeypatch):
     assert "Recognised code, no processing rule yet. Classification treats it as unknown." in html
     assert "Name checked against its source page" in html and "Name not in the table yet" not in html
     assert "INS numbers" not in html
+
+
+def test_abstention_heading_is_short_and_reason_is_body_text():
+    from bs4 import BeautifulSoup
+    text = "Ingredients: Carbonated Water, Sugar."
+    html = post(create_app(FakeOcr(text)).test_client()).get_data(as_text=True)
+    soup = BeautifulSoup(html, "html.parser")
+    heading = soup.find("h2")
+    assert heading.get_text(strip=True) == "Not enough information"
+    body = heading.find_next_sibling("p")
+    assert "standalone scope is not established" in body.get_text()
+    assert "not treated forms or mixtures" in body.get_text()
+    assert "named water" not in heading.get_text()

@@ -88,7 +88,7 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
 
     # Plain juices held (senior review): the bare term does not establish fresh/pasteurized versus reconstituted from concentrate
     for juice in ["apple juice", "grape juice", "orange juice", "pineapple juice"]:
-        assert juice not in rows, f"{juice} is held (cranberry precedent), no row"
+        assert rows[juice]["kind"] == "fruit_juice"  # fruit-forms-23: recognition only; bare form still abstains
 
     # Condition-blocked candidate items
     assert "roasted peanuts" not in rows, "roasted peanuts on b1/N15 has added sugar/salt, must be blocked"
@@ -136,4 +136,4 @@ def test_juice_rows_are_held():
     are held (same discipline as cranberry). They stay unassessed; nothing else changes."""
     for juice in ["apple juice", "grape juice", "orange juice", "pineapple juice"]:
         r = analyse_text(f"Ingredients: {juice}.", source="text")
-        assert not r.answered and juice in r.unassessed, juice
+        assert not r.answered and juice in r.unplaced, juice  # fruit-forms-23: separate conditioned recognition
