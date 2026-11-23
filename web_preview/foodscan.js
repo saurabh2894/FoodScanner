@@ -265,6 +265,7 @@
       return kept.length > 1 && kept.length === parts.length ? [kept, connectors] : [[raw], []];
     }
     const countWords = (t) => (t.match(/[\p{L}\p{N}]+/gu) || []).length;
+    const MILK_COMPOSITION = /^\s*((?:(?:pasteurized|pasteurised)\s+)?(?:buffalo milk|cow milk|goat milk|toned milk|double toned milk|milk))\s+(Fat\s*\d+(?:\.\d+)?\s*%\s*Min(?:imum)?\.?\s*,\s*SNF\s*\d+(?:\.\d+)?\s*%\s*Min(?:imum)?\.?)\s*$/i;
     function parseIngredientList(text, opts) {
       const assumeList = !!(opts && opts.assumeList);
       const norm = normaliseWs(text);
@@ -287,6 +288,9 @@
         terminated = true;
         declarations.push(...containsSentences(bodyWithTail));
       }
+      const composition = [];
+      const cm = MILK_COMPOSITION.exec(body);
+      if (cm) { composition.push(collapse(cm[2])); terminated = terminated || body.trimEnd().endsWith("."); body = cm[1]; }
       const keptWords = countWords(body);
       const read = readSections(body);
       terminated = terminated || read.ended;
@@ -306,7 +310,7 @@
         if (cur.length) { sections.push({ label: curLabel, items: cur }); items.push(...cur); }
       }
       if (!items.length) return { found: false };
-      return { found: true, items, terminated, unbalanced, declarations, sections, ignored: read.unread ? [collapse(read.unread)] : [], headingKind, headingText, regionWords, keptWords, tailWords: regionWords - keptWords };
+      return { found: true, items, terminated, unbalanced, declarations, sections, composition, ignored: read.unread ? [collapse(read.unread)] : [], headingKind, headingText, regionWords, keptWords, tailWords: regionWords - keptWords };
     }
 
     function* bracketGroups(raw) {
@@ -1109,6 +1113,7 @@
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced)))];
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
+      sectionWarnings.push(...parsed.composition.map((seg) => `Milk composition declaration (not an added ingredient): "${seg}". No vitamin, added-solid or milk-fat ingredient was inferred.`));
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
@@ -1155,6 +1160,12 @@
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
         assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0; }).length } };
+      if (parsed.composition.length) {
+        const compositionWords = parsed.composition.reduce((n, x) => n + countWords(x), 0);
+        common.completeness.words.composition = compositionWords; common.completeness.words.excluded -= compositionWords;
+        sectionWarnings.push("Existing milk mappings may be PROVISIONAL: NOVA names milk, not each species or standardised class. The composition note supplies no new placement evidence; see full source evidence.");
+        common.warnings = [...sectionWarnings];
+      }
       const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
       const blocking = truncation || unread || headingRisk || lost;
       const r = classifyIngredients(ings, parsed.declarations);

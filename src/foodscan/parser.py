@@ -126,6 +126,7 @@ class ParsedList:
     # Text after the list that was NOT read as ingredients (unlabelled text after a full stop). Never dropped
     # silently: it is kept here so the result can show it and, if it looks like more ingredients, say so.
     ignored: list[str] = field(default_factory=list)
+    composition: list[str] = field(default_factory=list)  # exact paired milk fat/SNF declaration, shown as metadata
     heading_kind: str = "none"        # exact / fuzzy (damaged heading) / assumed (pasted list, no heading) / inferred (set by the pipeline)
     heading_text: str = ""
     region_words: int = 0             # words after the heading
@@ -510,6 +511,16 @@ def split_top_level_and_ex(raw: str) -> tuple[list[str], list[str]]:
     return (keep, connectors) if len(keep) > 1 and len(keep) == len(parts) else ([raw], [])
 
 
+# N09 actual pack: milk name, then a paired minimum composition declaration. This
+# is not an ingredient synonym or a nutrient cutoff. Require the ENTIRE pre-stop
+# region to match; any additional ingredient, unknown word, bracket or section
+# prevents extraction. No new milk name/process permission is granted here.
+_MILK_COMPOSITION = re.compile(
+    r"^\s*(?P<milk>(?:(?:pasteurized|pasteurised)\s+)?(?:buffalo milk|cow milk|goat milk|toned milk|double toned milk|milk))"
+    r"\s+(?P<composition>Fat\s*\d+(?:\.\d+)?\s*%\s*Min(?:imum)?\.?\s*,\s*SNF\s*\d+(?:\.\d+)?\s*%\s*Min(?:imum)?\.?)\s*$",
+    re.IGNORECASE)
+
+
 def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList:
     norm = _normalise_ws(text)
     found = _find_heading(norm)
@@ -541,6 +552,12 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         # (allergen cross-contact) is never a declaration.
         declarations = _contains_sentences(body_with_tail)
 
+    composition = []
+    cm = _MILK_COMPOSITION.fullmatch(body)
+    if cm:
+        composition = [_collapse(cm.group("composition"))]
+        terminated = terminated or body.rstrip().endswith(".")
+        body = cm.group("milk")
     kept_words = count_words(body)
     raw_sections, ended, unread = _read_sections(body)
     terminated = terminated or ended
@@ -577,6 +594,7 @@ def parse_ingredient_list(text: str, *, assume_list: bool = False) -> ParsedList
         declarations=declarations,
         sections=sections,
         ignored=ignored,
+        composition=composition,
         heading_kind=heading_kind,
         heading_text=heading_text,
         region_words=region_words,

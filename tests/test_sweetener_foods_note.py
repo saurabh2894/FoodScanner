@@ -69,5 +69,7 @@ def test_every_frozen_paste_input_keeps_its_group():
         # without species restriction; species not named by a verified NOVA source), so both move None -> Group 1. Evidence: evaluation/per_form_2b/.
         # Intended, attributed exception (whole-food-guard-1): b3/Q04 'Milk solids (Toned Milk) & Active Culture' names a different recognised food inside a whole_food bracket; no clause read establishes that a milk named in the
         # bracket of 'milk solids' is the same food, and a frozen expectation is not evidence, so the item now abstains (Group 1 -> None). Evidence: evaluation/whole_food_guard_1/.
-        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04") else (1 if key in ("b2/M02", "b3/Q06") else group))
+        # N09 actual-pack correction: complete paired fat/SNF minima are composition metadata,
+        # not added milk-fat ingredients. Original frozen JSON stays unchanged. research/09.
+        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04") else (1 if key in ("b1/N09", "b2/M02", "b3/Q06") else group))
         assert (r.group if r.answered else None) == expected, key

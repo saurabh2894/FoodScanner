@@ -433,6 +433,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     uses = [u for i in ings for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(items)] + amp_notes
+    section_warnings += [f'Milk composition declaration (not an added ingredient): "{seg}". No vitamin, added-solid or milk-fat ingredient was inferred.' for seg in parsed.composition]
     unread_like = [seg for seg in parsed.ignored if _looks_like_more_ingredients(seg)]
     unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
                        for seg in unread_like]
@@ -511,6 +512,12 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
         "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i))}}
+    if parsed.composition:
+        composition_words = sum(count_words(x) for x in parsed.composition)
+        completeness["words"]["composition"] = composition_words
+        completeness["words"]["excluded"] -= composition_words
+        section_warnings.append("Existing milk mappings may be PROVISIONAL: NOVA names milk, not each species or standardised class. The composition note supplies no new placement evidence; see full source evidence.")
+        common["warnings"] = list(section_warnings)
     common["completeness"] = completeness
     if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
         blocking = blocking or f"{unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost"

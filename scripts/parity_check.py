@@ -20,6 +20,8 @@ BISCUIT = ("Ingredients: Refined wheat flour, sugar, edible vegetable oil (palmo
 CORPUS = [
     BISCUIT,
     "Ingredients: Whole wheat flour.",
+    "Ingredients: Pasteurized Buffalo Milk Fat 6.00% Min., SNF 9.00% Min. Allergen Information: Contains Milk",
+    "Ingredients: Pasteurized Buffalo Milk Fat 6.00% Min., SNF 9.00% Min., Vitamin A",
     "Ingredients: Cucumber, water, salt, vinegar, dill.",
     "Ingredients: Sugar, refined wheat flo",
     "Ingredients: Rice, maltodextrin.", "Ingredients: Rice, dextrose.", "Ingredients: Rice, modified starch.",

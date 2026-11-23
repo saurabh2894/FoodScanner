@@ -89,7 +89,7 @@
   {% if result.completeness.words.in_list %}
     {% set c = result.completeness %}
     <h3>Completeness: {{ c.status }}</h3>
-    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed.items }} items are outside the vocabulary. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
+    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are outside the vocabulary. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
     {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
   {% endif %}
   {% if result.ignored %}
