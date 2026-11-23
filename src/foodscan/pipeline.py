@@ -568,19 +568,22 @@ def _read_image(path, engine) -> Analysis:
     if alt is None or clean:
         return first
     # One bounded second pass for photos that did not read cleanly, and for any reading that holds additive codes (digits are the
-    # characters OCR confuses most). The better yield is kept; ties keep the first reading. The two readings are compared on the codes only.
+    # characters OCR confuses most). The better yield is kept; ties keep the first reading. Codes, section labels and extracted ingredient items are compared for review only.
     second = analyse_text(alt(path), source="ocr")
     chosen = second if _ocr_yield(second) > _ocr_yield(first) else first
     note = ocr_code_disagreement([u.code for u in first.ins_mappings], [u.code for u in second.ins_mappings])
     if note:
         chosen.warnings.append(note)
-    if note or [s[0] for s in first.sections] != [s[0] for s in second.sections]:
+    items_differ = _reading_items(first) != _reading_items(second)
+    if note or [s[0] for s in first.sections] != [s[0] for s in second.sections] or items_differ:
         chosen.reading_conflict = {
             "chosen": "second" if chosen is second else "first",
+            "items_differ": items_differ,
             "selection": "Higher existing recognised-item yield; ties keep the first reading. Not chosen for code identity or classification group.",
             "readings": [{"label": label, "text": a.extracted_text,
                 "sections": [sec[0] or "No section label" for sec in a.sections],
                 "codes": sorted(set(u.code for u in a.ins_mappings)),
+                "ingredients": list(a.ingredients),
                 "heading": a.heading["kind"], "completeness": a.completeness["status"]}
                 for label, a in (("first", first), ("second", second))]}
         chosen.warnings.append("Photo readings differ. The result uses the " + chosen.reading_conflict["chosen"] + " reading only; compare both readings with the pack. Text accounting does not prove correct characters or codes.")
@@ -605,6 +608,14 @@ def _rotated_fallback(path, engine, chosen: Analysis) -> Analysis:
     if best_deg:
         best.warnings.append(f"The text was read after turning the photo {best_deg} degrees clockwise (sideways or upside-down text). Check the extracted ingredients against the pack.")
     return best
+
+
+def _reading_items(a: Analysis) -> list[str]:
+    """Review-only signatures. Ignore case/spacing/punctuation, not item order or digits.
+
+    Never edit either reading or use this comparison to select or classify it.
+    """
+    return [re.sub(r"[^a-z0-9]+", " ", item.lower()).strip() for item in a.ingredients]
 
 
 def ocr_code_disagreement(first: list[str], second: list[str]) -> str | None:

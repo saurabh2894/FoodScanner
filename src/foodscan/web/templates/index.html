@@ -41,6 +41,7 @@
   {% if result.reading_conflict %}
   <section class="reading-conflict">
     <h3>Photo readings differ</h3>
+    <p>{% if result.reading_conflict.items_differ %}The extracted ingredient items differ, including possible wording, numbers, order or item boundaries. This comparison does not tell which reading is correct.{% else %}The extracted codes or section labels differ.{% endif %}</p>
     <p>Result uses the {{ result.reading_conflict.chosen }} reading only. No codes or text were merged. Compare both readings with the pack before relying on a disputed item.</p>
     <p>Text accounting marked complete does not prove correct characters or codes.</p>
     <details><summary>Compare both readings</summary>
@@ -49,6 +50,7 @@
       <h4>{{ reading.label|capitalize }} reading{% if reading.label == result.reading_conflict.chosen %} (used for this result){% else %} (not used){% endif %}</h4>
       <p>Sections extracted for analysis: {{ reading.sections|join('; ') or 'None found' }}. Codes: {% for code in reading.codes %}INS {{ code }}{% if not loop.last %}, {% endif %}{% else %}None found{% endfor %}.</p>
       <p>Heading: {{ reading.heading }}. Text accounting: {{ reading.completeness }}.</p>
+      <p>Extracted ingredient items: {{ reading.ingredients|join("; ") or "None found" }}.</p>
       <pre>{{ reading.text }}</pre>
       {% endfor %}
     </details>

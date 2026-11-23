@@ -275,10 +275,12 @@
         compare.appendChild(el("h3", { text: r.label.charAt(0).toUpperCase() + r.label.slice(1) + " reading" + (r.label === conflict.chosen ? " (used for this result)" : " (not used)") }));
         compare.appendChild(el("p", { "class": "hint", text: "Sections extracted for analysis: " + (r.sections.join("; ") || "None found") + ". Codes: " + (r.codes.map(function (c) { return "INS " + c; }).join(", ") || "None found") + "." }));
         compare.appendChild(el("p", { "class": "hint", text: "Heading: " + r.heading + ". Text accounting: " + r.completeness + "." }));
+        compare.appendChild(el("p", { "class": "hint", text: "Extracted ingredient items: " + ((r.ingredients || []).join("; ") || "None found") + "." }));
         compare.appendChild(el("pre", { text: r.text }));
       });
       card.appendChild(el("section", { "class": "reading-conflict warn" }, [
         el("h3", { text: "Photo readings differ" }),
+        el("p", { text: conflict.items_differ ? "The extracted ingredient items differ, including possible wording, numbers, order or item boundaries. This comparison does not tell which reading is correct." : "The extracted codes or section labels differ." }),
         el("p", { text: "Result uses the " + conflict.chosen + " reading only. No codes or text were merged. Compare both readings with the pack before relying on a disputed item." }),
         el("p", { "class": "hint", text: "Text accounting marked complete does not prove correct characters or codes." }), compare]));
     }
@@ -594,11 +596,13 @@
         var c1 = codesOf(a1), c2 = codesOf(a2), only1 = c1.filter(function (c) { return c2.indexOf(c) < 0; }), only2 = c2.filter(function (c) { return c1.indexOf(c) < 0; });
         if (only1.length || only2.length) ocrNotes.push("Two readings of the photo disagree on additive codes: " + (only1.length ? "INS " + only1.sort().join(", INS ") : "none") + " in the first reading, " + (only2.length ? "INS " + only2.sort().join(", INS ") : "none") + " in the second. Possible misread, check the pack.");
         var sectionsOf = function (a) { return (a.sections || []).map(function (sec) { return sec[0] || "No section label"; }); };
-        if (only1.length || only2.length || JSON.stringify(sectionsOf(a1)) !== JSON.stringify(sectionsOf(a2))) {
-          readingConflict = { chosen: text === res2.data.text && yieldOf(a2) > yieldOf(a1) ? "second" : "first",
+        var itemsOf = function (a) { return a.ingredients.map(function (item) { return item.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }); };
+        var itemsDiffer = JSON.stringify(itemsOf(a1)) !== JSON.stringify(itemsOf(a2));
+        if (only1.length || only2.length || JSON.stringify(sectionsOf(a1)) !== JSON.stringify(sectionsOf(a2)) || itemsDiffer) {
+          readingConflict = { items_differ: itemsDiffer, chosen: text === res2.data.text && yieldOf(a2) > yieldOf(a1) ? "second" : "first",
             selection: "Higher existing recognised-item yield; ties keep the first reading. Not chosen for code identity or classification group.",
             readings: [["first", a1, res.data.text], ["second", a2, res2.data.text]].map(function (r) { return {
-              label: r[0], text: r[2], sections: sectionsOf(r[1]), codes: Array.from(new Set(codesOf(r[1]))).sort(),
+              label: r[0], text: r[2], ingredients: r[1].ingredients.slice(), sections: sectionsOf(r[1]), codes: Array.from(new Set(codesOf(r[1]))).sort(),
               heading: r[1].heading.kind, completeness: r[1].completeness.status }; }) };
         }
       }
