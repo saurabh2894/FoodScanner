@@ -1,0 +1,239 @@
+{
+  "state": "Local only, unpublished",
+  "main_base": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "local_base": "completed unpublished local12",
+  "canonical": 552,
+  "aliases": 304,
+  "new_heads": 6,
+  "new_aliases": 2,
+  "cumulative_vs_pinned_main": {
+    "heads": 34,
+    "aliases": 55
+  },
+  "counts_are_names_and_overlapping_categories_not_disjoint_foods_or_coverage": true,
+  "source_clauses": {
+    "nova_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/",
+    "legume_clause": "Lentils, chickpeas, and other legumes",
+    "vegetable_clause": "Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers",
+    "group3_clause": "These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.",
+    "fao_url": "https://www.fao.org/4/ca5644en/ca5644en.pdf",
+    "fao_minimal_process_clause": "Unprocessed foods altered by industrial processes such as removal of inedible or unwanted parts, drying, powdering, squeezing, crushing, grinding, fractioning, steaming, poaching, boiling, roasting, and pasteurization, chilling, freezing, placing in containers, vacuum packaging, non-alcoholic fermentation, and other methods that do not add salt, sugar, oils or fats or other food substances to the original food.",
+    "all_exact_names_absent_from_nova": true,
+    "fao_names_boiling_and_roasting": true
+  },
+  "runtime_proof": {
+    "unqualified_canonical_powder_answers": [],
+    "alias_parent": {
+      "count": 3312,
+      "mismatches": []
+    },
+    "full_field_parity": {
+      "count": 24667,
+      "mismatches": []
+    },
+    "existing_names": {
+      "count": 848,
+      "differences": [],
+      "non_provenance_differences": []
+    },
+    "frozen66": {
+      "count": 66,
+      "differences": []
+    }
+  },
+  "affected_family_proof": {
+    "related_existing_names": [
+      "adzuki beans",
+      "arhar dal",
+      "bean sprouts",
+      "beans",
+      "bengal gram",
+      "bengal gram flour",
+      "black beans",
+      "black eyed beans",
+      "black eyed peas",
+      "black gram",
+      "black-eyed beans",
+      "black-eyed peas",
+      "blackeyed beans",
+      "blackeyed peas",
+      "broad beans",
+      "broadbeans",
+      "cannellini beans",
+      "carioca beans",
+      "chana dal",
+      "chick pea",
+      "chick peas",
+      "cranberry beans",
+      "faba beans",
+      "fababeans",
+      "fava beans",
+      "favabeans",
+      "flor de mayo beans",
+      "french beans",
+      "garbanzo bean",
+      "garbanzo beans",
+      "gram flour",
+      "great northern beans",
+      "green gram",
+      "horse beans",
+      "horsebeans",
+      "hyacinth beans",
+      "kidney beans",
+      "lentil",
+      "lima beans",
+      "masoor dal",
+      "mat bean",
+      "moong dal",
+      "moth bean",
+      "mothbeans",
+      "mung bean",
+      "mung beans",
+      "mung dal",
+      "navy beans",
+      "peas",
+      "pigeon peas",
+      "pigeonpeas",
+      "pink beans",
+      "pinto beans",
+      "red gram",
+      "red lentil",
+      "roasted gram",
+      "small white beans",
+      "snap beans",
+      "snapbeans",
+      "southern peas",
+      "soy bean",
+      "soy beans",
+      "soy-bean oil",
+      "soya bean",
+      "soya bean flour",
+      "soya bean seed",
+      "soya beans",
+      "soyabean",
+      "soyabean flour",
+      "soyabean seed",
+      "soyabean seeds",
+      "soyabeans",
+      "soybean",
+      "soybean flour",
+      "soybean oil",
+      "soybean seed",
+      "soybean seeds",
+      "soybeans",
+      "split pulse urad flour",
+      "string beans",
+      "toor dal",
+      "tur dal",
+      "urad dal",
+      "wax beans",
+      "winged beans",
+      "yambean",
+      "yardlong beans"
+    ],
+    "name_count": 87,
+    "forms": 28,
+    "source_paths": 2,
+    "before_after_full_field_comparisons": 4872,
+    "python_javascript_full_field_comparisons": 9744,
+    "before_after_changes": [],
+    "cross_engine_mismatches": []
+  },
+  "oos32": {
+    "date": "2026-11-22",
+    "before_pin": "1513332f3d63462b85da98499ca2dc2133c7b564",
+    "after": "local combined nalt_names_13, uncommitted",
+    "frozen_manifest_unchanged": true,
+    "full_field_cross_engine_analyses": 128,
+    "cross_engine_mismatches": [],
+    "before_after_full_field_changes": [],
+    "caveat": "Original frozen targeted herb/spice text challenge only, not a coverage estimate and not photo-capture validation."
+  },
+  "stored_photos": {
+    "before_pin": "1513332f3d63462b85da98499ca2dc2133c7b564",
+    "after": "unpublished local nalt_names_13, 552 canonical and 304 aliases",
+    "ocr_assets": [
+      {
+        "name": "eng.traineddata.b64.txt",
+        "sha256": "396b9ea38c7bc489cdfc3e405e8c572b20ad16675bf15f191b261807834a76b5",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract-core-lstm.wasm.js",
+        "sha256": "8f04aa0cc81e7bde33f80e92fa01a7a665f0b4884d098acf5de9c7104a11dfaa",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract-core-simd-lstm.wasm.js",
+        "sha256": "ce20eda9533cbed1e6c2b4276fbae1e0adc61b6754b5513084be601787b457cf",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract.min.js",
+        "sha256": "a8e29918d098b2b06e1012bdaeffb4aec0445c5d5654709023e0bd1f442a80e8",
+        "unchanged": true
+      },
+      {
+        "name": "worker-boot.js",
+        "sha256": "932f4104ca64a0614dc677b43ec01f7e82679112ebd0deda3ccaf5fca78aa679",
+        "unchanged": true
+      },
+      {
+        "name": "worker.min.js",
+        "sha256": "aca1229639fc9907d86f96e825955a2b7c5716d17f3bc3acd71f9c7ab66181fc",
+        "unchanged": true
+      }
+    ],
+    "actual_browser_photo_runs": 6,
+    "python_javascript_full_field_comparisons": 12,
+    "live_browser_python_full_field_comparisons": 6,
+    "before_after_source_pair_comparisons": 6,
+    "cross_engine_mismatches": [],
+    "live_browser_python_mismatches": [],
+    "before_after_source_pair_changes": [],
+    "local_asset_requests": 36,
+    "local_asset_failures": [],
+    "caveat": "Three exact stored images only, not a new capture or full original-photo corpus. Unchanged OCR is not accurate OCR: original still abstains; millet additive digits and chips text/brackets still include recognition errors."
+  },
+  "scoped_suite": {
+    "passed": 10200,
+    "baseline_failures": [
+      "test_millet_puff_photo.py::test_real_photo_is_group4_with_sections",
+      "test_mine_unassessed.py::test_real_evidence_has_known_open_and_closed_terms"
+    ],
+    "skipped": 2,
+    "deselected": 1,
+    "xfailed": 5,
+    "restricted_reference_module_excluded": true
+  },
+  "focused_checks_passed": 1041,
+  "build_full_field_comparisons": 15635,
+  "actual_pixels_inspected": [
+    "Greengram1",
+    "Salted Urd Beans3",
+    "Mungo Beans Powder abstention",
+    "100% Haricot Beans Powder1",
+    "Catjang Peas1",
+    "Mungobeans1",
+    "Original stored photo desktop/mobile, still abstains",
+    "Millet stored photo desktop/mobile, still4 with OCR warnings",
+    "Chips stored photo desktop/mobile, still4 with uncertain completeness"
+  ],
+  "historical_inventory_changes": "Old held-negative tests explicitly retain all unrelated negatives and assert1 for only these source-backed lifts; original manifests untouched; 33 old legume-kind rows plus6new. An initial accidental addition to the fruit-kind inventory assertion was caught by the suite and restored byte-identically to local12, with no runtime change.",
+  "caveats": [
+    "No source/main/live publication. Fresh main reconciliation still required.",
+    "Three stored photos only, not fresh capture/full original-photo corpus/accuracy proof.",
+    "Original photo still abstains. Existing OCR errors persist.",
+    "Excluded reference module remains unvalidated.",
+    "The same2pinned-baseline failures remain."
+  ],
+  "pinned_baseline_fresh_rerun": {
+    "passed": 6783,
+    "same_failure_names": true,
+    "failed": 2,
+    "skipped": 2,
+    "deselected": 1,
+    "xfailed": 5,
+    "note": "Fresh offline run of pinned1513332 source, not a live-main refresh."
+  }
+}
