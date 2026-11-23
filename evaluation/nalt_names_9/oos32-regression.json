@@ -1,0 +1,473 @@
+{
+  "date": "2026-11-22",
+  "before_pin": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "after": "local combined nalt_names_9, uncommitted",
+  "frozen_manifest_unchanged": true,
+  "exact_hashes": [
+    {
+      "id": "S01",
+      "sha256": "9f634ebfebe38e73406dbdf0d2cf5aec74759cf94967113848e500dadd69d7d5",
+      "bytes": 733
+    },
+    {
+      "id": "S02",
+      "sha256": "8d7189ea94c13045f9ea755b7a1cb813593730263b53ec0c0c0249cc35df8d76",
+      "bytes": 15
+    },
+    {
+      "id": "S03",
+      "sha256": "1cf018c1eecf3dc7fffc5b0a7d0d11080da96cfb0cfd948b42ed57680b425ad3",
+      "bytes": 457
+    },
+    {
+      "id": "S04",
+      "sha256": "ed2b7c801198f22a951c30b2b00bc9251a403bc17153ab62cfe1275d9f9d571d",
+      "bytes": 672
+    },
+    {
+      "id": "S05",
+      "sha256": "0bcae1c79c239ae1ff2a0b4b642b766daf352a8c1a8f2003deaee1c92f399303",
+      "bytes": 282
+    },
+    {
+      "id": "S06",
+      "sha256": "d131d46fae6851efb52c9440532253d57aa1aaa4ce10d148fc42341a3554391f",
+      "bytes": 342
+    },
+    {
+      "id": "S07",
+      "sha256": "413c45f6d64fe9397e7e6fb55ef0495f794b832aac67ede9ca94b7581b9296a4",
+      "bytes": 257
+    },
+    {
+      "id": "S08",
+      "sha256": "2476e89349cfc4d9288898671c028db07f06c1b3684b34ec80c23c528c4c35a2",
+      "bytes": 249
+    },
+    {
+      "id": "S09",
+      "sha256": "16eb82840b8f8fa4ead8c6034e26000f9fb74a0a343e6031be46245c5d60a128",
+      "bytes": 223
+    },
+    {
+      "id": "S10",
+      "sha256": "2e5001bab604efad823f4f334e8be2e9f52e0637bc931dd443a97877a9505510",
+      "bytes": 100
+    },
+    {
+      "id": "S11",
+      "sha256": "6870ffdc531c148553a4162c2c1c76fcb83f5d947055d9bd34101065718e5899",
+      "bytes": 235
+    },
+    {
+      "id": "S12",
+      "sha256": "35b524cd8da330d3c4c255fbc15c4378c603c0790c0d69f986f4f19bfb3b1948",
+      "bytes": 153
+    },
+    {
+      "id": "S13",
+      "sha256": "0cad7e7e5e3ae490ff50dba8c260efc1ca5dfd06659bf2974ef2549681c198f5",
+      "bytes": 1029
+    },
+    {
+      "id": "S14",
+      "sha256": "48332935120a53b39602b67fdfcce346e0d13f4c78f9b55a187fa32c292d6754",
+      "bytes": 395
+    },
+    {
+      "id": "S15",
+      "sha256": "ba1ce835453176ef71fecdc29b356e5dc4cb22f58b063d29364de3f027c4fb2f",
+      "bytes": 728
+    },
+    {
+      "id": "S16",
+      "sha256": "17eab8d37328d1c958e026ad6d0dc0964a5f6e0404f99592d9bd7b8080b0e0cd",
+      "bytes": 142
+    },
+    {
+      "id": "S17",
+      "sha256": "1dd4fc4071ecd46bcb32f53f8426a5db0c41764c67821a4af47dd8b7945dadf4",
+      "bytes": 180
+    },
+    {
+      "id": "S18",
+      "sha256": "b3f573d92d54096b9fec02d66594f7b591a6ad42893fcb232ee56aa7ab0d481f",
+      "bytes": 804
+    },
+    {
+      "id": "S19",
+      "sha256": "331227bae8bfde3317307d92a988b366b3b7c2c12326e0f81bddac8b1007dc8d",
+      "bytes": 976
+    },
+    {
+      "id": "S20",
+      "sha256": "976f79de1175d173d3ef8bb722d58cc174b10e91e67aad8f9e865a8ec042149f",
+      "bytes": 421
+    },
+    {
+      "id": "S21",
+      "sha256": "2c07e66d95917c149fd052c2d08400f7e236077bfefcb8a7a6b6b827b9c6e259",
+      "bytes": 187
+    },
+    {
+      "id": "S22",
+      "sha256": "b54d109e29a075888ad1b170070a0b66e988b270228d8f87e0f05fe8411a6311",
+      "bytes": 200
+    },
+    {
+      "id": "S23",
+      "sha256": "9bcbc5c6c48a97417922c629d2347a771f14b7d20471049481517a5870e95f2f",
+      "bytes": 482
+    },
+    {
+      "id": "S24",
+      "sha256": "bbd7562187280b26b3c055b6eb7782906328e6c834aec3484a26fd987e6dc15a",
+      "bytes": 423
+    },
+    {
+      "id": "S25",
+      "sha256": "3a969377c19bb347ec9b3ae144efc643c58756da562988dd49a108cf1b97807e",
+      "bytes": 135
+    },
+    {
+      "id": "S26",
+      "sha256": "b809704e2c1ce842df8b28206a892183e4b541e966aed9bcc0aefdbf9101215a",
+      "bytes": 402
+    },
+    {
+      "id": "S27",
+      "sha256": "cc531150a44daf7ccc483997dff79060777015e50ef71bee6fbd2283b4120440",
+      "bytes": 411
+    },
+    {
+      "id": "S28",
+      "sha256": "ac895ee71ae9c1aa9d3fcf75ae3cd0ce566c7fa79f5fb9c4e5a6eabdff367857",
+      "bytes": 291
+    },
+    {
+      "id": "S29",
+      "sha256": "14245e1aa3b319244a580dba6557f29129ee6e5a23f9417e60a92b9caaa68618",
+      "bytes": 170
+    },
+    {
+      "id": "S30",
+      "sha256": "05bc5e564672fd1549c18cad6f13584c10e22199b7075187e8bf9b96e9c764ed",
+      "bytes": 997
+    },
+    {
+      "id": "S31",
+      "sha256": "1ce737abd1ad601b1035ecce98f1a24d762b3743d58ad39f1d99fc9644a626df",
+      "bytes": 365
+    },
+    {
+      "id": "S32",
+      "sha256": "426e8fb94ea424ab73d526256d33c612c42fcacddcc44352d1e6e272f2e523e7",
+      "bytes": 327
+    }
+  ],
+  "full_field_cross_engine_analyses": 128,
+  "cross_engine_mismatches": [],
+  "before_after_full_field_changes": [],
+  "caveat": "Original frozen targeted herb/spice text challenge only, not a coverage estimate and not photo-capture validation.",
+  "original_targeted_evaluator_summary": {
+    "labels": 32,
+    "mentions_of_staged_terms": 66,
+    "mentions_by_after_status": {
+      "recognised": 52,
+      "NOT recognised": 12,
+      "inside another item": 2
+    },
+    "labels_with_changed_group_status_drivers_or_reason": [],
+    "labels_with_newly_unassessed_items": []
+  },
+  "recovery": {
+    "S01": {
+      "record": "https://in.openfoodfacts.org/product/00850001",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/00850001?fields=code,ingredients_text_en",
+      "expected_sha256": "9f634ebfebe38e73406dbdf0d2cf5aec74759cf94967113848e500dadd69d7d5",
+      "status": "retrieved",
+      "actual_sha256": "9f634ebfebe38e73406dbdf0d2cf5aec74759cf94967113848e500dadd69d7d5",
+      "matches_frozen": true,
+      "bytes": 733
+    },
+    "S02": {
+      "record": "https://in.openfoodfacts.org/product/0677937725636",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0677937725636?fields=code,ingredients_text_en",
+      "expected_sha256": "8d7189ea94c13045f9ea755b7a1cb813593730263b53ec0c0c0249cc35df8d76",
+      "status": "retrieved",
+      "actual_sha256": "8d7189ea94c13045f9ea755b7a1cb813593730263b53ec0c0c0249cc35df8d76",
+      "matches_frozen": true,
+      "bytes": 15
+    },
+    "S03": {
+      "record": "https://in.openfoodfacts.org/product/06172282",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/06172282?fields=code,ingredients_text_en",
+      "expected_sha256": "1cf018c1eecf3dc7fffc5b0a7d0d11080da96cfb0cfd948b42ed57680b425ad3",
+      "status": "retrieved",
+      "actual_sha256": "1cf018c1eecf3dc7fffc5b0a7d0d11080da96cfb0cfd948b42ed57680b425ad3",
+      "matches_frozen": true,
+      "bytes": 457
+    },
+    "S04": {
+      "record": "https://in.openfoodfacts.org/product/8886467122422",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8886467122422?fields=code,ingredients_text_en",
+      "expected_sha256": "ed2b7c801198f22a951c30b2b00bc9251a403bc17153ab62cfe1275d9f9d571d",
+      "status": "retrieved",
+      "actual_sha256": "ed2b7c801198f22a951c30b2b00bc9251a403bc17153ab62cfe1275d9f9d571d",
+      "matches_frozen": true,
+      "bytes": 672
+    },
+    "S05": {
+      "record": "https://in.openfoodfacts.org/product/0769807238367",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0769807238367?fields=code,ingredients_text_en",
+      "expected_sha256": "0bcae1c79c239ae1ff2a0b4b642b766daf352a8c1a8f2003deaee1c92f399303",
+      "status": "retrieved",
+      "actual_sha256": "0bcae1c79c239ae1ff2a0b4b642b766daf352a8c1a8f2003deaee1c92f399303",
+      "matches_frozen": true,
+      "bytes": 282
+    },
+    "S06": {
+      "record": "https://in.openfoodfacts.org/product/0846203004878",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0846203004878?fields=code,ingredients_text_en",
+      "expected_sha256": "d131d46fae6851efb52c9440532253d57aa1aaa4ce10d148fc42341a3554391f",
+      "status": "retrieved",
+      "actual_sha256": "d131d46fae6851efb52c9440532253d57aa1aaa4ce10d148fc42341a3554391f",
+      "matches_frozen": true,
+      "bytes": 342
+    },
+    "S07": {
+      "record": "https://in.openfoodfacts.org/product/00002899",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/00002899?fields=code,ingredients_text_en",
+      "expected_sha256": "413c45f6d64fe9397e7e6fb55ef0495f794b832aac67ede9ca94b7581b9296a4",
+      "status": "retrieved",
+      "actual_sha256": "413c45f6d64fe9397e7e6fb55ef0495f794b832aac67ede9ca94b7581b9296a4",
+      "matches_frozen": true,
+      "bytes": 257
+    },
+    "S08": {
+      "record": "https://in.openfoodfacts.org/product/00857462",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/00857462?fields=code,ingredients_text_en",
+      "expected_sha256": "2476e89349cfc4d9288898671c028db07f06c1b3684b34ec80c23c528c4c35a2",
+      "status": "retrieved",
+      "actual_sha256": "2476e89349cfc4d9288898671c028db07f06c1b3684b34ec80c23c528c4c35a2",
+      "matches_frozen": true,
+      "bytes": 249
+    },
+    "S09": {
+      "record": "https://in.openfoodfacts.org/product/8906186410010",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8906186410010?fields=code,ingredients_text_en",
+      "expected_sha256": "16eb82840b8f8fa4ead8c6034e26000f9fb74a0a343e6031be46245c5d60a128",
+      "status": "retrieved",
+      "actual_sha256": "16eb82840b8f8fa4ead8c6034e26000f9fb74a0a343e6031be46245c5d60a128",
+      "matches_frozen": true,
+      "bytes": 223
+    },
+    "S10": {
+      "record": "https://in.openfoodfacts.org/product/0797059265244",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0797059265244?fields=code,ingredients_text_en",
+      "expected_sha256": "2e5001bab604efad823f4f334e8be2e9f52e0637bc931dd443a97877a9505510",
+      "status": "retrieved",
+      "actual_sha256": "2e5001bab604efad823f4f334e8be2e9f52e0637bc931dd443a97877a9505510",
+      "matches_frozen": true,
+      "bytes": 100
+    },
+    "S11": {
+      "record": "https://in.openfoodfacts.org/product/4007273656565",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/4007273656565?fields=code,ingredients_text_en",
+      "expected_sha256": "6870ffdc531c148553a4162c2c1c76fcb83f5d947055d9bd34101065718e5899",
+      "status": "retrieved",
+      "actual_sha256": "6870ffdc531c148553a4162c2c1c76fcb83f5d947055d9bd34101065718e5899",
+      "matches_frozen": true,
+      "bytes": 235
+    },
+    "S12": {
+      "record": "https://in.openfoodfacts.org/product/0670087143015",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0670087143015?fields=code,ingredients_text_en",
+      "expected_sha256": "35b524cd8da330d3c4c255fbc15c4378c603c0790c0d69f986f4f19bfb3b1948",
+      "status": "retrieved",
+      "actual_sha256": "35b524cd8da330d3c4c255fbc15c4378c603c0790c0d69f986f4f19bfb3b1948",
+      "matches_frozen": true,
+      "bytes": 153
+    },
+    "S13": {
+      "record": "https://in.openfoodfacts.org/product/3948537078321",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/3948537078321?fields=code,ingredients_text_en",
+      "expected_sha256": "0cad7e7e5e3ae490ff50dba8c260efc1ca5dfd06659bf2974ef2549681c198f5",
+      "status": "retrieved",
+      "actual_sha256": "0cad7e7e5e3ae490ff50dba8c260efc1ca5dfd06659bf2974ef2549681c198f5",
+      "matches_frozen": true,
+      "bytes": 1029
+    },
+    "S14": {
+      "record": "https://in.openfoodfacts.org/product/12345678",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/12345678?fields=code,ingredients_text_en",
+      "expected_sha256": "48332935120a53b39602b67fdfcce346e0d13f4c78f9b55a187fa32c292d6754",
+      "status": "retrieved",
+      "actual_sha256": "48332935120a53b39602b67fdfcce346e0d13f4c78f9b55a187fa32c292d6754",
+      "matches_frozen": true,
+      "bytes": 395
+    },
+    "S15": {
+      "record": "https://in.openfoodfacts.org/product/19015958",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/19015958?fields=code,ingredients_text_en",
+      "expected_sha256": "ba1ce835453176ef71fecdc29b356e5dc4cb22f58b063d29364de3f027c4fb2f",
+      "status": "retrieved",
+      "actual_sha256": "ba1ce835453176ef71fecdc29b356e5dc4cb22f58b063d29364de3f027c4fb2f",
+      "matches_frozen": true,
+      "bytes": 728
+    },
+    "S16": {
+      "record": "https://in.openfoodfacts.org/product/4012824401075",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/4012824401075?fields=code,ingredients_text_en",
+      "expected_sha256": "17eab8d37328d1c958e026ad6d0dc0964a5f6e0404f99592d9bd7b8080b0e0cd",
+      "status": "retrieved",
+      "actual_sha256": "17eab8d37328d1c958e026ad6d0dc0964a5f6e0404f99592d9bd7b8080b0e0cd",
+      "matches_frozen": true,
+      "bytes": 142
+    },
+    "S17": {
+      "record": "https://in.openfoodfacts.org/product/4796001651513",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/4796001651513?fields=code,ingredients_text_en",
+      "expected_sha256": "1dd4fc4071ecd46bcb32f53f8426a5db0c41764c67821a4af47dd8b7945dadf4",
+      "status": "retrieved",
+      "actual_sha256": "1dd4fc4071ecd46bcb32f53f8426a5db0c41764c67821a4af47dd8b7945dadf4",
+      "matches_frozen": true,
+      "bytes": 180
+    },
+    "S18": {
+      "record": "https://in.openfoodfacts.org/product/5056517311714",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/5056517311714?fields=code,ingredients_text_en",
+      "expected_sha256": "b3f573d92d54096b9fec02d66594f7b591a6ad42893fcb232ee56aa7ab0d481f",
+      "status": "retrieved",
+      "actual_sha256": "b3f573d92d54096b9fec02d66594f7b591a6ad42893fcb232ee56aa7ab0d481f",
+      "matches_frozen": true,
+      "bytes": 804
+    },
+    "S19": {
+      "record": "https://in.openfoodfacts.org/product/8801073142428",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8801073142428?fields=code,ingredients_text_en",
+      "expected_sha256": "331227bae8bfde3317307d92a988b366b3b7c2c12326e0f81bddac8b1007dc8d",
+      "status": "retrieved",
+      "actual_sha256": "331227bae8bfde3317307d92a988b366b3b7c2c12326e0f81bddac8b1007dc8d",
+      "matches_frozen": true,
+      "bytes": 976
+    },
+    "S20": {
+      "record": "https://in.openfoodfacts.org/product/0876094106740",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0876094106740?fields=code,ingredients_text_en",
+      "expected_sha256": "976f79de1175d173d3ef8bb722d58cc174b10e91e67aad8f9e865a8ec042149f",
+      "status": "retrieved",
+      "actual_sha256": "976f79de1175d173d3ef8bb722d58cc174b10e91e67aad8f9e865a8ec042149f",
+      "matches_frozen": true,
+      "bytes": 421
+    },
+    "S21": {
+      "record": "https://in.openfoodfacts.org/product/8901242204503",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8901242204503?fields=code,ingredients_text_en",
+      "expected_sha256": "2c07e66d95917c149fd052c2d08400f7e236077bfefcb8a7a6b6b827b9c6e259",
+      "status": "retrieved",
+      "actual_sha256": "2c07e66d95917c149fd052c2d08400f7e236077bfefcb8a7a6b6b827b9c6e259",
+      "matches_frozen": true,
+      "bytes": 187
+    },
+    "S22": {
+      "record": "https://in.openfoodfacts.org/product/8908009059383",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8908009059383?fields=code,ingredients_text_en",
+      "expected_sha256": "b54d109e29a075888ad1b170070a0b66e988b270228d8f87e0f05fe8411a6311",
+      "status": "retrieved",
+      "actual_sha256": "b54d109e29a075888ad1b170070a0b66e988b270228d8f87e0f05fe8411a6311",
+      "matches_frozen": true,
+      "bytes": 200
+    },
+    "S23": {
+      "record": "https://in.openfoodfacts.org/product/0801541001439",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0801541001439?fields=code,ingredients_text_en",
+      "expected_sha256": "9bcbc5c6c48a97417922c629d2347a771f14b7d20471049481517a5870e95f2f",
+      "status": "retrieved",
+      "actual_sha256": "9bcbc5c6c48a97417922c629d2347a771f14b7d20471049481517a5870e95f2f",
+      "matches_frozen": true,
+      "bytes": 482
+    },
+    "S24": {
+      "record": "https://in.openfoodfacts.org/product/6281036028877",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/6281036028877?fields=code,ingredients_text_en",
+      "expected_sha256": "bbd7562187280b26b3c055b6eb7782906328e6c834aec3484a26fd987e6dc15a",
+      "status": "retrieved",
+      "actual_sha256": "bbd7562187280b26b3c055b6eb7782906328e6c834aec3484a26fd987e6dc15a",
+      "matches_frozen": true,
+      "bytes": 423
+    },
+    "S25": {
+      "record": "https://in.openfoodfacts.org/product/8836473163230",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8836473163230?fields=code,ingredients_text_en",
+      "expected_sha256": "3a969377c19bb347ec9b3ae144efc643c58756da562988dd49a108cf1b97807e",
+      "status": "retrieved",
+      "actual_sha256": "3a969377c19bb347ec9b3ae144efc643c58756da562988dd49a108cf1b97807e",
+      "matches_frozen": true,
+      "bytes": 135
+    },
+    "S26": {
+      "record": "https://in.openfoodfacts.org/product/8906098831286",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8906098831286?fields=code,ingredients_text_en",
+      "expected_sha256": "b809704e2c1ce842df8b28206a892183e4b541e966aed9bcc0aefdbf9101215a",
+      "status": "retrieved",
+      "actual_sha256": "b809704e2c1ce842df8b28206a892183e4b541e966aed9bcc0aefdbf9101215a",
+      "matches_frozen": true,
+      "bytes": 402
+    },
+    "S27": {
+      "record": "https://in.openfoodfacts.org/product/8901552023450",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8901552023450?fields=code,ingredients_text_en",
+      "expected_sha256": "cc531150a44daf7ccc483997dff79060777015e50ef71bee6fbd2283b4120440",
+      "status": "retrieved",
+      "actual_sha256": "cc531150a44daf7ccc483997dff79060777015e50ef71bee6fbd2283b4120440",
+      "matches_frozen": true,
+      "bytes": 411
+    },
+    "S28": {
+      "record": "https://in.openfoodfacts.org/product/8906076133289",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8906076133289?fields=code,ingredients_text_en",
+      "expected_sha256": "ac895ee71ae9c1aa9d3fcf75ae3cd0ce566c7fa79f5fb9c4e5a6eabdff367857",
+      "status": "retrieved",
+      "actual_sha256": "ac895ee71ae9c1aa9d3fcf75ae3cd0ce566c7fa79f5fb9c4e5a6eabdff367857",
+      "matches_frozen": true,
+      "bytes": 291
+    },
+    "S29": {
+      "record": "https://in.openfoodfacts.org/product/0694642813311",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0694642813311?fields=code,ingredients_text_en",
+      "expected_sha256": "14245e1aa3b319244a580dba6557f29129ee6e5a23f9417e60a92b9caaa68618",
+      "status": "retrieved",
+      "actual_sha256": "14245e1aa3b319244a580dba6557f29129ee6e5a23f9417e60a92b9caaa68618",
+      "matches_frozen": true,
+      "bytes": 170
+    },
+    "S30": {
+      "record": "https://in.openfoodfacts.org/product/0850015415975",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/0850015415975?fields=code,ingredients_text_en",
+      "expected_sha256": "05bc5e564672fd1549c18cad6f13584c10e22199b7075187e8bf9b96e9c764ed",
+      "status": "retrieved",
+      "actual_sha256": "05bc5e564672fd1549c18cad6f13584c10e22199b7075187e8bf9b96e9c764ed",
+      "matches_frozen": true,
+      "bytes": 997
+    },
+    "S31": {
+      "record": "https://in.openfoodfacts.org/product/00009891",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/00009891?fields=code,ingredients_text_en",
+      "expected_sha256": "1ce737abd1ad601b1035ecce98f1a24d762b3743d58ad39f1d99fc9644a626df",
+      "status": "retrieved",
+      "actual_sha256": "1ce737abd1ad601b1035ecce98f1a24d762b3743d58ad39f1d99fc9644a626df",
+      "matches_frozen": true,
+      "bytes": 365
+    },
+    "S32": {
+      "record": "https://in.openfoodfacts.org/product/8901192215116",
+      "request_url": "https://world.openfoodfacts.org/api/v2/product/8901192215116?fields=code,ingredients_text_en",
+      "expected_sha256": "426e8fb94ea424ab73d526256d33c612c42fcacddcc44352d1e6e272f2e523e7",
+      "status": "retrieved",
+      "actual_sha256": "426e8fb94ea424ab73d526256d33c612c42fcacddcc44352d1e6e272f2e523e7",
+      "matches_frozen": true,
+      "bytes": 327
+    }
+  }
+}
