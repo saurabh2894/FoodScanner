@@ -1,0 +1,396 @@
+{
+  "date": "2026-11-22",
+  "base": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "state": "LOCAL ONLY, validation in progress, no commit",
+  "new_foods": [
+    {
+      "term": "sweetcorn",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sweetcorn is not named: class-instance of plain fresh vegetable (fresh sweetcorn kernels, not cereal-grain corn), supported by current USDA NALT Product29136, https://lod.nal.usda.gov/nalt/en/page/29136, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 29136,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/29136",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "red mombins",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term red mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 136400,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136400",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "yellow mombins",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term yellow mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136401, https://lod.nal.usda.gov/nalt/en/page/136401, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 136401,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136401",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "atemoyas",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term atemoyas is not named: class-instance of plain fruit, supported by current USDA NALT Product9680, https://lod.nal.usda.gov/nalt/en/page/9680, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 9680,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/9680",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "acai berries",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term acai berries is not named: class-instance of plain fruit, supported by current USDA NALT Product153344, https://lod.nal.usda.gov/nalt/en/page/153344, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 153344,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/153344",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "bilberries",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term bilberries is not named: class-instance of plain fruit, supported by current USDA NALT Product17149, https://lod.nal.usda.gov/nalt/en/page/17149, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 17149,
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/17149",
+      "inference_level": "class-instance, not exact-named food"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "sweet corn",
+      "target": "sweetcorn",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/29136",
+      "concept_id": 29136,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sweetcorn is not named: class-instance of plain fresh vegetable (fresh sweetcorn kernels, not cereal-grain corn), supported by current USDA NALT Product29136, https://lod.nal.usda.gov/nalt/en/page/29136, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker.",
+      "source": "USDA NALT Product29136, https://lod.nal.usda.gov/nalt/en/page/29136, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "purple mombins",
+      "target": "red mombins",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136400",
+      "concept_id": 136400,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term red mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker.",
+      "source": "USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "red hog plums",
+      "target": "red mombins",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136400",
+      "concept_id": 136400,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term red mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker.",
+      "source": "USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "purple hog plums",
+      "target": "red mombins",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136400",
+      "concept_id": 136400,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term red mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker.",
+      "source": "USDA NALT Product136400, https://lod.nal.usda.gov/nalt/en/page/136400, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "yellow hog plums",
+      "target": "yellow mombins",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136401",
+      "concept_id": 136401,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-8): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term yellow mombins is not named: class-instance of plain fruit, supported by current USDA NALT Product136401, https://lod.nal.usda.gov/nalt/en/page/136401, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker.",
+      "source": "USDA NALT Product136401, https://lod.nal.usda.gov/nalt/en/page/136401, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "black-eyed beans",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "legume",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named by the clause (an instance of the class 'legumes'); plain dry/raw seed form (inference level: class-instance); FDC category 'Legumes and Legume Products' (naming evidence only, CC0); CONDITION KEPT AT ITEM LEVEL (kind legume): FAO Group 3 names 'canned or bottled vegetables or legumes (pulses) preserved in brine' (p.7 prose; Table 1 Group 3 p.12 'Canned or bottled vegetables and legumes in brine') and defines Group 3 as 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; an item whose own name or bracket adds salt, sugar or brine never takes Group 1 through this row (Group 3 by the definition or the brine example; canned/bottled/preserved forms that do not say brine, salt or sugar abstain); roasted and boiled plain forms are unchanged (FAO Group 1 definition p.6 names roasting and boiling); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2644284 \"Blackeye pea, dry\"; sr_legacy FDC id 173758 \"Cowpeas, common (blackeyes, crowder, southern), mature seeds, raw\"",
+      "source": "USDA NALT Product16208, https://lod.nal.usda.gov/nalt/en/page/16208, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "black-eyed peas",
+      "target": "cowpeas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/16208",
+      "concept_id": 16208,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "legume",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"legumes such as beans, lentils, and chickpeas\"; exact term not named by the clause (an instance of the class 'legumes'); plain dry/raw seed form (inference level: class-instance); FDC category 'Legumes and Legume Products' (naming evidence only, CC0); CONDITION KEPT AT ITEM LEVEL (kind legume): FAO Group 3 names 'canned or bottled vegetables or legumes (pulses) preserved in brine' (p.7 prose; Table 1 Group 3 p.12 'Canned or bottled vegetables and legumes in brine') and defines Group 3 as 'Products made by adding salt, oil, sugar or other group 2 ingredients to group 1 foods'; an item whose own name or bracket adds salt, sugar or brine never takes Group 1 through this row (Group 3 by the definition or the brine example; canned/bottled/preserved forms that do not say brine, salt or sugar abstain); roasted and boiled plain forms are unchanged (FAO Group 1 definition p.6 names roasting and boiling); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2644284 \"Blackeye pea, dry\"; sr_legacy FDC id 173758 \"Cowpeas, common (blackeyes, crowder, southern), mature seeds, raw\"",
+      "source": "USDA NALT Product16208, https://lod.nal.usda.gov/nalt/en/page/16208, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "soy-bean oil",
+      "target": "soybean oil",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/28891",
+      "concept_id": 28891,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "culinary",
+      "target_source": "PROVISIONAL: NOVA group 2 culinary ingredient (salt, sugars, oils and fats); research/02 lists oils, ghee, sugar, salt",
+      "source": "USDA NALT Product28891, https://lod.nal.usda.gov/nalt/en/page/28891, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "cherry tomatoes",
+      "target": "tomato",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/136426",
+      "concept_id": 136426,
+      "identity_level": "current NALT explicit tomato food type; NOVA vegetable class independently verified",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-8 citation correction): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Tomato is not literally named in that example clause: class-instance of a plain vegetable/plant fruit. Current USDA NALT Product50832 explicitly identifies the tomatoes food product under vegetables and its cherry/grape/plum tomato food types, https://lod.nal.usda.gov/nalt/en/page/50832 ; checked2026-11-22, CC BY4.0, identity/category only, not NOVA. Plain food or source-named minimal process, no added substances; unsupported powders, extracts and preserved/added-substance forms are not placed by this citation. Existing form guards unchanged.",
+      "source": "USDA NALT Product136426, https://lod.nal.usda.gov/nalt/en/page/136426, current page checked2026-11-22, CC BY4.0; current NALT explicit tomato food type; NOVA vegetable class independently verified; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "grape tomatoes",
+      "target": "tomato",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/196806",
+      "concept_id": 196806,
+      "identity_level": "current NALT explicit tomato food type; NOVA vegetable class independently verified",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-8 citation correction): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Tomato is not literally named in that example clause: class-instance of a plain vegetable/plant fruit. Current USDA NALT Product50832 explicitly identifies the tomatoes food product under vegetables and its cherry/grape/plum tomato food types, https://lod.nal.usda.gov/nalt/en/page/50832 ; checked2026-11-22, CC BY4.0, identity/category only, not NOVA. Plain food or source-named minimal process, no added substances; unsupported powders, extracts and preserved/added-substance forms are not placed by this citation. Existing form guards unchanged.",
+      "source": "USDA NALT Product196806, https://lod.nal.usda.gov/nalt/en/page/196806, current page checked2026-11-22, CC BY4.0; current NALT explicit tomato food type; NOVA vegetable class independently verified; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "plum tomatoes",
+      "target": "tomato",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/196820",
+      "concept_id": 196820,
+      "identity_level": "current NALT explicit tomato food type; NOVA vegetable class independently verified",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-8 citation correction): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Tomato is not literally named in that example clause: class-instance of a plain vegetable/plant fruit. Current USDA NALT Product50832 explicitly identifies the tomatoes food product under vegetables and its cherry/grape/plum tomato food types, https://lod.nal.usda.gov/nalt/en/page/50832 ; checked2026-11-22, CC BY4.0, identity/category only, not NOVA. Plain food or source-named minimal process, no added substances; unsupported powders, extracts and preserved/added-substance forms are not placed by this citation. Existing form guards unchanged.",
+      "source": "USDA NALT Product196820, https://lod.nal.usda.gov/nalt/en/page/196820, current page checked2026-11-22, CC BY4.0; current NALT explicit tomato food type; NOVA vegetable class independently verified; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "courgettes",
+      "target": "zucchini",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/29712",
+      "concept_id": 29712,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2685568 \"Squash, summer, green, zucchini, includes skin, raw\"; sr_legacy FDC id 168469 \"Squash, summer, zucchini, includes skin, frozen, unprepared\"; sr_legacy FDC id 168565 \"Squash, zucchini, baby, raw\"; sr_legacy FDC id 169291 \"Squash, summer, zucchini, includes skin, raw\"",
+      "source": "USDA NALT Product29712, https://lod.nal.usda.gov/nalt/en/page/29712, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "mexican husk tomatoes",
+      "target": "tomatillos",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/302994",
+      "concept_id": 302994,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2727582 \"Tomatillos, dehusked, raw\"; sr_legacy FDC id 168566 \"Tomatillos, raw\"",
+      "source": "USDA NALT Product302994, https://lod.nal.usda.gov/nalt/en/page/302994, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "kinnow mandarins",
+      "target": "mandarin",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26512",
+      "concept_id": 26512,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2710832 \"Mandarin, seedless, peeled, raw\"",
+      "source": "USDA NALT Product26512, https://lod.nal.usda.gov/nalt/en/page/26512, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "kinnows",
+      "target": "mandarin",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26512",
+      "concept_id": 26512,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2710832 \"Mandarin, seedless, peeled, raw\"",
+      "source": "USDA NALT Product26512, https://lod.nal.usda.gov/nalt/en/page/26512, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "grape berries",
+      "target": "grapes",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/41690",
+      "concept_id": 41690,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): foundation FDC id 2263890 \"Grapes, red, seedless, raw\"; foundation FDC id 2263891 \"Grapes, green, seedless, raw\"; foundation FDC id 2346412 \"Grapes, red, seedless, raw\"; foundation FDC id 2346413 \"Grapes, green, seedless, raw\"; sr_legacy FDC id 174683 \"Grapes, red or green (European type, such as Thompson seedless), raw\"",
+      "source": "USDA NALT Product41690, https://lod.nal.usda.gov/nalt/en/page/41690, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "longanberries",
+      "target": "longans",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/33669",
+      "concept_id": 33669,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169089 \"Longans, raw\"",
+      "source": "USDA NALT Product33669, https://lod.nal.usda.gov/nalt/en/page/33669, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "persimmon fruits",
+      "target": "persimmons",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/33788",
+      "concept_id": 33788,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169941 \"Persimmons, japanese, raw\"; sr_legacy FDC id 169943 \"Persimmons, native, raw\"",
+      "source": "USDA NALT Product33788, https://lod.nal.usda.gov/nalt/en/page/33788, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "sapodilla plum",
+      "target": "sapodilla",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/51400",
+      "concept_id": 51400,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 167759 \"Sapodilla, raw\"",
+      "source": "USDA NALT Product51400, https://lod.nal.usda.gov/nalt/en/page/51400, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "melon pawpaws",
+      "target": "papayas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/22509",
+      "concept_id": 22509,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169926 \"Papayas, raw\"",
+      "source": "USDA NALT Product22509, https://lod.nal.usda.gov/nalt/en/page/22509, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "melon papaws",
+      "target": "papayas",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/22509",
+      "concept_id": 22509,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'fruit'; inference level: class-instance of fruit; the clause names 'fruit' without listing species, and the Group 1 definition names 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table); botanical fruit used as vegetables or berries/drupes/pomes/tropical fruit are instances of the class, none is named); plain raw or frozen-unsweetened form (inference level: class-instance); FDC category 'Fruits and Fruit Juices' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169926 \"Papayas, raw\"",
+      "source": "USDA NALT Product22509, https://lod.nal.usda.gov/nalt/en/page/22509, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "escarole",
+      "target": "endive",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/26242",
+      "concept_id": 26242,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; exact term not named by the clause (an instance of the class 'vegetables'; inference level: class-instance of vegetables; the clause names 'leafy and root vegetables'; stem, flower, bulb and fruit-vegetables (tomato, cauliflower, onion, courgette) are instances of the Group 1 definition 'edible parts of plants (fruit, seeds, leaves, stems, roots, tubers)' (same table), not named by the example); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 168412 \"Endive, raw\"",
+      "source": "USDA NALT Product26242, https://lod.nal.usda.gov/nalt/en/page/26242, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "head lettuce",
+      "target": "lettuce",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/44725",
+      "concept_id": 44725,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-6): FAO 2019 Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; class-instance of edible plant parts (leaf or stem); leafy vegetables are named, celery is not named; plain edible food and source-named minimal processes only, not an extract, juice, puree, starch, sauce, preserve or other derivative; whole-food powder needs existing affirmative same-item composition evidence. FAO Table 1 also explicitly names drying and powdering as minimal processes without added food substances. Identity/category only: USDA NAL Agricultural Thesaurus Product concept 43828, preferred term lettuce, https://lod.nal.usda.gov/nalt/en/page/43828, current page checked 2026-11-22; CC BY 4.0. NALT does not assign NOVA. Existing item-own salt/sugar/brine, processing and composition conditions remain; powders require the existing affirmative same-item composition evidence; nested children do not qualify their parent. No source-supported strong marker is added. NOVA source: https://www.fao.org/4/ca5644en/ca5644en.pdf",
+      "source": "USDA NALT Product44725, https://lod.nal.usda.gov/nalt/en/page/44725, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "butter lettuce",
+      "target": "lettuce",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/44725",
+      "concept_id": 44725,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-6): FAO 2019 Table 1 Group 1 p.11 \"Fresh, squeezed, chilled, frozen, or dried fruit and leafy and root vegetables\"; class-instance of edible plant parts (leaf or stem); leafy vegetables are named, celery is not named; plain edible food and source-named minimal processes only, not an extract, juice, puree, starch, sauce, preserve or other derivative; whole-food powder needs existing affirmative same-item composition evidence. FAO Table 1 also explicitly names drying and powdering as minimal processes without added food substances. Identity/category only: USDA NAL Agricultural Thesaurus Product concept 43828, preferred term lettuce, https://lod.nal.usda.gov/nalt/en/page/43828, current page checked 2026-11-22; CC BY 4.0. NALT does not assign NOVA. Existing item-own salt/sugar/brine, processing and composition conditions remain; powders require the existing affirmative same-item composition evidence; nested children do not qualify their parent. No source-supported strong marker is added. NOVA source: https://www.fao.org/4/ca5644en/ca5644en.pdf",
+      "source": "USDA NALT Product44725, https://lod.nal.usda.gov/nalt/en/page/44725, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "cremini mushrooms",
+      "target": "crimini mushrooms",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "concept_id": 7329,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"fungi such as fresh or dried mushrooms\"; exact term not named by the clause (an instance of the class 'vegetables'; the clause names the broader term 'mushrooms'); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 168434 \"Mushrooms, brown, italian, or crimini, raw\"",
+      "source": "USDA NALT Product7329, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "portobello mushrooms",
+      "target": "portabella mushrooms",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "concept_id": 7329,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11 \"fungi such as fresh or dried mushrooms\"; exact term not named by the clause (an instance of the class 'vegetables'; the clause names the broader term 'mushrooms'); plain raw or frozen-unprepared form (inference level: class-instance); FDC category 'Vegetables and Vegetable Products' (naming evidence only, CC0); name from USDA FoodData Central (CC0 1.0): sr_legacy FDC id 169255 \"Mushrooms, portabella, raw\"",
+      "source": "USDA NALT Product7329, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "button mushrooms",
+      "target": "mushroom",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "concept_id": 7329,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-6): FAO 2019 Table 1 Group 1 p.11 \"fungi such as fresh or dried mushrooms\"; exact-named mushroom example; food means edible fungi only; plain edible food and source-named minimal processes only, not an extract, juice, puree, starch, sauce, preserve or other derivative; whole-food powder needs existing affirmative same-item composition evidence. FAO Table 1 also explicitly names drying and powdering as minimal processes without added food substances. Identity/category only: USDA NAL Agricultural Thesaurus Product concept 7329, preferred term mushrooms, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked 2026-11-22; CC BY 4.0. NALT does not assign NOVA. Existing item-own salt/sugar/brine, processing and composition conditions remain; powders require the existing affirmative same-item composition evidence; nested children do not qualify their parent. No source-supported strong marker is added. NOVA source: https://www.fao.org/4/ca5644en/ca5644en.pdf",
+      "source": "USDA NALT Product7329, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "cultivated mushrooms",
+      "target": "mushroom",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "concept_id": 7329,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-6): FAO 2019 Table 1 Group 1 p.11 \"fungi such as fresh or dried mushrooms\"; exact-named mushroom example; food means edible fungi only; plain edible food and source-named minimal processes only, not an extract, juice, puree, starch, sauce, preserve or other derivative; whole-food powder needs existing affirmative same-item composition evidence. FAO Table 1 also explicitly names drying and powdering as minimal processes without added food substances. Identity/category only: USDA NAL Agricultural Thesaurus Product concept 7329, preferred term mushrooms, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked 2026-11-22; CC BY 4.0. NALT does not assign NOVA. Existing item-own salt/sugar/brine, processing and composition conditions remain; powders require the existing affirmative same-item composition evidence; nested children do not qualify their parent. No source-supported strong marker is added. NOVA source: https://www.fao.org/4/ca5644en/ca5644en.pdf",
+      "source": "USDA NALT Product7329, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    },
+    {
+      "name": "abalone mushrooms",
+      "target": "mushroom",
+      "source_url": "https://lod.nal.usda.gov/nalt/en/page/7329",
+      "concept_id": 7329,
+      "identity_level": "current NALT Product name or synonym",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-6): FAO 2019 Table 1 Group 1 p.11 \"fungi such as fresh or dried mushrooms\"; exact-named mushroom example; food means edible fungi only; plain edible food and source-named minimal processes only, not an extract, juice, puree, starch, sauce, preserve or other derivative; whole-food powder needs existing affirmative same-item composition evidence. FAO Table 1 also explicitly names drying and powdering as minimal processes without added food substances. Identity/category only: USDA NAL Agricultural Thesaurus Product concept 7329, preferred term mushrooms, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked 2026-11-22; CC BY 4.0. NALT does not assign NOVA. Existing item-own salt/sugar/brine, processing and composition conditions remain; powders require the existing affirmative same-item composition evidence; nested children do not qualify their parent. No source-supported strong marker is added. NOVA source: https://www.fao.org/4/ca5644en/ca5644en.pdf",
+      "source": "USDA NALT Product7329, https://lod.nal.usda.gov/nalt/en/page/7329, current page checked2026-11-22, CC BY4.0; current NALT Product name or synonym; naming/identity only, not a new NOVA placement or strong marker; target and item-own form conditions retained (nalt-names-8)."
+    }
+  ],
+  "source_corrections": [
+    {
+      "term": "tomato",
+      "old_source": "PROVISIONAL author seed (fruit/vegetable; research/02 group 1 examples list fruit)",
+      "new_source": "PROVISIONAL (nalt-names-8 citation correction): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . Tomato is not literally named in that example clause: class-instance of a plain vegetable/plant fruit. Current USDA NALT Product50832 explicitly identifies the tomatoes food product under vegetables and its cherry/grape/plum tomato food types, https://lod.nal.usda.gov/nalt/en/page/50832 ; checked2026-11-22, CC BY4.0, identity/category only, not NOVA. Plain food or source-named minimal process, no added substances; unsupported powders, extracts and preserved/added-substance forms are not placed by this citation. Existing form guards unchanged. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "rationale": "New cultivar aliases require current source-backed vegetable placement, not only the legacy author seed."
+    }
+  ],
+  "held": [
+    "cranberry",
+    "tamarind",
+    "coconut",
+    "celery",
+    "beets",
+    "arrowroot",
+    "mungo beans",
+    "mungobeans",
+    "greengram",
+    "mungbeans",
+    "blackgram",
+    "urd beans",
+    "haricot beans",
+    "star anise",
+    "winter melon",
+    "catjang peas",
+    "ginger root",
+    "jaggary",
+    "jagghery",
+    "bovine milk",
+    "chard",
+    "groundnut",
+    "flaxseed",
+    "tree mushrooms",
+    "scallions",
+    "spring onions",
+    "portabello mushrooms",
+    "portobella mushrooms"
+  ],
+  "notes": [
+    "Whole Portobello phrase protects against the existing short alias repeating the mushroom noun.",
+    "Green onions already resolve to onion; not counted as a new food. Fresh green beans already resolve to beans, but broad dry/fresh aliases remain held.",
+    "Existing mung/black-gram wording maps to dal. New compact/spelling variants stay held rather than expand an unreviewed whole-vs-split food mapping.",
+    "Two constructed non-NALT whole spelling variants are held. Only the current-page explicit Portobello Mushrooms phrase is added, with the existing reviewed Portobello to Portabella route.",
+    "Summer Squash already answersGroup1 on baseline, so no new alias is added and it is not treated as an abstention hold.",
+    "Unqualified Sugared prefixes still abstain. Explicit food-powder Sugar brackets takeGroup3 through current same-food plus culinary-ingredient guards, except conservative red-mombin colour parsing. Red-mombin whole/pure powder forms remain a disclosed abstention gap."
+  ],
+  "not_added_existing_supported": [
+    "summer squash"
+  ]
+}
