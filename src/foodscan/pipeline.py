@@ -42,6 +42,7 @@ class Analysis:
     drivers: list[Driver] = field(default_factory=list)
     ins_mappings: list[InsUse] = field(default_factory=list)
     extracted_text: str = ""
+    reading_conflict: dict | None = None  # photo-only, alternatives remain separate and never alter the chosen result
     warnings: list[str] = field(default_factory=list)   # answered, but with a caveat
     sections: list[tuple[str | None, list[str]]] = field(default_factory=list)   # (label, items) per list section
     # What the classifier could not judge (not in the vocabulary, no marker, no INS code), plus compound
@@ -561,6 +562,16 @@ def _read_image(path, engine) -> Analysis:
     note = ocr_code_disagreement([u.code for u in first.ins_mappings], [u.code for u in second.ins_mappings])
     if note:
         chosen.warnings.append(note)
+    if note or [s[0] for s in first.sections] != [s[0] for s in second.sections]:
+        chosen.reading_conflict = {
+            "chosen": "second" if chosen is second else "first",
+            "selection": "Higher existing recognised-item yield; ties keep the first reading. Not chosen for code identity or classification group.",
+            "readings": [{"label": label, "text": a.extracted_text,
+                "sections": [sec[0] or "No section label" for sec in a.sections],
+                "codes": sorted(set(u.code for u in a.ins_mappings)),
+                "heading": a.heading["kind"], "completeness": a.completeness["status"]}
+                for label, a in (("first", first), ("second", second))]}
+        chosen.warnings.append("Photo readings differ. The result uses the " + chosen.reading_conflict["chosen"] + " reading only; compare both readings with the pack. Text accounting does not prove correct characters or codes.")
     if not chosen.ingredients and ROTATIONS:
         chosen = _rotated_fallback(path, engine, chosen)
     return chosen

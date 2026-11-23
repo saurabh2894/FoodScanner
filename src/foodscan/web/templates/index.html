@@ -11,6 +11,7 @@
   .abstain { border-left: 6px solid #888; }
   .error { border-left: 6px solid #c33; }
   small, .src { color: #555; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   code { background: #f3f3f3; padding: 0 .25rem; }
   .insgroup { border-top: 1px solid #ddd; margin-top: .6rem; padding-top: .5rem; }
   .inslist { list-style: none; padding: 0; margin: .4rem 0 0; display: grid; gap: .5rem; }
@@ -37,6 +38,22 @@
   <h2>{{ result.headline }}</h2>
   {% if result.answered %}<p class="src">Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.</p>{% endif %}
   {% for w in result.warnings %}<p><strong>Warning:</strong> {{ w }}</p>{% endfor %}
+  {% if result.reading_conflict %}
+  <section class="reading-conflict">
+    <h3>Photo readings differ</h3>
+    <p>Result uses the {{ result.reading_conflict.chosen }} reading only. No codes or text were merged. Compare both readings with the pack before relying on a disputed item.</p>
+    <p>Text accounting marked complete does not prove correct characters or codes.</p>
+    <details><summary>Compare both readings</summary>
+      <p>{{ result.reading_conflict.selection }}</p>
+      {% for reading in result.reading_conflict.readings %}
+      <h4>{{ reading.label|capitalize }} reading{% if reading.label == result.reading_conflict.chosen %} (used for this result){% else %} (not used){% endif %}</h4>
+      <p>Sections extracted for analysis: {{ reading.sections|join('; ') or 'None found' }}. Codes: {% for code in reading.codes %}INS {{ code }}{% if not loop.last %}, {% endif %}{% else %}None found{% endfor %}.</p>
+      <p>Heading: {{ reading.heading }}. Text accounting: {{ reading.completeness }}.</p>
+      <pre>{{ reading.text }}</pre>
+      {% endfor %}
+    </details>
+  </section>
+  {% endif %}
   {% if result.retake %}<p><strong>Retake guidance:</strong> {{ result.retake }}</p>{% endif %}
   {% if result.answered and result.drivers %}
     <h3>Driven by</h3>

@@ -267,6 +267,21 @@
     card.appendChild(el("h2", { text: a.answered || !a.ingredients.length ? a.headline : "Not enough information to assign a NOVA group" }));
     if (a.answered) card.appendChild(el("p", { "class": "hint", text: "Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product." }));
     (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
+    if (a.reading_conflict) {
+      var conflict = a.reading_conflict;
+      var compare = el("details", {}, [el("summary", { text: "Compare both readings" }),
+        el("p", { "class": "hint", text: conflict.selection })]);
+      conflict.readings.forEach(function (r) {
+        compare.appendChild(el("h3", { text: r.label.charAt(0).toUpperCase() + r.label.slice(1) + " reading" + (r.label === conflict.chosen ? " (used for this result)" : " (not used)") }));
+        compare.appendChild(el("p", { "class": "hint", text: "Sections extracted for analysis: " + (r.sections.join("; ") || "None found") + ". Codes: " + (r.codes.map(function (c) { return "INS " + c; }).join(", ") || "None found") + "." }));
+        compare.appendChild(el("p", { "class": "hint", text: "Heading: " + r.heading + ". Text accounting: " + r.completeness + "." }));
+        compare.appendChild(el("pre", { text: r.text }));
+      });
+      card.appendChild(el("section", { "class": "reading-conflict warn" }, [
+        el("h3", { text: "Photo readings differ" }),
+        el("p", { text: "Result uses the " + conflict.chosen + " reading only. No codes or text were merged. Compare both readings with the pack before relying on a disputed item." }),
+        el("p", { "class": "hint", text: "Text accounting marked complete does not prove correct characters or codes." }), compare]));
+    }
     if (a.retake) card.appendChild(el("p", { "class": "warn", text: "Retake guidance: " + a.retake }));
     card.appendChild(scale);
     var openItems = engine.explanationItems(a), itemExplanation = null;
@@ -565,7 +580,7 @@
       // Yield of a reading = ingredients found minus those not fully assessed (0 when no list was found).
       function yieldOf(a) { return a.ingredients.length ? Math.max(0, a.ingredients.length - a.unassessed.length - (a.unplaced ? a.unplaced.length : 0)) : 0; }
       var text = res.data.text, a1 = engine.analyseText(text, { source: "ocr" }), note = "";
-      var ocrNotes = [], codesOf = function (a) { return a.ins.map(function (u) { return u.code; }); };
+      var readingConflict = null, ocrNotes = [], codesOf = function (a) { return a.ins.map(function (u) { return u.code; }); };
       if (!(a1.answered && a1.completeness.status === "complete" && a1.ins.length === 0)) {
         // One bounded second pass for photos that did not read cleanly: uneven lighting and glare flattened. The better yield is kept; ties keep the first reading.
         stage = "Second reading with lighting correction"; lastEvent = Date.now();
@@ -578,6 +593,14 @@
         // Two readings that disagree on additive codes: a review hint only. Neither is chosen for the codes; nothing is replaced.
         var c1 = codesOf(a1), c2 = codesOf(a2), only1 = c1.filter(function (c) { return c2.indexOf(c) < 0; }), only2 = c2.filter(function (c) { return c1.indexOf(c) < 0; });
         if (only1.length || only2.length) ocrNotes.push("Two readings of the photo disagree on additive codes: " + (only1.length ? "INS " + only1.sort().join(", INS ") : "none") + " in the first reading, " + (only2.length ? "INS " + only2.sort().join(", INS ") : "none") + " in the second. Possible misread, check the pack.");
+        var sectionsOf = function (a) { return (a.sections || []).map(function (sec) { return sec[0] || "No section label"; }); };
+        if (only1.length || only2.length || JSON.stringify(sectionsOf(a1)) !== JSON.stringify(sectionsOf(a2))) {
+          readingConflict = { chosen: text === res2.data.text && yieldOf(a2) > yieldOf(a1) ? "second" : "first",
+            selection: "Higher existing recognised-item yield; ties keep the first reading. Not chosen for code identity or classification group.",
+            readings: [["first", a1, res.data.text], ["second", a2, res2.data.text]].map(function (r) { return {
+              label: r[0], text: r[2], sections: sectionsOf(r[1]), codes: Array.from(new Set(codesOf(r[1]))).sort(),
+              heading: r[1].heading.kind, completeness: r[1].completeness.status }; }) };
+        }
       }
       // Rotated retries are OFF (ROTATIONS empty): the measurement in evaluation/ocr_rotation_addendum recovered 0 of 22 photos in this path. When on: the same reader on the photo turned
       // by each listed angle (clockwise), only when no ingredient list was found.
@@ -606,6 +629,7 @@
       $("label-text").value = text;
       var finalA = engine.analyseText(text, { source: "ocr" });
       finalA.retake = retake;
+      finalA.reading_conflict = rotUsed ? null : readingConflict;
       ocrNotes.forEach(function (n) { finalA.warnings.push(n); });
       render(finalA, "photo");
       status.textContent = "Done" + note + ". The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
