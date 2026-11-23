@@ -264,6 +264,32 @@ def suspect_section_items(items: list[str]) -> list[str]:
     return out
 
 
+def suspect_adjacent_class_items(items: list[str]) -> list[str]:
+    """Diagnostic only: closed food bracket then a separate additive-class bracket.
+
+    No split is invented. Nested declarations and an initial additive-class item
+    are excluded: the latter can legitimately list several additive functions.
+    """
+    out = []
+    for item in items:
+        depth = 0
+        for n, char in enumerate(item):
+            if char in "([{":
+                depth += 1
+            elif char in ")]}":
+                depth = max(0, depth - 1)
+                if depth:
+                    continue
+                before, after = item[:n+1], item[n+1:]
+                if _class_word_re().search(_flat(before).replace("stabiliz", "stabilis").replace("emulsifying", "emulsifier").replace("thickening", "thickener")):
+                    continue
+                match = re.match(r"\s+([a-z ]+?)\s*\(", after, re.IGNORECASE)
+                if match and _class_word_re().fullmatch(_flat(match.group(1))):
+                    out.append(item)
+                    break
+    return out
+
+
 def _normalise_ws(text: str) -> str:
     """Collapse spaces but KEEP line breaks (they can separate sections)."""
     lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")

@@ -17,7 +17,7 @@ from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference, is_additive_absence_claim
 from .tables import load_table
 from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
-                     suspect_section_items, unclosed_openers)
+                     suspect_section_items, suspect_adjacent_class_items, unclosed_openers)
 
 NOT_ENOUGH = "Not enough information"
 GROUP_NAMES = {
@@ -454,6 +454,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     section_warnings += _role_phrase_notes(ings)
     pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
     section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]
+    boundary_suspects = suspect_adjacent_class_items(items)
+    section_warnings += [f'"{_short(it)}": an additive-class bracket follows a closed food bracket without a separator; the ingredient boundary may be missing. The original item is kept unchanged.' for it in boundary_suspects]
     implausible = source == "ocr" and _implausible(ings)
     if implausible:
         section_warnings.append("Few of the items were recognised, so this text may not be the ingredient list")
@@ -514,6 +516,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         reasons.append("a section label may not have been split from an ingredient")
     if pct_suspects:
         reasons.append("an item has text after a percentage: a comma may be missing between two ingredients")
+    if boundary_suspects:
+        reasons.append("an additive-class bracket follows a closed food bracket without a separator: ingredient-item boundaries are uncertain, even though the words are accounted for")
     if implausible:
         reasons.append("few of the items were recognised: this text may not be an ingredient list")
     denom = in_list + not_read + unaccounted

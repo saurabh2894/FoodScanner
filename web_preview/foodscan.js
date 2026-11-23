@@ -122,6 +122,23 @@
       }
       return { items, unbalanced: bracketDepth(text) !== 0 };
     }
+    function suspectAdjacentClassItems(items) {
+      const out=[];
+      for (const item of items) {
+        let depth=0;
+        for (let n=0;n<item.length;n++) {
+          const c=item[n];
+          if ("([{".includes(c)) depth++;
+          else if (")]}".includes(c)) {
+            depth=Math.max(0,depth-1);
+            if (depth || CLASS_WORD_RE.test(flatten(item.slice(0,n+1)).replace(/stabiliz/g,"stabilis").replace(/emulsifying/g,"emulsifier").replace(/thickening/g,"thickener"))) continue;
+            const m=/^\s+([a-z ]+?)\s*\(/i.exec(item.slice(n+1));
+            if (m) {const f=flatten(m[1]), hit=CLASS_WORD_RE.exec(f);if(hit && hit.index===0 && hit[0].length===f.length){out.push(item);break;}}
+          }
+        }
+      }
+      return out;
+    }
     const normaliseWs = (text) => text.replace(/\r\n?/g, "\n").split("\n")
       .map((ln) => ln.replace(/[ \t ]+/g, " ").trim()).join("\n").replace(/\n{2,}/g, "\n").trim();
 
@@ -1186,6 +1203,8 @@
       sectionWarnings.push(...roleNotes(ings));
       const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
       sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));
+      const boundarySuspects = suspectAdjacentClassItems(items);
+      sectionWarnings.push(...boundarySuspects.map(it => `"${shortText(it)}": an additive-class bracket follows a closed food bracket without a separator; the ingredient boundary may be missing. The original item is kept unchanged.`));
       const implausible = source === "ocr" && isImplausible(ings);
       if (implausible) sectionWarnings.push("Few of the items were recognised, so this text may not be the ingredient list");
       sectionWarnings.push(...possibleMisreads(ings));
@@ -1218,6 +1237,7 @@
       if (unaccounted) reasons.push(`${unaccounted} word(s) after the heading were neither read as ingredients nor set aside`);
       if (suspectSectionItems(items).length) reasons.push("a section label may not have been split from an ingredient");
       if (pctSuspects.length) reasons.push("an item has text after a percentage: a comma may be missing between two ingredients");
+      if (boundarySuspects.length) reasons.push("an additive-class bracket follows a closed food bracket without a separator: ingredient-item boundaries are uncertain, even though the words are accounted for");
       if (implausible) reasons.push("few of the items were recognised: this text may not be an ingredient list");
       const denom = inList + notRead + unaccounted;
       common.completeness = {

@@ -1,6 +1,19 @@
-# Backlog (next round; nothing here is being implemented now)
+# Backlog
 
-Rule from the reviewer: this round ends with the sweetener + soybean bundle. New case fixes that arrive are recorded here, not implemented.
+## Reconciled 23 November 2026
+Current technical checks below supersede stale implementation status, not historical source/authority claims. No repository reviewer attribution is treated as owner permission.
+
+Resolved in current main: US Stabilizer (414) extracts code 414; Thickening & Stabilizing Agents extracts listed codes and existing class evidence; Contains-line codes are exposed as declaration-only entries; INS explanatory note is not glued into flavour item; M08 splits Milk solids and Sugar. Existing soy lecithin/isolate handling must be checked term-by-term in markers/synonyms rather than inferred from this old no-row note.
+
+Current candidate: M12 adjacent food/additive brackets remain one unchanged item, with a possible-boundary warning and uncertain text accounting. No split, code, driver or group change. M04 is not claimed resolved: complete word accounting alone does not prove correct compound-food boundaries.
+
+Product-name prefix remains unresolved. A synthetic exact heading followed by THE GOOD PRO MIX is still merged with Rice, but no accessible original image/reference was recovered for a safe exclusion rule. Do not strip arbitrary capitalized lines or tune a product-name exception from this synthetic probe.
+
+Other sourcing/OCR/family-code holds below are unchanged. No new OCR tie-break or source admission.
+
+## Historical backlog snapshot (not instructions)
+
+Historical note attributed the old round boundary to a reviewer. Original user-channel research found no direct instruction forbidding a future diagnostic completeness review; the old attribution itself supplies no authority.
 
 ## Parser and vocabulary
 - A bare code after a US-spelled class word ("Stabilizer (414)") is not read as an INS code (code extraction runs before spelling is normalised).

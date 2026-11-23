@@ -22,7 +22,7 @@ WATER_CONTROLS = ["Ingredients: " + f.format(t="Carbonated Water") + "." for f i
 import csv
 with (ROOT / "src/foodscan/resources/descriptors.csv").open() as _fh:
     WATER_CONTROLS += ["Ingredients: " + text + "." for row in csv.DictReader(_fh) for d in [next(iter(row.values()))] for text in [d + " Carbonated Water", "Carbonated Water " + d]]
-CORPUS = WATER_CONTROLS + [
+CORPUS = ['Ingredients: Mixed Spices (Clove, Cinnamon, Chilli) Preservative (INS 211).', 'Ingredients: Rice (Rice) Colour (INS 102).', 'Ingredients: Spices [Clove, Cinnamon] preservative (INS 211).', 'Ingredients: Rice (Rice), Preservative (INS 211).', 'Ingredients: Spices (Pepper Preservative (INS 211)).', 'Ingredients: Stabilizer (INS 414) Preservative (INS 211).', 'Ingredients: Stabiliser (INS 414) Preservative (INS 211).', 'Ingredients: Emulsifying Agent (INS 322) Preservative (INS 211).', 'Ingredients: Rice (Rice) (100%).', 'Ingredients: Rice (Rice) as colouring.', 'Ingredients: Mixed Spices (Clove, Cinnamon, Chilli).', 'Ingredients: Rice (Rice) with salt (1%).', 'Ingredients: Rice (Rice) and Preservative (INS 211).', 'Ingredients: Rice (Rice) Preservative free (claim).', 'Ingredients: Rice (Rice) Natural Flavour (vanilla).'] + WATER_CONTROLS + [
     BISCUIT,
     "Ingredients: Whole wheat flour.",
     (ROOT / "tests/fixtures/native_n08_readings/second.txt").read_text(),
