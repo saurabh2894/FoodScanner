@@ -56,6 +56,10 @@ def test_synthetic_unassessed_co_ingredients_are_not_laundered_by_the_powder_abs
 @pytest.mark.parametrize("t", ["Spinach Extract Powder", "Beet Red Powder", "Celery Powder", "Arrowroot Powder"])
 def test_synthetic_negative_base_terms_that_stay_out_remain_unassessed(t):
     group, a = g(t)
+    if t=='Celery Powder':
+        assert group is None and 'named without its composition' in (a.reason or '')
+        assert not a.unassessed  # Recognized sourced celery, but unspecified powder stays unanswered.
+        return
     assert group is None and t.lower() in " ".join(u.lower() for u in a.unassessed)
 
 
