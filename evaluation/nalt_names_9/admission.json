@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-22",
+  "main_base": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "local_base": "nalt_names_8, unpublished",
+  "state": "LOCAL ONLY, scoped validation complete, no commit",
+  "new_foods": [
+    {
+      "term": "tangors",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term tangors is not named: class-instance of plain fruit, supported by current USDA NALT Product26520, https://lod.nal.usda.gov/nalt/26520, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 26520,
+      "source_url": "https://lod.nal.usda.gov/nalt/26520",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "tangelos",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term tangelos is not named: class-instance of plain fruit, supported by current USDA NALT Product26563, https://lod.nal.usda.gov/nalt/26563, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 26563,
+      "source_url": "https://lod.nal.usda.gov/nalt/26563",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "satsumas",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term satsumas is not named: class-instance of plain fruit, supported by current USDA NALT Product26572, https://lod.nal.usda.gov/nalt/26572, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 26572,
+      "source_url": "https://lod.nal.usda.gov/nalt/26572",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "bergamot oranges",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term bergamot oranges is not named: class-instance of plain fruit, supported by current USDA NALT Product16720, https://lod.nal.usda.gov/nalt/16720, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 16720,
+      "source_url": "https://lod.nal.usda.gov/nalt/16720",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "sour oranges",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sour oranges is not named: class-instance of plain fruit, supported by current USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 17102,
+      "source_url": "https://lod.nal.usda.gov/nalt/17102",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "bean sprouts",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term bean sprouts is not named: class-instance of plain vegetable, supported by current USDA NALT Product16190, https://lod.nal.usda.gov/nalt/16190, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Current NALT sprouts (food), https://lod.nal.usda.gov/nalt/en/page/98404, explicitly places bean and buckwheat sprouts under this vegetable product category. Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 16190,
+      "source_url": "https://lod.nal.usda.gov/nalt/16190",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "microgreens",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term microgreens is not named: class-instance of plain vegetable, supported by current USDA NALT Product260606, https://lod.nal.usda.gov/nalt/260606, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 260606,
+      "source_url": "https://lod.nal.usda.gov/nalt/260606",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "buckwheat sprouts",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term buckwheat sprouts is not named: class-instance of plain vegetable, supported by current USDA NALT Product278221, https://lod.nal.usda.gov/nalt/278221, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Current NALT sprouts (food), https://lod.nal.usda.gov/nalt/en/page/98404, explicitly places bean and buckwheat sprouts under this vegetable product category. Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 278221,
+      "source_url": "https://lod.nal.usda.gov/nalt/278221",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "sorrel",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sorrel is not named: class-instance of plain vegetable, supported by current USDA NALT Product43829, https://lod.nal.usda.gov/nalt/43829, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 43829,
+      "source_url": "https://lod.nal.usda.gov/nalt/43829",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "sweet potato greens",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sweet potato greens is not named: class-instance of plain vegetable, supported by current USDA NALT Product43831, https://lod.nal.usda.gov/nalt/43831, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 43831,
+      "source_url": "https://lod.nal.usda.gov/nalt/43831",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "japanese bunching onions",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term japanese bunching onions is not named: class-instance of plain vegetable, supported by current USDA NALT Product6636, https://lod.nal.usda.gov/nalt/6636, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 6636,
+      "source_url": "https://lod.nal.usda.gov/nalt/6636",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "winter squashes",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term winter squashes is not named: class-instance of plain vegetable, supported by current USDA NALT Product30550, https://lod.nal.usda.gov/nalt/30550, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Current NALT squashes, https://lod.nal.usda.gov/nalt/30549, places winter squashes under the vegetable class. Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 30550,
+      "source_url": "https://lod.nal.usda.gov/nalt/30550",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "grain sprouts",
+      "kind": "vegetable",
+      "source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term grain sprouts is not named: class-instance of plain vegetable, supported by current USDA NALT Product98404, https://lod.nal.usda.gov/nalt/98404, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "concept_id": 98404,
+      "source_url": "https://lod.nal.usda.gov/nalt/98404",
+      "inference_level": "class-instance, not exact-named food"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "king oranges",
+      "target": "tangors",
+      "concept_id": 26520,
+      "source_url": "https://lod.nal.usda.gov/nalt/26520",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term tangors is not named: class-instance of plain fruit, supported by current USDA NALT Product26520, https://lod.nal.usda.gov/nalt/26520, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product26520, https://lod.nal.usda.gov/nalt/26520, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "uglifruit",
+      "target": "tangelos",
+      "concept_id": 26563,
+      "source_url": "https://lod.nal.usda.gov/nalt/26563",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term tangelos is not named: class-instance of plain fruit, supported by current USDA NALT Product26563, https://lod.nal.usda.gov/nalt/26563, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product26563, https://lod.nal.usda.gov/nalt/26563, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "satsuma mandarins",
+      "target": "satsumas",
+      "concept_id": 26572,
+      "source_url": "https://lod.nal.usda.gov/nalt/26572",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term satsumas is not named: class-instance of plain fruit, supported by current USDA NALT Product26572, https://lod.nal.usda.gov/nalt/26572, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product26572, https://lod.nal.usda.gov/nalt/26572, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "satsuma oranges",
+      "target": "satsumas",
+      "concept_id": 26572,
+      "source_url": "https://lod.nal.usda.gov/nalt/26572",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term satsumas is not named: class-instance of plain fruit, supported by current USDA NALT Product26572, https://lod.nal.usda.gov/nalt/26572, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product26572, https://lod.nal.usda.gov/nalt/26572, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "bigarades",
+      "target": "sour oranges",
+      "concept_id": 17102,
+      "source_url": "https://lod.nal.usda.gov/nalt/17102",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sour oranges is not named: class-instance of plain fruit, supported by current USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "bitter oranges",
+      "target": "sour oranges",
+      "concept_id": 17102,
+      "source_url": "https://lod.nal.usda.gov/nalt/17102",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sour oranges is not named: class-instance of plain fruit, supported by current USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "seville oranges",
+      "target": "sour oranges",
+      "concept_id": 17102,
+      "source_url": "https://lod.nal.usda.gov/nalt/17102",
+      "target_kind": "fruit",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term sour oranges is not named: class-instance of plain fruit, supported by current USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product17102, https://lod.nal.usda.gov/nalt/17102, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "microgreen plants",
+      "target": "microgreens",
+      "concept_id": 260606,
+      "source_url": "https://lod.nal.usda.gov/nalt/260606",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term microgreens is not named: class-instance of plain vegetable, supported by current USDA NALT Product260606, https://lod.nal.usda.gov/nalt/260606, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product260606, https://lod.nal.usda.gov/nalt/260606, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "pearl onions",
+      "target": "onion",
+      "concept_id": 6633,
+      "source_url": "https://lod.nal.usda.gov/nalt/6633",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term onion is not named: class-instance of plain vegetable, supported by current USDA NALT Product6633, https://lod.nal.usda.gov/nalt/6633, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product6633, https://lod.nal.usda.gov/nalt/6633, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "japanese leeks",
+      "target": "japanese bunching onions",
+      "concept_id": 6636,
+      "source_url": "https://lod.nal.usda.gov/nalt/6636",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term japanese bunching onions is not named: class-instance of plain vegetable, supported by current USDA NALT Product6636, https://lod.nal.usda.gov/nalt/6636, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product6636, https://lod.nal.usda.gov/nalt/6636, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    },
+    {
+      "name": "welsh onions",
+      "target": "japanese bunching onions",
+      "concept_id": 6636,
+      "source_url": "https://lod.nal.usda.gov/nalt/6636",
+      "target_kind": "vegetable",
+      "target_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term japanese bunching onions is not named: class-instance of plain vegetable, supported by current USDA NALT Product6636, https://lod.nal.usda.gov/nalt/6636, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "source": "USDA NALT Product6636, https://lod.nal.usda.gov/nalt/6636, current page checked2026-11-22, CC BY4.0; current Product name or synonym. Identity only, not NOVA placement; target independently has current NOVA class support. Item-own form conditions retained. Not a strong marker (nalt-names-9)."
+    }
+  ],
+  "source_corrections": [
+    {
+      "term": "onion",
+      "old_source": "PROVISIONAL author seed (vegetable)",
+      "new_source": "PROVISIONAL (nalt-names-9): Martinez Steele et al., J Nutr2023, Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term onion is not named: class-instance of plain vegetable, supported by current USDA NALT Product6633, https://lod.nal.usda.gov/nalt/6633, checked2026-11-22, CC BY4.0 (identity and edible-food category, not NOVA). Plain natural food and source-named minimal processes only, no added substances. This is not permission for an unspecified powder, extract, isolate, oil-roasted food or preserved product; existing form guards and item-level conditions remain. Not a strong marker. Current Table1 Group3 independently supports same-food preparations with culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions and preserved/canned forms without sufficient composition still abstain.",
+      "rationale": "The pearl-onion alias requires current placement evidence, not the legacy author-seed provenance."
+    }
+  ],
+  "held": [
+    "cranberry",
+    "tamarind",
+    "coconut",
+    "celery",
+    "beets",
+    "arrowroot",
+    "mungo beans",
+    "mungobeans",
+    "greengram",
+    "mungbeans",
+    "blackgram",
+    "urd beans",
+    "haricot beans",
+    "star anise",
+    "winter melon",
+    "catjang peas",
+    "ginger root",
+    "jaggary",
+    "jagghery",
+    "bovine milk",
+    "chard",
+    "groundnut",
+    "flaxseed",
+    "tree mushrooms",
+    "scallions",
+    "spring onions",
+    "portabello mushrooms",
+    "portobella mushrooms",
+    "cashew fruit",
+    "cashew apple",
+    "truffles"
+  ],
+  "notes": [
+    "Cashew fruit/apple identity is verified but existing short cashew alias rewrites the phrases to cashew nuts fruit/apple. Held without classifier changes.",
+    "Unqualified truffles can mean fungal food or a confection; no bare head is added.",
+    "All prior holds remain. Source silence or dictionary identity alone never grants placement.",
+    "New grain sprouts is an exact NALT synonym of the edible vegetable sprouts-food product, not a claim about unsprouted grain."
+  ],
+  "validation_report": "README.md",
+  "validation_proof": "validation-proof.json",
+  "frozen_oos32_proof": "oos32-regression.json"
+}
