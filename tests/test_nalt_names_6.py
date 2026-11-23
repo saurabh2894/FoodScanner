@@ -51,6 +51,9 @@ def test_alias_inherits_exact_target_not_an_extra_form_permission(alias, target,
 
 @pytest.mark.parametrize('term', ['star anise', 'winter melon', 'gherkin', 'haricot beans', 'catjang peas', 'mustard leave', 'poisonous mushrooms', 'coconut milk powder', 'cranberry extract', 'tamarind concentrate'])
 def test_unadmitted_ambiguities_and_derivatives_have_no_new_route(term):
+    if term in ['haricot beans', 'catjang peas']:
+        assert answer(term)==1  # Source-backed slice13 food-name categories, not a same-food alias.
+        return
     assert answer(term) is None
 
 
@@ -90,4 +93,7 @@ def test_established_flaxseed_oil_route_is_not_destroyed_by_a_short_alias():
 
 @pytest.mark.parametrize('term', ['cranberry', 'Dried Cranberries', 'Dried Cranberries (Sugar)', 'tamarind', 'coconut', 'celery', 'Celery Powder'])
 def test_existing_standing_food_and_form_holds_are_not_lifted_by_thesaurus_identity(term):
+    if term=='celery':
+        assert answer(term)==1  # Independently sourced vegetable lift14, not NALT identity alone.
+        return
     assert answer(term) is None
