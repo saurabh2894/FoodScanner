@@ -1,0 +1,4680 @@
+[
+  {
+    "text": "Ingredients: Potato, flavouring (627), salt.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "flavouring (627)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "flavouring (627)",
+        "detail": "INS 627 (disodium guanylate)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); flavour enhancers are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "flavouring (627)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Roasted Peanuts (91%) Sugar, Stabilizer (INS471), Iodised Salt.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (INS471)",
+        "detail": "INS 471 (emulsifier)",
+        "source": "research/02 \"Indian label specifics\" example \"Emulsifier (INS 471)\" + marker class 2 (emulsifiers)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS471)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Color (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Color (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Color (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Color (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Color (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Color (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Color (102) free.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102) free",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Color (102) free.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102) free",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Color (102) not used.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102) not used",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Color (102) not used.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102) not used",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (INS 102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (INS 102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Color (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Color (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Color (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Colour (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "without Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Colour (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "without Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Colour (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "free from Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Colour (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "free from Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102) free.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102) free",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102) free.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102) free",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102) not used.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102) not used",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102) not used.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102) not used",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (INS 102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (INS 102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Colour (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "no added Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (102)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "Colour (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabilizer (102).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabilizer (102).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Stabilizer (102).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Stabilizer (102).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Stabilizer (102).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Stabilizer (102).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102) free.",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102) free",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102) free.",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102) free",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102) not used.",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102) not used",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102) not used.",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102) not used",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabilizer (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabilizer (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Stabiliser (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Stabiliser (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102) free.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102) free.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102) not used.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102) not used.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Stabiliser (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Emulsifiers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "without Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Emulsifiers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "without Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Emulsifiers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Emulsifiers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102) free.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102) free",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102) free.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102) free",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102) not used.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102) not used",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102) not used.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102) not used",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (INS 102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (INS 102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Emulsifiers (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Emulsifiers (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "\"emulsifier\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (emulsifiers)",
+        "section": null
+      },
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Emulsifiers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Flavor Enhancers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, without Flavor Enhancers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "without Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Flavor Enhancers (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, free from Flavor Enhancers (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "free from Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102) free.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102) free.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) free",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102) not used.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102) not used.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102) not used",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": []
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, no added Flavor Enhancers (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "no added Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102), no added Color (110).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Flavor Enhancers (102), no added Color (110).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"flavour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavourings)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "\"enhancer\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (flavour enhancers)",
+        "section": null
+      },
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "no added Color (110)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Flavor Enhancers (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (102).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (INS 102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (INS 102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (E102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (E102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (E102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (E102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (INS 102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (INS 102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (INS 102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (INS 102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (E102).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (E102).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (E102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabiliser (E102), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "INS 102 (tartrazine)",
+        "source": "Project-maintained classification mapping; Codex reference data shown separately. Not an endorsement by Codex, FAO or WHO; name/class as listed in a Codex INS list (edition not recorded: unknown) (not in research/02); colourings are marker class 2",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (INS 211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (INS 211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (INS 211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (INS 211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (E211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (E211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (E211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Color (E211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (INS 211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (INS 211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (INS 211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (INS 211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (E211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (E211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (E211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Colour (E211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": 4,
+    "before_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "\"colour\" (cosmetic_additive)",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      },
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "maltodextrin",
+        "detail": "\"maltodextrin\" (derived_substance)",
+        "source": "research/02 marker class 1",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (414).",
+    "source": "ocr",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      },
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "INS 414 (not in local mapping)",
+        "source": "no source: code absent from ins_map.csv",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk, Stabilizer (414).",
+    "source": "text",
+    "before_group": null,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "\"stabiliser\" (unlisted_additive)",
+        "source": "NOT in research/02: treated as uncertain pending review",
+        "section": null
+      },
+      {
+        "ingredient": "Stabilizer (414)",
+        "detail": "INS 414 (not in local mapping)",
+        "source": "no source: code absent from ins_map.csv",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (INS 102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (INS 102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (INS 102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (INS 102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (E102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (E102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (E102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabilizer (E102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabilizer (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (INS 102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (INS 102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (INS 102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (INS 102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (INS 102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (E102).",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (E102).",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (E102), maltodextrin.",
+    "source": "ocr",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Stabiliser (E102), maltodextrin.",
+    "source": "text",
+    "before_group": 1,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Milk",
+        "detail": "single recognised unprocessed food",
+        "source": "research/02 group 1 examples (milk)",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Stabiliser (E102)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (INS 211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (INS 211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (INS 211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (INS 211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (INS 211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (INS 211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (INS 211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (INS 211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (E211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (E211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (E211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (E211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (E211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (E211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Color (E211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Color (E211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Color (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (INS 211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (INS 211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (INS 211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (INS 211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (INS 211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (INS 211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (INS 211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (INS 211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (INS 211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (E211).",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (E211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (E211).",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (E211)",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (E211), maltodextrin.",
+    "source": "ocr",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (E211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  },
+  {
+    "text": "Ingredients: Milk. Contains Colour (E211), maltodextrin.",
+    "source": "text",
+    "before_group": 4,
+    "after_group": null,
+    "before_drivers": [
+      {
+        "ingredient": "Contains Colour (E211), maltodextrin",
+        "detail": "declared in \"Contains\" statement: \"colour\"",
+        "source": "research/02 marker class 2 (colourings); NOVA wording: Monteiro et al. 2019 identification paper (Public Health Nutr 22:936; abstract read) and NUPENS-USP classification page (research/04). PROVISIONAL: applies to a declared additive colour only",
+        "section": null
+      }
+    ],
+    "after_drivers": [
+      {
+        "ingredient": "Colour (E211)",
+        "detail": "declared class and local code mapping differ; entry unresolved",
+        "source": "label wording versus existing project mapping; no source resolves this mismatch",
+        "section": null
+      }
+    ]
+  }
+]

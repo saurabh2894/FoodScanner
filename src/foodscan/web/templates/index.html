@@ -10,7 +10,7 @@
   .answer { border-left: 6px solid #2a6; }
   .abstain { border-left: 6px solid #888; }
   .error { border-left: 6px solid #c33; }
-  small, .src { color: #555; }
+  small, .src { color: #555; overflow-wrap: anywhere; }
   pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   code { background: #f3f3f3; padding: 0 .25rem; }
   .insgroup { border-top: 1px solid #ddd; margin-top: .6rem; padding-top: .5rem; }
@@ -106,15 +106,16 @@
   {% endif %}
   {% if result.ins_mappings %}
     {% macro effect(u) -%}
-      {%- if u.name is none and u.ref_name -%}No decision rule (the JECFA page read names it, but it cannot decide a group; unknown stays unknown)
+      {%- if u.class_conflict -%}Class/code mismatch (entry unresolved; no marker evidence used)
+      {%- elif u.name is none and u.ref_name -%}No decision rule (the JECFA page read names it, but it cannot decide a group; unknown stays unknown)
       {%- elif u.name is none -%}Code not in the table (cannot count as a marker; if nothing else decides, the result stays uncertain)
       {%- elif u.strength == 'strong' -%}Ultra-processing marker
       {%- elif u.strength in ('weak', 'weak_specific') -%}Weak marker (not enough on its own)
       {%- else -%}Not a marker by itself{%- endif -%}
     {%- endmacro %}
     <h3>Additive codes</h3>
-    {% set named = result.ins_mappings | selectattr('name') | list | length %}
-    <p class="src">{{ result.ins_mappings | length }} found: {{ named }} with a decision rule, {{ result.ins_mappings | length - named }} without.</p>
+    {% set named = result.ins_mappings | selectattr('name') | rejectattr('class_conflict') | list | length %}
+    <p class="src">{{ result.ins_mappings | length }} found: {{ named }} with a usable decision rule, {{ result.ins_mappings | length - named }} without.</p>
     {% for group in result.ins_mappings | groupby('ingredient') %}
       <div class="insgroup">
         <strong>{{ (group.grouper or '').split('(')[0].strip(' ,;:*-') or group.grouper }}</strong>
@@ -126,7 +127,7 @@
             {% for c in u.classes if c|lower != (u.name or '')|lower %}<span class="role">{{ c }}</span>{% endfor %}
             {% if u.name is none and u.ref_name %}<span class="src">Recognised code, no processing rule yet. Classification treats it as unknown.{% if u.ref_url %} {{ 'Name is provisional' if 'PROVISIONAL' in u.ref_source else 'Name checked against its source page' }} ({{ u.ref_url }}).{% endif %}{% if u.ref_classes %} Possible functions listed elsewhere: {{ u.ref_classes | join(', ') }}.{% endif %}</span>{% endif %}
             {% for n in u.role_notes %}<span class="src">{{ n }}</span>{% endfor %}
-            <span class="effect">{{ u.role_label if (u.role_label and u.strength not in ('strong', 'weak', 'weak_specific')) else effect(u) }}</span>
+            <span class="effect">{{ u.role_label if (not u.class_conflict and u.role_label and u.strength not in ('strong', 'weak', 'weak_specific')) else effect(u) }}</span>
             {% if u.source %}<span class="src">Source: {{ 'Project research notes' if u.source.startswith('research/') else ('Codex INS list' if 'Codex' in u.source else u.source[:48]) }}</span>{% endif %}
           </li>
         {% endfor %}

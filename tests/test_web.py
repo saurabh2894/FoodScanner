@@ -88,7 +88,7 @@ def test_additive_codes_are_grouped_with_plain_effect_labels(monkeypatch):
     monkeypatch.setattr(normalise, '_ins_reference', lambda: {normalise.canonical_code(r['ins']): r for r in csv.DictReader(ref.open(encoding='utf-8'))})
     text = "Ingredients: Rice, Acidity Regulators(INS330, INS296), colour (INS 102), preservative (INS 211), salt."
     html = post(create_app(FakeOcr(text)).test_client()).get_data(as_text=True)
-    assert "Additive codes" in html and "4 found: 2 with a decision rule, 2 without." in html
+    assert "Additive codes" in html and "4 found: 2 with a usable decision rule, 2 without." in html
     assert "Acidity Regulators" in html and "Ultra-processing marker" in html
     assert "Declared as preservative" in html and "no Group 4 marker detected for this role per Monteiro et al. 2019, FAO" in html   # was the bare "Not a marker by itself" pill
     assert "Declared as acidity regulator" in html and "this class is not named in the NOVA source read" in html   # replaces the bare "No decision rule" where the label declares a class

@@ -471,13 +471,23 @@
     const canonicalCode = (c) => c.toLowerCase().replace(/\s+/g, "");
 
     const ADDITIVE_CLASSES = new Set(["cosmetic_additive", "ordinary_additive", "unlisted_additive"]);
-    const bareTerms = [...new Set(T.markers.filter((r) => ADDITIVE_CLASSES.has(r.marker_class)).map((r) => r.term.toLowerCase()))]
+    const bareClasses = new Set(T.markers.filter((r) => ADDITIVE_CLASSES.has(r.marker_class)).map((r) => r.term.toLowerCase()));
+    const bareAliases = T.synonyms.filter((r) => bareClasses.has(r.to.toLowerCase())).map((r) => r.from.toLowerCase());
+    const bareTerms = [...new Set([...bareClasses, ...bareAliases])]
       .sort((a, b) => b.length - a.length).map(esc).join("|");
-    const CLASS_WORD_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?![a-z])");
+    const classTerms = [...bareClasses].sort((a, b) => b.length - a.length).map(esc).join("|");
+    const CLASS_WORD_RE = new RegExp("(?<![a-z])(?:" + classTerms + ")(?:s|ing|ings)?(?![a-z])");
     // "Flavour Enhancers (627, 631)": bare codes, only right after an additive class word
     const BARE_RE = new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?:\\s+of\\s+[a-z]+(?:\\s+[a-z]+){0,2})?\\s*[(\\[{]\\s*(?<codes>" + CODE + "(?:\\s*(?:,|and|&|/)\\s*" + CODE + ")*)\\s*[)\\]}]", "g");
 
+    function isAdditiveAbsenceClaim(raw) {
+      const low = stripChars(raw.toLowerCase(), " ,;:.");
+      if (!/^(?:no|not|without|free\s+(?:from|of)|does\s+not\s+contain|do\s+not\s+contain)\b/.test(low)
+          && !/\b(?:free|absent|not\s+(?:added|used|present))$/.test(low)) return false;
+      return new RegExp("(?<![a-z])(?:" + bareTerms + ")(?:s|ing|ings)?(?![a-z])").test(low);
+    }
     function extractIns(text) {
+      if (isAdditiveAbsenceClaim(text)) return {stripped:text.toLowerCase(), uses:[]};
       const uses = [];
       const addUse = (c) => {
         const code = canonicalCode(c);
@@ -529,7 +539,13 @@
       name = stripFootnotes(name);
       inner = stripFootnotes(inner);
       const roles = declaredRoles(name), phrase = roles.length ? labelPhrase(raw) : null, notes = declaredRoleNotes(roles, phrase || "");
-      uses.forEach((u) => { u.ingredient = raw; u.declared = phrase; u.declared_roles = roles; u.role_notes = notes; });
+      uses.forEach((u) => { u.ingredient = raw; u.declared = phrase; u.declared_roles = roles;
+        u.class_conflict = !!(u.classes.length && roles.length && !u.classes.some((c) => roles.includes(c)));
+        u.role_notes = u.class_conflict ? [`This entry declares ${roles.join(" & ")}, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used.`] : notes; });
+      if (uses.some((u) => u.class_conflict)) {
+        const conflictNotes = uses.find((u) => u.class_conflict).role_notes;
+        uses.forEach((u) => {u.class_conflict = true; u.role_notes = conflictNotes;});
+      }
       return { raw, name, inner, ins: uses, text: (name + " " + inner).trim() };
     }
 
@@ -748,6 +764,8 @@
     };
     const legumeAddedSaltSugarOrBrine = (ing) => addedIn(ing, LEGUME_ADDED) || (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).some((p) => p.trim() && isRecognised(p.trim()) && lookup(p.trim()).kind === "culinary");
     function hitsFor(ing) {
+      if (isAdditiveAbsenceClaim(ing.raw)) return [];
+      if (ing.ins.some((u) => u.class_conflict)) return [{strength:"unlisted", marker_class:"unlisted_additive", detail:"declared class and local code mapping differ; entry unresolved", source:"label wording versus existing project mapping; no source resolves this mismatch"}];
       let hits = [];
       const noteOnly = colourNoteOnly(ing), sweetFoods = sweetenerFoodsOnly(ing);
       for (const { re, row } of markers) {
@@ -773,10 +791,15 @@
       const strong = [], weak = [];
       for (const ing of ings) for (const h of hitsFor(ing)) (h.strength === "strong" ? strong : weak).push({ ingredient: ing.raw, detail: h.detail, source: h.source, section: ing.section ?? null });
       for (const decl of declarations || []) {
-        const text = normaliseIngredient(decl).text;
-        for (const { re, row } of markers)
-          if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(text))
-            strong.push({ ingredient: decl, detail: `declared in "Contains" statement: "${row.term}"`, source: row.source, section: null });
+        for (const clause of splitItemsText(decl.replace(/^contains?\s*:?[ ]*/i, ""))) {
+          const ing = normaliseIngredient(clause);
+          if (ing.ins.some((u) => u.class_conflict)) {
+            weak.push({ingredient:clause, detail:"declared class and local code mapping differ; entry unresolved", source:"label wording versus existing project mapping; no source resolves this mismatch", section:null}); continue;
+          }
+          for (const { re, row } of markers)
+            if (row.strength === "strong" && row.marker_class === "cosmetic_additive" && re.test(ing.text))
+              strong.push({ingredient:decl,detail:`declared in "Contains" statement: "${row.term}"`,source:row.source,section:null});
+        }
       }
       if (strong.length) return { group: 4, drivers: strong, reason: null };
       // A colour note on a named food leaves open whether a colour is added: without an independent marker (above) the result stays uncertain.
@@ -903,7 +926,7 @@
         const ing = normaliseIngredient(raw);
         ing.section = section;
         ing.ins.forEach((u) => { u.section = section; });
-        let split = depth < 3 ? splitCompound(raw) : null;
+        let split = depth < 3 && !isAdditiveAbsenceClaim(raw) ? splitCompound(raw) : null;
         if (split && split[1].length === 1 && isColourNote(normaliseIngredient(split[1][0]).text)) split = null;   // "Annatto (colour)": a function note on a named food
         if (split && !recognisableIng(normaliseIngredient(split[0]))) {
           if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible
@@ -1113,12 +1136,15 @@
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
         ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
       const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced)))];
+      const declarationConflicts = parsed.declarations.flatMap((d) => splitItemsText(d.replace(/^contains?\s*:?[ ]*/i, "")).map(normaliseIngredient)).filter((i) => i.ins.some((u) => u.class_conflict));
       const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
       sectionWarnings.push(...parsed.composition.map((seg) => `Milk composition declaration (not an added ingredient): "${seg}". No vitamin, added-solid or milk-fat ingredient was inferred.`));
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
       sectionWarnings.push(...ings.filter(colourNoteOnly).map((i) => `"${i.raw}": a colour note on a named ingredient is not counted as an added colour`));
       sectionWarnings.push(...ings.filter(sweetenerFoodsOnly).map((i) => `"${i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class`));
+      sectionWarnings.push(...ings.filter((i) => isAdditiveAbsenceClaim(i.raw)).map((i) => `"${i.raw}": additive-absence wording is not treated as a positive ingredient or code declaration; the entry stays unresolved`));
+      sectionWarnings.push(...ings.concat(declarationConflicts).filter((i) => i.ins.some((u) => u.class_conflict)).map((i) => `"${i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used`));
       sectionWarnings.push(...roleNotes(ings));
       const pctSuspects = items.filter((it) => SUSPECT_PCT.test(it));
       sectionWarnings.push(...pctSuspects.map((it) => `"${shortText(it)}" has text after a percentage; a comma may be missing between two ingredients`));
@@ -1126,7 +1152,7 @@
       if (implausible) sectionWarnings.push("Few of the items were recognised, so this text may not be the ingredient list");
       sectionWarnings.push(...possibleMisreads(ings));
       if (parsed.unbalanced) sectionWarnings.push(...items.flatMap((it) => unclosedOpeners(it)).map((snip) => `A bracket near "${snip}" was never closed, so the text after it was kept together as one item instead of being split (where it should close cannot be known)`));
-      const common = { ingredients: items, ins: ings.flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, unplaced, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
+      const common = { ingredients: items, ins: ings.concat(declarationConflicts).flatMap((i) => i.ins), warnings: [...sectionWarnings], unassessed, unplaced, ignored: [...parsed.ignored], declared, heading: { kind: parsed.headingKind, text: parsed.headingText }, sections: sections.map((sec) => [sec.label, sec.items]) };
       let truncation = null, vocabLast = false;      // vocabLast: the last item is not in the vocabulary but does not look cut off (a vocabulary gap, not a truncation)
       if (parsed.unbalanced) truncation = "ingredient list looks truncated (unclosed bracket)";
       else if (!parsed.terminated && !recognisableIng(ings[ings.length - 1])) {
@@ -1160,7 +1186,7 @@
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
-        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0; }).length } };
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || i.ins.some((u) => u.class_conflict) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0; }).length } };
       if (parsed.composition.length) {
         const compositionWords = parsed.composition.reduce((n, x) => n + countWords(x), 0);
         common.completeness.words.composition = compositionWords; common.completeness.words.excluded -= compositionWords;

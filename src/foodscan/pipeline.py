@@ -14,7 +14,7 @@ from pathlib import Path
 from .classify import _MILK_TERMS, is_fat_row, lookup as _lookup, Driver, _hits_for, classify_ingredients, nested_unplaced, colour_note_only, ingredient_marker_terms, sweetener_foods_only, is_colour_note, is_recognised, marker_terms
 from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
-from .normalise import _ins_reference
+from .normalise import _ins_reference, is_additive_absence_claim
 from .tables import load_table
 from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, unclosed_openers)
@@ -367,7 +367,7 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
         ing = normalise_list([raw])[0]
         ing.section = section
         ing.ins = [replace(u, section=section) for u in ing.ins]
-        split = split_compound(raw) if depth < 3 else None
+        split = split_compound(raw) if depth < 3 and not is_additive_absence_claim(raw) else None
         if split and len(split[1]) == 1 and is_colour_note(normalise_list([split[1][0]])[0].text):
             split = None          # "Annatto (colour)": a function note on a named food, not a colour ingredient: keep whole
         if split and not _recognisable(normalise_list([split[0]])[0]):
@@ -435,7 +435,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     unplaced = list(dict.fromkeys(
         [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"]
         + [name for i in ings for name in nested_unplaced(i)]))
-    uses = [u for i in ings for u in i.ins]
+    declaration_conflicts = [i for decl in parsed.declarations for i in normalise_list(split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE))) if any(u.class_conflict for u in i.ins)]
+    uses = [u for i in ings + declaration_conflicts for u in i.ins]
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
                         for it in suspect_section_items(items)] + amp_notes
     section_warnings += [f'Milk composition declaration (not an added ingredient): "{seg}". No vitamin, added-solid or milk-fat ingredient was inferred.' for seg in parsed.composition]
@@ -445,6 +446,8 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     section_warnings += unread_warnings
     section_warnings += [f'"{i.raw}": a colour note on a named ingredient is not counted as an added colour' for i in ings if colour_note_only(i)]
     section_warnings += [f'"{i.raw}": the bracket names foods, so the word "sweeteners" is not counted as an added sweetener class' for i in ings if sweetener_foods_only(i)]
+    section_warnings += [f'"{i.raw}": additive-absence wording is not treated as a positive ingredient or code declaration; the entry stays unresolved' for i in ings if is_additive_absence_claim(i.raw)]
+    section_warnings += [f'"{i.raw}": declared class and local code mapping differ; codes remain visible, but marker evidence from this entry is not used' for i in ings + declaration_conflicts if any(u.class_conflict for u in i.ins)]
     section_warnings += _role_phrase_notes(ings)
     pct_suspects = [it for it in items if _SUSPECT_PCT.search(it)]
     section_warnings += [f'"{_short(it)}" has text after a percentage; a comma may be missing between two ingredients' for it in pct_suspects]
@@ -516,7 +519,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
-        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i))}}
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or any(u.class_conflict for u in i.ins) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i))}}
     if parsed.composition:
         composition_words = sum(count_words(x) for x in parsed.composition)
         completeness["words"]["composition"] = composition_words

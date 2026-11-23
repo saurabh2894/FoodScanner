@@ -27,8 +27,10 @@ _ADDITIVE_CLASSES = {"cosmetic_additive", "ordinary_additive", "unlisted_additiv
 def _bare_codes_re() -> re.Pattern:
     """"Flavour Enhancers (627, 631)": codes with no INS/E prefix, but only right after an
     additive class word taken from markers.csv, so "Salt (500)" is never read as a code."""
-    terms = sorted({r["term"].lower() for r in load_table("markers.csv") if r["marker_class"] in _ADDITIVE_CLASSES},
-                   key=len, reverse=True)
+    classes = {r["term"].lower() for r in load_table("markers.csv") if r["marker_class"] in _ADDITIVE_CLASSES}
+    # Existing direct class aliases only. Do not rewrite the input or extend mappings.
+    aliases = {r["from"].lower() for r in load_table("synonyms.csv") if r["to"].lower() in classes}
+    terms = sorted(classes | aliases, key=len, reverse=True)
     alt = "|".join(re.escape(t) for t in terms)
     return re.compile(
         rf"(?<![a-z])(?:{alt})(?:s|ing|ings)?(?:\s+of\s+[a-z]+(?:\s+[a-z]+){{0,2}})?\s*[(\[{{]\s*(?P<codes>{_CODE}(?:\s*(?:,|and|&|/)\s*{_CODE})*)\s*[)\]}}]")
@@ -51,11 +53,19 @@ class InsUse:
     ref_source: str | None = None
     # Declared role (roles.py): the class the SCANNED label names for the entry this code sits in ("Acidity Regulator (INS 330)" -> acidity regulator).
     # Read from the label text only, never from the code. Display only: it never feeds a decision.
+    entry_conflict: bool = False  # another code in this same declaration may disagree
     declared: str | None = None            # the label's own wording for the entry
     declared_roles: tuple[str, ...] = ()   # canonical roles read from it; () when the label names no class
 
     @property
+    def class_conflict(self) -> bool:
+        # A mismatch with this limited local mapping, not proof a role is impossible.
+        return self.entry_conflict or bool(self.classes and self.declared_roles and not set(self.classes).intersection(self.declared_roles))
+
+    @property
     def role_notes(self) -> list[str]:
+        if self.class_conflict:
+            return [f'This entry declares {" & ".join(self.declared_roles)}, but at least one code has a different class in this project mapping. The mismatch is unresolved, not proof the label is wrong or that a code has no other function. No marker evidence from this entry is used.']
         return role_notes(self.declared_roles, self.declared or "")
 
     @property
@@ -166,8 +176,31 @@ def _split_brackets(text: str) -> tuple[str, str]:
     return clean(outside), clean(inside)
 
 
+@cache
+def _additive_claim_class_re() -> re.Pattern:
+    classes = {r["term"].lower() for r in load_table("markers.csv") if r["marker_class"] in _ADDITIVE_CLASSES}
+    aliases = {r["from"].lower() for r in load_table("synonyms.csv") if r["to"].lower() in classes}
+    alt = "|".join(re.escape(t) for t in sorted(classes | aliases, key=len, reverse=True))
+    return re.compile(r"(?<![a-z])(?:" + alt + r")(?:s|ing|ings)?(?![a-z])")
+
+
+def is_additive_absence_claim(raw: str) -> bool:
+    """An item claiming an additive is absent is not positive ingredient evidence.
+
+    Keep the item visible and unresolved, rather than asserting a plain-food group.
+    Only claim-leading or claim-trailing wording is covered, not food conditions.
+    """
+    low = raw.lower().strip(" ,;:.")
+    if not (re.match(r"^(?:no|not|without|free\s+(?:from|of)|does\s+not\s+contain|do\s+not\s+contain)\b", low)
+            or re.search(r"\b(?:free|absent|not\s+(?:added|used|present))$", low)):
+        return False
+    return bool(_additive_claim_class_re().search(low))
+
+
 def extract_ins(text: str) -> tuple[str, list[InsUse]]:
     """Return (text with INS references removed, mapped INS uses)."""
+    if is_additive_absence_claim(text):
+        return text.lower(), []
     table = _ins_map()
     uses: list[InsUse] = []
     low = text.lower()
@@ -219,7 +252,10 @@ def normalise_ingredient(raw: str) -> Ingredient:
     inner = strip_footnotes(inner)
     roles = _declared_roles(name)
     phrase = label_phrase(raw) if roles else None
-    return Ingredient(raw=raw, name=name, inner=inner, ins=[replace(u, ingredient=raw, declared=phrase, declared_roles=roles) for u in uses])
+    uses = [replace(u, ingredient=raw, declared=phrase, declared_roles=roles) for u in uses]
+    if any(u.class_conflict for u in uses):
+        uses = [replace(u, entry_conflict=True) for u in uses]
+    return Ingredient(raw=raw, name=name, inner=inner, ins=uses)
 
 
 def normalise_list(items: list[str]) -> list[Ingredient]:

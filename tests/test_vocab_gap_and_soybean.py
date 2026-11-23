@@ -78,5 +78,7 @@ def test_every_frozen_paste_input_keeps_its_group():
         # bracket of 'milk solids' is the same food, and a frozen expectation is not evidence, so the item now abstains (Group 1 -> None). Evidence: evaluation/whole_food_guard_1/.
         # N09 actual-pack correction: complete paired fat/SNF minima are composition metadata,
         # not added milk-fat ingredients. Original frozen JSON stays unchanged. research/09.
-        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04") else (1 if key in ("b1/N09", "b2/M02", "b3/Q06") else group))
+        # Class/code mismatch guard: N15 declares stabilizer for INS471, mapped here as emulsifier.
+        # The literal code stays visible but the disputed entry no longer decides Group 4.
+        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04", "b1/N15") else (1 if key in ("b1/N09", "b2/M02", "b3/Q06") else group))
         assert (r.group if r.answered else None) == expected, key

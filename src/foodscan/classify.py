@@ -19,7 +19,7 @@ import re
 from dataclasses import dataclass, field
 from functools import cache
 
-from .normalise import Ingredient, flatten, normalise_ingredient, normalise_list, _split_brackets
+from .normalise import Ingredient, flatten, normalise_ingredient, normalise_list, _split_brackets, is_additive_absence_claim
 from .tables import load_table
 
 
@@ -588,6 +588,10 @@ _STARCH_MODIFIED = re.compile(r"modif|pregelatini[sz]ed|acid[- ]?treated|oxidi[s
 
 
 def _hits_for(ing: Ingredient) -> list[_Hit]:
+    if is_additive_absence_claim(ing.raw):
+        return []
+    if any(u.class_conflict for u in ing.ins):
+        return [_Hit("unlisted", "unlisted_additive", "declared class and local code mapping differ; entry unresolved", "label wording versus existing project mapping; no source resolves this mismatch")]
     hits: list[_Hit] = []
     note_only = colour_note_only(ing)
     sweet_foods = sweetener_foods_only(ing)
@@ -646,11 +650,16 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         for h in _hits_for(ing):
             d = Driver(ing.raw, h.detail, h.source, ing.section)
             (strong if h.strength == "strong" else weak).append(d)
+    from .parser import split_items
     for decl in declarations or []:
-        text = normalise_ingredient(decl).text   # same spelling/plural handling as ingredients (color -> colour)
-        for pat, row in _markers():
-            if row["strength"] == "strong" and row["marker_class"] == "cosmetic_additive" and pat.search(text):
-                strong.append(Driver(decl, f'declared in "Contains" statement: "{row["term"]}"', row["source"]))
+        for clause in split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE)):
+            ing = normalise_ingredient(clause)
+            if any(u.class_conflict for u in ing.ins):
+                weak.append(Driver(clause, "declared class and local code mapping differ; entry unresolved", "label wording versus existing project mapping; no source resolves this mismatch"))
+                continue
+            for pat, row in _markers():
+                if row["strength"] == "strong" and row["marker_class"] == "cosmetic_additive" and pat.search(ing.text):
+                    strong.append(Driver(decl, f'declared in "Contains" statement: "{row["term"]}"', row["source"]))
 
     if strong:
         return Classification(4, drivers=strong)

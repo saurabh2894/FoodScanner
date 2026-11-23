@@ -109,8 +109,10 @@ def test_a_stabiliser_alone_stays_uncertain(text):
     assert not t(text).answered, text
 
 
-def test_a_code_that_already_carries_a_class_still_decides():
-    assert t("Ingredients: Rice, salt, stabilizer (INS 471).").group == 4        # INS 471 is mapped as an emulsifier
+def test_a_code_with_a_different_declared_class_stays_uncertain():
+    a = t("Ingredients: Rice, salt, stabilizer (INS 471).")
+    assert a.group is None
+    assert a.ins_mappings[0].code == "471" and a.ins_mappings[0].class_conflict
 
 
 # ============================ 4. vocabulary: buffalo milk; probiotic culture is NOT mapped =====================================

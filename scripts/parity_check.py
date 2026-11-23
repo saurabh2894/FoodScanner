@@ -344,7 +344,7 @@ def py_result(text, source="ocr"):
         "drivers": [{"ingredient": d.ingredient, "detail": d.detail, "source": d.source, "section": d.section} for d in a.drivers],
         "ins": [{"code": u.code, "name": u.name, "source": u.source, "classes": list(u.classes), "strength": u.strength,
                  "ingredient": u.ingredient, "section": u.section, "ref_name": u.ref_name, "ref_classes": list(u.ref_classes), "ref_partial": u.ref_partial, "ref_source": u.ref_source,
-                 "declared": u.declared, "declared_roles": list(u.declared_roles), "role_notes": u.role_notes} for u in a.ins_mappings],
+                 "class_conflict": u.class_conflict, "declared": u.declared, "declared_roles": list(u.declared_roles), "role_notes": u.role_notes} for u in a.ins_mappings],
     }
 
 
@@ -1181,6 +1181,23 @@ for _target in (CORPUS, PASTE):
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
+# Existing class aliases and item-level absence claims. Synthetic controls only.
+_alias_code_controls = [
+    "Ingredients: Milk, " + shape.format(t) + "."
+    for t in ["Color", "Colour", "Stabilizer", "Stabiliser", "Emulsifiers", "Flavor Enhancers"]
+    for shape in ["{} (102)", "no added {} (102)", "without {} (102)", "free from {} (102)",
+                  "{} (102) free", "{} (102) not used", "no added {} (INS 102)",
+                  "no added {} (102), maltodextrin", "{} (102), no added Color (110)"]
+]
+PAIRS += [(t, source) for t in _alias_code_controls for source in ["ocr", "text"]]
+_conflict_controls = ["Ingredients: Milk, " + term + " (" + prefix + code + ")" + suffix + "."
+    for term,code in [("Stabilizer","102"),("Stabiliser","102"),("Color","211"),("Colour","211"),("Colour","102"),("Stabilizer","414"),("Flavour Enhancer","627")]
+    for prefix in ["", "INS ", "E"] for suffix in ["", ", maltodextrin"]]
+PAIRS += [(t,s)for t in _conflict_controls for s in ["ocr","text"]]
+PAIRS += [(t.replace("Milk, ","Milk. Contains "),s)for t in _conflict_controls for s in ["ocr","text"]]
+TOTAL = len(PAIRS)
+
+
 def run_js(pairs):
     """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:
@@ -1211,7 +1228,7 @@ def main() -> int:
             for k in p:
                 if p[k] != j[k]:
                     print(f"  {k}:\n    py: {p[k]!r}\n    js: {j[k]!r}")
-    print(f"{TOTAL - bad}/{TOTAL} analyses identical between Python and JS ({len(CORPUS)} photo-path texts, {len(PASTE)} pasted-text texts)")
+    print(f"{TOTAL - bad}/{TOTAL} analyses identical between Python and JS ({len(CORPUS)} photo-path texts, {len(PASTE)} pasted-text texts, plus {len(PAIRS) - len(CORPUS) - len(PASTE)} focused alias/claim pairs)")
     return 1 if bad else 0
 
 
