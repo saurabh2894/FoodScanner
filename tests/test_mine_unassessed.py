@@ -100,3 +100,36 @@ def test_real_evidence_has_known_open_and_closed_terms():
     assert rows["fenugreek"]["recognised_now"] and rows["fenugreek"]["distinct_paste_inputs"] >= 5                    # a gap closed by lexicon-1
     assert not any(i.startswith("?") for r in rows.values() if r["distinct_paste_inputs"] for i in r["input_ids"][: r["distinct_paste_inputs"]])
     assert all(r["rank_open"] is None for r in rows.values() if r["photo_only"] or r["noise"] or r["recognised_now"])
+
+
+@pytest.mark.parametrize("term", [
+    "wheat gluten", "whey powder", "hydrolysed vegetable protein",
+    "lemon juice concentrate", "apple juice concentrate", "fructose",
+])
+def test_current_marker_route_closes_historical_vocabulary_gap(term):
+    _, recognised = mu.default_analysers()
+    assert recognised(term)
+    inv = mu.Inventory()
+    inv.add(term, "paste_recorded", "b1/N01", "historical.json")
+    row, = mu.finish(inv, recognised)
+    assert row["recognised_now"] and row["rank_open"] is None
+    assert row["recorded_paste_mentions"] == 1 and row["live_inputs"] == 0
+
+
+@pytest.mark.parametrize("term", [
+    "liquid glucose", "cocoa solids", "guar gum", "Synthetic Vinegar",
+    "wheat gluten, zorbium", "whey powder, zorbium",
+    "lemon juice concentrate (zorbium)",
+])
+def test_marker_substring_or_group4_answer_does_not_hide_unresolved_content(term):
+    _, recognised = mu.default_analysers()
+    assert not recognised(term)
+
+
+def test_real_inventory_has_no_live_gap_closed_by_simple_marker_route():
+    analyse, recognised = mu.default_analysers()
+    rows = mu.finish(mu.mine(REPO_ROOT / "evaluation", analyse), recognised)
+    # Current live context beats historical standalone probes.
+    assert not [r["term"] for r in rows if r["live_inputs"] and r["recognised_now"]
+                and r["term"] in {"wheat gluten", "whey powder", "hydrolysed vegetable protein",
+                                  "lemon juice concentrate", "apple juice concentrate", "fructose", "whey solids"}]

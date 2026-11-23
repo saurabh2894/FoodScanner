@@ -12,12 +12,15 @@ Evidence streams (kept apart, because they do not carry the same trust):
 
 Ranking: by distinct input IDs from the two paste streams (a photo mention of an input already counted adds nothing), then live count, then
 recorded mentions. A term already recognised by this build is kept in the inventory but marked `recognised_now`, so closed gaps stay visible.
+Recognition includes the vocabulary and full-phrase strong-marker routes, not merely vocabulary lookup. A Group 4 answer alone is not
+recognition: unresolved content must remain visible. Recognition does not establish universal placement of conditioned or compound forms.
 
 Exit codes: 0 ok; 1 error; 2 output exists without --force.
 """
 from __future__ import annotations
 
 import argparse
+from functools import lru_cache
 import csv
 import json
 import re
@@ -217,8 +220,20 @@ def default_analysers():
         a = analyse_text(text, source="text")
         return [u for u in a.unassessed if "group name" not in u]
 
+    @lru_cache(maxsize=None)
     def recognised(raw: str) -> bool:
-        return is_recognised(normalise_ingredient(raw).name)
+        if is_recognised(normalise_ingredient(raw).name):
+            return True
+        # The lexicon is not the only recognition route: strong derived-substance
+        # markers can already account for a term. Require the full original phrase
+        # to have no unresolved content, rather than treating any marker substring
+        # or a Group 4 answer as proof that its whole item has been assessed.
+        # Do not let an already-decisive marker conceal bracketed composition.
+        # This closure route is only for a simple term, never a compound form.
+        if re.search(r"[()\[\],;:&]|\band\b", raw, re.I):
+            return False
+        a = analyse_text("Ingredients: " + raw, source="text")
+        return bool(a.drivers) and not a.unassessed and not a.unplaced
 
     return unassessed_of, recognised
 
