@@ -307,6 +307,11 @@ def _looks_like_more_ingredients(seg: str) -> bool:
     non-ingredient labels (Note:, Directions:, ...) are not."""
     if seg.lstrip().startswith(("*", "\u2020", "#")) or starts_with_denied_label(seg):
         return False
+    # Actual N08 second OCR inserts a stop before a combined, unplaced culture
+    # phrase. Recognising the word as ingredient-like is NOT mapping its role or
+    # placing probiotics. Never classify unread text; it only blocks Group1-3.
+    if re.search(r"\bcultures?\b", seg, re.IGNORECASE):
+        return True
     parts = split_items(seg)
     return len(parts) >= 2 or any(_recognisable(normalise_list([part])[0]) for part in parts)
 

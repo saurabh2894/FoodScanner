@@ -989,6 +989,7 @@
     // unread text after a full stop that could be the rest of the list (mirrors pipeline._looks_like_more_ingredients)
     function looksLikeMoreIngredients(seg) {
       if (/^\s*[*\u2020#]/.test(seg) || startsWithDeniedLabel(seg)) return false;
+      if (/\bcultures?\b/i.test(seg)) return true;  // unread ingredient-like token, never a role/placement mapping
       const parts = splitTopLevel(collapse(seg)).items;
       return parts.length >= 2 || parts.some((part) => recognisableIng(normaliseIngredient(part)));
     }

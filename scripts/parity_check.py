@@ -20,6 +20,7 @@ BISCUIT = ("Ingredients: Refined wheat flour, sugar, edible vegetable oil (palmo
 CORPUS = [
     BISCUIT,
     "Ingredients: Whole wheat flour.",
+    (ROOT / "tests/fixtures/native_n08_readings/second.txt").read_text(),
     "Ingredients: Pasteurized Buffalo Milk Fat 6.00% Min., SNF 9.00% Min. Allergen Information: Contains Milk",
     "Ingredients: Pasteurized Buffalo Milk Fat 6.00% Min., SNF 9.00% Min., Vitamin A",
     "Ingredients: Cucumber, water, salt, vinegar, dill.",
