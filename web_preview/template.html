@@ -67,6 +67,10 @@
   .abstain .scale .step { opacity: .55; }
   ul.plain, ol.plain { margin: 0; padding-left: 1.2rem; display: grid; gap: .35rem; }
   .mono { font-family: var(--font-mono); font-size: .84rem; overflow-wrap: anywhere; }
+  .item-explanation { margin: 1rem 0; }
+  .issue-reason { margin: .25rem 0; font-size: .88rem; }
+  .item-explanation li { padding-bottom: .5rem; }
+  .classification-reason, .driver-evidence { margin-top: .5rem; }
   .src { display: block; color: var(--muted); font-size: .75rem; }
   .twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
   details summary { cursor: pointer; color: var(--muted); font-size: .85rem; }
@@ -260,11 +264,26 @@
           [el("b", { text: s[0] }), el("span", { text: s[1] })]);
       }));
     card.appendChild(el("p", { "class": "hint result-source", text: which === "photo" ? "Result from this photo's extracted text." : "Result from the last analysed text." }));
-    card.appendChild(el("h2", { text: a.headline }));
+    card.appendChild(el("h2", { text: a.answered || !a.ingredients.length ? a.headline : "Not enough information to assign a NOVA group" }));
     if (a.answered) card.appendChild(el("p", { "class": "hint", text: "Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product." }));
     (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
     if (a.retake) card.appendChild(el("p", { "class": "warn", text: "Retake guidance: " + a.retake }));
     card.appendChild(scale);
+    var openItems = engine.explanationItems(a), itemExplanation = null;
+    if (openItems.length) {
+      var issueList = el("ul", { "class": "plain" }, openItems.map(function (x) {
+        return el("li", {}, [el("strong", { "class": "mono", text: x.item }),
+          el("p", { "class": "issue-reason", text: x.reason }),
+          el("details", {}, [el("summary", { text: "What would help" }), el("p", { "class": "hint", text: x.need })])]);
+      }));
+      itemExplanation = el("div", { "class": "item-explanation" }, [
+        el("h3", { text: a.answered ? "Still not fully assessed" : "Why no group is assigned" }),
+        el("p", { "class": "hint", text: a.answered ? "These items are not fully assessed. See the evidence that decides the assigned group above." : "These are evidence gaps, not findings that an ingredient is unsafe. A clearer photo alone may not settle them." }), issueList]);
+    }
+    if (itemExplanation && !a.answered) card.appendChild(itemExplanation);
+    if (!a.answered && !openItems.length) card.appendChild(el("p", { "class": "hint", text: a.reason }));
+    if (!a.answered) card.appendChild(el("details", { "class": "classification-reason" }, [
+      el("summary", { text: "Full classification reason" }), el("p", { "class": "hint", text: a.reason })]));
     if (a.drivers.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: a.answered ? "Driven by" : "Weak evidence seen (not enough to decide)" }),
@@ -273,11 +292,13 @@
           li.appendChild(el("span", { "class": "mono", text: d.ingredient }));
           if (d.section) li.appendChild(el("em", { text: " (" + d.section + ")" }));
           li.appendChild(document.createTextNode(": " + d.detail));
-          if (a.answered) li.appendChild(el("span", { "class": "src", text: d.source }));
+          if (d.source) li.appendChild(el("details", { "class": "driver-evidence" }, [
+            el("summary", { text: "Full source evidence" }), el("span", { "class": "src", text: d.source })]));
           return li;
         }))
       ]));
     }
+    if (itemExplanation && a.answered) card.appendChild(itemExplanation);
     var cols = el("div", { "class": "twocol" });
     var labelled = (a.sections || []).some(function (sec) { return sec[0]; });
     var listBox = el("div", {}, [el("h3", { text: "Extracted ingredients" })]);

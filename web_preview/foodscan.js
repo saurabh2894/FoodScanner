@@ -1166,7 +1166,27 @@
       if (truncation) warnings.push("List may be incomplete (" + stripChars(truncation.replace(/^ingredient list looks truncated /, ""), "()") + "). Group 4 stands because the markers found are already enough.");
       return Object.assign({}, common, { answered: true, group: r.group, reason: null, drivers: r.drivers, warnings, text, headline: `NOVA group ${r.group}: ${GROUP_NAMES[r.group]}` });
     }
-    return { analyseText, NOT_ENOUGH, GROUP_NAMES };
+    // Presentation-only: uses the same item predicates as the existing uncertainty reason.
+    // It does not choose a group, add a rule or turn recognition into placement.
+    function explanationItems(a) {
+      const out = [], seen = new Set();
+      function add(item, reason, need) {
+        const key = item + "||" + reason;
+        if (!seen.has(key)) { seen.add(key); out.push({ item, reason, need }); }
+      }
+      (a.unplaced || []).forEach((item) => add(item, "Recognised by name, but no source available here places this form.", "A source that covers this exact form or a class that genuinely includes it."));
+      const secs = (a.sections || []).map(([label, items]) => ({ label, items }));
+      const ings = expand(secs.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, [], []);
+      for (const ing of ings) {
+        const row = lookup(ing.name);
+        if (row && (fatPowder(ing, row.kind) || ((row.kind === "food_powder" || powderRouted(ing, row.kind)) && !(ings.length === 1 && powderCompositionStated(ing)))))
+          add(ing.raw, "The powder's composition is not established for classification.", "Item-specific composition, including any carriers or anti-caking agents. Its percentage of this product does not establish what the powder contains.");
+      }
+      (a.unassessed || []).filter((item) => !item.includes("(group name; its contents were assessed separately)")).forEach((item) => add(item, "Not fully assessed by the available vocabulary and rules.", "Check the extracted name against the pack; if accurate, the ingredient needs a supported decision rule."));
+      if (!a.answered) (a.drivers || []).forEach((d) => add(d.ingredient, "Weak or unlisted evidence, not enough on its own to decide a group.", "A supported processing rule or other decisive label evidence. This is not proof of ultra-processing."));
+      return out;
+    }
+    return { analyseText, explanationItems, NOT_ENOUGH, GROUP_NAMES };
   }
 
   root.FoodScan = { createEngine };

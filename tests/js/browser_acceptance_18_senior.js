@@ -22,7 +22,7 @@ async function resultOf(pg) {
     const res = document.getElementById('result'), h2 = res.querySelector('h2'), headline = h2 ? h2.textContent.trim() : '';
     const m = headline.match(/NOVA\s+group\s+(\d)/i), drivers = [];
     res.querySelectorAll('h3').forEach(h3 => { if (/Driven by|Weak evidence seen/i.test(h3.textContent)) { const ul = h3.nextElementSibling; if (ul && ul.tagName === 'UL') ul.querySelectorAll('li').forEach(li => drivers.push(li.textContent.trim())); } });
-    const text = res.innerText, c = text.match(/COMPLETENESS:\s*([A-Z]+)/i);
+    const text = res.textContent, c = text.match(/COMPLETENESS:\s*([A-Z]+)/i);
     return { headline, group: m ? +m[1] : null, abstain: /not enough information/i.test(headline) || !!res.querySelector('.panel.abstain'), drivers, text, completeness: c ? c[1].toUpperCase() : null };
   });
 }
