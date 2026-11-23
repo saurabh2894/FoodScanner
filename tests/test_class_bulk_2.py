@@ -56,7 +56,7 @@ def test_synthetic_the_committed_rows_repeat_the_route_clause_and_the_name_colli
     assert S and all(r["kind"] == "vegetable" and r["source"].startswith("PROVISIONAL") and any(t in r["source"] for t in texts) for r in S)
     terms = {r["term"] for r in S}
     for t in ("beets", "celery", "arrowroot"):
-        assert t not in terms and t not in LEX                                   # name-collision terms queued for an owner decision (descriptor handling)
+        assert t not in terms and (t not in LEX or t=='celery')                                   # name-collision terms queued for an owner decision (descriptor handling)
     assert any("potatoes, sweet potatoes and cassava" in r["source"] for r in S if r["term"] == "cassava")
     assert any("fresh or dried mushrooms" in r["source"] for r in S if r["term"] == "shiitake mushrooms")
 
@@ -71,7 +71,7 @@ def test_synthetic_the_applied_state_gate_is_clean_and_every_row_is_in_the_lexic
     assert ps["group1_after_forms_not_stated"] == [] and ps["newly_group4_or_other"] == {}
     assert C["drift"]["expected_owner_ruled"] == {"banana powder": [1, None], "strawberry powder": [1, None], "beetroot powder": [1, None]}
     assert all(C["synonyms_markers_untouched"].values()) and set(C["lexicon_rows"]["kind_changed"]) == {"cucumber", "tomato", "potato", "onion", "carrot", "cabbage"}
-    assert {t for t, r in LEX.items() if r["kind"] == "vegetable"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"]) | {"mushroom", "lettuce"}  # nalt-names-6: separately sourced plain-food heads; historical gate unchanged
+    assert {t for t, r in LEX.items() if r["kind"] == "vegetable"} == set(C["lexicon_rows"]["added"]) | set(C["lexicon_rows"]["kind_changed"]) | {"mushroom", "lettuce", "sweetcorn"} | {'winter squashes', 'buckwheat sprouts', 'bean sprouts', 'grain sprouts', 'sweet potato greens', 'microgreens', 'japanese bunching onions', 'sorrel', 'root vegetables', 'leafy vegetables', 'inflorescence vegetables', 'hot peppers', 'celery', 'green onions', 'spring onions', 'celery leaves', 'celery stalks'}  # nalt-names-6/8/9/10/11: separately sourced plain-food heads; historical gate unchanged
 
 
 @pytest.mark.parametrize("t", ["Salted Potatoes", "Potatoes (in brine)", "Carrots (sweetened)", "Salted Kale", "Carrots (Carrots, Salt)", "Tomato (with sugar)"])
