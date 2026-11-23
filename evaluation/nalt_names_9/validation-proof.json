@@ -1,0 +1,45 @@
+{
+  "unqualified_canonical_powder_answers": [],
+  "alias_parent": {
+    "count": 17721,
+    "mismatches": []
+  },
+  "full_field_parity": {
+    "count": 50083,
+    "mismatches": []
+  },
+  "existing_names": {
+    "count": 802,
+    "differences": [
+      {
+        "name": "onion",
+        "fields": [
+          "analysis"
+        ]
+      },
+      {
+        "name": "dehydrated onion",
+        "fields": [
+          "analysis"
+        ]
+      },
+      {
+        "name": "onions flakes",
+        "fields": [
+          "analysis"
+        ]
+      },
+      {
+        "name": "onion flakes",
+        "fields": [
+          "analysis"
+        ]
+      }
+    ],
+    "non_provenance_differences": []
+  },
+  "frozen66": {
+    "count": 66,
+    "differences": []
+  }
+}

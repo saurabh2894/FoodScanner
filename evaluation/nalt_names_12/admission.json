@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-22",
+  "main_base": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "local_base": "nalt_names_11, unpublished",
+  "state": "LOCAL ONLY, validated scoped candidate, no commit",
+  "new_foods": [
+    {
+      "term": "dewberries",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-12): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\" and \"Dried fruits, fruit juices fresh or pasteurized without added sugar or other substances\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term dewberries is not named: class-instance of the stated plain fruit classes, not an exact-named food and not NOVA placement supplied by NALT. Whole edible fruit identity independently supported by NC State Extension, https://plants.ces.ncsu.edu/plants/rubus-flagellaris/, which identifies dewberry fruit as edible raw, and USDA AMS, https://www.ams.usda.gov/sites/default/files/media/Canned_Blackberry_Inspection_Instructions%5B1%5D.pdf, which describes fresh dewberries and distinguishes their trailing habit and fruit structure from upright blackberries. Current NALT Product17839 uses dewberries as a synonym under blackberries, but this row is a separately supported fruit-class instance, not an assertion that all blackberry/dewberry names denote the same food. Plain food or source-named minimal process only, without added substances. Existing supported grinding/roasting scope is conditional on an explicit same-food-only composition; an unspecified powder, extract, oil, juice, flour, isolate or insufficiently specified preserved product gets no placement from this row. Not a strong marker. Table1 Group3 separately supports culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions remain unplaced.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "loganberries",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-12): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\" and \"Dried fruits, fruit juices fresh or pasteurized without added sugar or other substances\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term loganberries is not named: class-instance of the stated plain fruit classes, not an exact-named food and not NOVA placement supplied by NALT. Whole fresh berry identity is independently supported by USDA AMS, https://www.ams.usda.gov/sites/default/files/media/Canned_Blackberry_Inspection_Instructions%5B1%5D.pdf, which lists loganberries and boysenberries as distinct varietal types and describes the fresh fruit used for canning; NC State Extension, https://content.ces.ncsu.edu/extension-gardener-handbook/14-small-fruits, lists the named hybrid fruits separately; University of Idaho, https://www.uidaho.edu/extension/horticulture/landscapes/edible, independently describes the loganberry fruit. Current NALT Product19035 places loganberries as a synonym under boysenberries. That vocabulary equivalence is NOT adopted: no alias between these distinct fruits is added. Plain food or source-named minimal process only, without added substances. Existing supported grinding/roasting scope is conditional on an explicit same-food-only composition; an unspecified powder, extract, oil, juice, flour, isolate or insufficiently specified preserved product gets no placement from this row. Not a strong marker. Table1 Group3 separately supports culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions remain unplaced.",
+      "inference_level": "class-instance, not exact-named food"
+    },
+    {
+      "term": "currants",
+      "kind": "fruit",
+      "source": "PROVISIONAL (nalt-names-12): Martinez Steele et al., J Nutr2023 Table1 Group1, \"Natural, packaged, cut, chilled or frozen vegetables, fruits, potatoes, cassava, and other roots and tubers\" and \"Dried fruits, fruit juices fresh or pasteurized without added sugar or other substances\"; https://pmc.ncbi.nlm.nih.gov/articles/PMC10127522/ . The exact term currants is not named: class-instance of the stated plain fruit classes, not an exact-named food and not NOVA placement supplied by NALT. This is a food-name category covering plain Ribes berries and plain dried Corinth-grape currants, not an assertion they are the same fruit. Current NALT Product17749 relates the product to Ribes and narrower black/red currants. UC Agriculture and Natural Resources Raisin Production Manual, https://my.ucanr.edu/sites/intvit/files/24430.pdf, explicitly distinguishes grape currants from Ribes. University of Arizona Cooperative Extension, https://extension.arizona.edu/sites/extension.arizona.edu/files/attachment/augsep2016.pdf, describes the Black Corinth dried grape used in baking as currants, with untreated sun/shade/vine drying. The NOVA fresh-fruit and no-added-substance dried-fruit clauses independently cover the two physical food readings. No alias to a specific Ribes berry or grape is created; concentrates, juice, powders, oil-coated or sweetened unspecified products get no plain-food permission from this category. Plain food or source-named minimal process only, without added substances. Existing supported grinding/roasting scope is conditional on an explicit same-food-only composition; an unspecified powder, extract, oil, juice, flour, isolate or insufficiently specified preserved product gets no placement from this row. Not a strong marker. Table1 Group3 separately supports culinary additions: \"These are relatively simple products manufactured essentially with the addition of salt or sugar or other substances of common culinary use, such as oil or vinegar, to unprocessed or minimally processed foods.\" Item-own salt/sugar/brine or explicit culinary additions use the existing Group3 guard; unknown additions remain unplaced.",
+      "inference_level": "class-instance, not exact-named food"
+    }
+  ],
+  "aliases": [],
+  "held": [
+    "cranberry",
+    "tamarind",
+    "coconut",
+    "celery",
+    "beets",
+    "arrowroot",
+    "mungo beans",
+    "mungobeans",
+    "greengram",
+    "mungbeans",
+    "blackgram",
+    "urd beans",
+    "haricot beans",
+    "star anise",
+    "winter melon",
+    "catjang peas",
+    "ginger root",
+    "jaggary",
+    "jagghery",
+    "bovine milk",
+    "chard",
+    "groundnut",
+    "flaxseed",
+    "tree mushrooms",
+    "scallions",
+    "spring onions",
+    "portabello mushrooms",
+    "portobella mushrooms",
+    "cashew fruit",
+    "cashew apple",
+    "truffles",
+    "dried vegetables",
+    "edible fungi",
+    "wild edible mushrooms",
+    "bush beans",
+    "pole beans",
+    "bushbeans",
+    "peppers (hot)",
+    "shea butter",
+    "shea oil",
+    "chili peppers"
+  ],
+  "notes": [
+    "Independent fruit-class heads, not NALT same-food aliases.",
+    "Currants is an overlapping food-name category, not an additional disjoint food count.",
+    "The historical class-bulk3 ingestion rule still queues underspecified Loganberries,frozen; this separately reviewed admission does not alter that importer or its frozen outputs."
+  ],
+  "reviewed_existing_effects": "Sixteen source-path changes in eight red-currant powder texts reviewed against plain-fruit/grinding/culinary-addition scope; no answer loss. Explicit same-food-only gains1, explicit sugar gains3, unknown/rice powder still abstains. See related-contexts-proof.json in evidence bundle."
+}

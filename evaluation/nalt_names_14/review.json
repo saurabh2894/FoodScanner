@@ -1,0 +1,178 @@
+{
+  "base": "completed unpublished local13",
+  "state": "LOCAL VALIDATED, unpublished; main reconciliation and existing publishing hold remain",
+  "old_name_proof": {
+    "unqualified_canonical_powder_answers": [],
+    "alias_parent": {
+      "count": 1671,
+      "mismatches": []
+    },
+    "full_field_parity": {
+      "count": 21445,
+      "mismatches": []
+    },
+    "existing_names": {
+      "count": 856,
+      "differences": [
+        {
+          "name": "beet greens",
+          "fields": [
+            "analysis"
+          ]
+        }
+      ],
+      "non_provenance_differences": []
+    },
+    "frozen66": {
+      "count": 66,
+      "differences": []
+    }
+  },
+  "related_summary": {
+    "name_count": 48,
+    "forms": 28,
+    "source_paths": 2,
+    "before_after_full_field_comparisons": 2688,
+    "python_javascript_full_field_comparisons": 5376,
+    "cross_engine_mismatches": []
+  },
+  "related_citation_changes": 28,
+  "original32": {
+    "full_field_cross_engine_analyses": 128,
+    "reviewed_source_path_changes": 7,
+    "answer_changes": 0,
+    "driver_changes": 0
+  },
+  "photos": {
+    "before_pin": "1513332f3d63462b85da98499ca2dc2133c7b564",
+    "after": "unpublished local nalt_names_14, 557 canonical and 305 aliases",
+    "photos": [
+      {
+        "id": "original",
+        "photo_sha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+        "text_sha256": "c0da03608406308541ff53f79ecbbd04f6cdb6aa0a7ae63594b23e66b56484ee",
+        "ocr_characters": 423,
+        "identical_extracted_text": true,
+        "identical_full_browser_analysis": true,
+        "identical_result_ui_text": true,
+        "answered": false,
+        "group": null,
+        "completeness": "complete",
+        "visible_preview_both": true,
+        "mobile_no_overflow_both": true,
+        "page_errors": [],
+        "done_both": true
+      },
+      {
+        "id": "millet",
+        "photo_sha256": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+        "text_sha256": "383071e28c9916df48d1b5bd649a082445c6fac9f9c5ab06a2557a978808090d",
+        "ocr_characters": 421,
+        "identical_extracted_text": true,
+        "identical_full_browser_analysis": true,
+        "identical_result_ui_text": true,
+        "answered": true,
+        "group": 4,
+        "completeness": "complete",
+        "visible_preview_both": true,
+        "mobile_no_overflow_both": true,
+        "page_errors": [],
+        "done_both": true
+      },
+      {
+        "id": "chips",
+        "photo_sha256": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+        "text_sha256": "fc92a77010a6df784be68f126cd556d9c9376472bd8589d5a14f4a5d091b090d",
+        "ocr_characters": 600,
+        "identical_extracted_text": true,
+        "identical_full_browser_analysis": true,
+        "identical_result_ui_text": true,
+        "answered": true,
+        "group": 4,
+        "completeness": "uncertain",
+        "visible_preview_both": true,
+        "mobile_no_overflow_both": true,
+        "page_errors": [],
+        "done_both": true
+      }
+    ],
+    "ocr_assets": [
+      {
+        "name": "eng.traineddata.b64.txt",
+        "sha256": "396b9ea38c7bc489cdfc3e405e8c572b20ad16675bf15f191b261807834a76b5",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract-core-lstm.wasm.js",
+        "sha256": "8f04aa0cc81e7bde33f80e92fa01a7a665f0b4884d098acf5de9c7104a11dfaa",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract-core-simd-lstm.wasm.js",
+        "sha256": "ce20eda9533cbed1e6c2b4276fbae1e0adc61b6754b5513084be601787b457cf",
+        "unchanged": true
+      },
+      {
+        "name": "tesseract.min.js",
+        "sha256": "a8e29918d098b2b06e1012bdaeffb4aec0445c5d5654709023e0bd1f442a80e8",
+        "unchanged": true
+      },
+      {
+        "name": "worker-boot.js",
+        "sha256": "932f4104ca64a0614dc677b43ec01f7e82679112ebd0deda3ccaf5fca78aa679",
+        "unchanged": true
+      },
+      {
+        "name": "worker.min.js",
+        "sha256": "aca1229639fc9907d86f96e825955a2b7c5716d17f3bc3acd71f9c7ab66181fc",
+        "unchanged": true
+      }
+    ],
+    "actual_browser_photo_runs": 6,
+    "python_javascript_full_field_comparisons": 12,
+    "live_browser_python_full_field_comparisons": 6,
+    "before_after_source_pair_comparisons": 6,
+    "cross_engine_mismatches": [],
+    "live_browser_python_mismatches": [],
+    "before_after_source_pair_changes": [],
+    "local_asset_requests": 36,
+    "local_asset_failures": [],
+    "external_requests_blocked": [
+      {
+        "tag": "main",
+        "name": "original",
+        "origin": "https://fonts.googleapis.com"
+      },
+      {
+        "tag": "local14",
+        "name": "original",
+        "origin": "https://fonts.googleapis.com"
+      },
+      {
+        "tag": "main",
+        "name": "millet",
+        "origin": "https://fonts.googleapis.com"
+      },
+      {
+        "tag": "local14",
+        "name": "millet",
+        "origin": "https://fonts.googleapis.com"
+      },
+      {
+        "tag": "main",
+        "name": "chips",
+        "origin": "https://fonts.googleapis.com"
+      },
+      {
+        "tag": "local14",
+        "name": "chips",
+        "origin": "https://fonts.googleapis.com"
+      }
+    ],
+    "caveat": "Three exact stored images only, not a new capture or full original-photo corpus. Unchanged OCR is not accurate OCR: original still abstains; millet additive digits and chips text/brackets still include recognition errors."
+  },
+  "suite": "10532passed, same2baseline failures,2skips,1deselected,5xfailed",
+  "focused_passed": 404,
+  "visual_inspected": true,
+  "completed_local13_preserved": true
+}

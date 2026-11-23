@@ -19,13 +19,16 @@ LEGUME_ROWS = ["beans", "peas", "chickpea", "lentil", "rajma", "moong", "soybean
                "adzuki beans", "black beans", "broadbeans", "cannellini beans", "carioca beans", "cowpeas", "cranberry beans", "flor de mayo beans", "great northern beans", "hyacinth beans",
                "kidney beans", "lima beans", "lupins", "mothbeans", "navy beans", "pigeon peas", "pink beans", "pinto beans", "small white beans", "winged beans", "yardlong beans"]
 
+# Slice13: separately source-reviewed seed/pod food-name heads. The original33 are retained.
+LEGUME_ROWS += ['greengram', 'blackgram', 'mungo beans', 'mungobeans', 'catjang peas', 'haricot beans']
+
 
 def g(text):
     a = analyse_text(f"Ingredients: {text}.", source="text")
     return (a.group if a.answered else None), a
 
 
-def test_synthetic_exactly_the_33_legume_rows_have_the_legume_kind():
+def test_synthetic_exactly_the_39_source_reviewed_legume_rows_have_the_legume_kind():
     assert {t for t, r in LEX.items() if r["kind"] == "legume"} == set(LEGUME_ROWS)
 
 

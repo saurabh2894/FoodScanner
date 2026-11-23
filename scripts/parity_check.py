@@ -1101,6 +1101,25 @@ for _texts in (CORPUS, PASTE):
     _texts.extend(t for t in _NALT_7_TEXTS if t not in _texts)
 
 
+# nalt-names-8: source-reviewed food/name/form controls, synthetic not OCR accuracy.
+_NALT_8_MANIFEST = json.loads((ROOT / "evaluation" / "nalt_names_8" / "admission.json").read_text())
+_NALT_8_NAMES = [a["name"] for a in _NALT_8_MANIFEST["aliases"]] + [r["term"] for r in _NALT_8_MANIFEST["new_foods"]]
+_NALT_8_FORMS = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', 'Sugared {t}', '{t} (Salt)', '{t} (Sugar)', '{t} (Brine)', '{t} (XQ9)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (100% Rice)', '{t} powder (Sugar)', '{t} butter', '{t} flour', '{t} oil', '{t} extract', '{t} juice', '{t} solids', '{t} protein isolate', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)', 'Cashew Nuts ({t} Powder)', 'Cashew Nuts (100% {t} Powder)', '{t} (Milk Powder)', '{t} (Banana Powder)', '{t} (100% Rice, Banana Powder)', 'Hydrogenated {t}', 'Interesterified {t}', '{t} (Rice)', '{t} (Palm, Salt)']
+_NALT_8_TEXTS = ["Ingredients: " + f.format(t=t) + "." for t in _NALT_8_NAMES for f in _NALT_8_FORMS]
+_NALT_8_TEXTS += ["Ingredients: " + t + "." for t in _NALT_8_MANIFEST["held"]]
+for _texts in (CORPUS, PASTE):
+    _texts.extend(t for t in _NALT_8_TEXTS if t not in _texts)
+
+
+# nalt-names-9: current-source names and forms, synthetic not OCR-image accuracy.
+_NALT_9_MANIFEST = json.loads((ROOT / "evaluation" / "nalt_names_9" / "admission.json").read_text())
+_NALT_9_NAMES = [a["name"] for a in _NALT_9_MANIFEST["aliases"]] + [r["term"] for r in _NALT_9_MANIFEST["new_foods"]]
+_NALT_9_TEXTS = ["Ingredients: " + f.format(t=t) + "." for t in _NALT_9_NAMES for f in _NALT_8_FORMS]
+_NALT_9_TEXTS += ["Ingredients: " + t + "." for t in _NALT_9_MANIFEST["held"]]
+for _texts in (CORPUS, PASTE):
+    _texts.extend(t for t in _NALT_9_TEXTS if t not in _texts)
+
+
 TOTAL = len(CORPUS) + len(PASTE)
 
 
@@ -1116,6 +1135,48 @@ process.stdout.write(JSON.stringify(corpus.map(([t, source]) => pick(E.analyseTe
 
 PAIRS = [(t, "ocr") for t in CORPUS] + [(t, "text") for t in PASTE]
 
+
+# nalt-names-10: synthetic category/form controls, not measured label accuracy.
+_m10 = json.loads((ROOT / 'evaluation/nalt_names_10/admission.json').read_text())
+_f10 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Sugar)', '{t} extract', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
+_t10 = [r['term'] for r in _m10['new_foods']] + [r['name'] for r in _m10['aliases']]
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in _t10 for f in _f10)
+PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
+TOTAL = len(PAIRS)
+
+# nalt-names-11: synthetic food-name/form controls, not measured label accuracy.
+_m11 = json.loads((ROOT / 'evaluation/nalt_names_11/admission.json').read_text())
+_f11 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Sugar)', '{t} extract', '{t} butter', '{t} oil', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
+_t11 = [r['term'] for r in _m11['new_foods']] + [r['name'] for r in _m11['aliases']]
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in _t11 for f in _f11)
+PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
+TOTAL = len(PAIRS)
+
+# nalt-names-12: separately reviewed fruit names/categories, synthetic controls only.
+_m12 = json.loads((ROOT / 'evaluation/nalt_names_12/admission.json').read_text())
+_f12 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Sugar)', '{t} extract', '{t} juice', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=r['term']) + '.' for r in _m12['new_foods'] for f in _f12)
+PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
+TOTAL = len(PAIRS)
+
+# nalt-names-13: separately sourced pulse names/categories, synthetic controls only.
+_m13 = json.loads((ROOT / 'evaluation/nalt_names_13/admission.json').read_text())
+_f13 = ['{t}', 'Raw {t}', 'Dried {t}', 'Roasted {t}', 'Boiled {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Rice)', '{t} powder (Sugar)', '{t} flour', '{t} extract', '{t} leaves', '{t} straw', '100% {t} hulls powder', '{t} forage', '{t} hay', '{t} silage', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in [r['term'] for r in _m13['new_foods']] + [a['name'] for a in _m13['aliases']] for f in _f13)
+PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
+TOTAL = len(PAIRS)
+
+# nalt-names-14: independent vegetable food parts, synthetic controls only.
+_m14 = json.loads((ROOT / 'evaluation/nalt_names_14/admission.json').read_text())
+_f14 = ['{t}', 'Raw {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Rice)', '{t} powder (Sugar)', '{t} flour', '{t} extract', '{t} juice', '{t} oil', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: '+f.format(t=n)+'.' for n in [r['term'] for r in _m14['new_foods']]+[a['name'] for a in _m14['aliases']] for f in _f14)
+PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
+TOTAL = len(PAIRS)
 
 def run_js(pairs):
     """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""

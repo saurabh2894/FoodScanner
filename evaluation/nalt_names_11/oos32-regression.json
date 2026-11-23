@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-22",
+  "before_pin": "1513332f3d63462b85da98499ca2dc2133c7b564",
+  "after": "local combined nalt_names_11, uncommitted",
+  "frozen_manifest_unchanged": true,
+  "exact_hashes": [
+    {
+      "id": "S01",
+      "sha256": "9f634ebfebe38e73406dbdf0d2cf5aec74759cf94967113848e500dadd69d7d5",
+      "bytes": 733
+    },
+    {
+      "id": "S02",
+      "sha256": "8d7189ea94c13045f9ea755b7a1cb813593730263b53ec0c0c0249cc35df8d76",
+      "bytes": 15
+    },
+    {
+      "id": "S03",
+      "sha256": "1cf018c1eecf3dc7fffc5b0a7d0d11080da96cfb0cfd948b42ed57680b425ad3",
+      "bytes": 457
+    },
+    {
+      "id": "S04",
+      "sha256": "ed2b7c801198f22a951c30b2b00bc9251a403bc17153ab62cfe1275d9f9d571d",
+      "bytes": 672
+    },
+    {
+      "id": "S05",
+      "sha256": "0bcae1c79c239ae1ff2a0b4b642b766daf352a8c1a8f2003deaee1c92f399303",
+      "bytes": 282
+    },
+    {
+      "id": "S06",
+      "sha256": "d131d46fae6851efb52c9440532253d57aa1aaa4ce10d148fc42341a3554391f",
+      "bytes": 342
+    },
+    {
+      "id": "S07",
+      "sha256": "413c45f6d64fe9397e7e6fb55ef0495f794b832aac67ede9ca94b7581b9296a4",
+      "bytes": 257
+    },
+    {
+      "id": "S08",
+      "sha256": "2476e89349cfc4d9288898671c028db07f06c1b3684b34ec80c23c528c4c35a2",
+      "bytes": 249
+    },
+    {
+      "id": "S09",
+      "sha256": "16eb82840b8f8fa4ead8c6034e26000f9fb74a0a343e6031be46245c5d60a128",
+      "bytes": 223
+    },
+    {
+      "id": "S10",
+      "sha256": "2e5001bab604efad823f4f334e8be2e9f52e0637bc931dd443a97877a9505510",
+      "bytes": 100
+    },
+    {
+      "id": "S11",
+      "sha256": "6870ffdc531c148553a4162c2c1c76fcb83f5d947055d9bd34101065718e5899",
+      "bytes": 235
+    },
+    {
+      "id": "S12",
+      "sha256": "35b524cd8da330d3c4c255fbc15c4378c603c0790c0d69f986f4f19bfb3b1948",
+      "bytes": 153
+    },
+    {
+      "id": "S13",
+      "sha256": "0cad7e7e5e3ae490ff50dba8c260efc1ca5dfd06659bf2974ef2549681c198f5",
+      "bytes": 1029
+    },
+    {
+      "id": "S14",
+      "sha256": "48332935120a53b39602b67fdfcce346e0d13f4c78f9b55a187fa32c292d6754",
+      "bytes": 395
+    },
+    {
+      "id": "S15",
+      "sha256": "ba1ce835453176ef71fecdc29b356e5dc4cb22f58b063d29364de3f027c4fb2f",
+      "bytes": 728
+    },
+    {
+      "id": "S16",
+      "sha256": "17eab8d37328d1c958e026ad6d0dc0964a5f6e0404f99592d9bd7b8080b0e0cd",
+      "bytes": 142
+    },
+    {
+      "id": "S17",
+      "sha256": "1dd4fc4071ecd46bcb32f53f8426a5db0c41764c67821a4af47dd8b7945dadf4",
+      "bytes": 180
+    },
+    {
+      "id": "S18",
+      "sha256": "b3f573d92d54096b9fec02d66594f7b591a6ad42893fcb232ee56aa7ab0d481f",
+      "bytes": 804
+    },
+    {
+      "id": "S19",
+      "sha256": "331227bae8bfde3317307d92a988b366b3b7c2c12326e0f81bddac8b1007dc8d",
+      "bytes": 976
+    },
+    {
+      "id": "S20",
+      "sha256": "976f79de1175d173d3ef8bb722d58cc174b10e91e67aad8f9e865a8ec042149f",
+      "bytes": 421
+    },
+    {
+      "id": "S21",
+      "sha256": "2c07e66d95917c149fd052c2d08400f7e236077bfefcb8a7a6b6b827b9c6e259",
+      "bytes": 187
+    },
+    {
+      "id": "S22",
+      "sha256": "b54d109e29a075888ad1b170070a0b66e988b270228d8f87e0f05fe8411a6311",
+      "bytes": 200
+    },
+    {
+      "id": "S23",
+      "sha256": "9bcbc5c6c48a97417922c629d2347a771f14b7d20471049481517a5870e95f2f",
+      "bytes": 482
+    },
+    {
+      "id": "S24",
+      "sha256": "bbd7562187280b26b3c055b6eb7782906328e6c834aec3484a26fd987e6dc15a",
+      "bytes": 423
+    },
+    {
+      "id": "S25",
+      "sha256": "3a969377c19bb347ec9b3ae144efc643c58756da562988dd49a108cf1b97807e",
+      "bytes": 135
+    },
+    {
+      "id": "S26",
+      "sha256": "b809704e2c1ce842df8b28206a892183e4b541e966aed9bcc0aefdbf9101215a",
+      "bytes": 402
+    },
+    {
+      "id": "S27",
+      "sha256": "cc531150a44daf7ccc483997dff79060777015e50ef71bee6fbd2283b4120440",
+      "bytes": 411
+    },
+    {
+      "id": "S28",
+      "sha256": "ac895ee71ae9c1aa9d3fcf75ae3cd0ce566c7fa79f5fb9c4e5a6eabdff367857",
+      "bytes": 291
+    },
+    {
+      "id": "S29",
+      "sha256": "14245e1aa3b319244a580dba6557f29129ee6e5a23f9417e60a92b9caaa68618",
+      "bytes": 170
+    },
+    {
+      "id": "S30",
+      "sha256": "05bc5e564672fd1549c18cad6f13584c10e22199b7075187e8bf9b96e9c764ed",
+      "bytes": 997
+    },
+    {
+      "id": "S31",
+      "sha256": "1ce737abd1ad601b1035ecce98f1a24d762b3743d58ad39f1d99fc9644a626df",
+      "bytes": 365
+    },
+    {
+      "id": "S32",
+      "sha256": "426e8fb94ea424ab73d526256d33c612c42fcacddcc44352d1e6e272f2e523e7",
+      "bytes": 327
+    }
+  ],
+  "full_field_cross_engine_analyses": 128,
+  "cross_engine_mismatches": [],
+  "before_after_full_field_changes": [],
+  "caveat": "Original frozen targeted herb/spice text challenge only, not a coverage estimate and not photo-capture validation."
+}

@@ -1,0 +1,104 @@
+{
+  "_note": "Expectations are item-level and were set from the label text and the engine output reviewed on 2026-11-21; each 'why' states what the label shows. Groups are label-based NOVA classifications, never health findings. Reading completeness is asserted separately from group validity.",
+  "labels": [
+    {
+      "key": "L01", "name": "Multigrain flour blend pack", "kind": "REAL_LABEL",
+      "textPath": "evaluation/browser_acceptance_18_senior/inputs/original_multigrain_label.txt",
+      "imagePath": "evaluation/browser_acceptance_18_senior/inputs/original_multigrain_label.jpg",
+      "imageSha256": "beed9e9324b246295fa74e729161640e448ff2afdf0f045577e38fc53eff5f18",
+      "provenance": "Owner's pack photo as received through a chat relay: a 57260-byte 607x494 copy, NOT the owner's original camera file (the owner's original is 81439 bytes and is not in the repository). Reference text is the owner's transcription.",
+      "paste": {
+        "group": null, "completeness": "COMPLETE",
+        "driversInclude": ["Antioxidant (Natural Tocopherol)"],
+        "resultIncludes": ["recognised by name only", "Sprouted Ragi", "Sprouted Jowar", "was read as shared by both sides of \"Sprouted Ragi & Jowar\"", "applies to the pair", "Date Powder", "Banana Powder", "Beetroot Powder"],
+        "resultExcludes": ["NOVA group 4", "NOVA group 3", "DRIVEN BY"]
+      },
+      "photo": {
+        "group": null,
+        "extractedIncludes": ["Multigrain Flour Blend", "Date Powder"],
+        "driversInclude": ["Antioxidant (Natural Tocopherol)"],
+        "resultIncludes": ["Sprouted"],
+        "resultExcludes": ["NOVA group 4", "NOVA group 3"]
+      },
+      "why": "Bracketed blend pair split with shared modifier, footnote marks, powders and unplaced grains: honest abstention."
+    },
+    {
+      "key": "L02", "name": "Millet puff snack pack", "kind": "REAL_LABEL",
+      "textPath": "evaluation/browser_acceptance_18_senior/inputs/l02_reference.txt",
+      "imagePath": "tests/fixtures/millet_puff_label.jpg",
+      "imageSha256": "0befae618d66bf8c5c78e5eda12db9d1fe3da8b00976eefc3737c36edf3902fb",
+      "provenance": "Real pack photo in tests/fixtures, cropped to the ingredient panel. Reference text transcribed from it.",
+      "paste": {
+        "group": 4, "completeness": "COMPLETE",
+        "driversInclude": ["Natural and Nature Identical Flavours"],
+        "resultIncludes": ["Puff 88%", "Seasoning 12%", "INS 330", "INS 296", "INS 334", "INS 508", "INS 392", "Amchur", "Tamarind"],
+        "resultExcludes": ["NOVA group 3"]
+      },
+      "photo": {
+        "group": 4,
+        "extractedIncludes": ["Supergrain Blend", "Natural and Nature Identical Flavours"],
+        "driversInclude": ["Natural and Nature Identical Flavours"],
+        "resultIncludes": ["Seasoning 12%"],
+        "resultExcludes": ["NOVA group 3"]
+      },
+      "why": "Section headings with percentages, INS codes, unassessed terms, flavour marker."
+    },
+    {
+      "key": "L03", "name": "Potato chips pack", "kind": "REAL_LABEL",
+      "textPath": "evaluation/browser_acceptance_18_senior/inputs/l03_reference.txt",
+      "imagePath": "tests/fixtures/chips_label.png",
+      "imageSha256": "f434a7bf97d5271abeb4db1c51f4d5013575245ab76318319a820aab811eaac9",
+      "provenance": "Real pack photo in tests/fixtures at small scale. Reference text transcribed from it.",
+      "paste": {
+        "group": 4, "completeness": "UNCERTAIN",
+        "driversInclude": ["Maltodextrin", "Hydrolysed Vegetable Protein", "Flavour Enhancers (627, 631)"],
+        "resultIncludes": ["was never closed", "List may be incomplete (unclosed bracket)", "Group 4 stands because the markers found are already enough", "Cheese Powder (0.3%)", "Spices and Condiments"],
+        "resultExcludes": ["NOVA group 3"]
+      },
+      "photo": {
+        "group": 4,
+        "extractedIncludes": ["Maltodextrin", "Hydrolysed Vegetable Protein"],
+        "driversInclude": ["Maltodextrin"],
+        "resultIncludes": ["List may be incomplete (unclosed bracket)"],
+        "resultExcludes": ["NOVA group 3"]
+      },
+      "why": "Unclosed bracket: structural warning present and Group 4 only through the strong-marker exception (Option A)."
+    },
+    {
+      "key": "L04", "name": "Cheese/milk product with 'contains no' statement (R1)", "kind": "REAL_LABEL",
+      "textPath": "evaluation/negation_addendum/inputs/R1.txt",
+      "provenance": "Open Food Facts India text (barcode prefix 890); no photo in the repository.",
+      "paste": {
+        "group": null, "completeness": "COMPLETE",
+        "driversInclude": ["PAST STABILIZER (INS 509)"],
+        "resultIncludes": ["INS 509", "MICROBIAL CULTU", "Not in the table yet"],
+        "resultExcludes": ["NOVA group 4", "DECLARED ON A CONTAINS LINE"]
+      },
+      "why": "The negated 'contains no added flavour' span declares nothing; the abstention comes from an unlisted stabiliser code and a cut-off item."
+    },
+    {
+      "key": "L05", "name": "Potato snack with 'no artificial ...' statement (R2)", "kind": "REAL_LABEL",
+      "textPath": "evaluation/negation_addendum/inputs/R2.txt",
+      "provenance": "Open Food Facts India text; no photo in the repository.",
+      "paste": {
+        "group": null, "completeness": "COMPLETE",
+        "driversInclude": [],
+        "resultIncludes": ["not in the local vocabulary", "Refined Palmolien Oil", "Spices & Condiments"],
+        "resultExcludes": ["NOVA group 4", "DECLARED ON A CONTAINS LINE", "DRIVEN BY"]
+      },
+      "why": "The absence statement declares nothing; the abstention is a vocabulary gap (named), not a negation effect."
+    },
+    {
+      "key": "L06", "name": "Flavoured curd, mixed positive and negative statement (R3)", "kind": "REAL_LABEL",
+      "textPath": "evaluation/negation_addendum/inputs/R3.txt",
+      "provenance": "Open Food Facts India text; no photo in the repository.",
+      "paste": {
+        "group": 4, "completeness": "COMPLETE",
+        "driversInclude": ["CONTAINS ADDED FLAVOUR(S)"],
+        "resultIncludes": ["DECLARED ON A CONTAINS LINE", "ROSE FLAVOUR"],
+        "resultExcludes": ["NOVA group 3"]
+      },
+      "why": "Positive added-flavour span drives Group 4; the 'no preservatives' span does not suppress it."
+    }
+  ]
+}

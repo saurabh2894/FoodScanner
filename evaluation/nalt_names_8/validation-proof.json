@@ -1,0 +1,26 @@
+{
+  "alias_parent": {
+    "count": 45588,
+    "mismatches": []
+  },
+  "full_field_parity": {
+    "count": 57007,
+    "mismatches": []
+  },
+  "existing_names": {
+    "count": 767,
+    "differences": [
+      {
+        "name": "tomato",
+        "fields": [
+          "analysis"
+        ]
+      }
+    ],
+    "non_provenance_differences": []
+  },
+  "frozen66": {
+    "count": 66,
+    "differences": []
+  }
+}

@@ -47,7 +47,7 @@
   .btn:disabled { opacity: .55; cursor: default; }
   .chip { appearance: none; background: var(--accent-soft); color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: .25rem .7rem; font: 500 .8rem var(--font-body); cursor: pointer; }
   .hint { color: var(--muted); font-size: .85rem; }
-  #photo-preview { max-width: 100%; max-height: 14rem; border: 1px solid var(--line); border-radius: 8px; justify-self: start; }
+  #photo-preview { max-width: 100%; max-height: 14rem; border: 1px solid var(--line); border-radius: 8px; justify-self: start; object-fit: contain; image-orientation: from-image; display: block; box-sizing: border-box; }
   .warn { border-left: 4px solid var(--accent); background: var(--accent-soft); padding: .5rem .75rem; border-radius: 0 6px 6px 0; font-size: .88rem; }
   .status { font-size: .85rem; color: var(--muted); min-height: 1.3em; }
   /* result */
@@ -238,8 +238,20 @@
     return box;
   }
 
-  function render(a) {
-    var box = $("result");
+  // Only the active input's result is mounted. The other tab's result is detached,
+  // so it cannot look like a classification of the newly selected input.
+  var activeResultTab = "text", savedResults = { text: document.createElement("div"), photo: document.createElement("div") };
+  function resultBox(which) { return which === activeResultTab ? $("result") : savedResults[which]; }
+  function stopPhotoForText() {
+    if (!activeRun) return;
+    activeRun(); activeRun = null;
+    resultBox("photo").textContent = "";
+    $("photo-analyse").disabled = !photoFile;
+    $("photo-status").textContent = photoFile ? "Photo reading stopped because the text was edited or analysed. Press Read photo and analyse to read the selected photo again." : "";
+  }
+  function render(a, which) {
+    which = which || "text";
+    var box = resultBox(which);
     box.textContent = "";
     var card = el("div", { "class": "panel" + (a.answered ? "" : " abstain") });
     var scale = el("div", { "class": "scale", role: "img", "aria-label": a.answered ? "Level " + a.group + " of 4" : "No level assigned" },
@@ -247,6 +259,7 @@
         return el("div", { "class": "step", "data-n": s[0], "data-on": String(a.answered && String(a.group) === s[0]) },
           [el("b", { text: s[0] }), el("span", { text: s[1] })]);
       }));
+    card.appendChild(el("p", { "class": "hint result-source", text: which === "photo" ? "Result from this photo's extracted text." : "Result from the last analysed text." }));
     card.appendChild(el("h2", { text: a.headline }));
     if (a.answered) card.appendChild(el("p", { "class": "hint", text: "Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product." }));
     (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
@@ -323,7 +336,8 @@
   }
 
   // source "text": pasted or typed (messages are about the text). source "ocr": text read from a photo.
-  function run(source) { render(engine.analyseText($("label-text").value, { source: source || "text" })); }
+  function run(source) { stopPhotoForText(); render(engine.analyseText($("label-text").value, { source: source || "text" }), "text"); }
+  $("label-text").addEventListener("input", function () { stopPhotoForText(); resultBox("text").textContent = ""; });
 
   $("analyse").addEventListener("click", function () { run("text"); });
   document.querySelectorAll("[data-example]").forEach(function (b) {
@@ -331,6 +345,12 @@
   });
 
   function selectTab(which) {
+    if (which !== activeResultTab) {
+      var box = $("result"), old = savedResults[activeResultTab], next = savedResults[which];
+      while (box.firstChild) old.appendChild(box.firstChild);
+      while (next.firstChild) box.appendChild(next.firstChild);
+      activeResultTab = which;
+    }
     ["text", "photo"].forEach(function (t) {
       var on = t === which;
       $("tab-" + t).setAttribute("aria-selected", String(on));
@@ -404,12 +424,12 @@
 
   // The result area is what people look at, so progress and failures show there, not only in the small status line.
   function showCard(title, lines, abstain) {
-    var box = $("result");
+    var box = resultBox("photo");
     box.textContent = "";
     var card = el("div", { "class": "panel" + (abstain ? " abstain" : "") }, [el("h2", { text: title })]);
     lines.forEach(function (t) { card.appendChild(el("p", { "class": "hint", text: t })); });
     box.appendChild(card);
-    box.scrollIntoView({ block: "nearest" });
+    if (activeResultTab === "photo") box.scrollIntoView({ block: "nearest" });
   }
 
   function assetUrl(p) { return new URL(p, document.baseURI).href; }
@@ -421,39 +441,56 @@
   var THUMB_MAX = 640;
   function makeThumb(file) {
     return new Promise(function (resolve) {
+      if (!file) { resolve(null); return; }
       var url = URL.createObjectURL(file), img = new Image(), done = false;
       function finish(v) { if (!done) { done = true; URL.revokeObjectURL(url); resolve(v); } }
-      setTimeout(function () { finish(null); }, 10000);
+      var timer = setTimeout(function () { finish(null); }, 10000);
       img.onload = function () {
         try {
-          var k = Math.min(1, THUMB_MAX / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement("canvas");
-          c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
-          c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
-          finish(c.toDataURL("image/jpeg", 0.8));
+          var nw = img.naturalWidth || img.width, nh = img.naturalHeight || img.height;
+          if (!nw || !nh) { finish(null); return; }
+          var k = Math.min(1, THUMB_MAX / Math.max(nw, nh)), c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(nw * k)); c.height = Math.max(1, Math.round(nh * k));
+          var ctx = c.getContext("2d");
+          if (!ctx) { finish(null); return; }
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          var dataUrl = c.toDataURL("image/jpeg", 0.8);
+          clearTimeout(timer);
+          finish(dataUrl);
         } catch (e) { finish(null); }
       };
-      img.onerror = function () { finish(null); };
+      img.onerror = function () { clearTimeout(timer); finish(null); };
       img.src = url;
     });
   }
-  var previewToken = 0;
-  $("photo").addEventListener("change", function (ev) {
-    photoFile = ev.target.files && ev.target.files[0] || null;
-    $("photo-analyse").disabled = !photoFile;
-    var pv = $("photo-preview"), token = ++previewToken;
-    pv.onerror = function () { pv.hidden = true; pv.removeAttribute("src"); if (photoFile) $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; };
-    if (!photoFile) { pv.hidden = true; pv.removeAttribute("src"); return; }
+  // One place decides what the current selection is. Every replacement or removal (change event, or a cancel event that leaves the input empty) goes through it, so it
+  // always (1) makes any pending thumbnail stale, (2) stops a reading that is in flight for the old photo, and (3) removes a result that belongs to the old photo.
+  var previewToken = 0, activeRun = null;
+  function applySelection(file) {
+    photoFile = file; previewToken++;
+    if (activeRun) { activeRun(); activeRun = null; }
+    resultBox("photo").textContent = "";
+    $("photo-analyse").disabled = !file;
+    var pv = $("photo-preview"), token = previewToken;
+    pv.onerror = function () { if (token !== previewToken) return; pv.hidden = true; pv.removeAttribute("src"); if (photoFile) $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; };
+    pv.hidden = true; pv.removeAttribute("src");
+    if (!file) { $("photo-status").textContent = ""; return; }
     $("photo-status").textContent = "Photo ready. Press Read photo and analyse.";
-    makeThumb(photoFile).then(function (dataUrl) {
-      if (token !== previewToken) return;                       // a newer selection replaced this one
+    makeThumb(file).then(function (dataUrl) {
+      if (token !== previewToken) return;                       // a newer selection replaced or removed this one
       if (dataUrl) { pv.src = dataUrl; pv.hidden = false; }
       else { pv.hidden = true; pv.removeAttribute("src"); $("photo-status").textContent = "Photo ready (no preview could be shown). Press Read photo and analyse."; }
     });
-  });
+  }
+  $("photo").addEventListener("change", function (ev) { applySelection(ev.target.files && ev.target.files[0] || null); });
+  // A picker that is dismissed fires "cancel". Browsers differ on whether they keep or clear the previous selection, so the input is the truth: nothing changes when it still
+  // holds the photo already in use (this also makes a dispatched synthetic "cancel" harmless); an emptied input is a removal like any other.
+  $("photo").addEventListener("cancel", function (ev) { var f = ev.target.files && ev.target.files[0] || null; if (f !== photoFile) applySelection(f); });
 
   $("photo-analyse").addEventListener("click", async function () {
     var status = $("photo-status"), btn = $("photo-analyse");
     if (!photoFile) { status.textContent = "Choose a photo first."; return; }
+    var file = photoFile;   // this run reads only the photo it started with, even if the selection changes meanwhile
     var t0 = Date.now(), lastEvent = Date.now(), stage = "Preparing photo", over = false, worker = null, lastError = "";
     function say(text) { status.textContent = text; showCard("Reading photo…", [text, "Nothing is uploaded: this runs in your browser."], false); }
     function fail(msg) {
@@ -469,6 +506,8 @@
       return;
     }
     btn.disabled = true;
+    // Called when the selection is replaced or removed: the run ends without rendering anything, the reader is released, and no failure card appears.
+    activeRun = function () { if (over) return; over = true; clearInterval(tick); if (worker) { try { worker.terminate(); } catch (e) {} } };
     say("Preparing photo… 0 s");
     var tick = setInterval(function () {
       if (over) return;
@@ -480,7 +519,8 @@
       say(stage + "… " + secs + " s");
     }, 1000);
     try {
-      var img = await prepare(photoFile);
+      var img = await prepare(file);
+      if (over) return;
       stage = "Starting the text reader"; lastEvent = Date.now();
       worker = await Tesseract.createWorker("eng", 1, {
         // everything comes from this page's own files: the viewer blocks runtime downloads from other sites
@@ -497,6 +537,7 @@
           lastEvent = Date.now();
         }
       });
+      if (over) { try { worker.terminate(); } catch (e) {} return; }   // the selection changed while the reader was starting
       stage = "Recognising text"; lastEvent = Date.now();
       var res = await worker.recognize(img);
       if (over) return;
@@ -507,7 +548,9 @@
       if (!(a1.answered && a1.completeness.status === "complete" && a1.ins.length === 0)) {
         // One bounded second pass for photos that did not read cleanly: uneven lighting and glare flattened. The better yield is kept; ties keep the first reading.
         stage = "Second reading with lighting correction"; lastEvent = Date.now();
-        var res2 = await worker.recognize(await prepare(photoFile, "flat"));
+        var prep2 = await prepare(file, "flat");
+        if (over) return;                                   // replaced during preparation: the reader is already released, do not start it
+        var res2 = await worker.recognize(prep2);
         if (over) return;
         var a2 = engine.analyseText(res2.data.text, { source: "ocr" });
         if (yieldOf(a2) > yieldOf(a1)) { text = res2.data.text; note = " (the second reading, with lighting correction, gave more and was used)"; }
@@ -523,7 +566,9 @@
         var bestY = 0;
         for (var ri = 0, rots = ROTATIONS; ri < rots.length; ri++) {
           stage = "Retry with the photo turned " + rots[ri] + " degrees"; lastEvent = Date.now();
-          var resR = await worker.recognize(await prepare(photoFile, undefined, rots[ri]));
+          var prepR = await prepare(file, undefined, rots[ri]);
+          if (over) return;
+          var resR = await worker.recognize(prepR);
           if (over) return;
           var aR = engine.analyseText(resR.data.text, { source: "ocr" });
           if (yieldOf(aR) > bestY) { bestY = yieldOf(aR); text = resR.data.text; rotUsed = rots[ri]; if (bestY >= 3) break; }
@@ -531,13 +576,17 @@
         if (rotUsed) { ocrNotes.push("The text was read after turning the photo " + rotUsed + " degrees clockwise (sideways or upside-down text). Check the extracted ingredients against the pack."); note = " (read after turning the photo " + rotUsed + " degrees)"; }
         else retake = "No ingredient list could be read from this photo. Retake it: put the pack on a flat surface (or hold it still), use good even light with no glare or shadow across the text, shoot straight-on and close so the ingredients panel fills the frame with the text upright. Or paste the label text instead.";
       }
-      over = true; clearInterval(tick); btn.disabled = false;
+      // Still cancellable while the reader is released: the run is only finished (over, activeRun cleared) after this await, and only if the selection did not change meanwhile.
+      clearInterval(tick);
       try { await worker.terminate(); } catch (e) {}
+      if (over) return;
+      over = true; btn.disabled = false; activeRun = null;
+      resultBox("text").textContent = "";
       $("label-text").value = text;
       var finalA = engine.analyseText(text, { source: "ocr" });
       finalA.retake = retake;
       ocrNotes.forEach(function (n) { finalA.warnings.push(n); });
-      render(finalA);
+      render(finalA, "photo");
       status.textContent = "Done" + note + ". The text that was read is in the Paste tab: check it, fix any mistakes and press Analyse again.";
     } catch (e) {
       fail("Photo reading failed: " + String((e && e.message) || e).slice(0, 160) + ".");
