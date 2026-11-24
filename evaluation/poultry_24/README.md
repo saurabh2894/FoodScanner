@@ -1,0 +1,1 @@
+poultry-24: quail, pheasant, ostrich, guinea hen (FDC SR Legacy raw poultry records; FAO Group 1 names poultry). Same animal-guard-1 rules as turkey and duck. Skipped: Canada goose and ruffed grouse (wild-game labels, goose row exists). Flip gate: 0.
