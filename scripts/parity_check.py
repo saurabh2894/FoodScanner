@@ -1205,6 +1205,9 @@ for _target in (CORPUS, PASTE):
 # sweetener-names-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
+# fao-named-substances-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1251,6 +1254,9 @@ for _target in (CORPUS, PASTE):
 # sweetener-names-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
+# fao-named-substances-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1296,6 +1302,9 @@ for _target in (CORPUS, PASTE):
 # sweetener-names-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
+# fao-named-substances-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1341,6 +1350,9 @@ for _target in (CORPUS, PASTE):
 # sweetener-names-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
+# fao-named-substances-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1386,6 +1398,9 @@ for _target in (CORPUS, PASTE):
 # sweetener-names-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
+# fao-named-substances-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
