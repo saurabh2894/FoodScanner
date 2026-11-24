@@ -22,11 +22,15 @@ def g(t):
 
 
 def test_synthetic_sixty_eight_fish_rows_and_the_eight_meat_rows_are_present():
-    assert len(ROWS) == 68 and "queen crab" in ROWS and "snow crab" not in ROWS and "spot" in ROWS and "spot croaker" not in ROWS and "pumpkin seed sunfish" in ROWS and "pumpkinseed sunfish" not in ROWS
+    # 68 rows of animal-fish-rows-1 plus 38 genus rows of fish-rows-2-24
+    assert len(ROWS) == 106 and "queen crab" in ROWS and "snow crab" not in ROWS and "spot" in ROWS and "spot croaker" not in ROWS and "pumpkin seed sunfish" in ROWS and "pumpkinseed sunfish" not in ROWS and "squid" in ROWS and "tilapia" not in ROWS
     assert all(t in LEX for t in ("beef", "lamb", "pork", "chicken", "veal", "turkey", "duck", "goose"))
 
 
 NOT_FISH = {"alaska king crab", "blue crab", "blue swimming crab", "dungeness crab", "queen crab", "northern lobster", "blue mussel", "eastern oyster", "pacific oyster", "common octopus", "patagonian bay scallop", "sea scallop"}
+# fish-rows-2-24 (2026-11-24): 38 genus rows stacked on the same guard; the eleven shellfish extend the dried-scope-none set
+NOT_FISH_2 = {"abalone", "clam", "crayfish", "cuttlefish", "mussel", "octopus", "oyster", "scallop", "spiny lobster", "squid", "whelk"}
+NOT_FISH = NOT_FISH | NOT_FISH_2
 
 
 @pytest.mark.parametrize("t", ROWS)
@@ -52,7 +56,8 @@ def test_synthetic_dried_crustaceans_and_molluscs_abstain_and_never_fall_back_to
 
 
 def test_synthetic_the_scope_split_is_twelve_seafood_and_fifty_six_fish_rows():
-    assert len(NOT_FISH) == 12 and len(ROWS) - len(NOT_FISH) == 56 and NOT_FISH <= set(ROWS)
+    # animal-fish-rows-1 split 12 seafood / 56 fish; fish-rows-2-24 adds 11 seafood (scope none) and 27 finfish
+    assert len(NOT_FISH) == 23 and len(ROWS) - len(NOT_FISH) == 83 and NOT_FISH <= set(ROWS)
 
 
 @pytest.mark.parametrize("t", ROWS)
