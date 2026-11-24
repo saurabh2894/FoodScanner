@@ -47,6 +47,6 @@ def test_synthetic_a_group_1_to_3_list_without_these_terms_is_untouched():
     assert g("Ingredients: Rice, salt.")[0] == 3 and g("Ingredients: Beans")[0] == 1
 
 
-@pytest.mark.xfail(strict=True, reason="KNOWN GAP: the z spelling 'hydrolyzed' does not match the approved marker row 'hydrolysed vegetable protein' (seen in dev/F07 and out-of-sample S13, both already Group 4 by other markers). A spelling synonym needs the owner's approval.")
-def test_synthetic_known_gap_hydrolyzed_spelling_variant():
+# hydrolysed-protein-24: the z spelling is now a marker row of its own, so the former known gap is closed.
+def test_synthetic_hydrolyzed_spelling_variant_is_group_4():
     assert g("Ingredients: Rice, Hydrolyzed Vegetable Protein.")[0] == 4

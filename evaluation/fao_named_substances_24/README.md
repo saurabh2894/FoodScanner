@@ -1,3 +1,4 @@
 fao-named-substances-24: casein, whey protein, mechanically separated meat, fruit juice concentrate as strong markers. FAO 2019 p.10 names each verbatim as a food substance whose presence identifies a product as ultra-processed.
 Staged after a free-from guard: lactose and gluten. The marker pattern now skips a term preceded by no, no added, non, without, free from or free of, or followed by free ("lactose free milk", "gluten-free oats"). Guard added to classify._markers and the JS port. Held: hydrolysed proteins (no spelling or plural match), corn syrup (clause names only high-fructose corn syrup).
 Flip gate: 4 inputs change driver lists only (an extra "gluten" driver beside wheat gluten), no group changes.
+Hydrolysed proteins were staged afterwards in hydrolysed-protein-24.

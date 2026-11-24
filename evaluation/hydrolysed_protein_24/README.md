@@ -1,0 +1,2 @@
+hydrolysed-protein-24: FAO 2019 p.10 names "hydrolysed proteins" among substances whose presence identifies a product as ultra-processed. Staged: hydrolysed/hydrolyzed protein(s) (term named, spelling variants) and soy, wheat, milk, plant, vegetable protein forms (class-instance). Held: hydrolysed collagen, protein hydrolysate, HVP abbreviation (not the same wording; need separate verification).
+Flip gate: 1 input changes (dev/F07): group stays 4, hydrolyzed vegetable protein becomes a driver, and two unassessed entries are now assessed.

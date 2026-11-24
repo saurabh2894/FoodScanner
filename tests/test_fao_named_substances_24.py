@@ -28,4 +28,4 @@ def test_held_terms_stay_unstaged():
     import csv
     from pathlib import Path
     terms = {r["term"] for r in csv.DictReader((Path(__file__).resolve().parent.parent / "src/foodscan/resources/markers.csv").open(newline=""))}
-    assert not ({"hydrolysed protein", "corn syrup"} & terms)
+    assert not ({"corn syrup"} & terms)

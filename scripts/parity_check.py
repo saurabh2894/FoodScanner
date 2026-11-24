@@ -1208,6 +1208,9 @@ for _target in (CORPUS, PASTE):
 # fao-named-substances-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats', 'Lactose', 'Wheat flour, Gluten', 'Milk (lactose free)', 'Gluten-free wheat flour', 'Without gluten', 'Free from gluten', 'No added lactose', 'Casein free', 'Non gluten flour'])
+# hydrolysed-protein-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1257,6 +1260,9 @@ for _target in (CORPUS, PASTE):
 # fao-named-substances-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats', 'Lactose', 'Wheat flour, Gluten', 'Milk (lactose free)', 'Gluten-free wheat flour', 'Without gluten', 'Free from gluten', 'No added lactose', 'Casein free', 'Non gluten flour'])
+# hydrolysed-protein-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1305,6 +1311,9 @@ for _target in (CORPUS, PASTE):
 # fao-named-substances-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats', 'Lactose', 'Wheat flour, Gluten', 'Milk (lactose free)', 'Gluten-free wheat flour', 'Without gluten', 'Free from gluten', 'No added lactose', 'Casein free', 'Non gluten flour'])
+# hydrolysed-protein-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1353,6 +1362,9 @@ for _target in (CORPUS, PASTE):
 # fao-named-substances-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats', 'Lactose', 'Wheat flour, Gluten', 'Milk (lactose free)', 'Gluten-free wheat flour', 'Without gluten', 'Free from gluten', 'No added lactose', 'Casein free', 'Non gluten flour'])
+# hydrolysed-protein-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1401,6 +1413,9 @@ for _target in (CORPUS, PASTE):
 # fao-named-substances-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Casein', 'Water, Casein', 'Casein (Stabiliser)', 'Wheat flour, Salt, Whey protein concentrate', 'Water, Whey protein isolate', 'Whey protein concentrate (Milk)', 'Wheat flour, Mechanically separated meat', 'Mechanically separated meat, Salt', 'Wheat flour, Fruit juice concentrate', 'Water, Lemon juice concentrate', 'Fruit juice concentrate (Apple)', 'Tomato paste', 'Orange juice from concentrate', 'Whey', 'Milk protein', 'Lactose free milk', 'Gluten free oats', 'Lactose', 'Wheat flour, Gluten', 'Milk (lactose free)', 'Gluten-free wheat flour', 'Without gluten', 'Free from gluten', 'No added lactose', 'Casein free', 'Non gluten flour'])
+# hydrolysed-protein-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
