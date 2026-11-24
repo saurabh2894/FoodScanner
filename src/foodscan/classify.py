@@ -321,6 +321,37 @@ def is_cheese_row(row) -> bool:
     return bool(row) and row["kind"] == "whole_food" and _CHEESE_MARK in row["source"]
 
 
+# tomato-g3-1: a row whose source records 'TOMATO-CONC-G3' is a tomato concentrate. Brazil Dietary Guidelines Group 3: "tomato extract or concentrates (with salt and/or sugar)". Group 3 ONLY when salt or sugar is stated
+# (a sibling salt or sugar item, or salt/sugar in the item's own bracket) and nothing else is in the list or bracket; unstated, other additives or other foods abstain (a concentrate with no salt or sugar stated is not placed by the clause).
+_TOMATO_MARK = "TOMATO-CONC-G3"
+_TOMATO_OK_TERMS = frozenset({"salt", "sugar", "iodised salt"})
+_TOMATO_INNER_OK = frozenset({"tomato", "tomatoes", "salt", "sugar"})
+
+
+def is_tomato_conc_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _TOMATO_MARK in row["source"]
+
+
+def tomato_conc_verdict(ings):
+    """None when no tomato concentrate row is present; otherwise (group, detail) with group 3 or None (abstain)."""
+    idx = [n for n, i in enumerate(ings) if is_tomato_conc_row(lookup(i.name))]
+    if not idx:
+        return None
+    if len(idx) != 1:
+        return (None, "more than one tomato concentrate item is listed, so the combination is not established")
+    t = ings[idx[0]]
+    others = [i for n, i in enumerate(ings) if n != idx[0]]
+    if any((lookup(o.name) or {}).get("term") not in _TOMATO_OK_TERMS or o.inner for o in others):
+        return (None, "the list holds something besides the tomato concentrate and salt or sugar, so no source read here places the combination")
+    parts = [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", t.inner or "") if p.strip()]
+    if any(p not in _TOMATO_INNER_OK for p in parts) or _added(t, _CHEESE_ABSTAIN):
+        return (None, "the concentrate's bracket or wording holds something besides tomato, salt or sugar, so no source read here places it")
+    stated = bool(others) or any(p in ("salt", "sugar") for p in parts)
+    if not stated:
+        return (None, "salt or sugar is not stated, and the Brazil Group 3 clause covers tomato concentrates only 'with salt and/or sugar'")
+    return (3, "tomato concentrate with stated salt or sugar (Brazil Dietary Guidelines Group 3: 'tomato extract or concentrates (with salt and/or sugar)')")
+
+
 def animal_powder(ing, kind: str) -> bool:
     return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS)
 
@@ -770,6 +801,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    tv = tomato_conc_verdict(ings)
+    if tv is not None:
+        if tv[0] == 3:
+            t0 = next(i for i in ings if is_tomato_conc_row(lookup(i.name)))
+            return Classification(3, drivers=[Driver(t0.raw, tv[1], lookup(t0.name)["source"], t0.section)])
+        return Classification(None, reason="a tomato concentrate is named: " + tv[1] + ", so no group is asserted")
     bracket_unknown = [(i.raw, fat_bracket_residual(i) or plain_culinary_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and (fat_bracket_residual(i) or plain_culinary_residual(i)))]
     fat_powders = [i.raw for i, k in zip(ings, kinds) if fat_powder(i, k)]
     animal_powders = [i.raw for i, k in zip(ings, kinds) if animal_powder(i, k)]
