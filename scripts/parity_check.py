@@ -1168,6 +1168,12 @@ _f10 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}',
 _t10 = [r['term'] for r in _m10['new_foods']] + [r['name'] for r in _m10['aliases']]
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in _t10 for f in _f10)
+# cheese-g3-1 parity: every staged cheese term in sole, listed, bracketed and conditioned forms.
+import csv as _csv
+_CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cheese_rows_24" / "staged_rows.csv").open(newline=""))]
+_fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1177,6 +1183,12 @@ _f11 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}',
 _t11 = [r['term'] for r in _m11['new_foods']] + [r['name'] for r in _m11['aliases']]
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in _t11 for f in _f11)
+# cheese-g3-1 parity: every staged cheese term in sole, listed, bracketed and conditioned forms.
+import csv as _csv
+_CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cheese_rows_24" / "staged_rows.csv").open(newline=""))]
+_fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1185,6 +1197,12 @@ _m12 = json.loads((ROOT / 'evaluation/nalt_names_12/admission.json').read_text()
 _f12 = ['{t}', 'Raw {t}', 'Fresh {t}', 'Frozen {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Sugar)', '{t} extract', '{t} juice', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=r['term']) + '.' for r in _m12['new_foods'] for f in _f12)
+# cheese-g3-1 parity: every staged cheese term in sole, listed, bracketed and conditioned forms.
+import csv as _csv
+_CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cheese_rows_24" / "staged_rows.csv").open(newline=""))]
+_fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1193,6 +1211,12 @@ _m13 = json.loads((ROOT / 'evaluation/nalt_names_13/admission.json').read_text()
 _f13 = ['{t}', 'Raw {t}', 'Dried {t}', 'Roasted {t}', 'Boiled {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Rice)', '{t} powder (Sugar)', '{t} flour', '{t} extract', '{t} leaves', '{t} straw', '100% {t} hulls powder', '{t} forage', '{t} hay', '{t} silage', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=n) + '.' for n in [r['term'] for r in _m13['new_foods']] + [a['name'] for a in _m13['aliases']] for f in _f13)
+# cheese-g3-1 parity: every staged cheese term in sole, listed, bracketed and conditioned forms.
+import csv as _csv
+_CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cheese_rows_24" / "staged_rows.csv").open(newline=""))]
+_fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1201,6 +1225,12 @@ _m14 = json.loads((ROOT / 'evaluation/nalt_names_14/admission.json').read_text()
 _f14 = ['{t}', 'Raw {t}', 'Dried {t}', 'Roasted {t}', 'Salted {t}', '{t} (Salt)', '{t} (Sugar)', '{t} powder', '100% {t} powder', 'Whole {t} powder', '{t} powder (Rice)', '{t} powder (Sugar)', '{t} flour', '{t} extract', '{t} juice', '{t} oil', 'Mango ({t} Powder)', 'Mango (100% {t} Powder)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: '+f.format(t=n)+'.' for n in [r['term'] for r in _m14['new_foods']]+[a['name'] for a in _m14['aliases']] for f in _f14)
+# cheese-g3-1 parity: every staged cheese term in sole, listed, bracketed and conditioned forms.
+import csv as _csv
+_CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cheese_rows_24" / "staged_rows.csv").open(newline=""))]
+_fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 

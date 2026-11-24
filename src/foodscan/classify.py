@@ -311,6 +311,16 @@ def animal_dried_unscoped(ing, kind: str) -> bool:
     return kind == "whole_food" and is_animal_row(row) and not any(m in row["source"] for m in _DRIED_SCOPES) and _added(ing, _ANIMAL_DRIED)
 
 
+# cheese-g3-1: a row whose source records 'CHEESE-G3' is a cheese. Brazil Dietary Guidelines Group 3 names "cheeses" and FAO Table 1 Group 3 names "simple cheeses to which salt is added". A sole, plain cheese item is Group 3;
+# a cheese inside a longer list, with a bracket, or with a powder, processed, smoked, spread, sauce, flavoured or analogue word abstains (no rule or source here places those forms).
+_CHEESE_MARK = "CHEESE-G3"
+_CHEESE_ABSTAIN = frozenset({"powder", "powdered", "processed", "smoked", "spread", "sauce", "flavour", "flavor", "flavoured", "flavored", "analogue", "analog", "substitute", "dip", "grated", "shredded", "dried", "dehydrated", "canned", "tinned", "pickled", "breaded", "fried", "baked", "melted", "sliced", "blend"})
+
+
+def is_cheese_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _CHEESE_MARK in row["source"]
+
+
 def animal_powder(ing, kind: str) -> bool:
     return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS)
 
@@ -819,6 +829,11 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     nested_powders = [p for i in ings for p in nested_powder_unresolved(i)]
     if nested_powders:
         return Classification(None, reason="a nested powder's form or composition is not established (" + "; ".join(nested_powders) + "), so it cannot inherit the outer food's plain placement and no group is asserted")
+    cheese_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_cheese_row(lookup(i.name))]
+    if cheese_names:
+        if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CHEESE_ABSTAIN):
+            return Classification(3, drivers=[Driver(ings[0].raw, "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(None, reason="a cheese is named (" + "; ".join(cheese_names) + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted")
     nut_salted = animal_dry + [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:

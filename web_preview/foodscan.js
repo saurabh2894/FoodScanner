@@ -697,6 +697,9 @@
     const ANIMAL_DRIED = new Set(["dried", "dehydrated"]);
     const isAnimalRow = (row) => !!row && row.kind === "whole_food" && row.source.includes(ANIMAL_MARK);
     const DRIED_SCOPES = ["DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish"];
+    // cheese-g3-1 (mirrors classify.is_cheese_row / _CHEESE_ABSTAIN)
+    const CHEESE_ABSTAIN = new Set(["powder", "powdered", "processed", "smoked", "spread", "sauce", "flavour", "flavor", "flavoured", "flavored", "analogue", "analog", "substitute", "dip", "grated", "shredded", "dried", "dehydrated", "canned", "tinned", "pickled", "breaded", "fried", "baked", "melted", "sliced", "blend"]);
+    const isCheeseRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CHEESE-G3");
     const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalPowder = (ing, kind) => kind === "whole_food" && isAnimalRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS);
@@ -912,6 +915,12 @@
       if (wfCondition.length) return { group: null, drivers: [], reason: "an item whose own text names an added or preserving condition (" + wfCondition.map(([raw, o]) => raw + ": " + o.join(", ")).join("; ") + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted" };
       const nestedPowders = ings.flatMap(nestedPowderUnresolved);
       if (nestedPowders.length) return { group: null, drivers: [], reason: "a nested powder's form or composition is not established (" + nestedPowders.join("; ") + "), so it cannot inherit the outer food's plain placement and no group is asserted" };
+      const cheeseNames = ings.filter((i, n) => kinds[n] === "whole_food" && isCheeseRow(lookup(i.name))).map((i) => i.raw);
+      if (cheeseNames.length) {
+        if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], CHEESE_ABSTAIN))
+          return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: null, drivers: [], reason: "a cheese is named (" + cheeseNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted" };
+      }
       const legumePreserved = ings.filter((i, n) => GUARDED_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) {
         const preservedNut = ings.map((i, n) => [i, kinds[n]]).filter(([i, k]) => GUARDED_KINDS.includes(k) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map(([, k]) => k === "nut_seed");
