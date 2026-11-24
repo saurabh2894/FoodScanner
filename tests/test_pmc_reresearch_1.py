@@ -25,6 +25,10 @@ def test_synthetic_only_the_owner_lifted_plain_starch_rows_entered_the_vocabular
     for d in DEC["decisions"]:
         if d["disposition"] == "ACCEPT_ROW":
             assert d["term"] in LEX and "LIFTED for plain/unmodified starch" in d["owner_override"]
+        elif d["term"] == "cocoa powder":
+            # cocoa-powder-24 (2026-11-24): footnote 5 verified live on the rendered PMC page and the parked bracket
+            # condition implemented, so the single-source park is superseded; asserted in tests/test_cocoa_powder_24.py
+            assert d["term"] in LEX
         elif d["term"] not in APPROVED_4:
             assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
             assert d["standing_reason"] == "single admissible source or broader than FAO"

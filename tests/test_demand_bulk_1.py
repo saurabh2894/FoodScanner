@@ -71,6 +71,10 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
         assert grp("Ingredients: Carbonated Water.")[0] == 1
         assert not analyse_text("Ingredients: Carbonated Water, Sugar.", source="text").answered
         return
+    if d["term"] == "cocoa powder":
+        # cocoa-powder-24 (2026-11-24): PMC10127522 footnote 5 verified live on the rendered PMC page and the
+        # pmc-reresearch-4 park condition implemented (cocoa_powder_residual); asserted in tests/test_cocoa_powder_24.py
+        return
     if d["term"] in ("apple juice", "grape juice", "orange juice", "pineapple juice"):
         # fruit-forms-23: recognition does not lift the bare-form placement hold.
         from foodscan.classify import lookup

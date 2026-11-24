@@ -458,7 +458,16 @@ _NESTED_3_TEXTS = [
     "Ingredients: Cashew Nuts (Vitamins and Minerals).",
     "Ingredients: Chickpea (Vitamins and Minerals).",
     "Ingredients: Sugar Apples (Vitamins and Minerals).",
-    "Ingredients: Milk (Starter Culture)."
+    "Ingredients: Milk (Starter Culture).",
+    # cocoa-powder-24: the plain-food bracket condition on the new culinary row (Py/JS must agree on every form)
+    "Ingredients: Cocoa Powder.",
+    "Ingredients: Cocoa Powder (5%).",
+    "Ingredients: Cocoa Powder (unsweetened).",
+    "Ingredients: Cocoa Powder (Sugar).",
+    "Ingredients: cocoa powder (alkalised).",
+    "Ingredients: Milk, Cocoa Powder, Sugar.",
+    "Ingredients: cocoa.",
+    "Ingredients: cocoa solids."
 ]
 for _texts in (CORPUS, PASTE):
     _texts.extend(t for t in _NESTED_3_TEXTS if t not in _texts)

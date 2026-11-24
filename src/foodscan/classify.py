@@ -348,6 +348,28 @@ def fat_bracket_residual(ing) -> list:
     return out
 
 
+def cocoa_powder_residual(ing) -> list:
+    """cocoa-powder-24: the item-level 'unsweetened' condition of the pmc-reresearch-4 park record, implemented at merge.
+    PMC10127522 table footnote 5 places 'cocoa powder' as an other processed culinary ingredient (listed with 'unsweetened
+    baking chocolate'); the row covers the plain food only. Its bracket must add nothing: a percentage or quantity is the
+    item's share, and the word 'unsweetened' restates the row's own condition. Every other bracket part (sugar, flavours,
+    alkalising agents, another food) leaves the item's composition unestablished, so the item abstains rather than take
+    the Group 2 placement."""
+    head = lookup(ing.name)
+    if not head or head["term"] != "cocoa powder" or not ing.inner:
+        return []
+    out = []
+    for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
+        p = part.strip()
+        toks = re.findall(r"[a-z]+", p.lower())
+        if not toks:
+            continue                                # a percentage or quantity share
+        if toks == ["unsweetened"]:
+            continue                                # the condition word restated
+        out.append(p)
+    return out
+
+
 # The four nutrient labels remain outside this check: FAO Table 1 expressly
 # includes Group 1 foods with vitamins/minerals added. Recognition-only grain
 # forms have no equivalent placement and must not disappear inside brackets.
@@ -734,7 +756,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    bracket_unknown = [(i.raw, fat_bracket_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and fat_bracket_residual(i))]
+    bracket_unknown = [(i.raw, fat_bracket_residual(i) or cocoa_powder_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and (fat_bracket_residual(i) or cocoa_powder_residual(i)))]
     fat_powders = [i.raw for i, k in zip(ings, kinds) if fat_powder(i, k)]
     animal_powders = [i.raw for i, k in zip(ings, kinds) if animal_powder(i, k)]
     animal_dry = [i.raw for i, k in zip(ings, kinds) if animal_dried(i, k)]
@@ -767,7 +789,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
         tail = "), so neither Group 1 nor Group 3 is established while part of the item is unassessed"
         names = " names content the vocabulary does not recognise ("
-        if any(cul_flags):      # culinary-guard-1: an oil or fat item (Group 2 at stake); its bracket part may be unrecognised OR a recognised food that is not a culinary ingredient
+        cocoa_raws = {i.raw for i in ings if cocoa_powder_residual(i)}
+        if any(raw in cocoa_raws for raw, _, _ in bracket_unknown):   # cocoa-powder-24: the plain-food condition, not a culinary-composition check
+            what = "a bracket on cocoa powder" if all(raw in cocoa_raws for raw, _, _ in bracket_unknown) else "a bracket on a food item"
+            names = " adds content beyond the plain unsweetened food the source names ("
+            tail = "), so the item is not established as plain cocoa powder and no group is asserted"
+        elif any(cul_flags):      # culinary-guard-1: an oil or fat item (Group 2 at stake); its bracket part may be unrecognised OR a recognised food that is not a culinary ingredient
             what = "a bracket on a processed culinary ingredient" if all(cul_flags) else "a bracket on a food item"
             names = " names content that is unrecognised or is a different food, not a culinary ingredient ("
             tail = "), so what the item contains is not established and no group is asserted while part of the item is unassessed"

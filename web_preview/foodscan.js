@@ -719,6 +719,18 @@
       return out;
     };
     const fatPowderStated = (ing) => /(?<![\d.])100(?:\.0+)?\s*%/.test(ing.raw.toLowerCase().replace(/[(\[{][^)\]}]*[)\]}]/g, ""));
+    const cocoaPowderResidual = (ing) => {
+      const head = lookup(ing.name);
+      if (!head || head.term !== "cocoa powder" || !ing.inner) return [];
+      const out = [];
+      for (const part of ing.inner.split(/\s*(?:,|;|&|\band\b)\s*/)) {
+        const p = part.trim(), toks = p.toLowerCase().match(/[a-z]+/g) || [];
+        if (!toks.length) continue;
+        if (toks.length === 1 && toks[0] === "unsweetened") continue;
+        out.push(p);
+      }
+      return out;
+    };
     const fatPowder = (ing, kind) => kind === "culinary" && isFatRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS) && !fatPowderStated(ing);
     function powderRouted(ing, kind) {
       if (!POWDER_ROUTED.includes(kind)) return false;
@@ -860,7 +872,7 @@
       }
       const unrecognised = ings.filter((i) => !isRecognised(i.name)).map((i) => i.raw);
       if (unrecognised.length) return { group: null, drivers: [], reason: "ingredients not in the local vocabulary, so processing level cannot be judged: " + unrecognised.join(", ") + otherOpenItems(ings, new Set(unrecognised)) };
-      const bracketUnknown = ings.filter((i) => ((GUARDED_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length) || (lookup(i.name).kind === "culinary" && fatBracketResidual(i).length)).map((i) => [i.raw, lookup(i.name).kind === "culinary" ? fatBracketResidual(i) : bracketResidual(i), lookup(i.name).kind]);
+      const bracketUnknown = ings.filter((i) => ((GUARDED_KINDS.includes(lookup(i.name).kind) || lookup(i.name).kind === "flour" || lookup(i.name).kind === "whole_food") && bracketResidual(i).length) || (lookup(i.name).kind === "culinary" && (fatBracketResidual(i).length || cocoaPowderResidual(i).length))).map((i) => [i.raw, lookup(i.name).kind === "culinary" ? (fatBracketResidual(i).length ? fatBracketResidual(i) : cocoaPowderResidual(i)) : bracketResidual(i), lookup(i.name).kind]);
       const wfCondition = ings.map((i) => [i.raw, wholeFoodObserved(i, lookup(i.name).kind)]).filter(([, o]) => o.length);
       const wfNested = ings.map((i) => [i.raw, wholeFoodNested(i, lookup(i.name).kind)]).filter(([, r]) => r.length);
       const kinds = ings.map((i) => (powderRouted(i, lookup(i.name).kind) ? "food_powder" : lookup(i.name).kind));
@@ -880,11 +892,14 @@
       const animalDry = ings.filter((i, n) => animalDried(i, kinds0[n])).map((i) => i.raw);
       const animalDryUnscoped = ings.filter((i, n) => animalDriedUnscoped(i, kinds0[n])).map((i) => i.raw);
       const nutSalted = animalDry.concat(ings.filter((i, n) => (kinds[n] === "nut_seed" && nutAddedSaltOrSugar(i)) || (GUARDED_KINDS.includes(kinds[n]) && legumeAddedSaltSugarOrBrine(i)) || grainAddedSalt(i, kinds[n])).map((i) => i.raw));
-      if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.some(([, , k]) => k === "culinary")
+      const cocoaRaws = new Set(ings.filter((i) => cocoaPowderResidual(i).length).map((i) => i.raw));
+      if (bracketUnknown.length) return { group: null, drivers: [], reason: (bracketUnknown.some(([raw]) => cocoaRaws.has(raw))
+          ? (bracketUnknown.every(([raw]) => cocoaRaws.has(raw)) ? "a bracket on cocoa powder" : "a bracket on a food item")
+          : (bracketUnknown.some(([, , k]) => k === "culinary")
           ? (bracketUnknown.every(([, , k]) => k === "culinary") ? "a bracket on a processed culinary ingredient" : "a bracket on a food item")
-          : (bracketUnknown.every(([, , k]) => k !== "nut_seed") ? "a bracket on a legume, vegetable, fruit or flour item" : (bracketUnknown.every(([, , k]) => k === "nut_seed") ? "a bracket on a nut or seed item" : "a bracket on a food item")))
-        + (bracketUnknown.some(([, , k]) => k === "culinary") ? " names content that is unrecognised or is a different food, not a culinary ingredient (" : " names content the vocabulary does not recognise (") + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
-        + (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed") };
+          : (bracketUnknown.every(([, , k]) => k !== "nut_seed") ? "a bracket on a legume, vegetable, fruit or flour item" : (bracketUnknown.every(([, , k]) => k === "nut_seed") ? "a bracket on a nut or seed item" : "a bracket on a food item"))))
+        + (bracketUnknown.some(([raw]) => cocoaRaws.has(raw)) ? " adds content beyond the plain unsweetened food the source names (" : (bracketUnknown.some(([, , k]) => k === "culinary") ? " names content that is unrecognised or is a different food, not a culinary ingredient (" : " names content the vocabulary does not recognise (")) + bracketUnknown.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ")
+        + (bracketUnknown.some(([raw]) => cocoaRaws.has(raw)) ? "), so the item is not established as plain cocoa powder and no group is asserted" : (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")) };
       if (animalPowders.length) return { group: null, drivers: [], reason: "a powder of an animal food is named (" + animalPowders.join("; ") + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states" };
       if (animalDryUnscoped.length) return { group: null, drivers: [], reason: "a dried form of an animal food is named (" + animalDryUnscoped.join("; ") + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1" };
       const fatPowders = ings.filter((i, n) => fatPowder(i, kinds[n])).map((i) => i.raw);

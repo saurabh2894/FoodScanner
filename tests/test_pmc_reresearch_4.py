@@ -1,4 +1,4 @@
-"""pmc-reresearch-4 (owner-approved 2026-11-21, merged): approved rows/synonyms/markers are shipped; PARK (incl. cocoa powder and dry fruits, parked by the owner) and CONFLICT terms are not. SYNTHETIC checks."""
+"""pmc-reresearch-4 (owner-approved 2026-11-21, merged): approved rows/synonyms/markers are shipped; PARK (cocoa powder lifted 2026-11-24 by cocoa-powder-24 once its parked condition mechanism shipped; dry fruits stay parked) and CONFLICT terms are not. SYNTHETIC checks."""
 from __future__ import annotations
 
 import csv
@@ -31,6 +31,14 @@ def test_synthetic_approved_terms_are_shipped_and_parked_or_conflicted_terms_are
             assert t in lex and t not in syn and t not in mk
             assert analyse_text("Ingredients: Carbonated Water.", source="text").group == 1
             assert not analyse_text("Ingredients: Carbonated Water (Sugar).", source="text").answered
+            continue
+        if t == "cocoa powder":
+            # cocoa-powder-24 (2026-11-24): footnote 5 verified live on the rendered PMC page and the park record's
+            # item-level bracket condition implemented (cocoa_powder_residual in classify.py), so the row shipped.
+            from foodscan.pipeline import analyse_text
+            assert t in lex and t not in syn and t not in mk
+            assert analyse_text("Ingredients: Cocoa Powder.", source="text").group == 2
+            assert not analyse_text("Ingredients: Cocoa Powder (Sugar).", source="text").answered
             continue
         if k == "ACCEPT_ROW":
             assert t in lex, t
