@@ -1211,6 +1211,9 @@ for _target in (CORPUS, PASTE):
 # hydrolysed-protein-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
+# game-meat-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Deer', 'Deer, Salt', 'Dried deer', 'Smoked deer', 'Deer powder', 'Deer sausage', 'Rabbit', 'Rabbit, Salt', 'Dried rabbit', 'Smoked rabbit', 'Rabbit powder', 'Rabbit sausage', 'Bison', 'Bison, Salt', 'Dried bison', 'Smoked bison', 'Bison powder', 'Bison sausage', 'Boar', 'Boar, Salt', 'Dried boar', 'Smoked boar', 'Boar powder', 'Boar sausage', 'Moose', 'Moose, Salt', 'Dried moose', 'Smoked moose', 'Moose powder', 'Moose sausage', 'Caribou', 'Caribou, Salt', 'Dried caribou', 'Smoked caribou', 'Caribou powder', 'Caribou sausage', 'Antelope', 'Antelope, Salt', 'Dried antelope', 'Smoked antelope', 'Antelope powder', 'Antelope sausage', 'Wild boar', 'Reindeer'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1263,6 +1266,9 @@ for _target in (CORPUS, PASTE):
 # hydrolysed-protein-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
+# game-meat-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Deer', 'Deer, Salt', 'Dried deer', 'Smoked deer', 'Deer powder', 'Deer sausage', 'Rabbit', 'Rabbit, Salt', 'Dried rabbit', 'Smoked rabbit', 'Rabbit powder', 'Rabbit sausage', 'Bison', 'Bison, Salt', 'Dried bison', 'Smoked bison', 'Bison powder', 'Bison sausage', 'Boar', 'Boar, Salt', 'Dried boar', 'Smoked boar', 'Boar powder', 'Boar sausage', 'Moose', 'Moose, Salt', 'Dried moose', 'Smoked moose', 'Moose powder', 'Moose sausage', 'Caribou', 'Caribou, Salt', 'Dried caribou', 'Smoked caribou', 'Caribou powder', 'Caribou sausage', 'Antelope', 'Antelope, Salt', 'Dried antelope', 'Smoked antelope', 'Antelope powder', 'Antelope sausage', 'Wild boar', 'Reindeer'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1314,6 +1320,9 @@ for _target in (CORPUS, PASTE):
 # hydrolysed-protein-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
+# game-meat-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Deer', 'Deer, Salt', 'Dried deer', 'Smoked deer', 'Deer powder', 'Deer sausage', 'Rabbit', 'Rabbit, Salt', 'Dried rabbit', 'Smoked rabbit', 'Rabbit powder', 'Rabbit sausage', 'Bison', 'Bison, Salt', 'Dried bison', 'Smoked bison', 'Bison powder', 'Bison sausage', 'Boar', 'Boar, Salt', 'Dried boar', 'Smoked boar', 'Boar powder', 'Boar sausage', 'Moose', 'Moose, Salt', 'Dried moose', 'Smoked moose', 'Moose powder', 'Moose sausage', 'Caribou', 'Caribou, Salt', 'Dried caribou', 'Smoked caribou', 'Caribou powder', 'Caribou sausage', 'Antelope', 'Antelope, Salt', 'Dried antelope', 'Smoked antelope', 'Antelope powder', 'Antelope sausage', 'Wild boar', 'Reindeer'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1365,6 +1374,9 @@ for _target in (CORPUS, PASTE):
 # hydrolysed-protein-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
+# game-meat-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Deer', 'Deer, Salt', 'Dried deer', 'Smoked deer', 'Deer powder', 'Deer sausage', 'Rabbit', 'Rabbit, Salt', 'Dried rabbit', 'Smoked rabbit', 'Rabbit powder', 'Rabbit sausage', 'Bison', 'Bison, Salt', 'Dried bison', 'Smoked bison', 'Bison powder', 'Bison sausage', 'Boar', 'Boar, Salt', 'Dried boar', 'Smoked boar', 'Boar powder', 'Boar sausage', 'Moose', 'Moose, Salt', 'Dried moose', 'Smoked moose', 'Moose powder', 'Moose sausage', 'Caribou', 'Caribou, Salt', 'Dried caribou', 'Smoked caribou', 'Caribou powder', 'Caribou sausage', 'Antelope', 'Antelope, Salt', 'Dried antelope', 'Smoked antelope', 'Antelope powder', 'Antelope sausage', 'Wild boar', 'Reindeer'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1416,6 +1428,9 @@ for _target in (CORPUS, PASTE):
 # hydrolysed-protein-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Hydrolysed protein', 'Water, Hydrolyzed protein', 'Hydrolysed proteins, Salt', 'Wheat flour, Hydrolysed soy protein', 'Wheat flour, Hydrolyzed vegetable protein (Soy)', 'Wheat flour, Hydrolysed milk protein', 'Wheat flour, Hydrolysed protein free', 'Wheat flour, Hydrolysed collagen', 'Wheat flour, Soy protein', 'Wheat flour, Without hydrolysed protein'])
+# game-meat-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Deer', 'Deer, Salt', 'Dried deer', 'Smoked deer', 'Deer powder', 'Deer sausage', 'Rabbit', 'Rabbit, Salt', 'Dried rabbit', 'Smoked rabbit', 'Rabbit powder', 'Rabbit sausage', 'Bison', 'Bison, Salt', 'Dried bison', 'Smoked bison', 'Bison powder', 'Bison sausage', 'Boar', 'Boar, Salt', 'Dried boar', 'Smoked boar', 'Boar powder', 'Boar sausage', 'Moose', 'Moose, Salt', 'Dried moose', 'Smoked moose', 'Moose powder', 'Moose sausage', 'Caribou', 'Caribou, Salt', 'Dried caribou', 'Smoked caribou', 'Caribou powder', 'Caribou sausage', 'Antelope', 'Antelope, Salt', 'Dried antelope', 'Smoked antelope', 'Antelope powder', 'Antelope sausage', 'Wild boar', 'Reindeer'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
