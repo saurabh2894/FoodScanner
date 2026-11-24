@@ -348,15 +348,19 @@ def fat_bracket_residual(ing) -> list:
     return out
 
 
-def cocoa_powder_residual(ing) -> list:
-    """cocoa-powder-24: the item-level 'unsweetened' condition of the pmc-reresearch-4 park record, implemented at merge.
-    PMC10127522 table footnote 5 places 'cocoa powder' as an other processed culinary ingredient (listed with 'unsweetened
-    baking chocolate'); the row covers the plain food only. Its bracket must add nothing: a percentage or quantity is the
-    item's share, and the word 'unsweetened' restates the row's own condition. Every other bracket part (sugar, flavours,
-    alkalising agents, another food) leaves the item's composition unestablished, so the item abstains rather than take
-    the Group 2 placement."""
+# plain-condition culinary rows: the source names the plain food only. cocoa-powder-24 established the pattern (the pmc-reresearch-4 park
+# mechanism); pool-a-24 adds the two creams, unsweetened baking chocolate (the condition word is part of its row term) and gelatin powder.
+_PLAIN_CONDITION_CULINARY = frozenset({"cocoa powder", "coconut cream", "milk cream", "unsweetened baking chocolate", "gelatin powder"})
+
+
+def plain_culinary_residual(ing) -> list:
+    """cocoa-powder-24 / pool-a-24: item-level plain-food condition on the _PLAIN_CONDITION_CULINARY rows. PMC10127522 table footnote 5
+    places these items as other processed culinary ingredients as plain foods; the row covers the plain food only. Its bracket must add
+    nothing: a percentage or quantity is the item's share, and the word 'unsweetened' restates the condition. Every other bracket part
+    (sugar, flavours, alkalising agents, another food) leaves the item's composition unestablished, so the item abstains rather than
+    take the Group 2 placement."""
     head = lookup(ing.name)
-    if not head or head["term"] != "cocoa powder" or not ing.inner:
+    if not head or head["term"] not in _PLAIN_CONDITION_CULINARY or not ing.inner:
         return []
     out = []
     for part in re.split(r"\s*(?:,|;|&|\band\b)\s*", ing.inner):
@@ -756,7 +760,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
-    bracket_unknown = [(i.raw, fat_bracket_residual(i) or cocoa_powder_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and (fat_bracket_residual(i) or cocoa_powder_residual(i)))]
+    bracket_unknown = [(i.raw, fat_bracket_residual(i) or plain_culinary_residual(i) if k == "culinary" else bracket_residual(i), k) for i, k in zip(ings, kinds) if (k in _GUARDED_KINDS + _RESIDUAL_EXTRA_KINDS and bracket_residual(i)) or (k == "culinary" and (fat_bracket_residual(i) or plain_culinary_residual(i)))]
     fat_powders = [i.raw for i, k in zip(ings, kinds) if fat_powder(i, k)]
     animal_powders = [i.raw for i, k in zip(ings, kinds) if animal_powder(i, k)]
     animal_dry = [i.raw for i, k in zip(ings, kinds) if animal_dried(i, k)]
@@ -789,11 +793,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         what = "a bracket on a legume, vegetable, fruit or flour item" if not any(nut_flags) else ("a bracket on a nut or seed item" if all(nut_flags) else "a bracket on a food item")
         tail = "), so neither Group 1 nor Group 3 is established while part of the item is unassessed"
         names = " names content the vocabulary does not recognise ("
-        cocoa_raws = {i.raw for i in ings if cocoa_powder_residual(i)}
-        if any(raw in cocoa_raws for raw, _, _ in bracket_unknown):   # cocoa-powder-24: the plain-food condition, not a culinary-composition check
-            what = "a bracket on cocoa powder" if all(raw in cocoa_raws for raw, _, _ in bracket_unknown) else "a bracket on a food item"
-            names = " adds content beyond the plain unsweetened food the source names ("
-            tail = "), so the item is not established as plain cocoa powder and no group is asserted"
+        plain_cul = {i.raw: lookup(i.name)["term"] for i in ings if plain_culinary_residual(i)}
+        if any(raw in plain_cul for raw, _, _ in bracket_unknown):   # cocoa-powder-24 / pool-a-24: the plain-food condition, not a culinary-composition check
+            terms = {plain_cul[raw] for raw, _, _ in bracket_unknown if raw in plain_cul}
+            what = f"a bracket on {sorted(terms)[0]}" if len(terms) == 1 and all(raw in plain_cul for raw, _, _ in bracket_unknown) else "a bracket on a food item"
+            names = " adds content beyond the plain food the source names ("
+            tail = f"), so the item is not established as plain {sorted(terms)[0]} and no group is asserted" if len(terms) == 1 else "), so the items are not established as the plain foods the sources name and no group is asserted"
         elif any(cul_flags):      # culinary-guard-1: an oil or fat item (Group 2 at stake); its bracket part may be unrecognised OR a recognised food that is not a culinary ingredient
             what = "a bracket on a processed culinary ingredient" if all(cul_flags) else "a bracket on a food item"
             names = " names content that is unrecognised or is a different food, not a culinary ingredient ("

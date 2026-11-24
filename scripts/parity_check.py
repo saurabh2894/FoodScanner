@@ -467,7 +467,16 @@ _NESTED_3_TEXTS = [
     "Ingredients: cocoa powder (alkalised).",
     "Ingredients: Milk, Cocoa Powder, Sugar.",
     "Ingredients: cocoa.",
-    "Ingredients: cocoa solids."
+    "Ingredients: cocoa solids.",
+    # pool-a-24: the generalised plain-food condition on the four new culinary rows
+    "Ingredients: Coconut Cream.",
+    "Ingredients: Milk Cream (4%).",
+    "Ingredients: Unsweetened Baking Chocolate.",
+    "Ingredients: Gelatin Powder (unsweetened).",
+    "Ingredients: Coconut Cream (Sugar).",
+    "Ingredients: Milk Cream (sugar, flavour).",
+    "Ingredients: baking chocolate.",
+    "Ingredients: Milk, Milk Cream, Sugar."
 ]
 for _texts in (CORPUS, PASTE):
     _texts.extend(t for t in _NESTED_3_TEXTS if t not in _texts)
