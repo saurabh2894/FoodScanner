@@ -1217,6 +1217,9 @@ for _target in (CORPUS, PASTE):
 # lemon-grass-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Lemon grass', 'Lemon grass, Salt', 'Rice, Lemon grass', 'Lemon grass (5%), Rice', 'Dried lemon grass, Rice', 'Lemon grass powder, Rice', 'Lemon grass paste, Rice', 'Lemon grass flavour', 'Lemongrass', 'Lemongrass, Salt', 'Rice, Lemongrass', 'Lemongrass (5%), Rice', 'Dried lemongrass, Rice', 'Lemongrass powder, Rice', 'Lemongrass paste, Rice', 'Lemongrass flavour'])
+# algae-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Kelp, Salt', 'Dried kelp, Salt', 'Kelp powder, Salt', 'Kelp extract, Salt', 'Colour (Kelp)', 'Kelp flavour', 'Laver, Salt', 'Dried laver, Salt', 'Laver powder, Salt', 'Laver extract, Salt', 'Colour (Laver)', 'Laver flavour', 'Wakame, Salt', 'Dried wakame, Salt', 'Wakame powder, Salt', 'Wakame extract, Salt', 'Colour (Wakame)', 'Wakame flavour', 'Spirulina, Salt', 'Dried spirulina, Salt', 'Spirulina powder, Salt', 'Spirulina extract, Salt', 'Colour (Spirulina)', 'Spirulina flavour'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1275,6 +1278,9 @@ for _target in (CORPUS, PASTE):
 # lemon-grass-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Lemon grass', 'Lemon grass, Salt', 'Rice, Lemon grass', 'Lemon grass (5%), Rice', 'Dried lemon grass, Rice', 'Lemon grass powder, Rice', 'Lemon grass paste, Rice', 'Lemon grass flavour', 'Lemongrass', 'Lemongrass, Salt', 'Rice, Lemongrass', 'Lemongrass (5%), Rice', 'Dried lemongrass, Rice', 'Lemongrass powder, Rice', 'Lemongrass paste, Rice', 'Lemongrass flavour'])
+# algae-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Kelp, Salt', 'Dried kelp, Salt', 'Kelp powder, Salt', 'Kelp extract, Salt', 'Colour (Kelp)', 'Kelp flavour', 'Laver, Salt', 'Dried laver, Salt', 'Laver powder, Salt', 'Laver extract, Salt', 'Colour (Laver)', 'Laver flavour', 'Wakame, Salt', 'Dried wakame, Salt', 'Wakame powder, Salt', 'Wakame extract, Salt', 'Colour (Wakame)', 'Wakame flavour', 'Spirulina, Salt', 'Dried spirulina, Salt', 'Spirulina powder, Salt', 'Spirulina extract, Salt', 'Colour (Spirulina)', 'Spirulina flavour'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1332,6 +1338,9 @@ for _target in (CORPUS, PASTE):
 # lemon-grass-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Lemon grass', 'Lemon grass, Salt', 'Rice, Lemon grass', 'Lemon grass (5%), Rice', 'Dried lemon grass, Rice', 'Lemon grass powder, Rice', 'Lemon grass paste, Rice', 'Lemon grass flavour', 'Lemongrass', 'Lemongrass, Salt', 'Rice, Lemongrass', 'Lemongrass (5%), Rice', 'Dried lemongrass, Rice', 'Lemongrass powder, Rice', 'Lemongrass paste, Rice', 'Lemongrass flavour'])
+# algae-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Kelp, Salt', 'Dried kelp, Salt', 'Kelp powder, Salt', 'Kelp extract, Salt', 'Colour (Kelp)', 'Kelp flavour', 'Laver, Salt', 'Dried laver, Salt', 'Laver powder, Salt', 'Laver extract, Salt', 'Colour (Laver)', 'Laver flavour', 'Wakame, Salt', 'Dried wakame, Salt', 'Wakame powder, Salt', 'Wakame extract, Salt', 'Colour (Wakame)', 'Wakame flavour', 'Spirulina, Salt', 'Dried spirulina, Salt', 'Spirulina powder, Salt', 'Spirulina extract, Salt', 'Colour (Spirulina)', 'Spirulina flavour'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1389,6 +1398,9 @@ for _target in (CORPUS, PASTE):
 # lemon-grass-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Lemon grass', 'Lemon grass, Salt', 'Rice, Lemon grass', 'Lemon grass (5%), Rice', 'Dried lemon grass, Rice', 'Lemon grass powder, Rice', 'Lemon grass paste, Rice', 'Lemon grass flavour', 'Lemongrass', 'Lemongrass, Salt', 'Rice, Lemongrass', 'Lemongrass (5%), Rice', 'Dried lemongrass, Rice', 'Lemongrass powder, Rice', 'Lemongrass paste, Rice', 'Lemongrass flavour'])
+# algae-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Kelp, Salt', 'Dried kelp, Salt', 'Kelp powder, Salt', 'Kelp extract, Salt', 'Colour (Kelp)', 'Kelp flavour', 'Laver, Salt', 'Dried laver, Salt', 'Laver powder, Salt', 'Laver extract, Salt', 'Colour (Laver)', 'Laver flavour', 'Wakame, Salt', 'Dried wakame, Salt', 'Wakame powder, Salt', 'Wakame extract, Salt', 'Colour (Wakame)', 'Wakame flavour', 'Spirulina, Salt', 'Dried spirulina, Salt', 'Spirulina powder, Salt', 'Spirulina extract, Salt', 'Colour (Spirulina)', 'Spirulina flavour'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1446,6 +1458,9 @@ for _target in (CORPUS, PASTE):
 # lemon-grass-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Lemon grass', 'Lemon grass, Salt', 'Rice, Lemon grass', 'Lemon grass (5%), Rice', 'Dried lemon grass, Rice', 'Lemon grass powder, Rice', 'Lemon grass paste, Rice', 'Lemon grass flavour', 'Lemongrass', 'Lemongrass, Salt', 'Rice, Lemongrass', 'Lemongrass (5%), Rice', 'Dried lemongrass, Rice', 'Lemongrass powder, Rice', 'Lemongrass paste, Rice', 'Lemongrass flavour'])
+# algae-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Kelp, Salt', 'Dried kelp, Salt', 'Kelp powder, Salt', 'Kelp extract, Salt', 'Colour (Kelp)', 'Kelp flavour', 'Laver, Salt', 'Dried laver, Salt', 'Laver powder, Salt', 'Laver extract, Salt', 'Colour (Laver)', 'Laver flavour', 'Wakame, Salt', 'Dried wakame, Salt', 'Wakame powder, Salt', 'Wakame extract, Salt', 'Colour (Wakame)', 'Wakame flavour', 'Spirulina, Salt', 'Dried spirulina, Salt', 'Spirulina powder, Salt', 'Spirulina extract, Salt', 'Colour (Spirulina)', 'Spirulina flavour'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
