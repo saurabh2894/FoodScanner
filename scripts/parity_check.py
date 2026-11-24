@@ -1193,6 +1193,9 @@ for _target in (CORPUS, PASTE):
 # chives-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
+# grains-rare-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Einkorn', 'Einkorn, Salt', 'Einkorn flour', 'Einkorn, Maltodextrin', 'Fonio', 'Fonio, Salt', 'Fonio flour', 'Fonio, Maltodextrin', 'Khorasan', 'Khorasan, Salt', 'Khorasan flour', 'Khorasan, Maltodextrin', 'Farro', 'Farro, Salt', 'Farro flour', 'Farro, Maltodextrin', 'Bulgur', 'Bulgur, Salt', 'Bulgur flour', 'Bulgur, Maltodextrin', 'Wheat semolina (75%), Bulgur, Mustard', 'Salt, Farro'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1227,6 +1230,9 @@ for _target in (CORPUS, PASTE):
 # chives-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
+# grains-rare-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Einkorn', 'Einkorn, Salt', 'Einkorn flour', 'Einkorn, Maltodextrin', 'Fonio', 'Fonio, Salt', 'Fonio flour', 'Fonio, Maltodextrin', 'Khorasan', 'Khorasan, Salt', 'Khorasan flour', 'Khorasan, Maltodextrin', 'Farro', 'Farro, Salt', 'Farro flour', 'Farro, Maltodextrin', 'Bulgur', 'Bulgur, Salt', 'Bulgur flour', 'Bulgur, Maltodextrin', 'Wheat semolina (75%), Bulgur, Mustard', 'Salt, Farro'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1260,6 +1266,9 @@ for _target in (CORPUS, PASTE):
 # chives-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
+# grains-rare-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Einkorn', 'Einkorn, Salt', 'Einkorn flour', 'Einkorn, Maltodextrin', 'Fonio', 'Fonio, Salt', 'Fonio flour', 'Fonio, Maltodextrin', 'Khorasan', 'Khorasan, Salt', 'Khorasan flour', 'Khorasan, Maltodextrin', 'Farro', 'Farro, Salt', 'Farro flour', 'Farro, Maltodextrin', 'Bulgur', 'Bulgur, Salt', 'Bulgur flour', 'Bulgur, Maltodextrin', 'Wheat semolina (75%), Bulgur, Mustard', 'Salt, Farro'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1293,6 +1302,9 @@ for _target in (CORPUS, PASTE):
 # chives-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
+# grains-rare-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Einkorn', 'Einkorn, Salt', 'Einkorn flour', 'Einkorn, Maltodextrin', 'Fonio', 'Fonio, Salt', 'Fonio flour', 'Fonio, Maltodextrin', 'Khorasan', 'Khorasan, Salt', 'Khorasan flour', 'Khorasan, Maltodextrin', 'Farro', 'Farro, Salt', 'Farro flour', 'Farro, Maltodextrin', 'Bulgur', 'Bulgur, Salt', 'Bulgur flour', 'Bulgur, Maltodextrin', 'Wheat semolina (75%), Bulgur, Mustard', 'Salt, Farro'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1326,6 +1338,9 @@ for _target in (CORPUS, PASTE):
 # chives-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
+# grains-rare-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Einkorn', 'Einkorn, Salt', 'Einkorn flour', 'Einkorn, Maltodextrin', 'Fonio', 'Fonio, Salt', 'Fonio flour', 'Fonio, Maltodextrin', 'Khorasan', 'Khorasan, Salt', 'Khorasan flour', 'Khorasan, Maltodextrin', 'Farro', 'Farro, Salt', 'Farro flour', 'Farro, Maltodextrin', 'Bulgur', 'Bulgur, Salt', 'Bulgur flour', 'Bulgur, Maltodextrin', 'Wheat semolina (75%), Bulgur, Mustard', 'Salt, Farro'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
