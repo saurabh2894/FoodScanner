@@ -1,0 +1,1 @@
+lemon-grass-24: lemon grass (FDC SR Legacy 168573 "Lemon grass (citronella), raw") as an herb_spice row, class-instance of the FAO Group 1 "herbs and spices" example. class-bulk-2 queued it as an herb rather than a vegetable and it was never added. "lemongrass" is a synonym of the row, not a second head. Flip gate: 0.
