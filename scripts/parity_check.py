@@ -1184,6 +1184,9 @@ _CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cann
 _fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
+# wheat-semolina alias parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1209,6 +1212,9 @@ _CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cann
 _fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
+# wheat-semolina alias parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1233,6 +1239,9 @@ _CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cann
 _fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
+# wheat-semolina alias parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1257,6 +1266,9 @@ _CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cann
 _fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
+# wheat-semolina alias parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1281,6 +1293,9 @@ _CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cann
 _fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
+# wheat-semolina alias parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
