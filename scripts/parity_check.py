@@ -1199,6 +1199,9 @@ for _target in (CORPUS, PASTE):
 # clause-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Pasta', 'Pasta, Salt', 'Pasta, Maltodextrin', 'Pasta (Salted)', 'Couscous', 'Couscous, Salt', 'Couscous, Maltodextrin', 'Couscous (Salted)', 'Polenta', 'Polenta, Salt', 'Polenta, Maltodextrin', 'Polenta (Salted)', 'Rye', 'Rye, Salt', 'Rye, Maltodextrin', 'Rye (Salted)', 'Poppy seeds', 'Poppy seeds, Salt', 'Poppy seeds, Maltodextrin', 'Poppy seeds (Salted)', 'Caraway seeds', 'Caraway seeds, Salt', 'Caraway seeds, Maltodextrin', 'Caraway seeds (Salted)', 'Hemp seeds', 'Hemp seeds, Salt', 'Hemp seeds, Maltodextrin', 'Hemp seeds (Salted)', 'Lotus seeds', 'Lotus seeds, Salt', 'Lotus seeds, Maltodextrin', 'Lotus seeds (Salted)', 'Pasta (Egg, Wheat flour)', 'Cheese pasta', 'Pasta sauce', 'Wheat semolina (75%), Couscous, Mustard'])
+# group2-named-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1239,6 +1242,9 @@ for _target in (CORPUS, PASTE):
 # clause-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Pasta', 'Pasta, Salt', 'Pasta, Maltodextrin', 'Pasta (Salted)', 'Couscous', 'Couscous, Salt', 'Couscous, Maltodextrin', 'Couscous (Salted)', 'Polenta', 'Polenta, Salt', 'Polenta, Maltodextrin', 'Polenta (Salted)', 'Rye', 'Rye, Salt', 'Rye, Maltodextrin', 'Rye (Salted)', 'Poppy seeds', 'Poppy seeds, Salt', 'Poppy seeds, Maltodextrin', 'Poppy seeds (Salted)', 'Caraway seeds', 'Caraway seeds, Salt', 'Caraway seeds, Maltodextrin', 'Caraway seeds (Salted)', 'Hemp seeds', 'Hemp seeds, Salt', 'Hemp seeds, Maltodextrin', 'Hemp seeds (Salted)', 'Lotus seeds', 'Lotus seeds, Salt', 'Lotus seeds, Maltodextrin', 'Lotus seeds (Salted)', 'Pasta (Egg, Wheat flour)', 'Cheese pasta', 'Pasta sauce', 'Wheat semolina (75%), Couscous, Mustard'])
+# group2-named-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1278,6 +1284,9 @@ for _target in (CORPUS, PASTE):
 # clause-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Pasta', 'Pasta, Salt', 'Pasta, Maltodextrin', 'Pasta (Salted)', 'Couscous', 'Couscous, Salt', 'Couscous, Maltodextrin', 'Couscous (Salted)', 'Polenta', 'Polenta, Salt', 'Polenta, Maltodextrin', 'Polenta (Salted)', 'Rye', 'Rye, Salt', 'Rye, Maltodextrin', 'Rye (Salted)', 'Poppy seeds', 'Poppy seeds, Salt', 'Poppy seeds, Maltodextrin', 'Poppy seeds (Salted)', 'Caraway seeds', 'Caraway seeds, Salt', 'Caraway seeds, Maltodextrin', 'Caraway seeds (Salted)', 'Hemp seeds', 'Hemp seeds, Salt', 'Hemp seeds, Maltodextrin', 'Hemp seeds (Salted)', 'Lotus seeds', 'Lotus seeds, Salt', 'Lotus seeds, Maltodextrin', 'Lotus seeds (Salted)', 'Pasta (Egg, Wheat flour)', 'Cheese pasta', 'Pasta sauce', 'Wheat semolina (75%), Couscous, Mustard'])
+# group2-named-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1317,6 +1326,9 @@ for _target in (CORPUS, PASTE):
 # clause-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Pasta', 'Pasta, Salt', 'Pasta, Maltodextrin', 'Pasta (Salted)', 'Couscous', 'Couscous, Salt', 'Couscous, Maltodextrin', 'Couscous (Salted)', 'Polenta', 'Polenta, Salt', 'Polenta, Maltodextrin', 'Polenta (Salted)', 'Rye', 'Rye, Salt', 'Rye, Maltodextrin', 'Rye (Salted)', 'Poppy seeds', 'Poppy seeds, Salt', 'Poppy seeds, Maltodextrin', 'Poppy seeds (Salted)', 'Caraway seeds', 'Caraway seeds, Salt', 'Caraway seeds, Maltodextrin', 'Caraway seeds (Salted)', 'Hemp seeds', 'Hemp seeds, Salt', 'Hemp seeds, Maltodextrin', 'Hemp seeds (Salted)', 'Lotus seeds', 'Lotus seeds, Salt', 'Lotus seeds, Maltodextrin', 'Lotus seeds (Salted)', 'Pasta (Egg, Wheat flour)', 'Cheese pasta', 'Pasta sauce', 'Wheat semolina (75%), Couscous, Mustard'])
+# group2-named-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1356,6 +1368,9 @@ for _target in (CORPUS, PASTE):
 # clause-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Pasta', 'Pasta, Salt', 'Pasta, Maltodextrin', 'Pasta (Salted)', 'Couscous', 'Couscous, Salt', 'Couscous, Maltodextrin', 'Couscous (Salted)', 'Polenta', 'Polenta, Salt', 'Polenta, Maltodextrin', 'Polenta (Salted)', 'Rye', 'Rye, Salt', 'Rye, Maltodextrin', 'Rye (Salted)', 'Poppy seeds', 'Poppy seeds, Salt', 'Poppy seeds, Maltodextrin', 'Poppy seeds (Salted)', 'Caraway seeds', 'Caraway seeds, Salt', 'Caraway seeds, Maltodextrin', 'Caraway seeds (Salted)', 'Hemp seeds', 'Hemp seeds, Salt', 'Hemp seeds, Maltodextrin', 'Hemp seeds (Salted)', 'Lotus seeds', 'Lotus seeds, Salt', 'Lotus seeds, Maltodextrin', 'Lotus seeds (Salted)', 'Pasta (Egg, Wheat flour)', 'Cheese pasta', 'Pasta sauce', 'Wheat semolina (75%), Couscous, Mustard'])
+# group2-named-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
