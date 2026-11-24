@@ -28,8 +28,9 @@ def test_synthetic_bad_rows_block_the_gate():
     assert any("not an existing lexicon row" in e for e in gate([{"from": "zorbium seeds", "to": "no such row"}])["errors"])
     assert gate([{"from": "cumin", "to": "cumin"}])["dropped"] == [{"from": "cumin", "why": "already a lexicon term"}]
     assert any("listed twice" in e for e in gate([{"from": "zorbium seeds", "to": "cumin"}, {"from": "zorbium seeds", "to": "cumin"}])["errors"])
-    d = gate([{"from": "curry leaves", "to": "dried curry leaves"}])                     # the real drift case: an alias that rewrites an existing row's own name
-    assert d["verdict"] == "BLOCKED" and any("existing terms whose normalised name" in e for e in d["errors"])
+    # curry-leaves-24 made "curry leaves" a lexicon row, so the old drift case (alias "curry leaves" -> "dried curry leaves") is now stopped one step earlier, as a duplicate of an existing term.
+    d = gate([{"from": "curry leaves", "to": "dried curry leaves"}])
+    assert d["dropped"] == [{"from": "curry leaves", "why": "already a lexicon term"}]
 
 
 def test_synthetic_a_processed_form_control_that_becomes_recognised_blocks():

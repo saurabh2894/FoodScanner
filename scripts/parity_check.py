@@ -1187,6 +1187,9 @@ for _target in (CORPUS, PASTE):
 # wheat-semolina alias parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
+# curry-leaves-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1215,6 +1218,9 @@ for _target in (CORPUS, PASTE):
 # wheat-semolina alias parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
+# curry-leaves-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1242,6 +1248,9 @@ for _target in (CORPUS, PASTE):
 # wheat-semolina alias parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
+# curry-leaves-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1269,6 +1278,9 @@ for _target in (CORPUS, PASTE):
 # wheat-semolina alias parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
+# curry-leaves-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1296,6 +1308,9 @@ for _target in (CORPUS, PASTE):
 # wheat-semolina alias parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Wheat semolina', 'Wheat semolina (75%)', 'Wheat Semolina, Salt', 'Wheat semolina, Maltodextrin', 'Wheat semolina (Salt)', 'Wheat semolina powder'])
+# curry-leaves-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
