@@ -1202,6 +1202,9 @@ for _target in (CORPUS, PASTE):
 # group2-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
+# sweetener-names-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1245,6 +1248,9 @@ for _target in (CORPUS, PASTE):
 # group2-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
+# sweetener-names-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1287,6 +1293,9 @@ for _target in (CORPUS, PASTE):
 # group2-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
+# sweetener-names-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1329,6 +1338,9 @@ for _target in (CORPUS, PASTE):
 # group2-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
+# sweetener-names-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1371,6 +1383,9 @@ for _target in (CORPUS, PASTE):
 # group2-named-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Molasses', 'Molasses, Salt', 'Molasses, Maltodextrin', 'Molasses (Colour)', 'Dried molasses', 'Molasses, Flavour', 'Maple syrup', 'Maple syrup, Salt', 'Maple syrup, Maltodextrin', 'Maple syrup (Colour)', 'Dried maple syrup', 'Maple syrup, Flavour', 'Wheat flour, Maple syrup, Mustard', 'Maple flavoured syrup', 'Maple'])
+# sweetener-names-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Wheat flour, Salt, Aspartame', 'Water, Aspartame', 'Aspartame (INS 950)', 'Wheat flour, Salt, Sodium cyclamate', 'Water, Sodium cyclamate', 'Sodium cyclamate (INS 950)', 'Wheat flour, Salt, Sucralose', 'Water, Sucralose', 'Sucralose (INS 950)', 'Wheat flour, Salt, Acesulfame potassium', 'Water, Acesulfame potassium', 'Acesulfame potassium (INS 950)', 'Wheat flour, Salt, Saccharin', 'Water, Saccharin', 'Saccharin (INS 950)', 'Wheat flour, Salt, Steviol glycosides', 'Water, Steviol glycosides', 'Steviol glycosides (INS 950)', 'Stevia', 'Water, Sweeteners (Jaggery, Sucralose)', 'Wheat flour, Salt'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
