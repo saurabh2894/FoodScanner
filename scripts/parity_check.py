@@ -1179,6 +1179,11 @@ _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "toma
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _TOMATO_TERMS for f in _ft)
+# canned-fish-g3-1 parity.
+_CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "canned_fish_rows_24" / "staged_rows.csv").open(newline=""))]
+_fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1199,6 +1204,11 @@ _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "toma
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _TOMATO_TERMS for f in _ft)
+# canned-fish-g3-1 parity.
+_CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "canned_fish_rows_24" / "staged_rows.csv").open(newline=""))]
+_fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1218,6 +1228,11 @@ _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "toma
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _TOMATO_TERMS for f in _ft)
+# canned-fish-g3-1 parity.
+_CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "canned_fish_rows_24" / "staged_rows.csv").open(newline=""))]
+_fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1237,6 +1252,11 @@ _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "toma
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _TOMATO_TERMS for f in _ft)
+# canned-fish-g3-1 parity.
+_CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "canned_fish_rows_24" / "staged_rows.csv").open(newline=""))]
+_fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1256,6 +1276,11 @@ _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "toma
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _TOMATO_TERMS for f in _ft)
+# canned-fish-g3-1 parity.
+_CANNED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "canned_fish_rows_24" / "staged_rows.csv").open(newline=""))]
+_fcf = ['{t}', '{t}, Water, Salt', '{t}, Sunflower Oil', '{t} (in Oil)', '{t} (Water, Salt)', '{t}, Tomato Sauce', '{t}, Soy Protein', '{t} powder', '{t}, {t}', '{t} (Tuna, Salt)', 'Smoked {t}', '{t}, Milk', 'Salt, {t}', '{t}, Colour (102)']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CANNED_TERMS for f in _fcf)
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 

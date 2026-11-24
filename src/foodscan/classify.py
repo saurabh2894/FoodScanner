@@ -352,6 +352,34 @@ def tomato_conc_verdict(ings):
     return (3, "tomato concentrate with stated salt or sugar (Brazil Dietary Guidelines Group 3: 'tomato extract or concentrates (with salt and/or sugar)')")
 
 
+# canned-fish-g3-1: Brazil Dietary Guidelines Group 3 "canned sardine and tuna" and PAHO NP Model Panel A "canned sardine and tuna" name the CANNED form exactly. Rows carry 'CANNED-FISH-G3' and exist only for the canned/tinned names;
+# bare tuna and sardine stay unrecognised (a bare word would be read as raw). Group 3 when the item stands alone, with only water, salt or a plain oil as siblings, and no other bracket content or form word; anything else abstains.
+_CANNED_MARK = "CANNED-FISH-G3"
+_CANNED_SIBLINGS = frozenset({"water", "salt", "olive oil", "sunflower oil", "vegetable oil", "soybean oil", "refined oil", "edible vegetable oil"})
+_CANNED_INNER_OK = frozenset({"oil", "olive oil", "sunflower oil", "vegetable oil", "salt", "water", "brine"})
+_CANNED_ABSTAIN = _CHEESE_ABSTAIN - {"canned", "tinned"}
+
+
+def is_canned_fish_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _CANNED_MARK in row["source"]
+
+
+def canned_fish_verdict(ings):
+    idx = [n for n, i in enumerate(ings) if is_canned_fish_row(lookup(i.name))]
+    if not idx:
+        return None
+    if len(idx) != 1:
+        return (None, "more than one canned fish item is listed, so the combination is not established")
+    t = ings[idx[0]]
+    others = [i for n, i in enumerate(ings) if n != idx[0]]
+    if any((lookup(o.name) or {}).get("term") not in _CANNED_SIBLINGS or o.inner for o in others):
+        return (None, "the list holds something besides the canned fish and water, salt or a plain oil, so no source read here places the combination")
+    parts = [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", re.sub(r"^\s*(?:in|packed in)\s+", "", t.inner or "", flags=re.I)) if p.strip()]
+    if any(p not in _CANNED_INNER_OK for p in parts) or _added(t, _CANNED_ABSTAIN):
+        return (None, "the item's bracket or wording holds something besides oil, salt, water or brine, or a stated form, so no source read here places it")
+    return (3, "canned fish (Brazil Dietary Guidelines Group 3 and PAHO NP Model Panel A: 'canned sardine and tuna')")
+
+
 def animal_powder(ing, kind: str) -> bool:
     return kind == "whole_food" and is_animal_row(lookup(ing.name)) and _added(ing, _POWDER_WORDS)
 
@@ -801,6 +829,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         return Classification(None, reason="ingredients not in the local vocabulary, so processing level cannot be judged: " + ", ".join(unrecognised) + other_open_items(ings, set(unrecognised)))
 
     kinds = [lookup(i.name)["kind"] for i in ings]
+    cv = canned_fish_verdict(ings)
+    if cv is not None:
+        if cv[0] == 3:
+            c0 = next(i for i in ings if is_canned_fish_row(lookup(i.name)))
+            return Classification(3, drivers=[Driver(c0.raw, cv[1], lookup(c0.name)["source"], c0.section)])
+        return Classification(None, reason="a canned fish is named: " + cv[1] + ", so no group is asserted")
     tv = tomato_conc_verdict(ings)
     if tv is not None:
         if tv[0] == 3:

@@ -699,6 +699,22 @@
     const DRIED_SCOPES = ["DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish"];
     // cheese-g3-1 (mirrors classify.is_cheese_row / _CHEESE_ABSTAIN)
     const CHEESE_ABSTAIN = new Set(["powder", "powdered", "processed", "smoked", "spread", "sauce", "flavour", "flavor", "flavoured", "flavored", "analogue", "analog", "substitute", "dip", "grated", "shredded", "dried", "dehydrated", "canned", "tinned", "pickled", "breaded", "fried", "baked", "melted", "sliced", "blend"]);
+    // canned-fish-g3-1 (mirrors classify.is_canned_fish_row / canned_fish_verdict)
+    const CANNED_SIBLINGS = new Set(["water", "salt", "olive oil", "sunflower oil", "vegetable oil", "soybean oil", "refined oil", "edible vegetable oil"]);
+    const CANNED_INNER_OK = new Set(["oil", "olive oil", "sunflower oil", "vegetable oil", "salt", "water", "brine"]);
+    const CANNED_ABSTAIN = new Set([...CHEESE_ABSTAIN].filter((w) => w !== "canned" && w !== "tinned"));
+    const isCannedFishRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CANNED-FISH-G3");
+    const cannedFishVerdict = (ings) => {
+      const idx = ings.map((i, n) => (isCannedFishRow(lookup(i.name)) ? n : -1)).filter((n) => n >= 0);
+      if (!idx.length) return null;
+      if (idx.length !== 1) return [null, "more than one canned fish item is listed, so the combination is not established"];
+      const t = ings[idx[0]];
+      const others = ings.filter((_, n) => n !== idx[0]);
+      if (others.some((o) => !CANNED_SIBLINGS.has((lookup(o.name) || {}).term) || o.inner)) return [null, "the list holds something besides the canned fish and water, salt or a plain oil, so no source read here places the combination"];
+      const parts = (t.inner || "").replace(/^\s*(?:in|packed in)\s+/i, "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter(Boolean);
+      if (parts.some((p) => !CANNED_INNER_OK.has(p)) || addedIn(t, CANNED_ABSTAIN)) return [null, "the item's bracket or wording holds something besides oil, salt, water or brine, or a stated form, so no source read here places it"];
+      return [3, "canned fish (Brazil Dietary Guidelines Group 3 and PAHO NP Model Panel A: 'canned sardine and tuna')"];
+    };
     // tomato-g3-1 (mirrors classify.is_tomato_conc_row / tomato_conc_verdict)
     const TOMATO_OK_TERMS = new Set(["salt", "sugar", "iodised salt"]);
     const TOMATO_INNER_OK = new Set(["tomato", "tomatoes", "salt", "sugar"]);
@@ -909,6 +925,11 @@
       if (ings.length === 1 && kinds[0] === "named_water") return {group:1,drivers:[{ingredient:ings[0].raw,detail:"single plain carbonated water; exact-named Group 1 dietary-water example (Khandpur et al. 2021 Table 3)",source:lookup(ings[0].name).source,section:ings[0].section ?? null}],reason:null};
       const substantive = ings.map((i, n) => [i, kinds[n]]).filter(([, k]) => k !== "neutral" && k !== "culture");
       const kinds0 = ings.map((i) => lookup(i.name).kind);
+      const cv = cannedFishVerdict(ings);
+      if (cv) {
+        if (cv[0] === 3) { const c0 = ings.find((i) => isCannedFishRow(lookup(i.name))); return { group: 3, drivers: [{ ingredient: c0.raw, detail: cv[1], source: lookup(c0.name).source, section: c0.section ?? null }], reason: null }; }
+        return { group: null, drivers: [], reason: "a canned fish is named: " + cv[1] + ", so no group is asserted" };
+      }
       const tv = tomatoConcVerdict(ings);
       if (tv) {
         if (tv[0] === 3) { const t0 = ings.find((i) => isTomatoConcRow(lookup(i.name))); return { group: 3, drivers: [{ ingredient: t0.raw, detail: tv[1], source: lookup(t0.name).source, section: t0.section ?? null }], reason: null }; }
