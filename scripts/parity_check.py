@@ -1190,6 +1190,9 @@ for _target in (CORPUS, PASTE):
 # curry-leaves-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
+# chives-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1221,6 +1224,9 @@ for _target in (CORPUS, PASTE):
 # curry-leaves-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
+# chives-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1251,6 +1257,9 @@ for _target in (CORPUS, PASTE):
 # curry-leaves-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
+# chives-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1281,6 +1290,9 @@ for _target in (CORPUS, PASTE):
 # curry-leaves-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
+# chives-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
@@ -1311,6 +1323,9 @@ for _target in (CORPUS, PASTE):
 # curry-leaves-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f + '.' for f in ['Curry leaves', 'Curry leaves, Salt', 'Dried curry leaves', 'Curry leaves powder', 'Curry leaves (Colour)', 'Curry leaves, Maltodextrin', 'Wheat semolina (75%), Curry leaves, Mustard', 'Salt, Curry leaves'])
+# chives-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f + '.' for f in ['Chives', 'Chives, Salt', 'Dried chives', 'Chives powder', 'Chives (Colour)', 'Chives, Maltodextrin', 'Wheat semolina (75%), Chives, Mustard', 'Salt, Chives'])
 PAIRS = [(t, 'ocr') for t in CORPUS] + [(t, 'text') for t in PASTE]
 TOTAL = len(PAIRS)
 
