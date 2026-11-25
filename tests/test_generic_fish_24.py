@@ -21,3 +21,13 @@ def test_matches_species_row(form, name):
 def test_held_generics_stay_unrecognised():
     for n in ["Salmon", "Tuna", "Shrimp", "Catfish", "Tilapia", "Roe", "Herring", "Mackerel", "Anchovy"]:
         assert res(n) is None
+
+
+def test_generic_labels_are_excluded_from_the_head_count():
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import count_heads
+    c = count_heads.counts()
+    assert sorted(c["recognition_only"]) == ["cod", "crab", "flounder", "halibut", "lobster", "pollock"]
+    assert c["placed_rows"] - c["canonical_placed"] >= 6
