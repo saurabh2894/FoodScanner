@@ -736,6 +736,9 @@
     const isCheeseRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CHEESE-G3");
     // cured-meat-g3-1 (mirrors classify.is_cured_meat_row / _CURED_ABSTAIN)
     const CURED_ABSTAIN = new Set([...CHEESE_ABSTAIN, "raw", "uncooked", "bits", "bit", "meatless", "vegan", "vegetarian", "plant", "turkey", "chicken", "beef", "pork", "style", "salad", "loaf", "sausage", "stick", "sticks", "cured", "brined", "honey", "water", "added"]);
+    // yoghurt-g1-1 (mirrors classify.is_yoghurt_row / _YOGHURT_ABSTAIN)
+    const YOGHURT_ABSTAIN = new Set([...CHEESE_ABSTAIN, "sweetened", "sugar", "sugared", "fruit", "fruity", "low", "fat", "drinking", "drink", "frozen", "probiotic", "greek", "strawberry", "mango", "vanilla", "honey", "dried", "freeze"]);
+    const isYoghurtRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("YOGHURT-G1");
     const isCuredMeatRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CURED-MEAT-G3");
     const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
@@ -970,6 +973,12 @@
         if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], CHEESE_ABSTAIN))
           return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
         return { group: null, drivers: [], reason: "a cheese is named (" + cheeseNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted" };
+      }
+      const yoghurtNames = ings.filter((i, n) => kinds[n] === "whole_food" && isYoghurtRow(lookup(i.name))).map((i) => i.raw);
+      if (yoghurtNames.length) {
+        if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], YOGHURT_ABSTAIN))
+          return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "plain yoghurt (FAO Table 1 Group 1: 'fresh or pasteurized plain yoghurt'); a sole plain item, identity FSSAI Chapter 2.1 and USDA FDC SR Legacy", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: null, drivers: [], reason: "yoghurt is named (" + yoghurtNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (sweetened, flavoured, fruit, frozen, drinking, powder): the FAO clause names only plain yoghurt, so no group is asserted" };
       }
       const curedNames = ings.filter((i, n) => kinds[n] === "whole_food" && isCuredMeatRow(lookup(i.name))).map((i) => i.raw);
       if (curedNames.length) {

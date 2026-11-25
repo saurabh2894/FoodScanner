@@ -337,6 +337,16 @@ def is_cured_meat_row(row) -> bool:
     return bool(row) and row["kind"] == "whole_food" and _CURED_MARK in row["source"]
 
 
+# yoghurt-g1-1: a row whose source records 'YOGHURT-G1' is plain yoghurt. FAO Table 1 Group 1 prose: "fresh or pasteurized plain yoghurt"; identity FSSAI Chapter 2.1 item 1(f)(xvii) 'yoghurt' and USDA FDC SR Legacy 'Yogurt, plain'.
+# A sole, plain item is Group 1; any list, bracket, sweetened, flavoured, fruit, frozen, drinking, powder or other stated form abstains (the clause names only plain yoghurt).
+_YOGHURT_MARK = "YOGHURT-G1"
+_YOGHURT_ABSTAIN = _CHEESE_ABSTAIN | frozenset({"sweetened", "sugar", "sugared", "fruit", "fruity", "low", "fat", "drinking", "drink", "frozen", "probiotic", "greek", "strawberry", "mango", "vanilla", "honey", "dried", "freeze"})
+
+
+def is_yoghurt_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _YOGHURT_MARK in row["source"]
+
+
 # tomato-g3-1: a row whose source records 'TOMATO-CONC-G3' is a tomato concentrate. Brazil Dietary Guidelines Group 3: "tomato extract or concentrates (with salt and/or sugar)". Group 3 ONLY when salt or sugar is stated
 # (a sibling salt or sugar item, or salt/sugar in the item's own bracket) and nothing else is in the list or bracket; unstated, other additives or other foods abstain (a concentrate with no salt or sugar stated is not placed by the clause).
 _TOMATO_MARK = "TOMATO-CONC-G3"
@@ -925,6 +935,11 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CHEESE_ABSTAIN):
             return Classification(3, drivers=[Driver(ings[0].raw, "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(None, reason="a cheese is named (" + "; ".join(cheese_names) + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted")
+    yoghurt_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_yoghurt_row(lookup(i.name))]
+    if yoghurt_names:
+        if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _YOGHURT_ABSTAIN):
+            return Classification(1, drivers=[Driver(ings[0].raw, "plain yoghurt (FAO Table 1 Group 1: 'fresh or pasteurized plain yoghurt'); a sole plain item, identity FSSAI Chapter 2.1 and USDA FDC SR Legacy", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(None, reason="yoghurt is named (" + "; ".join(yoghurt_names) + ") inside a longer list, with a bracket, or with a stated form (sweetened, flavoured, fruit, frozen, drinking, powder): the FAO clause names only plain yoghurt, so no group is asserted")
     cured_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_cured_meat_row(lookup(i.name))]
     if cured_names:
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CURED_ABSTAIN):

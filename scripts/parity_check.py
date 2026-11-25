@@ -1179,6 +1179,11 @@ _CURED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cured
 _fcm = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Pork)', '{t} powder', 'Smoked {t}', 'Raw {t}', '{t} bits', 'Meatless {t}', 'Turkey {t}', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CURED_TERMS for f in _fcm)
+# yoghurt-g1-1 parity.
+_YOG_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "yoghurt_24" / "staged_rows.csv").open(newline=""))] + ["yogurt"]
+_fyg = ['{t}', '{t}, Salt', '{t}, Sugar', '{t} (Milk)', '{t} powder', 'Fruit {t}', 'Frozen {t}', 'Greek {t}', 'Milk, {t}', '{t} flavour', 'Sweetened {t}', '{t} drink', 'Dried {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _YOG_TERMS for f in _fyg)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
