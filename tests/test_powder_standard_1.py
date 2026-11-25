@@ -60,6 +60,9 @@ def test_synthetic_negative_base_terms_that_stay_out_remain_unassessed(t):
         assert group is None and 'named without its composition' in (a.reason or '')
         assert not a.unassessed  # Recognized sourced celery, but unspecified powder stays unanswered.
         return
+    if t == 'Beet Red Powder':
+        assert group is None and 'name_collision' in (a.reason or '')  # beetroot-24: now an explicit weak-marker abstention, still no group
+        return
     assert group is None and t.lower() in " ".join(u.lower() for u in a.unassessed)
 
 

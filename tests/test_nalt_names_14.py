@@ -85,13 +85,14 @@ def test_celery_leaves_are_an_independently_sourced_positive_not_a_generic_part_
  assert result('100% celery leaves powder')==1
 
 @pytest.mark.parametrize('text,expected',[
- ('beetroot powder powder',None),('100% beetroot powder powder',None),
- ('Whole beetroot powder powder',None),('beetroot powder powder (Sugar)',None),
+ ('beetroot powder powder',None),('100% beetroot powder powder',1),
+ ('Whole beetroot powder powder',1),('beetroot powder powder (Sugar)',3),
  ('beetroot powder powder (100% Rice)',None),
  ('beetroot powder powder (100% beetroot powder)',None),
- ('Mango (beetroot powder Powder)',None),('Mango (100% beetroot powder Powder)',None),
+ ('Mango (beetroot powder Powder)',None),('Mango (100% beetroot powder Powder)',1),
  ('Mango (forage beets Powder)',None),('Mango (100% sugar beets Powder)',None),
- ('beetroot',None),('beets',None),('beetroots',None),('red beets',None),
+ ('beetroot',1),('beets',None),('beetroots',1)  # beetroot-24: label 'beetroot' staged (CoFID 13-164); 'beets' stays out
+ ,('red beets',None),
  ('beetroot powder',None),('100% beetroot powder',1),
  ('whole beetroot powder',1),('beetroot powder (Sugar)',None)])
 def test_narrow_food_names_preserve_the_older_beetroot_powder_surface(text,expected):
@@ -100,5 +101,5 @@ def test_narrow_food_names_preserve_the_older_beetroot_powder_surface(text,expec
 @pytest.mark.parametrize('name',['beets','beetroots','red beets','beetroot','beet red','beetroot red'])
 @pytest.mark.parametrize('form',['{t}','{t} powder','100% {t} powder','Whole {t} powder','Mango (100% {t} Powder)'])
 def test_held_beet_food_colour_collision_is_not_forced_into_a_plain_food(name,form):
- expected=1 if name in {'beetroot','beetroots'} and form in ['100% {t} powder','Whole {t} powder','Mango (100% {t} Powder)'] else None
+ expected=1 if name in {'beetroot','beetroots'} and form in ['{t}','100% {t} powder','Whole {t} powder','Mango (100% {t} Powder)'] else None  # beetroot-24: bare label now a row
  assert result(form.format(t=name))==expected  # Existing explicit beetroot-powder routes stay supported; no new root head.
