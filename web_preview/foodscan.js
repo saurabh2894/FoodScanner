@@ -373,7 +373,7 @@
         if (toFlat.startsWith(term + " ")) tail = "(?:\\s+" + esc(toFlat.slice(term.length + 1)).replace(/ /g, "\\s+") + "(?![a-z]))?";
         return { re: new RegExp(left + esc(term) + right + tail, "g"), to: r.to.toLowerCase() };
       });
-    const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )(?<!source of )(?<!rich in )(?<!high in )" + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
+    const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )" + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
     const descriptors = new Set(T.descriptors.filter((r) => !(r.kinds || "").trim()).map((r) => r.word.toLowerCase()));

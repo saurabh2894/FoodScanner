@@ -43,7 +43,7 @@ def _markers() -> tuple[tuple[re.Pattern, dict], ...]:
     out = []
     for r in load_table("markers.csv"):
         term = flatten(r["term"])
-        out.append((re.compile(rf"(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )(?<!source of )(?<!rich in )(?<!high in ){re.escape(term)}(?![a-z])(?![ -]free(?![a-z]))"), r))
+        out.append((re.compile(rf"(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of ){re.escape(term)}(?![a-z])(?![ -]free(?![a-z]))"), r))
     return tuple(out)
 
 
