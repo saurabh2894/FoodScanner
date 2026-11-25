@@ -39,4 +39,4 @@ def test_source_roles_and_exact_scope():
   assert 'Naming only, not NOVA placement:' in r['source']
  assert 'class-instance' in lookup('corn starch')['source']
  assert 'exact-named' in lookup('baking powder')['source']
- assert g('Potato Starch') is None
+ assert g('Potato Starch') == 2  # culinary-gaps-24: potato starch row added on the same FAO clause (was a held negative control)

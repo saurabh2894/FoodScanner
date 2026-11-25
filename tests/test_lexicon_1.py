@@ -68,7 +68,7 @@ def test_explicit_exclusions_and_blocked_items_did_not_get_rows():
     # Historical pmc-decisions-1 lifted plain/tapioca starch only. Later direct-culinary-2
     # adds corn starch under the exact FAO corn-starch class and USDA NALT identity.
     # Potato and modified forms remain excluded; maize starch is an alias, not a row.
-    for starch in ["potato starch", "modified starch", "maize starch"]:
+    for starch in ["modified starch", "maize starch"]:  # culinary-gaps-24: potato starch added as a row on the same FAO clause as tapioca/corn starch
         assert starch not in rows, f"starch {starch} should not be in lexicon.csv"
     assert rows['corn starch']['kind'] == 'culinary'
     assert 'starches extracted from corn and other plants' in rows['corn starch']['source']

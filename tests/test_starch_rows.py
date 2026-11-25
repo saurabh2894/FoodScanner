@@ -36,7 +36,7 @@ def test_synthetic_negative_modified_forms_are_never_captured_by_the_plain_rows_
     assert not any(d.detail == "single processed culinary ingredient" for d in a.drivers)
 
 
-@pytest.mark.parametrize("t", ["modified corn starch", "modified tapioca starch", "pregelatinised starch", "acid treated starch", "oxidised starch", "corn starch", "maize starch", "potato starch", "starch, modified"])
+@pytest.mark.parametrize("t", ["modified corn starch", "modified tapioca starch", "pregelatinised starch", "acid treated starch", "oxidised starch", "corn starch", "maize starch", "starch, modified"])  # culinary-gaps-24: potato starch removed from the held controls; same FAO clause "starches extracted from corn and other plants", tested in test_culinary_gaps_24.py)
 def test_synthetic_negative_other_starch_names_retain_holds_except_source_reviewed_corn(t):
     if t in {'corn starch', 'maize starch'}:
         # direct-culinary-2: exact corn-starch class + corn/maize identity; not a
