@@ -1,0 +1,1 @@
+generic-fish-24: cod, halibut, pollock, flounder, crab, lobster as generic labels of existing species rows. Not counted as new heads if count_heads treats them as near-duplicates. Held: salmon, tuna, shrimp, catfish, tilapia, roe, snail, herring, mackerel, anchovy, bass.

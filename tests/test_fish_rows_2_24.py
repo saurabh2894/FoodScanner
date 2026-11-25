@@ -42,5 +42,5 @@ def test_synthetic_dried_scope_rules():
 
 
 def test_synthetic_held_generics_stay_unrecognised():
-    for t in ["Tuna", "Salmon", "Shrimp", "Crab", "Lobster", "Cod", "Herring", "Sardine", "Mackerel", "Pollock", "Halibut", "Anchovy", "Prawns", "Catfish", "Tilapia", "Cod Liver Oil"]:
+    for t in ["Tuna", "Salmon", "Shrimp", "Herring", "Sardine", "Mackerel", "Anchovy", "Prawns", "Catfish", "Tilapia", "Cod Liver Oil"]:
         assert g(t)[0] is None, t
