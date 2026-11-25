@@ -1200,6 +1200,11 @@ _fiab = ['{t}', '{t}, Salt', 'Sugar, {t}', 'Wheat flour, {t}', '{t} (5%), Water'
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for a, b in _IAB for t in (a.title(), b.title()) for f in _fiab)
     _target.extend('Ingredients: ' + t + '.' for t in ['Chana dal', 'Chana dal, Salt', 'Chana', 'Urd dal', 'Masur dal'])
+# indian-alias-24c parity (oils).
+_IAC = [(r["from"], r["to"]) for r in _csv.DictReader((ROOT / "evaluation" / "indian_alias_24" / "aliases_c.csv").open(newline=""))]
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for a, b in _IAC for t in (a.title(), b.title()) for f in _fiab)
+    _target.extend('Ingredients: ' + t + '.' for t in ['Rapeseed oil', 'Toria oil', 'Til ka tel', 'Sesame seed oil'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']

@@ -33,7 +33,8 @@ def test_synthetic_plain_oils_stay_group_2_and_hydrogenated_forms_group_4(t):
 
 @pytest.mark.parametrize("t", OILS)
 def test_synthetic_unrecognised_bracket_content_on_an_oil_or_fat_abstains(t):
-    for b in ("XQ9", "oryzanol", "XQ9 Oil", "XQ9 Carrier Oil", "Mineral Oil", "Essential Oil", "XQ9 Fat", "Gingelly Oil"):
+    for b in ("XQ9", "oryzanol", "XQ9 Oil", "XQ9 Carrier Oil", "Mineral Oil", "Essential Oil", "XQ9 Fat", "Kokum Oil"):  # indian-alias-24c: Gingelly Oil is now FSSAI 2.2-paired with sesame oil, so the negative control is a different unrecognised oil
+
         group, a = g(f"{t} ({b})")
         assert group is None and a.reason.startswith("a bracket on a processed culinary ingredient names content that is unrecognised or is a different food, not a culinary ingredient (") and "no group is asserted" in a.reason, (t, b)
 
@@ -51,8 +52,9 @@ def test_synthetic_oil_source_and_recognised_culinary_brackets_stay_group_2(t):
     assert g(t)[0] == 2, t
 
 
-def test_synthetic_no_alias_is_assumed_for_gingelly_or_til_oil():
-    assert g("Sesame Oil (Gingelly Oil)")[0] is None and g("Sesame Oil (Til Oil)")[0] is None
+def test_synthetic_gingelly_and_til_oil_are_the_fssai_paired_names_for_sesame_oil():
+    # indian-alias-24c (FSSAI Chapter 2.2 "TIL OIL (Gingelly or sesame oil)") replaces the earlier agent-authored hold: naming only, bracket of the same oil is no longer an unrecognised different food.
+    assert g("Gingelly Oil")[0] == 2 and g("Til Oil")[0] == 2 and g("Hydrogenated Til Oil")[0] == 4
 
 
 def test_synthetic_hydrogenation_marker_keeps_precedence_over_the_bracket_guard():
