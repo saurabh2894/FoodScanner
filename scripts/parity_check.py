@@ -1189,6 +1189,11 @@ _SF_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "smoked_f
 _fsf = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Atlantic)', '{t} powder', 'Canned {t}', 'Salted {t}', '{t} pate', '{t} flavour', 'Raw {t}', 'Milk, {t}', '{t}, Dill']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _SF_TERMS for f in _fsf)
+# indian-alias-24 parity: each alias and its English term in sole, listed and conditioned forms.
+_IA = [(r["from"], r["to"]) for r in _csv.DictReader((ROOT / "evaluation" / "indian_alias_24" / "aliases.csv").open(newline=""))]
+_fia = ['{t}', '{t}, Salt', '{t} powder', 'Sugar, {t}', 'Wheat flour, {t}', '{t} (5%), Water', 'Milk, Sugar, {t}', 'Dried {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for a, b in _IA for t in (a.title(), b.title()) for f in _fia)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
