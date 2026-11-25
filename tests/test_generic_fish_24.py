@@ -29,5 +29,6 @@ def test_generic_labels_are_excluded_from_the_head_count():
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
     import count_heads
     c = count_heads.counts()
-    assert sorted(c["recognition_only"]) == ["cod", "crab", "flounder", "halibut", "lobster", "pollock"]
+    # yoghurt-24: "plain yoghurt" is recognition-only (variant of the existing dahi head per the FSSAI clubbing list), so it joins the six generic fish labels
+    assert sorted(c["recognition_only"]) == ["cod", "crab", "flounder", "halibut", "lobster", "plain yoghurt", "pollock"]
     assert c["placed_rows"] - c["canonical_placed"] >= 6

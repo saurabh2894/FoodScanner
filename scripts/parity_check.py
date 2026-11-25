@@ -1180,8 +1180,8 @@ _fcm = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Pork)', '{t} powder', 'Smoked {t}
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CURED_TERMS for f in _fcm)
 # yoghurt-g1-1 parity.
-_YOG_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "yoghurt_24" / "staged_rows.csv").open(newline=""))] + ["yogurt"]
-_fyg = ['{t}', '{t}, Salt', '{t}, Sugar', '{t} (Milk)', '{t} powder', 'Fruit {t}', 'Frozen {t}', 'Greek {t}', 'Milk, {t}', '{t} flavour', 'Sweetened {t}', '{t} drink', 'Dried {t}']
+_YOG_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "yoghurt_24" / "staged_rows.csv").open(newline=""))] + ["plain yogurt"]
+_fyg = ['{t}', '{t}, Salt', '{t}, Sugar', '{t} (Milk)', '{t} powder', 'Fruit {t}', 'Frozen {t}', '{t}, Plain yoghurt', 'Greek {t}', 'Milk, {t}', '{t} flavour', 'Sweetened {t}', '{t} drink', 'Dried {t}', 'Yoghurt', 'Yogurt', 'Yoghurt, Sugar']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _YOG_TERMS for f in _fyg)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
