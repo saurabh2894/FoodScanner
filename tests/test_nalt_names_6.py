@@ -93,6 +93,9 @@ def test_established_flaxseed_oil_route_is_not_destroyed_by_a_short_alias():
 
 @pytest.mark.parametrize('term', ['cranberry', 'Dried Cranberries', 'Dried Cranberries (Sugar)', 'tamarind', 'coconut', 'celery', 'Celery Powder'])
 def test_existing_standing_food_and_form_holds_are_not_lifted_by_thesaurus_identity(term):
+    if term=='tamarind':
+        assert answer(term)==1  # tamarind-24: independently sourced fruit lift (FAO Group 1 class, FSSAI 2.3.49, FDC 167763).
+        return
     if term=='celery':
         assert answer(term)==1  # Independently sourced vegetable lift14, not NALT identity alone.
         return

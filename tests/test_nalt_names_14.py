@@ -40,6 +40,9 @@ def test_existing_protein_isolate_marker_remains_a_separate_marker(name):
 
 @pytest.mark.parametrize('name',M['held'])
 def test_no_other_prior_hold_is_lifted(name):
+ if name=='tamarind':
+  assert result(name)==1  # tamarind-24 lift; see tests/test_tamarind_24.py
+  return
  if name in ['greengram', 'blackgram', 'mungo beans', 'mungobeans', 'catjang peas', 'haricot beans', 'mungbeans', 'urd beans']:
   assert result(name)==1  # Source-backed slice13 lift; historical manifest retained.
   return

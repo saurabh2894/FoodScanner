@@ -61,6 +61,9 @@ def test_short_suffix_and_nut_aliases_preserve_established_canonical_spelling(na
 
 @pytest.mark.parametrize('name',['chard','bovine milk','bovine milk solids','star anise','winter melon','haricot beans','catjang peas','mustard leave','cranberry','tamarind','coconut','celery','Oil Roasted Peanuts','Peanut Butter','Peanut Milk','Sugared Peanuts'])
 def test_held_names_and_derivatives_are_not_lifted(name):
+    if name=='tamarind':
+     assert result(name)==1  # tamarind-24 lift; see tests/test_tamarind_24.py
+     return
     if name in ['celery', 'scallions', 'spring onions']:
      assert result(name)==1  # Independently sourced slice14 lift; older manifest retained.
      return

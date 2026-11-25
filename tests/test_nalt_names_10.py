@@ -47,7 +47,7 @@ def test_existing_protein_isolate_marker_remains_a_separate_marker(name):
 
 @pytest.mark.parametrize('name',[n for n in M['held'] if n not in ['dried vegetables','dehydrated vegetables']])
 def test_no_other_prior_hold_is_lifted(name):
- if name in ['celery', 'scallions', 'spring onions']:
+ if name in ['celery', 'scallions', 'spring onions', 'tamarind']:  # tamarind-24: plain tamarind lifted (FAO Group 1 fruit class, FSSAI 2.3.49, FDC 167763); pulp/paste/concentrate/powder forms still abstain; see tests/test_tamarind_24.py
   assert result(name)==1  # Independently sourced slice14 lift; older manifest retained.
   return
  if name in ['greengram', 'blackgram', 'mungo beans', 'mungobeans', 'catjang peas', 'haricot beans', 'mungbeans', 'urd beans']:
