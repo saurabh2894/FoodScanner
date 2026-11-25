@@ -1,0 +1,1 @@
+game-meat-24b: emu, elk, horse, beaver, squirrel, muskrat. Same rules as game-meat-24. Held: goat (the species word alone is deliberately unrecognised because it qualifies milk and cheese: tests/test_species_milk_2b.py) and mutton (alias unverified).
