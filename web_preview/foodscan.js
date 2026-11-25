@@ -734,6 +734,9 @@
       return [3, "tomato concentrate with stated salt or sugar (Brazil Dietary Guidelines Group 3: 'tomato extract or concentrates (with salt and/or sugar)')"];
     };
     const isCheeseRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CHEESE-G3");
+    // cured-meat-g3-1 (mirrors classify.is_cured_meat_row / _CURED_ABSTAIN)
+    const CURED_ABSTAIN = new Set([...CHEESE_ABSTAIN, "raw", "uncooked", "bits", "bit", "meatless", "vegan", "vegetarian", "plant", "turkey", "chicken", "beef", "pork", "style", "salad", "loaf", "sausage", "stick", "sticks", "cured", "brined", "honey", "water", "added"]);
+    const isCuredMeatRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CURED-MEAT-G3");
     const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalPowder = (ing, kind) => kind === "whole_food" && isAnimalRow(lookup(ing.name)) && addedIn(ing, POWDER_WORDS);
@@ -967,6 +970,12 @@
         if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], CHEESE_ABSTAIN))
           return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
         return { group: null, drivers: [], reason: "a cheese is named (" + cheeseNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted" };
+      }
+      const curedNames = ings.filter((i, n) => kinds[n] === "whole_food" && isCuredMeatRow(lookup(i.name))).map((i) => i.raw);
+      if (curedNames.length) {
+        if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], CURED_ABSTAIN))
+          return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "cured meat (FAO Table 1 Group 3 prose: 'processed animal foods such as ham, bacon, pastrami'); a sole plain item, identity USDA FDC SR Legacy", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: null, drivers: [], reason: "a cured meat is named (" + curedNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form or other-species word: no source read here places that form or combination, so no group is asserted" };
       }
       const legumePreserved = ings.filter((i, n) => GUARDED_KINDS.includes(kinds[n]) && legumePreservedForm(i) && !legumeAddedSaltSugarOrBrine(i)).map((i) => i.raw);
       if (legumePreserved.length) {

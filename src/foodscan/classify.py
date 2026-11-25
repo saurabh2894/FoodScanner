@@ -327,6 +327,16 @@ def is_cheese_row(row) -> bool:
     return bool(row) and row["kind"] == "whole_food" and _CHEESE_MARK in row["source"]
 
 
+# cured-meat-g3-1: a row whose source records 'CURED-MEAT-G3' is a named cured pork or beef item (bacon, ham, pastrami). FAO Table 1 Group 3 prose (p.7): "some types of processed animal foods such as ham, bacon, pastrami, and smoked fish";
+# identity is USDA FDC SR Legacy ('Pork, cured, bacon', 'Pork, cured, ham', 'Beef, cured, pastrami'). A sole, plain item is Group 3; any list, bracket, form word or plant/other-species word abstains.
+_CURED_MARK = "CURED-MEAT-G3"
+_CURED_ABSTAIN = _CHEESE_ABSTAIN | frozenset({"raw", "uncooked", "bits", "bit", "meatless", "vegan", "vegetarian", "plant", "turkey", "chicken", "beef", "pork", "style", "salad", "loaf", "sausage", "stick", "sticks", "cured", "brined", "honey", "water", "added"})
+
+
+def is_cured_meat_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _CURED_MARK in row["source"]
+
+
 # tomato-g3-1: a row whose source records 'TOMATO-CONC-G3' is a tomato concentrate. Brazil Dietary Guidelines Group 3: "tomato extract or concentrates (with salt and/or sugar)". Group 3 ONLY when salt or sugar is stated
 # (a sibling salt or sugar item, or salt/sugar in the item's own bracket) and nothing else is in the list or bracket; unstated, other additives or other foods abstain (a concentrate with no salt or sugar stated is not placed by the clause).
 _TOMATO_MARK = "TOMATO-CONC-G3"
@@ -915,6 +925,11 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CHEESE_ABSTAIN):
             return Classification(3, drivers=[Driver(ings[0].raw, "cheese (Brazil Dietary Guidelines Group 3: 'cheeses'; FAO Table 1 Group 3: 'simple cheeses to which salt is added'); a sole plain cheese item", lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(None, reason="a cheese is named (" + "; ".join(cheese_names) + ") inside a longer list, with a bracket, or with a stated form (powder, processed, smoked, spread, sauce, flavoured, grated, sliced): no source read here places that form or combination, so no group is asserted")
+    cured_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_cured_meat_row(lookup(i.name))]
+    if cured_names:
+        if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CURED_ABSTAIN):
+            return Classification(3, drivers=[Driver(ings[0].raw, "cured meat (FAO Table 1 Group 3 prose: 'processed animal foods such as ham, bacon, pastrami'); a sole plain item, identity USDA FDC SR Legacy", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(None, reason="a cured meat is named (" + "; ".join(cured_names) + ") inside a longer list, with a bracket, or with a stated form or other-species word: no source read here places that form or combination, so no group is asserted")
     nut_salted = animal_dry + [i.raw for i, k in zip(ings, kinds) if (k == "nut_seed" and nut_added_salt_or_sugar(i)) or (k in _GUARDED_KINDS and legume_added_salt_sugar_or_brine(i)) or grain_added_salt(i, k)]
     legume_preserved = [i.raw for i, k in zip(ings, kinds) if k in _GUARDED_KINDS and legume_preserved_form(i) and not legume_added_salt_sugar_or_brine(i)]
     if legume_preserved:

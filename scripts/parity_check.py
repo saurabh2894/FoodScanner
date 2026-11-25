@@ -1174,6 +1174,11 @@ _CHEESE_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "chee
 _fc = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Salt)', '{t} powder', 'Smoked {t}', 'Grated {t}', 'Processed {t}', '{t} (Cheddar)', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CHEESE_TERMS for f in _fc)
+# cured-meat-g3-1 parity: staged cured-meat terms in sole, listed, bracketed and conditioned forms.
+_CURED_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "cured_meat_24" / "staged_rows.csv").open(newline=""))]
+_fcm = ['{t}', '{t}, Salt', 'Salt, {t}', '{t} (Pork)', '{t} powder', 'Smoked {t}', 'Raw {t}', '{t} bits', 'Meatless {t}', 'Turkey {t}', 'Milk, {t}', '{t}, Wheat Flour', 'Dried {t}', 'Salted {t}']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _CURED_TERMS for f in _fcm)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
