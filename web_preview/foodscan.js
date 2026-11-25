@@ -739,6 +739,9 @@
     // yoghurt-g1-1 (mirrors classify.is_yoghurt_row / _YOGHURT_ABSTAIN)
     const YOGHURT_ABSTAIN = new Set([...CHEESE_ABSTAIN, "sweetened", "sugar", "sugared", "fruit", "fruity", "low", "fat", "drinking", "drink", "frozen", "probiotic", "greek", "strawberry", "mango", "vanilla", "honey", "dried", "freeze"]);
     const isYoghurtRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("YOGHURT-G1");
+    // smoked-fish-g3-1 (mirrors classify.is_smoked_fish_row / _SMOKED_FISH_ABSTAIN)
+    const SMOKED_FISH_ABSTAIN = new Set([...CHEESE_ABSTAIN].filter((w) => w !== "smoked").concat(["raw", "uncooked", "salted", "brined", "pate", "mousse", "cakes", "cake", "sauce", "pie", "salad", "soup", "paste", "fillet", "fillets"]));
+    const isSmokedFishRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("SMOKED-FISH-G3");
     const isCuredMeatRow = (row) => !!row && row.kind === "whole_food" && row.source.includes("CURED-MEAT-G3");
     const animalDried = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
     const animalDriedUnscoped = (ing, kind) => { const row = lookup(ing.name); return kind === "whole_food" && isAnimalRow(row) && !DRIED_SCOPES.some((m) => row.source.includes(m)) && addedIn(ing, ANIMAL_DRIED); };
@@ -979,6 +982,12 @@
         if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], YOGHURT_ABSTAIN))
           return { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "plain yoghurt (FAO Table 1 Group 1: 'fresh or pasteurized plain yoghurt'); a sole plain item, identity FSSAI Chapter 2.1 and USDA FDC SR Legacy", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
         return { group: null, drivers: [], reason: "yoghurt is named (" + yoghurtNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (sweetened, flavoured, fruit, frozen, drinking, powder): the FAO clause names only plain yoghurt, so no group is asserted" };
+      }
+      const smokedFishNames = ings.filter((i, n) => kinds[n] === "whole_food" && isSmokedFishRow(lookup(i.name))).map((i) => i.raw);
+      if (smokedFishNames.length) {
+        if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], SMOKED_FISH_ABSTAIN))
+          return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "smoked fish (FAO Table 1 Group 3 prose: 'processed animal foods such as ham, bacon, pastrami, and smoked fish'); a sole plain item, identity USDA FDC SR Legacy", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: null, drivers: [], reason: "a smoked fish is named (" + smokedFishNames.join("; ") + ") inside a longer list, with a bracket, or with a stated form (canned, salted, pate, spread, powder, flavoured): no source read here places that form or combination, so no group is asserted" };
       }
       const curedNames = ings.filter((i, n) => kinds[n] === "whole_food" && isCuredMeatRow(lookup(i.name))).map((i) => i.raw);
       if (curedNames.length) {

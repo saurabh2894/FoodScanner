@@ -347,6 +347,17 @@ def is_yoghurt_row(row) -> bool:
     return bool(row) and row["kind"] == "whole_food" and _YOGHURT_MARK in row["source"]
 
 
+# smoked-fish-g3-1: a row whose source records 'SMOKED-FISH-G3' is an explicitly named smoked fish (smoked salmon, smoked haddock, kippered herring). FAO Table 1 Group 3 prose p.7: "processed animal foods such as ham, bacon,
+# pastrami, and smoked fish"; identity USDA FDC SR Legacy 'Fish, X, smoked' / 'kippered'. The smoked word is part of the row name, so it is not a stated form here. A sole plain item is Group 3; a list, bracket, canned, salted,
+# pâté, spread, powder, flavoured, raw or other stated form abstains.
+_SMOKED_FISH_MARK = "SMOKED-FISH-G3"
+_SMOKED_FISH_ABSTAIN = (_CHEESE_ABSTAIN - {"smoked"}) | frozenset({"raw", "uncooked", "salted", "brined", "pate", "mousse", "cakes", "cake", "sauce", "pie", "salad", "soup", "paste", "fillet", "fillets"})
+
+
+def is_smoked_fish_row(row) -> bool:
+    return bool(row) and row["kind"] == "whole_food" and _SMOKED_FISH_MARK in row["source"]
+
+
 # tomato-g3-1: a row whose source records 'TOMATO-CONC-G3' is a tomato concentrate. Brazil Dietary Guidelines Group 3: "tomato extract or concentrates (with salt and/or sugar)". Group 3 ONLY when salt or sugar is stated
 # (a sibling salt or sugar item, or salt/sugar in the item's own bracket) and nothing else is in the list or bracket; unstated, other additives or other foods abstain (a concentrate with no salt or sugar stated is not placed by the clause).
 _TOMATO_MARK = "TOMATO-CONC-G3"
@@ -940,6 +951,11 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _YOGHURT_ABSTAIN):
             return Classification(1, drivers=[Driver(ings[0].raw, "plain yoghurt (FAO Table 1 Group 1: 'fresh or pasteurized plain yoghurt'); a sole plain item, identity FSSAI Chapter 2.1 and USDA FDC SR Legacy", lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(None, reason="yoghurt is named (" + "; ".join(yoghurt_names) + ") inside a longer list, with a bracket, or with a stated form (sweetened, flavoured, fruit, frozen, drinking, powder): the FAO clause names only plain yoghurt, so no group is asserted")
+    smoked_fish_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_smoked_fish_row(lookup(i.name))]
+    if smoked_fish_names:
+        if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _SMOKED_FISH_ABSTAIN - {"kippered"}):
+            return Classification(3, drivers=[Driver(ings[0].raw, "smoked fish (FAO Table 1 Group 3 prose: 'processed animal foods such as ham, bacon, pastrami, and smoked fish'); a sole plain item, identity USDA FDC SR Legacy", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(None, reason="a smoked fish is named (" + "; ".join(smoked_fish_names) + ") inside a longer list, with a bracket, or with a stated form (canned, salted, pate, spread, powder, flavoured): no source read here places that form or combination, so no group is asserted")
     cured_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_cured_meat_row(lookup(i.name))]
     if cured_names:
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CURED_ABSTAIN):

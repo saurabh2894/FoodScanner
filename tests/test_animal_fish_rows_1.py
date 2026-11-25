@@ -62,8 +62,13 @@ def test_synthetic_the_scope_split_is_twelve_seafood_and_fifty_six_fish_rows():
 
 @pytest.mark.parametrize("t", ROWS)
 def test_synthetic_powders_and_conditioned_forms_abstain(t):
+    # smoked-fish-24: "smoked haddock", "smoked sturgeon" and "smoked whitefish" are now explicit rows placed Group 3 (FAO Group 3 prose "smoked fish"; FDC SR Legacy identity), so the bare "smoked {x}" pin is skipped for them
+    smoked_rows = {"haddock", "sturgeon", "whitefish"}
     for f in ("{x} powder", "100% {x} powder", "whole {x} powder", "salted {x}", "smoked {x}", "cured {x}", "canned {x}", "breaded {x}", "battered {x}", "fried {x}", "minced {x}", "formed {x}", "cooked {x}", "chilled {x}",
               "{x} (XQ9)", "{x} (rice)", "{x} (milk)", "{x} (brine)", "{x} (sunflower oil)", "{x}, water"):
+        if f == "smoked {x}" and t in smoked_rows:
+            assert g(f.format(x=t))[0] == 3, f.format(x=t)
+            continue
         assert g(f.format(x=t))[0] is None, f.format(x=t)
     assert g(f"{t}, salt")[0] == 3 and g(f"hydrogenated {t}")[0] == 4
 

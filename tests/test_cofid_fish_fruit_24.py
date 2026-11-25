@@ -16,6 +16,10 @@ FRUIT = ["Redcurrants", "Whitecurrants", "Damsons", "Greengages"]
 @pytest.mark.parametrize("form", FORMS)
 @pytest.mark.parametrize("name", FISH)
 def test_fish_matches_haddock(form, name):
+    if form == "Smoked {}":
+        # smoked-fish-24: "Smoked Haddock" is now an explicit Group 3 row (FAO "smoked fish", FDC identity); these CoFID names stay unrecognised when smoked
+        assert res(form.format(name)) is None
+        return
     assert res(form.format(name)) == res(form.format("Haddock"))
 
 
