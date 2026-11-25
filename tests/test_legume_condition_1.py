@@ -21,6 +21,8 @@ LEGUME_ROWS = ["beans", "peas", "chickpea", "lentil", "rajma", "moong", "soybean
 
 # Slice13: separately source-reviewed seed/pod food-name heads. The original33 are retained.
 LEGUME_ROWS += ['greengram', 'blackgram', 'mungo beans', 'mungobeans', 'catjang peas', 'haricot beans']
+# pulses-24: horse gram (FSSAI 2.4.6(2)(VI) naming + FAO legumes class-instance), added additively.
+LEGUME_ROWS += ['horse gram']
 
 
 def g(text):
