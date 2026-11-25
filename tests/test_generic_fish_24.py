@@ -30,5 +30,6 @@ def test_generic_labels_are_excluded_from_the_head_count():
     import count_heads
     c = count_heads.counts()
     # smoked-fish-24 adds five explicit smoked-fish names (recognition-only coverage). yoghurt-24: "plain yoghurt" is recognition-only (variant of the existing dahi head per the FSSAI clubbing list), so it joins the six generic fish labels
-    assert sorted(c["recognition_only"]) == ["cod", "crab", "flounder", "halibut", "kippered herring", "lobster", "plain yoghurt", "pollock", "smoked haddock", "smoked salmon", "smoked sturgeon", "smoked whitefish"]
+    # flour-24: pearl millet flour and ragi flour join the recognition-only list (species flours of the millet flour row).
+    assert sorted(c["recognition_only"]) == sorted(["cod", "crab", "flounder", "halibut", "kippered herring", "lobster", "plain yoghurt", "pearl millet flour", "pollock", "ragi flour", "smoked haddock", "smoked salmon", "smoked sturgeon", "smoked whitefish"])
     assert c["placed_rows"] - c["canonical_placed"] >= 6
