@@ -1,4 +1,4 @@
-"""culinary-gaps-24: starches, salts and seed oils named by the FAO Group 2 clauses behave like their nearest existing rows."""
+"""culinary-gaps-24: potato, rice and wheat starch (identity: USDA NALT concepts 59403, 61521, 64114; placement: FAO Group 2 starches clause) behave like the tapioca starch row. Himalayan salt, kosher salt, hemp seed oil and pumpkin seed oil were withdrawn for lack of an identity source."""
 import pytest
 from foodscan.pipeline import analyse_text
 
@@ -9,7 +9,7 @@ def res(t):
 
 
 FORMS = ["{}", "{}, Salt", "{}, Sugar", "Dried {}", "{} powder", "Modified {}", "Hydrogenated {}", "Smoked {}", "{} flavour", "Rice, {}", "{} (5%), Water", "Organic {}", "{} (antioxidant)", "{}, Emulsifier"]
-CASES = [("Potato starch", "Tapioca starch"), ("Rice starch", "Tapioca starch"), ("Wheat starch", "Tapioca starch"), ("Himalayan salt", "Sea salt"), ("Kosher salt", "Sea salt"), ("Hemp seed oil", "Grapeseed oil"), ("Pumpkin seed oil", "Grapeseed oil")]
+CASES = [("Potato starch", "Tapioca starch"), ("Rice starch", "Tapioca starch"), ("Wheat starch", "Tapioca starch")]
 
 
 @pytest.mark.parametrize("form", FORMS)
@@ -25,3 +25,5 @@ def test_plain_forms_group_2():
 
 def test_neighbours_unchanged():
     assert res("Pink salt") is None and res("Cassava starch") is None and res("Sago starch") is None
+    for n in ["Himalayan salt", "Kosher salt", "Hemp seed oil", "Pumpkin seed oil"]:
+        assert res(n) is None, n  # withdrawn: no admissible identity source
