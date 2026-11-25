@@ -19,7 +19,12 @@ def test_unnamed_or_claim_forms_do_not_trigger(name):
     assert run("Wheat flour, Salt, " + name) != (True, 4)
 
 
-@pytest.mark.parametrize("t", ["Rice, Salt (source of lactose)", "Rice, Sugar (high in fructose)", "Oats (source of soluble fibre)", "Oats (rich in insoluble fibre)"])
-def test_claim_wording_alone_is_not_proof_the_substance_is_absent(t):
-    # A parenthesis can explain an added isolated ingredient, so a marker term stays a marker.
+@pytest.mark.parametrize("t", ["Rice, Salt (source of lactose)", "Rice, Sugar (high in fructose)", "Oats (source of soluble fibre)", "Oats (rich in insoluble fibre)", "Wheat flour, Milk solids (source of lactose)"])
+def test_claim_wording_alone_abstains(t):
+    # A parenthesis can describe a natural content or an added isolated ingredient: neither Group 4 nor a lower group.
+    assert run(t) == (False, None)
+
+
+@pytest.mark.parametrize("t", ["Oats (source of soluble fibre), Maltodextrin", "Oats (source of lactose), Lactose", "Rice, Salt (high in fructose), Wheat gluten"])
+def test_independent_group4_driver_is_preserved(t):
     assert run(t) == (True, 4)

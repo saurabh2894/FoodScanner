@@ -373,7 +373,8 @@
         if (toFlat.startsWith(term + " ")) tail = "(?:\\s+" + esc(toFlat.slice(term.length + 1)).replace(/ /g, "\\s+") + "(?![a-z]))?";
         return { re: new RegExp(left + esc(term) + right + tail, "g"), to: r.to.toLowerCase() };
       });
-    const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )" + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
+    const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )(?<!source of )(?<!rich in )(?<!high in )" + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
+    const claimMarkers = T.markers.filter((r) => r.strength === "strong").map((r) => ({ re: new RegExp("(?<![a-z])(?:source of|rich in|high in) " + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
     const lexicon = {};
     for (const r of T.lexicon) lexicon[flatten(r.term)] = r;
     const descriptors = new Set(T.descriptors.filter((r) => !(r.kinds || "").trim()).map((r) => r.word.toLowerCase()));
@@ -842,6 +843,9 @@
         if (noteOnly) break;
         if (sweetFoods && row.term === "sweetener") continue;      // the bracket names foods, so the class word is not counted      // the name has no marker and the bracket is only a function note: its words decide nothing
         if (re.test(ing.text)) hits.push({ strength: row.strength, marker_class: row.marker_class, detail: `"${row.term}" (${row.marker_class})`, source: row.source });
+      }
+      if (!noteOnly) for (const { re, row } of claimMarkers) {
+        if (re.test(ing.text) && !hits.some((h) => h.detail === `"${row.term}" (${row.marker_class})`)) hits.push({ strength: "weak", marker_class: "claim_wording", detail: `"${row.term}" named only in claim wording ("source of" / "rich in" / "high in")`, source: "claim wording alone neither shows an added isolated ingredient nor shows it absent; abstains" });
       }
       if ((ing.name === "starch" || ing.name === "tapioca starch") && ing.inner && /modif|pregelatini[sz]ed|acid[- ]?treated|oxidi[sz]ed|cross[- ]?linked|bleached|hydroxypropyl|acetylated|phosphated|thermally|enzymatically/.test(ing.inner.toLowerCase())
           && !hits.some((h) => h.detail === '"modified starch" (derived_substance)')) {

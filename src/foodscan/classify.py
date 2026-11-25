@@ -43,8 +43,14 @@ def _markers() -> tuple[tuple[re.Pattern, dict], ...]:
     out = []
     for r in load_table("markers.csv"):
         term = flatten(r["term"])
-        out.append((re.compile(rf"(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of ){re.escape(term)}(?![a-z])(?![ -]free(?![a-z]))"), r))
+        out.append((re.compile(rf"(?<![a-z])(?<!no )(?<!no added )(?<!non )(?<!non-)(?<!without )(?<!free from )(?<!free of )(?<!source of )(?<!rich in )(?<!high in ){re.escape(term)}(?![a-z])(?![ -]free(?![a-z]))"), r))
     return tuple(out)
+
+
+@cache
+def _claim_markers() -> tuple[tuple[re.Pattern, dict], ...]:
+    """A marker term directly after "source of", "rich in" or "high in". The wording can describe a natural content or an added isolated ingredient, so on its own it neither proves nor disproves the marker: it is read as an abstention (weak hit), never as a lower group and never as Group 4."""
+    return tuple((re.compile(rf"(?<![a-z])(?:source of|rich in|high in) {re.escape(flatten(r['term']))}(?![a-z])(?![ -]free(?![a-z]))"), r) for r in load_table("markers.csv") if r["strength"] == "strong")
 
 
 @cache
@@ -734,6 +740,10 @@ def _hits_for(ing: Ingredient) -> list[_Hit]:
             continue       # "Sweeteners (Jaggery Powder, Dates Powder)": the bracket names foods, so the class word is not counted
         if pat.search(ing.text):
             hits.append(_Hit(row["strength"], row["marker_class"], f'"{row["term"]}" ({row["marker_class"]})', row["source"]))
+    if not note_only:
+        for pat, row in _claim_markers():
+            if pat.search(ing.text) and not any(h.detail == f'"{row["term"]}" ({row["marker_class"]})' for h in hits):
+                hits.append(_Hit("weak", "claim_wording", f'"{row["term"]}" named only in claim wording ("source of" / "rich in" / "high in")', "claim wording alone neither shows an added isolated ingredient nor shows it absent; abstains"))
     if ing.name in _PLAIN_STARCH_ROWS and ing.inner and _STARCH_MODIFIED.search(ing.inner.lower()) and not any(h.detail == '"modified starch" (derived_substance)' for h in hits):
         mrow = next((row for _, row in _markers() if row["term"] == "modified starch"), None)
         if mrow is not None:
