@@ -1,0 +1,122 @@
+2. Which Are the Ingredients/Additives Characteristic of Ultra-Processing, and What Is
+Their Origin?
+     UPFs are made from many recombined ingredients and/or additives, and we suggested that
+the link between UPF and food system sustainability is first driven by the massive production of
+these compounds. This question is addressed by identifying the ingredients/additives characteristic
+of ultra-processing within the list of UPF ingredients used in these products. Based on the UPF
+Sustainability 2020, 12, 6280                                                                     4 of 29
+
+
+
+definition by NOVA, Figure 2 schematically represents the way in which a UPF is generally constructed,
+i.e., through the cracking of raw foods into isolated ingredients that are then recombined in artificial
+matrices with the addition of industrial ‘cosmetic’ additives that are not commonly used in the
+kitchen [9,23]. Depending on food products, e.g., ready-to-eat dishes, UPFs may also contain more
+or less real foods. The processes used to create these markers of ultra-processing include refining,
+extraction, purification, hydrolysis, and/or chemical modification. Such ingredients include processed
+carbohydrates such as sugar syrups, maltodextrins, dextrose, malt extracts and polyols, mainly extracted
+from maize, and wheat, rice, and potato; processed lipids such as refined and/or hydrogenated and
+inter-esterified oils; and processed proteins such as isolates from soy, milk, pea, egg, and meat,
+derived hydrolysates, and gluten. In addition to these ingredients, UPFs also contain “cosmetic”
+additives extracted directly from natural ingredients or chemically synthesized; there are more than
+316 authorized at the European level and more than 2500 at the world level, as evaluated by the Joint
+FAO/WHO Expert Committee on Food Additives (JECFA). The 690,499 foods referenced in the French
+Open Food Facts database (https://world.openfoodfacts.org/, retrieved on 20 June 2020) make it possible
+to determine an initial approximation of the frequency of these main ingredients/additives in UPFs
+(Tables 1 and 2). This database is today the most comprehensive one about packaged foods, and that
+gives the list of ingredients for most registered foods. Notably, this database has been previously used
+for retrieving lists of additives from approximatively 126,000 foods [24].
+       Starches and glucose-fructose/glucose syrup are by far the most commonly used
+carbohydrate-based ingredients in UPFs, being found in at least 7.6% and 3.2% of all referenced
+products, respectively. Ranking third are dextrose (>3.1%) and lactose (>1.6%), followed by malt
+extract (>1.2%), dextrins/maltodextrins (>1.1%), and invert sugar (>0.6%). For lipids, refined oils are
+extensively used and are found in at least 9.4% of referenced products, while hydrogenated oils are
+less commonly used (0.01%). In addition, for proteins, gluten (>1.7%) and milk protein isolates (>3.7%)
+are the most commonly used, while egg white proteins, gelatine, as well as pea and soy protein are less
+commonly used, falling in the range of 0.01–0.6%, and protein hydrolysates are used in a minimum of
+0.04% of referenced products. Aromas are much more commonly used, being found in at least 10.5% of
+all referenced products (Table 1).
+       Concerning additives, the most commonly used are texturing agents such as lecithins (>3.4%),
+modified starches (>2.4%), xanthan gum (>1.7%), mono- and diglycerides of fatty acids (>1.7%),
+pectins (>1.5%), diphosphates/pyrophosphates (>1.5%), guar gum (>1.3%), and carraghenans (>1.2%);
+colouring agents such as capsanthin (>0.7%), carotenes (>0.6%), carmines (>0.5%), and plain caramel
+(>0.5%); and taste modifiers such as monosodium glutamate (>0.5%), sucralose (>0.4%), acesulfame
+potassium (>0.3%), aspartame (>0.2%), and steviol glycosides (>0.1%) (Table 2).
+       Mass production of ultra-processed non-additive ingredients, and of numerous additives processed
+from the cracking of raw foods, mainly comes from intensive monocultures or livestock of only a
+few plant/animal varieties (see Section 3.3. related to industrial farming/agriculture). At minimum,
+their percentage use in foods varies from 0.03 to 12.6 of all foods (Tables 1 and 2), suggesting a high
+level of consumption, notably due to the rapid increase in worldwide UPF consumption, especially in
+Latin America [25]. In the following section, we will therefore analyse how the agricultural system at
+the basis of these ingredients is linked with sustainability or not, and the impacts of UPF-like product
+consumption on environmental indicators such as greenhouse gas emissions (GHGEs).
+Sustainability 2020, 12, 6280                                                                                                                                            5 of 29
+
+
+
+                       Original raw food A
+
+
+
+                                                                                                               Recombinant artificial ultra-
+                                                                                                              processed food made of food
+                                                                                                                 ingredients A, B, C ... +
+                                                                                                                   cosmetic additives
+                                                                                                                      (± real foods)
+                       Original raw food B
+
+
+
+                                                    Food matrix                                 Ingredient
+                                                unstructuration and                           recombination
+                                                ingredient isolation
+
+
+                       Original raw food C
+                                                                                       Addition of purified (loss of protective bioactive compounds) and
+                                                                                       cosmetic (markers of ultra-processing) ingredients/compensatory
+                                                                                       additives:
+                                                                                       - Texture agents
+                                                                                       - Taste enhancers
+                                                                                       - Dyes
+                                                                                       - Aromas
+                                                                                       - Sweeteners
+                                …                                                      ...
+
+      Figure 2. Schematic representation of UPFs through fractionation of original raw foods and ingredient recombination with ‘cosmetic’ additives. Figure was originally
+      supplied by the Siga Society©.
+Sustainability 2020, 12, 6280                                                                                            6 of 29
+
+
+
+      Table 1. Number of food products for the different non-additive ingredients characteristic of ultra-processing 1.
+
+                                                                                               Percentage of All Products in
+   Ingredients                                                 Number of Food Products 2
+                                                                                              the Open Food Facts Database 2
+   Ultra-processed carbohydrates:
+      Glucose-fructose syrup/glucose syrup/(oligo)fructose              >52,154                            >7.6
+                                                    Starch              >22,389                            >3.2
+                                                 Dextrose               >21,340                            >3.1
+                                                   Lactose              >11,232                            >1.6
+                                            Malt (extract)               >8292                             >1.2
+                                   Maltodextrins/dextrins                >7756                             >1.1
+                                              Invert sugar               >4349                             >0.6
+   Ultra-processed lipids:
+                         Refined plant-based oils and fats 3            >64,811                           >9.4
+                                        Hydrogenated oils                >99                              >0.01
+   Ultra-processed proteins:
+                                 Milk/whey/casein protein               >11,789                           >1.7
+                                                   Gluten               >11,428                           >1.7
+                                                  Gelatine               >3970                            >0.6
+                                               Soy protein               >1953                            >0.3
+                                               Pea protein               >1289                            >0.2
+                   Protein hydrolysate/hydrolysed proteins               >307                             >0.04
+                                    Egg white and protein                 >62                             >0.01
+   Aroma 4 :                                                            >72,348                           >10.5
+      1 Collected from the French Open Food Fact database, which contains 690,499 products (on 20 June 2020, as described
+
+      previously [24]); 2 Ingredient lists are not given for all products in the Open Food Facts database: therefore,
+      given values are only minimum values. 3 Refined oils are not strictly characteristic of UPFs in NOVA classification;
+      however, due to the high level of processing that refined oils undergo, they were considered in this analysis, as in
+      the Siga score methodology [13]. 4 Includes artificial and natural aromas.

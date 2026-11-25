@@ -44,6 +44,8 @@ def test_synthetic_approved_terms_are_shipped_and_parked_or_conflicted_terms_are
             assert t in lex, t
         elif k == "ACCEPT_SYNONYM":
             assert t in syn, t
+        elif t in ("glucose syrup", "liquid glucose", "malt extract"):
+            assert t in mk and t not in lex and t not in syn, t  # fardet-markers-24: shipped as markers on a second admissible source
         else:
             assert t not in lex and t not in syn and t not in mk, t
 
@@ -54,7 +56,9 @@ def test_synthetic_the_three_withdrawn_marker_proposals_are_held_with_the_exact_
     assert "product-level coding alone insufficient" in held["glucose syrup"]["reason"] and "product-level coding alone insufficient" in held["liquid glucose"]["reason"]
     assert "class membership not established for the texturized form" in held["texturized soy protein"]["reason"]
     mk = _col("markers.csv")
-    assert not (set(held) & mk)
+    # fardet-markers-24: glucose syrup and liquid glucose now ship as markers on a second admissible source (Fardet and Rock 2020, CC BY 4.0); the historical record stays as written.
+    assert not (set(held) & mk - {"glucose syrup", "liquid glucose"})
+    assert {"glucose syrup", "liquid glucose"} <= mk
 
 
 def test_synthetic_the_conflict_is_flagged_not_parked():

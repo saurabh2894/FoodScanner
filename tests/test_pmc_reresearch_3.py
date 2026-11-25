@@ -27,7 +27,7 @@ def test_synthetic_the_decision_record_marks_whey_as_approved_and_merged_and_eve
         if d["term"] in ("whey powder", "whey solids"):
             assert d["disposition"].startswith("APPROVED AND MERGED")
         else:
-            assert d["disposition"] == "PARK" and d["term"] not in MARKERS
+            assert d["disposition"] == "PARK" and (d["term"] not in MARKERS or d["term"] == "malt extract")  # malt extract: fardet-markers-24 (second source), historical record kept
             if d["term"] == "carbonated water":
                 # named-water-23: exact new primary example; mixed/treated forms remain held.
                 assert d["term"] in LEX

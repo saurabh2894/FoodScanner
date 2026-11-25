@@ -43,4 +43,4 @@ def test_synthetic_every_other_re_researched_term_stays_out_with_a_recorded_reas
         else:
             assert d["term"] not in LEX and not is_recognised(normalise_ingredient(d["term"]).name), d["term"]
             assert d["code"] in ("single_source_flag", "owner_decision_descriptor", "no_source_for_qualifier", "no_source_for_form") and d["reason"]
-    assert g("Rice, glucose syrup")[0] is None                                               # glucose syrup stays unclassified: HELD by the owner in pmc-decisions-4 (no ingredient-level naming in an admissible source)
+    assert g("Rice, glucose syrup")[0] == 4  # fardet-markers-24: the hold's own condition (a second admissible source naming it at ingredient level) is met by Fardet and Rock 2020, CC BY; see evaluation/fardet_markers_24 #                                               # glucose syrup stays unclassified: HELD by the owner in pmc-decisions-4 (no ingredient-level naming in an admissible source)

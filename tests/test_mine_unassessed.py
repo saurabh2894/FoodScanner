@@ -117,7 +117,8 @@ def test_current_marker_route_closes_historical_vocabulary_gap(term):
 
 
 @pytest.mark.parametrize("term", [
-    "liquid glucose", "cocoa solids", "guar gum", "Synthetic Vinegar",
+    "cocoa solids",  # liquid glucose left this list in fardet-markers-24 (now a marker)
+     "guar gum", "Synthetic Vinegar",
     "wheat gluten, zorbium", "whey powder, zorbium",
     "lemon juice concentrate (zorbium)",
 ])

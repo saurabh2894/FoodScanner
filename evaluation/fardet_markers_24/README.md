@@ -1,0 +1,1 @@
+fardet-markers-24: glucose syrup, malt extract, liquid glucose as strong Group 4 markers (Fardet and Rock 2020, CC BY 4.0, applying NOVA; not the FAO text). Held: starch (FAO plain-starch rule), gelatine and refined oils (not strong in the source text), 'sugar syrup' (ambiguous), 'glucose' alone, oligofructose.
