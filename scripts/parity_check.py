@@ -1218,6 +1218,11 @@ for _target in (CORPUS, PASTE):
 # grits-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Corn grits', 'Maize grits', 'Cornmeal') for f in _fl + ['Instant {t}', 'Enriched {t}', 'Cooked {t}', '{t} (Butter flavour)', 'White {t}'])
+# millets-24 parity.
+_ml = ['{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', 'Roasted {t}', '{t} flour', 'Puffed {t}', 'Cooked {t}', '{t} (Salt)', 'Instant {t}', '{t} 100%']
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Teff', 'Amaranth grain', 'Amaranth', 'Kodo millet', 'Kodo', 'Little millet', 'Kutki', 'Barnyard millet', 'Sanwa', 'Jhangora', 'Proso millet', 'Cheena', 'Mandua', 'Kangni', 'Kakun', 'Kuttu', 'Kabuli chana', 'Arhar') for f in _ml)
+    _target.extend('Ingredients: ' + t + '.' for t in ['Arhar dal', 'Arhar dal, Salt', 'Split arhar', 'Arhar flour'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
