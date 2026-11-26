@@ -1258,6 +1258,9 @@ for _target in (CORPUS, PASTE):
 # names-24b parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Lablab', 'Wing bean', 'Goa bean', 'Black-eyed peas', 'Black-eye pea', 'Ceylon spinach', 'Malabar nightshade', 'Water chestnuts', 'Vine spinach', 'Basella', 'Indian spinach') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
+# india-24 parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Pointed gourd', 'Parwal', 'Palwal', 'Cluster beans', 'Cluster bean', 'Bael', 'Bengal quince', 'Guar', 'Guar gum', 'Wood apple') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
