@@ -263,8 +263,8 @@ def powder_composition_stated(ing) -> bool:
 # (clause names only 'dried') the composition of a milk powder IS source-established. An item whose whole text is "<optional fat-grade word> milk powder" (milk, toned milk, double toned milk,
 # buffalo milk; grade words whole/skimmed/skim are fat grades, not composition statements) keeps its plain Group 1 placement. 'milk solids powder' / 'milk solids' (a solids fraction is not the
 # named powdered-milk form) and any item with extra words (a bracket naming an additive, a blend) stay under the powder standard.
-_MILK_POWDER_ROWS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk"})
-_MILK_POWDER_WORDS = frozenset({"milk", "toned", "double", "buffalo", "cow", "goat", "whole", "skimmed", "skim", "powder", "powdered"})
+_MILK_POWDER_ROWS = frozenset({"milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk", "sheep milk", "camel milk"})
+_MILK_POWDER_WORDS = frozenset({"milk", "toned", "double", "buffalo", "cow", "goat", "sheep", "camel", "whole", "skimmed", "skim", "powder", "powdered"})
 
 
 def milk_powder_named(ing) -> bool:

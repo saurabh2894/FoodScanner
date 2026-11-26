@@ -21,6 +21,9 @@ def test_plain_group_1():
     assert g("Camel milk") == 1
 
 
-def test_camel_milk_powder_abstains_conservatively():
+def test_sheep_camel_milk_powder_follow_the_powder_rule():
     # CORRECTION: only goat (and cow, buffalo, plain) milk powder is routed through the milk powder rule (group 1); sheep milk powder (pinned in test_dairy_rows_1) and camel milk powder both abstain.
-    assert g("Camel milk powder") is None
+    assert g("Camel milk powder") == 1 and g("Sheep milk powder") == 1 and g("Goat milk powder") == 1
+    for suffix in ["", " solids", " powder (maltodextrin)", " powder, sugar", " cheese"]:
+        goat = g("Goat milk" + suffix)
+        assert g("Camel milk" + suffix) == goat and g("Sheep milk" + suffix) == goat, suffix

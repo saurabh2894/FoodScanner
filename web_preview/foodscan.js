@@ -682,8 +682,8 @@
       return toks.includes("whole") && !ownToks.includes("milk") && !(row && MILK_TERMS.includes(row.term));
     }
     // powdered milk is placed by name (FAO Table 1 Group 1 'fresh, powdered or pasteurized milk'): mirrors classify.milk_powder_named
-    const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk"];
-    const MILK_POWDER_WORDS = new Set(["milk", "toned", "double", "buffalo", "cow", "goat", "whole", "skimmed", "skim", "powder", "powdered"]);
+    const MILK_POWDER_ROWS = ["milk", "toned milk", "double toned milk", "buffalo milk", "cow milk", "goat milk", "sheep milk", "camel milk"];
+    const MILK_POWDER_WORDS = new Set(["milk", "toned", "double", "buffalo", "cow", "goat", "sheep", "camel", "whole", "skimmed", "skim", "powder", "powdered"]);
     function milkPowderNamed(ing) {
       const row = lookup(ing.name);
       const toks = ing.text.toLowerCase().match(/[a-z]+/g) || [];
