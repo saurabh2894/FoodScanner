@@ -34,7 +34,7 @@ def test_synthetic_milk_unknown_brackets_and_bare_powders_abstain(t):
     assert g(t)[0] is None, t
 
 
-@pytest.mark.parametrize("t", ["Instant Coffee", "Decaffeinated Tea", "Decaf Coffee", "Instant Tea", "Tea Extract", "Coffee Extract", "Tea Leaves", "Coffee Beans", "Black Tea", "Oolong Tea", "Espresso", "Hibiscus Tea", "Chamomile Tea",
+@pytest.mark.parametrize("t", ["Instant Coffee", "Decaffeinated Tea", "Decaf Coffee", "Instant Tea", "Tea Extract", "Coffee Extract", "Tea Leaves", "Coffee Beans", "Espresso", "Hibiscus Tea", "Chamomile Tea",
                                "Herbal Tea", "Coffee Substitute", "Chicory", "Ready To Drink Tea", "Iced Tea", "Bottled Water", "Drinking Water"])
 def test_synthetic_held_forms_aliases_and_other_beverages_stay_unrecognised(t):
     assert g(t)[0] is None, t
@@ -47,7 +47,8 @@ def test_synthetic_conditioned_and_nested_forms_abstain_through_the_whole_food_g
 
 def test_synthetic_green_tea_resolves_through_the_global_descriptor_green():
     # reported, not designed: 'green' is a global descriptor, so 'Green Tea' resolves to the row `tea`; 'Black Tea' does not (aliases stay held)
-    assert g("Green Tea")[0] == 1 and g("Black Tea")[0] is None
+    # tea-24: black tea and oolong tea are now aliases of tea (FSSAI 2.10.1(1)); see tests/test_tea_24.py
+    assert g("Green Tea")[0] == 1 and g("Black Tea")[0] == 1
 
 
 def test_synthetic_row_provenance_has_the_verified_clause_and_no_spliced_definition_or_purity_claim():
