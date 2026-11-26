@@ -11,7 +11,7 @@ def g(t):
 FORMS = ["{}", "{}, Salt", "Sugar, {}", "Wheat flour, {}", "{} (5%), Water", "Rice, {}", "Dried {}", "Roasted {}", "{} (Sugar)", "{} 100%", "{} powder", "{} extract", "Instant {}", "Decaffeinated {}", "{} flavour", "{} leaves", "{} bags", "Iced {}", "{} concentrate", "Cooked {}", "{} (Salt)", "Milk, {}", "{}, Milk"]
 
 
-ALIASES = [('Parwal', 'Pointed gourd'), ('Palwal', 'Pointed gourd'), ('Parmal', 'Pointed gourd'), ('Cluster bean', 'Cluster beans'), ('Bengal quince', 'Bael')]
+ALIASES = [('Parwal', 'Pointed gourd'), ('Palwal', 'Pointed gourd'), ('Parmal', 'Pointed gourd'), ('Cluster bean', 'Cluster beans'), ('Bengal quince', 'Bael'), ('Star fruit', 'Carambola'), ('Starfruit', 'Carambola')]
 
 
 @pytest.mark.parametrize("form", FORMS)
