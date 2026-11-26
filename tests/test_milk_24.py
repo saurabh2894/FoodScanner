@@ -27,3 +27,10 @@ def test_sheep_camel_milk_powder_follow_the_powder_rule():
     for suffix in ["", " solids", " powder (maltodextrin)", " powder, sugar", " cheese"]:
         goat = g("Goat milk" + suffix)
         assert g("Camel milk" + suffix) == goat and g("Sheep milk" + suffix) == goat, suffix
+
+
+def test_skim_milk_spelling_matches_skimmed_milk():
+    # milk-24c: "skim" is a spelling variant of the existing descriptor "skimmed" (FSSAI 2.1 text says skimmed milk).
+    for a, b in [("Skim milk", "Skimmed milk"), ("Skim milk powder", "Skimmed milk powder"), ("Skim milk, sugar", "Skimmed milk, sugar")]:
+        assert g(a) == g(b), a
+    assert g("Skim milk") == 1
