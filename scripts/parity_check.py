@@ -1233,6 +1233,9 @@ for _target in (CORPUS, PASTE):
 # sugars-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Misri', 'Mishri', 'Golden syrup') for f in _ol)
+# oils-24b parity.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Taramira oil', 'Niger seed oil', 'Shea butter', 'Kokum fat', 'Mango kernel fat', 'Illipe butter', 'Shea stearin', 'Kokum', 'Niger seed', 'Mango kernel', 'Cocoa butter') for f in _ol)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']

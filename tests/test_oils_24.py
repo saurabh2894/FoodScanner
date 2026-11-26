@@ -2,7 +2,7 @@
 import pytest
 from foodscan.pipeline import analyse_text
 
-ROWS = ["mahua oil", "watermelon seed oil", "chia oil"]
+ROWS = ["mahua oil", "watermelon seed oil", "chia oil", "taramira oil", "niger seed oil", "kokum fat", "mango kernel fat", "illipe butter"]  # oils-24b adds the last five (FSSAI 2.2.1(11),(13); 2.2.4 items 7, 8, 13); shea butter held: prior NALT holds pinned in four test files
 
 
 def g(t):
@@ -25,3 +25,8 @@ def test_hydrogenated_group_4(t):
 def test_sprays_blends_additives_abstain(t):
     for f in ("{x} spray", "{x} blend", "{x} (antioxidant)", "{x} (INS 319)", "oil, {x}", "cooking {x}"):
         assert g(f.format(x=t)) is None
+
+
+@pytest.mark.parametrize("t", ["Shea stearin", "Shea olein", "Fractionated shea butter", "Mango kernel", "Kokum", "Taramira", "Niger seed"])
+def test_fractions_and_bare_seed_do_not_take_the_oil_group(t):
+    assert g(t) != 2
