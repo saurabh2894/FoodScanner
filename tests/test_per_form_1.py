@@ -83,7 +83,8 @@ def test_synthetic_the_species_word_alone_is_not_recognised_and_the_frozen_q10_l
     # b3/Q10 'Milk solids (Pasteurized skimmed cow milk)': 'milk solids' is not established as identical to milk (owner ruling) and no quoted source places this exact form (FAO names 'fresh, powdered or pasteurized
     # milk', not milk solids), so it stays abstained, attributed to the unknown-bracket rule. Group 1 for it would be an unjustified placement.
     assert not a.answered and "names content the vocabulary does not recognise" in (a.reason or "")
-    assert analyse_text("Ingredients: Milk solids.", source="text").group == 1                    # the bare existing row is untouched
+    # UPDATED (milk-24e): generic milk solids abstains outside a fermented milk (milk plus culture rule still gives 1); FSSAI 2.1 uses the words only as a composition measure, 2.7 defines them for chocolate only, and the term can name a fraction or concentrate.
+    assert analyse_text("Ingredients: Milk solids.", source="text").group is None
 
 
 def test_synthetic_the_toasted_term_set_is_exactly_the_23_terms_batch_4_placed():

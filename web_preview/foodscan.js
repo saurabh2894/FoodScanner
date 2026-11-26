@@ -971,6 +971,11 @@
       if (wfCondition.length) return { group: null, drivers: [], reason: "an item whose own text names an added or preserving condition (" + wfCondition.map(([raw, o]) => raw + ": " + o.join(", ")).join("; ") + "): the general Group 3 definition covers group 1 foods with salt, oil, sugar or other group 2 ingredients added, but this food's form and composition are not established by the label evidence and the rules available, so neither Group 1 nor Group 3 is asserted" };
       const nestedPowders = ings.flatMap(nestedPowderUnresolved);
       if (nestedPowders.length) return { group: null, drivers: [], reason: "a nested powder's form or composition is not established (" + nestedPowders.join("; ") + "), so it cannot inherit the outer food's plain placement and no group is asserted" };
+      // milk-24e: mirrors classify.py (generic milk solids abstains outside the fermented-milk context)
+      const msRows = ings.map((i) => lookup(i.name));
+      const msCultureRule = msRows.some((r) => r.kind === "culture") && msRows.every((r) => r.kind === "culture" || MILK_TERMS.includes(r.term));
+      if (msRows.some((r) => r.term === "milk solids") && !msCultureRule)
+        return { group: null, drivers: [], reason: "milk solids is named outside a fermented milk (" + ings.filter((i, n) => msRows[n].term === "milk solids").map((i) => i.raw).join("; ") + "): no source read defines generic milk solids as milk or as dried milk (FSSAI 2.1 uses the words only as a composition measure; Chapter 2.7 defines them for chocolate), and the term can name a fraction or concentrate, so no group is asserted" };
       const cheeseNames = ings.filter((i, n) => kinds[n] === "whole_food" && isCheeseRow(lookup(i.name))).map((i) => i.raw);
       if (cheeseNames.length) {
         if (ings.length === 1 && !ings[0].inner && !addedIn(ings[0], CHEESE_ABSTAIN))

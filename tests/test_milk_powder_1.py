@@ -33,7 +33,8 @@ def test_synthetic_negative_milk_solids_powder_abstains_in_every_position(t):
 
 
 def test_synthetic_milk_solids_alone_is_unchanged_and_non_milk_powders_still_abstain():
-    assert g("Milk Solids")[0] == 1                                            # the plain row, unchanged (no powder word)
+    # UPDATED (milk-24e): generic milk solids abstains outside a fermented milk (milk plus culture rule still gives 1); FSSAI 2.1 uses the words only as a composition measure, 2.7 defines them for chocolate only, and the term can name a fraction or concentrate.
+    assert g("Milk Solids")[0] is None
     for t in ("Spinach Powder", "Banana Powder", "Egg Powder", "Carrot Powder", "Rice Powder"):
         group, a = g(t)
         assert group is None and "named without its composition" in (a.reason or ""), t

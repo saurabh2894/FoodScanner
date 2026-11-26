@@ -50,7 +50,8 @@ def test_the_provenance_line_is_milk_context_not_a_blocking_item():
 
 
 def test_dairy_controls_the_rule_is_not_a_general_dairy_matcher():
-    assert t("Ingredients: Milk solids and Sugar.").group == 3                          # milk + sugar is still group 3, not 1
+    # UPDATED (milk-24e): generic milk solids abstains outside a fermented milk (milk plus culture rule still gives 1); FSSAI 2.1 uses the words only as a composition measure, 2.7 defines them for chocolate only, and the term can name a fraction or concentrate.
+    assert t("Ingredients: Milk solids and Sugar.").group is None                          # was 3; abstains now (milk-24e)
     assert not t("Ingredients: Milk, active culture, xyzgum.").answered                 # one unknown item
     assert t("Ingredients: Milk, active culture, sweetener (INS 950).").group == 4
     assert not t("Ingredients: Milk, probiotic culture.").answered                      # probiotic culture is still not a starter culture

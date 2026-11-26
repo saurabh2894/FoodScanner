@@ -80,5 +80,7 @@ def test_every_frozen_paste_input_keeps_its_group():
         # not added milk-fat ingredients. Original frozen JSON stays unchanged. research/09.
         # Class/code mismatch guard: N15 declares stabilizer for INS471, mapped here as emulsifier.
         # The literal code stays visible but the disputed entry no longer decides Group 4.
-        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04", "b1/N15") else (1 if key in ("b1/N09", "b2/M02", "b3/Q06") else group))
+        # UPDATED (milk-24e): b3/Q02 ("Milk solids." sole item, frozen 1) abstains for the same reason as b2/M08 below.
+        # UPDATED (milk-24e): b2/M08 Milkmaid sweetened condensed milk ("Milk solids, Sugar", frozen 3) now abstains: generic milk solids is not established as milk outside a fermented milk (FSSAI 2.1 composition measure only; 2.7 defines it for chocolate) and can name a fraction, so Group 3 vs 4 is not established.
+        expected = 3 if key == "b3/Q03" else (None if key in ("b3/Q10", "b3/Q04", "b1/N15", "b2/M08", "b3/Q02") else (1 if key in ("b1/N09", "b2/M02", "b3/Q06") else group))
         assert (r.group if r.answered else None) == expected, key

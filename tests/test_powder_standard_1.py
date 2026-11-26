@@ -21,7 +21,8 @@ def g(text):
 @pytest.mark.parametrize("t", ["Spinach Powder", "Carrot Powder", "Onion Powder", "Pinto Beans Powder", "Banana Powder", "Date Powder", "Egg Powder", "Milk Solids Powder", "Kale Powder (45%)", "Spinach Powdered"])
 def test_synthetic_negative_a_bare_x_powder_never_takes_group_1_from_the_powder_reading(t):
     group, a = g(t)
-    assert group is None and "named without its composition" in (a.reason or ""), (t, group)
+    # UPDATED (milk-24e): "Milk Solids Powder" now abstains earlier, on the generic milk solids guard (still no group); the powder-composition reason applies to every other item here.
+    assert group is None and ("named without its composition" in (a.reason or "") or (t == "Milk Solids Powder" and "milk solids is named outside a fermented milk" in (a.reason or ""))), (t, group)
 
 
 @pytest.mark.parametrize("t", ["100% Spinach Powder", "Spinach Powder (100%)", "Whole Spinach Powder", "100% Date Powder", "Whole Carrot Powder"])

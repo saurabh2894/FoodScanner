@@ -36,10 +36,11 @@ def test_skim_milk_spelling_matches_skimmed_milk():
     assert g("Skim milk") == 1
 
 
-def test_milk_solids_standalone_and_mixed_lists_are_stable():
-    # milk-24c review: standalone milk solids (FSSAI 2.7 definition, 2.1.13 dried milk) gives 1; a second milk, a vitamin, sugar or a different-food bracket does not leave it at 1.
+def test_milk_solids_abstains_outside_fermented_milk():
+    # milk-24e: identity-to-placement gap. FSSAI 2.1 uses milk solids only as a composition measure; 2.7 defines it for chocolate only; 2.1.13 2(a)(ii) lists dried and concentrated milk as fermented-milk raw materials (the milk plus culture rule).
     from foodscan.pipeline import analyse_text
     a = lambda x: analyse_text("Ingredients: " + x, source="text").group
-    assert a("Milk solids") == a("Skim milk solids") == a("Skimmed milk solids") == 1
-    assert a("Milk, milk solids") is None and a("Milk solids, Vitamin A") is None and a("Milk solids (Toned Milk)") is None
-    assert a("Milk solids, sugar") == 3 and a("Milk solids, Active Culture") == 1
+    for x in ["Milk solids", "Skim milk solids", "Skimmed milk solids", "Milk solids, sugar", "Milk solids and Sugar", "Milk solids, palm oil, sugar", "Milk, milk solids", "Milk solids, Vitamin A", "Milk solids (Toned Milk)"]:
+        assert a(x) is None, x
+    assert a("Milk solids, Active Culture") == 1 and a("Pasteurised double toned milk, Milk solids, Active lactic cultures") == 1
+    assert a("Whey protein concentrate, milk solids") == 4

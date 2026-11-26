@@ -941,6 +941,12 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     nested_powders = [p for i in ings for p in nested_powder_unresolved(i)]
     if nested_powders:
         return Classification(None, reason="a nested powder's form or composition is not established (" + "; ".join(nested_powders) + "), so it cannot inherit the outer food's plain placement and no group is asserted")
+    # milk-24e: generic "milk solids" is not established as milk or as the powdered-milk form outside a fermented milk. FSSAI 2.1 uses the words only as a composition measure; Ch 2.7 defines them for chocolate only;
+    # 2.1.13 2(a)(ii) lists concentrated and dried milk as fermented-milk raw materials, which is the one context the milk-plus-culture rule below covers. Elsewhere a solids item can be a fraction or concentrate, so abstain.
+    _ms_rows = [lookup(i.name) for i in ings]
+    _ms_culture_rule = any(r["kind"] == "culture" for r in _ms_rows) and all(r["kind"] == "culture" or r["term"] in _MILK_TERMS for r in _ms_rows)
+    if any(r["term"] == "milk solids" for r in _ms_rows) and not _ms_culture_rule:
+        return Classification(None, reason="milk solids is named outside a fermented milk (" + "; ".join(i.raw for i, r in zip(ings, _ms_rows) if r["term"] == "milk solids") + "): no source read defines generic milk solids as milk or as dried milk (FSSAI 2.1 uses the words only as a composition measure; Chapter 2.7 defines them for chocolate), and the term can name a fraction or concentrate, so no group is asserted")
     cheese_names = [i.raw for i, k in zip(ings, kinds) if k == "whole_food" and is_cheese_row(lookup(i.name))]
     if cheese_names:
         if len(ings) == 1 and not ings[0].inner and not _added(ings[0], _CHEESE_ABSTAIN):
