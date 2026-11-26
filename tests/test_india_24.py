@@ -21,7 +21,7 @@ def test_alias_matches_target(name, target, form):
 
 
 @pytest.mark.parametrize("form", FORMS)
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Elephant yam"])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Elephant yam", "Fenugreek leaves"])
 def test_new_vegetable_head_matches_okra(name, form):
     assert g(form.format(name)) == g(form.format("Okra")), (name, form)
 
@@ -33,7 +33,7 @@ def test_bael_matches_a_plain_fruit_row(form):
     assert g(form.format("Phalsa")) == g(form.format("Cantaloupe melons")), form
 
 
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa", "Elephant yam"] + [a for a, _ in ALIASES])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa", "Elephant yam", "Fenugreek leaves"] + [a for a, _ in ALIASES])
 def test_plain_group_1(name):
     assert g(name) == 1
 
@@ -41,3 +41,15 @@ def test_plain_group_1(name):
 @pytest.mark.parametrize("name", ["Guar", "Guar gum", "Wood apple", "Sirphal", "Elephant foot yam", "Konjac", "Konjac flour"])
 def test_deliberately_unaliased_names_do_not_take_group_1(name):
     assert g(name) != 1
+
+
+def test_bare_fenugreek_is_unchanged_by_the_leaf_row():
+    # india-24e: the seed and spice row keeps its prior behaviour
+    assert g("Fenugreek") is None
+    assert g("Fenugreek seeds") == g("Fenugreek seed")
+
+
+def test_fenugreek_leaves_are_not_the_seed_row():
+    from foodscan.normalise import normalise_ingredient
+    assert normalise_ingredient("fenugreek leaves").name == "fenugreek leaves"
+    assert normalise_ingredient("fenugreek seeds").name == "fenugreek"

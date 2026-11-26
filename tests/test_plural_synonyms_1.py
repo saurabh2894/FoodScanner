@@ -29,9 +29,10 @@ def test_synthetic_every_policy_row_is_merged_and_maps_to_its_target(r):
     assert normalise_ingredient(r["from"]).name == r["to"] and rec(r["from"]) and rec(r["from"].upper()) and rec(f"Dried {r['from']}")
 
 
+# india-24e: "fenugreek leaves" is now its own vegetable row (PROSEA Trigonella foenum-graecum id=601: leaves are a vegetable in India); it is still never mapped onto the seed row (test_fenugreek_leaves_are_not_the_seed_row).
 # Current Product19330 explicitly identifies mustard leaves as mustard greens, not mustard seed.
 # The historical policy JSON is unchanged and every other part/food hold remains.
-@pytest.mark.parametrize("t", [t for t in POLICY["must_stay_unmapped"] if t != "mustard leaves"])
+@pytest.mark.parametrize("t", [t for t in POLICY["must_stay_unmapped"] if t not in ("mustard leaves", "fenugreek leaves")])
 def test_synthetic_negative_control_other_part_or_food_is_not_mapped_onto_a_base_row(t):
     assert t not in SYN and normalise_ingredient(t).name == t and not rec(t)
 
@@ -42,7 +43,7 @@ def test_synthetic_negative_control_processed_forms_stay_unrecognised(t):
 
 
 def test_synthetic_the_four_part_distinctions_that_matter():
-    assert rec("fenugreek seeds") and not rec("fenugreek leaves")            # leaves are not the seed row
+    assert rec("fenugreek seeds") and normalise_ingredient("fenugreek leaves").name != "fenugreek"   # india-24e: own vegetable row, never the seed row
     assert rec("coriander leaves") and normalise_ingredient("coriander leaves").name == "coriander leaf"
     assert normalise_ingredient("coriander seeds").name != "coriander leaf"          # seeds never become the leaf row
     assert rec("basil leaves") and not rec("basil seeds")                              # raw basil seeds are a different food
@@ -59,7 +60,7 @@ def test_synthetic_existing_rows_are_untouched():
 
 
 def test_synthetic_plural_forms_in_a_list_are_recognised_and_the_other_parts_stay_visibly_unassessed():
-    a = analyse_text("Ingredients: Rice, cumin seeds, basil leaves, coriander leaves, fenugreek leaves, basil seeds, salt.", source="text")
+    a = analyse_text("Ingredients: Rice, cumin seeds, basil leaves, coriander leaves, fenugreek flowers, basil seeds, salt.", source="text")
     un = " | ".join(a.unassessed).lower()
-    assert "fenugreek leaves" in un and "basil seeds" in un
+    assert "fenugreek flowers" in un and "basil seeds" in un
     assert not any(x in un for x in ("cumin seeds", "basil leaves", "coriander leaves"))
