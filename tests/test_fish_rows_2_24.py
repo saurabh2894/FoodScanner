@@ -41,6 +41,7 @@ def test_synthetic_dried_scope_rules():
     assert g("Dried Squid")[0] is None
 
 
+# shrimp-24 lifted shrimp/prawn (tests/test_shrimp_24.py).
 def test_synthetic_held_generics_stay_unrecognised():
-    for t in ["Tuna", "Salmon", "Shrimp", "Herring", "Sardine", "Mackerel", "Anchovy", "Prawns", "Catfish", "Tilapia", "Cod Liver Oil"]:
+    for t in ["Tuna", "Salmon", "Herring", "Sardine", "Mackerel", "Anchovy", "Catfish", "Tilapia", "Cod Liver Oil"]:
         assert g(t)[0] is None, t

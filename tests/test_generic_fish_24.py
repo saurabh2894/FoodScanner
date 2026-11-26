@@ -18,8 +18,9 @@ def test_matches_species_row(form, name):
     assert res(form.format(name)) == res(form.format(SPECIES[name]))
 
 
+# shrimp-24 lifted shrimp (tests/test_shrimp_24.py).
 def test_held_generics_stay_unrecognised():
-    for n in ["Salmon", "Tuna", "Shrimp", "Catfish", "Tilapia", "Roe", "Herring", "Mackerel", "Anchovy"]:
+    for n in ["Salmon", "Tuna", "Catfish", "Tilapia", "Roe", "Herring", "Mackerel", "Anchovy"]:
         assert res(n) is None
 
 
