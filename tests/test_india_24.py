@@ -21,7 +21,7 @@ def test_alias_matches_target(name, target, form):
 
 
 @pytest.mark.parametrize("form", FORMS)
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans"])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Elephant yam"])
 def test_new_vegetable_head_matches_okra(name, form):
     assert g(form.format(name)) == g(form.format("Okra")), (name, form)
 
@@ -33,11 +33,11 @@ def test_bael_matches_a_plain_fruit_row(form):
     assert g(form.format("Phalsa")) == g(form.format("Cantaloupe melons")), form
 
 
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa"] + [a for a, _ in ALIASES])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa", "Elephant yam"] + [a for a, _ in ALIASES])
 def test_plain_group_1(name):
     assert g(name) == 1
 
 
-@pytest.mark.parametrize("name", ["Guar", "Guar gum", "Wood apple", "Sirphal"])
+@pytest.mark.parametrize("name", ["Guar", "Guar gum", "Wood apple", "Sirphal", "Elephant foot yam", "Konjac", "Konjac flour"])
 def test_deliberately_unaliased_names_do_not_take_group_1(name):
     assert g(name) != 1
