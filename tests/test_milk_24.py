@@ -22,5 +22,5 @@ def test_plain_group_1():
 
 
 def test_camel_milk_powder_abstains_conservatively():
-    # goat and sheep milk powder follow the milk powder rule (group 1); camel milk powder is not routed there and abstains.
+    # CORRECTION: only goat (and cow, buffalo, plain) milk powder is routed through the milk powder rule (group 1); sheep milk powder (pinned in test_dairy_rows_1) and camel milk powder both abstain.
     assert g("Camel milk powder") is None
