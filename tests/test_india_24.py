@@ -11,7 +11,7 @@ def g(t):
 FORMS = ["{}", "{}, Salt", "Sugar, {}", "Wheat flour, {}", "{} (5%), Water", "Rice, {}", "Dried {}", "Roasted {}", "{} (Sugar)", "{} 100%", "{} powder", "{} extract", "Instant {}", "Decaffeinated {}", "{} flavour", "{} leaves", "{} bags", "Iced {}", "{} concentrate", "Cooked {}", "{} (Salt)", "Milk, {}", "{}, Milk"]
 
 
-ALIASES = [('Parwal', 'Pointed gourd'), ('Palwal', 'Pointed gourd'), ('Parmal', 'Pointed gourd'), ('Cluster bean', 'Cluster beans'), ('Bengal quince', 'Bael'), ('Star fruit', 'Carambola'), ('Starfruit', 'Carambola')]
+ALIASES = [('Parwal', 'Pointed gourd'), ('Palwal', 'Pointed gourd'), ('Parmal', 'Pointed gourd'), ('Cluster bean', 'Cluster beans'), ('Bengal quince', 'Bael'), ('Star fruit', 'Carambola'), ('Starfruit', 'Carambola'), ('Karonda', 'Karanda'), ('Karaunda', 'Karanda')]
 
 
 @pytest.mark.parametrize("form", FORMS)
@@ -29,9 +29,11 @@ def test_new_vegetable_head_matches_okra(name, form):
 @pytest.mark.parametrize("form", FORMS)
 def test_bael_matches_a_plain_fruit_row(form):
     assert g(form.format("Bael")) == g(form.format("Cantaloupe melons")), form
+    assert g(form.format("Karanda")) == g(form.format("Cantaloupe melons")), form
+    assert g(form.format("Phalsa")) == g(form.format("Cantaloupe melons")), form
 
 
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael"] + [a for a, _ in ALIASES])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa"] + [a for a, _ in ALIASES])
 def test_plain_group_1(name):
     assert g(name) == 1
 
