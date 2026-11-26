@@ -37,7 +37,7 @@ def test_synthetic_sprays_blends_antioxidant_and_additive_brackets_abstain(t):
         assert g(f.format(x=t))[0] is None, f.format(x=t)
 
 
-@pytest.mark.parametrize("t", ["Nutmeg Butter", "Ucuhuba Butter", "Shea Butter", "Rapeseed Oil", "Industrial Canola Oil", "Natreon Canola Oil", "Beef Tallow", "Fish Oil", "Pork Fat", "Animal Fat", "Shortening", "Margarine"])
+@pytest.mark.parametrize("t", ["Nutmeg Butter", "Ucuhuba Butter", "Rapeseed Oil", "Industrial Canola Oil", "Natreon Canola Oil", "Beef Tallow", "Fish Oil", "Pork Fat", "Animal Fat", "Shortening", "Margarine"])
 # Maize Oil now has separate current NALT Product28879 naming evidence in nalt_names_7.
 # Every other held fat/synonym remains negative.
 def test_synthetic_held_synonym_and_other_fat_terms_stay_unrecognised(t):

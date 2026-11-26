@@ -45,7 +45,8 @@ def test_explicit_same_food_only_powder_keeps_named_grinding_scope(name,form):
 def test_existing_protein_isolate_marker_remains_a_separate_marker(name):
  assert result(name+' protein isolate')==4
 
-@pytest.mark.parametrize('name',M['held'])
+# oils-24b: shea butter retired from this historical hold (the hold said extracted butter inherits no kernel placement; FSSAI 2.2.4 item 12 plus the FAO Group 2 process definition now place it directly).
+@pytest.mark.parametrize('name',[h for h in M['held'] if h.lower()!='shea butter'])
 def test_no_other_prior_hold_is_lifted(name):
  if name in ['celery', 'scallions', 'spring onions', 'tamarind']:  # tamarind-24: plain tamarind lifted (FAO Group 1 fruit class, FSSAI 2.3.49, FDC 167763); pulp/paste/concentrate/powder forms still abstain; see tests/test_tamarind_24.py
   assert result(name)==1  # Independently sourced slice14 lift; older manifest retained.
@@ -81,7 +82,7 @@ def test_new_names_do_not_force_held_cashew_compounds_or_confections():
 def test_canonical_names_are_not_corrupted(name):
  assert normalise_ingredient(name).name == name
 
-@pytest.mark.parametrize('name',['Shea Butter','Shea Oil','Sheanuts Butter','Shea Nuts Butter','Shea Nuts Oil','Bush Beans','Pole Beans','Bushbeans','Peppers (Hot)'])
+@pytest.mark.parametrize('name',['Shea Oil','Sheanuts Butter','Shea Nuts Butter','Shea Nuts Oil','Bush Beans','Pole Beans','Bushbeans','Peppers (Hot)'])
 def test_held_derivatives_and_ambiguous_names_do_not_get_plain_food_permission(name):
  assert result(name) is None
 

@@ -2,7 +2,7 @@
 import pytest
 from foodscan.pipeline import analyse_text
 
-ROWS = ["mahua oil", "watermelon seed oil", "chia oil", "taramira oil", "niger seed oil", "kokum fat", "mango kernel fat", "illipe butter"]  # oils-24b adds the last five (FSSAI 2.2.1(11),(13); 2.2.4 items 7, 8, 13); shea butter held: prior NALT holds pinned in four test files
+ROWS = ["mahua oil", "watermelon seed oil", "chia oil", "taramira oil", "niger seed oil", "shea butter", "kokum fat", "mango kernel fat", "illipe butter"]  # oils-24b adds the last six (FSSAI 2.2.1(11),(13); 2.2.4 items 7, 8, 12, 13)
 
 
 def g(t):
