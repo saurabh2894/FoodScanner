@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import io
 import re
 import sys
 from collections import defaultdict
@@ -28,18 +29,34 @@ def flatten(text):
 def read_table(path, columns, issues):
     rows = []
     with path.open(encoding="utf-8-sig", newline="") as file:
-        reader = csv.reader(file, strict=True)
+        record_lines = []
+
+        def lines():
+            for line in file:
+                record_lines.append(line)
+                yield line
+
+        reader = csv.reader(lines())
         try:
+            record_lines.clear()
             header = next(reader, None)
             if header != list(columns):
                 issues.append(f"{path.name}: malformed header {header!r}; expected {list(columns)!r}")
                 return rows
-            for values in reader:
+            while True:
+                record_lines.clear()
+                try:
+                    values = next(reader)
+                except StopIteration:
+                    break
                 line = reader.line_num
+                try:
+                    list(csv.reader(io.StringIO("".join(record_lines)), strict=True))
+                except csv.Error as error:
+                    issues.append(f"{path.name}:{line}: malformed CSV: {error}")
                 if len(values) != len(columns):
                     issues.append(f"{path.name}:{line}: expected {len(columns)} fields, got {len(values)}")
-                    continue
-                row = dict(zip(columns, values))
+                row = dict(zip(columns, (values + [""] * len(columns))[:len(columns)]))
                 for field, value in row.items():
                     if not value.strip():
                         issues.append(f"{path.name}:{line}: empty {field}")
@@ -59,6 +76,7 @@ def audit(directory):
         "Empty or malformed fields": [],
         "Inconsistent categories": [],
     }
+    all_keys = defaultdict(list)
     for filename, columns in TABLES.items():
         rows = read_table(directory / filename, columns, findings["Empty or malformed fields"])
         key_field = columns[0]
@@ -71,6 +89,7 @@ def audit(directory):
                 continue
             exact[term].append(line)
             normalised[key].append((line, row))
+            all_keys[key].append((filename, line, term))
             if filename == "lexicon.csv" and row["kind"].strip() not in KINDS:
                 findings["Inconsistent categories"].append(
                     f"{filename}:{line}: {term!r} has unknown kind {row['kind']!r}"
@@ -95,6 +114,17 @@ def audit(directory):
                     findings["Inconsistent categories"].append(
                         f"{filename}: {key!r} has conflicting targets: {locations}"
                     )
+    for key, group in sorted(all_keys.items()):
+        if len({filename for filename, _, _ in group}) < 2:
+            continue
+        locations = ", ".join(f"{term!r} ({filename}:{line})" for filename, line, term in group)
+        if len({term for _, _, term in group}) > 1:
+            findings["Normalised key collisions"].append(f"across tables: {key!r}: {locations}")
+        for term in sorted({term for _, _, term in group}):
+            matches = [(filename, line) for filename, line, value in group if value == term]
+            if len({filename for filename, _ in matches}) > 1:
+                places = ", ".join(f"{filename}:{line}" for filename, line in matches)
+                findings["Duplicate entries"].append(f"across tables: {term!r}: {places}")
     return findings
 
 
