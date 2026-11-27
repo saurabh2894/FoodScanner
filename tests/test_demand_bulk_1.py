@@ -71,6 +71,11 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
         assert grp("Ingredients: Carbonated Water.")[0] == 1
         assert not analyse_text("Ingredients: Carbonated Water, Sugar.", source="text").answered
         return
+    if d["term"] in ("tomato paste", "tomato puree"):
+        # tomato-24b (2026-11-27): FSSAI 2.3.14 names tomato puree and tomato paste as concentrates of tomato juice and Codex CXS 57
+        # designates them tomato concentrate; they are now aliases of the tomato concentrate row (no new row, same Group 3 rule);
+        # asserted in tests/test_tomato_24b.py. The earlier agent-written PARK disposition was not user evidence.
+        return
     if d["term"] == "cocoa powder":
         # cocoa-powder-24 (2026-11-24): PMC10127522 footnote 5 verified live on the rendered PMC page and the
         # pmc-reresearch-4 park condition implemented (cocoa_powder_residual); asserted in tests/test_cocoa_powder_24.py

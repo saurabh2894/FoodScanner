@@ -16,10 +16,14 @@ def test_staged_count():
     assert sorted(STAGED) == ["tomato concentrate", "tomato extract"]
 
 
-def test_tomato_paste_stays_parked():
-    # demand_decisions_1 parks tomato paste until the owner decides; the Brazil clause names concentrates and extract, not paste
+def test_tomato_paste_and_puree_are_aliases_of_the_concentrate_row_not_rows():
+    # tomato-24b (supersedes the earlier agent-written park comment "until the owner decides", which was not user evidence):
+    # FSSAI 2.3.14 names tomato puree and tomato paste as concentrates of tomato juice; they are aliases, not new rows.
     from foodscan.classify import lookup
-    assert lookup("tomato paste") is None
+    assert lookup("tomato paste") is None and lookup("tomato puree") is None
+    from foodscan.normalise import normalise_ingredient
+    assert normalise_ingredient("tomato paste").name == "tomato concentrate"
+    assert normalise_ingredient("tomato puree").name == "tomato concentrate"
 
 
 @pytest.mark.parametrize("t", STAGED)
