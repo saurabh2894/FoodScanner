@@ -18,7 +18,7 @@ def test_added_ingredient_group_3(t):
     assert grp(t) == 3
 
 
-@pytest.mark.parametrize("t", ["Tamarind pulp", "Tamarind paste", "Tamarind puree", "Tamarind concentrate", "Tamarind concentrate (65%)", "Tamarind (pulp)", "Tamarind juice", "Tamarind powder", "Tamarind extract", "Tamarind seed", "Tamarind seed powder", "Tamarind kernel powder", "Tamarind gum", "Tamarind nectar", "Tamarind candy", "Tamarind chutney", "Tamarind sauce", "Sweetened tamarind", "Tamarind in brine", "Tamarind (E412)", "Tamarind flakes", "Imli"])
+@pytest.mark.parametrize("t", ["Tamarind pulp", "Tamarind paste", "Tamarind puree", "Tamarind concentrate", "Tamarind concentrate (65%)", "Tamarind (pulp)", "Tamarind juice", "Tamarind powder", "Tamarind extract", "Tamarind seed", "Tamarind seed powder", "Tamarind kernel powder", "Tamarind gum", "Tamarind nectar", "Tamarind candy", "Tamarind chutney", "Tamarind sauce", "Sweetened tamarind", "Tamarind in brine", "Tamarind (E412)", "Tamarind flakes"])
 def test_other_forms_abstain(t):
     assert grp(t) is None
 

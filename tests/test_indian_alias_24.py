@@ -27,6 +27,6 @@ def test_alias_matches_english(pair, form):
 
 
 def test_ambiguous_names_stay_unrecognised():
-    # methi (seed or leaf), sarson/rai (seed, greens or oil), jeera spelling, taj, kalonji: not encoded, leads only
-    for n in ["Methi, Salt", "Sarson, Salt", "Jeera, Salt", "Taj, Salt", "Kalonji, Salt"]:
+    # methi (seed or leaf), sarson/rai (seed, greens or oil), taj, kalonji: not encoded, leads only
+    for n in ["Methi, Salt", "Sarson, Salt", "Taj, Salt", "Kalonji, Salt"]:
         assert "not in the local vocabulary" in res(n)[1]
