@@ -1309,6 +1309,9 @@ for _target in (CORPUS, PASTE):
 # general-25a parity: flake heads and aliases in plain, salted, sugared, fried, mix and powder forms.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Wheat flakes', 'Ragi flakes', 'Jowar flakes', 'Rice flakes', 'Poha', 'Sorghum flakes', 'Corn flakes') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Fried {t}', '{t} mix', '{t} powder', '{t} (Sugar)', '{t}, Peanuts, Salt'))
+# general-25b parity: bran heads in plain, salted, sugared, flakes, powder and oil forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Wheat bran', 'Oat bran', 'Rice bran', 'Corn bran') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', '{t} flakes', '{t} powder', '{t} oil', '{t} (Sugar)'))
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']

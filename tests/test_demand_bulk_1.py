@@ -111,6 +111,12 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
         # Brown rice flakes is recognised through the rice flakes row (descriptor "brown" dropped). Corn flakes and quinoa flakes stay parked.
         assert rec(d["term"]), d["term"]
         return
+    if d["term"] == "wheat bran":
+        # general-25b (2026-11-28): the earlier agent-written PARK reason ("flour or meal of a grain not named") did not fit: wheat is named in the
+        # grains clause and bran is a fraction, not a flour. The Group 1 definition names fractioning without added substances; FDC SR Legacy
+        # supplies the name (169722). Placed as a class-instance row; asserted in tests/test_general_25b.py. Bran products stay out.
+        assert rec(d["term"]), d["term"]
+        return
     if d["term"] in APPROVED_4:
         return                                                              # approved and merged later (pmc-decisions-4); asserted in tests/test_pmc_reresearch_4.py
     if d["term"] == "refined palmolien oil" and rec(d["term"]):
