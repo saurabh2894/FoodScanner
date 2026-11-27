@@ -382,7 +382,7 @@ def tomato_conc_verdict(ings):
         return (None, "the list holds something besides the tomato concentrate and salt or sugar, so no source read here places the combination")
     parts = [p.strip().lower() for p in re.split(r"\s*(?:,|;|&|\band\b)\s*", t.inner or "") if p.strip()]
     if any(p not in _TOMATO_INNER_OK for p in parts) or _added(t, _CHEESE_ABSTAIN):
-        return (None, "the concentrate's bracket or wording holds something besides tomato, salt or sugar, so no source read here places it")
+        return (None, "the bracket or wording after the concentrate is not limited to tomato, salt or sugar, so the Group 3 clause's condition is not shown to be met and nothing is placed")
     stated = bool(others) or any(p in ("salt", "sugar") for p in parts)
     if not stated:
         return (None, "salt or sugar is not stated, and the Brazil Group 3 clause covers tomato concentrates only 'with salt and/or sugar'")

@@ -16,14 +16,13 @@ def test_staged_count():
     assert sorted(STAGED) == ["tomato concentrate", "tomato extract"]
 
 
-def test_tomato_paste_and_puree_are_aliases_of_the_concentrate_row_not_rows():
+def test_tomato_paste_is_an_alias_of_the_concentrate_row_not_a_row():
     # tomato-24b (supersedes the earlier agent-written park comment "until the owner decides", which was not user evidence):
-    # FSSAI 2.3.14 names tomato puree and tomato paste as concentrates of tomato juice; they are aliases, not new rows.
+    # FSSAI 2.3.14 and Codex CXS 57 give paste at 25 percent soluble solids or more, a concentrate; paste is an alias, not a new row. Tomato puree is deliberately not aliased (see tests/test_tomato_24b.py).
     from foodscan.classify import lookup
     assert lookup("tomato paste") is None and lookup("tomato puree") is None
     from foodscan.normalise import normalise_ingredient
     assert normalise_ingredient("tomato paste").name == "tomato concentrate"
-    assert normalise_ingredient("tomato puree").name == "tomato concentrate"
 
 
 @pytest.mark.parametrize("t", STAGED)

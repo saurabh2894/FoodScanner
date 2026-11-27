@@ -728,7 +728,7 @@
       const others = ings.filter((_, n) => n !== idx[0]);
       if (others.some((o) => !TOMATO_OK_TERMS.has((lookup(o.name) || {}).term) || o.inner)) return [null, "the list holds something besides the tomato concentrate and salt or sugar, so no source read here places the combination"];
       const parts = (t.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter(Boolean);
-      if (parts.some((p) => !TOMATO_INNER_OK.has(p)) || addedIn(t, CHEESE_ABSTAIN)) return [null, "the concentrate's bracket or wording holds something besides tomato, salt or sugar, so no source read here places it"];
+      if (parts.some((p) => !TOMATO_INNER_OK.has(p)) || addedIn(t, CHEESE_ABSTAIN)) return [null, "the bracket or wording after the concentrate is not limited to tomato, salt or sugar, so the Group 3 clause's condition is not shown to be met and nothing is placed"];
       const stated = others.length > 0 || parts.some((p) => p === "salt" || p === "sugar");
       if (!stated) return [null, "salt or sugar is not stated, and the Brazil Group 3 clause covers tomato concentrates only 'with salt and/or sugar'"];
       return [3, "tomato concentrate with stated salt or sugar (Brazil Dietary Guidelines Group 3: 'tomato extract or concentrates (with salt and/or sugar)')"];
