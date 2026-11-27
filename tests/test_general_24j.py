@@ -11,9 +11,9 @@ def g(t):
 FORMS = ["{}", "{}, Salt", "Sugar, {}", "Wheat flour, {}", "{} (5%), Water", "Rice, {}", "Dried {}", "Roasted {}", "{} (Sugar)", "{} 100%", "{} powder", "{} extract", "Instant {}", "Decaffeinated {}", "{} flavour", "{} leaves", "{} bags", "Iced {}", "{} concentrate", "Cooked {}", "{} (Salt)", "Milk, {}", "{}, Milk"]
 
 FRUITS = ["Ambarella", "Bilimbi", "Langsat", "Salak", "Santol", "Tamarillo", "Wax apple", "Cape gooseberry", "Dragon fruit"]
-VEGS = ["Sponge gourd", "Snow peas"]
+VEGS = ["Snow peas"]
 ALIASES = [("Jamun", "Java-plum"), ("Jambolan", "Java-plum"), ("Snake fruit", "Salak"), ("Tree tomato", "Tamarillo"), ("Java apple", "Wax apple"), ("Wax jambu", "Wax apple"),
-           ("Pitaya", "Dragon fruit"), ("Pitahaya", "Dragon fruit"), ("Sentol", "Santol"), ("Kechapi", "Santol"), ("Mangetout", "Snow peas"), ("Smooth loofah", "Sponge gourd")]
+           ("Pitaya", "Dragon fruit"), ("Pitahaya", "Dragon fruit"), ("Sentol", "Santol"), ("Kechapi", "Santol"), ("Mangetout", "Snow peas"), ("Smooth loofah", "Dishcloth gourd"), ("Sponge gourd", "Dishcloth gourd")]
 
 
 @pytest.mark.parametrize("form", FORMS)
