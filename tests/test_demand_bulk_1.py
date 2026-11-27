@@ -105,6 +105,10 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
         return
     if d["term"] in APPROVED_4:
         return                                                              # approved and merged later (pmc-decisions-4); asserted in tests/test_pmc_reresearch_4.py
+    if d["term"] == "refined palmolien oil" and rec(d["term"]):
+        # palmolien-24: a spelling alias of the existing palmolein row (Indian trade spelling, supplier listing in the synonyms.csv source note); spelling only, no new placement
+        assert normalise_ingredient(d["term"]).name == "palmolein", d["term"]
+        return
     if d["term"] in ("dehydrated onion", "onions flakes") and rec(d["term"]):
         assert normalise_ingredient(d["term"]).name == "onion", d["term"]         # dehydrated-policy-1: term-level mapping to the source-supported dried onion, one per term
         return
