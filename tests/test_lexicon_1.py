@@ -49,7 +49,8 @@ def test_added_lexicon_rows_exist_with_kind_and_provisional_source():
         assert term in rows, f"missing lexicon row for {term}"
         row = rows[term]
         assert row["kind"] == expected_kind, f"wrong kind for {term}: {row['kind']} != {expected_kind}"
-        assert row["source"].startswith("PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11"), f"invalid source for {term}: {row['source']}"
+        src = row["source"].split("): ", 1)[1] if row["source"].startswith("RECOGNITION-ONLY (species-identity audit 24m") else row["source"]  # audit-24m demotion keeps the original source text
+        assert src.startswith("PROVISIONAL: FAO 2019 (ca5644en.pdf) Table 1 Group 1 p.11"), f"invalid source for {term}: {row['source']}"
         assert "exact label term seen on" in row["source"], f"source for {term} missing evidence citation: {row['source']}"
 
 

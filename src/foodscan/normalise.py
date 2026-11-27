@@ -150,11 +150,12 @@ def _synonyms() -> list[tuple[re.Pattern, str]]:
 
 def flatten(text: str) -> str:
     """Lowercase, hyphens/slashes to spaces, collapse whitespace."""
-    text = re.sub(r"[-–—_/]", " ", text.lower())
+    text = re.sub(r"[-–—_/]", " ", text.lower().replace("\u2019", "'").replace("\u2018", "'"))
     return re.sub(r"\s+", " ", text).strip()
 
 
 def _apply_synonyms(text: str) -> str:
+    text = text.replace("\u2019", "'").replace("\u2018", "'")  # curly apostrophe reads as the straight one (general-24m)
     for pat, to in _synonyms():
         text = pat.sub(to, text)
     return text

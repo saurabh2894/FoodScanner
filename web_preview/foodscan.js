@@ -7,7 +7,7 @@
   function createEngine(T) {
     const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const collapse = (s) => s.replace(/\s+/g, " ").trim();
-    const flatten = (s) => s.toLowerCase().replace(/[-–—_/]/g, " ").replace(/\s+/g, " ").trim();
+    const flatten = (s) => s.toLowerCase().replace(/[\u2019\u2018]/g, "'").replace(/[-–—_/]/g, " ").replace(/\s+/g, " ").trim();
     const stripChars = (s, chars) => {
       let a = 0, b = s.length;
       while (a < b && chars.includes(s[a])) a++;
@@ -555,6 +555,7 @@
       let { stripped: text, uses } = extractIns(raw);
       text = text.replace(/\d+(?:\.\d+)?\s*%/g, " ");
       text = stripFootnotes(text);
+      text = text.replace(/[\u2019\u2018]/g, "'");
       for (const s of synonyms) text = text.replace(s.re, s.to);
       text = flatten(text);
       let [name, inner] = splitBrackets(text);

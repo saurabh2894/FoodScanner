@@ -1270,6 +1270,9 @@ for _target in (CORPUS, PASTE):
 # general-24l parity: arracacha, fig-leaf gourd and nine alias names (jute mallow, tannia, sponge gourd and others) in plain, salted, sugared, dried and powder forms.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Arracacha', 'Fig-leaf gourd', 'Peruvian parsnip', 'Malabar gourd', 'Tannia', 'Jute mallow', 'Jews mallow', "Jew's mallow", 'Sponge gourd', 'Smooth loofah') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
+# general-24m parity: curly-apostrophe names and the demoted duplicate rows (behaviour must be unchanged) in plain and conditioned forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Jew\u2019s mallow', "Jew's mallow", 'Bishop\u2019s seed', 'Jicama', 'Yambean', 'Sapote', 'Mamey sapote', 'Cress', 'Garden cress', 'Bajra', 'Pearl millet', 'Jowar', 'Sorghum', 'Maize', 'Corn', 'Groundnut oil', 'Peanut oil', 'Chillies', 'Chilli', 'Rajma', 'Kidney beans', 'Moong', 'Greengram', 'Winter squashes', 'Winter squash') for f in _sh + ['Dried {t}', 'Salted {t}', '{t} (Sugar)'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
