@@ -32,3 +32,12 @@ def test_plain_group_1(name):
 def test_unaliased_names_stay_unrecognised():
     for t in ["Akee", "Mountain cranberry", "Cowberry", "Japanese medlar"]:
         assert g(t) is None
+
+
+@pytest.mark.parametrize("form", FORMS)
+def test_pineapple_guava_alias_matches_feijoa(form):
+    assert g(form.format("Pineapple guava")) == g(form.format("Feijoa")), form
+
+
+def test_pineapple_and_guava_separate_words_stay_unrecognised():
+    assert g("Pineapple, Guava") is None
