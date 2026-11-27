@@ -31,10 +31,11 @@ def test_bael_matches_a_plain_fruit_row(form):
     assert g(form.format("Bael")) == g(form.format("Cantaloupe melons")), form
     assert g(form.format("Karanda")) == g(form.format("Cantaloupe melons")), form
     assert g(form.format("Indian jujube")) == g(form.format("Cantaloupe melons")), form
+    assert g(form.format("Citron")) == g(form.format("Cantaloupe melons")), form
     assert g(form.format("Phalsa")) == g(form.format("Cantaloupe melons")), form
 
 
-@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa", "Elephant yam", "Fenugreek leaves", "Indian jujube"] + [a for a, _ in ALIASES])
+@pytest.mark.parametrize("name", ["Pointed gourd", "Cluster beans", "Bael", "Karanda", "Phalsa", "Elephant yam", "Fenugreek leaves", "Indian jujube", "Citron"] + [a for a, _ in ALIASES])
 def test_plain_group_1(name):
     assert g(name) == 1
 
