@@ -33,5 +33,6 @@ def test_plain_group_1(name):
 
 
 def test_unaliased_names_stay_unrecognised():
-    for t in ["Wood apple", "Elephant apple", "Sadaphal", "Ladyfinger"]:
+    # general-24z: wood apple removed from this stale expected gap; it now has its own head row (Purdue/Morton identity and raw-pulp use). Elephant apple (Dillenia) stays unrecognised.
+    for t in ["Elephant apple", "Sadaphal", "Ladyfinger"]:
         assert g(t) is None

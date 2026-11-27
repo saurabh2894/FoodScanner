@@ -40,7 +40,7 @@ def test_plain_group_1(name):
     assert g(name) == 1
 
 
-@pytest.mark.parametrize("name", ["Guar", "Guar gum", "Wood apple", "Sirphal", "Elephant foot yam", "Konjac", "Konjac flour"])
+@pytest.mark.parametrize("name", ["Guar", "Guar gum", "Sirphal", "Elephant foot yam", "Konjac", "Konjac flour"])
 def test_deliberately_unaliased_names_do_not_take_group_1(name):
     assert g(name) != 1
 

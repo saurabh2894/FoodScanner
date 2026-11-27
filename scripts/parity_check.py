@@ -1305,7 +1305,10 @@ for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Aronia', 'Chokeberry', 'Chokeberries', 'Jostaberry', 'Black sapote', 'Calamansi', 'Kabocha', 'Chokecherry') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', '{t} powder', '{t} juice', '{t} (Sugar)'))
 # general-24y parity: mirabelle, red huckleberry and barberry in plain, salted, sugared, dried, powder and juice forms.
 for _target in (CORPUS, PASTE):
-    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Mirabelle', 'Red huckleberry', 'Barberry', 'Huckleberry') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', '{t} powder', '{t} juice', '{t} (Sugar)'))
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Mirabelle', 'Red huckleberry', 'Barberry', 'Huckleberry', 'Abiu', 'Wampee', 'Grumichama', 'Wood apple') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', '{t} powder', '{t} juice', '{t} (Sugar)'))
+# general-25a parity: flake heads and aliases in plain, salted, sugared, fried, mix and powder forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Wheat flakes', 'Ragi flakes', 'Jowar flakes', 'Rice flakes', 'Poha', 'Sorghum flakes', 'Corn flakes') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Fried {t}', '{t} mix', '{t} powder', '{t} (Sugar)', '{t}, Peanuts, Salt'))
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
