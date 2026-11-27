@@ -1300,6 +1300,9 @@ for _target in (CORPUS, PASTE):
 # general-24w parity: ulluco head and kundri alias in plain, salted, sugared, dried, powder and canned forms.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Ulluco', 'Kundri') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', '{t} powder', 'Canned {t}', '{t} (Sugar)', 'Boiled {t}'))
+# general-24x parity: five heads and the chokeberry aliases in plain, salted, sugared, dried, powder and juice forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Aronia', 'Chokeberry', 'Chokeberries', 'Jostaberry', 'Black sapote', 'Calamansi', 'Kabocha', 'Chokecherry') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Dried {t}', '{t} powder', '{t} juice', '{t} (Sugar)'))
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
