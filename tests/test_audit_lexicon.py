@@ -83,3 +83,40 @@ def test_summary_and_missing_file_error(resources, tmp_path, capsys):
     assert "Inconsistent categories: 0" in output
     assert audit_lexicon.main(["--resources", str(tmp_path / "missing")]) == 1
     assert "Cannot read lexicon" in capsys.readouterr().err
+
+
+META = "Info: trailing id/batch metadata columns (intentional, not errors)"
+SAME_DUP = "Info: same-target duplicate aliases (harmless repeats)"
+SAME_VAR = "Info: same-target normalised spelling variants (harmless)"
+
+
+def test_trailing_id_and_batch_columns_are_info_not_malformed(resources):
+    findings = audit_lexicon.audit(resources("acorns,nut_seed,source,fdc_sr_legacy:170157;fdc_sr_legacy:170565,class-nuts-5\n"))
+    assert findings["Empty or malformed fields"] == []
+    assert len(findings[META]) == 1 and "acorns" in findings[META][0]
+
+
+def test_split_row_with_extra_fields_is_an_error(resources):
+    findings = audit_lexicon.audit(resources('rajma,legume,"unfinished quote, then ""more"" text",extra words here,and more\n'))
+    assert any("split or malformed row" in item for item in findings["Empty or malformed fields"])
+    assert findings[META] == []
+
+
+def test_same_target_alias_repeats_are_info_but_different_targets_are_errors(resources):
+    findings = audit_lexicon.audit(resources("", "brinjal,eggplant,a\nbrinjal,eggplant,b\nkundri,ivy gourd,a\nkundri,pointed gourd,b\n"))
+    assert any("'brinjal'" in item for item in findings[SAME_DUP])
+    assert not any("'brinjal'" in item for item in findings["Duplicate entries"])
+    assert any("'kundri'" in item for item in findings["Duplicate entries"])
+    assert any("conflicting targets" in item for item in findings["Inconsistent categories"])
+
+
+def test_same_target_spelling_variants_are_info(resources):
+    findings = audit_lexicon.audit(resources("", "lady's finger,okra,a\nlady\u2019s finger,okra,b\n"))
+    assert findings[SAME_VAR] and findings["Normalised key collisions"] == []
+
+
+def test_real_repo_tables_have_no_error_findings():
+    findings = audit_lexicon.audit(audit_lexicon.RESOURCES)
+    errors = {h: v for h, v in findings.items() if not h.startswith("Info:") and v}
+    assert errors == {}
+    assert audit_lexicon.main(["--strict"]) == 0

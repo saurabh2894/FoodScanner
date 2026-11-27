@@ -26,7 +26,16 @@ def flatten(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def read_table(path, columns, issues):
+def is_metadata_row(values, columns):
+    """Intentional shape: the 3 table columns plus a trailing source id and batch tag, nothing else."""
+    return (
+        len(values) == len(columns) + 2
+        and re.fullmatch(r"[\w:;.\-]+", values[-2]) is not None
+        and re.fullmatch(r"[\w\-]+", values[-1]) is not None
+    )
+
+
+def read_table(path, columns, issues, metadata):
     rows = []
     with path.open(encoding="utf-8-sig", newline="") as file:
         record_lines = []
@@ -55,7 +64,11 @@ def read_table(path, columns, issues):
                 except csv.Error as error:
                     issues.append(f"{path.name}:{line}: malformed CSV: {error}")
                 if len(values) != len(columns):
-                    issues.append(f"{path.name}:{line}: expected {len(columns)} fields, got {len(values)}")
+                    if is_metadata_row(values, columns):
+                        metadata.append(f"{path.name}:{line}: {values[0]!r} has trailing id and batch columns ({values[-2]!r}, {values[-1]!r}); ignored by the 3-column loader")
+                        values = values[:len(columns)]
+                    else:
+                        issues.append(f"{path.name}:{line}: expected {len(columns)} fields, got {len(values)} (a split or malformed row, the loader would keep a truncated source)")
                 row = dict(zip(columns, (values + [""] * len(columns))[:len(columns)]))
                 for field, value in row.items():
                     if not value.strip():
@@ -68,6 +81,11 @@ def read_table(path, columns, issues):
     return rows
 
 
+def same_target(rows, key_field, term):
+    """True when every row for this exact synonym source term maps to the same normalised target."""
+    return len({flatten(row["to"]) for _, row in rows if row[key_field] == term}) == 1
+
+
 def audit(directory):
     """Return sections of findings; missing/unreadable files raise an error."""
     findings = {
@@ -75,10 +93,14 @@ def audit(directory):
         "Normalised key collisions": [],
         "Empty or malformed fields": [],
         "Inconsistent categories": [],
+        "Info: trailing id/batch metadata columns (intentional, not errors)": [],
+        "Info: same-target duplicate aliases (harmless repeats)": [],
+        "Info: same-target normalised spelling variants (harmless)": [],
     }
+    metadata = findings["Info: trailing id/batch metadata columns (intentional, not errors)"]
     all_keys = defaultdict(list)
     for filename, columns in TABLES.items():
-        rows = read_table(directory / filename, columns, findings["Empty or malformed fields"])
+        rows = read_table(directory / filename, columns, findings["Empty or malformed fields"], metadata)
         key_field = columns[0]
         exact = defaultdict(list)
         normalised = defaultdict(list)
@@ -96,12 +118,18 @@ def audit(directory):
                 )
         for term, lines in sorted(exact.items()):
             if len(lines) > 1:
-                findings["Duplicate entries"].append(f"{filename}: {term!r} at lines {lines}")
+                if filename == "synonyms.csv" and same_target(rows, key_field, term):
+                    findings["Info: same-target duplicate aliases (harmless repeats)"].append(f"{filename}: {term!r} at lines {lines}")
+                else:
+                    findings["Duplicate entries"].append(f"{filename}: {term!r} at lines {lines}")
         for key, group in sorted(normalised.items()):
             terms = sorted({row[key_field] for _, row in group})
             if len(terms) > 1:
                 locations = ", ".join(f"{row[key_field]!r} (line {line})" for line, row in group)
-                findings["Normalised key collisions"].append(f"{filename}: {key!r}: {locations}")
+                if filename == "synonyms.csv" and len({flatten(r["to"]) for _, r in group}) == 1:
+                    findings["Info: same-target normalised spelling variants (harmless)"].append(f"{filename}: {key!r}: {locations}")
+                else:
+                    findings["Normalised key collisions"].append(f"{filename}: {key!r}: {locations}")
             if filename == "lexicon.csv":
                 kinds = sorted({row["kind"].strip() for _, row in group if row["kind"].strip()})
                 if len(kinds) > 1:
@@ -130,6 +158,7 @@ def audit(directory):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--strict", action="store_true", help="exit 1 when any non-info finding exists")
     parser.add_argument("--resources", type=Path, default=RESOURCES, help="directory containing the two CSV tables")
     args = parser.parse_args(argv)
     try:
@@ -142,7 +171,9 @@ def main(argv=None):
         print(f"\n{heading}: {len(items)}")
         for item in items:
             print(f"  {item}")
-    return 0
+    errors = sum(len(items) for heading, items in findings.items() if not heading.startswith("Info:"))
+    print(f"\nErrors (non-info findings): {errors}")
+    return 1 if args.strict and errors else 0
 
 
 if __name__ == "__main__":
