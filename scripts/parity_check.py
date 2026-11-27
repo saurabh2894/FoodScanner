@@ -1261,6 +1261,9 @@ for _target in (CORPUS, PASTE):
 # india-24 parity.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Pointed gourd', 'Parwal', 'Palwal', 'Cluster beans', 'Cluster bean', 'Bael', 'Bengal quince', 'Star fruit', 'Starfruit', 'Karanda', 'Karonda', 'Karaunda', 'Phalsa', 'Elephant yam', 'Elephant foot yam', 'Konjac', 'Fenugreek leaves', 'Indian jujube', 'Tomato paste', 'Tomato puree', 'Tomato concentrate', 'Star anise', 'Chinese star anise', 'Aniseed', 'Citron', 'Candied citron', 'Sweetsop', 'Pomelo', 'Fenugreek', 'Fenugreek seeds', 'Guar', 'Guar gum', 'Wood apple') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
+# general-24j parity: new fruit and vegetable heads and their alias names in plain, salted, sugared, dried and powder forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Ambarella', 'Bilimbi', 'Jamun', 'Jambolan', 'Java plum', 'Langsat', 'Salak', 'Snake fruit', 'Santol', 'Sentol', 'Kechapi', 'Tamarillo', 'Tree tomato', 'Wax apple', 'Java apple', 'Wax jambu', 'Cape gooseberry', 'Dragon fruit', 'Pitaya', 'Pitahaya', 'Sponge gourd', 'Smooth loofah', 'Snow peas', 'Mangetout', 'Black plum', 'Gherkin') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
