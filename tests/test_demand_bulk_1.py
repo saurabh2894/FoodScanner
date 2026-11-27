@@ -103,6 +103,14 @@ def test_synthetic_negative_no_parked_label_bound_or_marker_proposal_term_is_rec
         from foodscan.classify import lookup
         assert lookup(normalise_ingredient(d["term"]).name)["term"] == "cow milk", d["term"]
         return
+    if d["term"] in ("rice flakes", "brown rice flakes", "jowar flakes", "ragi flakes"):
+        # general-25a (2026-11-28): the earlier agent-written PARK reason was "this grain is not named" in the flakes clause. The same clause
+        # ("grits, flakes or flour made from corn, wheat, oats, or cassava") already places flours of other grains as class-instances, and the
+        # FAO text says plain corn flakes are minimally processed and only sweetened or flavoured forms are not. Plain single-grain flakes are now
+        # placed as class-instance rows with manufacture sources (CFTRI ragi and jowar flakes, NIFTEM flaked rice); asserted in tests/test_general_25a.py.
+        # Brown rice flakes is recognised through the rice flakes row (descriptor "brown" dropped). Corn flakes and quinoa flakes stay parked.
+        assert rec(d["term"]), d["term"]
+        return
     if d["term"] in APPROVED_4:
         return                                                              # approved and merged later (pmc-decisions-4); asserted in tests/test_pmc_reresearch_4.py
     if d["term"] == "refined palmolien oil" and rec(d["term"]):

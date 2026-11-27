@@ -43,7 +43,7 @@ def test_oats_with_sugar_and_salt_is_group3_not_forced_higher():
 
 
 # ---- the layer must not over-reach ---------------------------------------------------------------------
-@pytest.mark.parametrize("wording", ["corn flakes", "wheat flakes", "jackfruit seed paste", "mung bean noodles", "oat protein concentrate",
+@pytest.mark.parametrize("wording", ["corn flakes", "jackfruit seed paste", "mung bean noodles", "oat protein concentrate",
                                      "rice syrup", "oat beta glucan"])
 def test_descriptors_do_not_turn_processed_items_into_plain_ones(wording):
     assert group(wording) is None, wording
@@ -52,7 +52,8 @@ def test_descriptors_do_not_turn_processed_items_into_plain_ones(wording):
 def test_flakes_is_not_a_descriptor_but_oat_flakes_is_an_oat_wording():
     from foodscan.normalise import normalise_ingredient
 
-    assert lookup("corn flakes") is None and lookup("wheat flakes") is None
+    # general-25a: wheat flakes now has its own row (the FAO clause names flakes made from wheat); corn flakes stays unrecognised (open composition)
+    assert lookup("corn flakes") is None and lookup("wheat flakes")["term"] == "wheat flakes"
     assert normalise_ingredient("oat flakes").name == "oat"                  # synonym, applied in normalisation
     assert lookup(normalise_ingredient("rolled oat flakes").name)["term"] == "oat"
 
