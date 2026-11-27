@@ -29,5 +29,6 @@ def test_existing_dal_rows_unchanged():
     assert grp("Chana dal") == 1 and grp("Chana dal, Salt") == 3 and grp("Masoor dal") == 1 and grp("Urad dal") == 1 and grp("Urd beans") == 1 and grp("Black gram") == 1
 
 
-def test_chana_not_encoded():
-    assert grp("Chana") is None
+def test_chana_encoded_with_dal_guard():
+    # reversed in general-24u3: engine guard keeps "chana dal" rows intact
+    assert grp("Chana") == 1 and grp("Chana dal") == 1

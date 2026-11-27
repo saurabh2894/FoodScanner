@@ -361,6 +361,7 @@
     const insRef = {};     // display names only (ins_names.csv): "Recognised code, no processing rule yet"; never feeds a decision
     for (const r of T.ins_names) insRef[r.ins.toLowerCase().replace(/\s+/g, "")] = r;
 
+    const dalRows = new Set(T.lexicon.map((r) => flatten(r.term)).filter((t) => t.endsWith(" dal")));
     const synonyms = [...T.synonyms]
       .sort((a, b) => b.from.length - a.from.length)
       .map((r) => {
@@ -371,7 +372,8 @@
         // target-safe rewrite (mirrors normalise.py): an alias that is a strict word-prefix of its own target absorbs the remaining target words when they follow
         const toFlat = flatten(r.to);
         if (toFlat.startsWith(term + " ")) tail = "(?:\\s+" + esc(toFlat.slice(term.length + 1)).replace(/ /g, "\\s+") + "(?![a-z]))?";
-        return { re: new RegExp(left + esc(term) + right + tail, "g"), to: r.to.toLowerCase() };
+        const guard = dalRows.has(term + " dal") && !r.to.toLowerCase().endsWith(" dal") ? "(?!\\s+dal(?![a-z]))" : "";   // mirrors normalise.py: chana must leave "chana dal" alone
+        return { re: new RegExp(left + esc(term) + right + guard + tail, "g"), to: r.to.toLowerCase() };
       });
     const markers = T.markers.map((r) => ({ re: new RegExp("(?<![a-z])(?<!(?<![a-z])no )(?<!(?<![a-z])no added )(?<!(?<![a-z])non )(?<!(?<![a-z])non-)(?<!without )(?<!free from )(?<!free of )(?<!source of )(?<!rich in )(?<!high in )" + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));
     const claimMarkers = T.markers.filter((r) => r.strength === "strong").map((r) => ({ re: new RegExp("(?<![a-z])(?:source of|rich in|high in) " + esc(flatten(r.term)) + "(?![a-z])(?![ -]free(?![a-z]))"), row: r }));

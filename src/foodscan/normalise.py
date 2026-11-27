@@ -132,10 +132,13 @@ def _synonyms() -> list[tuple[re.Pattern, str]]:
         return ("(?<![a-z0-9])" if term[0].isdigit() else "(?<![a-z])",
                 "(?![a-z0-9])" if term[-1].isdigit() else "(?![a-z])")
 
+    dal_rows = {flatten(r["term"]) for r in load_table("lexicon.csv") if flatten(r["term"]).endswith(" dal")}
     out = []
     for r in rows:
         term = r["from"].lower()
         left, right = boundary(term)
+        # a bare alias must not rewrite the first word of an existing "<term> dal" row ("chana" must leave "chana dal" alone, general-24u3)
+        guard = r"(?!\s+dal(?![a-z]))" if term + " dal" in dal_rows and not r["to"].lower().endswith(" dal") else ""
         # an alias for a "... dal" term also absorbs a following "dal" ("bengal gram dal" -> "chana dal", not "chana dal dal")
         tail = r"(?:\s+dal(?![a-z]))?" if r["to"].lower().endswith(" dal") and not term.endswith(" dal") else ""
         # target-safe rewrite (engine-fixes-1): an alias that is a strict word-prefix of its OWN target absorbs the remaining target words when they follow, so the canonical name is never
@@ -143,7 +146,7 @@ def _synonyms() -> list[tuple[re.Pattern, str]]:
         to_flat = flatten(r["to"])
         if to_flat.startswith(term + " "):
             tail = r"(?:\s+" + re.escape(to_flat[len(term) + 1:]).replace(r"\ ", r"\s+") + r"(?![a-z]))?"
-        out.append((re.compile(f"{left}{re.escape(term)}{right}{tail}"), r["to"].lower()))
+        out.append((re.compile(f"{left}{re.escape(term)}{right}{guard}{tail}"), r["to"].lower()))
     return out
 
 

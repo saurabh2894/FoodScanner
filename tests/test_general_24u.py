@@ -1,4 +1,4 @@
-"""general-24u: six Hindi-name aliases (lichi, kalimirch, mandva, til) of existing rows (IISc India Flora). Every alias equals its English head in every probed form."""
+"""general-24u: seven Hindi-name aliases (lichi, kalimirch, mandva, til) of existing rows (IISc India Flora). Every alias equals its English head in every probed form."""
 import pytest
 from foodscan.pipeline import analyse_text
 
@@ -10,7 +10,7 @@ def g(t):
 
 FORMS = ["{}", "{}, Salt", "Sugar, {}", "Wheat flour, {}", "{} (5%), Water", "Rice, {}", "Dried {}", "Roasted {}", "{} (Sugar)", "{} 100%", "{} powder", "{} extract", "Instant {}", "Decaffeinated {}", "{} flavour", "{} leaves", "{} bags", "Iced {}", "{} concentrate", "Cooked {}", "{} (Salt)", "Milk, {}", "{}, Milk"]
 
-ALIASES = [("Imli", "Tamarind"), ("Jeera", "Cumin"), ("Lichi", "Litchis"), ("Kalimirch", "Black pepper"), ("Mandva", "Ragi"), ("Til", "Sesame seeds")]
+ALIASES = [("Chana", "Chickpea"), ("Imli", "Tamarind"), ("Jeera", "Cumin"), ("Lichi", "Litchis"), ("Kalimirch", "Black pepper"), ("Mandva", "Ragi"), ("Til", "Sesame seeds")]
 
 
 @pytest.mark.parametrize("form", FORMS)
@@ -26,10 +26,11 @@ def test_compounds_do_not_gain_a_new_placement(t):
 
 
 
-def test_chana_stays_unencoded_because_alias_rewrites_compounds():
-    # Measured: aliasing chana to chickpea turned 'Chana dal' and 'Bengal gram dal' from group 1 into abstentions
-    # and made 'Roasted chana' group 1 although roasting has no placement source. Not a species-identity doubt.
-    assert g("Chana") is None
+def test_chana_alias_leaves_chana_dal_rows_alone():
+    # general-24u3: an engine guard stops a bare alias from rewriting the first word of an existing "<term> dal" row.
+    assert g("Chana") == g("Chickpea") == 1
+    assert g("Chana dal") == 1 and g("Chana dal, Salt") == 3 and g("Bengal gram dal") == 1
+    assert g("Roasted chana") == g("Roasted chickpea")
 
 
 @pytest.mark.parametrize("t", ["Kala jeera", "Shahi jeera", "Jeera powder", "Imli chutney"])
