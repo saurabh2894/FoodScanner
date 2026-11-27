@@ -31,3 +31,11 @@ def test_repaired_sources_are_complete():
         rows = {r["term"]: r["source"] for r in csv.DictReader(f)}
     assert rows["calamansi"].rstrip().endswith("are not placed by this row.")
     assert rows["rajma"].rstrip().endswith("plain dals as group 1")
+
+
+def test_no_alias_maps_to_two_targets():
+    seen = {}
+    with (RES / "synonyms.csv").open(newline="") as f:
+        for r in csv.DictReader(f):
+            seen.setdefault(r["from"].lower(), set()).add(r["to"])
+    assert {k: v for k, v in seen.items() if len(v) > 1} == {}
