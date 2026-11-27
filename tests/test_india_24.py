@@ -62,3 +62,17 @@ def test_indian_jujube_is_its_own_row_and_ber_is_not_aliased():
     assert normalise_ingredient("indian jujube").name == "indian jujube"
     assert normalise_ingredient("jujube").name != "indian jujube"
     assert g("Ber") != 1
+
+
+@pytest.mark.parametrize("form", FORMS)
+def test_star_anise_behaves_like_the_other_spice_rows(form):
+    # india-24h: recognition-level spice row; every form equals the existing aniseed row, and star anise is not aniseed
+    assert g(form.format("Star anise")) == g(form.format("Aniseed")), form
+    assert g(form.format("Chinese star anise")) == g(form.format("Star anise")), form
+
+
+def test_star_anise_is_recognised_and_not_the_aniseed_row():
+    from foodscan.normalise import normalise_ingredient
+    assert normalise_ingredient("star anise").name == "star anise"
+    assert normalise_ingredient("aniseed").name == "aniseed"
+    assert normalise_ingredient("chinese star anise").name == "star anise"
