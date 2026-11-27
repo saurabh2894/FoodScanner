@@ -35,4 +35,6 @@ def test_plain_forms_placed():
 
 
 def test_neighbours_unchanged():
-    assert res("Salmon") is None and res("Tuna") is None and res("Swede") is None
+    assert res("Salmon") is None and res("Tuna") is None
+    # general-24k: Swede left this control list. PROTA Brassica napus (https://plantuse.plantnet.org/en/Brassica_napus_(PROTA)) gives "Swede, rutabaga (En)", so it is now an alias of the existing rutabagas row.
+    assert res("Swede") == res("Rutabagas") == 1

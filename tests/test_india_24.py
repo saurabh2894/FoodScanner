@@ -57,11 +57,12 @@ def test_fenugreek_leaves_are_not_the_seed_row():
     assert normalise_ingredient("fenugreek seeds").name == "fenugreek"
 
 
-def test_indian_jujube_is_its_own_row_and_ber_is_not_aliased():
+def test_indian_jujube_is_its_own_row_and_ber_is_aliased_to_it_from_general_24k():
     from foodscan.normalise import normalise_ingredient
     assert normalise_ingredient("indian jujube").name == "indian jujube"
     assert normalise_ingredient("jujube").name != "indian jujube"
-    assert g("Ber") != 1
+    # general-24k: the old pin (ber not aliased) predates a naming source. IISc India Flora Online (https://indiaflora-ces.iisc.ac.in/herbsheet.php?cat=13&id=12608) gives "Ber (Hindi)" for Ziziphus mauritiana, common names Common Jujube, Indian Jujube. Plain fruit either way (both rows Group 1).
+    assert g("Ber") == g("Indian jujube") == 1
 
 
 @pytest.mark.parametrize("form", FORMS)

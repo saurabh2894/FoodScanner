@@ -1264,6 +1264,9 @@ for _target in (CORPUS, PASTE):
 # general-24j parity: new fruit and vegetable heads and their alias names in plain, salted, sugared, dried and powder forms.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Ambarella', 'Bilimbi', 'Jamun', 'Jambolan', 'Java plum', 'Langsat', 'Salak', 'Snake fruit', 'Santol', 'Sentol', 'Kechapi', 'Tamarillo', 'Tree tomato', 'Wax apple', 'Java apple', 'Wax jambu', 'Cape gooseberry', 'Dragon fruit', 'Pitaya', 'Pitahaya', 'Sponge gourd', 'Smooth loofah', 'Snow peas', 'Mangetout', 'Black plum', 'Gherkin') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
+# general-24k parity: six new fruit heads and 27 alias names (English and Hindi names of existing rows) in plain, salted, sugared, dried and powder forms.
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Water apple', 'Malay apple', 'Cempedak', 'Marang', 'Naranjilla', 'Canistel', 'Pomerac', 'Bell fruit', 'Chempedak', 'Egg fruit', 'West Indian cherry', 'Surinam cherry', 'Brazil cherry', 'Cantaloupe', 'Musk melon', 'Muskmelon', 'Swede', 'Rocket', 'Rocket salad', 'Palak', 'Amrud', 'Sitaphal', 'Ber', 'Lauki', 'Tindora', 'Kundri', 'Arvi', 'Chikoo', 'Sapota', 'Mosambi', 'Petha') for f in _sh + ['Dried {t}', '{t} powder', 'Salted {t}', '{t} (Sugar)', 'Canned {t}'])
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
