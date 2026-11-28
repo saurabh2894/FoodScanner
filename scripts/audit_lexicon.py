@@ -59,12 +59,14 @@ def browser_tables():
     env = dict(os.environ, PYTHONPATH=str(ROOT / "src"), PYTHONDONTWRITEBYTECODE="1")
     result = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "web_tables.py")],
-        capture_output=True, text=True, env=env, check=True,
+        capture_output=True, text=True, env=env,
     )
-    return json.loads(result.stdout)
+    if result.returncode:
+        return None, result.stderr.strip()
+    return json.loads(result.stdout), None
 
 
-def audit(heads, aliases, browser):
+def audit(heads, aliases, browser, browser_error=None):
     issues = []
     for label, rows, fields in (
         ("lexicon", heads, ("term", "kind", "source")),
@@ -80,7 +82,7 @@ def audit(heads, aliases, browser):
                 value = row.get(field)
                 if isinstance(value, str) and value and (value != value.strip() or
                                                           (field != "source" and not key(value))):
-                    issues.append(f"{label} row {line}: malformed {field}: {value!r}")
+                    issues.append(f"{label} row {line}: malformed {field} (whitespace or punctuation only)")
             if label == "lexicon" and row.get("kind") and row["kind"] not in KINDS:
                 issues.append(f"{label} row {line}: unknown kind {row['kind']!r}")
 
@@ -119,14 +121,17 @@ def audit(heads, aliases, browser):
     normalized_aliases = [f"{k}: {', '.join(sorted(v))}" for k, v in sorted(spellings.items()) if len(v) > 1]
 
     differences = []
-    for label, python_rows, js_rows, fields in (
-        ("heads", heads, browser["lexicon"], ("term",)),
-        ("aliases", aliases, browser["synonyms"], ("from", "to")),
-    ):
-        py = {tuple(r.get(f) or "" for f in fields) for r in python_rows}
-        js = {tuple(r.get(f) or "" for f in fields) for r in js_rows}
-        for side, missing in (("Python only", py - js), ("browser only", js - py)):
-            differences.extend(f"{label} {side}: {' -> '.join(entry)}" for entry in sorted(missing))
+    if browser is None:
+        differences.append(f"Unavailable: browser table generation failed: {browser_error}")
+    else:
+        for label, python_rows, js_rows, fields in (
+            ("heads", heads, browser["lexicon"], ("term",)),
+            ("aliases", aliases, browser["synonyms"], ("from", "to")),
+        ):
+            py = {tuple(r.get(f) or "" for f in fields) for r in python_rows}
+            js = {tuple(r.get(f) or "" for f in fields) for r in js_rows}
+            for side, missing in (("Python only", py - js), ("browser only", js - py)):
+                differences.extend(f"{label} {side}: {' -> '.join(entry)}" for entry in sorted(missing))
 
     return {
         "scope": ["Browser tables are generated from the Python CSVs by scripts/web_tables.py; "
@@ -149,8 +154,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="emit JSON instead of plain text")
     args = parser.parse_args()
-    report = audit(read_csv(RESOURCES / "lexicon.csv"),
-                   read_csv(RESOURCES / "synonyms.csv"), browser_tables())
+    heads = read_csv(RESOURCES / "lexicon.csv")
+    aliases = read_csv(RESOURCES / "synonyms.csv")
+    browser, error = browser_tables()
+    report = audit(heads, aliases, browser, error)
     if args.json:
         print(json.dumps(report, indent=2, ensure_ascii=False))
     else:
@@ -166,6 +173,8 @@ def main():
                     print("  None")
             else:
                 print("  Not available")
+    if error:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
