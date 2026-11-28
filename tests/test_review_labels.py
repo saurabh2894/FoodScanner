@@ -46,13 +46,14 @@ def test_percentage_label_does_not_turn_a_food_into_a_label():
 
 
 # ---- label on the same line, no full stop, no line break ---------------------------------------------
-def test_same_line_section_label_is_split_and_the_oil_survives():
+def test_same_line_product_form_label_is_not_split_and_the_result_is_flagged():
+    # Changed with peel-known-phrase-1 (more cautious): "Rice Bran Oil Seasoning : Onion" used to split into "Rice Bran Oil" + a section "Seasoning". A seasoning can hold unlisted contents, so the
+    # word is no longer dropped: the whole text is one flagged item and the completeness is uncertain. Group 4 (flavour marker) still stands through the strong-marker exception.
     p = parse_ingredient_list(SAME_LINE)
-    assert [s.label for s in p.sections] == [None, "Seasoning"]
-    assert "Rice Bran Oil" in p.sections[0].items
-    assert not any(":" in i for i in p.items)
+    assert [s.label for s in p.sections] == [None]
+    assert any("Rice Bran Oil Seasoning" in i for i in p.items)
     a = analyse_text(SAME_LINE)
-    assert a.group == 4 and any(d.section == "Seasoning" for d in a.drivers)
+    assert a.completeness["status"] == "uncertain" and any("section label may not have been split" in w for w in a.warnings)
 
 
 def test_unknown_prefix_is_not_guessed_but_flagged():

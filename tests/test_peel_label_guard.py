@@ -34,10 +34,9 @@ def test_synthetic_no_candidate_label_with_a_form_word_is_accepted_whichever_can
     assert _peel_label(item) is None
 
 
-def test_powder_seasoning_is_never_the_label_only_seasoning_is():
-    # Changed with peel-known-phrase-1 (explained, not weakened): this item used to stay whole only because the prefix "Rice Bran Oil Powder" was not an exact lexicon term. With the shared
-    # known-prefix rule it is a known phrase (powder is a descriptor), exactly like "Garlic Powder Seasoning : Onion". The guard still refuses "Powder Seasoning" as a LABEL: the label is "Seasoning".
-    assert _peel_label("Rice Bran Oil Powder Seasoning : Onion") == ("Rice Bran Oil Powder", "Seasoning", "Onion")
+def test_powder_seasoning_is_never_peeled():
+    # The prefix "Rice Bran Oil Powder" is a known phrase under the shared rule, but the tail "Seasoning" names a product form: the item stays whole and abstains (product-form tails).
+    assert _peel_label("Rice Bran Oil Powder Seasoning : Onion") is None
 
 
 @pytest.mark.parametrize("word", DESCRIPTORS + ["flake", "flakes"])
@@ -46,16 +45,19 @@ def test_synthetic_every_descriptor_and_flake_word_blocks_the_peel(word):
     assert _peel_label(f"Rice Bran Oil Seasoning {word} : Onion") is None
 
 
-@pytest.mark.parametrize("item, expected", [
-    ("Rice Bran Oil Seasoning : Onion", ("Rice Bran Oil", "Seasoning", "Onion")),
-    ("Rice Bran Oil Seasoning (12%): Onion", ("Rice Bran Oil", "Seasoning 12%", "Onion"))])
-def test_synthetic_positive_control_a_real_section_pattern_still_peels(item, expected):
-    assert _peel_label(item) == expected
+@pytest.mark.parametrize("item", ["Rice Bran Oil Seasoning : Onion", "Rice Bran Oil Seasoning (12%): Onion"])
+def test_synthetic_same_line_product_form_label_is_not_peeled(item):
+    # Changed with peel-known-phrase-1 (more cautious, explained): these used to peel to ("Rice Bran Oil", "Seasoning", "Onion"), dropping the word "Seasoning" and leaving a confident
+    # answer for a list that may hold unlisted contents. A product-form tail now keeps the whole text as one item (flagged), so the result abstains.
+    assert _peel_label(item) is None
 
 
-def test_synthetic_positive_control_end_to_end_same_line_section_still_splits():
-    p = parse_ingredient_list("Ingredients: Rice, Rice Bran Oil Seasoning : Onion, salt, flavour.")
-    assert [s.label for s in p.sections] == [None, "Seasoning"] and not any(":" in i for i in p.items)
+def test_synthetic_end_to_end_same_line_product_form_label_stays_whole_and_flagged():
+    t = "Ingredients: Rice, Rice Bran Oil Seasoning : Onion, salt, flavour."
+    p = parse_ingredient_list(t)
+    assert [s.label for s in p.sections] == [None] and "Rice Bran Oil Seasoning : Onion" in p.items
+    a = analyse_text(t, source="text")
+    assert any("section label may not have been split" in w for w in a.warnings) and a.completeness["status"] == "uncertain"
 
 
 # ---- sweep: the batch's new known prefixes x label-like suffixes (SYNTHETIC; scripts/peel_sweep.py is the exploratory version) ----
@@ -72,10 +74,11 @@ def test_synthetic_sweep_no_new_prefix_peels_a_phantom_label_from_a_name_or_form
 
 
 @pytest.mark.parametrize("prefix", NEW_PREFIXES)
-def test_synthetic_sweep_positive_controls_genuine_headers_still_peel_after_every_new_prefix(prefix):
+def test_synthetic_sweep_genuine_header_words_are_product_forms_and_never_peel_after_any_new_prefix(prefix):
+    # Changed with peel-known-phrase-1 (more cautious, explained): SEASONING / SOUP / SAUCE used to peel after every known prefix (the "positive controls"). They name product forms,
+    # so the text stays whole and abstains; the guard sweep above (names and form words never peel) is unchanged.
     for suf, label in GENUINE_SUFFIXES:
-        got = _peel_label(f"{prefix.upper()} {suf}: Roasted Sesame")
-        assert got == (prefix.upper(), label, "Roasted Sesame"), (prefix, suf, got)
+        assert _peel_label(f"{prefix.upper()} {suf}: Roasted Sesame") is None, (prefix, suf)
 
 
 def test_guard_word_set_is_exactly_descriptors_plus_flake_plus_the_named_rule_file_form_words():

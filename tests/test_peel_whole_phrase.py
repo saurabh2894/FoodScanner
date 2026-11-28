@@ -22,8 +22,7 @@ from scripts import parity_check as pc
 NO_PEEL = ["Corn Oil: Onion", "Moong Dal: Roasted", "Milk Solids: Skimmed Milk", "Rice Flour: Rice, Water", "Roasted Barley Flour: Wheat", "Coriander Leaf: Fresh",
            "Oyster Mushrooms: Garlic", "Mustard Greens: Salt", "Wheat Flour (45%): Wheat", "Wheat Flour 45%: Wheat", "Vitamins and Minerals: Iron, Zinc", "Tomato Concentrate: Tomato",
            "Rice Flours: Wheat", "Corn Oil: Onion: Garlic", "Corn Oil 12%: Onion", "Dried Moong Dal: Roasted", "Mystery Corn Oil: Onion"]
-STILL_PEEL = [("Corn Oil Seasoning : Onion", ("Corn Oil", "Seasoning", "Onion")), ("Milk Solids Seasoning : Onion", ("Milk Solids", "Seasoning", "Onion")),
-              ("Moong Dal Seasoning (12%): Onion", ("Moong Dal", "Seasoning 12%", "Onion")), ("Rice Bran Oil Seasoning : Onion", ("Rice Bran Oil", "Seasoning", "Onion"))]
+PRODUCT_FORM_TAIL = ["Corn Oil Seasoning : Onion", "Milk Solids Seasoning : Onion", "Moong Dal Seasoning (12%): Onion", "Rice Bran Oil Seasoning : Onion"]    # whole name + product-form tail: not peeled (abstain)
 
 
 @pytest.mark.parametrize("item", NO_PEEL)
@@ -31,9 +30,10 @@ def test_recognised_whole_name_is_not_split(item):
     assert _peel_label(item) is None
 
 
-@pytest.mark.parametrize("item,expected", STILL_PEEL)
-def test_name_plus_real_section_label_still_peels(item, expected):
-    assert _peel_label(item) == expected
+@pytest.mark.parametrize("item", PRODUCT_FORM_TAIL)
+def test_name_plus_product_form_tail_is_kept_whole(item):
+    # Changed with peel-known-phrase-1 (product-form tails): these peeled before ("Corn Oil" + "Seasoning"), which dropped the product word; now they stay whole and abstain.
+    assert _peel_label(item) is None
 
 
 def test_every_multi_word_lexicon_term_stays_whole_before_a_colon():
@@ -46,13 +46,15 @@ def test_bracketed_sub_list_with_a_whole_name_colon_keeps_the_item_whole():
     assert "Corn Oil: Onion (Moong Dal: Roasted)" in p.items and [s.label for s in p.sections] == [None]
 
 
-def test_open_item_known_prefix_plus_non_form_tail_still_peels():
-    # OPEN ITEM (documented in evaluation/peel_known_phrase_1/README.md): "Paprika" is known, "Oleoresin" is neither a form word nor a lexicon term, and the whole phrase is not a recognised name.
-    assert _peel_label("Paprika Oleoresin (0.6%): Roasted Sesame") == ("Paprika", "Oleoresin 0.6%", "Roasted Sesame")
+def test_paprika_oleoresin_open_item_now_stays_whole():
+    # Documented open item (evaluation/peel_known_phrase_1/README.md). It used to peel to ("Paprika", "Oleoresin 0.6%", ...) because "Oleoresin" is neither a form word nor a lexicon term.
+    # "oleoresin" is a product-form word (and the peel allowlist of known label words is empty), so the item now stays whole and abstains. The general class (a known prefix plus an unlisted
+    # tail word) is closed the same way; what stays open is the data decision of WHICH plain words may ever be peeled.
+    assert _peel_label("Paprika Oleoresin (0.6%): Roasted Sesame") is None
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is needed to run the browser engine")
-@pytest.mark.parametrize("item", NO_PEEL + [i for i, _ in STILL_PEEL] + ["Paprika Oleoresin (0.6%): Roasted Sesame"])
+@pytest.mark.parametrize("item", NO_PEEL + PRODUCT_FORM_TAIL + ["Paprika Oleoresin (0.6%): Roasted Sesame"])
 def test_python_and_js_agree(item):
     text = "Ingredients: Rice, " + item + ", salt."
     assert pc.py_result(text, "text") == pc.run_js([(text, "text")])[0]

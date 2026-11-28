@@ -34,9 +34,12 @@ KEPT = ["Mystery Powder Seasoning : Onion", "Mystery Dried Paprika Seasoning : O
         "Dried Paprika Seasoning :", "Dried Paprika Seasoning : 12%"]
 
 
-@pytest.mark.parametrize("item,expected", PEELS)
-def test_known_prefix_forms_peel_the_section_label(item, expected):
-    assert _peel_label(item) == expected
+@pytest.mark.parametrize("item,old_split", PEELS)
+def test_known_prefix_forms_with_a_product_form_tail_are_kept_whole(item, old_split):
+    # Changed with peel-known-phrase-1 (product-form tails; more cautious, explained): under the shared known-prefix rule alone these peeled to `old_split`, silently dropping the
+    # product word ("Seasoning"). A seasoning can hold unlisted contents, so the whole text stays ONE item and the result abstains.
+    assert _peel_label(item) is None
+    assert _known_phrase(_flat(old_split[0]))          # the prefix IS a known phrase (the shared rule is unchanged); the tail is what blocks the peel
 
 
 @pytest.mark.parametrize("item", KEPT)

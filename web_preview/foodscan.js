@@ -167,6 +167,11 @@
     }
     // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
     const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
+    // product-form tails are never peeled and only known plain label words may be (none by evidence); mirrors parser._PRODUCT_FORM_WORDS / _KNOWN_LABEL_WORDS / _tail_is_peelable
+    const PRODUCT_FORM_WORDS = new Set(["seasoning", "sauce", "soup", "mix", "premix", "blend", "paste", "masala", "tastemaker", "topping", "sprinkler", "garnish", "filling", "coating", "glaze", "dressing", "base", "concentrate", "extract", "oleoresin", "syrup", "noodles", "puff"]);
+    const KNOWN_LABEL_WORDS = new Set();
+    const wordForms = (w) => { const x = w.toLowerCase().replace(/\u2019/g, "'").replace(/^'+|'+$/g, ""); return [x, x.endsWith("s") ? x.slice(0, -1) : x, x.endsWith("es") ? x.slice(0, -2) : x]; };
+    const tailIsPeelable = (labelWords) => { const forms = labelWords.map(wordForms); if (forms.some((f) => f.some((w) => PRODUCT_FORM_WORDS.has(w)))) return false; return forms.every((f) => f.some((w) => KNOWN_LABEL_WORDS.has(w))); };
     const labelHasFormWord = (label) => (label.toLowerCase().match(/[a-z]+/g) || []).some((t) => allDescriptorWords.has(t) || FORM_WORDS_EXTRA.has(t));
     // "Rice Bran Oil Seasoning : Onion" -> [prefix, label, rest]; mirrors parser._peel_label
     function peelLabel(item) {
@@ -184,7 +189,7 @@
         const labelWords = words.slice(k);
         if (labelWords.length > 4 || !labelWords.every((w) => /^[A-Za-z&'\u2019\/\-]+$/.test(w))) continue;
         const label = labelWords.join(" "), flat = flatten(label);
-        if (DENY.test(label) || isRecognised(flat) || CLASS_WORD_RE.test(flat) || labelHasFormWord(label)) continue;
+        if (DENY.test(label) || isRecognised(flat) || CLASS_WORD_RE.test(flat) || labelHasFormWord(label) || !tailIsPeelable(labelWords)) continue;
         const prefix = words.slice(0, k).join(" ");
         if (knownPhrase(flatten(prefix))) return [prefix, label + (pct ? " " + pct : ""), rest];
       }

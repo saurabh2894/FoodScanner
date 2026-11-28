@@ -219,6 +219,32 @@ def _name_form_words() -> frozenset:
     return frozenset(r["word"].lower() for r in load_table("descriptors.csv")) | _FORM_WORDS_EXTRA
 
 
+# peel-known-phrase-1 (product-form tails): a section label glued after an ingredient on the same line ("Garlic Powder Seasoning : Onion") is NOT peeled when its words name a
+# product form. A seasoning, sauce, mix, blend, paste, masala, topping ... can hold things the label does not list, so dropping that word and keeping only the earlier
+# ingredient would turn an abstention into a confident classification. The whole text stays ONE item, `suspect_section_items` flags it, and the result abstains.
+# Where the words come from (nothing is taken from review examples alone; evaluation/peel_known_phrase_1/product_form_words.md lists each word with its source and pins it with a test):
+#  - data/ingest/clause_tier1_herbs_spices.json processed_words: seasoning, mix, sauce, paste, blend, extract, syrup (+ flavour/flavor, already class words);
+#  - section labels that occur in the saved real labels and the parity corpus: seasoning, sauce, soup, noodles, puff, topping, sprinkler, masala, tastemaker, coating, oleoresin;
+#  - the reviewer's list for words the data does not contain: garnish, filling, glaze, dressing, base, concentrate.
+_PRODUCT_FORM_WORDS = frozenset({"seasoning", "sauce", "soup", "mix", "premix", "blend", "paste", "masala", "tastemaker", "topping", "sprinkler", "garnish", "filling", "coating",
+                                 "glaze", "dressing", "base", "concentrate", "extract", "oleoresin", "syrup", "noodles", "puff"})
+# Peeling happens only when EVERY label word is already a known plain label word. The data holds none: every same-line label word in the saved real labels and the corpus is a product form
+# (above) or a food name. The set is therefore empty by evidence, not by omission: adding a word needs a cited real label whose word is not a product form.
+_KNOWN_LABEL_WORDS: frozenset = frozenset()
+
+
+def _word_forms(word: str) -> set:
+    w = word.lower().replace("\u2019", "'").strip("'")
+    return {w, w[:-1] if w.endswith("s") else w, w[:-2] if w.endswith("es") else w}
+
+
+def _tail_is_peelable(label_words: list) -> bool:
+    forms = [_word_forms(w) for w in label_words]
+    if any(f & _PRODUCT_FORM_WORDS for f in forms):
+        return False
+    return all(f & _KNOWN_LABEL_WORDS for f in forms)
+
+
 def _label_has_form_word(label: str) -> bool:
     return any(t in _name_form_words() for t in re.findall(r"[a-z]+", label.lower()))
 
@@ -251,7 +277,7 @@ def _peel_label(item: str) -> tuple[str, str, str] | None:
             continue
         label = " ".join(label_words)
         flat = _flat(label)
-        if _DENY.fullmatch(label) or flat in _lexicon_terms() or _class_word_re().search(flat) or _label_has_form_word(label):
+        if _DENY.fullmatch(label) or flat in _lexicon_terms() or _class_word_re().search(flat) or _label_has_form_word(label) or not _tail_is_peelable(label_words):
             continue                                   # checked for EVERY candidate the loop tries (shortest label first), not only the first
         prefix = " ".join(words[:k])
         if _known_phrase(_flat(prefix)):

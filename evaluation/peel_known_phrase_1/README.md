@@ -1,6 +1,6 @@
 # Peel known-phrase: shared rule (claude/peel-known-phrase-1)
 
-Steps: (a) design (below, approved as J+W), (b) implemented as two commits: **J** (shared known-prefix rule + flatten fix, commit f87d04f) and **W** (whole-phrase guard, separate commit so it can be dropped). Results are at the end of this file.
+Steps: (a) design (below, approved as J+W), (b) implemented as two commits (then a third commit, product-form tails, see the last section): **J** (shared known-prefix rule + flatten fix, commit f87d04f) and **W** (whole-phrase guard, separate commit so it can be dropped). Results are at the end of this file.
 
 Base reliability/demand-truth-23 at ddc717e. No data table is edited. Scripts here (`survey.py`, `real.py`, `sweep2.py`) are read-only probes; paths inside them are scratch paths and were run from the repository root.
 
@@ -65,3 +65,16 @@ Behaviour change worth reading (`before_after.md` section 3):
 ## Could not decide
 - Real label evidence is thin: only 2 items with a depth-0 colon in 100 saved real labels, neither peels under any rule. The rule choice is structural, the flip run only confirms that no saved label moves.
 - Whether a colon after a recognised name should instead open a nested sub-list (e.g. "Wheat Flour: Wheat 80%, Barley"). W keeps such items whole and flagged (abstain), which is the conservative reading.
+
+
+## Product-form tails (third commit; review finding on b886096 accepted)
+Finding: with J+W, "Garlic Powder Seasoning : Onion" became the item "Garlic Powder" + "Onion" and the word "Seasoning" was dropped, so an unrecognised item (abstain on the base) turned into a confident Group 3. A seasoning, sauce or blend can hold things the label does not list. Parity agreement was never evidence of correctness: it only shows both engines do the same thing.
+Replacement design (parser and JS identical; replaces nothing from J or W, which still decide WHAT counts as a known prefix):
+- a section label glued after an ingredient on the same line is peeled only when EVERY tail word is a known plain label word; a tail containing a product-form word is never peeled (the whole text stays ONE flagged item, so the result abstains);
+- product-form words come from the data, not from review examples alone (`product_form_words.md`): the clause file's processed words, the section labels in the saved real labels and the parity corpus, and the reviewer-listed words the data does not contain;
+- the allowlist of known plain label words is EMPTY by evidence (every same-line label in the data is a product form or a food name), so a same-line glued label is never peeled today. Lines that start a section ("Seasoning : Onion" at the start of a line or sentence, "Rice Bran Oil. Seasoning : Onion") are a different path and are unchanged.
+Evidence (`before_after_product_form.md`): 37,381 corpus pairs + 158 Copilot pairs + 68 new product-form pairs, three builds in fresh processes. Against the base ddc717e: 0 more-confident pairs, 0 answered-group changes; 99 answer -> abstain, 29 complete -> uncertain, 2 structure-only. Against the PR head b886096: 0 more-confident pairs. The pre-existing same-class cases moved the cautious way too ("Rice Bran Oil Seasoning :" was Group 3/4 complete on the base; it is abstain/uncertain now, and Group 4 where a flavour marker is present stays Group 4 through the strong-marker exception, status uncertain). Frozen 66 and out-of-sample 32: 0 fields changed. Copilot corpus (79 rows by its own report script): 0 divergent rows, 0/158 divergent analyses. Parity 37,449/37,449, suite 18,982 passed.
+Tests changed with this commit (all more cautious, each explained in a comment): the "still peels" positive controls in test_peel_label_guard.py, test_peel_whole_phrase.py and test_peel_known_phrase.py now expect the whole text to stay one item; test_review_labels.py's same-line case expects uncertain + the suspect-section warning. No test was weakened to meet parity.
+
+## Open item status after the third commit
+"Paprika Oleoresin (0.6%):" no longer peels: "oleoresin" is a product-form word and no tail word is allowed to peel, so it stays one item and abstains (pinned by test, parity case). The general class "known prefix + unlisted tail" is closed the same way. What stays open is a data decision: which plain label words, if any, may ever be peeled (the allowlist), and the nested-sub-list reading of a colon after a recognised name.

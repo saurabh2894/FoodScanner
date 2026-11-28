@@ -1726,6 +1726,19 @@ PAIRS += [("Ingredients: Rice, " + i + ", salt.", s) for i in _peel_w for s in [
 TOTAL = len(PAIRS)
 
 
+# peel-known-phrase-1 (product-form tails): a recognised phrase + a product-form word before a colon is kept whole (never peeled, the word never dropped) and abstains, in BOTH engines.
+# Nested, multi-colon, percent, curly-apostrophe, plural, mixed-case and unknown-tail shapes. Synthetic controls.
+_peel_pf = ["Garlic Powder Seasoning : Onion", "Red chilli powder Sauce : Onion", "Dried Paprika Masala : Onion", "Corn Oil Seasoning (12%): Onion", "Bishop\u2019s Seed Masala 5%: Onion",
+            "Garlic Powder Seasoning : Onion : Garlic", "Garlic Powder Seasoning: Masala: Onion", "Garlic Powder Seasoning : Onion (Red Chilli Powder Sauce : Salt)",
+            "Garlic Powder Seasoning : Onion [Corn Oil Seasoning : Salt]", "GARLIC POWDER SEASONING (12%): ONION", "garlic powder seasoning 5%: onion", "Garlic Powder SEASONINGS : Onion",
+            "Red Chilli Powders Seasonings : Onion", "Rice Bran Oil Hot Masala Seasoning : Onion", "Rice Bran Oil Masala Tastemaker : Onion", "Rice Bran Oil Zorba : Onion",
+            "Rice Bran Oil Fancy Zorba : Onion", "Turmeric Topping : Onion", "Turmeric Garnish : Onion", "Cumin Filling : Onion", "Cumin Coating (3%): Onion", "Cumin Glaze : Onion",
+            "Cumin Dressing : Onion", "Cumin Base : Onion", "Tomato Concentrate Base : Onion", "Paprika Extract Seasoning : Onion", "Wheat Flour Premix : Onion", "Rice Noodles Soup (22.7%): Onion",
+            "Rice Puff Sprinkler : Onion", "Corn Syrup Seasoning : Onion", "Whole Wheat Flour Seasoning : Onion", "Mystery Seasoning : Onion", "Seasoning : Onion", "Rice Bran Oil. Seasoning : Onion"]
+PAIRS += [("Ingredients: Rice, " + i + ", salt.", s) for i in _peel_pf for s in ["ocr", "text"]]
+TOTAL = len(PAIRS)
+
+
 def run_js(pairs):
     """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:
