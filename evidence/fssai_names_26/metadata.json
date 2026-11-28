@@ -1,0 +1,26 @@
+{
+  "pinned_sha": "1e27863c63a2256eaee5b3e36bbc70cefabc35c8",
+  "branch": "antigravity/fssai-names-26",
+  "date": "2026-11-28",
+  "method": "Downloaded original FSSAI compendium PDFs via curl from fssai.gov.in, extracted per-page text with pypdf, extracted verbatim defining sentences per clause, and checked exact/alias membership against lexicon.csv and synonyms.csv via check_lexicon.py.",
+  "extraction_tool": "pypdf (via uv run --with pypdf) on Python 3.12.10",
+  "counts_script": "evidence/fssai_names_26/check_lexicon.py",
+  "counts": {
+    "total_extracted": 134,
+    "exact": 6,
+    "alias": 1,
+    "no": 127,
+    "chapters": {
+      "2.7": {"extracted": 24, "exact": 1, "alias": 0, "no": 23},
+      "2.9": {"extracted": 78, "exact": 3, "alias": 0, "no": 75},
+      "2.10": {"extracted": 32, "exact": 2, "alias": 1, "no": 29}
+    }
+  },
+  "not_completed_or_omitted": [
+    "2.7.6(2)(b) table-only matrix of 9 sweetened cocoa/drinking chocolate variants (listed under Not extracted in 2.7.md)",
+    "2.7.7(1)(d) table-only cocoa powder fat-reduced columns (listed under Not extracted in 2.7.md)",
+    "2.9.25 (printed as Omitted)",
+    "2.9.30(2) and 2.9.30(3) (printed as Omitted)",
+    "2.10.5 (printed as Omitted)"
+  ]
+}
