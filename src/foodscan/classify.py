@@ -931,7 +931,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if animal_powders:
         return Classification(None, reason="a powder of an animal food is named (" + "; ".join(animal_powders) + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states")
     if animal_dry_unscoped:
-        return Classification(None, reason="a dried form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried or salted meats and fish only, so whether a dried or salted form of this food is processed that way is not established, and drying or salting alone does not make it Group 1")
+        return Classification(None, reason="a dried or salted form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried or salted meats and fish only, so whether a dried or salted form of this food is processed that way is not established, and drying or salting alone does not make it Group 1")
     if fat_powders:
         return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%")
     if wf_nested:

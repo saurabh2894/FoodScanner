@@ -52,7 +52,7 @@ def test_synthetic_dried_crustaceans_and_molluscs_abstain_and_never_fall_back_to
         group, a = g(f.format(x=t))
         assert group is None, f.format(x=t)
     group, a = g(f"dried {t}")
-    assert a.reason.startswith("a dried form of an animal food is named (") and "dried or salted meats and fish only" in a.reason and "does not make it Group 1" in a.reason
+    assert a.reason.startswith("a dried or salted form of an animal food is named (") and "dried or salted meats and fish only" in a.reason and "does not make it Group 1" in a.reason
 
 
 def test_synthetic_the_scope_split_is_twelve_seafood_and_fifty_six_fish_rows():

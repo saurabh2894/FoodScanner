@@ -31,3 +31,8 @@ def test_edges_still_abstain_or_keep_their_own_route():
     assert g("salted chicken (brine)")[0] is None and g("salted crab")[0] is None
     assert g("smoked chicken")[0] is None and g("cured pork")[0] is None and g("chicken, salted")[0] is None
     assert g("unsalted chicken")[0] == 1 and g("chicken")[0] == 1 and g("salted butter")[0] == 2 and g("salted almonds")[0] == 3 and g("salted rice")[0] == 3
+
+
+def test_salted_unscoped_reason_names_salted_not_only_dried():
+    a = g("salted crab")[1]
+    assert a.reason.startswith("a dried or salted form of an animal food is named (salted crab)")
