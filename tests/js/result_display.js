@@ -20,8 +20,17 @@ async function main() {
         [...result.querySelectorAll(".ingredient-name")].map((name) => [
           name.textContent, name.parentElement.querySelector(".ingredient-quantity")?.textContent ?? null,
         ]),
+        result.querySelector(".coverage-caption")?.textContent ?? null,
       ]);
+      const caption = actual.pop();
+      const assessment = expected.pop();
       assert.deepEqual(actual, expected, text);
+      if (assessment === null) {
+        assert.equal(caption, null, text);
+      } else {
+        assert.ok(caption?.includes(assessment), text);
+        if (expected[1] !== null) assert.doesNotMatch(caption, /fully assessed/, text);
+      }
     }
   } finally {
     await browser.close();

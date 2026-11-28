@@ -28,9 +28,22 @@ CASES = [
     ("Rice brown:", None, "uncertain", [("Rice brown:", None)]),
     ("Ingredients: Rice brown: 60%, salt.", 3, "complete",
      [("Rice brown: 60%", None), ("salt", None)]),
+    ("Ingredients: Sugar: 12%, salt.", None, "complete",
+     [("Sugar: 12%", None), ("salt", None)]),
+    ("Ingredients: Rice flour: 60 g.", 1, "complete", [("Rice flour: 60 g", None)]),
+    ("Ingredients: Rice: 60% wheat, salt.", None, "uncertain",
+     [("Rice: 60% wheat", None), ("salt", None)]),
     ("Rice 60% salt", None, "uncertain", [("Rice 60% salt", None)]),
     ("Rice 60%", 1, "complete", [("Rice", "(60%)")]),
 ]
+
+
+# The web views split colon quantities while the CLI keeps their original spelling.
+WEB_INGREDIENTS = {
+    "Ingredients: Rice brown: 60%, salt.": [("Rice brown", "(60%)"), ("salt", None)],
+    "Ingredients: Sugar: 12%, salt.": [("Sugar", "(12%)"), ("salt", None)],
+    "Ingredients: Rice flour: 60 g.": [("Rice flour", "(60 g)")],
+}
 
 
 def expected_display(text, group, completeness, ingredients):
@@ -40,13 +53,21 @@ def expected_display(text, group, completeness, ingredients):
     classification = ("Classification: NOVA group assigned." if group is not None else
                       "Classification: no NOVA group assigned.")
     reason = f"Reason: {analysis.reason}" if group is None else None
-    return analysis, [classification, reason, f"Text completeness: {completeness}", ingredients]
+    assessment = None
+    if analysis.completeness["words"]["in_list"]:
+        counts = analysis.completeness["assessed"]
+        assessment = ("This product could not be assigned a NOVA group." if group is None else
+                      f'{counts["not_assessed"]} of {counts["items"]} items are not fully assessed.')
+    return analysis, [classification, reason, f"Text completeness: {completeness}",
+                      WEB_INGREDIENTS.get(text, ingredients), assessment]
 
 
 @pytest.mark.parametrize("text,group,completeness,ingredients", CASES)
 def test_python_result_display(text, group, completeness, ingredients):
-    analysis, (classification, reason, coverage, _) = expected_display(text, group, completeness, ingredients)
+    analysis, (classification, reason, coverage, web_ingredients, assessment) = expected_display(text, group, completeness, ingredients)
     extracted = analysis.ingredients.copy()
+    if text in WEB_INGREDIENTS:
+        assert extracted == [name for name, _ in ingredients]
     output = format_analysis(analysis).splitlines()
     assert classification in output
     assert next((line for line in output if line.startswith("Reason: ")), None) == reason
@@ -65,7 +86,15 @@ def test_python_result_display(text, group, completeness, ingredients):
     for name in soup.select(".ingredient-name"):
         tag = name.find_next_sibling(class_="ingredient-quantity")
         items.append((name.get_text(), tag.get_text() if tag else None))
-    assert items == ingredients
+    assert items == web_ingredients
+    caption_element = soup.select_one(".coverage-caption")
+    if assessment is None:
+        assert caption_element is None
+    else:
+        caption = caption_element.get_text()
+        assert assessment in caption
+        if group is None:
+            assert "fully assessed" not in caption
     assert analysis.ingredients == extracted
 
 

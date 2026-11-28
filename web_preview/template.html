@@ -172,9 +172,14 @@
 
   // Keep in sync with ingredient_display in src/foodscan/display.py.
   function ingredientItem(item) {
+    var colonMatch = /^([^:]+):\s*([0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?)\s*$/i.exec(item);
     var match = /^(.*?)(?:\s+([0-9]+(?:\.[0-9]+)?)\s*%|\s*\(\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*\))$/.exec(item);
-    var name = match ? match[1].trimEnd() : "";
-    var quantity = match && match[0] === item && /[\p{L}\p{N})\]}]$/u.test(name) ? "(" + (match[2] || match[3]) + "%)" : null;
+    var name = colonMatch ? colonMatch[1].trimEnd() : match ? match[1].trimEnd() : "";
+    var quantity = null;
+    if (/[\p{L}\p{N})\]}]$/u.test(name)) {
+      if (colonMatch) quantity = "(" + colonMatch[2].trimEnd() + ")";
+      else if (match[0] === item) quantity = "(" + (match[2] || match[3]) + "%)";
+    }
     var li = el("li", { "class": "mono" }, [el("span", { "class": "ingredient-name", text: quantity ? name : item })]);
     if (quantity) {
       li.appendChild(document.createTextNode(" "));
@@ -357,9 +362,11 @@
     }
     if (a.completeness && a.completeness.words && a.completeness.words.in_list) {
       var c = a.completeness, w = c.words;
+      var assessmentCaption = a.group === null ? "This product could not be assigned a NOVA group."
+        : c.assessed.not_assessed + " of " + c.assessed.items + " items are not fully assessed.";
       card.appendChild(el("div", {}, [
         el("h3", { text: "Text coverage details" }),
-        el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + (w.composition ? w.composition + " identified as milk-composition metadata, " : "") + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are not fully assessed. " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
+        el("p", { "class": "hint coverage-caption", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + (w.composition ? w.composition + " identified as milk-composition metadata, " : "") + w.declared + " declared. " + assessmentCaption + " " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
         el("ul", { "class": "plain" }, c.reasons.map(function (r) { return el("li", { text: r }); }))
       ]));
     }

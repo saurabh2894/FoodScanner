@@ -36,7 +36,7 @@
 
 {% if result %}
 {% macro ingredient_item(item) -%}
-  {% set name, quantity = item|ingredient_display -%}
+  {% set name, quantity = item|ingredient_display(colon_quantities=true) -%}
   <li><span class="ingredient-name">{{ name }}</span>{% if quantity %} <span class="ingredient-quantity">{{ quantity }}</span>{% endif %}</li>
 {%- endmacro %}
 <div class="card {{ 'answer' if result.answered else 'abstain' }}">
@@ -107,7 +107,7 @@
   {% if result.completeness.words.in_list %}
     {% set c = result.completeness %}
     <h3>Text coverage details</h3>
-    <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are not fully assessed. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
+    <p class="src coverage-caption">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {% if result.group is none %}This product could not be assigned a NOVA group.{% else %}{{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are not fully assessed.{% endif %} {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
     {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
   {% endif %}
   {% if result.ignored %}
