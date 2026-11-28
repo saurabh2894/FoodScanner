@@ -1325,6 +1325,10 @@ for _target in (CORPUS, PASTE):
 _HEADS_25F = ('Arrowroot starch', 'Arrowroot', 'Maize flour', 'Whole maize flour', 'Whole corn flour', 'Sultanas', 'Sultana', 'Finger millet')
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _HEADS_25F for f in ('{t}', 'Wheat flour, {t}, Salt', '{t}, Salt', '{t} (Flavour)'))
+# general-26a parity: FSSAI 2.8.1 sugar-name aliases in plain, salted and additive forms.
+_HEADS_26A = ('Plantation white sugar', 'Khandsari sugar', 'Bura sugar', 'Cube sugar', 'Icing sugar')
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _HEADS_26A for f in ('{t}', 'Wheat flour, {t}, Salt', '{t}, Salt', '{t} (Flavour)'))
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']
