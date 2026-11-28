@@ -170,21 +170,32 @@
     return n;
   }
 
-  // Keep in sync with ingredient_display in src/foodscan/display.py.
-  function ingredientItem(item) {
-    var colonMatch = /^([^:]+):\s*([0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?)\s*$/i.exec(item);
-    var match = /^(.*?)(?:\s+([0-9]+(?:\.[0-9]+)?)\s*%|\s*\(\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*\))$/.exec(item);
-    var name = colonMatch ? colonMatch[1].trimEnd() : match ? match[1].trimEnd() : "";
-    var quantity = null;
-    if (/[\p{L}\p{N})\]}]$/u.test(name)) {
-      if (colonMatch) quantity = "(" + colonMatch[2].trimEnd() + ")";
-      else if (match[0] === item) quantity = "(" + (match[2] || match[3]) + "%)";
-    }
-    var li = el("li", { "class": "mono" }, [el("span", { "class": "ingredient-name", text: quantity ? name : item })]);
+  // Keep in sync with the display helpers in src/foodscan/display.py.
+  function colonQuantityDisplay(item) {
+    var match = /^([^:]+):\s*([0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?)\s*$/i.exec(item);
+    var name = match ? match[1].trimEnd() : "";
+    return /[\p{L}\p{N})\]}]$/u.test(name) ? [name, "(" + match[2].trimEnd() + ")"] : [item, null];
+  }
+
+  function appendIngredientName(li, name, quantity, nameClass) {
+    li.appendChild(el("span", { "class": nameClass, text: name }));
     if (quantity) {
       li.appendChild(document.createTextNode(" "));
       li.appendChild(el("span", { "class": "ingredient-quantity", text: quantity }));
     }
+  }
+
+  function ingredientItem(item) {
+    var [name, quantity] = colonQuantityDisplay(item);
+    if (!quantity) {
+      var match = /^(.*?)(?:\s+([0-9]+(?:\.[0-9]+)?)\s*%|\s*\(\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*\))$/.exec(item);
+      if (match && match[0] === item && /[\p{L}\p{N})\]}]$/u.test(match[1].trimEnd())) {
+        name = match[1].trimEnd();
+        quantity = "(" + (match[2] || match[3]) + "%)";
+      }
+    }
+    var li = el("li", { "class": "mono" });
+    appendIngredientName(li, name, quantity, "ingredient-name");
     return li;
   }
 
@@ -326,7 +337,8 @@
         el("h3", { text: a.answered ? "Driven by" : "Weak evidence seen (not enough to decide)" }),
         el("ul", { "class": "plain" }, a.drivers.map(function (d) {
           var li = el("li", {});
-          li.appendChild(el("span", { "class": "mono", text: d.ingredient }));
+          var [name, quantity] = a.answered ? colonQuantityDisplay(d.ingredient) : [d.ingredient, null];
+          appendIngredientName(li, name, quantity, "mono driver-name");
           if (d.section) li.appendChild(el("em", { text: " (" + d.section + ")" }));
           li.appendChild(document.createTextNode(": " + d.detail));
           if (d.source) li.appendChild(el("details", { "class": "driver-evidence" }, [

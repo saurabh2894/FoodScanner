@@ -5,7 +5,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from .display import ingredient_display
+from .display import colon_quantity_display, ingredient_display
 from .ocr import OcrUnavailable
 from .pipeline import NOT_ENOUGH, Analysis, analyse_image, analyse_text
 
@@ -52,14 +52,21 @@ def format_analysis(a: Analysis) -> str:
         lines.append(f"Warning: {w}")
     if a.answered and a.drivers:
         lines.append("Driven by:")
-        lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}  [{d.source}]" for d in a.drivers]
+        for d in a.drivers:
+            name, quantity = colon_quantity_display(d.ingredient)
+            annotation = f"  {quantity}" if quantity else ""
+            lines.append(f"  - {name}{annotation}{_where(d)}: {d.detail}  [{d.source}]")
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
         lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
     w = c["words"]
+    assessment_caption = (
+        ". This product could not be assigned a NOVA group." if a.group is None else
+        f"; {c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary."
+    )
     lines.append(f"{w['in_list']} words read as ingredients ({round(c['list_share'] * 100)}% of the list region); "
-                 f"{w['not_read']} not read, {w['unaccounted']} unaccounted, {w['excluded']} set aside after the list, {w['declared']} declared; "
-                 f"{c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary."
+                 f"{w['not_read']} not read, {w['unaccounted']} unaccounted, {w['excluded']} set aside after the list, {w['declared']} declared"
+                 + assessment_caption
                  + (" All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct."
                     if c["status"] == "complete" else ""))
     lines += [f"  - check: {r}" for r in c["reasons"]]

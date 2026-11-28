@@ -11,7 +11,7 @@ from pathlib import Path
 
 from flask import Flask, render_template, request
 
-from ..display import ingredient_display
+from ..display import colon_quantity_display, ingredient_display
 from ..ocr import OcrEngine, OcrUnavailable, TesseractOcr
 from ..pipeline import analyse_image
 
@@ -22,6 +22,7 @@ HOST = "127.0.0.1"
 def create_app(ocr: OcrEngine | None = None) -> Flask:
     app = Flask(__name__)
     app.jinja_env.filters["ingredient_display"] = ingredient_display
+    app.jinja_env.filters["colon_quantity_display"] = colon_quantity_display
     app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB
     engine = ocr or TesseractOcr()
 

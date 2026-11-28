@@ -77,7 +77,8 @@
     <h3>Driven by</h3>
     <ul>
     {% for d in result.drivers %}
-      <li><strong>{{ d.ingredient }}</strong>{% if d.section %} <em>({{ d.section }})</em>{% endif %}: {{ d.detail }} <span class="src">[{{ d.source }}]</span></li>
+      {% set name, quantity = d.ingredient|colon_quantity_display %}
+      <li><strong class="driver-name">{{ name }}</strong>{% if quantity %} <span class="ingredient-quantity">{{ quantity }}</span>{% endif %}{% if d.section %} <em>({{ d.section }})</em>{% endif %}: {{ d.detail }} <span class="src">[{{ d.source }}]</span></li>
     {% endfor %}
     </ul>
   {% endif %}
