@@ -10,7 +10,7 @@ async function main() {
   try {
     const page = await browser.newPage();
     await page.setContent(html);
-    for (const [text, expected] of cases) {
+    for (const [text, expected, expectedDriver] of cases) {
       await page.fill("#label-text", text);
       await page.click("#analyse");
       const actual = await page.locator("#result").evaluate((result) => [
@@ -22,6 +22,15 @@ async function main() {
         ]),
         result.querySelector(".coverage-caption")?.textContent ?? null,
       ]);
+      if (expectedDriver) {
+        const drivers = page.locator("#result h3").filter({ hasText: /^Driven by$/ }).locator("..");
+        const driver = drivers.locator("li").first();
+        assert.deepEqual(
+          [await driver.locator(".driver-name").textContent(),
+            await driver.locator(".ingredient-quantity").textContent()],
+          expectedDriver, text,
+        );
+      }
       const caption = actual.pop();
       const assessment = expected.pop();
       assert.deepEqual(actual, expected, text);
