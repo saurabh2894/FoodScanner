@@ -56,7 +56,7 @@ def test_synthetic_different_parts_stay_distinct_and_bare_base_rows_are_not_wide
     assert rec("peppermint") and rec("spearmint") and rec("mint") and "peppermint" not in SYNONYMS
 
 
-@pytest.mark.parametrize("t", ["poppy seed", "curry powder", "prepared mustard", "seasoning mix", "poultry seasoning", "pumpkin pie spice", "vanilla extract", "canned capers"])
+@pytest.mark.parametrize("t", ["curry powder", "prepared mustard", "seasoning mix", "poultry seasoning", "pumpkin pie spice", "vanilla extract", "canned capers"])
 def test_synthetic_negative_parked_or_rejected_forms_are_not_recognised(t):
     assert not rec(t) and t not in lex()
 
@@ -94,7 +94,7 @@ def test_merged_rows_are_byte_for_byte_the_gate_candidates():
     cand = list(csv.DictReader((gate / "lexicon_candidate_rows.csv").open(encoding="utf-8", newline="")))
     syn_c = list(csv.DictReader((gate / "synonyms_candidate_rows.csv").open(encoding="utf-8", newline="")))
     L = lex()
-    assert len(cand) == 20 and len(syn_c) == 4 and "poppy seed" not in L
+    assert len(cand) == 20 and len(syn_c) == 4
     for r in cand:
         assert L[r["term"]]["kind"] == r["kind"] and L[r["term"]]["source"] == r["source"]
     S = {r["from"]: r for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig", newline=""))}

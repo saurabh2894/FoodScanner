@@ -16,8 +16,8 @@ def test_staged():
 
 
 def test_held_terms_stay_held():
-    # poppy seed: parked (overlaps the conditioned nuts/seeds clause); lotus seeds: held by the class_bulk_5 review (oily-seed membership unsupported); caraway seed is a synonym of caraway.
-    assert lookup("poppy seed") is None and lookup("lotus seeds") is None
+    # poppy seed: parked here, REVERSED by fssai-names-26f (placed through the spice class, FAO Group 1 herbs and spices plus FSSAI 2.9.16, so the oily-seed salt/sugar condition is not borrowed); lotus seeds: held by the class_bulk_5 review (oily-seed membership unsupported); caraway seed is a synonym of caraway.
+    assert lookup("lotus seeds") is None
 
 
 @pytest.mark.parametrize("term", sorted(LIKE))

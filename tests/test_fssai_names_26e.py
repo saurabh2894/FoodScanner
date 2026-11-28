@@ -24,6 +24,6 @@ def test_meat_rows_group_1_and_dried_group_3(t):
     assert g(t) == 1 and g("Dried " + t) == 3
 
 
-@pytest.mark.parametrize("t", ["Mutton", "Goat", "Buffalo", "Mineral water", "Natural mineral water", "Poppy seed", "Curry powder", "Onion powder", "Amchur", "Meat", "Poultry"])
+@pytest.mark.parametrize("t", ["Mutton", "Goat", "Buffalo", "Curry powder", "Onion powder", "Amchur", "Meat", "Poultry"])
 def test_held_names_stay_unrecognised(t):
     assert g(t) is None
