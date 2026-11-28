@@ -165,6 +165,17 @@
       }
       return -1;
     }
+    const BARE_QUANTITY = /^[0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?$/i;
+    function quantityColonPrefix(item) {
+      const colon = colonAtDepth0(item);
+      return colon > 0 && BARE_QUANTITY.test(item.slice(colon + 1).trim()) ? item.slice(0, colon).trim() : null;
+    }
+    function unitQuantityColonPrefix(item) {
+      const prefix = quantityColonPrefix(item);
+      if (prefix === null) return null;
+      const colon = colonAtDepth0(item);
+      return /(?:mg|kg|ml|g|l)\s*$/i.test(item.slice(colon + 1).trim()) ? prefix : null;
+    }
     // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
     const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
     // product-form tails are never peeled and only known plain label words may be (none by evidence); mirrors parser._PRODUCT_FORM_WORDS / _KNOWN_LABEL_WORDS / _tail_is_peelable
@@ -196,7 +207,7 @@
       return null;
     }
     function suspectSectionItems(items) {
-      return items.filter((it) => { const c = colonAtDepth0(it); return c > 0 && !CLASS_WORD_RE.test(flatten(it.slice(0, c))); });
+      return items.filter((it) => { const c = colonAtDepth0(it); return c > 0 && quantityColonPrefix(it) === null && !CLASS_WORD_RE.test(flatten(it.slice(0, c))); });
     }
     function nextBoundary(body, start) {
       let depth = 0;
@@ -349,6 +360,9 @@
           i = end + 1;
         } else i++;
       }
+    }
+    function bracketColonContents(raw) {
+      return [...bracketGroups(raw)].filter(([, end, content]) => end < raw.length && /\S[^:]*:\s*\S/.test(content)).map(([, , content]) => content);
     }
     function splitCompound(raw) {
       for (const [idx, , content] of bracketGroups(raw)) {
@@ -1094,10 +1108,13 @@
     function expand(items, depth, heads, notes) {   // items: [raw, section label] pairs
       const out = [];
       for (const [raw, section] of items) {
-        const ing = normaliseIngredient(raw);
+        const quantityPrefix = unitQuantityColonPrefix(raw);
+        const normalisedRaw = quantityPrefix && recognisableIng(normaliseIngredient(quantityPrefix)) ? quantityPrefix : raw;
+        const ing = normaliseIngredient(normalisedRaw);
+        ing.raw = raw;
         ing.section = section;
         ing.ins.forEach((u) => { u.section = section; });
-        let split = depth < 3 && !isAdditiveAbsenceClaim(raw) ? splitCompound(raw) : null;
+        let split = depth < 3 && !isAdditiveAbsenceClaim(raw) && !bracketColonContents(raw).length ? splitCompound(raw) : null;
         if (split && split[1].length === 1 && isColourNote(normaliseIngredient(split[1][0]).text)) split = null;   // "Annatto (colour)": a function note on a named food
         if (split && !recognisableIng(normaliseIngredient(split[0]))) {
           if (heads) heads.push(split[0]);       // the group name itself is not classified: keep it visible
@@ -1302,13 +1319,18 @@
       const heads = [];
       const ampNotes = [];
       const ings = expand(sections.flatMap((sec) => sec.items.map((raw) => [raw, sec.label])), 0, heads, ampNotes);
+      const bracketColons = ings.flatMap((i) => bracketColonContents(i.raw).map((content) => [i.raw, content]));
+      const bracketColonItems = new Set(bracketColons.map(([raw]) => raw));
       const declared = declaredAdditives(parsed.declarations, ings);
       const unassessed = [...new Set([
         ...ings.filter((i) => !recognisableIng(i)).map((i) => i.raw),
-        ...heads.map((h) => `${h} (group name; its contents were assessed separately)`)])];
+        ...heads.map((h) => `${h} (group name; its contents were assessed separately)`),
+        ...bracketColons.map(([, content]) => `${content} (bracketed label and contents not assessed separately)`)])];
       const unplaced = [...new Set(ings.filter((i) => { const l = lookup(i.name); return l && l.kind === "unplaced"; }).map((i) => i.raw).concat(ings.flatMap(nestedUnplaced),ings.filter(i => lookup(i.name)?.kind === "fruit_juice" && !(ings.length === 1 && plainJuiceStated(i))).map(i => i.raw),ings.flatMap(nestedJuiceUnresolved),ings.flatMap(i => namedWaterUnresolved(i, ings.length === 1))))];
       const declarationEvidence = parsed.declarations.flatMap((d) => splitItemsText(d.replace(/^contains?\s*:?[ ]*/i, "")).map(normaliseIngredient)).filter((i) => i.ins.length || hitsFor(i).length);
-      const sectionWarnings = suspectSectionItems(items).map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
+      const sectionSuspects = suspectSectionItems(items);
+      const sectionWarnings = sectionSuspects.map((it) => `"${it}" contains a colon, so a section label may not have been split from the ingredient before it`).concat(ampNotes);
+      sectionWarnings.push(...bracketColons.map(([raw, content]) => `"${raw}": bracketed label and contents were not assessed separately: "${content}"`));
       sectionWarnings.push(...parsed.composition.map((seg) => `Milk composition declaration (not an added ingredient): "${seg}". No vitamin, added-solid or milk-fat ingredient was inferred.`));
       const unreadLike = parsed.ignored.filter(looksLikeMoreIngredients);
       sectionWarnings.push(...unreadLike.map((seg) => `Text after a full stop was not read as ingredients but looks like more of the list: "${shortText(seg)}"`));
@@ -1351,7 +1373,8 @@
       else if (vocabLast) reasons.push("the last item is not in the local vocabulary");
       if (unreadLike.length) reasons.push("text after a full stop looks like more ingredients and was not read");
       if (unaccounted) reasons.push(`${unaccounted} word(s) after the heading were neither read as ingredients nor set aside`);
-      if (suspectSectionItems(items).length) reasons.push("a section label may not have been split from an ingredient");
+      if (sectionSuspects.length) reasons.push("a section label may not have been split from an ingredient");
+      if (bracketColons.length) reasons.push("a bracketed label and its contents were not assessed separately");
       if (pctSuspects.length) reasons.push("an item has text after a percentage: a comma may be missing between two ingredients");
       if (boundarySuspects.length) reasons.push("an additive-class bracket follows a closed food bracket without a separator: ingredient-item boundaries are uncertain, even though the words are accounted for");
       if (implausible) reasons.push("few of the items were recognised: this text may not be an ingredient list");
@@ -1360,7 +1383,7 @@
         status: reasons.length ? "uncertain" : "complete", heading: parsed.headingKind, reasons,
         list_share: denom ? Math.round(inList / denom * 1000) / 1000 : 0.0,
         words: { region: parsed.regionWords, in_list: inList, declared: declaredW, excluded: Math.max(0, parsed.tailWords - declaredW) + provenanceWords, not_read: notRead, unaccounted },
-        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return !recognisableIng(i) || i.ins.some((u) => u.class_conflict) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0 || (l && l.kind === "fruit_juice" && !(ings.length === 1 && plainJuiceStated(i))) || nestedJuiceUnresolved(i).length > 0 || namedWaterUnresolved(i, ings.length === 1).length > 0; }).length } };
+        assessed: { items: ings.length, not_assessed: ings.filter((i) => { const l = lookup(i.name); return bracketColonItems.has(i.raw) || !recognisableIng(i) || i.ins.some((u) => u.class_conflict) || (l && l.kind === "unplaced") || nestedUnplaced(i).length > 0 || (l && l.kind === "fruit_juice" && !(ings.length === 1 && plainJuiceStated(i))) || nestedJuiceUnresolved(i).length > 0 || namedWaterUnresolved(i, ings.length === 1).length > 0; }).length } };
       if (parsed.composition.length) {
         const compositionWords = parsed.composition.reduce((n, x) => n + countWords(x), 0);
         common.completeness.words.composition = compositionWords; common.completeness.words.excluded -= compositionWords;
@@ -1368,8 +1391,10 @@
         common.warnings = [...sectionWarnings];
       }
       const lost = unaccounted ? `${unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost` : null;
-      const blocking = truncation || unread || headingRisk || lost;
       const r = classifyIngredients(ings, parsed.declarations);
+      const blocking = truncation || unread || headingRisk || lost
+        || (r.group !== null && sectionSuspects.length ? "a section label may not have been split from an ingredient" : null)
+        || (r.group !== null && bracketColons.length ? "a bracketed label and its contents were not assessed separately" : null);
       // Option A (user decision): a strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
       if (blocking && r.group !== 4) return abstain(blocking, text, Object.assign({ drivers: r.drivers }, common));
       if (r.group === null) return abstain(r.reason || "classification uncertain", text, Object.assign({ drivers: r.drivers }, common));

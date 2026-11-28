@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -51,6 +52,13 @@ def test_parse_not_assessed_skips_the_explainer_and_group_names_and_stops_at_hea
     text = ("NOT ASSESSED\n\nNot in the vocabulary, or a group name whose contents were assessed. These did not affect the group.\n\n"
             "alpha\nbeta (group name; its contents were assessed separately)\ngamma\nCOMPLETENESS: UNCERTAIN\ndelta")
     assert mu.parse_not_assessed(text) == ["alpha", "gamma"]
+
+
+def test_parse_not_assessed_skips_current_browser_caption():
+    template = (REPO_ROOT / "web_preview" / "template.html").read_text(encoding="utf-8")
+    caption = re.search(r'el\("p", \{ "class": "hint", text: "(Not in the vocabulary[^"]+)" \}\)', template)
+    assert caption
+    assert mu.parse_not_assessed(f"NOT ASSESSED\n\n{caption.group(1)}\n\nSeasoning: Onion\nRaw text analysed") == ["Seasoning: Onion"]
 
 
 def test_canon_id_covers_keys_file_names_and_negation_codes():
