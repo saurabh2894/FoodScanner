@@ -41,6 +41,9 @@ def test_existing_protein_isolate_marker_remains_a_separate_marker(name):
 # oils-24b: shea butter retired from this historical hold (the hold said extracted butter inherits no kernel placement; FSSAI 2.2.4 item 12 plus the FAO Group 2 process definition now place it directly).
 @pytest.mark.parametrize('name',[h for h in M['held'] if h.lower()!='shea butter'])
 def test_no_other_prior_hold_is_lifted(name):
+ if name=='arrowroot':
+  assert result(name)==2  # general-25f: FSSAI 2.4.14(1) defines arrowroot as the purified starch; FAO Group 2 starches. The old hold covered the raw-root/vegetable reading, which stays unaliased.
+  return
  if name=='tamarind':
   assert result(name)==1  # tamarind-24 lift; see tests/test_tamarind_24.py
   return

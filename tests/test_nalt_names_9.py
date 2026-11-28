@@ -47,6 +47,9 @@ def test_existing_protein_isolate_marker_remains_a_separate_marker(name):
 
 @pytest.mark.parametrize('name',M['held'])
 def test_no_other_prior_hold_is_lifted(name):
+ if name=='arrowroot':
+  assert result(name)==2  # general-25f: FSSAI 2.4.14(1) defines arrowroot as the purified starch; FAO Group 2 starches. The old hold covered the raw-root/vegetable reading, which stays unaliased.
+  return
  if name in ['celery', 'scallions', 'spring onions', 'tamarind']:  # tamarind-24: plain tamarind lifted (FAO Group 1 fruit class, FSSAI 2.3.49, FDC 167763); pulp/paste/concentrate/powder forms still abstain; see tests/test_tamarind_24.py
   assert result(name)==1  # Independently sourced slice14 lift; older manifest retained.
   return

@@ -55,7 +55,7 @@ def test_synthetic_the_committed_rows_repeat_the_route_clause_and_the_name_colli
     texts = [RULE["clause"]["text"]] + [c["text"] for c in RULE["clauses_alt"]]
     assert S and all(r["kind"] == "vegetable" and r["source"].startswith("PROVISIONAL") and any(t in r["source"] for t in texts) for r in S)
     terms = {r["term"] for r in S}
-    for t in ("beets", "celery", "arrowroot"):
+    for t in ("beets", "celery"):
         assert t not in terms and (t not in LEX or t=='celery')                                   # name-collision terms queued for an owner decision (descriptor handling)
     assert any("potatoes, sweet potatoes and cassava" in r["source"] for r in S if r["term"] == "cassava")
     assert any("fresh or dried mushrooms" in r["source"] for r in S if r["term"] == "shiitake mushrooms")
