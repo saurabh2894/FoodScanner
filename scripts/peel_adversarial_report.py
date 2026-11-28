@@ -18,7 +18,15 @@ def main():
     with (ROOT / "tests" / "corpus_adversarial_peel.csv").open(
         encoding="utf-8", newline=""
     ) as f:
-        rows = list(csv.DictReader(f))
+        rows = list(csv.DictReader(f, strict=True))
+
+    ids = set()
+    for row in rows:
+        if not all(row.get(key) for key in ("id", "category", "text")):
+            raise ValueError(f"Incomplete corpus row: {row!r}")
+        if row["id"] in ids:
+            raise ValueError(f"Duplicate corpus id: {row['id']}")
+        ids.add(row["id"])
 
     pairs = [(row["text"], source) for row in rows for source in ("text", "ocr")]
     js_results = pc.run_js(pairs)
@@ -34,9 +42,13 @@ def main():
             differing_rows.add(row["id"])
             differences += 1
             print(f"\n{row['id']} [{row['category']}, {source}]: {text}")
-            for key in py:
-                if py[key] != js[key]:
-                    print(f"  {key}:\n    Python: {py[key]!r}\n    JS: {js[key]!r}")
+            missing = object()
+            for key in dict.fromkeys((*py, *js)):
+                pvalue, jvalue = py.get(key, missing), js.get(key, missing)
+                if pvalue != jvalue:
+                    pdisplay = "<missing>" if pvalue is missing else repr(pvalue)
+                    jdisplay = "<missing>" if jvalue is missing else repr(jvalue)
+                    print(f"  {key}:\n    Python: {pdisplay}\n    JS: {jdisplay}")
     print(f"\n{len(rows)} rows; {len(differing_rows)} divergent rows; "
           f"{differences}/{len(pairs)} divergent analyses (text and OCR paths).")
 
