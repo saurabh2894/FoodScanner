@@ -179,6 +179,7 @@
       const mp = /\s+(\d+(?:\.\d+)?\s*%)\s*$/.exec(left) || /\s*\(\s*(\d+(?:\.\d+)?\s*%)\s*\)\s*$/.exec(left);
       if (mp) { pct = mp[1].replace(/\s+/g, ""); left = left.slice(0, mp.index); }
       const words = left.split(/\s+/).filter(Boolean);
+      if (words.length > 1 && knownPhrase(flatten(words.join(" ")))) return null;   // peel-known-phrase-1 (W): the whole text before the colon is already a recognised ingredient name; mirrors parser._peel_label
       for (let k = words.length - 1; k > 0; k--) {
         const labelWords = words.slice(k);
         if (labelWords.length > 4 || !labelWords.every((w) => /^[A-Za-z&'\u2019\/\-]+$/.test(w))) continue;

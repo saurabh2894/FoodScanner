@@ -1715,6 +1715,17 @@ PAIRS += [("Ingredients: Rice, " + i + ", salt.", s) for i in _peel_j for s in [
 TOTAL = len(PAIRS)
 
 
+# peel-known-phrase-1 (W): a recognised whole name before the colon is never split into item + label. Compounds that must NOT peel, controls that still peel, several colons, brackets,
+# percent values, plurals, unknown first words, and the documented OPEN ITEM (known prefix + non-form tail that is part of a product name still peels in both engines). Synthetic controls.
+_peel_w = ["Corn Oil: Onion", "Moong Dal: Roasted", "Milk Solids: Skimmed Milk", "Rice Flour: Rice, Water", "Roasted Barley Flour: Wheat", "Coriander Leaf: Fresh", "Oyster Mushrooms: Garlic",
+           "Mustard Greens: Salt", "Wheat Flour (45%): Wheat", "Wheat Flour 45%: Wheat", "Vitamins and Minerals: Iron, Zinc", "Tomato Concentrate: Tomato", "Rice Flours: Wheat",
+           "Corn Oil: Onion: Garlic", "Corn Oil: Onion (Moong Dal: Roasted)", "Mystery Corn Oil: Onion", "Corn Oil 12%: Onion", "Dried Moong Dal: Roasted", "Bishop\u2019s Seed Oil: Onion",
+           "Corn Oil Seasoning : Onion", "Milk Solids Seasoning : Onion", "Moong Dal Seasoning (12%): Onion", "Rice Bran Oil Seasoning : Onion", "Invert syrup Seasoning : Onion",
+           "Paprika Oleoresin (0.6%): Roasted Sesame", "Paprika Oleoresin: Roasted Sesame"]
+PAIRS += [("Ingredients: Rice, " + i + ", salt.", s) for i in _peel_w for s in ["ocr", "text"]]
+TOTAL = len(PAIRS)
+
+
 def run_js(pairs):
     """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:

@@ -243,6 +243,8 @@ def _peel_label(item: str) -> tuple[str, str, str] | None:
     if mp:
         pct, left = re.sub(r"\s+", "", mp.group(1)), left[:mp.start()]
     words = left.split()
+    if len(words) > 1 and _known_phrase(_flat(" ".join(words))):
+        return None            # peel-known-phrase-1 (W): the whole text before the colon is already a recognised ingredient name ("Corn Oil: ...", "Moong Dal: ..."), never name + label
     for k in range(len(words) - 1, 0, -1):
         label_words = words[k:]
         if len(label_words) > 4 or not all(_LABEL_WORD.fullmatch(w) for w in label_words):
