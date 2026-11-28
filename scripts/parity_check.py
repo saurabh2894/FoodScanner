@@ -1315,6 +1315,12 @@ for _target in (CORPUS, PASTE):
 # general-25c parity: heads and aliases in plain, salted, sugared, canned, pickled, powder and juice forms.
 for _target in (CORPUS, PASTE):
     _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in ('Peaches', 'Peach', 'Crookneck squash', 'Scallop squash', 'Alfalfa sprouts', 'Radish sprouts') for f in ('{t}', '{t}, Salt', 'Sugar, {t}', 'Canned {t}', 'Pickled {t}', '{t} powder', '{t} juice', '{t} (Sugar)'))
+# general-25e parity: single-spice powders (FSSAI 2.9) and their aliases in plain, salted and additive forms; the section-label form is for the head names only (alias names in a section label are the pinned peel divergence in tests/test_peel_known_phrase_divergence.py).
+_HEADS_25E = ('Chilli powder', 'Turmeric powder', 'Coriander powder', 'Cumin powder', 'Cardamom powder', 'Cinnamon powder', 'Clove powder', 'Fennel powder', 'Fenugreek powder', 'Ginger powder', 'Mustard powder', 'Nutmeg powder', 'Black pepper powder')
+_ALIASES_25E = ('Red chilli powder', 'Haldi powder', 'Dhania powder', 'Jeera powder', 'Dry ginger powder', 'Dried ginger powder', 'Indian gooseberry')
+for _target in (CORPUS, PASTE):
+    _target.extend('Ingredients: ' + f.format(t=t) + '.' for t in _HEADS_25E + _ALIASES_25E for f in ('{t}', 'Wheat flour, {t}, Salt', '{t}, Salt', '{t} (Flavour)'))
+    _target.extend('Ingredients: Rice, ' + t + ' Seasoning : Onion, salt.' for t in _HEADS_25E)
 # tomato-g3-1 parity: staged tomato concentrate terms in stated, unstated, bracketed and conditioned forms.
 _TOMATO_TERMS = [r["term"] for r in _csv.DictReader((ROOT / "evaluation" / "tomato_rows_24" / "staged_rows.csv").open(newline=""))]
 _ft = ['{t}', '{t}, Salt', '{t}, Sugar', '{t}, Sugar, Salt', '{t} (Salt)', '{t} (Tomato, Salt)', '{t} (28°B)', '{t}, Salt, Water', '{t}, Salt, Citric Acid', '{t} powder', 'Dried {t}, Salt', '{t}, {t}, Salt', '{t} (Tomato)', '{t}, Salt, Wheat Flour', 'Salt, {t}', 'Milk, {t}']

@@ -22,8 +22,9 @@ from scripts import parity_check as pc
 PROBES = [
     "Ingredients: Rice, Dried Paprika Seasoning: Onion, salt.",
     "Ingredients: Rice, Paprika Powder Seasoning: Onion, salt.",
-    "Ingredients: Rice, Chilli Powder Seasoning : Onion, salt.",
     "Ingredients: Rice, Garlic Powder Seasoning : Onion, salt.",
+    "Ingredients: Rice, Red chilli powder Seasoning : Onion, salt.",
+    "Ingredients: Rice, Dry ginger powder Seasoning : Onion, salt.",
 ]
 
 

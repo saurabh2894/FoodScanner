@@ -61,7 +61,7 @@ def test_synthetic_negative_parked_or_rejected_forms_are_not_recognised(t):
     assert not rec(t) and t not in lex()
 
 
-@pytest.mark.parametrize("t", ["garlic powder", "onion powder", "chilli powder"])
+@pytest.mark.parametrize("t", ["garlic powder", "onion powder"])  # chilli powder reversed by general-25e: FAO Group 1 names spices "whole or powdered" and FSSAI 2.9.3(2) defines chilli powder; this batch only asserted it was not touched
 def test_synthetic_negative_no_new_row_or_synonym_was_added_for_the_parked_powders(t):
     assert t not in lex() and t not in {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig"))}        # whatever they do today is unchanged by this batch
 
