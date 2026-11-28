@@ -1,4 +1,6 @@
-# Peel known-phrase: shared rule (claude/peel-known-phrase-1), step (a) design
+# Peel known-phrase: shared rule (claude/peel-known-phrase-1)
+
+Steps: (a) design (below, approved as J+W), (b) implemented as two commits: **J** (shared known-prefix rule + flatten fix, commit f87d04f) and **W** (whole-phrase guard, separate commit so it can be dropped). Results are at the end of this file.
 
 Base reliability/demand-truth-23 at ddc717e. No data table is edited. Scripts here (`survey.py`, `real.py`, `sweep2.py`) are read-only probes; paths inside them are scratch paths and were run from the repository root.
 
@@ -38,3 +40,28 @@ So the saved label sets cannot show which rule is better; the decision rests on 
 ## What I cannot decide here
 - Whether the owner wants the whole-phrase guard in this change (it fixes 61 existing false peels and is a behaviour change of the Python source of truth; without it, J alone would extend the false-peel class to JS-only forms). I recommend it; it is a separate commit so it can be dropped.
 - Whether "Paprika Oleoresin (0.6%): ..." style false peels (known prefix + non-form tail) should get a data-driven evidence rule; out of scope.
+
+
+## Step (b) results (J+W)
+Changed: `parser._flat` (curly apostrophes), `parser._known_phrase` (lookup or marker, lazy import of `classify.lookup`), the whole-phrase guard in `parser._peel_label` and `peelLabel` in `web_preview/foodscan.js`; tests, `scripts/parity_check.py` corpus, this note. No data table, no classifier code. Existing guards (form-word, descriptor, class-word, lexicon-term label, deny list, digit/bracket checks) are untouched and still run first; W only adds a non-peel condition.
+
+| Gate | Result |
+|---|---|
+| Parity | 37,381/37,381 identical (37,277 existing + 52 J cases + 52 W cases, each in `ocr` and `text`) |
+| Full suite | 18,937 passed (the five strict-xfail probes are now ordinary passing parity cases) |
+| Frozen 66 labels (flip dump, fresh processes, base vs branch) | 0 fields changed on any label (group, status, reason, drivers, ingredients, unassessed, INS) |
+| Out-of-sample 32 labels (same method) | 0 fields changed |
+| Whole base parity corpus (37,277 pairs, py_result, fresh processes) | 0 pairs changed |
+| 61 multi-word terms that peeled before | 61 -> kept whole (list in `before_after.md`); each was a recognised whole name split into a shorter name plus a phantom label ("Corn Oil: x" -> "Corn" + "Oil", "Wheat Flour: x", "Moong Dal: x"...) |
+
+Behaviour change worth reading (`before_after.md` section 3):
+- **J (more peels, what the five probes ask for):** "Garlic Powder Seasoning : Onion" and the other descriptor/plural/curly forms now peel; the result moves from uncertain/abstain to complete/Group 3 in the synthetic list (the same answer the straight-apostrophe and exact-term shapes already gave).
+- **W (fewer peels):** a colon after a recognised whole name now keeps the item whole and flagged, so synthetic "Rice, Corn Oil: Onion, salt." moves from an answered Group 3 (built on the phantom split "Corn" + section "Oil") to uncertain/abstain. This turns invented structure into an abstention; it does not remove a right peel, because in every case the whole pre-colon text is itself a recognised ingredient name. "Vitamins and Minerals: Iron, Zinc" is the one with a plausible heading reading; it was split into "Vitamins" + "And Minerals" before, which is not a correct reading either, and is now kept whole and flagged.
+- **Curly apostrophe side effect:** "Bishop\u2019s Seed Oil: Onion" now peels like the straight-apostrophe form always did (Python and JS agree); this is the open item below, not a new class.
+
+## OPEN ITEM (documented, not fixed): known prefix + non-form tail that belongs to a product name
+"Paprika Oleoresin (0.6%): Roasted Sesame" still peels to "Paprika" + section "Oleoresin 0.6%" in both engines (pinned by `test_open_item_known_prefix_plus_non_form_tail_still_peels` and in the parity corpus, so any future rule change shows up). Same class: OIL, MASALA, TOPPING, GARNISH, OLEORESIN tails after a known prefix. Neither W nor J can see it, because the phrase as a whole is not a recognised name. A fix needs evidence that is not in the tables today (a known-section-word list or a recognised-compound list) and is a data decision for the owner.
+
+## Could not decide
+- Real label evidence is thin: only 2 items with a depth-0 colon in 100 saved real labels, neither peels under any rule. The rule choice is structural, the flip run only confirms that no saved label moves.
+- Whether a colon after a recognised name should instead open a nested sub-list (e.g. "Wheat Flour: Wheat 80%, Barley"). W keeps such items whole and flagged (abstain), which is the conservative reading.
