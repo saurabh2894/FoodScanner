@@ -20,6 +20,11 @@ KINDS = {
     "nut_seed", "flour", "culture", "unplaced", "fruit_juice", "food_powder",
     "neutral", "named_water",
 }
+PROVENANCE_IDS = re.compile(
+    r"(?:fdc|fdc_sr_legacy|fdc_foundation|nalt|cofid):[0-9-]+"
+    r"(?:;(?:fdc|fdc_sr_legacy|fdc_foundation|nalt|cofid):[0-9-]+)*"
+)
+RULE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)+")
 
 
 def key(text):
@@ -54,6 +59,14 @@ def read_csv(path):
         return list(reader)
 
 
+def legacy_provenance_fields(label, row):
+    extra = row.get(None, [])
+    # Staged lexicon rows use fdc_ids and rule_id after the three-column header.
+    return (label == "lexicon" and len(extra) == 2
+            and PROVENANCE_IDS.fullmatch(extra[0])
+            and RULE_ID.fullmatch(extra[1]))
+
+
 def browser_tables():
     # The build inserts the output of this same generator into template.html.
     env = dict(os.environ, PYTHONPATH=str(ROOT / "src"), PYTHONDONTWRITEBYTECODE="1")
@@ -68,6 +81,8 @@ def browser_tables():
 
 def audit(heads, aliases, browser, browser_error=None):
     issues = []
+    legacy_columns = []
+    whitespace = []
     for label, rows, fields in (
         ("lexicon", heads, ("term", "kind", "source")),
         ("synonyms", aliases, ("from", "to", "source")),
@@ -76,13 +91,32 @@ def audit(heads, aliases, browser, browser_error=None):
             for field in fields:
                 if not isinstance(row.get(field), str) or not row[field].strip():
                     issues.append(f"{label} row {line}: missing or empty {field}")
+            named = [name for name in row if name is not None and name not in fields]
+            if named:
+                issues.append(f"{label} row {line}: extra CSV fields {named!r}")
             if None in row:
-                issues.append(f"{label} row {line}: extra CSV fields {row[None]!r}")
+                issue = f"{label} row {line}: extra CSV fields {row[None]!r}"
+                if legacy_provenance_fields(label, row):
+                    legacy_columns.append(f"{issue} (term {row.get('term')!r})")
+                else:
+                    issues.append(issue)
             for field in fields:
                 value = row.get(field)
                 if isinstance(value, str) and value and (value != value.strip() or
                                                           (field != "source" and not key(value))):
-                    issues.append(f"{label} row {line}: malformed {field} (whitespace or punctuation only)")
+                    issue = f"{label} row {line}: malformed {field} (whitespace or punctuation only)"
+                    if value != value.strip():
+                        edges = []
+                        if value != value.lstrip():
+                            edges.append("leading")
+                        if value != value.rstrip():
+                            edges.append("trailing")
+                        whitespace.append(
+                            f"{issue} ({' and '.join(edges)} whitespace; "
+                            f"entry {row.get(fields[0])!r})"
+                        )
+                    else:
+                        issues.append(issue)
             if label == "lexicon" and row.get("kind") and row["kind"] not in KINDS:
                 issues.append(f"{label} row {line}: unknown kind {row['kind']!r}")
 
@@ -133,7 +167,7 @@ def audit(heads, aliases, browser, browser_error=None):
             for side, missing in (("Python only", py - js), ("browser only", js - py)):
                 differences.extend(f"{label} {side}: {' -> '.join(entry)}" for entry in sorted(missing))
 
-    return {
+    report = {
         "scope": ["Browser tables are generated from the Python CSVs by scripts/web_tables.py; "
                   "this compares generator output, not a deployed artifact.",
                   "NOVA group counts unavailable: lexicon rows have no group field; classification is contextual."],
@@ -146,8 +180,19 @@ def audit(heads, aliases, browser, browser_error=None):
         "near_duplicate_head_candidates": candidate_heads,
         "inconsistent_categories": inconsistent,
         "missing_or_malformed_fields": issues,
+        "legacy_unheaded_provenance_columns": legacy_columns,
+        "whitespace_in_values": whitespace,
         "python_browser_differences": differences,
     }
+    report["finding_counts"] = {
+        name: len(value) for name, value in report.items()
+        if isinstance(value, list) and name != "scope"
+    }
+    report["finding_counts"]["total"] = sum(report["finding_counts"].values())
+    report["finding_counts"]["malformed_fields_total"] = (
+        len(issues) + len(legacy_columns) + len(whitespace)
+    )
+    return report
 
 
 def main():
