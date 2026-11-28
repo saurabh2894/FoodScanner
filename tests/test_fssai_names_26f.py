@@ -29,3 +29,17 @@ def test_poppy_alone_abstains_and_oil_unchanged():
 
 def test_compounded_asafoetida_stays_unrecognised_and_salt_unchanged():
     assert g("Compounded asafoetida") is None and g("Iodised salt") == 2 and g("Rice, asafoetida, salt") == 3
+
+
+ALIASES_G = [("Gur", "Jaggery"), ("Jau", "Barley"), ("Mixed millet flour", "Millet flour"), ("Durum wheat semolina", "Semolina"), ("Durum semolina", "Semolina"), ("Whole durum wheat semolina", "Semolina")]
+
+
+@pytest.mark.parametrize("t,ref", ALIASES_G)
+def test_26g_aliases_follow_their_target(t, ref):
+    for f in FORMS + ["Wheat flour, {}", "Sugar, {}", "Rice, {}"]:
+        assert g(f.format(t)) == g(f.format(ref)), f
+
+
+def test_golden_syrup_stays_held():
+    # FSSAI 2.8.6 defines it as syrup obtained by inversion of sugar and allows additives; FAO Table 1 lists invert sugar among Group 4 markers, so no placement clause is established
+    assert g("Golden syrup") is None
