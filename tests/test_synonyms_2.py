@@ -18,8 +18,9 @@ ROWS = list(csv.DictReader((EV / "synonym_rows.csv").open(encoding="utf-8", newl
 # UPDATED (engine-fixes-1): 'bok choy' was gate-excluded in synonyms-2 (prefix-of-target rewrite defect); the engine is now target-safe and the row is re-added, so it leaves the parked list (13 remain parked).
 # scoped-powder-5: Maida now has exact FSSAI2.4.2 naming evidence. The old parked.csv is retained as history; all other parked aliases remain negative controls.
 # nalt-names-6: current NALT Product 16207 explicitly gives chick peas as the same chickpea food. The parked.csv is retained as history; every other hold remains.
-PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline="")) if r["alias"] not in {"bok choy", "maida", "chick peas", "tumeric", "gingelly oil", "refined palmolien oil"}]
+PARKED = [r["alias"] for r in csv.DictReader((EV / "parked.csv").open(encoding="utf-8", newline="")) if r["alias"] not in {"bok choy", "maida", "chick peas", "tumeric", "gingelly oil", "refined palmolien oil", "cassia", "cassia whole"}]
 # palmolien-24: "refined palmolien oil" leaves the old parked list (Indian trade spelling of palmolein, evidence in the synonyms.csv note); 8 remain parked.
+# fssai-names-26e: "cassia" and "cassia whole" leave the parked list (6 remain parked): they were parked as cinnamon aliases without equivalence evidence; cassia is now its own head (FSSAI 2.9.5 defines Cassia (Taj) separately from cinnamon 2.9.4), not an alias of cinnamon.
 
 
 def g(text):
@@ -30,7 +31,7 @@ def g(text):
 # indian-alias-24c: FSSAI Chapter 2.2 'TIL OIL (Gingelly or sesame oil)' now names gingelly oil, so it leaves the parked list.
 # nalt-names-7: current Product30814 names tumeric as turmeric. Only that spelling leaves the old parked list.
 def test_synthetic_23_historical_rows_remain_and_10_other_aliases_are_parked():
-    assert len(ROWS) == 23 and len(PARKED) == 8
+    assert len(ROWS) == 23 and len(PARKED) == 6
     for r in ROWS:
         assert SYN[r["from"]]["to"] == r["to"] and r["source"].startswith("PROVISIONAL: alias of existing lexicon row") and "recognition routing only" in r["source"]
         assert "FDC id" in r["source"] and ("food_attribute.csv row" in r["source"] or "bracketed alternate name in the FDC description" in r["source"])

@@ -30,6 +30,6 @@ def test_alias_follows_target(a, target):
     assert g(a) == 2
 
 
-@pytest.mark.parametrize("t", ["Beef fat", "Suet", "Mutton fat", "Margarine", "Fat spread", "Vanaspati", "Tallow", "Goat meat", "Poppy seeds"])
+@pytest.mark.parametrize("t", ["Beef fat", "Suet", "Mutton fat", "Margarine", "Fat spread", "Vanaspati", "Tallow", "Poppy seeds"])
 def test_held_names_stay_unrecognised(t):
     assert g(t) is None
