@@ -30,7 +30,7 @@ def test_other_forms_abstain(t, shape):
     assert not a.answered or a.group is None
 
 
-@pytest.mark.parametrize("t", ["Tuna", "Sardine", "Sardines", "Tuna (Canned)", "Tuna in Oil"])
-def test_bare_names_stay_unrecognised(t):
+@pytest.mark.parametrize("t", ["Tuna (Canned)", "Tuna in Oil"])
+def test_bare_names_stay_unrecognised(t):  # fssai-fish-26c: bare Tuna/Sardine(s) are now Group 1 fish rows (FSSAI 2.6.2 names them); only the canned/oil-pack forms stay held here
     a = run(t)
     assert not a.answered or a.group is None

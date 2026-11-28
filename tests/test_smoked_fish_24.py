@@ -34,6 +34,6 @@ def test_other_forms_never_group3(t, f):
 
 def test_neighbours_unchanged():
     assert run("Haddock").group == 1 and run("Dried haddock").group == 3
-    for n in ["Salmon", "Herring", "Mackerel", "Smoked trout", "Smoked chicken", "Smoked paprika"]:
+    for n in ["Salmon", "Herring", "Smoked trout", "Smoked chicken", "Smoked paprika"]:
         a = run(n)
         assert not a.answered or a.group is None

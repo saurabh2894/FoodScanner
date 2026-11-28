@@ -26,6 +26,22 @@ def test_plain_forms_placed():
         assert res(n) == 1
 
 
-@pytest.mark.parametrize("n", ["Sardine", "Sardines", "Mackerel", "Pomfret", "Seer fish", "Anchovies", "Tuna"])
-def test_canned_ambiguous_names_stay_unrecognised(n):
-    assert res(n) is None
+FISH_C = ["Sardine", "Sardines", "Mackerel", "Pomfret", "Seer fish", "Anchovy", "Anchovies", "Tuna"]
+
+
+@pytest.mark.parametrize("form", FORMS)
+@pytest.mark.parametrize("name", FISH_C)
+def test_named_in_canned_standard_matches_haddock(form, name):
+    if form in ("Smoked {}", "Canned {}") and name in ("Tuna", "Sardine", "Sardines"):
+        return  # canned tuna/sardine rows are Group 3 by canned-fish-g3-1
+    if form == "Smoked {}":
+        assert res(form.format(name)) is None
+        return
+    assert res(form.format(name)) == res(form.format("Haddock"))
+
+
+@pytest.mark.parametrize("n", FISH_C)
+def test_bare_names_group1_canned_pack_forms_abstain(n):
+    assert res(n) == 1
+    for f in ("{} (Canned)", "{} in Oil", "{}, Tomato Sauce"):
+        assert res(f.format(n)) is None

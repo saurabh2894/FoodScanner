@@ -20,7 +20,7 @@ def test_matches_species_row(form, name):
 
 # shrimp-24 lifted shrimp (tests/test_shrimp_24.py).
 def test_held_generics_stay_unrecognised():
-    for n in ["Salmon", "Tuna", "Roe", "Herring", "Mackerel", "Anchovy"]:
+    for n in ["Salmon", "Roe", "Herring"]:
         assert res(n) is None
 
 # audit-24m: fifteen rows that were the same food as an existing row, demoted to RECOGNITION-ONLY (species-identity audit).
