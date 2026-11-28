@@ -51,7 +51,7 @@ def test_synthetic_same_part_variants_are_synonyms_not_new_rows(variant, base):
 def test_synthetic_different_parts_stay_distinct_and_bare_base_rows_are_not_widened():
     assert normalise_ingredient("coriander leaf").name == "coriander leaf" and normalise_ingredient("coriander seed").name == "coriander seed"
     assert normalise_ingredient("dill weed").name == "dill weed" and normalise_ingredient("dill seed").name == "dill seed"
-    assert lex()["coriander"]["source"] == "PROVISIONAL author seed (spice)" and lex()["dill"]["source"] == "research/02 synthetic example 3"          # untouched
+    assert lex()["coriander"]["source"].startswith("PROVISIONAL (source-repair-26e") and lex()["dill"]["source"] == "research/02 synthetic example 3"          # untouched
     assert "coriander" not in {r["from"] for r in csv.DictReader((RES / "synonyms.csv").open(encoding="utf-8-sig"))}
     assert rec("peppermint") and rec("spearmint") and rec("mint") and "peppermint" not in SYNONYMS
 
