@@ -211,3 +211,51 @@ not assessed `Garlic Powder Seasoning: Onion`; uncertain; colon warning.
 All ingredient words are kept; the ambiguous composite is explicitly not
 assessed, and the Contains declaration is moved to declarations rather than
 misrepresented as a list item. The explicit added-flavour class justifies G4.
+
+## 2. Lost answers: 28-row triage
+
+These are the 28 rows identified in PR #13 as answered by both engines on at
+least one path at `b886096` and abstaining on that path at the tested head.
+Twenty-seven changed on both paths; `no-heading` changed on text only (OCR
+already abstained). A readable answer need not reproduce the old peel: a
+percentage-bearing compound can instead be retained as a section heading.
+The recall category assumes only the disclosed contents of that heading,
+not undisclosed product ingredients or processing. A category here concerns
+the decision to abstain, not whether the old ingredient extraction was correct.
+
+**Counts:** abstention right 5; recall cost 5; unclear 18; total 28.
+
+| Category | Row | Short reason |
+|---|---|---|
+| Abstention right | `alias-after-exact` | `Turmeric Masala` can be a compound name or turmeric followed by a heading. |
+| Abstention right | `unknown-label` | `Garlic Powder Garnish` may be a compound name, not a separate garnish heading. |
+| Abstention right | `plural-cumin-seeds` | Old peel moved `Seeds` out of `Cumin Seeds`; the boundary is unresolved. |
+| Abstention right | `plural-coriander-leaves` | Old peel moved `Leaves` out of `Coriander Leaves`; the boundary is unresolved. |
+| Abstention right | `percent-zero` | A declared seasoning at 0% with listed contents is internally unclear. |
+| Recall cost | `percent-label` | `Garlic Powder Seasoning (12%):` is a readable percentage-bearing heading; disclosed contents are onion and salt. |
+| Recall cost | `percent-bare` | `Garlic Powder Seasoning 12%:` is a readable heading and percentage without brackets. |
+| Recall cost | `percent-decimal` | `Garlic Powder Seasoning (12.5%):` is a readable heading with a decimal percentage. |
+| Recall cost | `percent-spaced` | Spaces within `( 12.5 % )` do not make the heading unreadable. |
+| Recall cost | `percent-exact-prefix` | `Cumin Seasoning (2.5%):` is a readable percentage-bearing heading; onion and salt are disclosed. |
+| Unclear | `exact-prefix` | `Rice Bran Oil Seasoning:` does not settle whether oil is a separate item or part of the name. |
+| Unclear | `descriptor-prefix` | `Garlic Powder Seasoning:` can be a compound name or an item plus heading. |
+| Unclear | `exact-salt` | `Salt Seasoning:` leaves salt's role and the boundary open. |
+| Unclear | `exact-cumin` | `Cumin Seasoning:` leaves cumin's role and the boundary open. |
+| Unclear | `descriptor-dried` | `Dried Garlic Seasoning:` admits both a product name and an item-plus-heading reading. |
+| Unclear | `descriptor-ground` | `Ground Cumin Seasoning:` admits both readings. |
+| Unclear | `descriptor-multiple` | `Dry Ground Ginger Seasoning:` admits both readings. |
+| Unclear | `descriptor-mixed-case` | Case changes do not resolve the compound-versus-section boundary. |
+| Unclear | `descriptor-spaces` | Extra spaces do not establish an ingredient boundary. |
+| Unclear | `plural-onions` | `Onions Seasoning:` may name a seasoning or separate onions from its heading. |
+| Unclear | `plural-garlics` | Unusual `Garlics` and the adjacent heading leave the intended phrase uncertain. |
+| Unclear | `plural-chillies` | `Chillies Seasoning:` admits both boundary readings. |
+| Unclear | `plural-prefix-and-label` | `Onions Toppings:` could be a compound name or onions followed by a heading. |
+| Unclear | `percent-after-colon` | Onion's percentage is readable, but does not settle the preceding `Garlic Powder Seasoning` boundary. |
+| Unclear | `line-break` | The line break follows the colon; it does not settle the preceding compound name. |
+| Unclear | `semicolon` | Semicolons separate items, but do not settle the compound before the colon. |
+| Unclear | `no-heading` | Text input has the same unresolved compound; absence of a heading is not itself a text-path defect. |
+| Unclear | `contains-allergen` | `Contains milk` is an allergen line, not a driver; it does not resolve the compound. |
+
+For the unclear cases a reviewer needs the intended component/section
+boundary, and, where a compound is a product name, its disclosed composition.
+Neither engine agreement nor the old G3 answer resolves that question.
