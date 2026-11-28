@@ -681,6 +681,12 @@ def _bracket_groups(raw: str):
             i += 1
 
 
+def bracket_colon_contents(raw: str) -> list[str]:
+    """Keep closed bracketed label-and-content spans intact for coverage review."""
+    return [content for _, end, content in _bracket_groups(raw)
+            if end < len(raw) and re.search(r"\S[^:]*:\s*\S", content)]
+
+
 def split_compound(raw: str) -> tuple[str, list[str]] | None:
     """Split "Seasoning (Sugar, Salt, Maltodextrin)" into ("Seasoning", [sub-items]).
 

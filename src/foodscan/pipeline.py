@@ -16,7 +16,7 @@ from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference, is_additive_absence_claim
 from .tables import load_table
-from .parser import (_class_word_re, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
+from .parser import (_class_word_re, bracket_colon_contents, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, suspect_adjacent_class_items, unclosed_openers)
 
 NOT_ENOUGH = "Not enough information"
@@ -367,7 +367,7 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
         ing = normalise_list([raw])[0]
         ing.section = section
         ing.ins = [replace(u, section=section) for u in ing.ins]
-        split = split_compound(raw) if depth < 3 and not is_additive_absence_claim(raw) else None
+        split = split_compound(raw) if depth < 3 and not is_additive_absence_claim(raw) and not bracket_colon_contents(raw) else None
         if split and len(split[1]) == 1 and is_colour_note(normalise_list([split[1][0]])[0].text):
             split = None          # "Annatto (colour)": a function note on a named food, not a colour ingredient: keep whole
         if split and not _recognisable(normalise_list([split[0]])[0]):
@@ -428,10 +428,13 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     heads: list[str] = []
     amp_notes: list[str] = []
     ings = _expand([(raw, label) for label, its in sections for raw in its], heads=heads, notes=amp_notes)
+    bracket_colons = [(i.raw, content) for i in ings for content in bracket_colon_contents(i.raw)]
+    bracket_colon_items = {raw for raw, _ in bracket_colons}
     declared = _declared_additives(parsed.declarations, ings)
     unassessed = list(dict.fromkeys(
         [i.raw for i in ings if not _recognisable(i)]
-        + [f"{h} (group name; its contents were assessed separately)" for h in heads]))
+        + [f"{h} (group name; its contents were assessed separately)" for h in heads]
+        + [f"{content} (bracketed label and contents not assessed separately)" for _, content in bracket_colons]))
     unplaced = list(dict.fromkeys(
         [i.raw for i in ings if (_lookup(i.name) or {}).get("kind") == "unplaced"]
         + [name for i in ings for name in nested_unplaced(i)]
@@ -440,8 +443,11 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         + [name for i in ings for name in named_water_unresolved(i, len(ings) == 1)]))
     declaration_evidence = [i for decl in parsed.declarations for i in normalise_list(split_items(re.sub(r"^contains?\s*:?[ ]*", "", decl, flags=re.IGNORECASE))) if i.ins or _hits_for(i)]
     uses = [u for i in ings for u in i.ins] + [replace(u, declaration_only=True) for i in declaration_evidence for u in i.ins]
+    section_suspects = suspect_section_items(items)
     section_warnings = [f'"{it}" contains a colon, so a section label may not have been split from the ingredient before it'
-                        for it in suspect_section_items(items)] + amp_notes
+                        for it in section_suspects] + amp_notes
+    section_warnings += [f'"{raw}": bracketed label and contents were not assessed separately: "{content}"'
+                         for raw, content in bracket_colons]
     section_warnings += [f'Milk composition declaration (not an added ingredient): "{seg}". No vitamin, added-solid or milk-fat ingredient was inferred.' for seg in parsed.composition]
     unread_like = [seg for seg in parsed.ignored if _looks_like_more_ingredients(seg)]
     unread_warnings = [f'Text after a full stop was not read as ingredients but looks like more of the list: "{_short(seg)}"'
@@ -512,8 +518,10 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         reasons.append("text after a full stop looks like more ingredients and was not read")
     if unaccounted:
         reasons.append(f"{unaccounted} word(s) after the heading were neither read as ingredients nor set aside")
-    if suspect_section_items(items):
+    if section_suspects:
         reasons.append("a section label may not have been split from an ingredient")
+    if bracket_colons:
+        reasons.append("a bracketed label and its contents were not assessed separately")
     if pct_suspects:
         reasons.append("an item has text after a percentage: a comma may be missing between two ingredients")
     if boundary_suspects:
@@ -526,7 +534,7 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
         "list_share": round(in_list / denom, 3) if denom else 0.0,
         "words": {"region": parsed.region_words, "in_list": in_list, "declared": declared_w,
                   "excluded": max(0, parsed.tail_words - declared_w) + provenance_words, "not_read": not_read, "unaccounted": unaccounted},
-        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if not _recognisable(i) or any(u.class_conflict for u in i.ins) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i) or ((_lookup(i.name) or {}).get("kind") == "fruit_juice" and not (len(ings) == 1 and plain_juice_stated(i))) or nested_juice_unresolved(i) or named_water_unresolved(i, len(ings) == 1))}}
+        "assessed": {"items": len(ings), "not_assessed": sum(1 for i in ings if i.raw in bracket_colon_items or not _recognisable(i) or any(u.class_conflict for u in i.ins) or (_lookup(i.name) or {}).get("kind") == "unplaced" or nested_unplaced(i) or ((_lookup(i.name) or {}).get("kind") == "fruit_juice" and not (len(ings) == 1 and plain_juice_stated(i))) or nested_juice_unresolved(i) or named_water_unresolved(i, len(ings) == 1))}}
     if parsed.composition:
         composition_words = sum(count_words(x) for x in parsed.composition)
         completeness["words"]["composition"] = composition_words
@@ -536,8 +544,12 @@ def analyse_text(text: str, *, source: str = "ocr") -> Analysis:
     common["completeness"] = completeness
     if unaccounted:                                           # lost text: like truncation, only a strong-marker Group 4 stands
         blocking = blocking or f"{unaccounted} word(s) after the heading were neither read nor set aside, so text may have been lost"
-
     result = classify_ingredients(ings, parsed.declarations)
+    if result.group is not None:
+        if section_suspects:
+            blocking = blocking or "a section label may not have been split from an ingredient"
+        if bracket_colons:
+            blocking = blocking or "a bracketed label and its contents were not assessed separately"
 
     # Option A (decided by the user): missing text can never remove a marker, so a
     # strong-marker Group 4 call stands on a possibly incomplete list, with a warning.
