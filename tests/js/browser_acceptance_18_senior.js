@@ -22,8 +22,10 @@ async function resultOf(pg) {
     const res = document.getElementById('result'), h2 = res.querySelector('h2'), headline = h2 ? h2.textContent.trim() : '';
     const m = headline.match(/NOVA\s+group\s+(\d)/i), drivers = [];
     res.querySelectorAll('h3').forEach(h3 => { if (/Driven by|Weak evidence seen/i.test(h3.textContent)) { const ul = h3.nextElementSibling; if (ul && ul.tagName === 'UL') ul.querySelectorAll('li').forEach(li => drivers.push(li.textContent.trim())); } });
-    const text = res.textContent, c = text.match(/COMPLETENESS:\s*([A-Z]+)/i);
-    return { headline, group: m ? +m[1] : null, abstain: /not enough information/i.test(headline) || !!res.querySelector('.panel.abstain'), drivers, text, completeness: c ? c[1].toUpperCase() : null };
+    const text = res.textContent;
+    const c = res.querySelector('.text-completeness')?.textContent.match(/^Text completeness:\s*(complete|uncertain)$/i);
+    const reason = res.querySelector('p.classification-reason')?.textContent.trim() || '';
+    return { headline, reason, group: m ? +m[1] : null, abstain: /not enough information/i.test(headline) || !!res.querySelector('.panel.abstain'), drivers, text, completeness: c ? c[1].toUpperCase() : null };
   });
 }
 function judge(label, which, r, exp, extracted) {          // item-level checks; completeness is its own check, never folded into the group check
@@ -87,7 +89,7 @@ async function setPaste(pg, text) { await pg.click('#tab-text'); await pg.fill('
     report.controls.synthetic_edit_reanalyse = { kind: 'SYNTHETIC_MUTATION_CONTROL', action: 'appended ", Sugar, Maltodextrin." to the L01 reference text', beforeGroup: before.group, afterGroup: after.group, afterDrivers: after.drivers, screenshot: await shot(pg, 'control_edit_reanalyse.png') };
   }
   // ---- negative controls (synthetic) ----
-  { await setPaste(pg, ''); const r = await resultOf(pg); check('CONTROL empty input: abstains with "No text to analyse" and no stale group', r.abstain && r.group === null && /No text to analyse/i.test(r.headline), r.headline); report.controls.empty = { kind: 'SYNTHETIC_CONTROL', headline: r.headline }; }
+  { await setPaste(pg, ''); const r = await resultOf(pg); check('CONTROL empty input: abstains with "No text to analyse" and no stale group', r.abstain && r.group === null && /No text to analyse/i.test(r.reason), r.reason); report.controls.empty = { kind: 'SYNTHETIC_CONTROL', headline: r.headline, reason: r.reason }; }
   { await setPaste(pg, 'Ingredients: SyntheticChemicalX999, FakeCompoundZ404.'); const r = await resultOf(pg); check('CONTROL unknown compounds: abstain and name them', r.abstain && r.group === null && r.text.includes('SyntheticChemicalX999') && r.text.includes('FakeCompoundZ404'), r.headline.slice(0, 120)); report.controls.unknown = { kind: 'SYNTHETIC_CONTROL', headline: r.headline.slice(0, 160) }; }
 
   // ---- photo flows: real local OCR ----

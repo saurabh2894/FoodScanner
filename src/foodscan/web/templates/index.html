@@ -18,6 +18,7 @@
   .inslist .missing { color: #666; font-style: italic; }
   .inslist .src, .inslist .effect { display: block; font-size: .85rem; }
   .role { font-size: .75rem; background: #e6f1ee; border-radius: 999px; padding: 0 .45rem; }
+  .ingredient-quantity { display: inline-block; margin-left: .35em; padding: 0 .35em; border: 1px solid currentColor; border-radius: .35em; }
 </style>
 </head>
 <body>
@@ -34,13 +35,23 @@
 {% endif %}
 
 {% if result %}
+{% macro ingredient_item(item) -%}
+  {% set name, quantity = item|ingredient_display -%}
+  <li><span class="ingredient-name">{{ name }}</span>{% if quantity %} <span class="ingredient-quantity">{{ quantity }}</span>{% endif %}</li>
+{%- endmacro %}
 <div class="card {{ 'answer' if result.answered else 'abstain' }}">
   {% if result.answered %}
   <h2>{{ result.headline }}</h2>
   {% else %}
   <h2>Not enough information</h2>
-  {% if result.reason %}<p>{{ result.reason }}</p>{% endif %}
   {% endif %}
+  {% if result.group is none %}
+  <p class="classification-status">Classification: no NOVA group assigned.</p>
+  <p class="classification-reason">Reason: {{ result.reason }}</p>
+  {% else %}
+  <p class="classification-status">Classification: NOVA group assigned.</p>
+  {% endif %}
+  <p class="text-completeness">Text completeness: {{ result.completeness.status }}</p>
   {% if result.answered %}<p class="src">Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.</p>{% endif %}
   {% for w in result.warnings %}<p><strong>Warning:</strong> {{ w }}</p>{% endfor %}
   {% if result.reading_conflict %}
@@ -81,10 +92,10 @@
   {% if result.ingredients and result.sections|selectattr(0)|list %}
     {% for label, items in result.sections %}
       <p><strong>{{ label or 'No section label' }}</strong></p>
-      <ul>{% for i in items %}<li>{{ i }}</li>{% endfor %}</ul>
+      <ul>{% for i in items %}{{ ingredient_item(i) }}{% endfor %}</ul>
     {% endfor %}
   {% elif result.ingredients %}
-    <ol>{% for i in result.ingredients %}<li>{{ i }}</li>{% endfor %}</ol>
+    <ol>{% for i in result.ingredients %}{{ ingredient_item(i) }}{% endfor %}</ol>
   {% else %}
     <p>None found.</p>
   {% endif %}
@@ -95,7 +106,7 @@
   {% endif %}
   {% if result.completeness.words.in_list %}
     {% set c = result.completeness %}
-    <h3>Completeness: {{ c.status }}</h3>
+    <h3>Text coverage details</h3>
     <p class="src">{{ c.words.in_list }} words read as ingredients ({{ (c.list_share * 100)|round|int }}% of the list region); {{ c.words.not_read }} not read, {{ c.words.unaccounted }} unaccounted, {{ c.words.excluded }} set aside after the list, {% if c.words.composition %}{{ c.words.composition }} identified as milk-composition metadata, {% endif %}{{ c.words.declared }} declared. {{ c.assessed.not_assessed }} of {{ c.assessed["items"] }} items are not fully assessed. {% if c.status == 'complete' %}All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct.{% else %}This is text coverage, not a guarantee that characters, digits or the list are complete or correct.{% endif %}</p>
     {% if c.reasons %}<ul>{% for r in c.reasons %}<li>{{ r }}</li>{% endfor %}</ul>{% endif %}
   {% endif %}

@@ -5,12 +5,18 @@ import argparse
 import sys
 from pathlib import Path
 
+from .display import ingredient_display
 from .ocr import OcrUnavailable
-from .pipeline import Analysis, analyse_image, analyse_text
+from .pipeline import NOT_ENOUGH, Analysis, analyse_image, analyse_text
 
 
 def _where(d) -> str:
     return f" (section: {d.section})" if d.section else ""
+
+
+def _ingredient_line(n: int, item: str) -> str:
+    name, quantity = ingredient_display(item)
+    return f"  {n}. {name}" + (f"  {quantity}" if quantity else "")
 
 
 def format_analysis(a: Analysis) -> str:
@@ -22,14 +28,22 @@ def format_analysis(a: Analysis) -> str:
             lines.append(f"  [{label or 'no section label'}]")
             for i in items:
                 n += 1
-                lines.append(f"  {n}. {i}")
+                lines.append(_ingredient_line(n, i))
     elif a.ingredients:
         lines.append("Ingredients found:")
-        lines += [f"  {n}. {i}" for n, i in enumerate(a.ingredients, 1)]
+        lines += [_ingredient_line(n, i) for n, i in enumerate(a.ingredients, 1)]
     else:
         lines.append("Ingredients found: none")
     lines.append("")
-    lines.append(a.headline)
+    c = a.completeness
+    if a.group is None:
+        lines.append(NOT_ENOUGH)
+        lines.append("Classification: no NOVA group assigned.")
+        lines.append(f"Reason: {a.reason}")
+    else:
+        lines.append(a.headline)
+        lines.append("Classification: NOVA group assigned.")
+    lines.append(f"Text completeness: {c['status']}")
     if a.answered:
         lines.append("Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product.")
     if a.retake:
@@ -42,9 +56,8 @@ def format_analysis(a: Analysis) -> str:
     if not a.answered and a.drivers:
         lines.append("Weak evidence seen (not enough to decide):")
         lines += [f"  - {d.ingredient}{_where(d)}: {d.detail}" for d in a.drivers]
-    c = a.completeness
     w = c["words"]
-    lines.append(f"Completeness: {c['status']}. {w['in_list']} words read as ingredients ({round(c['list_share'] * 100)}% of the list region); "
+    lines.append(f"{w['in_list']} words read as ingredients ({round(c['list_share'] * 100)}% of the list region); "
                  f"{w['not_read']} not read, {w['unaccounted']} unaccounted, {w['excluded']} set aside after the list, {w['declared']} declared; "
                  f"{c['assessed']['not_assessed']} of {c['assessed']['items']} items outside the vocabulary."
                  + (" All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct."

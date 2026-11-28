@@ -241,7 +241,7 @@ def test_completeness_explanation_says_it_is_not_a_guarantee(tmp_path, capsys):
     f = tmp_path / "l.txt"; f.write_text(LABEL.replace("@A@", "236").replace("@B@", "382"))
     cli.main(["classify", "--text", str(f)])
     out = capsys.readouterr().out
-    assert "Completeness: complete" in out and "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." in out
+    assert "Text completeness: complete" in out and "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." in out
 
 
 class _Eng:

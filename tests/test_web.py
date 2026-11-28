@@ -104,7 +104,7 @@ def test_abstention_heading_is_short_and_reason_is_body_text():
     soup = BeautifulSoup(html, "html.parser")
     heading = soup.find("h2")
     assert heading.get_text(strip=True) == "Not enough information"
-    body = heading.find_next_sibling("p")
+    body = heading.find_next_sibling("p", class_="classification-reason")
     assert "standalone scope is not established" in body.get_text()
     assert "not treated forms or mixtures" in body.get_text()
     assert "named water" not in heading.get_text()

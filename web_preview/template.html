@@ -70,7 +70,8 @@
   .item-explanation { margin: 1rem 0; }
   .issue-reason { margin: .25rem 0; font-size: .88rem; }
   .item-explanation li { padding-bottom: .5rem; }
-  .classification-reason, .driver-evidence { margin-top: .5rem; }
+  .ingredient-quantity { display: inline-block; margin-left: .35em; padding: 0 .35em; border: 1px solid currentColor; border-radius: .35em; }
+  .driver-evidence { margin-top: .5rem; }
   .src { display: block; color: var(--muted); font-size: .75rem; }
   .twocol { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
   details summary { cursor: pointer; color: var(--muted); font-size: .85rem; }
@@ -169,6 +170,19 @@
     return n;
   }
 
+  // Keep in sync with ingredient_display in src/foodscan/display.py.
+  function ingredientItem(item) {
+    var match = /^(.*?)(?:\s+([0-9]+(?:\.[0-9]+)?)\s*%|\s*\(\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*\))$/.exec(item);
+    var name = match ? match[1].trimEnd() : "";
+    var quantity = match && match[0] === item && /[\p{L}\p{N})\]}]$/u.test(name) ? "(" + (match[2] || match[3]) + "%)" : null;
+    var li = el("li", { "class": "mono" }, [el("span", { "class": "ingredient-name", text: quantity ? name : item })]);
+    if (quantity) {
+      li.appendChild(document.createTextNode(" "));
+      li.appendChild(el("span", { "class": "ingredient-quantity", text: quantity }));
+    }
+    return li;
+  }
+
   // ---- additive codes ------------------------------------------------------------------------------------
   // What a code does to the result, in plain words. No health wording: this is about processing evidence only.
   var EFFECTS = {
@@ -264,7 +278,11 @@
           [el("b", { text: s[0] }), el("span", { text: s[1] })]);
       }));
     card.appendChild(el("p", { "class": "hint result-source", text: which === "photo" ? "Result from this photo's extracted text." : "Result from the last analysed text." }));
-    card.appendChild(el("h2", { text: a.answered || !a.ingredients.length ? a.headline : "Not enough information to assign a NOVA group" }));
+    card.appendChild(el("h2", { text: a.answered ? a.headline : "Not enough information to assign a NOVA group" }));
+    card.appendChild(el("p", { "class": "classification-status", text: a.group === null ?
+      "Classification: no NOVA group assigned." : "Classification: NOVA group assigned." }));
+    if (a.group === null) card.appendChild(el("p", { "class": "classification-reason", text: "Reason: " + a.reason }));
+    card.appendChild(el("p", { "class": "text-completeness", text: "Text completeness: " + a.completeness.status }));
     if (a.answered) card.appendChild(el("p", { "class": "hint", text: "Label-based NOVA classification from the ingredient text. It is not a safety or health finding about any ingredient or product." }));
     (a.warnings || []).forEach(function (w) { card.appendChild(el("p", { "class": "warn", text: "Warning: " + w })); });
     if (a.reading_conflict) {
@@ -298,9 +316,6 @@
         el("p", { "class": "hint", text: a.answered ? "These items are not fully assessed. See the evidence that decides the assigned group above." : "These are evidence gaps, not findings that an ingredient is unsafe. A clearer photo alone may not settle them." }), issueList]);
     }
     if (itemExplanation && !a.answered) card.appendChild(itemExplanation);
-    if (!a.answered && !openItems.length) card.appendChild(el("p", { "class": "hint", text: a.reason }));
-    if (!a.answered) card.appendChild(el("details", { "class": "classification-reason" }, [
-      el("summary", { text: "Full classification reason" }), el("p", { "class": "hint", text: a.reason })]));
     if (a.drivers.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: a.answered ? "Driven by" : "Weak evidence seen (not enough to decide)" }),
@@ -323,9 +338,9 @@
     else if (labelled) {
       a.sections.forEach(function (sec) {
         listBox.appendChild(el("p", { "class": "hint", text: sec[0] || "No section label" }));
-        listBox.appendChild(el("ul", { "class": "plain" }, sec[1].map(function (i) { return el("li", { "class": "mono", text: i }); })));
+        listBox.appendChild(el("ul", { "class": "plain" }, sec[1].map(ingredientItem)));
       });
-    } else listBox.appendChild(el("ol", { "class": "plain" }, a.ingredients.map(function (i) { return el("li", { "class": "mono", text: i }); })));
+    } else listBox.appendChild(el("ol", { "class": "plain" }, a.ingredients.map(ingredientItem)));
     cols.appendChild(listBox);
     card.appendChild(cols);
     if (a.ins.length) card.appendChild(insBlock(a.ins));
@@ -343,7 +358,7 @@
     if (a.completeness && a.completeness.words && a.completeness.words.in_list) {
       var c = a.completeness, w = c.words;
       card.appendChild(el("div", {}, [
-        el("h3", { text: "Completeness: " + c.status }),
+        el("h3", { text: "Text coverage details" }),
         el("p", { "class": "hint", text: w.in_list + " words read as ingredients (" + Math.round(c.list_share * 100) + "% of the list region); " + w.not_read + " not read, " + w.unaccounted + " unaccounted, " + w.excluded + " set aside after the list, " + (w.composition ? w.composition + " identified as milk-composition metadata, " : "") + w.declared + " declared. " + c.assessed.not_assessed + " of " + c.assessed.items + " items are not fully assessed. " + (c.status === "complete" ? "All recognised text spans accounted for. This is not a guarantee that characters, digits or the list are complete or correct." : "This is text coverage, not a guarantee that characters, digits or the list are complete or correct.") }),
         el("ul", { "class": "plain" }, c.reasons.map(function (r) { return el("li", { text: r }); }))
       ]));

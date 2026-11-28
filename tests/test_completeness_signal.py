@@ -78,7 +78,7 @@ def test_cli_prints_the_signal(tmp_path, capsys):
     f.write_text("Ingredients: Rice, salt. Sugar, vinegar.")
     cli.main(["classify", "--text", str(f)])
     out = capsys.readouterr().out
-    assert "Completeness" in out and "not read" in out
+    assert "Text completeness: uncertain" in out and "not read" in out
 
 
 def test_span_property_nothing_is_unaccounted_over_generated_inputs():
