@@ -75,7 +75,7 @@ def test_synthetic_powders_and_conditioned_forms_abstain(t):
 
 # shrimp-24 lifted the shrimp and prawn holds additively (tests/test_shrimp_24.py).
 # generic-fish-24 re-examined and staged cod, halibut, pollock, crab, lobster (tests/test_generic_fish_24.py); the rest stay held.
-@pytest.mark.parametrize("t", ["Salmon", "Tuna", "Fish", "Snow Crab", "Spot Croaker", "Pumpkinseed Sunfish", "Catfish", "Tilapia"])
+@pytest.mark.parametrize("t", ["Salmon", "Tuna", "Fish", "Snow Crab", "Spot Croaker", "Pumpkinseed Sunfish"])  # fssai-fish-26b: Catfish and Tilapia left this hold list; FSSAI 2.6.2 names them (tests/test_fssai_fish_26b.py)
 def test_synthetic_generic_names_and_aliases_stay_unrecognised(t):
     assert g(t)[0] is None, t
 
