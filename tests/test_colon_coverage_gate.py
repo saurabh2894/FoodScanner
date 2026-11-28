@@ -29,8 +29,22 @@ STRONG = "Ingredients: Rice, Garlic Powder Seasoning: Onion, maltodextrin."
 DECLARED = "Ingredients: Rice, Garlic Powder Seasoning: Onion, salt. Contains added flavour."
 BRACKET_STRONG = "Ingredients: Rice, Garlic Powder (Seasoning: Onion, salt), maltodextrin."
 BRACKET_DECLARED = BRACKET_TEXTS[0] + " Contains added flavour."
+QUANTITY_POSITIVES = [
+    "Ingredients: Rice: 60%, salt.",
+    "Ingredients: Rice: 60 %, salt.",
+    "Ingredients: Sugar: 20%, Rice, Salt.",
+    "Ingredients: Rice: 30 g, salt.",
+]
+SUGAR_QUANTITY = "Ingredients: Sugar: 20%, Salt."
+WHEAT_QUANTITIES = "Ingredients: Wheat flour: 50%, Sugar: 20%, Salt."
+SECTION_NEGATIVE = "Ingredients: Rice, Garlic Powder Seasoning: Onion, salt."
+QUANTITY_TEXT_NEGATIVE = "Ingredients: Rice: 60% wheat, salt."
+QUANTITY_STRONG = "Ingredients: Rice: 60% wheat, maltodextrin."
+NESTED_STRONG = "Ingredients: Rice, Garlic Powder (Seasoning: Onion, salt), maltodextrin."
 TEXTS = BRACKET_TEXTS + [SQUARE, CURLY, PLAIN, HEADING, STRONG, DECLARED,
-                         BRACKET_STRONG, BRACKET_DECLARED]
+                         BRACKET_STRONG, BRACKET_DECLARED, *QUANTITY_POSITIVES,
+                         SUGAR_QUANTITY, WHEAT_QUANTITIES, SECTION_NEGATIVE,
+                         QUANTITY_TEXT_NEGATIVE, QUANTITY_STRONG, NESTED_STRONG]
 
 
 @pytest.fixture(scope="module", params=["python", "js"])
@@ -81,3 +95,45 @@ def test_strong_marker_survives_coverage_uncertainty(results, source, text):
     assert result["answered"] and result["group"] == 4
     assert result["completeness"]["status"] == "uncertain"
     assert result["warnings"]
+
+
+@pytest.mark.parametrize("source", ["text", "ocr"])
+@pytest.mark.parametrize("text", QUANTITY_POSITIVES)
+def test_bare_quantity_colons_do_not_block_classifiable_ingredients(results, source, text):
+    result = results[text, source]
+    assert result["answered"] and result["group"] == 3
+    assert "section label may not have been split" not in result["completeness"]["reasons"]
+    assert not any("section label may not have been split" in warning for warning in result["warnings"])
+
+
+@pytest.mark.parametrize("source", ["text", "ocr"])
+@pytest.mark.parametrize("text", [SUGAR_QUANTITY, WHEAT_QUANTITIES])
+def test_quantity_colons_do_not_override_existing_classification_abstentions(results, source, text):
+    result = results[text, source]
+    assert not result["answered"]
+    assert "section label may not have been split" not in result["reason"]
+    assert not any("section label may not have been split" in reason for reason in result["completeness"]["reasons"])
+    if text == SUGAR_QUANTITY:
+        assert "combination does not match" in result["reason"]
+    else:
+        assert "flour-based list" in result["reason"]
+
+
+@pytest.mark.parametrize("source", ["text", "ocr"])
+def test_quantity_followed_by_ingredient_text_still_hits_the_gate(results, source):
+    for text in (SECTION_NEGATIVE, QUANTITY_TEXT_NEGATIVE):
+        result = results[text, source]
+        assert not result["answered"]
+        assert any("section label may not have been split" in reason for reason in result["completeness"]["reasons"])
+        assert any("section label may not have been split" in warning for warning in result["warnings"])
+
+
+@pytest.mark.parametrize("source", ["text", "ocr"])
+@pytest.mark.parametrize("text", [QUANTITY_STRONG, NESTED_STRONG])
+def test_strong_marker_still_survives_quantity_or_nested_colon_uncertainty(results, source, text):
+    result = results[text, source]
+    assert result["answered"] and result["group"] == 4
+    if text == QUANTITY_STRONG:
+        assert any("section label may not have been split" in reason for reason in result["completeness"]["reasons"])
+    else:
+        assert any("bracketed label and contents" in warning for warning in result["warnings"])

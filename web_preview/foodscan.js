@@ -165,6 +165,17 @@
       }
       return -1;
     }
+    const BARE_QUANTITY = /^[0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?$/i;
+    function quantityColonPrefix(item) {
+      const colon = colonAtDepth0(item);
+      return colon > 0 && BARE_QUANTITY.test(item.slice(colon + 1).trim()) ? item.slice(0, colon).trim() : null;
+    }
+    function unitQuantityColonPrefix(item) {
+      const prefix = quantityColonPrefix(item);
+      if (prefix === null) return null;
+      const colon = colonAtDepth0(item);
+      return /(?:mg|kg|ml|g|l)\s*$/i.test(item.slice(colon + 1).trim()) ? prefix : null;
+    }
     // a candidate label that holds a descriptor or form word is an ingredient name, never a section label; mirrors parser._label_has_form_word
     const FORM_WORDS_EXTRA = new Set(["flake", "flakes", "extract", "extracts", "paste", "pastes", "mix", "mixes", "blend", "blends", "syrup", "cooked", "canned", "pickled", "prepared"]);
     // product-form tails are never peeled and only known plain label words may be (none by evidence); mirrors parser._PRODUCT_FORM_WORDS / _KNOWN_LABEL_WORDS / _tail_is_peelable
@@ -196,7 +207,7 @@
       return null;
     }
     function suspectSectionItems(items) {
-      return items.filter((it) => { const c = colonAtDepth0(it); return c > 0 && !CLASS_WORD_RE.test(flatten(it.slice(0, c))); });
+      return items.filter((it) => { const c = colonAtDepth0(it); return c > 0 && quantityColonPrefix(it) === null && !CLASS_WORD_RE.test(flatten(it.slice(0, c))); });
     }
     function nextBoundary(body, start) {
       let depth = 0;
@@ -1097,7 +1108,10 @@
     function expand(items, depth, heads, notes) {   // items: [raw, section label] pairs
       const out = [];
       for (const [raw, section] of items) {
-        const ing = normaliseIngredient(raw);
+        const quantityPrefix = unitQuantityColonPrefix(raw);
+        const normalisedRaw = quantityPrefix && recognisableIng(normaliseIngredient(quantityPrefix)) ? quantityPrefix : raw;
+        const ing = normaliseIngredient(normalisedRaw);
+        ing.raw = raw;
         ing.section = section;
         ing.ins.forEach((u) => { u.section = section; });
         let split = depth < 3 && !isAdditiveAbsenceClaim(raw) && !bracketColonContents(raw).length ? splitCompound(raw) : null;

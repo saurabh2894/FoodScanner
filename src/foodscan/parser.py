@@ -202,6 +202,25 @@ def _colon_at_depth0(item: str) -> int:
     return -1
 
 
+_BARE_QUANTITY = re.compile(r"[0-9]+(?:\.[0-9]+)?\s*(?:%|mg|kg|ml|g|l)?", re.IGNORECASE)
+
+
+def _quantity_colon_prefix(item: str) -> str | None:
+    colon = _colon_at_depth0(item)
+    if colon <= 0 or not _BARE_QUANTITY.fullmatch(item[colon + 1:].strip()):
+        return None
+    return item[:colon].strip()
+
+
+def _unit_quantity_colon_prefix(item: str) -> str | None:
+    prefix = _quantity_colon_prefix(item)
+    if prefix is None:
+        return None
+    colon = _colon_at_depth0(item)
+    suffix = item[colon + 1:].strip()
+    return prefix if re.search(r"(?:mg|kg|ml|g|l)\s*$", suffix, re.IGNORECASE) else None
+
+
 # Words that make a candidate label an ingredient NAME rather than a section label. Three sources, nothing else:
 #  1. every word in descriptors.csv (form and handling: powder, powdered, dried, dry, ground, whole, fresh, ...)
 #  2. "flake", "flakes" (not in descriptors.csv)
@@ -291,7 +310,7 @@ def suspect_section_items(items: list[str]) -> list[str]:
     out = []
     for it in items:
         c = _colon_at_depth0(it)
-        if c > 0 and not _class_word_re().search(_flat(it[:c])):
+        if c > 0 and _quantity_colon_prefix(it) is None and not _class_word_re().search(_flat(it[:c])):
             out.append(it)
     return out
 

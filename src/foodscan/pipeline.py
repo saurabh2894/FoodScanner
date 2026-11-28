@@ -16,7 +16,7 @@ from .normalise import Ingredient, InsUse, normalise_list
 from .ocr import OcrEngine, TesseractOcr
 from .normalise import _ins_reference, is_additive_absence_claim
 from .tables import load_table
-from .parser import (_class_word_re, bracket_colon_contents, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
+from .parser import (_class_word_re, _unit_quantity_colon_prefix, bracket_colon_contents, count_words, parse_ingredient_list, split_compound, split_items, split_top_level_and, split_top_level_and_ex, starts_with_denied_label,
                      suspect_section_items, suspect_adjacent_class_items, unclosed_openers)
 
 NOT_ENOUGH = "Not enough information"
@@ -364,7 +364,10 @@ def _expand(items: list[tuple[str, str | None]], depth: int = 0, heads: list[str
     """
     out: list[Ingredient] = []
     for raw, section in items:
-        ing = normalise_list([raw])[0]
+        quantity_prefix = _unit_quantity_colon_prefix(raw)
+        normalised_raw = quantity_prefix if quantity_prefix and _recognisable(normalise_list([quantity_prefix])[0]) else raw
+        ing = normalise_list([normalised_raw])[0]
+        ing.raw = raw
         ing.section = section
         ing.ins = [replace(u, section=section) for u in ing.ins]
         split = split_compound(raw) if depth < 3 and not is_additive_absence_claim(raw) and not bracket_colon_contents(raw) else None
