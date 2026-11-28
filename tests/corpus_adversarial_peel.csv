@@ -1,0 +1,7 @@
+id,category,text
+alias-heading,alias,"Ingredients: Seasoning : Onion, salt."
+exact-prefix,control,"Ingredients: Rice, Rice Bran Oil Seasoning : Onion, salt."
+descriptor-prefix,descriptor,"Ingredients: Rice, Garlic Powder Seasoning : Onion, salt."
+compound-guard,compound,"Ingredients: Rice, Rice Bran Oil Seasoning Powder : Onion, salt."
+multi-colon,colon,"Ingredients: Rice, Garlic Powder Seasoning: Masala: Onion, salt."
+percent-label,percentage,"Ingredients: Rice, Garlic Powder Seasoning (12%): Onion, salt."
