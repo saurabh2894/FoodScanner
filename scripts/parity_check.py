@@ -1702,6 +1702,19 @@ PAIRS += [("Ingredients: " + form.format(name) + ".", source) for name in _juice
 TOTAL = len(PAIRS)
 
 
+# peel-known-phrase-1 (J): ONE shared "known prefix" rule for parser._peel_label (lookup() or marker term, flattened like the JS flatten). The first six are the former strict-xfail probes
+# (Python/JS diverged on them) plus the curly-apostrophe probe. Synthetic controls, not accuracy evidence.
+_peel_j = ["Dried Paprika Seasoning: Onion", "Paprika Powder Seasoning: Onion", "Garlic Powder Seasoning : Onion", "Red chilli powder Seasoning : Onion", "Dry ginger powder Seasoning : Onion",
+           "Bishop\u2019s Seed Seasoning : Onion", "Bishop's Seed Seasoning : Onion",
+           "Red Chilli Powders Seasoning : Onion", "Roasted Rice Seasoning (12%): Onion", "Dried Coriander Leaves Seasoning 5%: Onion, Garlic", "Refined Palm Oil Sauce : Onion",
+           "Mystery Powder Seasoning : Onion", "Mystery Dried Paprika Seasoning : Onion", "Garlic Powder Seasoning : Onion : Garlic",
+           "Garlic Powder Seasoning : Onion (Garlic, Red Chilli Powder Seasoning : Salt)", "Garlic Powder Seasoning (12%): Onion", "Garlic Powder Seasoning 12%: Onion",
+           "Garlic Powder Flavour : Onion", "Garlic Powder Note: Onion", "Toasted Rice Seasoning : Onion", "Toasted Milk Seasoning : Onion", "Powdered Sugar Seasoning : Onion",
+           "Whole Wheat Flour Seasoning : Onion", "Dry ginger powder Seasoning : Onion: Garlic", "Dried Paprika Seasoning : 12%", "Dried Paprika Seasoning :"]
+PAIRS += [("Ingredients: Rice, " + i + ", salt.", s) for i in _peel_j for s in ["ocr", "text"]]
+TOTAL = len(PAIRS)
+
+
 def run_js(pairs):
     """Run the browser engine (web_preview/foodscan.js, under node) on [(text, source), ...]; returns one result dict per pair. Raises RuntimeError if node fails."""
     with tempfile.TemporaryDirectory() as td:

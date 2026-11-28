@@ -29,9 +29,15 @@ def test_synthetic_s19_shape_stays_whole_with_no_phantom_section_and_stays_flagg
 
 @pytest.mark.parametrize("item", [
     "PAPRIKA POWDER FLAKE(0.6%): ROASTED SESAME", "Paprika Powder Flake (0.6%): Roasted Sesame", "Paprika Flakes: Roasted Sesame",
-    "Rice Bran Oil Seasoning Powder : Onion", "Rice Bran Oil Dried Flakes (5%): Onion", "Rice Bran Oil Powder Seasoning : Onion"])
+    "Rice Bran Oil Seasoning Powder : Onion", "Rice Bran Oil Dried Flakes (5%): Onion"])
 def test_synthetic_no_candidate_label_with_a_form_word_is_accepted_whichever_candidate_the_loop_tries_first(item):
     assert _peel_label(item) is None
+
+
+def test_powder_seasoning_is_never_the_label_only_seasoning_is():
+    # Changed with peel-known-phrase-1 (explained, not weakened): this item used to stay whole only because the prefix "Rice Bran Oil Powder" was not an exact lexicon term. With the shared
+    # known-prefix rule it is a known phrase (powder is a descriptor), exactly like "Garlic Powder Seasoning : Onion". The guard still refuses "Powder Seasoning" as a LABEL: the label is "Seasoning".
+    assert _peel_label("Rice Bran Oil Powder Seasoning : Onion") == ("Rice Bran Oil Powder", "Seasoning", "Onion")
 
 
 @pytest.mark.parametrize("word", DESCRIPTORS + ["flake", "flakes"])

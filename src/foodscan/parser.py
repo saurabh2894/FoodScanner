@@ -135,7 +135,8 @@ class ParsedList:
 
 
 def _flat(s: str) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"[-\u2013\u2014_/]", " ", s.lower())).strip()
+    # Same normalisation as normalise.flatten and the JS flatten (curly apostrophes read as the straight one), so the peel evidence below cannot differ between engines on "Bishop\u2019s Seed".
+    return re.sub(r"\s+", " ", re.sub(r"[-\u2013\u2014_/]", " ", s.lower().replace("\u2019", "'").replace("\u2018", "'"))).strip()
 
 
 @cache
@@ -180,7 +181,10 @@ def _marker_terms() -> frozenset:
 
 
 def _known_phrase(flat: str) -> bool:
-    return flat in _lexicon_terms() or flat in _marker_terms()
+    """Evidence that the text before a candidate section label is an ingredient name. ONE rule shared with the JS port (knownPhrase): a name that lookup() recognises
+    (exact term, plural form, leading or all descriptors stripped, kind-scoped descriptor) or an exact marker term. Not synonym-aware: lookup() has no synonym path in either engine."""
+    from .classify import lookup        # lazy: classify imports normalise, not parser; loading parser alone must not pull classify in
+    return lookup(flat) is not None or flat in _marker_terms()
 
 
 _LABEL_WORD = re.compile(r"[A-Za-z&'\u2019/\-]+")
