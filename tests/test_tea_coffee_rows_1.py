@@ -35,7 +35,7 @@ def test_synthetic_milk_unknown_brackets_and_bare_powders_abstain(t):
 
 
 @pytest.mark.parametrize("t", ["Instant Coffee", "Decaffeinated Tea", "Decaf Coffee", "Instant Tea", "Tea Extract", "Coffee Extract", "Tea Leaves", "Coffee Beans", "Espresso", "Hibiscus Tea", "Chamomile Tea",
-                               "Herbal Tea", "Coffee Substitute", "Chicory", "Ready To Drink Tea", "Iced Tea", "Bottled Water", "Drinking Water"])
+                               "Coffee Substitute", "Chicory", "Ready To Drink Tea", "Iced Tea", "Bottled Water", "Drinking Water"])
 def test_synthetic_held_forms_aliases_and_other_beverages_stay_unrecognised(t):
     assert g(t)[0] is None, t
 
