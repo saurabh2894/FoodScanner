@@ -295,7 +295,7 @@ def fat_powder(ing, kind: str) -> bool:
 # (grinding, steaming, boiling and roasting are named minimal processes WITH their no-added-substance condition, which the observed-condition guard keeps); salted, smoked, cured, canned, breaded, fried and generic cooked forms
 # abstain as before; plant, dairy and fat rows are not animal rows.
 _ANIMAL_MARK = "meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts"
-_ANIMAL_DRIED = frozenset({"dried", "dehydrated"})
+_ANIMAL_DRIED = frozenset({"dried", "dehydrated", "salted"})   # salted-animal-1: the same FAO Group 3 example names "salted ... meats and fish"; scoped rows only (DRIED-G3-SCOPE meat or finfish), see animal_dried; smoked and cured stay abstaining (not descriptors, a global parser change)
 
 
 def is_animal_row(row) -> bool:
@@ -626,6 +626,8 @@ def whole_food_observed(ing, kind: str) -> list:
                 if lookup(p.strip()) and lookup(p.strip())["term"] in _SOURCE_PLACED_CULINARY]
     obs = nut_added_observed(ing) + [w for w in sorted(_LEGUME_PRESERVED) if _added(ing, {w})]
     obs = list(dict.fromkeys(obs))
+    if kind == "whole_food" and animal_dried(ing, kind):      # salted-animal-1: "salted" on a meat or finfish row is the FAO Group 3 example itself, not an unestablished condition (animal_dried routes it); other observed words stay
+        obs = [o for o in obs if o != "salted"]
     if grain_added_salt(ing, kind):                                  # per-form-2a: salt on these 23 terms is a supported Group 3; only salt itself (the words 'salt'/'salted' or a lexicon salt row) is exempt
         salt_rows = {r["term"] for r in load_table("lexicon.csv") if r["kind"] == "culinary" and (r["term"] == "salt" or r["term"].endswith(" salt"))}
         obs = [o for o in obs if o not in ("salt", "salted") and not ((lookup(o) or {}).get("term") in salt_rows)]
@@ -929,7 +931,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
     if animal_powders:
         return Classification(None, reason="a powder of an animal food is named (" + "; ".join(animal_powders) + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states")
     if animal_dry_unscoped:
-        return Classification(None, reason="a dried form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1")
+        return Classification(None, reason="a dried form of an animal food is named (" + "; ".join(animal_dry_unscoped) + "): the FAO Group 3 example names dried or salted meats and fish only, so whether a dried or salted form of this food is processed that way is not established, and drying or salting alone does not make it Group 1")
     if fat_powders:
         return Classification(None, reason="a powder of an oil or fat is named (" + "; ".join(fat_powders) + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%")
     if wf_nested:
@@ -983,7 +985,7 @@ def classify_ingredients(ings: list[Ingredient], declarations: list[str] | None 
             return Classification(3, drivers=[Driver(ings[0].raw, what, lookup(ings[0].name)["source"], ings[0].section)])
         return Classification(1, drivers=[Driver(ings[0].raw, "single recognised unprocessed food", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and animal_dry:
-        return Classification(3, drivers=[Driver(ings[0].raw, "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example", lookup(ings[0].name)["source"], ings[0].section)])
+        return Classification(3, drivers=[Driver(ings[0].raw, "dried or salted meat, poultry or fish (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour") and nut_salted:            # only the salted-grain guard can fill nut_salted for these kinds
         return Classification(3, drivers=[Driver(ings[0].raw, "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", lookup(ings[0].name)["source"], ings[0].section)])
     if len(ings) == 1 and kinds[0] in ("whole_food", "flour"):

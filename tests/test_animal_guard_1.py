@@ -42,7 +42,7 @@ def test_synthetic_animal_powders_abstain_whatever_the_text_states(t):
 
 @pytest.mark.parametrize("t", ROWS)
 def test_synthetic_conditioned_forms_abstain_or_follow_the_existing_guards(t):
-    for f in ("salted {x}", "smoked {x}", "cured {x}", "canned {x}", "breaded {x}", "battered {x}", "fried {x}", "pan fried {x}", "minced {x}", "formed {x}", "cooked {x}", "chilled {x}",
+    for f in ("smoked {x}", "cured {x}", "canned {x}", "breaded {x}", "battered {x}", "fried {x}", "pan fried {x}", "minced {x}", "formed {x}", "cooked {x}", "chilled {x}",
               "{x} (XQ9)", "{x} (rice)", "{x} (milk)", "{x} (egg)", "{x} (brine)", "{x} (canned)", "{x} (preserved)", "{x} (sunflower oil)", "{x}, water", "{x}, rice"):
         assert g(f.format(x=t))[0] is None, f.format(x=t)
     assert g(f"{t}, salt")[0] == 3 and g(f"{t}, sugar")[0] == 3 and g(f"{t}, sunflower oil")[0] == 3

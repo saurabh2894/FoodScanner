@@ -52,7 +52,7 @@ def test_synthetic_dried_crustaceans_and_molluscs_abstain_and_never_fall_back_to
         group, a = g(f.format(x=t))
         assert group is None, f.format(x=t)
     group, a = g(f"dried {t}")
-    assert a.reason.startswith("a dried form of an animal food is named (") and "dried meats and fish only" in a.reason and "does not make it Group 1" in a.reason
+    assert a.reason.startswith("a dried form of an animal food is named (") and "dried or salted meats and fish only" in a.reason and "does not make it Group 1" in a.reason
 
 
 def test_synthetic_the_scope_split_is_twelve_seafood_and_fifty_six_fish_rows():
@@ -64,12 +64,14 @@ def test_synthetic_the_scope_split_is_twelve_seafood_and_fifty_six_fish_rows():
 def test_synthetic_powders_and_conditioned_forms_abstain(t):
     # smoked-fish-24: "smoked haddock", "smoked sturgeon" and "smoked whitefish" are now explicit rows placed Group 3 (FAO Group 3 prose "smoked fish"; FDC SR Legacy identity), so the bare "smoked {x}" pin is skipped for them
     smoked_rows = {"haddock", "sturgeon", "whitefish"}
-    for f in ("{x} powder", "100% {x} powder", "whole {x} powder", "salted {x}", "smoked {x}", "cured {x}", "canned {x}", "breaded {x}", "battered {x}", "fried {x}", "minced {x}", "formed {x}", "cooked {x}", "chilled {x}",
+    for f in ("{x} powder", "100% {x} powder", "whole {x} powder", "smoked {x}", "cured {x}", "canned {x}", "breaded {x}", "battered {x}", "fried {x}", "minced {x}", "formed {x}", "cooked {x}", "chilled {x}",
               "{x} (XQ9)", "{x} (rice)", "{x} (milk)", "{x} (brine)", "{x} (sunflower oil)", "{x}, water"):
         if f == "smoked {x}" and t in smoked_rows:
             assert g(f.format(x=t))[0] == 3, f.format(x=t)
             continue
         assert g(f.format(x=t))[0] is None, f.format(x=t)
+    # salted-animal-27a: "salted {x}" follows the dried scope (FAO Group 3 example "salted, dried, cured, or smoked meats and fish"): Group 3 for a finfish row, abstain for an unscoped seafood row
+    assert g(f"salted {t}")[0] == (3 if "DRIED-G3-SCOPE: finfish" in LEX[t] else None), t
     assert g(f"{t}, salt")[0] == 3 and g(f"hydrogenated {t}")[0] == 4
 
 

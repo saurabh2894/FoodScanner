@@ -666,6 +666,7 @@
       // Keep the existing supported Group 3 salted-grain route and prior culinary exclusions.
       if (kind === "flour" && grainAddedSalt(ing, kind)) return (ing.inner || "").split(/\s*(?:,|;|&|\band\b)\s*/).map((p) => p.trim().toLowerCase()).filter((p) => lookup(p) && SOURCE_PLACED_CULINARY.has(lookup(p).term));
       let obs = Array.from(new Set(nutAddedObserved(ing).concat(Array.from(LEGUME_PRESERVED).sort().filter((w) => addedIn(ing, new Set([w]))))));
+      if (kind === "whole_food" && animalDried(ing, kind)) obs = obs.filter((o) => o !== "salted");   // salted-animal-27a: mirrors classify.py
       if (grainAddedSalt(ing, kind)) {
         const saltRows = new Set(T.lexicon.filter((r) => r.kind === "culinary" && (r.term === "salt" || r.term.endsWith(" salt"))).map((r) => r.term));
         obs = obs.filter((o) => o !== "salt" && o !== "salted" && !(lookup(o) && saltRows.has(lookup(o).term)));
@@ -718,7 +719,7 @@
     const isFatRow = (row) => !!row && row.kind === "culinary" && (FAT_LAST_WORDS.has(row.term.split(" ").slice(-1)[0]) || FAT_ROWS.has(row.term));
     // animal-guard-1 (mirrors classify.is_animal_row / animal_dried / animal_powder)
     const ANIMAL_MARK = "meat, poultry, fish and seafood, whole or in the form of steaks, fillets and other cuts";
-    const ANIMAL_DRIED = new Set(["dried", "dehydrated"]);
+    const ANIMAL_DRIED = new Set(["dried", "dehydrated", "salted"]);
     const isAnimalRow = (row) => !!row && row.kind === "whole_food" && row.source.includes(ANIMAL_MARK);
     const DRIED_SCOPES = ["DRIED-G3-SCOPE: meat", "DRIED-G3-SCOPE: finfish"];
     // cheese-g3-1 (mirrors classify.is_cheese_row / _CHEESE_ABSTAIN)
@@ -987,7 +988,7 @@
             return ts.size === 1 ? "), so the item is not established as plain " + [...ts][0] + " and no group is asserted" : "), so the items are not established as the plain foods the sources name and no group is asserted"; })()
           : (bracketUnknown.some(([, , k]) => k === "culinary") ? "), so what the item contains is not established and no group is asserted while part of the item is unassessed" : "), so neither Group 1 nor Group 3 is established while part of the item is unassessed")) };
       if (animalPowders.length) return { group: null, drivers: [], reason: "a powder of an animal food is named (" + animalPowders.join("; ") + "): no source read names powdered meat, poultry, fish or seafood, so its form and composition are not established and no group is asserted, whatever percentage the item states" };
-      if (animalDryUnscoped.length) return { group: null, drivers: [], reason: "a dried form of an animal food is named (" + animalDryUnscoped.join("; ") + "): the FAO Group 3 example names dried meats and fish only, so whether a dried form of this food is processed that way is not established, and drying alone does not make it Group 1" };
+      if (animalDryUnscoped.length) return { group: null, drivers: [], reason: "a dried form of an animal food is named (" + animalDryUnscoped.join("; ") + "): the FAO Group 3 example names dried or salted meats and fish only, so whether a dried or salted form of this food is processed that way is not established, and drying or salting alone does not make it Group 1" };
       const fatPowders = ings.filter((i, n) => fatPowder(i, kinds[n])).map((i) => i.raw);
       if (fatPowders.length) return { group: null, drivers: [], reason: "a powder of an oil or fat is named (" + fatPowders.join("; ") + "): a powder is named but its composition is not established, so no group is asserted unless the item's own name states 100%" };
       if (wfNested.length) return { group: null, drivers: [], reason: "a bracket names a different food inside the item (" + wfNested.map(([raw, r]) => raw + ": " + r.join(", ")).join("; ") + "): no rule or source available here establishes that it is the same food or how the two combine, so what the item is made of is not established and neither Group 1 nor Group 3 is asserted" };
@@ -1034,7 +1035,7 @@
           ? { group: 3, drivers: [{ ingredient: ings[0].raw, detail: kinds[0] === "nut_seed" ? nutGroup3Driver(ings[0]) : kinds[0] === "fruit" ? "fruit with added sugar, syrup or salt (FAO Group 3: 'whole fruit preserved in syrup'; definition: adding salt or sugar to group 1 foods)" : kinds[0] + " with added salt, sugar or brine (FAO Group 3: 'canned or bottled vegetables or legumes (pulses) preserved in brine'; definition: adding salt or sugar to group 1 foods)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null }
           : { group: 1, drivers: [{ ingredient: ings[0].raw, detail: "single recognised unprocessed food", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && animalDry.length)
-        return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "dried meat, poultry, fish or seafood (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
+        return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "dried or salted meat, poultry or fish (FAO Table 1 Group 3 example: 'salted, dried, cured, or smoked meats and fish'); class-instance of that example", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour") && nutSalted.length)
         return { group: 3, drivers: [{ ingredient: ings[0].raw, detail: "grain or grain flour with added salt (FAO: group 1 foods with salt added are classed in NOVA group 3 as processed foods; inference: no clause names a salted grain)", source: lookup(ings[0].name).source, section: ings[0].section ?? null }], reason: null };
       if (ings.length === 1 && (kinds[0] === "whole_food" || kinds[0] === "flour"))
