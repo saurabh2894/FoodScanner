@@ -106,7 +106,7 @@
   {% endif %}
   {% if result.unassessed %}
     <h3>Not assessed</h3>
-    <p class="src">Items or spans not assessed, and group names whose contents were assessed separately.</p>
+    <p class="src">Not in the vocabulary or not assessed separately; group names may have assessed contents.</p>
     <ul>{% for u in result.unassessed %}<li>{{ u }}</li>{% endfor %}</ul>
   {% endif %}
   {% if result.unplaced %}

@@ -365,7 +365,7 @@
     if (a.unassessed && a.unassessed.length) {
       card.appendChild(el("div", {}, [
         el("h3", { text: "Not assessed" }),
-        el("p", { "class": "hint", text: "Items or spans not assessed, and group names whose contents were assessed separately." }),
+        el("p", { "class": "hint", text: "Not in the vocabulary or not assessed separately; group names may have assessed contents." }),
         el("ul", { "class": "plain" }, a.unassessed.map(function (u) { return el("li", { "class": "mono", text: u }); }))
       ]));
     }
